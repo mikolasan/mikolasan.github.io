@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "gatsby-mikolasan-blog",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Nikolay Neupokoev - developer, traveler, snob. Personal blog.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Nikolay Neupokoev <neupokoev.n@gmail.com>",
   "dependencies": {
     "gatsby": "^2.1.2",
     "gatsby-image": "^2.0.29",
@@ -19,23 +19,13 @@
     "react-dom": "^16.8.1",
     "react-helmet": "^5.2.0"
   },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
+  "license": "private",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
