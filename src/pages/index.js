@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 
 const IndexPage = () => (
   <Layout>
-    <h1>Всё</h1>
+    <h1>Index</h1>
     <blockquote>
       <q>Свет в темноте, грохот в тиши:
           Шепот ночей, пламя свечи.
