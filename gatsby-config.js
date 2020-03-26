@@ -9,12 +9,24 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `markdown-pages`,
-        path: `${__dirname}/src/markdown`,
+        path: `${ __dirname }/src/markdown`,
       },
     },
     `gatsby-transformer-remark`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-catch-links`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `gatsby-mikolasan-blog`,
+        short_name: `mikolasan`,
+        start_url: `/`,
+        background_color: `#663399`,
+        theme_color: `#663399`,
+        display: `standalone`,
+        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
