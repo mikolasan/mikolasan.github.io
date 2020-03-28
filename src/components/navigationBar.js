@@ -3,9 +3,9 @@ import { Link } from "gatsby"
 
 export default () => (
   <ul>
-    <li><Link to="/everything/">Всё</Link></li>
-    <li><Link to="/science/">Наука</Link></li>
-    <li><Link to="/projects/">Проекты</Link></li>
-    <li><Link to="/gamedev/">Игры</Link></li>
+    <li><Link to="/everything/">Everything</Link></li>
+    <li><Link to="/science/">Science</Link></li>
+    <li><Link to="/projects/">Projects</Link></li>
+    <li><Link to="/gamedev/">Gamedev</Link></li>
   </ul>
 )

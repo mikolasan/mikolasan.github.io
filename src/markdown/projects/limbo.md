@@ -1,5 +1,5 @@
 ---
-path: "/limbo"
+path: "/projects/limbo"
 date: "2020-03-15"
 title: "Лимб"
 ---

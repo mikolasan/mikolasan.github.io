@@ -47,4 +47,4 @@ Closure is used extensively in art. It is not so much the quantity, but rather t
 
 Надо взять как и в [большом эксперименте](http://www.math.nsc.ru/AP/ScientificDiscovery/PDF/natural_classification_systematics_ontology.pdf) 30 экземпляров каждой цифры
 
-[Что получилось](/postal-digits)
+[Что получилось](/science/postal-digits)

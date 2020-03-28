@@ -1,5 +1,5 @@
 ---
-path: "/postal-digits"
+path: "/science/postal-digits"
 date: "2020-03-19"
 title: "Цифры почтового индекса"
 ---
