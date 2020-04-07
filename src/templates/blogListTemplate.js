@@ -20,12 +20,14 @@ class BlogIndex extends React.Component {
           {posts.map(({ node }) => (
             <div key={node.id}>
               <h3>
-                {node.frontmatter.title}{" "}
-                <span>
-                  — {node.frontmatter.date}
-                </span>
+                {node.frontmatter.title}
               </h3>
-              <p>{node.excerpt}</p>
+              <span>
+                {node.frontmatter.date}
+              </span>
+              <p>{node.excerpt}{" "}
+              <Link to={node.frontmatter.path}>Читать далее...</Link>
+              </p>
             </div>
           ))}
           <ul
@@ -91,6 +93,7 @@ export const query = graphql`
           id
           frontmatter {
             title
+            path
             date(formatString: "DD MMMM, YYYY")
           }
           excerpt
