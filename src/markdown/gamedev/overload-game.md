@@ -1,7 +1,7 @@
 ---
-path: "/projects/overload-game"
+path: "/gamedev/overload-game"
 date: "2020-03-26"
-title: "Project \"Overload\""
+title: Overload
 featuredImage: overload-game.png
 ---
 

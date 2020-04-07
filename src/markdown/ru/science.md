@@ -1,7 +1,7 @@
 ---
 path: "/ru/science"
 date: "2020-03-19"
-title: "Science"
+title: "Наука"
 ---
 
 [Публикации](/ru/science/publications)
