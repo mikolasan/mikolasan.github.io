@@ -1,10 +1,15 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
+import { Breadcrumb } from 'gatsby-plugin-breadcrumb'
 import Layout from "../components/layout"
+import styles from "./blogTemplate.module.css"
 
-export default function Template ({ data }) {
+export default function Template ({ data, pageContext, location }) {
   const { markdownRemark } = data // data.markdownRemark holds our post data
+  const {
+    breadcrumb: { crumbs },
+  } = pageContext
   const { frontmatter, html } = markdownRemark
   const renderFeaturedImg = () => {
     if (frontmatter.featuredImage) {
@@ -18,8 +23,16 @@ export default function Template ({ data }) {
       return ""
     }
   }
+  const customCrumbLabel = "boo"
   return (
     <Layout>
+      <div className={styles.breadcrumbs}>
+        <Breadcrumb
+          crumbs={crumbs}
+          crumbSeparator=" > "
+          title=">>>"
+        />
+      </div>
       <h1>{frontmatter.title}</h1>
       {renderFeaturedImg()}
       <p>{frontmatter.date}</p>
