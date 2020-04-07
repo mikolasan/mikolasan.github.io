@@ -11,6 +11,7 @@ class BlogIndex extends React.Component {
     const isLast = currentPage === numPages
     const prevPage = currentPage - 1 === 1 ? '/' : (currentPage - 1).toString()
     const nextPage = (currentPage + 1).toString()
+    const onePage = isFirst && isLast
     return (
       <Layout>
         <div>
@@ -41,7 +42,7 @@ class BlogIndex extends React.Component {
               <Link to={`/everything/${prevPage}`} rel="prev">
                 ← Previous Page
               </Link>
-            )}
+            ) || "← Previous Page"}
             {Array.from({ length: numPages }, (_, i) => (
               <li
                 key={`pagination-number${i + 1}`}
@@ -66,7 +67,7 @@ class BlogIndex extends React.Component {
               <Link to={`/everything/${nextPage}`} rel="next">
                 Next Page →
               </Link>
-            )}
+            ) || "Next Page →"}
           </ul>
         </div>
       </Layout>
