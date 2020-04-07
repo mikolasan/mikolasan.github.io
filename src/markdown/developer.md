@@ -57,9 +57,9 @@ _Oct 2012 – Oct 2015_
 
 ### Core
 
-- **C++**: [hobby project](/projects/overload-game)
+- **C++**: [hobby project](/gamedev/overload-game)
 - **Java**: [hobby project](/projects/pet-project-navigator),
-- **Python**: [hobby project](/projects/pyroguelike),
+- **Python**: [hobby project](/gamedev/pyroguelike),
 - Lua,
 - **JavaScript**: [hobby project](/projects/postcatolyptica),
 
