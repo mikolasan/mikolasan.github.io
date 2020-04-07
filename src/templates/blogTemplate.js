@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
 import Img from "gatsby-image"
+import Layout from "../components/layout"
 
 export default function Template ({ data }) {
   const { markdownRemark } = data // data.markdownRemark holds our post data
@@ -9,7 +9,11 @@ export default function Template ({ data }) {
   const renderFeaturedImg = () => {
     if (frontmatter.featuredImage) {
       const featuredImgFluid = frontmatter.featuredImage.childImageSharp.fluid
-      return <Img fluid={featuredImgFluid} />
+      return (
+        <div style={{ maxHeight: "100%", height: "400px" }}>
+          <Img fluid={featuredImgFluid} style={{maxHeight: '100%'}} imgStyle={{objectFit: 'contain'}} />
+        </div>
+      )
     } else {
       return ""
     }
@@ -36,7 +40,7 @@ export const pageQuery = graphql`
         title
         featuredImage {
           childImageSharp {
-            fluid(maxWidth: 800) {
+            fluid(maxWidth: 400) {
               ...GatsbyImageSharpFluid
             }
           }

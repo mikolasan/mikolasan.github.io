@@ -1,12 +1,18 @@
 ---
 path: "/developer"
 date: "2020-03-26"
-title: "Developer"
+title: "CV"
 ---
 
 ## Profile
 
-I’m a professional software developer with strong mathematics and programming background, over 7 years of experience in the field of gambling devices such as game development, casino systems and equipment, calculating PAR sheets.
+I enjoy when the code is written well and it looks perfect.
+After more than 7 years of work with code of different quality I'm noticing a beauty in some projects and appreciate creators behind it.
+At the same time I realize that it is almost impossible in a real world.
+All the struggles behind the project do not matter if it is shipped in time and serves the buisness goal well.
+
+I’m a professional software developer with strong mathematics and programming background, over 7 years of experience in the field of gambling industry such as game development, casino systems and equipment, calculating PAR sheets.
+
 
 ## Work experience
 
@@ -77,9 +83,3 @@ Final qualification work “Modeling the active perception”.
 
 _Mechanics and Mathematics department, Novosibirsk State University, Russia_
 
-## About
-
-[GitHub](https://github.com/mikolasan)
-
-Communication and writing skills in English (fluent) and Russian (native)
-My interests include graphical design, mathematics, robotics, bicycling.

@@ -7,5 +7,6 @@ export default () => (
     <li><Link to="/science/">Science</Link></li>
     <li><Link to="/projects/">Projects</Link></li>
     <li><Link to="/gamedev/">Gamedev</Link></li>
+    <li><Link to="/about/">About</Link></li>
   </ul>
 )
