@@ -4,12 +4,7 @@ import NavigationBar from "../components/navigationBar"
 
 const Header = () => (
   <header>
-    <div>
-      <h1>
-        <Link to="/">Nikolay Neupokoev</Link>
-      </h1>
-      <p><Link to="/developer/">developer</Link> • traveler • snob</p>
-    </div>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet"></link>
     <NavigationBar />
   </header>
 )

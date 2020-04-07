@@ -1,0 +1,51 @@
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  
+}
+
+.menu {
+  
+}
+
+.sections {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.sections li {
+  float: left;
+  text-align: center;
+  border-right: 1px solid black;
+}
+
+.sections li:last-child {
+  border-right: none;
+}
+
+.sections a {
+  display: block;
+  width: 100px;
+  text-decoration: none;
+}
+
+.sections a:hover {
+  text-decoration: underline;
+}
+
+.active-section {
+  background-color: grey;
+}
+
+.right_section {
+  float: right;
+}
