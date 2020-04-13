@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import NavigationBar from "../components/navigationBar"
 
 const Header = () => (

@@ -1,8 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Img from "gatsby-image"
 import { Breadcrumb } from 'gatsby-plugin-breadcrumb'
 import Layout from "../components/layout"
+import FeaturedImage from "../components/featuredImage"
 import styles from "./blogTemplate.module.css"
 
 export default function Template ({ data, pageContext, location }) {
@@ -11,40 +11,33 @@ export default function Template ({ data, pageContext, location }) {
     breadcrumb: { crumbs },
   } = pageContext
   const { frontmatter, html } = markdownRemark
-  const renderFeaturedImg = () => {
-    if (frontmatter.featuredImage) {
-      const featuredImgFluid = frontmatter.featuredImage.childImageSharp.fluid
-      return (
-        <div style={{ maxHeight: "100%", height: "400px" }}>
-          <Img fluid={featuredImgFluid} style={{maxHeight: '100%'}} imgStyle={{objectFit: 'contain'}} />
-        </div>
-      )
-    } else {
-      return ""
-    }
+  let featuredImgFluid = null;
+  if (frontmatter.featuredImage) {
+    featuredImgFluid = frontmatter.featuredImage.childImageSharp.fluid
   }
-  const customCrumbLabel = "boo"
   return (
     <Layout>
-      <div className={styles.breadcrumbs}>
-        <Breadcrumb
-          crumbs={crumbs}
-          crumbSeparator=" > "
-          title=">>>"
+      <FeaturedImage imgFluid={featuredImgFluid} />
+      <section>
+        <div className={styles.breadcrumbs}>
+          <Breadcrumb
+            crumbs={crumbs}
+            crumbSeparator=" > "
+            title=">>>"
+          />
+        </div>
+        <h1>{frontmatter.title}</h1>
+        <p>{frontmatter.date}</p>
+        <div
+          dangerouslySetInnerHTML={{ __html: html }}
         />
-      </div>
-      <h1>{frontmatter.title}</h1>
-      {renderFeaturedImg()}
-      <p>{frontmatter.date}</p>
-      <div
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
+      </section>
     </Layout>
   )
 }
 
 export const pageQuery = graphql`
-  query($path: String!) {
+  query blogQuery($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {
@@ -53,7 +46,7 @@ export const pageQuery = graphql`
         title
         featuredImage {
           childImageSharp {
-            fluid(maxWidth: 400) {
+            fluid(maxWidth: 300) {
               ...GatsbyImageSharpFluid
             }
           }

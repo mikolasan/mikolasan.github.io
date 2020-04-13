@@ -1,11 +1,21 @@
 import React from "react"
 import Layout from "../components/layout"
+import FeaturedImage from "../components/featuredImage"
+import { Breadcrumb } from 'gatsby-plugin-breadcrumb'
 
-const IndexPage = () => (
+export default ({ data }) => (
   <Layout>
-    <h1>Index</h1>
-    <p>Empty now... Rely on categories above</p>
+    <FeaturedImage />
+    <section>
+      <div>
+        <Breadcrumb
+          crumbs={[]}
+          crumbSeparator=" > "
+          title=">>>"
+        />
+      </div>
+      <h1>Index</h1>
+      <p>Empty now... Rely on categories above</p>
+    </section>
   </Layout>
 )
-
-export default IndexPage

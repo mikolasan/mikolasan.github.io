@@ -1,12 +1,19 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
+import { Breadcrumb } from 'gatsby-plugin-breadcrumb'
 import Layout from "../components/layout"
+import FeaturedImage from "../components/featuredImage"
+import styles from "./blogTemplate.module.css"
 
 class BlogIndex extends React.Component {
   render() {
     const { data } = this.props
     const posts = data.allMarkdownRemark.edges
-    const { currentPage, numPages } = this.props.pageContext
+    const {
+      currentPage,
+      numPages,
+      breadcrumb: { crumbs },
+    } = this.props.pageContext
     const isFirst = currentPage === 1
     const isLast = currentPage === numPages
     const prevPage = currentPage - 1 === 1 ? '/' : (currentPage - 1).toString()
@@ -14,7 +21,15 @@ class BlogIndex extends React.Component {
     const onePage = isFirst && isLast
     return (
       <Layout>
-        <div>
+        <FeaturedImage />
+        <section>
+          <div className={styles.breadcrumbs}>
+            <Breadcrumb
+              crumbs={crumbs}
+              crumbSeparator=" > "
+              title=">>>"
+            />
+          </div>
           <h1>Everything</h1>
           <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
           {posts.map(({ node }) => (
@@ -71,7 +86,7 @@ class BlogIndex extends React.Component {
               </Link>
             ) || "Next Page →"}
           </ul>
-        </div>
+          </section>
       </Layout>
     )
   }

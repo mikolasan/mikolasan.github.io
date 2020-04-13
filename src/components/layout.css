@@ -12,6 +12,20 @@ section,
 summary {
   display: block;
 }
+
+section {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 0 1.0875rem;
+  
+}
+
+main,
+footer {
+  margin: 0 auto;
+  padding: 0;
+}
+
 audio,
 canvas,
 progress,
@@ -192,9 +206,8 @@ html {
   box-sizing: inherit;
 }
 body {
-  margin: 0 auto;
-  max-width: 960px;
-  padding: 1.45rem 1.0875rem;
+  margin: 0;
+  padding: 0;
   color: hsla(0, 0%, 0%, 0.8);
   font-family: 'PT Serif', serif;
   font-weight: normal;
@@ -214,7 +227,6 @@ img {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
 }
 h1 {
   margin-left: 0;
@@ -616,3 +628,23 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+ /* unvisited link */
+ a:link {
+  color: #5e7ce2;
+}
+
+/* visited link */
+a:visited {
+  color: #5e7ce2;
+}
+
+/* mouse over link */
+a:hover {
+  color: #6320ee;
+}
+
+/* selected link */
+a:active {
+  color: #6320ee;
+} 
