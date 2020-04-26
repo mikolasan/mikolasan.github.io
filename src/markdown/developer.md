@@ -57,11 +57,11 @@ _Oct 2012 – Oct 2015_
 
 ### Core
 
-- **C++**: [hobby project](/gamedev/overload-game)
-- **Java**: [hobby project](/projects/pet-project-navigator),
-- **Python**: [hobby project](/gamedev/pyroguelike),
-- Lua,
-- **JavaScript**: [hobby project](/projects/postcatolyptica),
+- [C++](/gamedev/c-plus-plus)
+- [Java](/gamedev/java) / [Kotlin](/gamedev/kotlin),
+- [Python](/gamedev/python),
+- [Lua](/gamedev/lua),
+- JavaScript,
 
 ### Frameworks
 
@@ -76,6 +76,14 @@ _Oct 2012 – Oct 2015_
 
 - Trello, Redmine, JIRA, Confluence
 
+### Hobby projects
+
+- [Logic game](/gamedev/overload-game) (pure C++, no game engines)
+- [Organizer for hobby projects](/projects/pet-project-navigator) (Java)
+- [Game Jam experience](/gamedev/pyroguelike) (Python),
+- [Fullstack project](/projects/postcatolyptica) (JavaScript)
+- and [others](/projects)
+
 ## Education
 
 **Master’s degree in [Applied Mathematics and Computer Science](/science)**, 2006-2012.
@@ -83,3 +91,8 @@ Final qualification work “Modeling the active perception”.
 
 _Mechanics and Mathematics department, Novosibirsk State University, Russia_
 
+### Publications
+
+Vityaev, E.E., Neupokoev, N.V.: [Formal model of perception based on fix-point of anticipations](http://www.math.nsc.ru/AP/ScientificDiscovery/PDF/model_of_perception_sbornik.pdf). [Approaches to mental modeling](http://urss.ru/cgi-bin/db.pl?lang=en&blang=en&page=Book&id=257246). pp.155-172, Moscow, URSS Editorial (2014)
+
+Vityaev, E.E., Neupokoev, N.V.: [Perception and pattern formal model as a fix-point of anticipations.](http://www.niisi.ru/iont/ni/Journal/V6/N1/VityaevNeupokoev_A.pdf) Vol 6, No 1, pp.28-41, [Neuroinformatics](https://www.niisi.ru/iont/ni/Journal/),  (2012)
