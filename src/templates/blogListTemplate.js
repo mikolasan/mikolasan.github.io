@@ -24,11 +24,11 @@ class BlogIndex extends React.Component {
         <FeaturedImage />
         <section>
           <div className={styles.breadcrumbs}>
-            <Breadcrumb
+            [<Breadcrumb
               crumbs={crumbs}
-              crumbSeparator=" > "
-              title=">>>"
-            />
+              crumbSeparator="//"
+              title=""
+            />]
           </div>
           <h1>Everything</h1>
           <h4>{data.allMarkdownRemark.totalCount} Posts</h4>

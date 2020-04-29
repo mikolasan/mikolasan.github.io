@@ -7,13 +7,7 @@ export default ({ data }) => (
   <Layout>
     <FeaturedImage />
     <section>
-      <div>
-        <Breadcrumb
-          crumbs={[]}
-          crumbSeparator=" > "
-          title=">>>"
-        />
-      </div>
+      <br />
       <h1>Index</h1>
       <p>Empty now... Rely on categories above</p>
     </section>

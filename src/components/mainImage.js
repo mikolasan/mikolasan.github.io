@@ -6,10 +6,10 @@ export default () => (
   <StaticQuery
     query={graphql`
       query IndexImageQuery {
-        file(relativePath: { eq: "index-2.jpg" }) {
+        file(relativePath: { eq: "index-4.png" }) {
           childImageSharp {
-            fixed(height: 300) {
-              ...GatsbyImageSharpFixed
+            fluid(quality: 100, fit: COVER) {
+              ...GatsbyImageSharpFluid
             }
           }
         }
@@ -17,7 +17,10 @@ export default () => (
     `}
     render={data => (
       <div style={{ maxHeight: "100%", height: "300px" }}>
-        <Img fixed={data.file.childImageSharp.fixed} style={{maxHeight: '100%'}} />
+        <Img 
+          fluid={data.file.childImageSharp.fluid}
+          style={{maxHeight: '100%'}}
+        />
       </div>
     )}
   />
