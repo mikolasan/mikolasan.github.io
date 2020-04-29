@@ -36,3 +36,11 @@
   background-color: #6320ee;
   color: white;
 }
+
+@media all and (max-width: 780px) {
+  .titlelink { display: none; }
+}
+
+@media all and (max-width: 580px) {
+  .topnav { display: none; }
+}

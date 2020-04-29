@@ -8,8 +8,8 @@ export default () => (
       query IndexImageQuery {
         file(relativePath: { eq: "index-2.jpg" }) {
           childImageSharp {
-            fluid(maxHeight: 300) {
-              ...GatsbyImageSharpFluid
+            fixed(height: 300) {
+              ...GatsbyImageSharpFixed
             }
           }
         }
@@ -17,7 +17,7 @@ export default () => (
     `}
     render={data => (
       <div style={{ maxHeight: "100%", height: "300px" }}>
-        <Img fluid={data.file.childImageSharp.fluid} style={{maxHeight: '100%'}} />
+        <Img fixed={data.file.childImageSharp.fixed} style={{maxHeight: '100%'}} />
       </div>
     )}
   />
