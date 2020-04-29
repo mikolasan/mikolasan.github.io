@@ -20,11 +20,11 @@ export default function Template ({ data, pageContext, location }) {
       <FeaturedImage imgFluid={featuredImgFluid} />
       <section>
         <div className={styles.breadcrumbs}>
-          <Breadcrumb
+          [<Breadcrumb
             crumbs={crumbs}
-            crumbSeparator=" > "
-            title=">>>"
-          />
+            crumbSeparator="//"
+            title=""
+          />]
         </div>
         <h1>{frontmatter.title}</h1>
         <p>{frontmatter.date}</p>

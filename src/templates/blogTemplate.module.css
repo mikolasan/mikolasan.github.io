@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   list-style-type: none;
-  margin: 0;
+  margin: 1em 0;
   padding: 0;
 }
 
@@ -13,7 +13,14 @@
   padding: 0;
 }
 
-.breadcrumbs li {
-  margin-left: 5px;
-  margin-right: 5px;
+.breadcrumbs ol li a {
+	display: block;
+	float: left;
+	height: 1.5em;
+	text-align: center;
+	padding: 0 0.5em;
+	position: relative;
+  margin: 0;
+  
+	text-decoration: none;
 }
