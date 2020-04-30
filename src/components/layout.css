@@ -36,9 +36,13 @@ footer {
   max-width: 960px;
   margin: 0 auto;
   padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-bottom: 1rem;
   padding-left: 1.0875rem;
   font-size: 0.75em
+}
+
+.copyright p {
+  margin-bottom: 0;
 }
 
 .bottomnav {

@@ -1,7 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
 import FeaturedImage from "../components/featuredImage"
-import { Breadcrumb } from 'gatsby-plugin-breadcrumb'
 
 export default ({ data }) => (
   <Layout>
