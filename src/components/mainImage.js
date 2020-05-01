@@ -6,9 +6,20 @@ export default () => (
   <StaticQuery
     query={graphql`
       query IndexImageQuery {
-        file(relativePath: { eq: "index-4.png" }) {
+        file(relativePath: { eq: "index-4.jpg" }) {
           childImageSharp {
-            fluid(quality: 100, fit: COVER) {
+            fluid(
+              srcSetBreakpoints: [576, 768, 922],
+              maxHeight: 500,
+              maxWidth: 1400,
+              cropFocus: ATTENTION,
+              fit: COVER,
+              duotone: {
+                highlight: "#f2f2f2",
+                shadow: "#211a1d"
+              },
+              quality: 100
+            ) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -16,10 +27,9 @@ export default () => (
       }
     `}
     render={data => (
-      <div style={{ maxHeight: "100%", height: "300px" }}>
+      <div>
         <Img 
           fluid={data.file.childImageSharp.fluid}
-          style={{maxHeight: '100%'}}
         />
       </div>
     )}
