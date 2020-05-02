@@ -1,5 +1,6 @@
 module.exports = {
   siteMetadata: {
+    siteUrl: `https://mikolasan.github.io`,
     title: `Nikolay Neupokoev - developer, traveler, snob`,
     description: `Nikolay Neupokoev - developer, traveler, snob. Personal blog.`,
     author: `@mikolasan`,
@@ -69,6 +70,29 @@ module.exports = {
         },
       },
     },
+    // {
+    //   resolve: `gatsby-plugin-prefetch-google-fonts`,
+    //   options: {
+    //     fonts: [
+    //       {
+    //         family: `Vollkorn SC`,
+    //         variants: [`700`]
+    //       },
+    //       {
+    //         family: `Manrope`,
+    //         variants: [`300`]
+    //       },
+    //       {
+    //         family: `Nunito`,
+    //         variants: [`300`]
+    //       },
+    //     ],
+    //     encode: false,
+    //     filename: "google-fonts.css",
+    //     formats: ["woff2", "woff", "ttf", "eof"]
+    //   },
+    // },
+    `gatsby-plugin-sitemap`
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
