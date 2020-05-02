@@ -61,6 +61,12 @@ module.exports = {
         trackingIds: [
           `UA-165261437-1`
         ],
+        pluginConfig: {
+          // Puts tracking script in the head instead of the body
+          head: true,
+          // using Google Global Site Tag does not necessarily constitute Tracking
+          respectDNT: false,
+        },
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
