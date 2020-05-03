@@ -37,10 +37,10 @@
   color: white;
 }
 
-@media all and (max-width: 780px) {
+@media all and (max-width: 870px) {
   .titlelink { display: none; }
 }
 
-@media all and (max-width: 580px) {
+@media all and (max-width: 675px) {
   .topnav { display: none; }
 }

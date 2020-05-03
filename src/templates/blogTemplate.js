@@ -15,8 +15,24 @@ export default function Template ({ data, pageContext, location }) {
   if (frontmatter.featuredImage) {
     featuredImgFluid = frontmatter.featuredImage.childImageSharp.fluid
   }
+  const linkPath = frontmatter.path
+  let anotherLanguageLink = ''
+  let languageName = ''
+  if (linkPath.includes('/ru/everything')) {
+    anotherLanguageLink = '/everything'
+    languageName = "Switch to english version"
+  } else if (linkPath.includes('/everything')) {
+    anotherLanguageLink = '/ru/everything'
+    languageName = "Switch to russian version"
+  } else if (linkPath.includes('/ru')) {
+    anotherLanguageLink = linkPath.replace('/ru', '/')
+    languageName = "Switch to english version"
+  } else {
+    anotherLanguageLink = '/ru' + linkPath
+    languageName = "Switch to russian version"
+  }
   return (
-    <Layout>
+    <Layout languageName={languageName} anotherLanguageLink={anotherLanguageLink}>
       <FeaturedImage imgFluid={featuredImgFluid} />
       <section>
         <div className={styles.breadcrumbs}>

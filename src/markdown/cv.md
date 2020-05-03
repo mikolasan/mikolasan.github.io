@@ -1,7 +1,7 @@
 ---
-path: "/developer"
-date: "2020-03-26"
-title: "CV"
+path: "/cv"
+date: "2019-02-13"
+title: "Curriculum Vitae"
 ---
 
 ## Profile
@@ -57,10 +57,10 @@ _Oct 2012 – Oct 2015_
 
 ### Core
 
-- [C++](/gamedev/c-plus-plus)
-- [Java](/gamedev/java) / [Kotlin](/gamedev/kotlin),
-- [Python](/gamedev/python),
-- [Lua](/gamedev/lua),
+- C++
+- [Java](/gamedev/java) / Kotlin,
+- Python,
+- Lua,
 - JavaScript,
 
 ### Frameworks

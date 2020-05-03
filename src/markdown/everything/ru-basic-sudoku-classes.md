@@ -1,5 +1,5 @@
 ---
-path: "/everything/basic-sudoku-classes"
+path: "/ru/everything/basic-sudoku-classes"
 date: "2019-02-16"
 title: "Basic Sudoku classes"
 ---

@@ -2,10 +2,10 @@ import React from "react"
 import PropTypes from "prop-types"
 import { graphql, Link, StaticQuery } from "gatsby"
 
-import Header from "./header"
+import NavigationBar from "../components/navigationBar"
 import "./layout.css"
 
-const Layout = ({ children }) => (
+const Layout = ({ children, languageName, anotherLanguageLink }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -18,14 +18,19 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <Header title={data.site.siteMetadata.title}/>
+        <header>
+          <link href="https://fonts.googleapis.com/css2?family=Vollkorn+SC:wght@700&family=Manrope:wght@300&family=Nunito:wght@300&display=swap" rel="stylesheet"></link>
+          <NavigationBar languageName={languageName} anotherLanguageLink={anotherLanguageLink}/>
+          <title>{data.site.siteMetadata.title}</title>
+        </header>
         <div>
           <main>{children}</main>
           <footer>
             <div class="bottomnav">
+              <Link style={{marginBottom: '0.5em', textDecoration: 'underline'}} to={anotherLanguageLink}>{languageName}</Link>
               <div class="bottomsmallabout">
                 <h2>About</h2>
-                <p>I am a future artist. I spend a lot of time with C++, but there is not much of intelligible. So I will become an artist, I promise. #sarcasm</p>
+                <p>I am a future artist. I spend a lot of time with C++, but there is not much of intelligible. So I will become an artist, I promise. #irony</p>
               </div>
               <div class="bottommenu">
                 <h2>Menu</h2>
@@ -33,7 +38,7 @@ const Layout = ({ children }) => (
                 <Link to="/science/">Science</Link>
                 <Link to="/projects/">Projects</Link>
                 <Link to="/gamedev/">Gamedev</Link>
-                <Link to="/about/">About</Link>
+                <Link to="/cv/">CV</Link>
               </div>
               <div class="bottomxsocial">
                 <h2>Social</h2>

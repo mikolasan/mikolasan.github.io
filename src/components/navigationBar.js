@@ -3,7 +3,7 @@ import { graphql, Link, StaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import styles from "./navigationBar.module.css"
 
-export default () => (
+export default (props) => (
   <StaticQuery
     query={graphql`
       query LogoQuery {
@@ -24,7 +24,8 @@ export default () => (
         <Link to="/science/">Science</Link>
         <Link to="/projects/">Projects</Link>
         <Link to="/gamedev/">Gamedev</Link>
-        <Link to="/about/" style={{backgroundColor: '#211a1d', color: '#f2f2f2', float: 'right'}}>About</Link>
+        <Link to="/about/" style={{float: 'right'}}>About</Link>
+        <Link to="/cv/" style={{float: 'right'}}>CV</Link>
       </div>
     )}
   />

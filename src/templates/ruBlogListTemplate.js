@@ -14,8 +14,8 @@ class BlogIndex extends React.Component {
       numPages,
       breadcrumb: { crumbs },
     } = this.props.pageContext
-    const anotherLanguageLink = '/ru/everything'
-    const languageName = "Switch to russian version"
+    const anotherLanguageLink = '/everything'
+    const languageName = "Switch to english version"
     const isFirst = currentPage === 1
     const isLast = currentPage === numPages
     const prevPage = currentPage - 1 === 1 ? '/' : (currentPage - 1).toString()
@@ -97,12 +97,12 @@ class BlogIndex extends React.Component {
 export default BlogIndex
 
 export const query = graphql`
-  query blogListQuery($skip: Int!, $limit: Int!) {
+  query ruBlogListQuery($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
       limit: $limit,
       skip: $skip,
       sort: { fields: [frontmatter___date], order: DESC},
-      filter: { frontmatter: { path: { regex: "/^\/everything*/" }}}
+      filter: { frontmatter: { path: { regex: "/\/ru\/everything*/" }}}
     ) {
       totalCount
       edges {

@@ -4,9 +4,5 @@ date: "2020-04-06"
 title: "About"
 ---
 
-[CV](/developer)
 
-[GitHub](https://github.com/mikolasan)
-
-Communication and writing skills in English (fluent) and Russian (native)
-My interests include graphical design, mathematics, robotics, bicycling.
+I am a future artist. I spend a lot of time with C++, but there is not much of intelligible. So I will become an artist, I promise.
