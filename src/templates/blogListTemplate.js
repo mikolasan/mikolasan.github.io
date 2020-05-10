@@ -14,7 +14,7 @@ class BlogIndex extends React.Component {
       numPages,
       breadcrumb: { crumbs },
     } = this.props.pageContext
-    const anotherLanguageLink = '/ru/everything'
+    const anotherLanguageLink = '/ru/blog'
     const languageName = "Switch to russian version"
     const isFirst = currentPage === 1
     const isLast = currentPage === numPages
@@ -26,13 +26,13 @@ class BlogIndex extends React.Component {
         <FeaturedImage />
         <section>
           <div className={styles.breadcrumbs}>
-            [<Breadcrumb
+            <Breadcrumb
               crumbs={crumbs}
-              crumbSeparator="//"
-              title=""
-            />]
+              crumbSeparator=">"
+              title="//"
+            />
           </div>
-          <h1>Everything</h1>
+          <h1>blog</h1>
           <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
           {posts.map(({ node }) => (
             <div key={node.id}>
@@ -58,7 +58,7 @@ class BlogIndex extends React.Component {
             }}
           >
             {!isFirst && (
-              <Link to={`/everything/${prevPage}`} rel="prev">
+              <Link to={`/blog/${prevPage}`} rel="prev">
                 ← Previous Page
               </Link>
             ) || "← Previous Page"}
@@ -70,7 +70,7 @@ class BlogIndex extends React.Component {
                 }}
               >
                 <Link
-                  to={`/everything/${i === 0 ? '' : i + 1}`}
+                  to={`/blog/${i === 0 ? '' : i + 1}`}
                   style={{
                     padding: 5,
                     textDecoration: 'none',
@@ -83,7 +83,7 @@ class BlogIndex extends React.Component {
               </li>
             ))}
             {!isLast && (
-              <Link to={`/everything/${nextPage}`} rel="next">
+              <Link to={`/blog/${nextPage}`} rel="next">
                 Next Page →
               </Link>
             ) || "Next Page →"}
@@ -102,7 +102,7 @@ export const query = graphql`
       limit: $limit,
       skip: $skip,
       sort: { fields: [frontmatter___date], order: DESC},
-      filter: { frontmatter: { path: { regex: "/^\/everything*/" }}}
+      filter: { frontmatter: { path: { regex: "/^\/blog*/" }}}
     ) {
       totalCount
       edges {

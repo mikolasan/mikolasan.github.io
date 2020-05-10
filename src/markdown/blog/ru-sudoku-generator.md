@@ -1,5 +1,5 @@
 ---
-path: "/ru/everything/sudoku-generator"
+path: "/ru/blog/sudoku-generator"
 date: "2019-03-04"
 title: "Sudoku generator"
 ---

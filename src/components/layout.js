@@ -34,7 +34,7 @@ const Layout = ({ children, languageName, anotherLanguageLink }) => (
               </div>
               <div class="bottommenu">
                 <h2>Menu</h2>
-                <Link to="/everything/">Everything</Link>
+                <Link to="/blog/">Blog</Link>
                 <Link to="/science/">Science</Link>
                 <Link to="/projects/">Projects</Link>
                 <Link to="/gamedev/">Gamedev</Link>

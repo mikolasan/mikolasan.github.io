@@ -1,5 +1,5 @@
 ---
-path: "/ru/everything/5th-grade"
+path: "/ru/blog/5th-grade"
 date: "2010-12-21"
 title: "Пятый класс"
 ---

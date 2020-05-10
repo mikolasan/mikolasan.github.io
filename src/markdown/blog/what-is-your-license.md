@@ -1,5 +1,5 @@
 ---
-path: /everything/what-is-your-license
+path: /blog/what-is-your-license
 date: 2020-05-02
 title: What is your license?
 ---

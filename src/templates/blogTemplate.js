@@ -18,11 +18,11 @@ export default function Template ({ data, pageContext, location }) {
   const linkPath = frontmatter.path
   let anotherLanguageLink = ''
   let languageName = ''
-  if (linkPath.includes('/ru/everything')) {
-    anotherLanguageLink = '/everything'
+  if (linkPath.includes('/ru/blog')) {
+    anotherLanguageLink = '/blog'
     languageName = "Switch to english version"
-  } else if (linkPath.includes('/everything')) {
-    anotherLanguageLink = '/ru/everything'
+  } else if (linkPath.includes('/blog')) {
+    anotherLanguageLink = '/ru/blog'
     languageName = "Switch to russian version"
   } else if (linkPath.includes('/ru')) {
     anotherLanguageLink = linkPath.replace('/ru', '/')
@@ -36,14 +36,14 @@ export default function Template ({ data, pageContext, location }) {
       <FeaturedImage imgFluid={featuredImgFluid} />
       <section>
         <div className={styles.breadcrumbs}>
-          [<Breadcrumb
+          <Breadcrumb
             crumbs={crumbs}
-            crumbSeparator="//"
-            title=""
-          />]
+            crumbSeparator=">"
+            title="//"
+          />
         </div>
         <h1>{frontmatter.title}</h1>
-        <p>{frontmatter.date}</p>
+        <p className={styles.postedon}>{frontmatter.date}</p>
         <div
           dangerouslySetInnerHTML={{ __html: html }}
         />
@@ -64,7 +64,7 @@ export const pageQuery = graphql`
           childImageSharp {
             fluid(
               srcSetBreakpoints: [576, 768, 922],
-              maxHeight: 500,
+              maxHeight: 400,
               maxWidth: 1400,
               cropFocus: ATTENTION,
               fit: COVER,

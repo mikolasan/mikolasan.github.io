@@ -10,7 +10,7 @@ export default () => (
           childImageSharp {
             fluid(
               srcSetBreakpoints: [576, 768, 922],
-              maxHeight: 500,
+              maxHeight: 400,
               maxWidth: 1400,
               cropFocus: ATTENTION,
               fit: COVER,
@@ -27,9 +27,10 @@ export default () => (
       }
     `}
     render={data => (
-      <div>
+      <div style={{ maxHeight: "400px" }}>
         <Img 
           fluid={data.file.childImageSharp.fluid}
+          style={{maxHeight: '400px'}} 
         />
       </div>
     )}

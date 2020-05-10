@@ -44,7 +44,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       allMarkdownRemark(
         limit: 1000,
         sort: { order: DESC, fields: [frontmatter___date] }
-        filter: { frontmatter: { path: { regex: "/^\/everything*/" }}}
+        filter: { frontmatter: { path: { regex: "/^\/blog*/" }}}
       ) {
         edges {
           node {
@@ -68,7 +68,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const numPages = Math.ceil(numPosts / postsPerPage)
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
-      path: i === 0 ? `/everything` : `/everything/${i + 1}`,
+      path: i === 0 ? `/blog` : `/blog/${i + 1}`,
       component: blogListTemplate,
       context: {
         limit: postsPerPage,
@@ -85,7 +85,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       allMarkdownRemark(
         limit: 1000,
         sort: { order: DESC, fields: [frontmatter___date] }
-        filter: { frontmatter: { path: { regex: "/\/ru\/everything*/" }}}
+        filter: { frontmatter: { path: { regex: "/\/ru\/blog*/" }}}
       ) {
         edges {
           node {
@@ -109,7 +109,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const ruNumPages = Math.ceil(ruNumPosts / ruPostsPerPage)
   Array.from({ length: ruNumPages }).forEach((_, i) => {
     createPage({
-      path: i === 0 ? `/ru/everything` : `/ru/everything/${i + 1}`,
+      path: i === 0 ? `/ru/blog` : `/ru/blog/${i + 1}`,
       component: ruBlogListTemplate,
       context: {
         limit: ruPostsPerPage,

@@ -1,5 +1,5 @@
 ---
-path: /everything/how-to-create-a-mutant
+path: /blog/how-to-create-a-mutant
 date: 2020-04-09
 title: How to create a mutant?
 ---

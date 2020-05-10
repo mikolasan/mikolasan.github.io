@@ -15,7 +15,7 @@ Do you want an idea for your new project?
 <p>
 I see how you feel. You came here bored with new trending technologies.
 They announce new framework every day. They release new programming language every Thursday.
-You want to try it all. Understand it very well and be the voice of StackOverflow answers not just a regular reader.
+You want to try it all. You want to understand it very well and be the voice of StackOverflow answers, not just a regular reader.
 </p>
 
 <p>
@@ -24,10 +24,10 @@ So you want to make a great application. It is easy.
 
 <p>
 Here it is. Every night you spend few hours before going to bed. 
-And depending how lucky you are, you may finish your project and do not become mad.
+And depending how lucky you are, you may finish your project and do not become mad before your first release.
 </p>
 
-<p>Checkout section <a href="/projects">"Projects"</a> in the search for new ideas.</p>
+<p>Checkout section <a href="/projects">"Projects"</a> to satisfy the search for new ideas.</p>
 
     </section>
   </Layout>
