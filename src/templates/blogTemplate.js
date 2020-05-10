@@ -69,8 +69,8 @@ export const pageQuery = graphql`
               cropFocus: ATTENTION,
               fit: COVER,
               duotone: {
-                highlight: "#f2f2f2",
-                shadow: "#211a1d"
+                highlight: "#4B5043",
+                shadow: "#211A1D"
               },
               quality: 100
             ) {

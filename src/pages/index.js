@@ -4,13 +4,28 @@ import FeaturedImage from "../components/featuredImage"
 
 export default ({ data }) => (
   <Layout languageName="Switch to russian version" anotherLanguageLink="/ru">
+    <div class="container">
     <FeaturedImage />
-    <section>
-      <br />
-      <h1>Here it comes</h1>
+    <div class="container-text">
+    <div class="featured-area">
+    <div class="featured-text">
+    <h1>Ideas for new projects?</h1>
+
 <p>
 Do you want an idea for your new project?
 </p>
+
+    </div>
+    <div class="featured-action">
+      <a href="/projects/ideas">
+        <button class="action-button">Goto catalogue</button>
+      </a>
+    </div>
+    </div>
+    </div>
+    </div>
+    <section>
+      <br />
 
 <p>
 I see how you feel. You came here bored with new trending technologies.

@@ -6,8 +6,8 @@ export default (props) => {
   const featuredImgFluid = props.imgFluid;
   if (featuredImgFluid) {
     return (
-      <div style={{ maxHeight: "400px" }}>
-        <Img fluid={featuredImgFluid} style={{maxHeight: '400px'}} />
+      <div style={{minHeight:"300px", maxHeight: "400px"}}>
+        <Img fluid={featuredImgFluid} style={{minHeight:"300px", maxHeight: '400px'}} />
       </div>
     )
   } else {
