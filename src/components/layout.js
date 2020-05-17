@@ -34,10 +34,10 @@ const Layout = ({ children, languageName, anotherLanguageLink }) => (
               </div>
               <div class="bottommenu">
                 <h2>Menu</h2>
-                <Link to="/blog/">Blog</Link>
-                <Link to="/science/">Science</Link>
                 <Link to="/projects/">Projects</Link>
                 <Link to="/gamedev/">Gamedev</Link>
+                <Link to="/science/">Science</Link>
+                <Link to="/blog/">Blog</Link>
                 <Link to="/cv/">CV</Link>
               </div>
               <div class="bottomxsocial">
