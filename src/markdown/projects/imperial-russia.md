@@ -2,6 +2,7 @@
 path: "/projects/imperial-russia"
 date: "2020-03-26"
 title: Imperial Russia
+tags: ["mobile", "kotlin"]
 featuredImage: imperial-russia-feature.png
 ---
 

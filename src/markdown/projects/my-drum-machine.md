@@ -2,6 +2,7 @@
 path: "/projects/my-drum-machine"
 date: "2020-05-16"
 title: "Свои электро ударные"
+tags: ["laser cut", "mobile"]
 ---
 
 ## Физическая часть

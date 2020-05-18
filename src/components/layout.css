@@ -36,10 +36,10 @@ section {
   margin-top: 6em;
   width: 100%;
   max-width: 960px;
-  padding: 0 1.0875rem;
+  padding: 1.25rem 1.5rem 1.25rem 1.5rem;
   color: #f2f2f2;
   overflow: hidden;
-  background-color: #0009;
+  background-color: #000000c2;
 }
 
 @media all and (max-width: 870px) {

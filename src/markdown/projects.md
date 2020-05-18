@@ -4,7 +4,7 @@ date: "2019-10-23"
 title: "Projects"
 ---
 
-## Very 🔥 Projects
+## Very hot 🔥 projects
 - [Imperial Russia](/projects/imperial-russia) - Historic unit converter
 - [Pet Project Navigator](/projects/pet-project-navigator) - loaded todo list
 

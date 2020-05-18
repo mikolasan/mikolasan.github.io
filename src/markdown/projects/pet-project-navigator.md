@@ -2,6 +2,7 @@
 path: "/projects/pet-project-navigator"
 date: "2020-03-26"
 title: Pet Project Navigator
+tags: ["java", "db", "mobile"]
 featuredImage: pet-project-navigator-1.png
 ---
 
