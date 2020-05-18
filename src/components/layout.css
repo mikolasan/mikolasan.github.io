@@ -33,12 +33,24 @@ section {
 
 .featured-area {
   margin: 0 auto;
-  margin-top: 2.5em;
+  margin-top: 6em;
   width: 100%;
   max-width: 960px;
   padding: 0 1.0875rem;
   color: #f2f2f2;
   overflow: hidden;
+}
+
+@media all and (max-width: 870px) {
+  .featured-area { 
+    margin-top: 3em;
+  }
+}
+
+@media all and (max-width: 675px) {
+  .featured-area { 
+    margin-top: 1em;
+  }
 }
 
 .featured-text {
@@ -60,21 +72,18 @@ section {
 .cards {
   margin: 1em 0;
   overflow: hidden;
+  text-align: center;
 }
 
 .card {
-  display: block;
-  float: left;
-  width: 230px;
-  margin: 1em 2em;
-  /* Add shadows to create the "card" effect */
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
+  display: inline-block;
+  width: 306px;
+  padding: 1em 2em;
 }
 
-/* On mouse-over, add a deeper shadow */
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+.card img {
+  width: 100px;
+  padding-bottom: 1em;
 }
 
 /* Add some padding inside the card container */

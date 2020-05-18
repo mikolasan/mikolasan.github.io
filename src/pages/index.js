@@ -40,15 +40,15 @@ So you want to make a great application. It is easy.
       <div class="card">
         <img src="card_idea.png" alt="Idea"/>
         <div class="card-container">
-          <h4><b>Idea</b></h4>
-          <p>Get an idea here. This the first step and it is very important.</p>
+          <h3><b>Idea</b></h3>
+          <p>Get an idea here. This is the first step and it is very important.</p>
         </div>
       </div>
 
       <div class="card">
         <img src="card_code.png" alt="Code"/>
         <div class="card-container">
-          <h4><b>Code</b></h4>
+          <h3><b>Code</b></h3>
           <p>Find source code that fits to your idea. Any language. Any license.</p>
         </div>
       </div>
@@ -56,18 +56,11 @@ So you want to make a great application. It is easy.
       <div class="card">
         <img src="card_art.png" alt="Art" />
         <div class="card-container">
-          <h4><b>Art</b></h4>
-          <p>Find good art. I have a list where to look for.</p>
+          <h3><b>Art</b></h3>
+          <p>Add colors and pictures. Find good art. I have a list where to look for it.</p>
         </div>
       </div>
       
-      <div class="card">
-        <img src="card_music.png" alt="Music" />
-        <div class="card-container">
-          <h4><b>Music</b></h4>
-          <p>Find good music. I have a list where to look for.</p>
-        </div>
-      </div>
     </div>
 
 <div>
@@ -79,6 +72,13 @@ And depending how lucky you are, you may finish your project and do not become m
 </p>
 
 <p>Checkout section <a href="/projects">"Projects"</a> to find out my passions.</p>
+
+<hr/>
+<small>
+<div>Icons made by <a href="https://www.flaticon.com/authors/wanicon" title="wanicon">wanicon</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+<div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+</small>
+
 </div>
     </section>
   </Layout>
