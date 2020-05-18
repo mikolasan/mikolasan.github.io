@@ -12,7 +12,7 @@ export default ({ data }) => (
             <h1>Ideas for new projects?</h1>
 
             <p>
-            So you want to make a great application. It is easy. Do you want an idea for your new project?
+            So you want to make a great application. It is easy. Get an idea here. This is the first step and it is very important.
             </p>
 
           </div>
@@ -33,7 +33,7 @@ You want to try it all. You want to understand it very well and be the voice of 
 </p>
 
 <p>
-So you want to make a great application. It is easy. 
+So you want to make a great application. It is easy. All you need is these three things.
 </p>
 
     <div class="cards">

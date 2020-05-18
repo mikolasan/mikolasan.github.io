@@ -17,7 +17,6 @@ export default ({ data }) => (
                 Гибель мечты, смерть от любви,<br/>
                 Жизнь без дверей, веришь ли ты?<br/>
               </p>
-              <p>— Из моих личных записей самых лучших подписей на форумах</p>
             </blockquote>
 
           </div>
@@ -60,34 +59,27 @@ export default ({ data }) => (
       <div class="card">
         <img src="card_idea.png" alt="Idea"/>
         <div class="card-container">
-          <h4><b>Idea</b></h4>
-          <p>Get an idea here. This the first step and it is very important.</p>
+          <h3><b>Идея</b></h3>
+          <p>Здесь можно найти интересные идеи. Иметь план перед началом осуществления проекта.</p>
         </div>
       </div>
 
       <div class="card">
         <img src="card_code.png" alt="Code"/>
         <div class="card-container">
-          <h4><b>Code</b></h4>
-          <p>Find source code that fits to your idea. Any language. Any license.</p>
+          <h3><b>Код</b></h3>
+          <p>Найти код, чтобы не изобретать велосипед и сосредоточиться на продукте. </p>
         </div>
       </div>
 
       <div class="card">
         <img src="card_art.png" alt="Art" />
         <div class="card-container">
-          <h4><b>Art</b></h4>
-          <p>Find good art. I have a list where to look for.</p>
+          <h3><b>Дизайн</b></h3>
+          <p>Нужно подобрать палитру, добавить фотографий и иллюстраций.</p>
         </div>
       </div>
       
-      <div class="card">
-        <img src="card_music.png" alt="Music" />
-        <div class="card-container">
-          <h4><b>Music</b></h4>
-          <p>Find good music. I have a list where to look for.</p>
-        </div>
-      </div>
     </div>
 
 <p>

@@ -39,6 +39,7 @@ section {
   padding: 0 1.0875rem;
   color: #f2f2f2;
   overflow: hidden;
+  background-color: #0009;
 }
 
 @media all and (max-width: 870px) {
