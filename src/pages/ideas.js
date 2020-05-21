@@ -69,7 +69,14 @@ export default IdeasPage
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(filter: {frontmatter: {tags: {ne: null}}}) {
+    allMarkdownRemark(
+      filter: {
+        frontmatter: {
+          tags: {ne: null},
+          path: {regex: "/^\/projects/"}
+        }
+      }
+    ) {
       group(field: frontmatter___tags) {
         nodes {
           frontmatter {
