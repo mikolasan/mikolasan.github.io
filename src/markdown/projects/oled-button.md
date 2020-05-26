@@ -1,7 +1,7 @@
 ---
 path: "/projects/oled-button"
 date: "2020-05-16"
-title: "Кнопка с экраном"
+title: "[In translation...] Кнопка с экраном"
 tags: ["hardware", "python"]
 ---
 

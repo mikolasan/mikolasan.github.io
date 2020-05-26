@@ -1,7 +1,7 @@
 ---
 path: "/projects/sort-bookmarks-in-firefox"
 date: "2020-05-16"
-title: "Дополнение для Firefox"
+title: "[In translation...] Дополнение для Firefox"
 tags: ["neural networks", "web"]
 ---
 

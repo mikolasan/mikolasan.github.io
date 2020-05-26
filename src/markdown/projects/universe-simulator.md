@@ -1,7 +1,7 @@
 ---
-path: "/projects/why-today"
+path: "/projects/universe-simulator"
 date: "2020-05-16"
-title: "Симулятор вселенной"
+title: "[In translation...] Симулятор вселенной"
 tags: ["c++"]
 ---
 

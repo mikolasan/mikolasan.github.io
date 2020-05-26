@@ -1,7 +1,7 @@
 ---
 path: "/projects/ai-powered-news-feed"
 date: "2020-05-16"
-title: Новостная лента, которую мы не заслуживаем
+title: [In translation...] Новостная лента, которую мы не заслуживаем
 tags: ["python", "django", "db", "scraper", "language processing", "web"]
 ---
 

@@ -1,22 +1,19 @@
 ---
 path: "/projects/woman-forecast"
 date: "2020-05-16"
-title: "Детектор женского недовольства"
+title: "Woman forecast"
 tags: ["mobile", "prediction", "calendar"]
 ---
 
-Бывает, что жена терпит, терпит. А потом у нее накипит и бомбанет. Следующая идея должна помочь мужикам учиться на своих ошибках, предсказывая момент, когда сковородка начинает раскаляться и необходимо без промедления решать отложенную проблему.
+This application should help men to understand their precious significant other better. It is recommended to people who experienced not once when fiancee or wife become angry without any reason. The key component is that a reason always exists, but it is not in your vision field. Usually, because people tend to delay their promises or tasks that are not prioritized accordingly.
 
-В программу заложено несколько правил, составленных из жизненного опыта и психологических исследований. Пусть даже на уровне журнала Космополитан. Правила определяют интервал срабатывания и вероятность на этом интервале и за его пределами. По прошествии какого-то опыта, который должен быть занесен в программу, правила могут изменять свои веса, подстраиваясь под действительность.
+In the form of a calendar, this application will track your promises and responsibilities, it will remind you when should be a final day for tasks without a deadline, if you missed something it will help to find a reason, and prevent from something similar to happen in the future, it will make you better as a person.
 
-Интерфейс программы представляет из себя календарь с иконками, закрашенными датами и анимациями на важных днях.
+For example, think about such routine tasks:
 
-Основная задача приложения - это предсказать дедлайн к какой-то задаче, которую вам поручили сделать, но при этом задачу можно откладывать на неопределенное время.
+- unclog a tub in the bathroom
+- hang a picture
+- fix an outlet
+- collect all socks lying on the floor
 
-Например,
-
-- залатать течь под раковиной
-- починить одну из розеток
-- повесить картину
-- собрать все носки запрятанные по квартире
-- очистить верхнюю полку шкафа от старья
+They all have consequences if you put them off till tomorrow. Girls can wait, but their patience is not endless. Because cause and effect can be modeled by artificial intelligence and future predictions can be made, this application strives to help humanity to make better relationships.

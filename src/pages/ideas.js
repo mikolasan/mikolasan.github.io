@@ -29,7 +29,7 @@ const IdeasPage = ({
       <ul>
         {group
           .sort((a, b) => a.totalCount < b.totalCount ? 1 : -1)
-          .filter(tag => tag.totalCount > 2)
+          .filter(tag => tag.totalCount > 1)
           .map(tag => (
           <li key={tag.fieldValue}>
             Popularity x{tag.totalCount}:{" "}<b>{tag.fieldValue}</b>

@@ -1,7 +1,7 @@
 ---
 path: "/projects/midi-tablet"
 date: "2020-05-16"
-title: "MIDI планшет"
+title: "[In translation...] MIDI планшет"
 tags: ["mobile"]
 ---
 

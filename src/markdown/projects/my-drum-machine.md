@@ -1,19 +1,12 @@
 ---
 path: "/projects/my-drum-machine"
 date: "2020-05-16"
-title: "Свои электро ударные"
+title: "My Drum Machine"
 tags: ["laser cut", "mobile"]
 ---
 
-## Физическая часть
+After I finished a project with an acrylic case that was laser cut by a layout that I simply downloaded from the Internet, I decided to find a new project where I will design a case, split it into parts, and prepare my layout. As usual, I have started looking into Pinterest boards to find suitable design ideas. My search was around arcade machines, arcade button consoles, and custom enclosures for Raspberry Pi and such. Not many cases are made out of plywood. I found some boxes with interesting engravings, but I focused on a combination of shapes and materials, while the comfortable layout of buttons can be arranged on it.
 
-После [этого](/projects/word-clock) захотелось самому спроектировать корпус. На этот раз резать будем фанеру, а корпус будет держать кнопки, которые будут воспроизводить звук при нажатии, что в целом создаст ударную установку.
-Сами кнопки - это только устройство ввода для специального приложения для телефона и компьютера, которое получает нажатия и проигрывает звуки.
+A box with buttons is a beautiful thing by itself, nevertheless, I expected to make a MIDI controller that can be connected to my computer for producing drum sounds in the DAW. 
 
-## Программная часть
-
-[Код на Гитхабе](https://github.com/mikolasan/android-drum-machine)
-
-- Зачем мне это надо: Мне нравится, что я могу использовать свой [планшет как миди пианино](/projects/midi-tablet). А вот драм машины нормальной я пока не видел. Также этот проект служит синтезатором звуков для моего кастомного Отэгэ устройства.
-- Как дальше развить:
-- Статус:
+But the idea is going crazy here. Instead of adding MIDI logic to buttons with Arduino or Raspberry board, the plan is to connect buttons with a USB cable to the mobile device as an OTG device, get inputs from button deck or user interface, and send it as MIDI signal out. I tried MIDI piano on my tablet and can recommend one application: MIDI Keyboard from Dreamhound Studios. So learning USB protocol was an appealing bonus in this project, although it can be done without the mobile application.
