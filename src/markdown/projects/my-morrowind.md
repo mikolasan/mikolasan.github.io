@@ -1,7 +1,7 @@
 ---
 path: "/projects/my-morrowind"
 date: "2020-05-16"
-title: "[In translation...] Мой Morrowind"
+title: "[In translation...] My Morrowind"
 tags: ["c++"]
 ---
 

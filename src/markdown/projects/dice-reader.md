@@ -1,7 +1,7 @@
 ---
 path: "/projects/dice-reader"
 date: "2020-05-16"
-title: "[In translation...] Настольная игра с кубиками"
+title: "[In translation...] Dice reader"
 tags: ["neural networks", "mobile", "image recognition"]
 ---
 

@@ -5,62 +5,36 @@ title: "Not your father's roguelike"
 featuredImage: pyroguelike-1.png
 ---
 
-Первый игровой джем (game jam), в котором я серьезно поучавствовал. Главный приз был 1 биткоин (что на тот момент было ни много ни мало $5,000).
+## Intro
 
-## План
+What a day it had been!
 
-- [x] не заходить за стены
-- [ ] показывать цифру когда несколько объектов на одной клетке (только один тип может группироваться)
-- [x] шкала жизней, враги отнимают жизни, когда стоят на соседней клетке
-- [x] большой уровень - движение камеры https://stackoverflow.com/questions/14354171/add-scrolling-to-a-platformer-in-pygame
-- [x] монстры задаются на уровне
-- [x] попробовать PyTMX для больших карт. большие карты для продвинутых противников
-- [ ] мышь - прицел (https://www.iconfinder.com/icons/825723/camping_focus_hunter_shoot_shooter_shooting_target_icon)
-- [x] длинная пуля, имеет направление
-- [x] аптечки
-- [x] главный герой вращается при повороте мыши
-- [x] ограниченное число патронов, статус в интерфейсе
-- [x] патроны
-- [x] деньги
-- [x] локация в баре
-- [x] система диалогов
+Jeff got fired from Burger Queen restaurant today. This week he needs to pay mortgage loan for her grandmother house and for cable TV just before a baseball season.
 
-- [x] система частиц
-- [ ] убрать двери
-- [ ] монстры останавливаются и перестают преследовать (баг или фича?)
-- [x] при game over начинать игру заново
-- [x] пуля убивает всех на одной линии - исправить
-- [ ] пуля убивает с одного удара - исправить (или добавить больше монстров)
-- [ ] добавить еще пару видов монстров
+Considering all this stuff together Jeff decides to go to a bar. To watch the first game, drink some beer and think about future and where to get some cash. 
 
-- [x] покер ? просто убить всех, когда дадут пушку
-- [x] при смене уровня все объекты снова создаются, а монстры не удаляются и становятся неуязвимыми
-- [ ] скрины с завязкой истории и легенда с управлением
-- [x] за пиво снимаются деньги
-- [x] при достижении желаемой суммы показываются позитивный game over
+Collect $500 or more this night and life will become less miserable.
 
-## О платформе repl.it
+## Preview
 
-Замечательная платформа!
+https://youtu.be/VqfjrGS7Ukw
 
-Но я больше не стану писать игры с графикой на голом питоне или с использованием pygame.
+## My story
 
-А по поводу платформы я заметил несколько вещей, может кому пригодится (или это будет исправлено в будущем - я честно надеялся, что мой баг репорт добавит мне очков в жюри).
+I'd like to share my experience with pygame on replit with other programmers. Here are my notes I made when started with this project. They boosted my productivity with this platform.
 
-- Стоп часто не работает, а как запустить код? Комбинация Ctrl+Enter запускает код.
-- Еще попробовать Ctrl+C в консоли
-- Стоп не работает и Ctrl+Enter не перезапускают код. Перезагрузка вкладки не помогает. Помогает форк проекта
-- (исправлено через пару дней джема) Нет возможности выключить перезапуск приложения после каждого нового введенного символа.
-- Нельзя открыть в новом окне - в новом окне только консольный вывод
-- Если посчастливится таки загрузить игру, то игра будет отображена в окне у которого есть две конпки закрыть и свернуть. нажатие на них приводит к печальным последствиям. Советую запускать в полноэкранном режиме
-- Не удаляются отступы после сохранения
-- Нельзя удалить файл, который в данный момент открыт (возможно остается копия файла при перемещении, если он открыт)
-- pdb не работает. можно использовать pdb_clone
-- а вы знали об авто форматировании? я бы его при сохранении применял
+- Stop button usually do not work. To restart code with new changes use Ctrl+Enter. Make sure focus in the code editor.
+- Also try Ctrl+C in console window.
+- If first 2 do not help, close a browser tab and open repl.it, go to your dashboard and open project again.
+- Sometimes it still displays window from previous start or do not display an app at all. It happened to me when the package manager (pip) tells you who is the boss. Then fork a project. When I discovered that method I finished with 11 forks of my game.
+- You cannot open just a game in new tab using *.run link. You have to play with layout whole day.
+- I recommend to run your app in fullscreen mode to prevent from clicking on close and minimize buttons of the window 
+- Linter tells you about every whitespace error and very often covers real syntax typos. Did you know that there is auto-format button near to "saved" status. I want an option to make it automatic on save (merge it with my habit to press Ctrl+S)
+- pdb did not work. I tried pdb_clone and it worked.
+- And do not try to remove file if it is currently opened.
 
-## Ссылки на будущее
 
-В процессе блуждания по интернету находятся вещи, не относящиеся к текущей проблематике, но интересные сами по себе, что их хочется аккуратно отложить "на потом":
+## Extra
 
 - http://www.playfuljs.com/a-first-person-engine-in-265-lines/
 - https://github.com/Mekire/pygame-raycasting-experiment

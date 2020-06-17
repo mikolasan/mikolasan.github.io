@@ -1,5 +1,5 @@
 ---
-path: "/projects/unsolved-problems"
+path: "/ru/projects/unsolved-problems"
 date: "2020-03-27"
 title: Нерешенные задачи программирования
 ---

@@ -1,8 +1,8 @@
 ---
 path: "/projects/word-clock"
 date: "2020-05-16"
-title: "[In translation...] Время словами на часах"
-tags: ["hardware", "laser cut"]
+title: "[In translation...] Word clock"
+tags: ["hardware", "embedded", "laser cut"]
 ---
 
 Следуя руководству из журнала Make сделал часы, которые показывают время словами. Заказал резку оргстекла на лазерном ЧПУ. Купил болтиков и пару микросхем.
