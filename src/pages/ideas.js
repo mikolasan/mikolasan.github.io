@@ -1,23 +1,13 @@
 import React from "react"
-import { Helmet } from "react-helmet"
 import PropTypes from "prop-types"
 import { Link, graphql } from "gatsby"
-import kebabCase from "lodash/kebabCase"
 import { Breadcrumb } from 'gatsby-plugin-breadcrumb'
 import Layout from "../components/layout"
 import FeaturedImage from "../components/featuredImage"
+import SlotMachine from "../components/slotMachine"
 import styles from "../templates/blogTemplate.module.css"
-import { init_interface } from "./slots/interface"
-import { init_reels } from "./slots/reels"
-import "./slot.css"
-
 
 class IdeasPage extends React.Component {
-  componentDidMount() {
-    init_reels();
-    init_interface();
-  }
-
   render() {
     const { data } = this.props
     const group = data.allMarkdownRemark.group
@@ -42,8 +32,7 @@ class IdeasPage extends React.Component {
           <h2>Lucky idea generator</h2>
           <p>If you want random unpredictable and fun project, then try this totally free slot machine
              from a slot developer who likes throwing cutting edge technologies in production. </p>
-          <canvas id="reels" width="650" height="394"></canvas>
-          <canvas id="interface" width="100" height="50"></canvas>
+            <SlotMachine />
           <p>
             <strong>Result: </strong>
             <span id="win">no result. Press "Spin" to update.</span>

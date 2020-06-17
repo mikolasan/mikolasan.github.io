@@ -41,23 +41,7 @@ const lines = [
   [1,5,8,11,13],
 ];
 
-var go = new Image();
-var nodejs = new Image();
-var cpp = new Image();
-var java = new Image();
-var rust = new Image();
-var python = new Image();
-var scala = new Image();
-var frame = new Image();
-const slot_images = new Map([
-  ["GO", go],
-  ["JS", nodejs],
-  ["CC", cpp],
-  ["JA", java],
-  ["RU", rust],
-  ["SC", scala],
-  ["PY", python],
-]);
+const slot_images = new Map();
 
 var y = 0;
 
@@ -424,6 +408,23 @@ function spin_stop() {
 // window.addEventListener('keydown', on_key_down);
 
 function init_reels() {
+  var go = new Image();
+  var nodejs = new Image();
+  var cpp = new Image();
+  var java = new Image();
+  var rust = new Image();
+  var python = new Image();
+  var scala = new Image();
+  var frame = new Image();
+  slot_images = new Map([
+    ["GO", go],
+    ["JS", nodejs],
+    ["CC", cpp],
+    ["JA", java],
+    ["RU", rust],
+    ["SC", scala],
+    ["PY", python],
+  ]);
   go.src = '/images/idea-generator/go.png';
   java.src = '/images/idea-generator/java.png';
   cpp.src = '/images/idea-generator/cpp.png';
