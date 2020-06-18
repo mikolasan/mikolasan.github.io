@@ -13,10 +13,10 @@ const height = slot_height * n_rows + shift_y * 2;
 
 const strips = [
   ["CC", "JS", "GO", "JA", "JS", "RU", "CC", "JA", "SC", "PY", "RU"],
-  ["CC", "CC", "CC", "CC"],
-  ["CC", "CC", "CC", "CC"],
-  ["CC", "CC", "CC", "CC"],
-  ["CC", "CC", "CC", "CC"],
+  ["JS", "CC", "CC", "CC", "JA", "SC"],
+  ["JS", "CC", "GO", "CC", "CC", "SC", "JA"],
+  ["PY", "CC", "CC", "CC", "JA", "PY"],
+  ["CC", "PY", "RU", "RU", "RU"],
 ];
 
 const paytable = new Map([
@@ -276,7 +276,7 @@ function move_reel(reel_id, dt, next_symbol_callback) {
   if (current_state === state_winning) return;
   t += dt * k;
   if (t > t_stopping && n_slots_spinned[reel_id] == 12) {
-    console.log("move_reel stop->idle", reel_id, t, t_stopping, n_slots_spinned[reel_id], reel_positions[reel_id]);
+    //console.log("move_reel stop->idle", reel_id, t, t_stopping, n_slots_spinned[reel_id], reel_positions[reel_id]);
     on_reel_stopped();
     return;
   } else if (current_state === state_spinning && t > t_spinning) {
