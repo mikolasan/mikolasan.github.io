@@ -41,7 +41,7 @@ const lines = [
   [1,5,8,11,13],
 ];
 
-const slot_images = new Map();
+var slot_images = new Map();
 
 var y = 0;
 
