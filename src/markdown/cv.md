@@ -6,12 +6,12 @@ title: "Curriculum Vitae"
 
 ## Profile
 
-I enjoy when the code is written well and it looks perfect.
-After more than 7 years of work with code of different quality I'm noticing a beauty in some projects and appreciate creators behind it.
-At the same time I realize that it is almost impossible in a real world.
-All the struggles behind the project do not matter if it is shipped in time and serves the buisness goal well.
+I enjoy the code that is written well and looks perfect.
+After more than seven years of work with code of different quality, I'm noticing beauty in some projects and appreciate creators behind it.
+At the same time, I realize that perfect code is almost impossible in the real world.
+All the struggles behind the project do not matter if it is shipped in time and serves the business goal well.
 
-I’m a professional software developer with strong mathematics and programming background, over 7 years of experience in the field of gambling industry such as game development, casino systems and equipment, calculating PAR sheets.
+I'm a professional software developer with strong mathematics and programming background. I have over seven years of experience in the field of the gambling industry, such as game development, casino systems, and equipment, calculating PAR sheets.
 
 
 ## Work experience

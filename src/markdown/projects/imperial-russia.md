@@ -3,7 +3,7 @@ path: "/projects/imperial-russia"
 date: "2020-03-26"
 title: "Imperial Russia: Historic unit converter"
 tags: ["mobile", "kotlin"]
-featuredImage: imperial-russia-feature.png
+featuredImage: imperial-russia-1.png
 ---
 
 ## Short Description
@@ -11,6 +11,8 @@ featuredImage: imperial-russia-feature.png
 Imperial Russia - Historic unit converter
 
 ## Full description
+
+![Russian landscape](./imperial-russia-feature.png)
 
 If you are reading a literary book about 18th century, or studying history, or you feel limited with the standard units of measurements, or by any other means find yourself curious about historic units used one or two centuries ago, like when it was time of Russian Empire, then this app might take you interest.
 
