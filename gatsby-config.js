@@ -92,7 +92,15 @@ module.exports = {
     //     formats: ["woff2", "woff", "ttf", "eof"]
     //   },
     // },
-    `gatsby-plugin-sitemap`
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-build-date`,
+      options: {
+        formatting: {
+          format: 'dddd D MMMM YYYY'
+        }
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',

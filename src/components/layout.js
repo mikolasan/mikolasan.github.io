@@ -13,6 +13,9 @@ const Layout = ({ children, languageName, anotherLanguageLink }) => (
           siteMetadata {
             title
           }
+        },
+        currentBuildDate {
+          currentDate
         }
       }
     `}
@@ -50,7 +53,7 @@ const Layout = ({ children, languageName, anotherLanguageLink }) => (
             </div>
             <div class="copyright">
               <p>This web site uses Google Analytics. It collects and processes data. <a href="https://policies.google.com/technologies/partner-sites">How Google uses information from sites</a></p>
-              <p>Built with{` `}<a href="https://www.gatsbyjs.org">Gatsby</a></p>
+              <p>Built with{` `}<a href="https://www.gatsbyjs.org">Gatsby</a>. Last build: {data.currentBuildDate.currentDate}</p>
               <p>Copyright © {new Date().getFullYear()} Nikolay Neupokoev. Some rights reserved.</p>
             </div>
           </footer>
