@@ -9,6 +9,7 @@ title: "Projects"
 - [Imperial Russia](/projects/imperial-russia) - Historic unit converter
 - [Pet Project Navigator](/projects/pet-project-navigator) - loaded todo list
 - Game development - there is a separate [section](/gamedev) for it
+- [Calm place](/projects/calm-place)
 
 ## Other aspects of life
 
