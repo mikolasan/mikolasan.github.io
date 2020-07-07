@@ -24,7 +24,7 @@ export default ({ data }) => (
           <img src="/card_developer.png" alt="Idea"/>
           <div class="card-container">
             <h3><b>Developer</b></h3>
-            <p>I believe in self-education as the best way of improving coding skills that is why I have many hobby projects. But ideas I have more.</p>
+            <p>I have many hobby projects. But ideas I have more.</p>
           </div>
         </div>
 
@@ -32,7 +32,7 @@ export default ({ data }) => (
           <img src="/card_traveler.png" alt="Code"/>
           <div class="card-container">
             <h3><b>Traveler</b></h3>
-            <p>More than writing code I like to plan a good journey, opt out to a real world.</p>
+            <p>More than writing code I like to plan a good journey.</p>
           </div>
         </div>
 
