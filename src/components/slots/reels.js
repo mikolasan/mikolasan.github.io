@@ -6,40 +6,110 @@ const slot_height = 128;
 const n_reels = 5;
 const n_rows = 3;
 const invisible_rows = 1; // add these rows to the top and bottom of the reels
-const shift_x = 5;
-const shift_y = 5;
-const width = slot_width * n_reels + shift_x * 2;
+const shift_x = 67;
+const shift_y = 271;
+const reel_gap = 7;
+const width = slot_width * n_reels + reel_gap * (n_reels - 1) + shift_x * 2;
 const height = slot_height * n_rows + shift_y * 2;
 
+// backends
+const PY = 'PY';
+const RB = 'RB';
+const SC = 'SC';
+const RU = 'RU';
+const GO = 'GO';
+const JS = 'JS';
+const CC = 'CC';
+const JA = 'JA';
+// frontends
+const RE = 'RE';
+const NG = 'NG';
+const VU = 'VU';
+const NE = 'NE';
+const QT = 'QT';
+const AN = 'AN';
+const IO = 'IO';
+// protocols
+const HT = 'HT';
+const US = 'US';
+const MI = 'MI';
+const PR = 'PR';
+const IR = 'IR';
+const XM = 'XM';
+// databases
+const MO = 'MO';
+const PO = 'PO';
+const QL = 'QL';
+const KA = 'KA';
+const CA = 'CA';
+const HA = 'HA';
+// features
+const OA = 'OA';
+const BL = 'BL';
+
+const symbol_names = new Map([
+  [GO, 'Go'],
+  [JS, 'NodeJS'],
+  [CC, 'C++'],
+  [JA, 'Java'],
+  [RU, 'Rust'],
+  [SC, 'Scala'],
+  [PY, 'Python'],
+  [RB, 'Ruby'],
+  [RE, 'ReactJS'],
+  [NG, 'Angular'],
+  [VU, 'Vue.js'],
+  [NE, '.NET'],
+  [QT, 'Qt'],
+  [AN, 'Android'],
+  [IO, 'iOS'],
+  [MO, 'MongoDB'],
+  [PO, 'PostgreSQL'],
+  [QL, 'GraphQL'],
+  [KA, 'Kafka'],
+  [CA, 'Cassandra'],
+  [HA, 'Hadoop'],
+  [HT, 'http'],
+  [US, 'USB'],
+  [MI, 'MIDI'],
+  [PR, 'protobuf'],
+  [IR, 'irc'],
+  [XM, 'XMPP'],
+  [OA, 'OAuth'],
+  [BL, 'Blockchain'],
+]);
+
 const strips = [
-  ["CC", "JS", "GO", "JA", "JS", "RU", "CC", "JA", "SC", "PY", "RU"],
-  ["JS", "CC", "CC", "CC", "JA", "SC"],
-  ["JS", "CC", "GO", "CC", "CC", "SC", "JA"],
-  ["PY", "CC", "CC", "CC", "JA", "PY"],
-  ["CC", "PY", "RU", "RU", "RU"],
+  [CC, JS, GO, JA, CC, CC, RB, JS, RU, CC, JA, SC, PY, RU, RB],
+  [RE, RE, RE, NG, VU, NE, QT, NG, AN, IO, VU, QT],
+  [MO, PO, PO, PO, QL, HA, KA, MO, QL, CA],
+  [HT, US, IR, XM, PR, MI, HT, PR],
+  [BL, BL, BL, OA, BL, OA],
 ];
 
-const paytable = new Map([
-  ["PY", [0,0,10,20,50]],
-  ["SC", [0,0,10,20,50]],
-  ["RU", [0,0,10,20,50]],
-  ["GO", [0,0,10,20,50]],
-  ["JS", [0,0,10,30,70]],
-  ["CC", [0,0,20,50,100]],
-  ["JA", [0,0,100,200,300]],
-])
 // 0 3 6 9  12
 // 1 4 7 10 13
 // 2 5 8 11 14
 const lines = [
-  [0,3,6,9,12],
   [1,4,7,10,13],
-  [2,5,8,11,14],
   [0,4,8,10,12],
-  [2,4,6,10,14],
-  [1,3,6,9,13],
-  [1,5,8,11,13],
+  [2,4,6,10,14]
 ];
+
+const spin_button = {
+  x: 342,
+  y: 727,
+  a: 53,
+  b: 52,
+  enabled: true,
+  clicked: false,
+  mouse: 'out',
+  normal: new Image(),
+  disabled: new Image(),
+  hover: new Image(),
+  pressed: new Image(),
+  highlight: new Image(),
+}
 
 var slot_images = new Map();
 
@@ -213,6 +283,7 @@ function on_reels_stopped() {
     on_winning_result(win, text_result);
   } else {
     switch_state(current_state, state_idle);
+    on_winning_result(0, "Nothing");
   }
 }
 
@@ -230,24 +301,23 @@ function parse_line(line_id) {
       break;
     }
   }
-  const win = paytable.get(first)[x_times - 1];
+  const win = 0;
   if (win == 0) slots = undefined;
   return {line_win: win, slots: slots};
 }
 
 function parse_result() {
   var win = 0;
-  var animating_slots = [];
   var text_result = ''
+  const reel_name = ['Backend', 'Frontend', 'DB', 'Protocol', 'Killer Feature']
   for (let i = 0; i < lines.length; ++ i) {
-    let {line_win, slots} = parse_line(i);
-    win += line_win;
-    if (slots) {
-      animating_slots.push(slots);
+    text_result += `<h3>Idea ${i+1}</h3><p><ul>`
+    for (let reel_id = 0; reel_id < n_reels; ++reel_id) {
+      text_result += `<li>${reel_name[reel_id]}: ${symbol_names.get(result[lines[i][reel_id]])}</li>`
     }
-    text_result += result[lines[1][i]] + ', '
+    text_result += '</ul></p>'
   }
-  return {win: win, animating_slots: animating_slots, text_result: text_result};
+  return {win: win, animating_slots: lines, text_result: text_result};
 }
 
 function generate_next_symbol(reel_id) {
@@ -315,6 +385,9 @@ function get_reel_draw_coords(reel_id, slot_id) {
 }
 
 const one_line_delay = 1000;
+const spin_highlight_delay = 2500;
+const spin_highlight = 500;
+var highlight_time = 0;
 
 function show_result(ctx, dt) {
   showtime += dt;
@@ -340,13 +413,14 @@ function show_result(ctx, dt) {
   for (let slot of slots) {
     const x = Math.floor(slot / n_rows);
     const y = slot % n_rows;
-    ctx.strokeRect(shift_x + x * slot_width, shift_y + y * slot_height, slot_width, slot_height);
+    ctx.strokeRect(shift_x + x * slot_width + reel_gap * x, shift_y + y * slot_height, slot_width, slot_height);
     //ctx.drawImage(frame, x * slot_width, y * slot_height);
   }
   ctx.restore();
 }
 
 var previous_frame = 0;
+var background = new Image();
 
 function draw(timestamp) {
   var dt = timestamp - previous_frame;
@@ -359,11 +433,12 @@ function draw(timestamp) {
     ctx.fillStyle = '#fff'; // background color
     ctx.fillRect(0, 0, width, height);
 
+    ctx.drawImage(background, 0, 0);
     ctx.save();
 
     // clipping rect
     ctx.beginPath();
-    ctx.rect(0, 0, slot_width * n_reels, slot_height * n_rows);
+    ctx.rect(shift_x, shift_y, slot_width * n_reels + reel_gap * (n_reels - 1), slot_height * n_rows);
     ctx.clip();
 
     // ctx.font = '30px sans-serif';
@@ -372,7 +447,7 @@ function draw(timestamp) {
       // draw a reel
       for (let i = 0; i < reels[reel_id].length; ++i) {
         let {x, y} = get_reel_draw_coords(reel_id, i);
-        ctx.drawImage(reels[reel_id][i], shift_x + x, shift_y + y);
+        ctx.drawImage(reels[reel_id][i], shift_x + x + reel_gap * reel_id, shift_y + y);
         //ctx.fillText(`y: ${y.toFixed(2)}`, x, y+50);
       }
       move_reel(reel_id, dt, generate_next_symbol);
@@ -383,6 +458,26 @@ function draw(timestamp) {
     if (current_state == state_winning) {
       show_result(ctx, dt);
     }
+
+    
+    if (!spin_button.enabled) {
+      ctx.drawImage(spin_button.disabled, spin_button.x, spin_button.y)
+    } else if (spin_button.clicked) {
+      ctx.drawImage(spin_button.pressed, spin_button.x, spin_button.y)
+    } else if (spin_button.mouse == 'in') {
+      ctx.drawImage(spin_button.hover, spin_button.x, spin_button.y)
+    } else {
+      highlight_time += dt;
+      if (highlight_time > spin_highlight_delay) {
+        ctx.drawImage(spin_button.highlight, spin_button.x, spin_button.y)
+      } else {
+        ctx.drawImage(spin_button.normal, spin_button.x, spin_button.y)
+      }
+      if (highlight_time > spin_highlight + spin_highlight_delay) {
+        highlight_time -= spin_highlight + spin_highlight_delay;
+      }      
+    }
+    
   }
   window.requestAnimationFrame(draw);
 }
@@ -405,25 +500,83 @@ function spin_stop() {
 //   }
 // }
 
+//Function to get the mouse position
+function getMousePos(canvas, event) {
+  return {
+    x: event.offsetX,
+    y: event.offsetY
+  };
+}
+
 // window.addEventListener('keydown', on_key_down);
+function isInside(pos, btn){
+  return Math.pow(pos.x - (btn.x + btn.a), 2) / Math.pow(btn.a, 2) 
+    + Math.pow(pos.y - (btn.y + btn.b), 2) / Math.pow(btn.b, 2) <= 1.0
+  // return pos.x > rect.x && pos.x < rect.x+rect.width && pos.y < rect.y+rect.height && pos.y > rect.y
+}
 
 function init_reels() {
+  var frame = new Image();
   var go = new Image();
   var nodejs = new Image();
   var cpp = new Image();
   var java = new Image();
   var rust = new Image();
   var python = new Image();
+  var ruby = new Image();
   var scala = new Image();
-  var frame = new Image();
+  var reactjs = new Image();
+  var angular = new Image();
+  var vuejs = new Image();
+  var dotnet = new Image();
+  var qt = new Image();
+  var android = new Image();
+  var ios = new Image();
+  var mongodb = new Image();
+  var postgresql = new Image();
+  var graphql = new Image();
+  var kafka = new Image();
+  var cassandra = new Image();
+  var hadoop = new Image();
+  var http = new Image();
+  var usb = new Image();
+  var midi = new Image();
+  var protobuf = new Image();
+  var irc = new Image();
+  var xmpp = new Image();
+  var oauth = new Image();
+  var blockchain = new Image();
+
   slot_images = new Map([
-    ["GO", go],
-    ["JS", nodejs],
-    ["CC", cpp],
-    ["JA", java],
-    ["RU", rust],
-    ["SC", scala],
-    ["PY", python],
+    [GO, go],
+    [JS, nodejs],
+    [CC, cpp],
+    [JA, java],
+    [RU, rust],
+    [SC, scala],
+    [PY, python],
+    [RB, ruby],
+    [RE, reactjs],
+    [NG, angular],
+    [VU, vuejs],
+    [NE, dotnet],
+    [QT, qt],
+    [AN, android],
+    [IO, ios],
+    [MO, mongodb],
+    [PO, postgresql],
+    [QL, graphql],
+    [KA, kafka],
+    [CA, cassandra],
+    [HA, hadoop],
+    [HT, http],
+    [US, usb],
+    [MI, midi],
+    [PR, protobuf],
+    [IR, irc],
+    [XM, xmpp],
+    [OA, oauth],
+    [BL, blockchain],
   ]);
   go.src = '/images/idea-generator/go.png';
   java.src = '/images/idea-generator/java.png';
@@ -432,12 +585,69 @@ function init_reels() {
   scala.src = '/images/idea-generator/scala.png';
   rust.src = '/images/idea-generator/rust.png';
   python.src = '/images/idea-generator/python.png';
+  ruby.src = '/images/idea-generator/ruby.png';
+  reactjs.src = '/images/idea-generator/reactjs.png';
+  angular.src = '/images/idea-generator/angular.png';
+  vuejs.src = '/images/idea-generator/vuejs.png';
+  dotnet.src = '/images/idea-generator/dotnet.png';
+  qt.src = '/images/idea-generator/qt.png';
+  android.src = '/images/idea-generator/android.png';
+  ios.src = '/images/idea-generator/ios.png';
+  mongodb.src = '/images/idea-generator/mongodb.png';
+  postgresql.src = '/images/idea-generator/postgresql.png';
+  graphql.src = '/images/idea-generator/graphql.png';
+  kafka.src = '/images/idea-generator/kafka.png';
+  cassandra.src = '/images/idea-generator/cassandra.png';
+  hadoop.src = '/images/idea-generator/hadoop.png';
+  http.src = '/images/idea-generator/http.png';
+  usb.src = '/images/idea-generator/usb.png';
+  midi.src = '/images/idea-generator/midi.png';
+  protobuf.src = '/images/idea-generator/protobuf.png';
+  irc.src = '/images/idea-generator/irc.png';
+  xmpp.src = '/images/idea-generator/xmpp.png';
+  oauth.src = '/images/idea-generator/oauth.png';
+  blockchain.src = '/images/idea-generator/blockchain.png';
+  background.src = '/images/idea-generator/slot-frame.png';
   frame.src = '/images/idea-generator/frame.png';
   reel_positions.fill(start_position);
   reel_position_offsets.fill(start_offset);
   for (let r = 0; r < n_reels; ++r) {
     init_reel(r);
   }
+  var canvas = document.getElementById('reels');
+  canvas.addEventListener('mousemove', function(evt) {
+    var mousePos = getMousePos(canvas, evt);
+    if (isInside(mousePos,spin_button)) {
+      spin_button.mouse = 'in'
+    } else {
+      spin_button.mouse = 'out'
+    }
+  }, false);
+  canvas.addEventListener('mousedown', function(evt) {
+    var mousePos = getMousePos(canvas, evt);
+    if (isInside(mousePos,spin_button)) {
+      spin_button.clicked = true
+    }
+  }, false);
+  canvas.addEventListener('mouseup', function(evt) {
+    var mousePos = getMousePos(canvas, evt);
+    if (isInside(mousePos,spin_button)) {
+      spin_button.clicked = false
+    }
+  }, false);
+  canvas.addEventListener('click', function(evt) {
+    var mousePos = getMousePos(canvas, evt);
+    if (isInside(mousePos,spin_button)) {
+      spin_button.clicked = false
+    }
+  }, false);
+
+  spin_button.normal.src = '/images/idea-generator/spin_button.png';
+  spin_button.disabled.src = '/images/idea-generator/spin_button_disabled.png';
+  spin_button.hover.src = '/images/idea-generator/spin_button_hover.png';
+  spin_button.pressed.src = '/images/idea-generator/spin_button_pressed.png';
+  spin_button.highlight.src = '/images/idea-generator/spin_button_highlight.png';
+  
   window.requestAnimationFrame(draw);
 }
 

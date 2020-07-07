@@ -12,8 +12,10 @@ class SlotMachine extends React.Component {
   render() {
     return (
       <>
-        <canvas id="reels" width="650" height="394"></canvas>
+        <canvas id="reels" width="900" height="843"></canvas>
         <canvas id="interface" width="100" height="50"></canvas>
+        <h2>Results</h2>
+        <div id="slot-machine-result"><p>No results. Press "Spin" to get new ideas.</p></div>
       </>
     )
   }
