@@ -38,7 +38,7 @@ const NavigationPage = ({ data }) => {
         {Array.from(sections.keys()).map(key => {
           return (
             <details>
-              <summary><h2>> {key.replaceAll("-", " ")}</h2></summary>
+              <summary><h2>> {key.replace("-", " ")}</h2></summary>
               <ul>
                 {sections.get(key).map(path => {
                   let title = "< no title :( >"
