@@ -511,7 +511,6 @@ function isInside(pos, btn){
 }
 
 function init_reels() {
-  var frame = new Image();
   var go = new Image();
   var nodejs = new Image();
   var cpp = new Image();
@@ -602,8 +601,7 @@ function init_reels() {
   xmpp.src = '/images/idea-generator/xmpp.png';
   oauth.src = '/images/idea-generator/oauth.png';
   blockchain.src = '/images/idea-generator/blockchain.png';
-  background.src = '/images/idea-generator/slot-frame.png';
-  frame.src = '/images/idea-generator/frame.png';
+  
   reel_positions.fill(start_position);
   reel_position_offsets.fill(start_offset);
   for (let r = 0; r < n_reels; ++r) {
@@ -649,6 +647,8 @@ function init_reels() {
   spin_button.highlight.src = '/images/idea-generator/spin_button_highlight.png';
   
   background = new Image();
+  background.src = '/images/idea-generator/slot-frame.png';
+
   window.requestAnimationFrame(draw);
 }
 
