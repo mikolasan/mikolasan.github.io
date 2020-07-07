@@ -11,6 +11,6 @@ export default (props) => {
       </div>
     )
   } else {
-    return <MainImage></MainImage>
+    return <MainImage />
   }
 }

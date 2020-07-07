@@ -25,13 +25,6 @@ class BlogIndex extends React.Component {
       <Layout languageName={languageName} anotherLanguageLink={anotherLanguageLink}>
         <FeaturedImage />
         <section>
-          <div className={styles.breadcrumbs}>
-            <Breadcrumb
-              crumbs={crumbs}
-              crumbSeparator=">"
-              title="//"
-            />
-          </div>
           <h1>blog</h1>
           <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
           {posts.map(({ node }) => (

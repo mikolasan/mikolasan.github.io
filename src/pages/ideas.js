@@ -1,112 +1,85 @@
 import React from "react"
-import PropTypes from "prop-types"
-import { Link, graphql } from "gatsby"
-import { Breadcrumb } from 'gatsby-plugin-breadcrumb'
+import { Link } from "gatsby"
 import Layout from "../components/layout"
-import FeaturedImage from "../components/featuredImage"
-import SlotMachine from "../components/slotMachine"
-import styles from "../templates/blogTemplate.module.css"
+import Banner from "../components/banner"
 
-class IdeasPage extends React.Component {
-  render() {
-    const { data } = this.props
-    const group = data.allMarkdownRemark.group
-    const {
-      currentPage,
-      numPages,
-      breadcrumb: { crumbs },
-    } = this.props.pageContext
-    return (
-      <Layout>
-        
-        <FeaturedImage />
-        <section>
-          <div className={styles.breadcrumbs}>
-            <Breadcrumb
-              crumbs={crumbs}
-              crumbSeparator=">"
-              title="//"
-            />
+const IdeasPage = () => (
+  <Layout>
+    <Banner 
+      buttonText="Open Lucky Idea Generator"
+      buttonLink="/lucky-idea-generator/"
+      secondButtonText="List creative ideas"
+      secondButtonLink="/creative-ideas/"
+    >
+      <h1>Ideas for new projects?</h1>
+      <p>
+      So you want to make a great application. 
+      It is easy. Get an idea here. This is the first step and it is very important.
+      </p>
+    </Banner>
+    <section>
+      <p>
+      I see how you feel. You came here bored with new trending technologies.
+      They announce new framework every day. They release new programming language every Thursday <sup>[citation needed]</sup>.
+      You want to try it all. You want to understand it very well and be the voice of StackOverflow answers, not just a regular reader.
+      </p>
+
+      <p>
+      So you want to make a great application. It is easy. All you need is these three things.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <img src="/card_idea.png" alt="Idea"/>
+          <div class="card-container">
+            <h3><b>Idea</b></h3>
+            <p>Get an idea here. This is the first step and it is very important.</p>
           </div>
-          <h1>Ideas</h1>
-          <h2>Lucky idea generator</h2>
-          <p>If you want random unpredictable and fun project, then try this totally free slot machine
-             from a slot developer who likes throwing cutting edge technologies in production. </p>
-            <SlotMachine />
-          <p>
-            <strong>Result: </strong>
-            <span id="win">no result. Press "Spin" to update.</span>
-          </p>
-          <h2>Creative ideas crafted with love</h2>
-          <ul>
-            {group
-              .sort((a, b) => a.totalCount < b.totalCount ? 1 : -1)
-              .filter(tag => tag.totalCount > 1)
-              .map(tag => (
-              <li key={tag.fieldValue}>
-                Popularity x{tag.totalCount}:{" "}<b>{tag.fieldValue}</b>
-                <ul>
-                  {tag.nodes.map(node => (
-                    <li key={node.frontmatter.title}>
-                      <Link to={node.frontmatter.path}>{node.frontmatter.title}</Link>{" "}
-                      ({node.frontmatter.tags
-                        .sort()
-                        .map(t => t === tag.fieldValue ? (<b>{t}</b>) : (t))
-                        .reduce((acc, x) => acc === null ? [x] : [acc, ', ', x], null)})
-                    </li>
-                  ))}
-                </ul>
-              </li>
+        </div>
 
-            ))}
-          </ul>
-          <h2>And other</h2>
-          <ul>
-          <li>Combine together cameras from trashed phones</li>
-          <li>Add Google drive support to open source file manager</li>
-          </ul>
-        </section>
-      </Layout>
-    )
-  }
-}
+        <div class="card">
+          <img src="/card_code.png" alt="Code"/>
+          <div class="card-container">
+            <h3><b>Code</b></h3>
+            <p>Find source code that fits to your idea. Any language. Any license.</p>
+          </div>
+        </div>
 
-IdeasPage.propTypes = {
-  data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
-      group: PropTypes.arrayOf(
-        PropTypes.shape({
-          fieldValue: PropTypes.string.isRequired,
-          totalCount: PropTypes.number.isRequired,
-        }).isRequired
-      ),
-    }),
-  }),
-}
+        <div class="card">
+          <img src="/card_art.png" alt="Art" />
+          <div class="card-container">
+            <h3><b>Art</b></h3>
+            <p>Add colors and pictures. Find good art. I have a list where to look for it.</p>
+          </div>
+        </div>
+        
+      </div>
+
+      <div>
+        <p>
+        Here it is. Every night you spend few hours before going to bed. 
+        And depending how lucky you are, you may finish your project and do not become mad before your first release.
+        </p>
+
+        <p>Checkout section <a href="/projects">"Projects"</a> to find out my passions.</p>
+
+        <hr/>
+        <small>
+        <div>Icons made by <a href="https://www.flaticon.com/authors/wanicon" title="wanicon">wanicon</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+        <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+        </small>
+
+      </div>
+
+      <Link to="/lucky-idea-generator/"><h2>Lucky idea generator</h2></Link>
+      <Link to="/creative-ideas/"><h2>Creative ideas crafted with love</h2></Link>
+      <h2>And other ideas</h2>
+      <ul>
+      <li>Combine together cameras from trashed phones</li>
+      <li>Add Google drive support to open source file manager</li>
+      </ul>
+    </section>
+  </Layout>
+)
 
 export default IdeasPage
-
-export const pageQuery = graphql`
-  query {
-    allMarkdownRemark(
-      filter: {
-        frontmatter: {
-          tags: {ne: null},
-          path: {regex: "/^\/projects/"}
-        }
-      }
-    ) {
-      group(field: frontmatter___tags) {
-        nodes {
-          frontmatter {
-            tags
-            path
-            title
-          }
-        }
-        fieldValue
-        totalCount
-      }
-    }
-  }
-`

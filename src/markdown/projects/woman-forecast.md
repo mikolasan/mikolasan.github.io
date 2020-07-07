@@ -2,6 +2,7 @@
 path: "/projects/woman-forecast"
 date: "2020-05-16"
 title: "Woman forecast"
+subtitle: "Predict why is your girlfriend mad at you"
 tags: ["mobile", "prediction", "calendar"]
 ---
 

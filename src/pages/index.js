@@ -1,85 +1,57 @@
 import React from "react"
 import Layout from "../components/layout"
-import FeaturedImage from "../components/featuredImage"
+import Banner from "../components/banner"
 
 export default ({ data }) => (
   <Layout languageName="Switch to russian version" anotherLanguageLink="/ru">
-    <div class="container">
-      <FeaturedImage />
-      <div class="container-text">
-        <div class="featured-area">
-          <div class="featured-text">
-            <h1>Ideas for new projects?</h1>
-
-            <p>
-            So you want to make a great application. It is easy. Get an idea here. This is the first step and it is very important.
-            </p>
-
-          </div>
-          <div class="featured-action">
-            <a href="/ideas/">
-            <button class="action-button">Go to Ideas</button>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+    <Banner 
+      buttonText="Developer: my projects" 
+      buttonLink="/projects/"
+      secondButtonText="Snob: my blog"
+      secondButtonLink="/blog/"
+    >
+      <h1>developer - traveler - snob</h1>
+    </Banner>
     <section>
-<br/>
-    <p>
-I see how you feel. You came here bored with new trending technologies.
-They announce new framework every day. They release new programming language every Thursday <sup>[citation needed]</sup>.
-You want to try it all. You want to understand it very well and be the voice of StackOverflow answers, not just a regular reader.
-</p>
+      <p>
+      I am a full-time developer, once a year traveler and a snob ever since I registered on Instagram.
+      I have a postgraduate degree in Applied Mathematics and Computer Science. With its help, I do what I do for a living.
+      But besides that, I passionate about game development and irrational exploitation of computers.
+      </p>
 
-<p>
-So you want to make a great application. It is easy. All you need is these three things.
-</p>
-
-    <div class="cards">
-      <div class="card">
-        <img src="card_idea.png" alt="Idea"/>
-        <div class="card-container">
-          <h3><b>Idea</b></h3>
-          <p>Get an idea here. This is the first step and it is very important.</p>
+      <div class="cards">
+        <div class="card">
+          <img src="/card_developer.png" alt="Idea"/>
+          <div class="card-container">
+            <h3><b>Developer</b></h3>
+            <p>I believe in self-education as the best way of improving coding skills that is why I have many hobby projects. But ideas I have more.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="card">
-        <img src="card_code.png" alt="Code"/>
-        <div class="card-container">
-          <h3><b>Code</b></h3>
-          <p>Find source code that fits to your idea. Any language. Any license.</p>
+        <div class="card">
+          <img src="/card_traveler.png" alt="Code"/>
+          <div class="card-container">
+            <h3><b>Traveler</b></h3>
+            <p>More than writing code I like to plan a good journey, opt out to a real world.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="card">
-        <img src="card_art.png" alt="Art" />
-        <div class="card-container">
-          <h3><b>Art</b></h3>
-          <p>Add colors and pictures. Find good art. I have a list where to look for it.</p>
+        <div class="card">
+          <img src="/card_snob.png" alt="Art" />
+          <div class="card-container">
+            <h3><b>Snob</b></h3>
+            <p>I enjoy the code that is written well and looks perfect. </p>
+          </div>
         </div>
+        
+        
       </div>
-      
-    </div>
-
-<div>
-
-
-<p>
-Here it is. Every night you spend few hours before going to bed. 
-And depending how lucky you are, you may finish your project and do not become mad before your first release.
-</p>
-
-<p>Checkout section <a href="/projects">"Projects"</a> to find out my passions.</p>
-
-<hr/>
-<small>
-<div>Icons made by <a href="https://www.flaticon.com/authors/wanicon" title="wanicon">wanicon</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-<div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-</small>
-
-</div>
+      <hr/>
+      <small>
+      <div>Icons made by <a href="https://www.flaticon.com/free-icon/programmer_2092430" title="srip">srip</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></div>
+      <div>Icons made by <a href="https://www.flaticon.com/free-icon/car_2706107" title="iconixar">iconixar</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></div>
+      <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></div>
+      </small>
     </section>
   </Layout>
 )

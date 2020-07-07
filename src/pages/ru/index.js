@@ -1,33 +1,20 @@
 import React from "react"
 import Layout from "../../components/layout"
-import FeaturedImage from "../../components/featuredImage"
+import Banner from "../../components/banner"
 
 export default ({ data }) => (
   <Layout languageName="Switch to english version" anotherLanguageLink="/">
-    <div class="container">
-      <FeaturedImage />
-      <div class="container-text">
-        <div class="featured-area">
-          <div class="featured-text">
-            <h1>Зачем мы здесь?</h1>
+      <Banner>
+        <h1>Зачем мы здесь?</h1>
 
-            <blockquote>
-              <p>Свет в темноте, грохот в тиши:<br/>
-                Шепот ночей, пламя свечи.<br/>
-                Гибель мечты, смерть от любви,<br/>
-                Жизнь без дверей, веришь ли ты?<br/>
-              </p>
-            </blockquote>
-
-          </div>
-          {/* <div class="featured-action">
-            <a href="/projects/ideas">
-            <button class="action-button">В Проекты!</button>
-            </a>
-          </div> */}
-        </div>
-      </div>
-    </div>
+        <blockquote>
+          <p>Свет в темноте, грохот в тиши:<br/>
+            Шепот ночей, пламя свечи.<br/>
+            Гибель мечты, смерть от любви,<br/>
+            Жизнь без дверей, веришь ли ты?<br/>
+          </p>
+        </blockquote>
+      </Banner>
     <section>
 
     

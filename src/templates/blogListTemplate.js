@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import { Breadcrumb } from 'gatsby-plugin-breadcrumb'
 import Layout from "../components/layout"
-import FeaturedImage from "../components/featuredImage"
+import Banner from "../components/banner"
 import styles from "./blogTemplate.module.css"
 
 class BlogIndex extends React.Component {
@@ -23,15 +23,11 @@ class BlogIndex extends React.Component {
     const onePage = isFirst && isLast
     return (
       <Layout languageName={languageName} anotherLanguageLink={anotherLanguageLink}>
-        <FeaturedImage />
+        <Banner>
+          <h1>Blog</h1>
+          <p>some text here...</p>
+        </Banner>
         <section>
-          <div className={styles.breadcrumbs}>
-            <Breadcrumb
-              crumbs={crumbs}
-              crumbSeparator=">"
-              title="//"
-            />
-          </div>
           <h1>blog</h1>
           <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
           {posts.map(({ node }) => (

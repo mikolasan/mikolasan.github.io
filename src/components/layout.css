@@ -16,7 +16,7 @@ summary {
 section {
   margin: 0 auto;
   max-width: 960px;
-  padding: 0 1.0875rem;
+  padding: 2.5rem 1.0875rem 0;
 }
 
 .container {
@@ -58,10 +58,26 @@ section {
 }
 
 .featured-action {
+  float: left;
 }
 
 .action-button {
-  background-color: #009FFD;
+  background-color: #0496FF;
+  border: none;
+  color: #f2f2f2;
+  padding: 0.5em 1em;
+  margin-right: 1.5em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.featured-second-action {
+  float: left;
+}
+
+.second-action-button {
+  background-color: #8F2D56;
   border: none;
   color: #f2f2f2;
   padding: 0.5em 1em;

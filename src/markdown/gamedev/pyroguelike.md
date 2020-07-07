@@ -5,6 +5,13 @@ title: "Not your father's roguelike"
 featuredImage: pyroguelike-1.png
 ---
 
+
+## Try it now!
+
+In the browser: https://repl.it/@stakanmartini/test-roguelike-11
+
+Source code: https://github.com/mikolasan/pyroguelike
+
 ## Intro
 
 What a day it had been!

@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import { Breadcrumb } from 'gatsby-plugin-breadcrumb'
 import Layout from "../components/layout"
 import FeaturedImage from "../components/featuredImage"
+import Banner from "../components/banner"
 import styles from "./blogTemplate.module.css"
 
 export default function Template ({ data, pageContext, location }) {
@@ -33,16 +34,12 @@ export default function Template ({ data, pageContext, location }) {
   }
   return (
     <Layout languageName={languageName} anotherLanguageLink={anotherLanguageLink}>
-      <FeaturedImage imgFluid={featuredImgFluid} />
+      {featuredImgFluid
+        && (<FeaturedImage imgFluid={featuredImgFluid} />)
+        || (<Banner><h1>{frontmatter.title}</h1><p dangerouslySetInnerHTML={{ __html: frontmatter.subtitle }} /></Banner>)
+      }
       <section>
-        <div className={styles.breadcrumbs}>
-          <Breadcrumb
-            crumbs={crumbs}
-            crumbSeparator=">"
-            title="//"
-          />
-        </div>
-        <h1>{frontmatter.title}</h1>
+        {featuredImgFluid && (<h1>{frontmatter.title}</h1>)}
         <p className={styles.postedon}>{frontmatter.date}</p>
         <div
           dangerouslySetInnerHTML={{ __html: html }}
@@ -60,6 +57,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         path
         title
+        subtitle
         featuredImage {
           childImageSharp {
             fluid(
