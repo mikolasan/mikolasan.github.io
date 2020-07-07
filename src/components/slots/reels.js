@@ -104,11 +104,6 @@ const spin_button = {
   enabled: true,
   clicked: false,
   mouse: 'out',
-  normal: new Image(),
-  disabled: new Image(),
-  hover: new Image(),
-  pressed: new Image(),
-  highlight: new Image(),
 }
 
 var slot_images = new Map();
@@ -420,7 +415,7 @@ function show_result(ctx, dt) {
 }
 
 var previous_frame = 0;
-var background = new Image();
+var background = null;
 
 function draw(timestamp) {
   var dt = timestamp - previous_frame;
@@ -642,12 +637,18 @@ function init_reels() {
     }
   }, false);
 
+  spin_button.normal = new Image();
+  spin_button.disabled = new Image();
+  spin_button.hover = new Image();
+  spin_button.pressed = new Image();
+  spin_button.highlight = new Image();
   spin_button.normal.src = '/images/idea-generator/spin_button.png';
   spin_button.disabled.src = '/images/idea-generator/spin_button_disabled.png';
   spin_button.hover.src = '/images/idea-generator/spin_button_hover.png';
   spin_button.pressed.src = '/images/idea-generator/spin_button_pressed.png';
   spin_button.highlight.src = '/images/idea-generator/spin_button_highlight.png';
   
+  background = new Image();
   window.requestAnimationFrame(draw);
 }
 
