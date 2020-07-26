@@ -2,6 +2,7 @@
 path: "/ru/gamedev/battleship"
 date: "2020-04-06"
 title: Bato yo slaget
+language: "ru"
 ---
 
 ## Идея

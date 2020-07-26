@@ -3,6 +3,7 @@ path: "/ru/projects/ai-powered-news-feed"
 date: "2020-05-16"
 title: Новостная лента, которую мы не заслуживаем
 tags: ["python", "django", "db", "scraper", "language processing", "web"]
+language: "ru"
 ---
 
 - Зачем мне это надо: Попытка понять как на одном только питоне делать приложение для веба.

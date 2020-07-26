@@ -2,7 +2,14 @@
 path: "/ru/science"
 date: "2020-03-19"
 title: "Наука"
+language: "ru"
 ---
+
+**📣 Новые темы**: 
+- [Обработка естественного языка](/ru/science/nlp-introduction) 🙀
+- [Тулза MMF](/ru/science/mmf)
+- [Добавить свою модель в MMF](/ru/science/mmf/add-new-model)
+
 
 [Публикации](/ru/science/publications)
 

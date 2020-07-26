@@ -2,6 +2,7 @@
 path: "/ru/projects/limbo"
 date: "2020-03-15"
 title: "Лимб"
+language: "ru"
 ---
 
 ## Дополнение для Firefox

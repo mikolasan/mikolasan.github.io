@@ -2,6 +2,7 @@
 path: "/ru/projects/github"
 date: "2020-04-06"
 title: "Мой GitHub"
+language: "ru"
 ---
 
 ## mikolasan.github.io

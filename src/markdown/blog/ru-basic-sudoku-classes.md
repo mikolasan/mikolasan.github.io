@@ -2,6 +2,7 @@
 path: "/ru/blog/basic-sudoku-classes"
 date: "2019-02-16"
 title: "Basic Sudoku classes"
+language: "ru"
 ---
 
 Я хочу напрогать алгоритм генерации судоку полей в стиле следующей статьи с Медиума https://medium.com/@rossharrison/generating-sudoku-boards-pt-1-structures-algorithms-a1e62feeb32.

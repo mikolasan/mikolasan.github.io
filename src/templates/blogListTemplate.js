@@ -28,8 +28,7 @@ class BlogIndex extends React.Component {
           <p>some text here...</p>
         </Banner>
         <section>
-          <h1>blog</h1>
-          <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
+          <h4>{data.allMarkdownRemark.totalCount} posts</h4>
           {posts.map(({ node }) => (
             <div key={node.id}>
               <h3>

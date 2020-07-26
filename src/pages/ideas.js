@@ -62,7 +62,14 @@ const IdeasPage = () => (
         </p>
 
         <p>Checkout section <a href="/projects">"Projects"</a> to find out my passions.</p>
-
+        <Link to="/lucky-idea-generator/"><h2>Lucky idea generator</h2></Link>
+        <Link to="/creative-ideas/"><h2>Creative ideas crafted with love</h2></Link>
+        <h2>And other ideas</h2>
+        <ul>
+        <li>Combine together cameras from trashed phones</li>
+        <li>Add Google drive support to open source file manager</li>
+        </ul>
+        
         <hr/>
         <small>
         <div>Icons made by <a href="https://www.flaticon.com/authors/wanicon" title="wanicon">wanicon</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
@@ -71,13 +78,7 @@ const IdeasPage = () => (
 
       </div>
 
-      <Link to="/lucky-idea-generator/"><h2>Lucky idea generator</h2></Link>
-      <Link to="/creative-ideas/"><h2>Creative ideas crafted with love</h2></Link>
-      <h2>And other ideas</h2>
-      <ul>
-      <li>Combine together cameras from trashed phones</li>
-      <li>Add Google drive support to open source file manager</li>
-      </ul>
+      
     </section>
   </Layout>
 )

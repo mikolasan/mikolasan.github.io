@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
+import Layout from "../components/ruLayout"
 import FeaturedImage from "../components/featuredImage"
 import Banner from "../components/banner"
 import styles from "./blogTemplate.module.css"
@@ -46,7 +46,7 @@ export default function Template ({ data, pageContext, location }) {
 }
 
 export const pageQuery = graphql`
-  query blogQuery($path: String!) {
+  query RuBlogQuery($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {

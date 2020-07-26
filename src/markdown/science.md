@@ -4,6 +4,11 @@ date: "2020-04-06"
 title: "Science"
 ---
 
+## New stuff 🔥
+
+- [Cat breeds ontology](/science/cat-breeds-ontology)
+
+
 ## Publications
 
 Vityaev, E.E., Neupokoev, N.V.: [Formal model of perception based on fix-point of anticipations](http://www.math.nsc.ru/AP/ScientificDiscovery/PDF/model_of_perception_sbornik.pdf). [Approaches to mental modeling](http://urss.ru/cgi-bin/db.pl?lang=en&blang=en&page=Book&id=257246). pp.155-172, Moscow, URSS Editorial (2014)

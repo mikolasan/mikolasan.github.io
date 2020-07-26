@@ -96,9 +96,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-build-date`,
       options: {
-        formatting: {
-          format: 'dddd D MMMM YYYY'
-        }
+        formatAsDateString: false,
       }
     },
     `gatsby-plugin-react-helmet`,

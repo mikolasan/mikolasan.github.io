@@ -3,6 +3,7 @@ path: "/ru/gamedev/pyroguelike"
 date: "2019-04-17"
 title: "Not your father's roguelike"
 featuredImage: pyroguelike-1.png
+language: "ru"
 ---
 
 Первый игровой джем (game jam), в котором я серьезно поучавствовал. Главный приз был 1 биткоин (что на тот момент было ни много ни мало $5,000).

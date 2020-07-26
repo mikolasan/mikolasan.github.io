@@ -1,7 +1,8 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import { Breadcrumb } from 'gatsby-plugin-breadcrumb'
-import Layout from "../components/layout"
+import Layout from "../components/ruLayout"
+import Banner from "../components/banner"
 import FeaturedImage from "../components/featuredImage"
 import styles from "./blogTemplate.module.css"
 
@@ -23,10 +24,12 @@ class BlogIndex extends React.Component {
     const onePage = isFirst && isLast
     return (
       <Layout languageName={languageName} anotherLanguageLink={anotherLanguageLink}>
-        <FeaturedImage />
+        <Banner>
+          <h1>Блог</h1>
+          <p>бложик...</p>
+        </Banner>
         <section>
-          <h1>blog</h1>
-          <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
+          <h4>{data.allMarkdownRemark.totalCount} заметок</h4>
           {posts.map(({ node }) => (
             <div key={node.id}>
               <h3>
@@ -36,7 +39,7 @@ class BlogIndex extends React.Component {
                 {node.frontmatter.date}
               </span>
               <p>{node.excerpt}{" "}
-              <Link to={node.frontmatter.path}>Read more...</Link>
+              <Link to={node.frontmatter.path}>Читать дальше...</Link>
               </p>
             </div>
           ))}
@@ -52,9 +55,9 @@ class BlogIndex extends React.Component {
           >
             {!isFirst && (
               <Link to={`/blog/${prevPage}`} rel="prev">
-                ← Previous Page
+                ← Пред стр
               </Link>
-            ) || "← Previous Page"}
+            ) || "← Пред стр"}
             {Array.from({ length: numPages }, (_, i) => (
               <li
                 key={`pagination-number${i + 1}`}
@@ -77,9 +80,9 @@ class BlogIndex extends React.Component {
             ))}
             {!isLast && (
               <Link to={`/blog/${nextPage}`} rel="next">
-                Next Page →
+                След стр →
               </Link>
-            ) || "Next Page →"}
+            ) || "След стр →"}
           </ul>
           </section>
       </Layout>
@@ -90,7 +93,7 @@ class BlogIndex extends React.Component {
 export default BlogIndex
 
 export const query = graphql`
-  query ruBlogListQuery($skip: Int!, $limit: Int!) {
+  query RuBlogListQuery($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
       limit: $limit,
       skip: $skip,

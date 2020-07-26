@@ -4,14 +4,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
 
   const blogPostTemplate = path.resolve(`./src/templates/blogTemplate.js`)
+  const ruBlogPostTemplate = path.resolve(`./src/templates/ruBlogTemplate.js`)
   const blogListTemplate = path.resolve(`./src/templates/blogListTemplate.js`)
   const ruBlogListTemplate = path.resolve(`./src/templates/ruBlogListTemplate.js`)
 
   const result = await graphql(`
     {
       allMarkdownRemark(
-        limit: 1000
-        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000,
+        sort: { order: DESC, fields: [frontmatter___date]},
+        filter: { frontmatter: {language: {ne: "ru"}}}
       ) {
         edges {
           node {
@@ -34,6 +36,39 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     createPage({
       path: node.frontmatter.path,
       component: blogPostTemplate,
+      context: {}, // additional data can be passed via context
+    })
+  })
+
+  // Russian version
+  const ruResult = await graphql(`
+    {
+      allMarkdownRemark(
+        limit: 1000,
+        sort: { order: DESC, fields: [frontmatter___date]},
+        filter: { frontmatter: {language: {eq: "ru"}}}
+      ) {
+        edges {
+          node {
+            frontmatter {
+              path
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  if (ruResult.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
+  }
+
+  ruResult.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    if (node.frontmatter.path === null) return
+    createPage({
+      path: node.frontmatter.path,
+      component: ruBlogPostTemplate,
       context: {}, // additional data can be passed via context
     })
   })
@@ -65,7 +100,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const posts = blogResult.data.allMarkdownRemark.edges
   const postsPerPage = 5
   const numPosts = posts.length
-  const numPages = Math.ceil(numPosts / postsPerPage)
+  const numPages = Math.ceil(numPosts / (postsPerPage + 1))
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/blog` : `/blog/${i + 1}`,
@@ -106,7 +141,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const ruPosts = ruBlogResult.data.allMarkdownRemark.edges
   const ruPostsPerPage = 5
   const ruNumPosts = ruPosts.length
-  const ruNumPages = Math.ceil(ruNumPosts / ruPostsPerPage)
+  const ruNumPages = Math.ceil(ruNumPosts / (ruPostsPerPage + 1))
   Array.from({ length: ruNumPages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/ru/blog` : `/ru/blog/${i + 1}`,
@@ -114,7 +149,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {
         limit: ruPostsPerPage,
         skip: i * ruPostsPerPage,
-        ruNumPages,
+        numPages: ruNumPages,
         currentPage: i + 1,
       },
     })

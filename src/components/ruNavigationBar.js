@@ -6,7 +6,7 @@ import styles from "./navigationBar.module.css"
 export default (props) => (
   <StaticQuery
     query={graphql`
-      query LogoQuery {
+      query RuLogoQuery {
         file(relativePath: { eq: "logo.png" }) {
           childImageSharp {
             fixed {
@@ -19,13 +19,13 @@ export default (props) => (
     render={data => (
       <div className={styles.topnav}>
         <Img fixed={data.file.childImageSharp.fixed} style={{float: 'left'}} />
-        <Link to="/" className={styles.titlelink} style={{backgroundColor: '#211a1d', color: '#f2f2f2'}}>Nikolay Neupokoev</Link>
-        <Link to="/ideas/">Ideas</Link>
-        <Link to="/projects/">Projects</Link>
-        <Link to="/science/">Science</Link>
-        <Link to="/blog/">Blog</Link>
-        <Link to="/about/" style={{float: 'right'}}>About</Link>
-        <Link to="/cv/" style={{float: 'right'}}>CV</Link>
+        <Link to="/ru" className={styles.titlelink} style={{backgroundColor: '#211a1d', color: '#f2f2f2'}}>Николай Неупокоев</Link>
+        <Link to="/ru/ideas/">Идеи</Link>
+        <Link to="/ru/projects/">Проекты</Link>
+        <Link to="/ru/science/">Наука</Link>
+        <Link to="/ru/blog/">Блог</Link>
+        <Link to="/ru/about/" style={{float: 'right'}}>О себе</Link>
+        <Link to="/ru/cv/" style={{float: 'right'}}>Резюме</Link>
       </div>
     )}
   />

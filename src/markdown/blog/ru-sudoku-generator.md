@@ -2,6 +2,7 @@
 path: "/ru/blog/sudoku-generator"
 date: "2019-03-04"
 title: "Sudoku generator"
+language: "ru"
 ---
 
 Я думаю, что об этом стоит рассказать.

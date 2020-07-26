@@ -4,6 +4,7 @@ date: "2020-03-26"
 title: Pet Project Navigator
 tags: ["java", "db", "mobile"]
 featuredImage: pet-project-navigator-1.png
+language: "ru"
 ---
 
 Приложение по выбору Хобби проекта для программиста. 

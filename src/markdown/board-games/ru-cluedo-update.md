@@ -2,6 +2,7 @@
 path: /ru/board-games/cluedo-update
 date: 2019-10-21
 title: Что не так с игрой Клюедо?
+language: "ru"
 ---
 
 ## Минусы текущей механики

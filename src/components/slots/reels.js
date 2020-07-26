@@ -46,6 +46,12 @@ const HA = 'HA';
 // features
 const OA = 'OA';
 const BL = 'BL';
+const CV = 'CV';
+const ML = 'ML';
+const DA = 'DA';
+const LP = 'LP';
+const IT = 'IT';
+const MS = 'MS';
 
 const symbol_names = new Map([
   [GO, 'Go'],
@@ -77,6 +83,12 @@ const symbol_names = new Map([
   [XM, 'XMPP'],
   [OA, 'OAuth'],
   [BL, 'Blockchain'],
+  [CV, 'OpenCV (computer vision)'],
+  [ML, 'Machine Learning'],
+  [DA, 'Dashboard'],
+  [LP, 'OpenNLP, NLTK (natural language processing)'],
+  [IT, 'Internet of Things'],
+  [MS, 'Seneca (Microservices)'],
 ]);
 
 const strips = [
@@ -84,7 +96,7 @@ const strips = [
   [RE, RE, RE, NG, VU, NE, QT, NG, AN, IO, VU, QT],
   [MO, PO, PO, PO, QL, HA, KA, MO, QL, CA],
   [HT, US, IR, XM, PR, MI, HT, PR],
-  [BL, BL, BL, OA, BL, OA],
+  [DA, BL, MS, ML, BL, BL, CV, OA, BL, DA, OA, IT, LP],
 ];
 
 // 0 3 6 9  12
@@ -540,6 +552,12 @@ function init_reels() {
   var xmpp = new Image();
   var oauth = new Image();
   var blockchain = new Image();
+  var computerVision = new Image();
+  var machineLearning = new Image();
+  var dashboard = new Image();
+  var languageProcessing = new Image();
+  var internetOfThings = new Image();
+  var microServices = new Image();
 
   slot_images = new Map([
     [GO, go],
@@ -571,6 +589,12 @@ function init_reels() {
     [XM, xmpp],
     [OA, oauth],
     [BL, blockchain],
+    [CV, computerVision],
+    [ML, machineLearning],
+    [DA, dashboard],
+    [LP, languageProcessing],
+    [IT, internetOfThings],
+    [MS, microServices]
   ]);
   go.src = '/images/idea-generator/go.png';
   java.src = '/images/idea-generator/java.png';
@@ -601,6 +625,12 @@ function init_reels() {
   xmpp.src = '/images/idea-generator/xmpp.png';
   oauth.src = '/images/idea-generator/oauth.png';
   blockchain.src = '/images/idea-generator/blockchain.png';
+  computerVision.src = '/images/idea-generator/opencv.png';
+  machineLearning.src = '/images/idea-generator/ml.png';
+  dashboard.src = '/images/idea-generator/dashboard.png';
+  languageProcessing.src = '/images/idea-generator/opennlp.png';
+  internetOfThings.src = '/images/idea-generator/iot.png';
+  microServices.src = '/images/idea-generator/seneca.png';
   
   reel_positions.fill(start_position);
   reel_position_offsets.fill(start_offset);
