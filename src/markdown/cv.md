@@ -3,7 +3,7 @@ path: "/cv"
 date: "2019-02-13"
 title: "Curriculum Vitae"
 subtitle: "<strong>Nikolay Neupokoev</strong> - Mathematician Engineer"
-buttonText: Download PDF
+buttonText: Download PDF version
 buttonLink: /CV-Neupokoev.pdf
 ---
 

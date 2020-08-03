@@ -3,6 +3,7 @@ path: "/ru/science/nlp-introduction"
 date: "2020-07-15"
 title: Введение в обработку естественного языка
 language: "ru"
+draft: true
 ---
 
 Вот наша цель

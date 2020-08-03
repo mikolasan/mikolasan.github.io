@@ -15,6 +15,7 @@ export default function Template ({ data, pageContext, location }) {
   const linkPath = frontmatter.path
   let anotherLanguageLink = ''
   let languageName = ''
+  let alertAboutDraftStatus = ''
   if (linkPath.includes('/ru/blog')) {
     anotherLanguageLink = '/blog'
     languageName = "Switch to english version"
@@ -24,9 +25,11 @@ export default function Template ({ data, pageContext, location }) {
   } else if (linkPath.includes('/ru')) {
     anotherLanguageLink = linkPath.replace('/ru', '/')
     languageName = "Switch to english version"
+    alertAboutDraftStatus = 'Статья находится в активной разработке. Она опубликована в таком виде не для издевательства над читателем, а только потому что редактор сказал можно.'
   } else {
     anotherLanguageLink = '/ru' + linkPath
     languageName = "Switch to russian version"
+    alertAboutDraftStatus = 'This article is not finished and not reviewed thoroughly. If for some reason you want to continue reading, do it at your own risk, but do not forget to come back later to enjoy the final version.'
   }
   return (
     <Layout languageName={languageName} anotherLanguageLink={anotherLanguageLink}>
@@ -37,6 +40,10 @@ export default function Template ({ data, pageContext, location }) {
       <section>
         {featuredImgFluid && (<h1>{frontmatter.title}</h1>)}
         <p className={styles.postedon}>{frontmatter.date}</p>
+        {frontmatter.draft && (<div className={styles.draftalert}>
+          <img src="/draft.png" alt="Picturing not a whole whale"/>
+          <p>{alertAboutDraftStatus}</p>
+        </div>)}
         <div
           dangerouslySetInnerHTML={{ __html: html }}
         />
@@ -53,6 +60,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         path
         title
+        draft
         subtitle
         buttonText
         buttonLink

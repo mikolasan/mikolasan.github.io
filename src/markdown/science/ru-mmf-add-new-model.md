@@ -3,6 +3,7 @@ path: "/ru/science/mmf/add-new-model"
 date: "2020-07-20"
 title: Добавить свою модель в MMF
 language: "ru"
+draft: true
 ---
 
 Давайте повторим результат из статьи **Recursive Deep Models for Semantic Compositionality Over a Sentiment Treebank** под авторством Richard Socher, Alex Perelygin, Jean Y. Wu, Jason Chuang,Christopher D. Manning, Andrew Y. Ng and Christopher Potts. Они в свою очередь ссылаются на парсер описанный в **Accurate Unlexicalized Parsing** Клейном и Маннингом (Dan Klein, Christopher D. Manning).

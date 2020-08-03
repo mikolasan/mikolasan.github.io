@@ -33,3 +33,17 @@
   margin: 0 0 1em 0;
   font-size: 85%;
 }
+
+.draftalert {
+  background-color: #d81159;
+  font-size: 120%;
+  padding: 2em;
+  margin-left: -2em;
+  margin-right: -2em;
+  margin-bottom: 2em;
+}
+
+.draftalert img {
+  width: 200px;
+  margin-bottom: 0.5em;
+}
