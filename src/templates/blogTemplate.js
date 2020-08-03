@@ -32,7 +32,7 @@ export default function Template ({ data, pageContext, location }) {
     <Layout languageName={languageName} anotherLanguageLink={anotherLanguageLink}>
       {featuredImgFluid
         && (<FeaturedImage imgFluid={featuredImgFluid} />)
-        || (<Banner><h1>{frontmatter.title}</h1><p dangerouslySetInnerHTML={{ __html: frontmatter.subtitle }} /></Banner>)
+        || (<Banner buttonText={frontmatter.buttonText} buttonLink={frontmatter.buttonLink}><h1>{frontmatter.title}</h1><p dangerouslySetInnerHTML={{ __html: frontmatter.subtitle }} /></Banner>)
       }
       <section>
         {featuredImgFluid && (<h1>{frontmatter.title}</h1>)}
@@ -54,6 +54,8 @@ export const pageQuery = graphql`
         path
         title
         subtitle
+        buttonText
+        buttonLink
         featuredImage {
           childImageSharp {
             fluid(

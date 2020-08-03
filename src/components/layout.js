@@ -5,6 +5,7 @@ import PropTypes from "prop-types"
 import { graphql, Link, StaticQuery } from "gatsby"
 
 import NavigationBar from "../components/navigationBar"
+import LikesPanel from "../components/likesPanel"
 import "./layout.css"
 
 const Layout = ({ children, languageName, anotherLanguageLink }) => (
@@ -30,7 +31,12 @@ const Layout = ({ children, languageName, anotherLanguageLink }) => (
         <header>
           <NavigationBar languageName={languageName} anotherLanguageLink={anotherLanguageLink}/>
         </header>
-        <main>{children}</main>
+        <main>
+          {children}
+          <section> 
+            <LikesPanel />
+          </section>
+        </main>
         <footer>
           <div class="bottomnav">
             <Link style={{marginBottom: '0.5em', textDecoration: 'underline'}} to={anotherLanguageLink}>{languageName}</Link>

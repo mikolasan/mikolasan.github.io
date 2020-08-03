@@ -26,7 +26,7 @@ Redshift привел меня к spaCy. А [оттуда](https://spacy.io/usag
 
 Значит [вот](https://nlp.stanford.edu/software/lex-parser.html) актуальная ссылка (на 2020 год). 
 
-Скачиваем https://nlp.stanford.edu/software/stanford-parser-4.0.0.zip (исходники https://github.com/stanfordnlp/CoreNLP/tree/master/src/edu/stanford/nlp/parser/lexparser)
+Скачиваем https://nlp.stanford.edu/software/stanford-parser-4.0.0.zip (исходники https://github.com/stanfordnlp/CoreNLP/tree/master/src/edu/stanford/nlp/parser/lexparser, вопросы/ответы https://nlp.stanford.edu/software/parser-faq.html)
 
 В текущее непростое время когда Оракл отвернулась от обычных разработчиков вот список поставищиков годной джава [1](https://stackoverflow.com/a/54737381/1104612) [2](https://stackoverflow.com/a/52431765/1104612). 
 Есть информация о том, какую сборку нужно выбирать в каком случае. Самый простой и достойный вариант, который не сразу можно нагуглить (например по запросу "java jdk download") - это https://adoptopenjdk.net/
