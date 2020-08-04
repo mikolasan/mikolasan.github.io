@@ -1,4 +1,5 @@
 const path = require("path")
+const likesConfig = require("./likes-config")
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
@@ -33,10 +34,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     if (node.frontmatter.path === null) return
+    const path = node.frontmatter.path
+    const showLikes = likesConfig.excludePath.find(p => p === path) === undefined
     createPage({
-      path: node.frontmatter.path,
+      path: path,
       component: blogPostTemplate,
-      context: {}, // additional data can be passed via context
+      context: {
+        showLikes: showLikes,
+        pagePath: path
+      },
     })
   })
 

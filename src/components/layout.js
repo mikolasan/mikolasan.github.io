@@ -8,7 +8,7 @@ import NavigationBar from "../components/navigationBar"
 import LikesPanel from "../components/likesPanel"
 import "./layout.css"
 
-const Layout = ({ children, languageName, anotherLanguageLink }) => (
+const Layout = ({ children, showLikes, languageName, anotherLanguageLink }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -33,9 +33,10 @@ const Layout = ({ children, languageName, anotherLanguageLink }) => (
         </header>
         <main>
           {children}
-          <section> 
+          {showLikes && (
+          <section>
             <LikesPanel />
-          </section>
+          </section>)}
         </main>
         <footer>
           <div class="bottomnav">

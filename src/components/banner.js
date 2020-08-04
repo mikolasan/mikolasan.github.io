@@ -23,27 +23,27 @@ export default ({ children, buttonText, buttonLink, secondButtonText, secondButt
       }
     `}
     render={data => (
-      <div class="container">
+      <div className="container">
         <div style={{minHeight:"350px", maxHeight: "400px"}}>
           <Img 
             fluid={data.file.childImageSharp.fluid}
             style={{minHeight:"350px", maxHeight: '400px'}} 
           />
         </div>
-        <div class="container-text">
-          <div class="featured-area">
-            <div class="featured-text">{children}</div>
+        <div className="container-text">
+          <div className="featured-area">
+            <div className="featured-text">{children}</div>
             {(buttonText && buttonLink) && (
-              <div class="featured-action">
+              <div className="featured-action">
                 <a href={buttonLink}>
-                  <button class="action-button">{buttonText}</button>
+                  <button className="action-button">{buttonText}</button>
                 </a>
               </div>
             ) || ''}
             {(secondButtonText && secondButtonLink) && (
-              <div class="featured-second-action">
+              <div className="featured-second-action">
                 <a href={secondButtonLink}>
-                  <button class="second-action-button">{secondButtonText}</button>
+                  <button className="second-action-button">{secondButtonText}</button>
                 </a>
               </div>
             ) || ''}

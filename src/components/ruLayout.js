@@ -30,7 +30,9 @@ const Layout = ({ children, languageName, anotherLanguageLink }) => (
         <header>
           <NavigationBar languageName={languageName} anotherLanguageLink={anotherLanguageLink}/>
         </header>
-        <main>{children}</main>
+        <main>
+          {children}
+        </main>
         <footer>
           <div class="bottomnav">
             <Link style={{marginBottom: '0.5em', textDecoration: 'underline'}} to={anotherLanguageLink}>{languageName}</Link>

@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import Banner from "../components/banner"
 
 const IdeasPage = () => (
-  <Layout>
+  <Layout languageName="Switch to russian version" anotherLanguageLink="/ru/ideas">
     <Banner 
       buttonText="Open Lucky Idea Generator"
       buttonLink="/lucky-idea-generator/"
