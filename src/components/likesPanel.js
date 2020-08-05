@@ -33,7 +33,7 @@ class LikesPanel extends React.Component {
         'Content-Type': 'application/json'
       }
     };
-    fetch('http://localhost:10000/likes?' + new URLSearchParams({
+    fetch('https://like-mikolasan.herokuapp.com/likes?' + new URLSearchParams({
       url: this.pageUrl
     }), requestOptions)
       .then(response => response.json())
@@ -60,7 +60,7 @@ class LikesPanel extends React.Component {
         like: scoreName
       })
     };
-    fetch('http://localhost:10000/like', requestOptions)
+    fetch('https://like-mikolasan.herokuapp.com/like', requestOptions)
       .then(response => response.json())
       .then(data => {
         this.scores[data.scoreName] = data.score
