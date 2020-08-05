@@ -7,7 +7,7 @@ import { graphql, Link, StaticQuery } from "gatsby"
 import NavigationBar from "../components/ruNavigationBar"
 import "./layout.css"
 
-const Layout = ({ children, languageName, anotherLanguageLink }) => (
+const RuLayout = ({ children, showLikes, languageName, anotherLanguageLink }) => (
   <StaticQuery
     query={graphql`
       query RuSiteTitleQuery {
@@ -28,19 +28,19 @@ const Layout = ({ children, languageName, anotherLanguageLink }) => (
           <link href="https://fonts.googleapis.com/css2?family=Vollkorn+SC:wght@700&family=Manrope:wght@300&family=Nunito:wght@300&display=swap" rel="stylesheet" />
         </Helmet>
         <header>
-          <NavigationBar languageName={languageName} anotherLanguageLink={anotherLanguageLink}/>
+          <NavigationBar />
         </header>
         <main>
           {children}
         </main>
         <footer>
-          <div class="bottomnav">
+          <div className="bottomnav">
             <Link style={{marginBottom: '0.5em', textDecoration: 'underline'}} to={anotherLanguageLink}>{languageName}</Link>
-            <div class="bottomsmallabout">
+            <div className="bottomsmallabout">
               <h2>О себе</h2>
               <p>Не использую смайлики и эмодзи. Пишу о муках программирования, невостребованных идеях, иногда кидаю чужие ссылки, а иногда свои наблюдения.</p>
             </div>
-            <div class="bottommenu">
+            <div className="bottommenu">
               <h2>Меню</h2>
               <Link to="/ru/ideas/">Идеи</Link>
               <Link to="/ru/projects/">Проекты</Link>
@@ -48,7 +48,7 @@ const Layout = ({ children, languageName, anotherLanguageLink }) => (
               <Link to="/ru/blog/">Блог</Link>
               <Link to="/ru/cv/">Резюме</Link>
             </div>
-            <div class="bottomxsocial">
+            <div className="bottomxsocial">
               <h2>Сети</h2>
               <a href="https://github.com/mikolasan">GitHub</a>
               <a href="https://www.linkedin.com/in/nikolay-neupokoev-29150065/">LinkedIn</a>
@@ -56,7 +56,7 @@ const Layout = ({ children, languageName, anotherLanguageLink }) => (
               <a href="https://twitter.com/stakanmartini">Twitter</a>
             </div>
           </div>
-          <div class="copyright">
+          <div className="copyright">
             <p>На этом сайте используется Google Analytics. Она собирает и обрабатывает данные о вас. <a href="https://policies.google.com/technologies/partner-sites">
               Как Google использует информацию, собираемую с сайтов</a>
             </p>
@@ -71,8 +71,10 @@ const Layout = ({ children, languageName, anotherLanguageLink }) => (
   />
 )
 
-Layout.propTypes = {
+RuLayout.propTypes = {
   children: PropTypes.node.isRequired,
+  languageName: PropTypes.node.isRequired,
+  anotherLanguageLink: PropTypes.node.isRequired,
 }
 
-export default Layout
+export default RuLayout

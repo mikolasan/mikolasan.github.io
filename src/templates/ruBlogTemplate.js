@@ -16,14 +16,14 @@ export default function Template ({ data, pageContext, location }) {
   let anotherLanguageLink = ''
   let languageName = ''
   let alertAboutDraftStatus = ''
-  if (linkPath.includes('/ru/blog')) {
+  if (linkPath.startsWith('/ru/blog')) {
     anotherLanguageLink = '/blog'
     languageName = "Switch to english version"
-  } else if (linkPath.includes('/blog')) {
+  } else if (linkPath.startsWith('/blog')) {
     anotherLanguageLink = '/ru/blog'
     languageName = "Switch to russian version"
-  } else if (linkPath.includes('/ru')) {
-    anotherLanguageLink = linkPath.replace('/ru', '/')
+  } else if (linkPath.startsWith('/ru/')) {
+    anotherLanguageLink = linkPath.replace('/ru/', '/')
     languageName = "Switch to english version"
     alertAboutDraftStatus = 'Статья находится в активной разработке. Она опубликована в таком виде не для издевательства над читателем, а только потому что редактор сказал можно.'
   } else {
@@ -32,7 +32,7 @@ export default function Template ({ data, pageContext, location }) {
     alertAboutDraftStatus = 'This article is not finished and not reviewed thoroughly. If for some reason you want to continue reading, do it at your own risk, but do not forget to come back later to enjoy the final version.'
   }
   return (
-    <Layout languageName={languageName} anotherLanguageLink={anotherLanguageLink}>
+    <Layout showLikes={pageContext.showLikes} languageName={languageName} anotherLanguageLink={anotherLanguageLink}>
       {featuredImgFluid
         && (<FeaturedImage imgFluid={featuredImgFluid} />)
         || (<Banner><h1>{frontmatter.title}</h1><p dangerouslySetInnerHTML={{ __html: frontmatter.subtitle }} /></Banner>)

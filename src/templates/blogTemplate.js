@@ -16,14 +16,14 @@ export default function Template ({ data, pageContext, location }) {
   let anotherLanguageLink = ''
   let languageName = ''
   let alertAboutDraftStatus = ''
-  if (linkPath.includes('/ru/blog')) {
+  if (linkPath.startsWith('/ru/blog')) {
     anotherLanguageLink = '/blog'
     languageName = "Switch to english version"
-  } else if (linkPath.includes('/blog')) {
+  } else if (linkPath.startsWith('/blog')) {
     anotherLanguageLink = '/ru/blog'
     languageName = "Switch to russian version"
-  } else if (linkPath.includes('/ru')) {
-    anotherLanguageLink = linkPath.replace('/ru', '/')
+  } else if (linkPath.startsWith('/ru/')) {
+    anotherLanguageLink = linkPath.replace('/ru/', '/')
     languageName = "Switch to english version"
     alertAboutDraftStatus = 'Статья находится в активной разработке. Она опубликована в таком виде не для издевательства над читателем, а только потому что редактор сказал можно.'
   } else {

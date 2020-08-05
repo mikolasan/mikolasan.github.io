@@ -75,7 +75,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     createPage({
       path: node.frontmatter.path,
       component: ruBlogPostTemplate,
-      context: {}, // additional data can be passed via context
+      context: {
+        showLikes: false,
+        pagePath: node.frontmatter.path
+      }, // additional data can be passed via context
     })
   })
 
