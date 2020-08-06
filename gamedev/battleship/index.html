@@ -8,29 +8,167 @@
 
         gtag('config', 'UA-165261437-1', {"send_page_view":false});
       }
-      </script><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><title data-react-helmet="true">Nikolay Neupokoev - developer, traveler, snob</title><link data-react-helmet="true" href="https://fonts.googleapis.com/css2?family=Vollkorn+SC:wght@700&amp;family=Manrope:wght@300&amp;family=Nunito:wght@300&amp;display=swap" rel="stylesheet"/><link as="script" rel="preload" href="/webpack-runtime-3d7bc12d8115a421daed.js"/><link as="script" rel="preload" href="/framework-2394cc53f56116c7693c.js"/><link as="script" rel="preload" href="/app-719097e1628386731f92.js"/><link as="script" rel="preload" href="/styles-f12963b3798c232a68f6.js"/><link as="script" rel="preload" href="/commons-99f1197e37f42dc5602a.js"/><link as="script" rel="preload" href="/component---src-templates-blog-template-js-f6b0a6115f8d36087d08.js"/><link as="fetch" rel="preload" href="/page-data\gamedev\battleship\page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data\app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><header><div class="navigationBar-module--topnav--3KXIe"><div class=" gatsby-image-wrapper" style="position:relative;overflow:hidden;display:inline-block;width:50px;height:50px;float:left"><img aria-hidden="true" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAB8UlEQVQ4y51VO6sqQQxe35WFnYiCiI2dlWKhImgpNjaCrb/ARkGwF/wHVtYWPno7EVE7K620E/GFje+cm0Byd8+ee3DvwPBlM99+k5lkswr8Ge/3G74P9LFfvf4TV+1X2NjtdjAajWA8HsN8PtcJqze43+8wm82Ii/N8PgtXeTwe9NDtdkFRFDCbzYTtdpv8vI7k1+tF9ul0Aq/XSzyLxQKTyYT8z+fzr2C/3xcCosvlgtVqJUQcLIgR+Xw+4lmtVphOp3rBXq8nESIJ7VQqpblHttWCNpvtd0GTyUSTRev1uhz9vyNEZHHE4XAoyTAsiDMQCEAoFJLnYDAIh8NBMm9YMJPJUDkgmaMsFosiiFk2JBiJRMjXaDTkJcRWq0X+/X5vTDAWi0mp5PN58TudTlgul3C73cDj8XwuGI1G5Xi5XI58DoeDMJlMwvF4BL/f/7lgIpHQRMfFzlgqlYwJhsNhnZjb7daUEiOW2cd1iF8BYqFQoOaBG6mT9JEg78xieIeYBBxYSuznjXWCnM3BYCBCdrud7HQ6DdfrldYZm80mrSEHrwMRW5kuwk6nI8fAGY/H4XK5CFHdHLLZrIaLkYsgf/CLxQLK5TJUKhWo1Wqw3W41rUttbzYb4uGsVquwXq+lvSm/tXXeTB0d+/71C/gC7cJKRuB+H2gAAAAASUVORK5CYII=" alt="" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms"/><noscript><picture><source srcset="/static/0c9bbc873f64560523d47d95ede2d256/ef958/logo.png 1x" /><img loading="lazy" width="50" height="50" srcset="/static/0c9bbc873f64560523d47d95ede2d256/ef958/logo.png 1x" src="/static/0c9bbc873f64560523d47d95ede2d256/ef958/logo.png" alt="" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div><a class="navigationBar-module--titlelink--BgzLr" style="background-color:#211a1d;color:#f2f2f2" href="/">Nikolay Neupokoev</a><a href="/ideas/">Ideas</a><a href="/projects/">Projects</a><a href="/science/">Science</a><a href="/blog/">Blog</a><a style="float:right" href="/about/">About</a><a style="float:right" href="/cv/">CV</a></div></header><main><div class="container"><div style="min-height:350px;max-height:400px"><div class=" gatsby-image-wrapper" style="position:relative;overflow:hidden;min-height:350px;max-height:400px"><div aria-hidden="true" style="width:100%;padding-bottom:20.833333333333336%"></div><img aria-hidden="true" src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQD/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEAMQAAABpkDUH//EABgQAAMBAQAAAAAAAAAAAAAAAAECEQMh/9oACAEBAAEFApFPdFJUf//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABgQAQEAAwAAAAAAAAAAAAAAAAEAAhEx/9oACAEBAAY/AiMV7aFv/8QAGhABAAIDAQAAAAAAAAAAAAAAAQARITFRcf/aAAgBAQABPyFKxddl2BA5lRI9n//aAAwDAQACAAMAAAAQA8//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAZEAEAAwEBAAAAAAAAAAAAAAABABEhMYH/2gAIAQEAAT8QNdUqWrkuAiU7lwqIPqf/2Q==" alt="" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms"/><noscript><picture><source srcset="/static/910e5c5134a0c3d81c9491d0b6e82b37/36589/index-7.jpg 576w,
-/static/910e5c5134a0c3d81c9491d0b6e82b37/15de5/index-7.jpg 768w,
-/static/910e5c5134a0c3d81c9491d0b6e82b37/70529/index-7.jpg 922w,
-/static/910e5c5134a0c3d81c9491d0b6e82b37/1f3ff/index-7.jpg 1400w,
-/static/910e5c5134a0c3d81c9491d0b6e82b37/79c55/index-7.jpg 1920w,
-/static/910e5c5134a0c3d81c9491d0b6e82b37/6564b/index-7.jpg 2960w" sizes="(max-width: 1920px) 100vw, 1920px" /><img loading="lazy" sizes="(max-width: 1920px) 100vw, 1920px" srcset="/static/910e5c5134a0c3d81c9491d0b6e82b37/36589/index-7.jpg 576w,
-/static/910e5c5134a0c3d81c9491d0b6e82b37/15de5/index-7.jpg 768w,
-/static/910e5c5134a0c3d81c9491d0b6e82b37/70529/index-7.jpg 922w,
-/static/910e5c5134a0c3d81c9491d0b6e82b37/1f3ff/index-7.jpg 1400w,
-/static/910e5c5134a0c3d81c9491d0b6e82b37/79c55/index-7.jpg 1920w,
-/static/910e5c5134a0c3d81c9491d0b6e82b37/6564b/index-7.jpg 2960w" src="/static/910e5c5134a0c3d81c9491d0b6e82b37/79c55/index-7.jpg" alt="" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div></div><div class="container-text"><div class="featured-area"><div class="featured-text"><h1>Bato yo slaget</h1><p></p></div></div></div></div><section><p class="blogTemplate-module--postedon--26LgD">April 06, 2020</p><div><h2>Идея</h2>
+      </script><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><title data-react-helmet="true">Nikolay Neupokoev - developer, traveler, snob</title><link data-react-helmet="true" href="https://fonts.googleapis.com/css2?family=Vollkorn+SC:wght@700&amp;family=Manrope:wght@300&amp;family=Nunito:wght@300&amp;display=swap" rel="stylesheet"/><link as="script" rel="preload" href="/webpack-runtime-4c89ff6c81ed892ef3eb.js"/><link as="script" rel="preload" href="/framework-2394cc53f56116c7693c.js"/><link as="script" rel="preload" href="/app-719097e1628386731f92.js"/><link as="script" rel="preload" href="/styles-f12963b3798c232a68f6.js"/><link as="script" rel="preload" href="/commons-99f1197e37f42dc5602a.js"/><link as="script" rel="preload" href="/component---src-templates-blog-template-js-a43cf23d80e04dc78674.js"/><link as="fetch" rel="preload" href="/page-data\gamedev\battleship\page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data\app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><header><div class="navigationBar-module--topnav--3KXIe"><div class=" gatsby-image-wrapper" style="position:relative;overflow:hidden;display:inline-block;width:50px;height:50px;float:left"><img aria-hidden="true" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAB8UlEQVQ4y51VO6sqQQxe35WFnYiCiI2dlWKhImgpNjaCrb/ARkGwF/wHVtYWPno7EVE7K620E/GFje+cm0Byd8+ee3DvwPBlM99+k5lkswr8Ge/3G74P9LFfvf4TV+1X2NjtdjAajWA8HsN8PtcJqze43+8wm82Ii/N8PgtXeTwe9NDtdkFRFDCbzYTtdpv8vI7k1+tF9ul0Aq/XSzyLxQKTyYT8z+fzr2C/3xcCosvlgtVqJUQcLIgR+Xw+4lmtVphOp3rBXq8nESIJ7VQqpblHttWCNpvtd0GTyUSTRev1uhz9vyNEZHHE4XAoyTAsiDMQCEAoFJLnYDAIh8NBMm9YMJPJUDkgmaMsFosiiFk2JBiJRMjXaDTkJcRWq0X+/X5vTDAWi0mp5PN58TudTlgul3C73cDj8XwuGI1G5Xi5XI58DoeDMJlMwvF4BL/f/7lgIpHQRMfFzlgqlYwJhsNhnZjb7daUEiOW2cd1iF8BYqFQoOaBG6mT9JEg78xieIeYBBxYSuznjXWCnM3BYCBCdrud7HQ6DdfrldYZm80mrSEHrwMRW5kuwk6nI8fAGY/H4XK5CFHdHLLZrIaLkYsgf/CLxQLK5TJUKhWo1Wqw3W41rUttbzYb4uGsVquwXq+lvSm/tXXeTB0d+/71C/gC7cJKRuB+H2gAAAAASUVORK5CYII=" alt="" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms"/><noscript><picture><source srcset="/static/0c9bbc873f64560523d47d95ede2d256/ef958/logo.png 1x" /><img loading="lazy" width="50" height="50" srcset="/static/0c9bbc873f64560523d47d95ede2d256/ef958/logo.png 1x" src="/static/0c9bbc873f64560523d47d95ede2d256/ef958/logo.png" alt="" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div><a class="navigationBar-module--titlelink--BgzLr" style="background-color:#211a1d;color:#f2f2f2" href="/">Nikolay Neupokoev</a><a href="/ideas/">Ideas</a><a href="/projects/">Projects</a><a href="/science/">Science</a><a href="/blog/">Blog</a><a style="float:right" href="/about/">About</a><a style="float:right" href="/cv/">CV</a></div></header><main><div style="min-height:300px;max-height:400px"><div class=" gatsby-image-wrapper" style="position:relative;overflow:hidden;min-height:300px;max-height:400px"><div aria-hidden="true" style="width:100%;padding-bottom:28.645833333333336%"></div><img aria-hidden="true" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAIAAAE78hlcAAAACXBIWXMAAAPoAAAD6AG1e1JrAAAAsklEQVQY04VQWw7CIBDkOLYFFpaFlpcx3v9QDkUTUz9MNmTIPHZA1SoputajAjoOVjHQGCG73pI4VYrYbXFmg8zb7c2zM8IW4KM/LThbi72nwPbxzKTXkYqEfDDpBQoQ7DT2IO3HLcMtYVhrBfimA4HAVk96FCENtZorpxUDB0rNXlA7swZvsIsA2AIgfj7smn0doX5PMGBmNK6lBJwI+m8uVc4KowX+bN996wlfmHMA+wKwp0flhQEVQAAAAABJRU5ErkJggg==" alt="" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms"/><noscript><picture><source srcset="/static/0d51580afb4ac18884eaab730db3830d/e3208/battleship_last_step.png 576w,
+/static/0d51580afb4ac18884eaab730db3830d/c8289/battleship_last_step.png 762w" sizes="(max-width: 762px) 100vw, 762px" /><img loading="lazy" sizes="(max-width: 762px) 100vw, 762px" srcset="/static/0d51580afb4ac18884eaab730db3830d/e3208/battleship_last_step.png 576w,
+/static/0d51580afb4ac18884eaab730db3830d/c8289/battleship_last_step.png 762w" src="/static/0d51580afb4ac18884eaab730db3830d/c8289/battleship_last_step.png" alt="" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div></div><section><h1>Bato yo slaget</h1><p class="blogTemplate-module--postedon--26LgD">April 06, 2020</p><div><p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 762px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/c2b77e254814940fa2b1283b9eecb72a/a016c/battleship_main_menu.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 90.99999999999999%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAIAAADUsmlHAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABg0lEQVQ4y2MIiklLzi1PyimLTM7FRFEpeZiC0an5MemF0akFDJ71Gz3qN3sCUcMWLAhTvB6GGjYzeIGkt3k2bCUDQTRvpZ7m+q0e9VtQUB2IBIoT1uzVuNW3dYdv204fMAlBPi3bvZu34dXcuNW9enP4wiOph8/EbNqTuPtY0p5j8dsOxGzam37sfMq+C/g0ezVuc67clL3ixIybt3pPn5t46cqEC5f7z17oPX1+5u3b3WdvQjyFXbN34zb7yo3ta85cun1736mzp6/dOHbpyrGLVw6du3jn2fP9l+4BfeSBX3Pr6tMX7tw9dPHKsas3jly6evTytSOXr529dWc3UHMDIc0tq0+fv33n4IUrR6/cOHH91tEr1w9fugrSfBG/5qZtdhUbO9edvfHw3uGz585cv3735cv7b97ce/368bu3h6/dx+dsoJxr7Zb4CXvrlx2vXHi4dulxOKpfdqJk/hEC8QzU71K7GWi/feUmIImMHCo3EZFIwJ7HREBzaZ226aMZAG8LQLXLVa7UAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Main menu"
+        title="Main menu"
+        src="/static/c2b77e254814940fa2b1283b9eecb72a/a016c/battleship_main_menu.png"
+        srcset="/static/c2b77e254814940fa2b1283b9eecb72a/772e8/battleship_main_menu.png 200w,
+/static/c2b77e254814940fa2b1283b9eecb72a/e17e5/battleship_main_menu.png 400w,
+/static/c2b77e254814940fa2b1283b9eecb72a/a016c/battleship_main_menu.png 762w"
+        sizes="(max-width: 762px) 100vw, 762px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<h2>Идея</h2>
 <p>Сначала появляется идея. Например, “я хочу сделать свою игру, нарисовать свой арт, написать музыку, за основу взять очень знакомую концепцию, но добавить туда оригинальных элементов”. Морской бой с дополнительными бонусными элементами, разведкой на вражеской территории и изменение позиций кораблей во время игры. Это уже звучит как много работы по проработке этих деталей еще на стадии прототипа. Но идея на этом не заканчивается. Это игра в стиле стимпанк с пиксель-арт графикой и аутентичной музыкой. Не побоюсь того, что в игре должна быть кампания с сюжетом.</p>
 <p>Эта идея основывается на моем заключении, что тема стимпанка имеет свою привлекательную нишу; в интернете можно найти много концептуального арта, и на рынке не хватает только классических игр в этом направлении.</p>
 <p>Это заключение меня подвело, когда я начал собирать графику <a href="https://www.pinterest.com/nenikolay/game-design/battleship/">на Пинтересте</a> - хорошего арта очень мало. А пиксельного - тотальный ноль.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 762px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/eb9d4a616410409f1e0da1f070c54b36/a016c/battleship_positioning.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 90.99999999999999%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAIAAADUsmlHAAAACXBIWXMAAA7DAAAOwwHHb6hkAAACyElEQVQ4y42T20/TUBzH9/+Y+KD8AZoY2EVgDJFt3bxt62Vbu+7S3WdX4EETRuQ2sgsdGB8MCbC2a9eJexjBbcIeRCITQeOrMT6QmGjii6cZSCQiJJ/88jsn/Zzfybc5qkEr7CBCNjwI2XGzzd2pCna3yYYbH7jvIF6znQD9HyCHx4J4IQepuje+7Exz8JNlLM1jsxyoyHQRnSliaa5vpKimSzpG1CRLJ9DHJAUVPCMEFl8QWdFXqHgLsm+hQuYlcr4MlvoxXk0D80xUjinetyDjGYFky8AhWZnIiZ6cCJb60fNkeJr3L1bwbAmMBaa3UCHyEp4ve9hK35jQTUs9ySPUSem0bJ8skqzkmuM8eVGZmZc8GY7KFkN53ji2ok9ygwxnYJTan+T+IXvZsnuOB5o3V0LYKpt61PbfeB3Qbfq1O6HehlfzitS2yO61yF1dUlCfhPf3tX2siDytPX+c+EVc+kZ2ffd1/fB3HZJXDsmrP8nL76mb2hG5h6moGVk9Ip/IxJEsuReqU5nMZhqvz/nqaYVmlmpkqVYuwE/H+6l8HzUPai9VAMNV9yeKeFZCZzhXRlSY5V3chvPNrr3WsNUaSL1Ftj+S7U+e/c+u9U0zEjTDQQimhuCohhZUWhrEIGhoXkvzOka4Hl6NLTXlg32+/UFo73HtPWHvAFD78nWp9daMRkxoGEJDQ0iiI4MMlOhA1TLStSgff9Z4ufVO2NiWmztyrVGtb1Xrreb2Lre2bnFGIWfE6gwPYw+P5FM/QDmLKWtHZU1i1eyMga8hZ9SIhExIWJGxqAUL30bPkDW02EOXwBHq2LIRiUDgnljEdFG5AyNp4ivDcLijGeEQADQAENstOH6+bEJjFiwCBoKoAMeTIxeabEZCVpSyYkEIoQCgsaBBKxoYRqL/lcEzSBT1xISBSBk8EwNEakBpUgZlZ7yfmARP+jenuynrE8fhdQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Positioning"
+        title="Positioning"
+        src="/static/eb9d4a616410409f1e0da1f070c54b36/a016c/battleship_positioning.png"
+        srcset="/static/eb9d4a616410409f1e0da1f070c54b36/772e8/battleship_positioning.png 200w,
+/static/eb9d4a616410409f1e0da1f070c54b36/e17e5/battleship_positioning.png 400w,
+/static/eb9d4a616410409f1e0da1f070c54b36/a016c/battleship_positioning.png 762w"
+        sizes="(max-width: 762px) 100vw, 762px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
 <h2>Под капотом</h2>
 <p>Первая игра с питоновскими классами. Да, это игра, но я играл именно с классами. Идея была в том, чтобы сделать такую иерархию, чтобы отделить логику и сделать не зависящим от нее отображение объектов. Текстовый рендер, 2д рендер, 3д рендер (3д на питоне - это шутка).</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 800px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/4bd2eccf09a5dad201ff0f238577746a/6bfd0/battleship_console.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 92.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAIAAAAf7rriAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAArklEQVQ4y6WSWw4CIQxFSzGU9wpmH84DTYwmAs7+1yMZJ/HD+EHnphA+OOm9UKg5r2utpZT8LDm/arks8zUt15Tm8bxM42+leWoXHvcbkNGIEvplrN0WgNhqPzR99v9CxBgjWOdAiN62jQ8hgFKK4XmHfQzyJJmw816wbZMxfNuHMisilOzMIaBEJqyPZDbW8WHSmj9hbbbbm/V+9Rfm27b+YGb+kBij+kVEwzC8AejQFX2mU0i7AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Console version"
+        title="Console version"
+        src="/static/4bd2eccf09a5dad201ff0f238577746a/5a190/battleship_console.png"
+        srcset="/static/4bd2eccf09a5dad201ff0f238577746a/772e8/battleship_console.png 200w,
+/static/4bd2eccf09a5dad201ff0f238577746a/e17e5/battleship_console.png 400w,
+/static/4bd2eccf09a5dad201ff0f238577746a/5a190/battleship_console.png 800w,
+/static/4bd2eccf09a5dad201ff0f238577746a/6bfd0/battleship_console.png 1011w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
 <h2>Этимология названия</h2>
 <p><strong>bato yo</strong> - <em>морской</em> с креольского на гаити
 <strong>slaget</strong> - <em>бой</em> с норвежского и голландского </p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 762px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/92be825bcbd2f4d6b432eba00d2776aa/a016c/battleship_gameplay.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 90.99999999999999%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAIAAADUsmlHAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAC0klEQVQ4y4WSaU8aYRCA+VHtD2hSZHcVEJRjWbBy7nKD+LIHy7IHKIIKCGq1gni0tUVwYcthj6S2/dD0V3XVmsak1eTJm8kkzzuTmdHMOQO+GOmNANQbsvtCdjdhdQVQdwjzRVFvBPVG74hg/rgLT6qxGjjxJOZPaDyVi/BLxVN5Z2QFM8XpkpknZmKeaUT3RwbhAsp9gPm/IMIQVjO38IrGUThJNkehAxklWcKVmi+UYo0uaE8Sh5PZ/ADKDWH+v2i0oQJR74T2BhZpzcQJz2LpF1wt3/kR2lcelwMNJdWe5M+uvOUTbVTwLFVRn8S+/0YffzRIj8m+qgyOPhXefl0stmfi/GpN5gpvXo1/5U4/T/MyxI8ekc3UOt64WCi2DWEuXD/zlFprne9rnSvb6nCKuzew+ww1/np/sdgK7/TDu3Jgq2MEpZnEik3Yi1Re20uXU9kxwk9g4RISJ9cId4iTaxlvKFvKTyTI6hN5cPIlst0lKmfe9VO8fj6b72vFtlZsQtS+ATRVjOmbFxzowaFaXOPelJebE6mpSK0hcTBOZ47QWfDUGV8oHpvFntuSjCXEeLlh86TQAMDwtAMnMRxYAgycUzRIrg/lBsb82CCps1EQVoao8+d0B+IGCNtzO0BkqRAt79h8AMUpB0Hb/Ne+hcjeyoravboS3c1WIGEEC2NEGEMq2Z6J5sxpej6SxghaxRmiueqxf1myBFj1yP7I/0D9JdNDg4yFYq1U1sSw1gSDERRerq0cdU20pLb2gDxGmK4llrEBJq2NL+KUmWRdfsrKcKxbtHJFSHio8himz/VY0JDL2nPiNEnOJWhrhGa3T4U5jt/uIdLoQTnTtUdZcuew2JYX2JW5ZcZGZ4P5CmsgzZT4SGUd3fFQ+VVpb81XBOu7s6mUHweFjVYqyM2QzIOyetVZWZ+qmGNlzFuaBhsGsAkLNV22AvNVOFNXj+Q3WDAK1hw8Yf4AAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Gameplay"
+        title="Gameplay"
+        src="/static/92be825bcbd2f4d6b432eba00d2776aa/a016c/battleship_gameplay.png"
+        srcset="/static/92be825bcbd2f4d6b432eba00d2776aa/772e8/battleship_gameplay.png 200w,
+/static/92be825bcbd2f4d6b432eba00d2776aa/e17e5/battleship_gameplay.png 400w,
+/static/92be825bcbd2f4d6b432eba00d2776aa/a016c/battleship_gameplay.png 762w"
+        sizes="(max-width: 762px) 100vw, 762px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
 <h2>Оригинальные элементы</h2>
 <p>Фишка номер 1: <a href="http://boardgamegeek.com/thread/605234/bravo-battleship">не квадратное поле</a>. Если делать что-то непохожее и крутое, то на <a href="http://www.redblobgames.com/grids/hexagons">гексах</a>! А если серьезно, то на гексах удобнее разворачиваться, брать радиусы.</p>
 <p>Бонусный выстрел. Сам выстрел работает как обычно, но кроме этого в радиусе одной клетки помечает с вероятностью 50/50 наличие корабля. т.е. не факт, что покажет. может повести по ложному следу. может показать несколько точек и только одна будет истинной.</p>
 <p>Восстановление тумана. Восстанавливать по одной не вижу, чтобы выглядело уместно. Произвольные клетки. Числом около 5-10. Клетки с подбитыми кораблями тоже считаются. Имеет смысл только, если корабли могут двигаться.</p>
 <p>Можно открыть одну пустую клетку на своем поле взамен на дополнительный выстрел.</p>
 <p>Противоракетная оборона. Ход противника можно отбить/остановить уже после того как известно место атаки. Поле остается не открытым.</p>
-<p>Разведка. Можно заранее узнать что находится в нужной клетке. Если это клетка не пустая то есть шанс 50/50, что субмарина (однопалубный) будет рассекречен.</p></div></section><section><hr/><h2>Page rating</h2><p>Voted as 🤯🤪😕🥱 <!-- -->0</p><h3>Cast your vote</h3><ul><li>🤯 <!-- -->0<!-- -->  <button>+1</button></li><li>🤪 <!-- -->0<!-- -->  <button>+1</button></li><li>😕 <!-- -->0<!-- -->  <button>+1</button></li><li>🥱 <!-- -->0<!-- -->  <button>+1</button></li></ul></section></main><footer><div class="bottomnav"><a style="margin-bottom:0.5em;text-decoration:underline" href="/ru/gamedev/battleship">Switch to russian version</a><div class="bottomsmallabout"><h2>About</h2><p>I am a future artist. I spend a lot of time with C++, but there is not much of intelligible. So I will become an artist, I promise. #irony</p></div><div class="bottommenu"><h2>Menu</h2><a href="/ideas/">Ideas</a><a href="/projects/">Projects</a><a href="/science/">Science</a><a href="/blog/">Blog</a><a href="/cv/">CV</a></div><div class="bottomxsocial"><h2>Social</h2><a href="https://github.com/mikolasan">GitHub</a><a href="https://www.linkedin.com/in/nikolay-neupokoev-29150065/">LinkedIn</a><a href="https://www.pinterest.com/nenikolay/">Pinterest</a><a href="https://twitter.com/mikolasan">Twitter</a></div></div><div class="copyright"><p>This web site uses Google Analytics. It collects and processes data. <a href="https://policies.google.com/technologies/partner-sites">How Google uses information from sites</a></p><p>Built with<!-- --> <a href="https://www.gatsbyjs.org">Gatsby</a>. Last build: <!-- -->Wednesday, August 5, 2020</p><p>Copyright © <!-- -->2020<!-- --> Nikolay Neupokoev. Some rights reserved.</p></div></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/gamedev/battleship";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-719097e1628386731f92.js"],"component---src-pages-404-js":["/component---src-pages-404-js-08cfc901752ca26e5914.js"],"component---src-pages-creative-ideas-js":["/component---src-pages-creative-ideas-js-59fc6996f6a1f3f34551.js"],"component---src-pages-ideas-js":["/component---src-pages-ideas-js-5ac7da44e3cfa18df08d.js"],"component---src-pages-index-js":["/component---src-pages-index-js-18f12ef07a27351fd2bc.js"],"component---src-pages-lucky-idea-generator-js":["/component---src-pages-lucky-idea-generator-js-d2ae9453b6543afe2615.js"],"component---src-pages-one-page-navigation-js":["/component---src-pages-one-page-navigation-js-8542572f373299c0eea9.js"],"component---src-pages-projects-calm-place-js":["/component---src-pages-projects-calm-place-js-218b017449cbe1aecf76.js"],"component---src-pages-ru-ideas-js":["/component---src-pages-ru-ideas-js-1b20f84a66bbb6db3e55.js"],"component---src-pages-ru-index-js":["/component---src-pages-ru-index-js-26bfc24aa272fdbeb288.js"],"component---src-templates-blog-list-template-js":["/component---src-templates-blog-list-template-js-a67fbd0eea872db2c0e8.js"],"component---src-templates-blog-template-js":["/component---src-templates-blog-template-js-f6b0a6115f8d36087d08.js"],"component---src-templates-ru-blog-list-template-js":["/component---src-templates-ru-blog-list-template-js-d371184200e5f0b3c481.js"],"component---src-templates-ru-blog-template-js":["/component---src-templates-ru-blog-template-js-b0360fcb32699447ead6.js"]};/*]]>*/</script><script src="/component---src-templates-blog-template-js-f6b0a6115f8d36087d08.js" async=""></script><script src="/commons-99f1197e37f42dc5602a.js" async=""></script><script src="/styles-f12963b3798c232a68f6.js" async=""></script><script src="/app-719097e1628386731f92.js" async=""></script><script src="/framework-2394cc53f56116c7693c.js" async=""></script><script src="/webpack-runtime-3d7bc12d8115a421daed.js" async=""></script></body></html>
+<p>Разведка. Можно заранее узнать что находится в нужной клетке. Если это клетка не пустая то есть шанс 50/50, что субмарина (однопалубный) будет рассекречен.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 762px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/815d521fd48262be348134e948b0df39/a016c/battleship_win_message.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 90.99999999999999%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAIAAADUsmlHAAAACXBIWXMAAA7DAAAOwwHHb6hkAAADaklEQVQ4y32S608jZRTGR4yJbkww+kXjJvsBL9m4m2iMrFGXNdh2ZnoFyqZAL9CWWmhLL9S2s9POzDvTC1B6gewCBXrbFlyEbUvbmQ6Uy7LG3RijfvIPcgq7H8xG3jx5cvImv5wn5xxIrftx0hkwO3yjZtvIpG3EOHVXbxkx2sbMjtGOZl6V1uLSWT1aixsypWv2taY5/YsqRA9hlNiD9w7b7gYfuLO8itmHKRYF/5XwQzU7DpqQNlr25FrWjZrGh1sN3jE6nsq30/Vn6fpz7WIbBryMOZC+EI8C7lytiwLqnwpb7+8Gy4eTibSCAtqpUMCzlK4+9a7V5OQj8b09Cb4n+HlREQApaMqo+gUPBXJtfOuocPAnsVEV2UlrMPvVze9u9V0Rwd2fftbd+233N33db779zutvvPXutRtIJy2HXrgAY9nD4PYpuXWinyvIHEQydyq6PfRxD3T9k64vP4euXYWE19X1muBX3vsQIRso3XoZnoMMyYoaS4DS4cTCQ3g6uLDKK1WTH92+LhqEexG45+v+92/8cPUL0Qc37/T0aYSBSWnu5fA4iCweT6dKWL7ly7F4oTnuXUaNDqONchHLijkOAWeK6BN57EwmeOSJhOBEoSYCeCk46MCp3d/y7b/EFlzpjiTqz6Pbx4N0XOP2D2NBCVGCwyUx2JTg6yhd6A9lDMusfe1MSZckdLEDMw9PyfIxk22CXDOwfbKyWB1SutUDMy6qoGAemzSzbidjy2TUNo+LTi/GS9ny0Xh8fnTCL6VYSA4awtJVEV4Z5mU0KyfqCFZB71VlFCsNVQ0aj90OTJmVCfUMbluIJErrpSN9JOa6MysjmpBUOBfAIdS5hEJYIM2jDA+DlpxuEHsNZnc/vM8yzhRuX9h89vfO038SpdpPMCYlGi/gVyUc5kC4tVb51flg3bW6aSLnxkEsXTsKZLdWqyc6bwQm6/8LIzQvxypWvU/t8nm+n9abvDCF6efmx2IxTBsaBvMIzV7SmRtguGi2NggoDUkrAGnR+aOx4uLjQ0oVpFdq0nDr0tiR1lLtDF8v0+s74Z/r/o2yejZgjy2HlIEhjLm8M6ti2PzxH/FYltZR+fbv/nxRb3DEUkXvNCkP4JfBwvCVDOfMtNTupMYQNaZ3zMlHYiKJEEsoWEKD94UL/RfGpv+R1nEYBAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Win message"
+        title="Win message"
+        src="/static/815d521fd48262be348134e948b0df39/a016c/battleship_win_message.png"
+        srcset="/static/815d521fd48262be348134e948b0df39/772e8/battleship_win_message.png 200w,
+/static/815d521fd48262be348134e948b0df39/e17e5/battleship_win_message.png 400w,
+/static/815d521fd48262be348134e948b0df39/a016c/battleship_win_message.png 762w"
+        sizes="(max-width: 762px) 100vw, 762px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p></div></section><section><hr/><h2>Page rating</h2><p>Voted as 🤯🤪😕🥱 <!-- -->0</p><h3>Cast your vote</h3><ul><li>🤯 <!-- -->0<!-- -->  <button>+1</button></li><li>🤪 <!-- -->0<!-- -->  <button>+1</button></li><li>😕 <!-- -->0<!-- -->  <button>+1</button></li><li>🥱 <!-- -->0<!-- -->  <button>+1</button></li></ul></section></main><footer><div class="bottomnav"><a style="margin-bottom:0.5em;text-decoration:underline" href="/ru/gamedev/battleship">Switch to russian version</a><div class="bottomsmallabout"><h2>About</h2><p>I am a future artist. I spend a lot of time with C++, but there is not much of intelligible. So I will become an artist, I promise. #irony</p></div><div class="bottommenu"><h2>Menu</h2><a href="/ideas/">Ideas</a><a href="/projects/">Projects</a><a href="/science/">Science</a><a href="/blog/">Blog</a><a href="/cv/">CV</a></div><div class="bottomxsocial"><h2>Social</h2><a href="https://github.com/mikolasan">GitHub</a><a href="https://www.linkedin.com/in/nikolay-neupokoev-29150065/">LinkedIn</a><a href="https://www.pinterest.com/nenikolay/">Pinterest</a><a href="https://twitter.com/mikolasan">Twitter</a></div></div><div class="copyright"><p>This web site uses Google Analytics. It collects and processes data. <a href="https://policies.google.com/technologies/partner-sites">How Google uses information from sites</a></p><p>Built with<!-- --> <a href="https://www.gatsbyjs.org">Gatsby</a>. Last build: <!-- -->Thursday, August 6, 2020</p><p>Copyright © <!-- -->2020<!-- --> Nikolay Neupokoev. Some rights reserved.</p></div></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/gamedev/battleship";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-719097e1628386731f92.js"],"component---src-pages-404-js":["/component---src-pages-404-js-ee482627437e677f2f72.js"],"component---src-pages-creative-ideas-js":["/component---src-pages-creative-ideas-js-59fc6996f6a1f3f34551.js"],"component---src-pages-ideas-js":["/component---src-pages-ideas-js-663daf59d3cc72cc7231.js"],"component---src-pages-index-js":["/component---src-pages-index-js-f3b4ae5a4ddcb4c7a0d2.js"],"component---src-pages-lucky-idea-generator-js":["/component---src-pages-lucky-idea-generator-js-d2ae9453b6543afe2615.js"],"component---src-pages-one-page-navigation-js":["/component---src-pages-one-page-navigation-js-5fa73c5a25f07454a1ae.js"],"component---src-pages-projects-calm-place-js":["/component---src-pages-projects-calm-place-js-6837057cd3a2bf0affe6.js"],"component---src-pages-ru-ideas-js":["/component---src-pages-ru-ideas-js-f862f6d42e76829c2dc1.js"],"component---src-pages-ru-index-js":["/component---src-pages-ru-index-js-a6529777bccc33339af1.js"],"component---src-templates-blog-list-template-js":["/component---src-templates-blog-list-template-js-16b11eac9b15ffee581a.js"],"component---src-templates-blog-template-js":["/component---src-templates-blog-template-js-a43cf23d80e04dc78674.js"],"component---src-templates-ru-blog-list-template-js":["/component---src-templates-ru-blog-list-template-js-cd64af9f6c88455d925f.js"],"component---src-templates-ru-blog-template-js":["/component---src-templates-ru-blog-template-js-8b542a1a72e03e94facf.js"]};/*]]>*/</script><script src="/component---src-templates-blog-template-js-a43cf23d80e04dc78674.js" async=""></script><script src="/commons-99f1197e37f42dc5602a.js" async=""></script><script src="/styles-f12963b3798c232a68f6.js" async=""></script><script src="/app-719097e1628386731f92.js" async=""></script><script src="/framework-2394cc53f56116c7693c.js" async=""></script><script src="/webpack-runtime-4c89ff6c81ed892ef3eb.js" async=""></script></body></html>

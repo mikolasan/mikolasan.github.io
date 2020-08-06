@@ -32,14 +32,14 @@
 <url> <loc>https://mikolasan.github.io/blog/how-to-create-a-mutant</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/about</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/science</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://mikolasan.github.io/gamedev/battleship</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/ru/science/publications</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://mikolasan.github.io/gamedev/battleship</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/gamedev/overload-game</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/gamedev/overload-godot</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/gamedev/sudoku-16x16</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://mikolasan.github.io/projects/imperial-russia</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/projects/postcatolyptica</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/science/roadmap</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://mikolasan.github.io/projects/imperial-russia</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/gamedev</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/science/postal-digits</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/projects</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -73,8 +73,8 @@
 <url> <loc>https://mikolasan.github.io/ru/projects/woman-forecast</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/ru/projects/wikipedia-upside-down</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/ru/projects/word-clock</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://mikolasan.github.io/ru/gamedev/battleship</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/ru/projects/github</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://mikolasan.github.io/ru/gamedev/battleship</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/ru/projects/unsolved-problems</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/ru/gamedev/overload-game</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/ru/projects/pet-project-navigator</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
