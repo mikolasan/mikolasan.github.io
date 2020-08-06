@@ -6,6 +6,14 @@ tags: ["mobile", "kotlin"]
 featuredImage: imperial-russia-1.png
 ---
 
+Opened beta testing! Hurrah!
+
+<a href='https://play.google.com/store/apps/details?id=io.github.mikolasan.imperialrussia&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
+<img alt='Get it on Google Play' width='300px' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/>
+</a>
+
+<small>Google Play and the Google Play logo are trademarks of Google LLC.</small>
+
 ## Short Description
 
 Imperial Russia - Historic unit converter
