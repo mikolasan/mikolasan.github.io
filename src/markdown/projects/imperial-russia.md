@@ -3,7 +3,7 @@ path: "/projects/imperial-russia"
 date: "2020-03-26"
 title: "Imperial Russia: Historic unit converter"
 tags: ["mobile", "kotlin"]
-featuredImage: imperial-russia-1.png
+featuredImage: imperial-russia-screen.png
 ---
 
 Opened beta testing! Hurrah!

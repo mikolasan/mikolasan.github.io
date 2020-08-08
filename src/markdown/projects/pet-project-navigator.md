@@ -3,18 +3,22 @@ path: "/projects/pet-project-navigator"
 date: "2020-05-20"
 title: Pet Project Navigator
 tags: ["java", "db", "mobile"]
-featuredImage: pet-project-navigator-1.png
+featuredImage: pet-project-navigator-3.png
 ---
 
 ## Another todo list?
 
 I believe that many programmers find writing a small todo list application without advertisements appealing to them.
 
+![List of projects](./pet-project-navigator-1.png)
+
 Let's take an example of grocery shopping, where we do create lists. When I create a list with pen and paper, I know that it has many disadvantages.
 
 I can forget the list at home, right at the place where I left it with the last item written in. In contrary, I will never forget my phone.
 I cannot sort items on the paper according to the store's plan.
 Usually I do not bother to take a pen with me, thus I cannot strike out already found items, hence I have to go through the list over and over verifying items in the cart and extracting the remaining. If not removing items, then moving items to the end would provide a workaround for this problem.
+
+![List of tasks](./pet-project-navigator-2.png)
 
 It sounds like an easy task, right? But I needed something different. 
 
@@ -25,7 +29,7 @@ After a while they become dead, ideas are fading out. I save the links, but usua
 Links are not annotated, which means no one knows what is behind that link. If it is broken, then an idea or inspiration is gone.
 They are collected together, but it does not mean that they are related, or that together they can make a project. So each list does not provide an ultimate goal.
 
-
+![Creating a task](./pet-project-navigator-6.png)
 
 
 
