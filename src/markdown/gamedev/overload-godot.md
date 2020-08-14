@@ -42,4 +42,4 @@ But I continued playing with them. I shall tell you that they are ugly, just bec
 
 I said, they are crystals!
 
-[Here](https://github.com/mikolasan/overload-godot) you can convience me to change license from GPL 3 to MIT. 
+[Here](https://github.com/mikolasan/overload-godot) you can convince me to change license from GPL 3 to MIT. 

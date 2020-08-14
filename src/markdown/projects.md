@@ -25,4 +25,4 @@ title: "Projects"
 - a board game
 - a science book
 - YouTube channel
-- 
+- [word clock](/projects/word-clock)
