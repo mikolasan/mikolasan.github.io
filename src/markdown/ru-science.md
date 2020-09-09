@@ -7,12 +7,11 @@ language: "ru"
 
 **📣 Новые темы**: 
 - [Мемы](/ru/science/memes)
-- [Введение в обработку естественного языка](/ru/science/nlp-introduction) 🙀
-- [Инструменты для обработки естественного языка](/ru/science/nlp-toolkits)
-- [Запускаем MMF](/ru/science/mmf)
-- [Добавить свою модель в MMF](/ru/science/mmf/add-new-model)
-- [Распознавание лиц](/ru/science/face-recognition)
-- [Распознавание расы по фото](/ru/science/race-recognition)
+- [Введение в обработку естественного языка](/ru/science/nlp-introduction), [Инструменты для обработки естественного языка](/ru/science/nlp-toolkits)
+- [Приспосабливаем RNTN модель](/ru/science/adapt-rntn-model), [Модифицируя Стэнфордовский разбор](/ru/science/modifying-stanford-parser), [Рисуем деревья](/ru/science/visualize-sentence-parse-trees)
+- [Запускаем MMF](/ru/science/mmf), [Добавить свою модель в MMF](/ru/science/mmf/add-new-model)
+- [Распознавание лиц](/ru/science/face-recognition), [Распознавание расы по фото](/ru/science/race-recognition)
+- [Онтологии](/ru/science/ontologies)
 
 
 [Публикации](/ru/science/publications)

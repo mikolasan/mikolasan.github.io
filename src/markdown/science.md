@@ -6,6 +6,7 @@ title: "Science"
 
 ## New stuff 🔥
 
+- [New stuff in Russian](/ru/science)
 - [Cat breeds ontology](/science/cat-breeds-ontology)
 
 

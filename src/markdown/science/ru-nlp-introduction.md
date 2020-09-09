@@ -178,3 +178,8 @@ TODO
 на которые я смогу ответить?
 
 https://datascience.stackexchange.com/questions/56476/what-is-the-best-question-generation-state-of-art-with-nlp
+
+
+## Далее
+
+[Инструменты для обработки естественного языка](/ru/science/nlp-toolkits)

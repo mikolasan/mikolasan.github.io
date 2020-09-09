@@ -25,7 +25,7 @@ export default function Template ({ data, pageContext, location }) {
   } else if (linkPath.startsWith('/ru/')) {
     anotherLanguageLink = linkPath.replace('/ru/', '/')
     languageName = "Switch to english version"
-    alertAboutDraftStatus = 'Статья находится в активной разработке. Она опубликована в таком виде не для издевательства над читателем, а только потому что редактор сказал можно.'
+    alertAboutDraftStatus = 'Статья находится в активной разработке. Она опубликована в таком виде не для издевательства над читателем, а только потому что редактор сказал "можно".'
   } else {
     anotherLanguageLink = '/ru' + linkPath
     languageName = "Switch to russian version"

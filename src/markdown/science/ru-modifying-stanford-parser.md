@@ -47,11 +47,13 @@ https://sourceforge.net/projects/grammarscope/
 
 **Заметка**. Если у вас уже установлен Android Studio, то у вас есть 3 вещи, которые не нужно устанавливать отдельно
 
-- java - C:\Program Files\Android\Android Studio\jre\bin
-- gradle - C:\Users\<user name>\.gradle\wrapper\dists\gradle-6.3-bin\8tpu6egwsccjzp10c1jckl0rx\gradle-6.3\bin
-- adb - C:\Users\<user name>\AppData\Local\Android\Sdk\platform-tools
+- java - `C:\Program Files\Android\Android Studio\jre\bin`
+- gradle - `C:\Users\<user name>\.gradle\wrapper\dists\gradle-6.3-bin\8tpu6egwsccjzp10c1jckl0rx\gradle-6.3\bin`
+- adb - `C:\Users\<user name>\AppData\Local\Android\Sdk\platform-tools`
 
+```
 C:\Program Files\Android\Android Studio\jre\bin>C:\Users\neupo\develop\ai\memes\grammarscope\bin\grammarscope.bat -corenlp
+```
 
 ### RNTN в действии
 

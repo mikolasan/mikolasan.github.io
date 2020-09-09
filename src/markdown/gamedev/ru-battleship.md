@@ -1,10 +1,12 @@
 ---
 path: "/ru/gamedev/battleship"
 date: "2020-04-06"
-title: Бато йо слагет
+title: Морской бой
 featuredImage: battleship_last_step.png
 language: "ru"
 ---
+
+Бато йо слагет!
 
 ![Main menu](./battleship_main_menu.png)
 
@@ -26,8 +28,10 @@ language: "ru"
 
 ## Этимология названия
 
-**bato yo** - _морской_ с креольского на гаити
-**slaget** - _бой_ с норвежского и голландского 
+Бато йо слагет
+
+- **bato yo** - _морской_ с креольского на гаити
+- **slaget** - _бой_ с норвежского и голландского 
 
 ![Gameplay](./battleship_gameplay.png)
 

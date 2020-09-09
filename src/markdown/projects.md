@@ -13,16 +13,16 @@ title: "Projects"
 
 ## Game development
 
-- [Sudoku 16x16 (Godot 3.1)](/gamedev/sudoku-16x16)
-- [In translation...] [Battleship (Python)](/gamedev/battleship)
 - [Roguelike (PyGame)](/gamedev/pyroguelike)
+- [In translation...] [Battleship (Python)](/gamedev/battleship)
 - [In translation...] [Overload (C++)](/gamedev/overload-game)
 - [Overload (Godot 3.1)](/gamedev/overload-godot)
+- [Sudoku 16x16 (Godot 3.1)](/gamedev/sudoku-16x16)
 
 
 ## Other aspects of life
 
-- a board game
-- a science book
+- board game
+- science book
 - YouTube channel
 - [word clock](/projects/word-clock)
