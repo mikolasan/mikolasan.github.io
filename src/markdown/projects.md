@@ -4,6 +4,8 @@ date: "2019-10-23"
 title: "Projects"
 ---
 
+[Why am I doing this?](/projects/why-am-i-doing-this)
+
 ## Software development
 
 - [Imperial Russia](/projects/imperial-russia) - Historic unit converter

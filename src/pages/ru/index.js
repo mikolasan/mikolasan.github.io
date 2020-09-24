@@ -64,6 +64,8 @@ export default ({ data }) => (
         
       </div>
 
+      Думаю о своем бизнесе <a href="/ru/plan">здесь</a>.
+
       </div>
     </section>
   </Layout>

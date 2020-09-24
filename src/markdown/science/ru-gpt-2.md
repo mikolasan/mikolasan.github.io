@@ -378,9 +378,18 @@ https://github.com/openai/gpt-2/issues/213
 python src/interactive_conditional_samples.py --model_name=345M --nsamples=10 --batch-size=1 --length=200 --top_k=40
 ```
 
-А теперь обучим нашу собственную 
+- использовать tf.Variable, чтобы удалить tf.Session, tf.while_loop, tf.get_variable (не так просто найти руководство по TensorFlow 2, где не используется Keras https://becominghuman.ai/image-classification-with-tensorflow-2-0-without-keras-e6534adddab2)
+- использовать tf.train.Checkpoint вместо tf.train.Saver
+
+https://www.tensorflow.org/guide/checkpoint#loading_mechanics
+https://www.tensorflow.org/api_docs/python/tf/train/Checkpoint
+https://www.tensorflow.org/api_docs/python/tf/compat/v1/train/Saver
+https://www.tensorflow.org/guide/variable?hl=en#lifecycles_naming_and_watching
+
 
 ## Обучаем новому
+
+А теперь обучим нашу собственную 
 
 https://medium.com/@ngwaifoong92/beginners-guide-to-retrain-gpt-2-117m-to-generate-custom-text-content-8bb5363d8b7f
 
@@ -423,5 +432,6 @@ To store everything you need to remove this line (or replace it with var_list=No
 - https://huggingface.co/gpt2 - открытая реализация теми, кто только и занимается, что обработкой естественного языка
 - их гитхаб https://github.com/huggingface/transformers#Quick-tour-TF-20-training-and-PyTorch-interoperability
 - статья о том как они запилили GPT-2 у себя и как с ним работать https://medium.com/huggingface/how-to-build-a-state-of-the-art-conversational-ai-with-transfer-learning-2d818ac26313
-- о трансформерах в целом https://jalammar.github.io/illustrated-transformer/
+- о трансформерах в целом https://jalammar.github.io/illustrated-transformer/ (не забудьте заглянуть на огонек в еще один научный бложек за заметкой о кросс энтропии https://colah.github.io/posts/2015-09-Visual-Information/ и https://www.countbayesie.com/blog/2017/5/9/kullback-leibler-divergence-explained)
 - о Роберте https://arxiv.org/pdf/1907.11692.pdf
+- отображать зависимость между текущим словом и следующим (визуализация "внимания") https://github.com/tensorflow/tensor2tensor/blob/master/tensor2tensor/visualization/attention.js

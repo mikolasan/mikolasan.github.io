@@ -24,3 +24,4 @@ language: "ru"
 ## Остальное
 
 - [Время словами на часах](/ru/projects/word-clock)
+- [Ютюб канал](/ru/youtube)
