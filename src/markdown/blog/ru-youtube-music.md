@@ -5,6 +5,6 @@ title: "Бесплатная музыка для YouTube"
 language: "ru"
 ---
 
-- https://www.bensound.com все этим пользуются. каждый звук напоминает о чьем-то видео.
+- https://www.bensound.com все этим пользуются. каждый звук напоминает о чьем-то видео. бесплатно, но неоригинально.
 - https://mixkit.co/free-stock-music/ambient/ - еще одна очень маленькая подборка
-- https://freemusicarchive.org/static нужно просматривать лицензию к каждой песне. https://freemusicarchive.org/genre/Ambient?sort=track_date_published&d=1&page=3
+- https://freemusicarchive.org/static нужно просматривать лицензию к каждой песне. но треков очень много. можно найти очень хорошие.

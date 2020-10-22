@@ -30,7 +30,7 @@ integration.
 _Feb 2018 – present_
 
 - Responsible for analyzing business requirements in all company’s projects and define technical project specifications. Design system architecture.
-- Designed mathematical models for Class III games which were certified in the test laboratory as GLI-11 compliant.
+- [Designed mathematical models](/slot-mathematician/ideas) for Class III games which were certified in the test laboratory as GLI-11 compliant.
 - Led development of server-based system with unique bingo rules imitating gameplay and frequencies of RNG casino games.
 - Architected a database for pull-tab machines compatible among different type of games.
 - Coordinated the development. Introduced into practice TDD by adding unit and integration tests to a legacy project before implementing new features and refactoring.
@@ -54,7 +54,7 @@ _Oct 2015 – Feb 2018_
 
 _Oct 2012 – Oct 2015_
 
-- Developed and released casino games for many companies in Russia, USA, Malaysia, Mexico, Argentina.
+- Developed and released [casino games](/lucky-idea-generator) for many companies in Russia, USA, Malaysia, Mexico, Argentina.
 - Provided remote installation support of company’s embedded system based on Linux.
 - Designed and coded simulation program for all new and modified games in C.
 - Preparing PAR sheets in Excel and TeX

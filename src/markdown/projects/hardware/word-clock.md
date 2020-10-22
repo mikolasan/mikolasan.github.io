@@ -1,34 +1,30 @@
 ---
 path: "/projects/word-clock"
 date: "2020-05-16"
-title: "[In translation...] Word clock"
+title: "Word clock"
 tags: ["hardware", "embedded", "laser cut"]
 ---
 
-Следуя руководству из журнала Make сделал часы, которые показывают время словами. 
+I followed instructions from Make magazine (Volume 67) and made word clock.
 
-Приблизительно [так](https://repl.it/@stakanmartini/WordClock#main.cpp) можно прикинуть расположение слов в квадрате.
+I also started a [code project](https://repl.it/@stakanmartini/WordClock#main.cpp) discovering ways to combine words into a grid.
 
-![Нарезаный акрил](./word-clock-1.jpg)
+![Acryl is ready](./word-clock-1.jpg)
 
-## Небольшой флэшбэк
+## Why
 
-Когда я был маленький мне нравился журнал Левша. В каждом номере там были подготовлены цветные листы, которые нужно было вырезать и склеивать. Каких моделей там только не было. Корабли, машины, танки, башни средневекового замка, Храм Христа Спасителя. Остальные советы и статьи проходили мимо. Помню из проволоки можно было сделать составной перстень, но отец сказал, что это глупости, что мне такое кольцо не нужно. Поэтому никаких инструментов и материалов я на это не получил.
+It will stay on the table and will show time when I need to head out of the office.
 
-В современном мире есть журнал Make, в котором рассказывают про дронов, 3D принтеры и микроконтроллеры. Они описывают разные проекты для дома, интересные механизмы.
+## Process
 
-В одном выпуске (Volume 67) у них были настольные часы. Здесь собралось вместе все, что я хотел попробовать: работа со светодиодной панелью, полезный проект на атмега, резка лазером акриловых панелей, часы для работы, чтобы уходить во время домой.
+Ordered laser cut, bought screws and adafruit boards.
 
-## Процесс
+![Peel it](./word-clock-2.jpg)
 
-Заказал резку оргстекла на лазерном ЧПУ. Купил болтиков и пару микросхем.
+How do you call screen that does not display time with digits, but tells it with words?
 
-![Еще не распакованный буквоблат](./word-clock-2.jpg)
+![The case](./word-clock-3.jpg)
 
-Если циферблат - это экран с цифрами, или точнее с числами от 1 до 12, то какое должно быть название для экрана с буквами, словами?
+## Result
 
-![Корпус собран](./word-clock-3.jpg)
-
-## Результат
-
-Часы работают, нужно только фото, видео запилить.
+The clock is working. I will edit video of the process.

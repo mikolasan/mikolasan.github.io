@@ -59,6 +59,7 @@ const Layout = ({ children, showLikes, languageName, anotherLanguageLink }) => (
               <a href="https://www.linkedin.com/in/nikolay-neupokoev-29150065/">LinkedIn</a>
               <a href="https://www.pinterest.com/nenikolay/">Pinterest</a>
               <a href="https://twitter.com/mikolasan">Twitter</a>
+              <a href="https://www.youtube.com/channel/UC7JDwFPt-Wu_rMB4-g-ePug">YouTube</a>
             </div>
           </div>
           <div class="copyright">

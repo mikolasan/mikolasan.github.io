@@ -54,6 +54,7 @@ const RuLayout = ({ children, showLikes, languageName, anotherLanguageLink }) =>
               <a href="https://www.linkedin.com/in/nikolay-neupokoev-29150065/">LinkedIn</a>
               <a href="https://www.pinterest.com/nenikolay/">Pinterest</a>
               <a href="https://twitter.com/stakanmartini">Twitter</a>
+              <a href="https://www.youtube.com/user/stakanmartini">YouTube</a>
             </div>
           </div>
           <div className="copyright">
