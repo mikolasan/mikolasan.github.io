@@ -1,0 +1,40 @@
+.blogcards {
+  align-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.blogcard {
+  flex: 30%;
+  padding-right: 2em;
+  margin-bottom: 2em;
+}
+
+.blogdate {
+  color: #595959;
+  font-size: 90%;
+}
+
+.blognavigation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
+
+@media screen and (max-width: 870px) {
+  .blogcard {
+    flex: 50%;
+    display: block;
+
+  }
+}
+
+@media screen and (max-width: 675px) {
+  .blogcard {
+    flex: 100%;
+    display: block;
+  }
+}

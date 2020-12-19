@@ -5,6 +5,12 @@ title: "Бесплатная музыка для YouTube"
 language: "ru"
 ---
 
-- https://www.bensound.com все этим пользуются. каждый звук напоминает о чьем-то видео. бесплатно, но неоригинально.
-- https://mixkit.co/free-stock-music/ambient/ - еще одна очень маленькая подборка
-- https://freemusicarchive.org/static нужно просматривать лицензию к каждой песне. но треков очень много. можно найти очень хорошие.
+- [NCS](https://ncs.io/music-search?q=&genre=&mood=&version=instrumental) - NoCopyrightSounds
+- [Free Music Archive](https://freemusicarchive.org/search?adv=1&music-filter-CC-attribution-only=1&music-filter-CC-attribution-sharealike=1&music-filter-public-domain=1&music-filter-remix-allowed=1) нужно просматривать лицензию к каждой песне. но треков очень много. можно найти очень хорошие.
+- [mixkit](https://mixkit.co/free-stock-music/) - еще одна очень маленькая подборка
+- [bensound](https://www.bensound.com) все этим пользуются. каждый звук напоминает о чьем-то видео. бесплатно, но неоригинально.
+
+
+## Не бесплатная (на всякий отчаянный случай)
+
+- [Epidemic Sound](https://www.epidemicsound.com/personal-subscription/)

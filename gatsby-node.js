@@ -107,7 +107,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
   // Create blog-list pages
   const posts = blogResult.data.allMarkdownRemark.edges
-  const postsPerPage = 5
+  const postsPerPage = 6
   const numPosts = posts.length
   const numPages = Math.ceil(numPosts / (postsPerPage + 1))
   Array.from({ length: numPages }).forEach((_, i) => {
@@ -148,7 +148,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
   // Create blog-list pages
   const ruPosts = ruBlogResult.data.allMarkdownRemark.edges
-  const ruPostsPerPage = 5
+  const ruPostsPerPage = 6
   const ruNumPosts = ruPosts.length
   const ruNumPages = Math.ceil(ruNumPosts / (ruPostsPerPage + 1))
   Array.from({ length: ruNumPages }).forEach((_, i) => {

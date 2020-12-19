@@ -1,9 +1,8 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import { Breadcrumb } from 'gatsby-plugin-breadcrumb'
 import Layout from "../components/layout"
 import Banner from "../components/banner"
-import styles from "./blogTemplate.module.css"
+import styles from "./blogListTemplate.module.css"
 
 class BlogIndex extends React.Component {
   render() {
@@ -28,30 +27,22 @@ class BlogIndex extends React.Component {
           <p>some text here...</p>
         </Banner>
         <section>
-          <h4>{data.allMarkdownRemark.totalCount} posts</h4>
-          {posts.map(({ node }) => (
-            <div key={node.id}>
-              <h3>
-                {node.frontmatter.title}
-              </h3>
-              <span>
-                {node.frontmatter.date}
-              </span>
-              <p>{node.excerpt}{" "}
-              <Link to={node.frontmatter.path}>Read more...</Link>
-              </p>
-            </div>
-          ))}
-          <ul
-            style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              listStyle: 'none',
-              padding: 0,
-            }}
-          >
+          <div className={styles.blogcards}>
+            {posts.map(({ node }) => (
+              <div key={node.id} className={styles.blogcard}>
+                <h3>
+                  {node.frontmatter.title}
+                </h3>
+                <p className={styles.blogdate}>
+                  {new Date(Date.parse(node.frontmatter.date)).toLocaleDateString("en-US", {dateStyle:"full"})}
+                </p>
+                <p>{node.excerpt}{" "}
+                  <Link to={node.frontmatter.path}>Read more...</Link>
+                </p>
+              </div>
+            ))}
+          </div>
+          <ul className={styles.blognavigation}>
             {!isFirst && (
               <Link to={`/blog/${prevPage}`} rel="prev">
                 ← Previous Page
@@ -106,7 +97,7 @@ export const query = graphql`
           frontmatter {
             title
             path
-            date(formatString: "DD MMMM, YYYY")
+            date
           }
           excerpt
         }

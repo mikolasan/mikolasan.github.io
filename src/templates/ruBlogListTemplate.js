@@ -1,10 +1,8 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import { Breadcrumb } from 'gatsby-plugin-breadcrumb'
 import Layout from "../components/ruLayout"
 import Banner from "../components/banner"
-import FeaturedImage from "../components/featuredImage"
-import styles from "./blogTemplate.module.css"
+import styles from "./blogListTemplate.module.css"
 
 class BlogIndex extends React.Component {
   render() {
@@ -19,7 +17,7 @@ class BlogIndex extends React.Component {
     const languageName = "Switch to english version"
     const isFirst = currentPage === 1
     const isLast = currentPage === numPages
-    const prevPage = currentPage - 1 === 1 ? '/' : (currentPage - 1).toString()
+    const prevPage = currentPage - 1 === 1 ? "" : (currentPage - 1).toString()
     const nextPage = (currentPage + 1).toString()
     const onePage = isFirst && isLast
     return (
@@ -29,32 +27,24 @@ class BlogIndex extends React.Component {
           <p>бложик...</p>
         </Banner>
         <section>
-          <h4>{data.allMarkdownRemark.totalCount} заметок</h4>
-          {posts.map(({ node }) => (
-            <div key={node.id}>
-              <h3>
-                {node.frontmatter.title}
-              </h3>
-              <span>
-                {node.frontmatter.date}
-              </span>
-              <p>{node.excerpt}{" "}
-              <Link to={node.frontmatter.path}>Читать дальше...</Link>
-              </p>
-            </div>
-          ))}
-          <ul
-            style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              listStyle: 'none',
-              padding: 0,
-            }}
-          >
+          <div className={styles.blogcards}>
+            {posts.map(({ node }) => (
+              <div key={node.id} className={styles.blogcard}>
+                <h3>
+                  {node.frontmatter.title}
+                </h3>
+                <p className={styles.blogdate}>
+                  {new Date(Date.parse(node.frontmatter.date)).toLocaleDateString("ru-RU", {dateStyle:"full"})}
+                </p>
+                <p>{node.excerpt}{" "}
+                  <Link to={node.frontmatter.path}>Читать дальше...</Link>
+                </p>
+              </div>
+            ))}
+          </div>
+          <ul className={styles.blognavigation}>
             {!isFirst && (
-              <Link to={`/blog/${prevPage}`} rel="prev">
+              <Link to={`/ru/blog/${prevPage}`} rel="prev">
                 ← Пред стр
               </Link>
             ) || "← Пред стр"}
@@ -66,7 +56,7 @@ class BlogIndex extends React.Component {
                 }}
               >
                 <Link
-                  to={`/blog/${i === 0 ? '' : i + 1}`}
+                  to={`/ru/blog/${i === 0 ? '' : i + 1}`}
                   style={{
                     padding: 5,
                     textDecoration: 'none',
@@ -79,7 +69,7 @@ class BlogIndex extends React.Component {
               </li>
             ))}
             {!isLast && (
-              <Link to={`/blog/${nextPage}`} rel="next">
+              <Link to={`/ru/blog/${nextPage}`} rel="next">
                 След стр →
               </Link>
             ) || "След стр →"}
@@ -107,7 +97,7 @@ export const query = graphql`
           frontmatter {
             title
             path
-            date(formatString: "DD MMMM, YYYY")
+            date
           }
           excerpt
         }
