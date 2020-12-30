@@ -5,7 +5,12 @@ title: "Ютюб"
 language: "ru"
 ---
 
+## Мета
 
 - [О канале](/ru/youtube/about)
 - [Число подписчиков](/ru/youtube/subscribers)
 - [Цели монетизации](/ru/youtube/monetization)
+
+## Эпизоды
+
+- [Воскрешение вентилятора](/ru/youtube/fan-resurrection)

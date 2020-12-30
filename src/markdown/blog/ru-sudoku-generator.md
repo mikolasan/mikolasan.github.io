@@ -22,3 +22,21 @@ language: "ru"
 Написать некоторое подобие судоку на react для web получилось прямо за реактивные сроки.
 
 И вот здесь здравый смысл в планировании нерезинового вечернего времени затерялся где-то за планом о создании тулзы, которая будет пошагово решать судоку и графически объяснять каждый ход. Благо такая тулза быстро нашлась на java. Правда я долго тупил, как её запустить под Idea.
+
+Некоторый псевдо с++ код
+
+```
+if (all(board.get_columns(), [](column){column.full() && column.unique()}
+    && all(board.get_rows(), [](row){row.full() && row.unique()}
+    && all(board.get_squares(), [](square){square.full() && squre.unique()}) {
+  // board is correct sudoku
+}
+
+board.row(x).column(y) = z
+board.square(n).in_row(x).in_column(y) = w
+
+if (board.row(x).open_left().size() == 1 && board.column(y).open_left().size() == 1)
+  for i in {1...9}:
+    board.row(x).column(y) = i
+    if (board.row(x).unique() && board.column(y).unique()) break;
+```
