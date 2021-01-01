@@ -2,10 +2,10 @@ import React from "react"
 import Layout from "../components/layout"
 import Banner from "../components/banner"
 
-export default ({ data }) => (
+const Index = ({ data }) => (
   <Layout languageName="Switch to russian version" anotherLanguageLink="/ru">
-    <Banner 
-      buttonText="Developer: my projects" 
+    <Banner
+      buttonText="Developer: my projects"
       buttonLink="/projects/"
       secondButtonText="Snob: my blog"
       secondButtonLink="/blog/"
@@ -21,29 +21,29 @@ export default ({ data }) => (
 
       <div class="cards">
         <div class="card">
-          <img src="/card_developer.png" alt="Idea"/>
+          <img src="/card_developer.png" alt="Developer" width="100px" />
           <div class="card-container">
-            <h3><b>Developer</b></h3>
+            <h3>Developer</h3>
             <p>I have many hobby projects. But ideas I have more.</p>
           </div>
         </div>
 
         <div class="card">
-          <img src="/card_traveler.png" alt="Code"/>
+          <img src="/card_traveler.png" alt="Traveler" width="100px" />
           <div class="card-container">
-            <h3><b>Traveler</b></h3>
+            <h3>Traveler</h3>
             <p>More than writing code I like to plan a good journey.</p>
           </div>
         </div>
 
         <div class="card">
-          <img src="/card_snob.png" alt="Art" />
+          <img src="/card_snob.png" alt="Snob" width="100px" />
           <div class="card-container">
-            <h3><b>Snob</b></h3>
+            <h3>Snob</h3>
             <p>I enjoy the code that is written well and looks perfect. </p>
           </div>
         </div>
-        
+
       </div>
       <h2>Navigation</h2>
       <p>Here is <a href="/one-page-navigation/">One Page to rule them all</a></p>
@@ -56,3 +56,5 @@ export default ({ data }) => (
     </section>
   </Layout>
 )
+
+export default Index

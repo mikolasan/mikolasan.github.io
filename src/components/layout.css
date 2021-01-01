@@ -43,13 +43,13 @@ section {
 }
 
 @media all and (max-width: 870px) {
-  .featured-area { 
+  .featured-area {
     margin-top: 3em;
   }
 }
 
 @media all and (max-width: 675px) {
-  .featured-area { 
+  .featured-area {
     margin-top: 1em;
   }
 }
@@ -96,16 +96,33 @@ section {
   display: inline-block;
   width: 306px;
   padding: 1em 2em;
+  vertical-align: top;
 }
 
 .card img {
-  width: 100px;
   padding-bottom: 1em;
 }
 
 /* Add some padding inside the card container */
 .card-container {
   padding: 2px 16px;
+}
+
+.ideacards {
+  margin: 1em 0;
+  overflow: hidden;
+  text-align: start;
+}
+
+.ideacard {
+  display: inline-block;
+  width: 306px;
+  padding: 1em 2em 1em 0;
+  vertical-align: top;
+}
+
+.ideacard p {
+  text-align: start;
 }
 
 main,
@@ -808,4 +825,4 @@ a:hover {
 /* selected link */
 a:active {
   color: #6320ee;
-} 
+}

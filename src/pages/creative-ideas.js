@@ -21,33 +21,34 @@ class CreativeIdeas extends React.Component {
         <Banner>
           <h1>Creative ideas crafted with love</h1>
           <p>
-          So you want to make a great application. 
+          So you want to make a great application.
           It is easy. Get an idea here. This is the first step and it is very important.
           </p>
         </Banner>
         <section>
-          <ul>
-            {group
-              .sort((a, b) => a.totalCount < b.totalCount ? 1 : -1)
-              .filter(tag => tag.totalCount > 1)
-              .map(tag => (
-              <li key={tag.fieldValue}>
-                Popularity x{tag.totalCount}:{" "}<b>{tag.fieldValue}</b>
-                <ul>
+          {group
+            .sort((a, b) => a.totalCount < b.totalCount ? 1 : -1)
+            .filter(tag => tag.totalCount > 1)
+            .map(tag => (
+              <div>
+                <h2 key={tag.fieldValue}>{tag.fieldValue}</h2>
+                <div class="ideacards">
                   {tag.nodes.map(node => (
-                    <li key={node.frontmatter.title}>
-                      <Link to={node.frontmatter.path}>{node.frontmatter.title}</Link>{" "}
-                      ({node.frontmatter.tags
-                        .sort()
-                        .map(t => t === tag.fieldValue ? (<b>{t}</b>) : (t))
-                        .reduce((acc, x) => acc === null ? [x] : [acc, ', ', x], null)})
-                    </li>
+                    <div class="ideacard" key={node.frontmatter.title}>
+                      <Link to={node.frontmatter.path}><b>{node.frontmatter.title}</b></Link>
+                      <p><small>
+                        {node.frontmatter.tags
+                          .sort()
+                          .map(t => t === tag.fieldValue ? (<b>{t}</b>) : (t))
+                          .reduce((acc, x) => acc === null ? [x] : [acc, ', ', x], null)}
+                      </small></p>
+                    </div>
                   ))}
-                </ul>
-              </li>
+                </div>
+              </div>
 
-            ))}
-          </ul>
+            ))
+          }
         </section>
       </Layout>
     )

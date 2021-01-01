@@ -27,4 +27,4 @@ How do you call screen that does not display time with digits, but tells it with
 
 ## Result
 
-The clock is working. I will edit video of the process.
+The clock is working. I will edit video of the process soon.

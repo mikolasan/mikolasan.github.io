@@ -5,7 +5,7 @@ import Banner from "../components/banner"
 
 const IdeasPage = () => (
   <Layout languageName="Switch to russian version" anotherLanguageLink="/ru/ideas">
-    <Banner 
+    <Banner
       buttonText="Open Lucky Idea Generator"
       buttonLink="/lucky-idea-generator/"
       secondButtonText="List creative ideas"
@@ -13,7 +13,7 @@ const IdeasPage = () => (
     >
       <h1>Ideas for new projects?</h1>
       <p>
-      So you want to make a great application. 
+      So you want to make a great application.
       It is easy. Get an idea here. This is the first step and it is very important.
       </p>
     </Banner>
@@ -30,34 +30,34 @@ const IdeasPage = () => (
 
       <div class="cards">
         <div class="card">
-          <img src="/card_idea.png" alt="Idea"/>
+          <img src="/card_idea.png" alt="Idea" width="100px" />
           <div class="card-container">
-            <h3><b>Idea</b></h3>
+            <h3>Idea</h3>
             <p>Get an idea here. This is the first step and it is very important.</p>
           </div>
         </div>
 
         <div class="card">
-          <img src="/card_code.png" alt="Code"/>
+          <img src="/card_code.png" alt="Code" width="100px" />
           <div class="card-container">
-            <h3><b>Code</b></h3>
+            <h3>Code</h3>
             <p>Find source code that fits to your idea. Any language. Any license.</p>
           </div>
         </div>
 
         <div class="card">
-          <img src="/card_art.png" alt="Art" />
+          <img src="/card_art.png" alt="Art" width="100px" />
           <div class="card-container">
-            <h3><b>Art</b></h3>
+            <h3>Art</h3>
             <p>Add colors and pictures. Find good art. I have a list where to look for it.</p>
           </div>
         </div>
-        
+
       </div>
 
       <div>
         <p>
-        Here it is. Every night you spend few hours before going to bed. 
+        Here it is. Every night you spend few hours before going to bed.
         And depending how lucky you are, you may finish your project and do not become mad before your first release.
         </p>
 
@@ -66,10 +66,10 @@ const IdeasPage = () => (
         <Link to="/creative-ideas/"><h2>Creative ideas crafted with love</h2></Link>
         <h2>And other ideas</h2>
         <ul>
-        <li>Combine together cameras from trashed phones</li>
-        <li>Add Google drive support to open source file manager</li>
+          <li>Combine together cameras from trashed phones</li>
+          <li>Add Google drive support to open source file manager</li>
         </ul>
-        
+
         <hr/>
         <small>
         <div>Icons made by <a href="https://www.flaticon.com/authors/wanicon" title="wanicon">wanicon</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
@@ -78,7 +78,7 @@ const IdeasPage = () => (
 
       </div>
 
-      
+
     </section>
   </Layout>
 )
