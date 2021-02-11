@@ -125,6 +125,10 @@ section {
   text-align: start;
 }
 
+.idea-card-container {
+  padding: 1em 0;
+}
+
 main,
 footer {
   margin: 0 auto;

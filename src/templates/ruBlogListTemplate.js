@@ -30,11 +30,11 @@ class BlogIndex extends React.Component {
           <div className={styles.blogcards}>
             {posts.map(({ node }) => (
               <div key={node.id} className={styles.blogcard}>
-                <h3>
+                <Link to={node.frontmatter.path}><h3>
                   {node.frontmatter.title}
-                </h3>
+                </h3></Link>
                 <p className={styles.blogdate}>
-                  {new Date(Date.parse(node.frontmatter.date)).toLocaleDateString("ru-RU", {dateStyle:"full"})}
+                  {new Date(Date.parse(node.frontmatter.date)).toLocaleDateString("ru-RU", { dateStyle: "full" })}
                 </p>
                 <p>{node.excerpt}{" "}
                   <Link to={node.frontmatter.path}>Читать дальше...</Link>

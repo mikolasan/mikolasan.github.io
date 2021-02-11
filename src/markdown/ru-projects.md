@@ -1,5 +1,5 @@
 ---
-path: "/ru/projects"
+path: "/ru/projects-old"
 date: "2020-06-06"
 title: "Проекты"
 language: "ru"

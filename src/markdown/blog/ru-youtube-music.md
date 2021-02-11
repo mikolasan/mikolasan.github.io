@@ -5,6 +5,7 @@ title: "Бесплатная музыка для YouTube"
 language: "ru"
 ---
 
+- [pixabay](https://pixabay.com/music/)
 - [NCS](https://ncs.io/music-search?q=&genre=&mood=&version=instrumental) - NoCopyrightSounds
 - [Free Music Archive](https://freemusicarchive.org/search?adv=1&music-filter-CC-attribution-only=1&music-filter-CC-attribution-sharealike=1&music-filter-public-domain=1&music-filter-remix-allowed=1) нужно просматривать лицензию к каждой песне. но треков очень много. можно найти очень хорошие.
 - [mixkit](https://mixkit.co/free-stock-music/) - еще одна очень маленькая подборка
@@ -14,3 +15,5 @@ language: "ru"
 ## Не бесплатная (на всякий отчаянный случай)
 
 - [Epidemic Sound](https://www.epidemicsound.com/personal-subscription/)
+- [Storyblocks](https://www.storyblocks.com/audio)
+- [Jamendo Licensing](https://licensing.jamendo.com/en/royalty-free-music)
