@@ -47,22 +47,26 @@
 <url> <loc>https://mikolasan.github.io/projects/postcatolyptica</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/science/roadmap</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/projects/imperial-russia</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://mikolasan.github.io/gamedev</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/science/postal-digits</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://mikolasan.github.io/gamedev</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/gamedev/pyroguelike</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/cv</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://mikolasan.github.io/ru/projects/3d-print-carmageddon</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://mikolasan.github.io/ru/youtube/fan-resurrection</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/ru/projects/hydroponics</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/ru/blog/google-drive-client</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/ru/blog/garage</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/ru/blog/task-management-online</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://mikolasan.github.io/ru/youtube/fan-resurrection</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://mikolasan.github.io/ru/projects/laptop-repair</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://mikolasan.github.io/ru/projects/surge-protector</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/ru/youtube/about</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/ru/youtube/monetization</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/ru/youtube/subscribers</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://mikolasan.github.io/ru/science/name-generator</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/ru/board-games/my-game</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/ru/blog/youtube-free-music</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://mikolasan.github.io/ru/youtube</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/ru/plan</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://mikolasan.github.io/ru/youtube</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/ru/board-games/legend-of-the-five-rings</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/ru/science/visualize-sentence-parse-trees</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/ru/gamedev/pygame</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -81,7 +85,7 @@
 <url> <loc>https://mikolasan.github.io/ru/blog/that-strange-dongle</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/ru/blog/tensorflow-and-flowers</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/ru/board-games</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://mikolasan.github.io/ru/projects</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://mikolasan.github.io/ru/projects-old</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/ru/about</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/ru/projects/ai-powered-news-feed</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/ru/projects/my-morrowind</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -126,4 +130,5 @@
 <url> <loc>https://mikolasan.github.io/projects/calm-place/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/ru/ideas/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/ru/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://mikolasan.github.io/ru/projects/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>
