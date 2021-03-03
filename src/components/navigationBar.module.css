@@ -1,9 +1,10 @@
 .topnav {
   margin: 0;
   padding: 0;
-  
+
   overflow: hidden;
   font-family: 'Manrope', sans-serif;
+  border-bottom: #211a1d solid 0.25rem;
 }
 
 .topnav img {

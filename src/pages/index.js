@@ -5,9 +5,9 @@ import Banner from "../components/banner"
 const Index = ({ data }) => (
   <Layout languageName="Switch to russian version" anotherLanguageLink="/ru">
     <Banner
-      buttonText="Developer: my projects"
+      buttonText="Open my latest projects"
       buttonLink="/projects/"
-      secondButtonText="Snob: my blog"
+      secondButtonText="Fresh posts in the blog"
       secondButtonLink="/blog/"
     >
       <h1>developer - traveler - snob</h1>

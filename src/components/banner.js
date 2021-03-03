@@ -24,10 +24,10 @@ export default ({ children, buttonText, buttonLink, secondButtonText, secondButt
     `}
     render={data => (
       <div className="container">
-        <div style={{minHeight:"350px", maxHeight: "400px"}}>
-          <Img 
+        <div style={{height: "400px"}}>
+          <Img
             fluid={data.file.childImageSharp.fluid}
-            style={{minHeight:"350px", maxHeight: '400px'}} 
+            style={{height: '400px'}}
           />
         </div>
         <div className="container-text">

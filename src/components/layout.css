@@ -26,6 +26,7 @@ section {
 
 .container {
   position:relative;
+
 }
 
 .container-text {
@@ -43,52 +44,61 @@ section {
   max-width: 960px;
   padding: 3rem 1.5rem;
   color: #f2f2f2;
-  overflow: hidden;
   background-color: #000000c2;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 @media all and (max-width: 870px) {
-  .featured-area {
-    margin-top: 3em;
-  }
+
 }
 
 @media all and (max-width: 675px) {
-  .featured-area {
-    margin-top: 1em;
+  .container {
+    height: 400px;
   }
 }
 
 .featured-text {
+  text-align: center;
+  width: 90%;
 }
 
 .featured-action {
-  float: left;
+  width: 25%;
 }
 
 .action-button {
-  background-color: #0496FF;
+  background-color: #b8f03c;
   border: none;
-  color: #f2f2f2;
+  color: #232424;
   padding: 0.5em 1em;
-  margin-right: 1.5em;
+  margin: 0.5em;
+  font-family: 'Manrope', sans-serif;
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  border-radius: 0.5rem;
 }
 
 .featured-second-action {
-  float: left;
+  width: 25%;
 }
 
 .second-action-button {
-  background-color: #8F2D56;
+  background-color: #f9e225;
   border: none;
-  color: #f2f2f2;
+  color: #181616;
   padding: 0.5em 1em;
+  margin: 0.5em;
+  font-family: 'Manrope', sans-serif;
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  border-radius: 0.5rem;
 }
 
 .cards {
@@ -141,7 +151,7 @@ footer {
 }
 
 footer {
-  border-top: #8F2D56 solid 0.5rem;
+  border-top: #5e7ce2 solid 0.5rem;
   background-color: #211a1d;
   color: #f2f2f2;
 }
