@@ -34,14 +34,14 @@
 <url> <loc>https://mikolasan.github.io/projects/what-language-to-choose</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/projects/imperial-russia/privacy-policy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/gamedev/c-plus-plus</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://mikolasan.github.io/gamedev/java</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/gamedev/kotlin</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://mikolasan.github.io/gamedev/java</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/gamedev/lua</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/blog/how-to-create-a-mutant</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://mikolasan.github.io/about</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://mikolasan.github.io/science</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/science/book</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/ru/science/publications</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://mikolasan.github.io/science</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://mikolasan.github.io/about</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/gamedev/overload-game</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/gamedev/sudoku-16x16</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/projects/postcatolyptica</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -60,8 +60,8 @@
 <url> <loc>https://mikolasan.github.io/ru/projects/laptop-repair</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/ru/projects/surge-protector</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/ru/youtube/about</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://mikolasan.github.io/ru/youtube/monetization</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/ru/youtube/subscribers</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://mikolasan.github.io/ru/youtube/monetization</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/ru/science/name-generator</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/ru/board-games/my-game</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/ru/blog/youtube-free-music</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -75,8 +75,8 @@
 <url> <loc>https://mikolasan.github.io/ru/science/face-recognition</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/ru/science/adapt-rntn-model</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/ru/science/modifying-stanford-parser</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://mikolasan.github.io/ru/cv</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/ru/science/nlp-toolkits</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://mikolasan.github.io/ru/cv</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/ru/science/mmf/add-new-model</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/ru/science/mmf</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://mikolasan.github.io/ru/science/race-recognition</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
