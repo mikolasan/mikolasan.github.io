@@ -8,15 +8,10 @@ import NavigationBar from "../components/navigationBar"
 import LikesPanel from "../components/likesPanel"
 import "./layout.css"
 
-const Layout = ({ children, showLikes, languageName, anotherLanguageLink }) => (
+const Layout = ({ children, showLikes, languageName, anotherLanguageLink, title }) => (
   <StaticQuery
     query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        },
+      query SiteInfoQuery {
         currentBuildDate {
           currentDate
         }
@@ -25,7 +20,7 @@ const Layout = ({ children, showLikes, languageName, anotherLanguageLink }) => (
     render={data => (
       <>
         <Helmet>
-          <title>{data.site.siteMetadata.title}</title>
+          <title>{title} - Nikolay Neupokoev</title>
           <link href="https://fonts.googleapis.com/css2?family=Vollkorn+SC:wght@700&family=Manrope:wght@300&family=Nunito:wght@300&display=swap" rel="stylesheet" />
         </Helmet>
         <header>

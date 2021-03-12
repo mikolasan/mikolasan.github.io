@@ -4,7 +4,7 @@ import Banner from "../components/banner"
 import SlotMachine from "../components/slotMachine"
 
 const LuckyIdeaGenerator = () => (
-  <Layout>
+  <Layout title="Lucky idea generator">
     <Banner>
       <h1>Lucky idea generator</h1>
       <p>

@@ -7,15 +7,10 @@ import { graphql, Link, StaticQuery } from "gatsby"
 import NavigationBar from "../components/ruNavigationBar"
 import "./layout.css"
 
-const RuLayout = ({ children, showLikes, languageName, anotherLanguageLink }) => (
+const RuLayout = ({ children, showLikes, languageName, anotherLanguageLink, title }) => (
   <StaticQuery
     query={graphql`
-      query RuSiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        },
+      query RuSiteInfoQuery {
         currentBuildDate {
           currentDate
         }
@@ -24,7 +19,7 @@ const RuLayout = ({ children, showLikes, languageName, anotherLanguageLink }) =>
     render={data => (
       <>
         <Helmet>
-          <title>{data.site.siteMetadata.title}</title>
+          <title>{title} - Николай Неупокоев</title>
           <link href="https://fonts.googleapis.com/css2?family=Vollkorn+SC:wght@700&family=Manrope:wght@300&family=Nunito:wght@300&display=swap" rel="stylesheet" />
         </Helmet>
         <header>

@@ -3,7 +3,11 @@ import Layout from "../../components/ruLayout"
 import Banner from "../../components/banner"
 
 const Projects = ({ data }) => (
-  <Layout languageName="Switch to english version" anotherLanguageLink="/projects">
+  <Layout
+    title="Проекты"
+    languageName="Switch to english version"
+    anotherLanguageLink="/projects"
+  >
     <Banner>
       <h1>Проекты</h1>
     </Banner>

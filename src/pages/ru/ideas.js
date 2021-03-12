@@ -4,7 +4,11 @@ import Layout from "../../components/ruLayout"
 import Banner from "../../components/banner"
 
 const IdeasPage = () => (
-  <Layout languageName="Switch to english version" anotherLanguageLink="/ideas">
+  <Layout
+    title="Идеи"
+    languageName="Switch to english version"
+    anotherLanguageLink="/ideas"
+  >
     <Banner>
       <h1>Идеи</h1>
     </Banner>

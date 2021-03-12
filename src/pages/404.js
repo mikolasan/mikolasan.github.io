@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import FeaturedImage from "../components/featuredImage"
 
 const NotFoundPage = () => (
-  <Layout>
+  <Layout title="404">
     <FeaturedImage />
     <section>
       <h1>404</h1>

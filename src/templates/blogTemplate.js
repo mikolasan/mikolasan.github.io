@@ -32,7 +32,12 @@ export default function Template ({ data, pageContext, location }) {
     alertAboutDraftStatus = 'This article is not finished and not reviewed thoroughly. If for some reason you want to continue reading, do it at your own risk, but do not forget to come back later to enjoy the final version.'
   }
   return (
-    <Layout showLikes={pageContext.showLikes} languageName={languageName} anotherLanguageLink={anotherLanguageLink}>
+    <Layout
+      title={frontmatter.title}
+      showLikes={pageContext.showLikes}
+      languageName={languageName}
+      anotherLanguageLink={anotherLanguageLink}
+    >
       {featuredImgFluid
         && (<FeaturedImage imgFluid={featuredImgFluid} />)
         || (<Banner buttonText={frontmatter.buttonText} buttonLink={frontmatter.buttonLink}><h1>{frontmatter.title}</h1><p dangerouslySetInnerHTML={{ __html: frontmatter.subtitle }} /></Banner>)

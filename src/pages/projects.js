@@ -3,7 +3,11 @@ import Layout from "../components/layout"
 import Banner from "../components/banner"
 
 const Projects = ({ data }) => (
-  <Layout languageName="Switch to russian version" anotherLanguageLink="/ru/projects">
+  <Layout
+    title="Projects"
+    languageName="Switch to russian version"
+    anotherLanguageLink="/ru/projects"
+  >
     <Banner>
       <h1>Projects</h1>
     </Banner>

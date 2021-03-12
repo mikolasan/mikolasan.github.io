@@ -21,7 +21,11 @@ class BlogIndex extends React.Component {
     const nextPage = (currentPage + 1).toString()
     const onePage = isFirst && isLast
     return (
-      <Layout languageName={languageName} anotherLanguageLink={anotherLanguageLink}>
+      <Layout
+        title="Blog"
+        languageName={languageName}
+        anotherLanguageLink={anotherLanguageLink}
+      >
         <Banner>
           <h1>Blog</h1>
           <p>some text here...</p>

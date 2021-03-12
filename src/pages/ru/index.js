@@ -3,16 +3,15 @@ import Layout from "../../components/ruLayout"
 import Banner from "../../components/banner"
 
 export default ({ data }) => (
-  <Layout languageName="Switch to english version" anotherLanguageLink="/">
-      <Banner>
-        <h1>программист - турист - сноб</h1>
-
-
-      </Banner>
+  <Layout
+    title="Программист, турист, сноб"
+    languageName="Switch to english version"
+    anotherLanguageLink="/"
+  >
+    <Banner>
+      <h1>программист - турист - сноб</h1>
+    </Banner>
     <section>
-
-
-
       <div>
 
       <blockquote>

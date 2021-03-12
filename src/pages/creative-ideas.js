@@ -17,7 +17,7 @@ class CreativeIdeas extends React.Component {
       breadcrumb: { crumbs },
     } = this.props.pageContext
     return (
-      <Layout>
+      <Layout title="Creative ideas">
         <Banner>
           <h1>Creative ideas crafted with love</h1>
           <p>

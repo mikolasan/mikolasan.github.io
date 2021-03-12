@@ -3,7 +3,11 @@ import Layout from "../components/layout"
 import Banner from "../components/banner"
 
 const Index = ({ data }) => (
-  <Layout languageName="Switch to russian version" anotherLanguageLink="/ru">
+  <Layout
+    title="Developer, traveler, snob"
+    languageName="Switch to russian version"
+    anotherLanguageLink="/ru"
+  >
     <Banner
       buttonText="Open my latest projects"
       buttonLink="/projects/"

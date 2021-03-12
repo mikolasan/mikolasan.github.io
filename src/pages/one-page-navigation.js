@@ -29,9 +29,9 @@ const NavigationPage = ({ data }) => {
       }
     }
   });
-  
+
   return (
-    <Layout>
+    <Layout title="One page navigation">
       <FeaturedImage />
       <section>
         <h1>Navigation</h1>
