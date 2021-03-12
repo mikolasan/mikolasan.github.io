@@ -23,6 +23,7 @@ class BlogIndex extends React.Component {
     return (
       <Layout
         title="Blog"
+        section="blog"
         languageName={languageName}
         anotherLanguageLink={anotherLanguageLink}
       >

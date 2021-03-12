@@ -34,6 +34,7 @@ export default function Template ({ data, pageContext, location }) {
   return (
     <Layout
       title={frontmatter.title}
+      section={frontmatter.section || `blog`}
       showLikes={pageContext.showLikes}
       languageName={languageName}
       anotherLanguageLink={anotherLanguageLink}
@@ -65,6 +66,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         path
         title
+        section
         draft
         subtitle
         buttonText

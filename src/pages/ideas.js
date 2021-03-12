@@ -6,6 +6,7 @@ import Banner from "../components/banner"
 const IdeasPage = () => (
   <Layout
     title="Ideas"
+    section="ideas"
     languageName="Switch to russian version"
     anotherLanguageLink="/ru/ideas"
   >

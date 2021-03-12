@@ -3,7 +3,7 @@ import { graphql, Link, StaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import styles from "./navigationBar.module.css"
 
-export default (props) => (
+const RuNavbar = ({ data, active }) => (
   <StaticQuery
     query={graphql`
       query RuLogoQuery {
@@ -20,13 +20,15 @@ export default (props) => (
       <div className={styles.topnav}>
         <Img fixed={data.file.childImageSharp.fixed} style={{float: 'left'}} />
         <Link to="/ru" className={styles.titlelink} style={{backgroundColor: '#211a1d', color: '#f2f2f2'}}>Николай Неупокоев</Link>
-        <Link to="/ru/ideas/">Идеи</Link>
-        <Link to="/ru/projects/">Проекты</Link>
-        <Link to="/ru/science/">Наука</Link>
-        <Link to="/ru/blog/">Блог</Link>
-        <Link to="/ru/about/" style={{float: 'right'}}>О себе</Link>
-        <Link to="/ru/cv/" style={{float: 'right'}}>Резюме</Link>
+        <Link to="/ru/ideas/" { ...(active === "ideas" && { className: styles.activelink }) }>Идеи</Link>
+        <Link to="/ru/projects/" { ...(active === "projects" && { className: styles.activelink }) }>Проекты</Link>
+        <Link to="/ru/science/" { ...(active === "science" && { className: styles.activelink }) }>Наука</Link>
+        <Link to="/ru/blog/" { ...(active === "blog" && { className: styles.activelink }) }>Блог</Link>
+        <Link to="/ru/about/" style={{float: 'right'}} { ...(active === "about" && { className: styles.activelink }) }>О себе</Link>
+        <Link to="/ru/cv/" style={{float: 'right'}} { ...(active === "cv" && { className: styles.activelink }) }>Резюме</Link>
       </div>
     )}
   />
 )
+
+export default RuNavbar

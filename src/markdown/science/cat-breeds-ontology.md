@@ -29,7 +29,7 @@ There are specific formats for ontologies depending in what program it was creat
 
 ## Do you need special software?
 
-From the next [article](https://medium.com/@vindulajayawardana/ontology-generation-and-visualization-with-prot%C3%A9g%C3%A9-6df0af9955e0) we can use [Protégé editor](https://protege.stanford.edu/products.php#desktop-protege) to create an ontology. And [VOWL plugin](http://vowl.visualdataweb.org/protegevowl.html) for it will help us to visualize it in the end. 
+From the next [article](https://medium.com/@vindulajayawardana/ontology-generation-and-visualization-with-prot%C3%A9g%C3%A9-6df0af9955e0) we can use [Protégé editor](https://protege.stanford.edu/products.php#desktop-protege) to create an ontology. And [VOWL plugin](http://vowl.visualdataweb.org/protegevowl.html) for it will help us to visualize it in the end.
 
 Also I have found the same functionality in [Mobi](https://mobi.inovexcorp.com/features/#download), [Jena](https://jena.apache.org/tutorials/sparql_optionals.html)
 
@@ -65,4 +65,4 @@ Here is the plan.
 
 ## And more!
 
-Did you now about DBpedia? It is a Large-scale, MultilingualKnowledge Base Extracted from Wikipedia. Check this out http://svn.aksw.org/papers/2013/SWJ_DBpedia/public.pdf
+Did you know about DBpedia? It is a Large-scale, Multilingual Knowledge Base Extracted from Wikipedia. Check this out http://svn.aksw.org/papers/2013/SWJ_DBpedia/public.pdf

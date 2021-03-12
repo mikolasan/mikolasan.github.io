@@ -38,6 +38,32 @@
   color: white;
 }
 
+a.activelink {
+  background: repeating-linear-gradient(
+    -45deg,
+    #5b5356,
+    #5b5356 10px,
+    #211a1d 10px,
+    #211a1d 20px
+  );
+  color: #f2f2f2;
+}
+
+a:link.activelink  {
+}
+
+a:visited.activelink  {
+  color: #f2f2f2;
+}
+
+a:hover.activelink {
+  background: unset;
+  background-color: #211a1d;
+}
+
+a.active.activelink  {
+}
+
 @media all and (max-width: 870px) {
   .titlelink { display: none; }
 }

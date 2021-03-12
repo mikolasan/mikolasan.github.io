@@ -3,9 +3,10 @@ path: "/ru/science"
 date: "2020-03-19"
 title: "Наука"
 language: "ru"
+section: "science"
 ---
 
-**📣 Новые темы**: 
+**📣 Новые темы**:
 - [Мемы](/ru/science/memes)
 - [Введение в обработку естественного языка](/ru/science/nlp-introduction), [Инструменты для обработки естественного языка](/ru/science/nlp-toolkits)
 - [Приспосабливаем RNTN модель](/ru/science/adapt-rntn-model), [Модифицируя Стэнфордовский разбор](/ru/science/modifying-stanford-parser), [Рисуем деревья](/ru/science/visualize-sentence-parse-trees)

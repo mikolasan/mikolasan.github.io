@@ -5,6 +5,7 @@ import Banner from "../../components/banner"
 const Projects = ({ data }) => (
   <Layout
     title="Проекты"
+    section="projects"
     languageName="Switch to english version"
     anotherLanguageLink="/projects"
   >
