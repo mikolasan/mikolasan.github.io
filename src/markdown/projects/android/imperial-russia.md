@@ -4,6 +4,7 @@ date: "2020-03-26"
 title: "Imperial Russia: Historic unit converter"
 tags: ["mobile", "kotlin"]
 featuredImage: imperial-russia-screen.png
+coverImage: "imperial-russia.jpg"
 ---
 
 Opened beta testing! Hurrah!

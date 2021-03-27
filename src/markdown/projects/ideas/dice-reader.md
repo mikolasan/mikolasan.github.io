@@ -2,7 +2,7 @@
 path: "/projects/dice-reader"
 date: "2020-05-16"
 title: "Dice reader"
-coverImage: ""
+coverImage: "dice-reader.jpg"
 tags: ["neural networks", "mobile", "image recognition"]
 idea: innovative
 ---

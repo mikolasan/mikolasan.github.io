@@ -1,7 +1,7 @@
 ---
 path: "/projects/5-servo-robot"
 date: "2020-05-16"
-title: "[In translation...] 5 servo robot: A robot out of 5 servos"
+title: "A robot out of 5 servos"
 tags: ["servo", "hardware", "robot"]
 ---
 

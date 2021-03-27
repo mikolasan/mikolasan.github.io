@@ -22,6 +22,7 @@ const Projects = ({ data }) => (
           <div class="idea-card-container">
             <h3>Imperial Russia</h3>
             <p>Historic unit converter</p>
+            <p><a href="/projects/imperial-russia">Read more</a></p>
           </div>
         </div>
 
@@ -32,6 +33,7 @@ const Projects = ({ data }) => (
           <div class="idea-card-container">
             <h3>Pet Project Navigator</h3>
             <p>Loaded todo list</p>
+            <p><a href="/projects/pet-project-navigator">Read more</a></p>
           </div>
         </div>
 
@@ -42,6 +44,7 @@ const Projects = ({ data }) => (
           <div class="idea-card-container">
             <h3>Calm place</h3>
             <p>TODO: description is missing</p>
+            <p><a href="/projects/calm-place">Read more</a></p>
           </div>
         </div>
       </div>
@@ -55,6 +58,7 @@ const Projects = ({ data }) => (
           <div class="idea-card-container">
             <h3><b>Roguelike</b></h3>
             <p>Not Your Father's Roguelike. (PyGame)</p>
+            <p><a href="/gamedev/pyroguelike">Read more</a></p>
           </div>
         </div>
 
@@ -65,6 +69,7 @@ const Projects = ({ data }) => (
           <div class="idea-card-container">
             <h3>Battleship</h3>
             <p> (Python)</p>
+            <p><a href="/gamedev/battleship">Read more</a></p>
           </div>
         </div>
 
@@ -75,6 +80,7 @@ const Projects = ({ data }) => (
           <div class="idea-card-container">
             <h3>Overload 1</h3>
             <p> (C++)</p>
+            <p><a href="/gamedev/overload-game">Read more</a></p>
           </div>
         </div>
 
@@ -85,6 +91,7 @@ const Projects = ({ data }) => (
           <div class="idea-card-container">
             <h3>Overload 2</h3>
             <p> (Godot 3.1)</p>
+            <p><a href="/gamedev/overload-godot">Read more</a></p>
           </div>
         </div>
 
@@ -95,6 +102,7 @@ const Projects = ({ data }) => (
           <div class="idea-card-container">
             <h3>Sudoku 16x16</h3>
             <p> (Godot 3.1)</p>
+            <p><a href="/gamedev/sudoku-16x16">Read more</a></p>
           </div>
         </div>
       </div>
@@ -108,6 +116,7 @@ const Projects = ({ data }) => (
           <div class="idea-card-container">
             <h3>Board game</h3>
             <p>TODO: description is missing</p>
+            <p><a href="/board-games">Read more</a></p>
           </div>
         </div>
 
@@ -118,6 +127,7 @@ const Projects = ({ data }) => (
           <div class="idea-card-container">
             <h3>Science book</h3>
             <p>TODO: description is missing</p>
+            <p><a href="/science/book">Read more</a></p>
           </div>
         </div>
 
@@ -128,6 +138,7 @@ const Projects = ({ data }) => (
           <div class="idea-card-container">
             <h3>YouTube channel</h3>
             <p>TODO: description is missing</p>
+            <p><a href="/youtube">Read more</a></p>
           </div>
         </div>
 
@@ -138,6 +149,7 @@ const Projects = ({ data }) => (
           <div class="idea-card-container">
             <h3>Word clock</h3>
             <p>TODO: description is missing</p>
+            <p><a href="/projects/word-clock">Read more</a></p>
           </div>
         </div>
       </div>

@@ -4,6 +4,7 @@ date: "2020-05-20"
 title: Pet Project Navigator
 tags: ["java", "db", "mobile"]
 featuredImage: pet-project-navigator-3.png
+coverImage: "pet-project-navigator.jpg"
 ---
 
 ## Another todo list?
