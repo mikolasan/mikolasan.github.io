@@ -4,7 +4,7 @@ module.exports = {
     "/ideas",
     "/projects",
     "/science",
-    "/lucky-idea-generator",
+    "/idea-generator",
     "/cv",
     "/about"
   ]

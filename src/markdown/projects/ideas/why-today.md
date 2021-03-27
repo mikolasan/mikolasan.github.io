@@ -3,6 +3,7 @@ path: "/projects/why-today"
 date: "2020-05-16"
 title: "Why today?"
 tags: ["mobile", "generator", "one-app-per-month", "one-screen-application", "one-button-application"]
+idea: creative
 ---
 
 The idea is pretty simple from one side, however, it has potential wide usage and everyday necessity. When something bad happens in our lives, we ask: "Why today?". Why did the computer decide to install an update and restart during the important presentation exactly today?

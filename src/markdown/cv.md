@@ -55,7 +55,7 @@ _Oct 2015 – Feb 2018_
 
 _Oct 2012 – Oct 2015_
 
-- Developed and released [casino games](/lucky-idea-generator) for many companies in Russia, USA, Malaysia, Mexico, Argentina.
+- Developed and released [casino games](/idea-generator) for many companies in Russia, USA, Malaysia, Mexico, Argentina.
 - Provided remote installation support of company’s embedded system based on Linux.
 - Designed and coded simulation program for all new and modified games in C.
 - Preparing PAR sheets in Excel and TeX

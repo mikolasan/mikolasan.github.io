@@ -3,6 +3,7 @@ path: "/ru/projects/horoscope-generator"
 date: "2020-05-16"
 title: "Гороскоп на неделю"
 tags: ["language processing", "mobile", "generator"]
+idea: innovative
 language: "ru"
 ---
 

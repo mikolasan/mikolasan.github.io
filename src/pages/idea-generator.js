@@ -4,14 +4,18 @@ import Banner from "../components/banner"
 import SlotMachine from "../components/slotMachine"
 
 const LuckyIdeaGenerator = () => (
-  <Layout title="Lucky idea generator">
+  <Layout
+    title="Idea generator"
+    section="ideas"
+  >
     <Banner>
-      <h1>Lucky idea generator</h1>
+      <h1>Idea generator</h1>
       <p>
       If you want random unpredictable and fun project, then try this totally free slot machine
       from a slot developer who likes throwing cutting edge technologies in production.
       </p>
     </Banner>
+    
     <section>
       <p>
       Essentially any project has backend, frontend, some storage or database, it uses a protocol and has a killer feature.

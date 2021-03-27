@@ -4,6 +4,7 @@ date: "2020-05-16"
 title: "Wikipedia upside down"
 subtitle: "(real name in progress) <br/>Knowledge that you really want to know"
 tags: ["db", "web", "scraper"]
+idea: innovative
 ---
 
 Without a doubt, Wikipedia is an incredible public source of knowledge. But most articles tend to describe topics in a scholarly manner. What we sometimes need are life hacks, advice, and instructions.

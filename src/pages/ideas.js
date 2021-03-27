@@ -11,10 +11,10 @@ const IdeasPage = () => (
     anotherLanguageLink="/ru/ideas"
   >
     <Banner
-      buttonText="Try Free Idea Generator"
-      buttonLink="/lucky-idea-generator/"
-      secondButtonText="Creative ideas for development"
-      secondButtonLink="/creative-ideas/"
+      buttonText="Try free Idea Generator"
+      buttonLink="/idea-generator/"
+      secondButtonText="Creative ideas for app development"
+      secondButtonLink="/creative-ideas-for-app-development/"
     >
       <h1>Ideas for new projects?</h1>
       <p>
@@ -46,7 +46,7 @@ const IdeasPage = () => (
           <img src="/card_code.png" alt="Code" width="100px" />
           <div class="card-container">
             <h3>Code</h3>
-            <p>Find source code that fits to your idea. Any language. Any license.</p>
+            <p>Write source code that fits to your idea. Any language. Any license.</p>
           </div>
         </div>
 
@@ -54,7 +54,7 @@ const IdeasPage = () => (
           <img src="/card_art.png" alt="Art" width="100px" />
           <div class="card-container">
             <h3>Art</h3>
-            <p>Add colors and pictures. Find good art. I have a list where to look for it.</p>
+            <p>Add colors and pictures. Find good art. I have <a href="/ideas/where-free-art">a list</a> where to look for it.</p>
           </div>
         </div>
 
@@ -67,14 +67,20 @@ const IdeasPage = () => (
         </p>
 
         <p>Checkout section <a href="/projects">"Projects"</a> to find out my passions.</p>
-        <Link to="/lucky-idea-generator/"><h2>Lucky idea generator</h2></Link>
-        <Link to="/creative-ideas/"><h2>Creative ideas crafted with love</h2></Link>
-        <h2>And other ideas</h2>
-        <ul>
-          <li>Combine together cameras from trashed phones</li>
-          <li>Add Google drive support to open source file manager</li>
-        </ul>
+        <Link to="/idea-generator/"><h2>Idea generator</h2></Link>
+        <h2>Ideas for your next application</h2>
+          <ul>
+            <li><Link to="/creative-ideas-for-app-development/">Creative ideas for app development</Link></li>
+            <li><Link to="/innovative-ideas-for-app-development/">Innovative ideas for app development</Link></li>
+            <li><Link to="/ideas-for-app-development/">All of the above</Link></li>
+            <li>Weird ones:
+              <ul>
+                <li>Combine together cameras from trashed phones</li>
+                <li>Add Google drive support to open source file manager</li>
+              </ul>
 
+            </li>
+          </ul>
         <hr/>
         <small>
         <div>Icons made by <a href="https://www.flaticon.com/authors/wanicon" title="wanicon">wanicon</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>

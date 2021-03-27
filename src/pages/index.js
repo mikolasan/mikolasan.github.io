@@ -20,7 +20,7 @@ const Index = ({ data }) => (
       <p>
       I am a full-time developer, once a year traveler and a snob ever since I registered on Instagram.
       I have a postgraduate degree in Applied Mathematics and Computer <a href="/science">Science</a>. With its help, I do what I do for a living.
-      But besides that, I passionate about game development and irrational exploitation of computers.
+      But besides that, I passionate about <a href="/gamedev">game development</a> and irrational exploitation of computers.
       </p>
 
       <div class="cards">

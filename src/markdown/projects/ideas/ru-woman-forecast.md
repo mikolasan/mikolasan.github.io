@@ -3,6 +3,7 @@ path: "/ru/projects/woman-forecast"
 date: "2020-05-16"
 title: "Детектор женского недовольства"
 tags: ["mobile", "prediction", "calendar"]
+idea: innovative
 language: "ru"
 ---
 

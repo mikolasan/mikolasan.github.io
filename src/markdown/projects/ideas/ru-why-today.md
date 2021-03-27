@@ -3,6 +3,7 @@ path: "/ru/projects/why-today"
 date: "2020-05-16"
 title: "Почему именно сегодня"
 tags: ["mobile", "generator"]
+idea: creative
 language: "ru"
 ---
 

@@ -7,7 +7,7 @@ import Banner from "../components/banner"
 import SlotMachine from "../components/slotMachine"
 import styles from "../templates/blogTemplate.module.css"
 
-class CreativeIdeas extends React.Component {
+class AllIdeas extends React.Component {
   render() {
     const { data } = this.props
     const group = data.allMarkdownRemark.group
@@ -17,9 +17,12 @@ class CreativeIdeas extends React.Component {
       breadcrumb: { crumbs },
     } = this.props.pageContext
     return (
-      <Layout title="Creative ideas">
+      <Layout
+        title="All ideas for app development"
+        section="ideas"
+      >
         <Banner>
-          <h1>Creative ideas crafted with love</h1>
+          <h1>All ideas for app development</h1>
           <p>
           So you want to make a great application.
           It is easy. Get an idea here. This is the first step and it is very important.
@@ -28,7 +31,6 @@ class CreativeIdeas extends React.Component {
         <section>
           {group
             .sort((a, b) => a.totalCount < b.totalCount ? 1 : -1)
-            .filter(tag => tag.totalCount > 1)
             .map(tag => (
               <div>
                 <h2 key={tag.fieldValue}>{tag.fieldValue}</h2>
@@ -55,7 +57,7 @@ class CreativeIdeas extends React.Component {
   }
 }
 
-CreativeIdeas.propTypes = {
+AllIdeas.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
       group: PropTypes.arrayOf(
@@ -68,7 +70,7 @@ CreativeIdeas.propTypes = {
   }),
 }
 
-export default CreativeIdeas
+export default AllIdeas
 
 export const pageQuery = graphql`
   query {
@@ -84,6 +86,7 @@ export const pageQuery = graphql`
         nodes {
           frontmatter {
             tags
+            idea
             path
             title
           }
