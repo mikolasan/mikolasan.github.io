@@ -1,7 +1,7 @@
 ---
 path: "/projects/universe-simulator"
 date: "2020-05-16"
-title: "[In translation...] Universe simulator"
+title: "Universe simulator"
 tags: ["c++"]
 idea: creative
 ---

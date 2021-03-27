@@ -30,17 +30,21 @@ class CreativeIdeas extends React.Component {
         </Banner>
         <section>
           <div>
-            <h2>Title</h2>
             <div class="ideacards">
               {edges
                 .sort((a, b) => a.node.frontmatter.date < b.node.frontmatter.date ? 1 : -1)
                 .map(({node}) => (
                 <div class="ideacard" key={node.frontmatter.title}>
-                  <Link to={node.frontmatter.path}><b>{node.frontmatter.title}</b></Link>
+                  <Link to={node.frontmatter.path}>
+                    <img src={node.frontmatter.coverImage || "/images/no-cover.jpg"}/>
+                  </Link>
+                  <h3>{node.frontmatter.title}</h3>
+                  <p><Link to={node.frontmatter.path}>Read more</Link></p>
                   <p><small>
                     {node.frontmatter.tags
                       .sort()
-                      .reduce((acc, x) => acc === null ? [x] : [acc, ', ', x], null)}
+                      .map(tag => (<span>{tag}</span>))
+                    }
                   </small></p>
                 </div>
               ))}
@@ -72,6 +76,7 @@ export const pageQuery = graphql`
             idea
             path
             title
+            coverImage
           }
         }
       }

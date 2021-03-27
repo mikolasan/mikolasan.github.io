@@ -1,5 +1,5 @@
 ---
-path: "/ru/projects/use-tablet-as-a-keyboard"
+path: "/ru/projects/tablet-as-keyboard"
 date: "2020-05-16"
 title: "Клавиатура как приложение для планшета"
 tags: ["bluetooth", "chromesact"]

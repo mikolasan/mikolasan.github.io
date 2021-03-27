@@ -1,7 +1,7 @@
 ---
 path: "/projects/midi-tablet"
 date: "2020-05-16"
-title: "[In translation...] MIDI tablet"
+title: "MIDI tablet"
 tags: ["mobile"]
 idea: creative
 ---

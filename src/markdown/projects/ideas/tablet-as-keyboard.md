@@ -1,7 +1,7 @@
 ---
-path: "/projects/use-tablet-as-a-keyboard"
+path: "/projects/tablet-as-keyboard"
 date: "2020-05-16"
-title: "[In translation...] Use tablet as a keyboard"
+title: "Tablet as a keyboard"
 tags: ["bluetooth", "chromesact"]
 idea: creative
 ---

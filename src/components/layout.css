@@ -131,13 +131,26 @@ section {
 
 .ideacard {
   display: inline-block;
-  width: 302px;
-  padding: 1em 2em 1em 0;
+  width: 284px;
+  padding: 1rem;
+  margin: 0.5rem;
   vertical-align: top;
+  background-color: #f6f6f6;
+}
+
+.ideacard img {
+  margin-bottom: 0.5rem;
 }
 
 .ideacard p {
   text-align: start;
+}
+
+.ideacard span {
+  background-color: #a9bcff;
+  padding: 0.1rem 0.25rem;
+  margin-right: 0.5rem;
+  border-radius: 0.5rem;
 }
 
 .idea-card-container {
