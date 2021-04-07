@@ -29,18 +29,18 @@ const Layout = ({ children, showLikes, languageName, anotherLanguageLink, title,
         <main>
           {children}
           {showLikes && (
-          <section>
-            <LikesPanel />
-          </section>)}
+            <section>
+              <LikesPanel />
+            </section>)}
         </main>
         <footer>
-          <div class="bottomnav">
+          <div className="bottomnav">
             <Link style={{marginBottom: '0.5em', textDecoration: 'underline'}} to={anotherLanguageLink}>{languageName}</Link>
-            <div class="bottomsmallabout">
+            <div className="bottomsmallabout">
               <h2>About</h2>
               <p>I am a future artist. I spend a lot of time with C++, but there is not much of intelligible. So I will become an artist, I promise. #irony</p>
             </div>
-            <div class="bottommenu">
+            <div className="bottommenu">
               <h2>Menu</h2>
               <Link to="/ideas/">Ideas</Link>
               <Link to="/projects/">Projects</Link>
@@ -48,7 +48,7 @@ const Layout = ({ children, showLikes, languageName, anotherLanguageLink, title,
               <Link to="/blog/">Blog</Link>
               <Link to="/cv/">CV</Link>
             </div>
-            <div class="bottomxsocial">
+            <div className="bottomxsocial">
               <h2>Social</h2>
               <a href="https://github.com/mikolasan">GitHub</a>
               <a href="https://www.linkedin.com/in/nikolay-neupokoev-29150065/">LinkedIn</a>
@@ -57,7 +57,7 @@ const Layout = ({ children, showLikes, languageName, anotherLanguageLink, title,
               <a href="https://www.youtube.com/channel/UC7JDwFPt-Wu_rMB4-g-ePug">YouTube</a>
             </div>
           </div>
-          <div class="copyright">
+          <div className="copyright">
             <p>This web site uses Google Analytics. It collects and processes data. <a href="https://policies.google.com/technologies/partner-sites">How Google uses information from sites</a></p>
             <p>Built with{` `}<a href="https://www.gatsbyjs.org">Gatsby</a>. Last build: {
             new Date(Date.parse(data.currentBuildDate.currentDate)).toLocaleDateString("en-US", {dateStyle:"full"})

@@ -23,26 +23,26 @@ const Index = ({ data }) => (
       But besides that, I passionate about <a href="/gamedev">game development</a> and irrational exploitation of computers.
       </p>
 
-      <div class="cards">
-        <div class="card">
+      <div className="cards">
+        <div className="card">
           <img src="/card_developer.png" alt="Developer" width="100px" />
-          <div class="card-container">
+          <div className="card-container">
             <h3>Developer</h3>
             <p>I have many hobby projects. But ideas I have more.</p>
           </div>
         </div>
 
-        <div class="card">
+        <div className="card">
           <img src="/card_traveler.png" alt="Traveler" width="100px" />
-          <div class="card-container">
+          <div className="card-container">
             <h3>Traveler</h3>
             <p>More than writing code I like to plan a good journey.</p>
           </div>
         </div>
 
-        <div class="card">
+        <div className="card">
           <img src="/card_snob.png" alt="Snob" width="100px" />
-          <div class="card-container">
+          <div className="card-container">
             <h3>Snob</h3>
             <p>I enjoy the code that is written well and looks perfect. </p>
           </div>

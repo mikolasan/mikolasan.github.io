@@ -30,11 +30,11 @@ class CreativeIdeas extends React.Component {
         </Banner>
         <section>
           <div>
-            <div class="ideacards">
+            <div className="ideacards">
               {edges
                 .sort((a, b) => a.node.frontmatter.date < b.node.frontmatter.date ? 1 : -1)
                 .map(({node}) => (
-                <div class="ideacard" key={node.frontmatter.title}>
+                <div className="ideacard" key={node.frontmatter.title}>
                   <Link to={node.frontmatter.path}>
                     <img src={node.frontmatter.coverImage ? "/images/projects/" + node.frontmatter.coverImage : "/images/no-cover.jpg"}/>
                   </Link>

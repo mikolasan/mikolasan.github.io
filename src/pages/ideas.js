@@ -39,11 +39,11 @@ const IdeasPage = () => (
 
       <p>Checkout section <a href="/projects">"Projects"</a> to find out my passions.</p>
       <h2>Idea generator</h2>
-        
+
       <p>
-      <a href="/idea-generator/">
-        <button className="action-button">Try it</button>
-      </a>
+        <a href="/idea-generator/">
+          <button className="action-button">Try it</button>
+        </a>
       </p>
 
       <p>
@@ -56,26 +56,26 @@ const IdeasPage = () => (
       So you want to make a great application. It is easy. All you need is these three things.
       </p>
 
-      <div class="cards">
-        <div class="card">
+      <div className="cards">
+        <div className="card">
           <img src="/card_idea.png" alt="Idea" width="100px" />
-          <div class="card-container">
+          <div className="card-container">
             <h3>Idea</h3>
             <p>Get an idea here. This is the first step and it is very important.</p>
           </div>
         </div>
 
-        <div class="card">
+        <div className="card">
           <img src="/card_code.png" alt="Code" width="100px" />
-          <div class="card-container">
+          <div className="card-container">
             <h3>Code</h3>
             <p>Write source code that fits to your idea. Any language. Any license.</p>
           </div>
         </div>
 
-        <div class="card">
+        <div className="card">
           <img src="/card_art.png" alt="Art" width="100px" />
-          <div class="card-container">
+          <div className="card-container">
             <h3>Art</h3>
             <p>Add colors and pictures. Find good art. I have <a href="/ideas/where-free-art">a list</a> where to look for it.</p>
           </div>

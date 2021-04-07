@@ -1,6 +1,6 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 export default () => (
   <StaticQuery
@@ -8,24 +8,23 @@ export default () => (
       query IndexImageQuery {
         file(relativePath: { eq: "index-7.jpg" }) {
           childImageSharp {
-            fluid(
-              srcSetBreakpoints: [576, 768, 922, 1400],
-              maxHeight: 400,
-              maxWidth: 1920,
-              cropFocus: CENTER,
-              fit: COVER,
+            gatsbyImageData(
+              layout: CONSTRAINED,
+              breakpoints: [576, 768, 922, 1400],
+              transformOptions: {
+                cropFocus: CENTER,
+                fit: COVER,
+              },
               quality: 100
-            ) {
-              ...GatsbyImageSharpFluid
-            }
+            )
           }
         }
       }
     `}
     render={data => (
       <div style={{minHeight:"350px", maxHeight: "400px"}}>
-        <Img 
-          fluid={data.file.childImageSharp.fluid}
+        <GatsbyImage 
+          image={data.file.childImageSharp.gatsbyImageData}
           style={{minHeight:"350px", maxHeight: '400px'}} 
         />
       </div>

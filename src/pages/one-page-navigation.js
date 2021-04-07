@@ -7,28 +7,28 @@ const NavigationPage = ({ data }) => {
   const nodes = data.allSitePage.nodes
   const edges = data.allMarkdownRemark.edges
   const paths = nodes.map(node => node.path)
-  let sections = new Map()
+  const sections = new Map()
   paths.forEach(path => {
     const ruRegex = /\/ru\/([a-z\-]+)\/.*/i
     const regex = /\/([a-z\-]+)\/.*/i
-    let ruMatch = ruRegex.exec(path)
-    let match = regex.exec(path)
+    const ruMatch = ruRegex.exec(path)
+    const match = regex.exec(path)
     if (ruMatch !== null && ruMatch[1] !== undefined) {
-      let sectioName = ruMatch[1]
+      const sectioName = ruMatch[1]
       if (sections.has(sectioName)) {
         sections.get(sectioName).unshift(path)
       } else {
         sections.set(sectioName, [path])
       }
     } else if (match !== null && match[1] !== undefined && match[1] !== "ru") {
-      let sectioName = match[1]
+      const sectioName = match[1]
       if (sections.has(sectioName)) {
         sections.get(sectioName).push(path)
       } else {
         sections.set(sectioName, [path])
       }
     }
-  });
+  })
 
   return (
     <Layout title="One page navigation">
@@ -38,7 +38,7 @@ const NavigationPage = ({ data }) => {
         {Array.from(sections.keys()).map(key => {
           return (
             <details>
-              <summary><h2>> {key.replace("-", " ")}</h2></summary>
+              <summary><h2>▸ {key.replace("-", " ")}</h2></summary>
               <ul>
                 {sections.get(key).map(path => {
                   let title = "< no title :( >"

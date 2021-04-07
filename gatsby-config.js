@@ -16,6 +16,9 @@ module.exports = {
               maxWidth: 800,
             },
           },
+          {
+            resolve: `gatsby-remark-prismjs`,
+          }
         ],
       },
     },
@@ -33,6 +36,7 @@ module.exports = {
         path: `${ __dirname }/src/images`,
       },
     },
+    `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sass`,

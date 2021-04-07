@@ -1,5 +1,5 @@
 import React from "react"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import MainImage from "../components/mainImage"
 
 export default (props) => {
@@ -7,7 +7,7 @@ export default (props) => {
   if (featuredImgFluid) {
     return (
       <div style={{minHeight:"300px", maxHeight: "400px"}}>
-        <Img fluid={featuredImgFluid} style={{minHeight:"300px", maxHeight: '400px'}} />
+        <GatsbyImage image={featuredImgFluid} style={{minHeight:"300px", maxHeight: '400px'}} />
       </div>
     )
   } else {

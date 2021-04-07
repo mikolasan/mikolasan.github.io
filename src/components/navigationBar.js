@@ -1,24 +1,26 @@
 import React from "react"
 import { graphql, Link, StaticQuery } from "gatsby"
-import Img from "gatsby-image"
-import styles from "./navigationBar.module.css"
+import { GatsbyImage } from "gatsby-plugin-image"
+import * as styles from "./navigationBar.module.css"
+
+const query = graphql`
+  {
+    file(relativePath: { eq: "logo.png" }) {
+      childImageSharp {
+        gatsbyImageData(
+          layout: FIXED
+        )
+      }
+    }
+}
+`
 
 const Navbar = ({ data, active }) => (
   <StaticQuery
-    query={graphql`
-      query LogoQuery {
-        file(relativePath: { eq: "logo.png" }) {
-          childImageSharp {
-            fixed {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-      }
-    `}
+    query={query}
     render={data => (
       <div className={styles.topnav}>
-        <Img fixed={data.file.childImageSharp.fixed} style={{float: 'left'}} />
+        <GatsbyImage image={data.file.childImageSharp.gatsbyImageData} style={{float: 'left'}} />
         <Link to="/" className={styles.titlelink} style={{backgroundColor: '#211a1d', color: '#f2f2f2'}}>Nikolay Neupokoev</Link>
         <Link to="/ideas/" { ...(active === "ideas" && { className: styles.activelink }) }>Ideas</Link>
         <Link to="/projects/" { ...(active === "projects" && { className: styles.activelink }) }>Projects</Link>

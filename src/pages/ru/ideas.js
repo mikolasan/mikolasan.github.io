@@ -21,26 +21,26 @@ const IdeasPage = () => (
       На все это нужно время.
       </p>
 
-      <div class="cards">
-        <div class="card">
+      <div className="cards">
+        <div className="card">
           <img src="/card_idea.png" alt="Idea" width="100px" />
-          <div class="card-container">
+          <div className="card-container">
             <h3><b>Идея</b></h3>
             <p>Здесь можно найти интересные идеи. Иметь план перед началом осуществления проекта.</p>
           </div>
         </div>
 
-        <div class="card">
+        <div className="card">
           <img src="/card_code.png" alt="Code" width="100px" />
-          <div class="card-container">
+          <div className="card-container">
             <h3><b>Код</b></h3>
             <p>Найти код, чтобы не изобретать велосипед и сосредоточиться на продукте. </p>
           </div>
         </div>
 
-        <div class="card">
+        <div className="card">
           <img src="/card_art.png" alt="Art" width="100px" />
-          <div class="card-container">
+          <div className="card-container">
             <h3><b>Дизайн</b></h3>
             <p>Нужно подобрать палитру, добавить фотографий и иллюстраций.</p>
           </div>

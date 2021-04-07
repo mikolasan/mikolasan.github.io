@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/ruLayout"
 import Banner from "../components/banner"
-import styles from "./blogListTemplate.module.css"
+import * as styles from "./blogListTemplate.module.css"
 
 class BlogIndex extends React.Component {
   render() {

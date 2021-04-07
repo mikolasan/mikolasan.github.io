@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../../components/ruLayout"
 import Banner from "../../components/banner"
 
-export default ({ data }) => (
+const RuIndex = ({ data }) => (
   <Layout
     title="Программист, турист, сноб"
     languageName="Switch to english version"
@@ -36,26 +36,26 @@ export default ({ data }) => (
       процессором, а заранее известные данные дадут заранее ожидаемый результат. Все просто идеально.
       </p>
 
-      <div class="cards">
-        <div class="card">
+      <div className="cards">
+        <div className="card">
           <img src="/card_developer.png" alt="Idea" width="100px" />
-          <div class="card-container">
+          <div className="card-container">
             <h3><b>Программист</b></h3>
             <p>В свободное время я пишу программы в качестве развлечения.</p>
           </div>
         </div>
 
-        <div class="card">
+        <div className="card">
           <img src="/card_traveler.png" alt="Code" width="100px" />
-          <div class="card-container">
+          <div className="card-container">
             <h3><b>Турист</b></h3>
             <p>Когда сидеть дома становится в тягость, я отправляюсь в дорогу.</p>
           </div>
         </div>
 
-        <div class="card">
+        <div className="card">
           <img src="/card_snob.png" alt="Art" width="100px" />
-          <div class="card-container">
+          <div className="card-container">
             <h3><b>Сноб</b></h3>
             <p>Больше удовольствия получаешь придираясь к чужому коду.</p>
           </div>
@@ -69,3 +69,5 @@ export default ({ data }) => (
     </section>
   </Layout>
 )
+
+export default RuIndex

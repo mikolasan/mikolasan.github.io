@@ -3,14 +3,14 @@ import { graphql } from "gatsby"
 import Layout from "../components/ruLayout"
 import FeaturedImage from "../components/featuredImage"
 import Banner from "../components/banner"
-import styles from "./blogTemplate.module.css"
+import * as styles from "./blogTemplate.module.css"
 
 export default function Template ({ data, pageContext, location }) {
   const { markdownRemark } = data // data.markdownRemark holds our post data
   const { frontmatter, html } = markdownRemark
   let featuredImgFluid = null;
   if (frontmatter.featuredImage) {
-    featuredImgFluid = frontmatter.featuredImage.childImageSharp.fluid
+    featuredImgFluid = frontmatter.featuredImage.childImageSharp.gatsbyImageData
   }
   const linkPath = frontmatter.path
   let anotherLanguageLink = ''
@@ -73,20 +73,19 @@ export const pageQuery = graphql`
         buttonLink
         featuredImage {
           childImageSharp {
-            fluid(
-              srcSetBreakpoints: [576, 768, 922],
-              maxHeight: 400,
-              maxWidth: 1400,
-              cropFocus: ATTENTION,
-              fit: COVER,
-              duotone: {
-                highlight: "#4B5043",
-                shadow: "#211A1D"
+            gatsbyImageData(
+              layout: FULL_WIDTH,
+              breakpoints: [576, 768, 922],
+              transformOptions: {
+                cropFocus: ATTENTION,
+                fit: COVER,
+                duotone: {
+                  highlight: "#4B5043",
+                  shadow: "#211A1D"
+                }
               },
               quality: 100
-            ) {
-              ...GatsbyImageSharpFluid
-            }
+            )
           }
         }
       }

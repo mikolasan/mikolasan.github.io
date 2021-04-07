@@ -1,6 +1,6 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 export default ({ children, buttonText, buttonLink, secondButtonText, secondButtonLink }) => (
   <StaticQuery
@@ -8,16 +8,15 @@ export default ({ children, buttonText, buttonLink, secondButtonText, secondButt
       query BannerImageQuery {
         file(relativePath: { eq: "index-7.jpg" }) {
           childImageSharp {
-            fluid(
-              srcSetBreakpoints: [576, 768, 922, 1400],
-              maxHeight: 400,
-              maxWidth: 1920,
-              cropFocus: CENTER,
-              fit: COVER,
+            gatsbyImageData(
+              layout: CONSTRAINED,
+              breakpoints: [576, 768, 922, 1400],
+              transformOptions: {
+                cropFocus: CENTER,
+                fit: COVER,
+              },
               quality: 100
-            ) {
-              ...GatsbyImageSharpFluid
-            }
+            )
           }
         }
       }
@@ -25,8 +24,8 @@ export default ({ children, buttonText, buttonLink, secondButtonText, secondButt
     render={data => (
       <div className="container">
         <div style={{height: "400px"}}>
-          <Img
-            fluid={data.file.childImageSharp.fluid}
+          <GatsbyImage
+            image={data.file.childImageSharp.gatsbyImageData}
             style={{height: '400px'}}
           />
         </div>
