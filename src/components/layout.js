@@ -35,7 +35,7 @@ const Layout = ({ children, showLikes, languageName, anotherLanguageLink, title,
         </main>
         <footer>
           <div className="bottomnav">
-            <Link style={{marginBottom: '0.5em', textDecoration: 'underline'}} to={anotherLanguageLink}>{languageName}</Link>
+            {anotherLanguageLink && (<Link style={{marginBottom: '0.5em', textDecoration: 'underline'}} to={anotherLanguageLink}>{languageName}</Link>)}
             <div className="bottomsmallabout">
               <h2>About</h2>
               <p>I am a future artist. I spend a lot of time with C++, but there is not much of intelligible. So I will become an artist, I promise. #irony</p>

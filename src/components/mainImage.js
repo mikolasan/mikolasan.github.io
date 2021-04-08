@@ -25,7 +25,8 @@ export default () => (
       <div style={{minHeight:"350px", maxHeight: "400px"}}>
         <GatsbyImage 
           image={data.file.childImageSharp.gatsbyImageData}
-          style={{minHeight:"350px", maxHeight: '400px'}} 
+          style={{minHeight:"350px", maxHeight: '400px'}}
+          alt="Car forest"
         />
       </div>
     )}

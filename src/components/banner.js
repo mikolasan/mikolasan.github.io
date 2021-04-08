@@ -27,6 +27,7 @@ export default ({ children, buttonText, buttonLink, secondButtonText, secondButt
           <GatsbyImage
             image={data.file.childImageSharp.gatsbyImageData}
             style={{height: '400px'}}
+            alt="Car forest"
           />
         </div>
         <div className="container-text">

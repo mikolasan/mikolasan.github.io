@@ -1,7 +1,6 @@
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types"
 import React from "react"
-import { Link } from "gatsby"
-import { Location } from '@reach/router'
+import { Location } from "@reach/router"
 
 class LikesPanel extends React.Component {
   static propTypes = {
@@ -15,61 +14,68 @@ class LikesPanel extends React.Component {
 
   scores = {
     "mind-blown": 0,
-    "wild": 0,
-    "confused": 0,
-    "boring": 0
+    wild: 0,
+    confused: 0,
+    boring: 0
   }
 
-  constructor(props) {
-    super(props);
-    this.likeClicked = this.likeClicked.bind(this);
+  constructor (props) {
+    super(props)
+    this.likeClicked = this.likeClicked.bind(this)
     this.pageUrl = props.location.pathname
+    this.serverUrl = "https://like-mikolasan.herokuapp.com"
   }
 
-  componentDidMount() {
+  async componentDidMount () {
     const requestOptions = {
-      headers: { 
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
       }
-    };
-    fetch('https://like-mikolasan.herokuapp.com/likes?' + new URLSearchParams({
-      url: this.pageUrl
-    }), requestOptions)
-      .then(response => response.json())
-      .then(data => {
-        if (data.scores === null) return
-        Object.entries(data.scores).forEach(([name, score]) => {
-          this.scores[name] = score
-        })
-        this.forceUpdate()
-      });
+    }
+    try {
+      const response = await fetch(this.serverUrl + "/likes?" + new URLSearchParams({
+        url: this.pageUrl
+      }), requestOptions)
+      if (!response.bodyUsed) return
+
+      const data = await response.json()
+      if (data.scores === null) return
+      
+      Object.entries(data.scores).forEach(([name, score]) => {
+        this.scores[name] = score
+      })
+      this.forceUpdate()
+    } catch (err) {
+      console.error(err)
+    }
   }
 
-  likeClicked(scoreName, e) {
-    e.preventDefault();
+  likeClicked (scoreName, e) {
+    e.preventDefault()
     // Simple POST request with a JSON body using fetch
     const requestOptions = {
-      method: 'POST',
-      headers: { 
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
       },
       body: JSON.stringify({
         url: this.pageUrl,
         like: scoreName
       })
-    };
-    fetch('https://like-mikolasan.herokuapp.com/like', requestOptions)
+    }
+    fetch(this.serverUrl + "/like", requestOptions)
       .then(response => response.json())
       .then(data => {
         this.scores[data.scoreName] = data.score
         this.forceUpdate()
-      });
+      })
+      .catch(err => console.error(err))
   }
 
-  render() {
-    let total = Object.values(this.scores).reduce((a, b) => a + b, 0)
+  render () {
+    const total = Object.values(this.scores).reduce((a, b) => a + b, 0)
     return (
       <>
         <hr />
@@ -80,9 +86,9 @@ class LikesPanel extends React.Component {
         <h3>Cast your vote</h3>
         <ul>
           <li>🤯 {this.scores["mind-blown"]}  <button onClick={this.likeClicked.bind(this, "mind-blown")}>+1</button></li>
-          <li>🤪 {this.scores["wild"]}  <button onClick={this.likeClicked.bind(this, "wild")}>+1</button></li>
-          <li>😕 {this.scores["confused"]}  <button onClick={this.likeClicked.bind(this, "confused")}>+1</button></li>
-          <li>🥱 {this.scores["boring"]}  <button onClick={this.likeClicked.bind(this, "boring")}>+1</button></li>
+          <li>🤪 {this.scores.wild}  <button onClick={this.likeClicked.bind(this, "wild")}>+1</button></li>
+          <li>😕 {this.scores.confused}  <button onClick={this.likeClicked.bind(this, "confused")}>+1</button></li>
+          <li>🥱 {this.scores.boring}  <button onClick={this.likeClicked.bind(this, "boring")}>+1</button></li>
         </ul>
       </>
     )

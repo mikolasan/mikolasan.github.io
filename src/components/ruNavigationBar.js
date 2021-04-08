@@ -18,7 +18,7 @@ const RuNavbar = ({ data, active }) => (
     `}
     render={data => (
       <div className={styles.topnav}>
-        <GatsbyImage image={data.file.childImageSharp.gatsbyImageData} style={{float: 'left'}} />
+        <GatsbyImage image={data.file.childImageSharp.gatsbyImageData} style={{float: 'left'}} alt="N означает либо Николай, либо Неупокоев, либо и то и другое"/>
         <Link to="/ru" className={styles.titlelink} style={{backgroundColor: '#211a1d', color: '#f2f2f2'}}>Николай Неупокоев</Link>
         <Link to="/ru/ideas/" { ...(active === "ideas" && { className: styles.activelink }) }>Идеи</Link>
         <Link to="/ru/projects/" { ...(active === "projects" && { className: styles.activelink }) }>Проекты</Link>

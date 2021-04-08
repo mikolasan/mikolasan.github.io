@@ -7,7 +7,7 @@ export default (props) => {
   if (featuredImgFluid) {
     return (
       <div style={{minHeight:"300px", maxHeight: "400px"}}>
-        <GatsbyImage image={featuredImgFluid} style={{minHeight:"300px", maxHeight: '400px'}} />
+        <GatsbyImage image={featuredImgFluid} style={{minHeight:"300px", maxHeight: '400px'}} alt="Featured image" />
       </div>
     )
   } else {

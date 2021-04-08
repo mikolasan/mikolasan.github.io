@@ -1,21 +1,13 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Link, graphql } from "gatsby"
-import { Breadcrumb } from 'gatsby-plugin-breadcrumb'
 import Layout from "../components/layout"
 import Banner from "../components/banner"
-import SlotMachine from "../components/slotMachine"
-import styles from "../templates/blogTemplate.module.css"
 
 class AllIdeas extends React.Component {
-  render() {
+  render () {
     const { data } = this.props
     const group = data.allMarkdownRemark.group
-    const {
-      currentPage,
-      numPages,
-      breadcrumb: { crumbs },
-    } = this.props.pageContext
     return (
       <Layout
         title="All ideas for app development"
