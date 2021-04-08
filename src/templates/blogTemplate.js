@@ -19,9 +19,11 @@ export default function Template ({ data, pageContext, location }) {
   if (linkPath.startsWith('/ru/blog')) {
     anotherLanguageLink = '/blog'
     languageName = "Switch to english version"
+    alertAboutDraftStatus = 'Статья находится в активной разработке. Она опубликована в таком виде не для издевательства над читателем, а только потому что редактор сказал "можно".'
   } else if (linkPath.startsWith('/blog')) {
     anotherLanguageLink = '/ru/blog'
     languageName = "Switch to russian version"
+    alertAboutDraftStatus = 'This article is not finished and not reviewed thoroughly. If for some reason you want to continue reading, do it at your own risk, but do not forget to come back later to enjoy the final version.'
   } else if (linkPath.startsWith('/ru/')) {
     anotherLanguageLink = linkPath.replace('/ru/', '/')
     languageName = "Switch to english version"
