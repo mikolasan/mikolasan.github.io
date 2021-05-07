@@ -72,3 +72,5 @@ $26,391 pledged of $134,967 goal
 
 https://leplants.ru/tsvetovodstvo/sistemy-kapelnogo-orosheniya-v-gidroponike-drip-systems/
 https://www.growertoday.com/top-feed-drip-system-hydroponics/
+
+[Своё](/ru/projects/hydroponics-drip-system)

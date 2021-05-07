@@ -6,57 +6,76 @@ const Index = ({ data }) => (
   <Layout
     title="Developer, traveler, snob"
     languageName="Switch to russian version"
-    anotherLanguageLink="/ru"
+    anotherLanguageLink="/ru/projects"
   >
     <Banner
-      buttonText="Open my latest projects"
-      buttonLink="/projects/"
-      secondButtonText="Fresh posts in the blog"
-      secondButtonLink="/blog/"
+      buttonText="All other projects"
+      buttonLink="/projects"
+      secondButtonText="Blog"
+      secondButtonLink="/blog"
     >
-      <h1>developer - traveler - snob</h1>
+      <h1>Nikolay Neupokoev</h1>
+      <p>I am a future artist. I spend a lot of time with C++, but there is not much of intelligible. So I will become an artist, I promise.</p>
     </Banner>
     <section>
-      <p>
-      I am a full-time developer, once a year traveler and a snob ever since I registered on Instagram.
-      I have a postgraduate degree in Applied Mathematics and Computer <a href="/science">Science</a>. With its help, I do what I do for a living.
-      But besides that, I passionate about <a href="/gamedev">game development</a> and irrational exploitation of computers.
-      </p>
-
-      <div className="cards">
-        <div className="card">
-          <img src="/card_developer.png" alt="Developer" width="100px" />
-          <div className="card-container">
-            <h3>Developer</h3>
-            <p>I have many hobby projects. But ideas I have more.</p>
+      <h2>Featured projects</h2>
+      <div className="ideacards">
+        <div className="ideacard">
+          <a href="/projects/imperial-russia">
+            <img src="/images/projects/imperial-russia.jpg" alt="Russian village" />
+          </a>
+          <div className="idea-card-container">
+            <h3>Imperial Russia</h3>
+            <p>Historic unit converter</p>
+            <p><a href="/projects/imperial-russia">Read more</a></p>
           </div>
         </div>
 
-        <div className="card">
-          <img src="/card_traveler.png" alt="Traveler" width="100px" />
-          <div className="card-container">
-            <h3>Traveler</h3>
-            <p>More than writing code I like to plan a good journey.</p>
+        <div className="ideacard">
+          <a href="/gamedev/overload-godot">
+            <img src="/images/projects/overload-godot.jpg" alt="" />
+          </a>
+          <div className="idea-card-container">
+            <h3>Overload 2</h3>
+            <p> (Godot 3.1)</p>
+            <p><a href="/gamedev/overload-godot">Read more</a></p>
           </div>
         </div>
 
-        <div className="card">
-          <img src="/card_snob.png" alt="Snob" width="100px" />
-          <div className="card-container">
-            <h3>Snob</h3>
-            <p>I enjoy the code that is written well and looks perfect. </p>
+        <div className="ideacard">
+          <a href="/gamedev/pyroguelike">
+            <img src="/images/projects/not-your-fathers-roguelike.jpg" alt="Pixel art level"/>
+          </a>
+          <div className="idea-card-container">
+            <h3><b>Roguelike</b></h3>
+            <p>Not Your Father's Roguelike. (PyGame)</p>
+            <p><a href="/gamedev/pyroguelike">Read more</a></p>
+          </div>
+        </div>
+
+        <div className="ideacard">
+          <a href="/board-games">
+            <img src="/images/projects/board-game.jpg" alt="Prototype playthrough"/>
+          </a>
+          <div className="idea-card-container">
+            <h3>Board game</h3>
+            <p>TODO: description is missing</p>
+            <p><a href="/board-games">Read more</a></p>
+          </div>
+        </div>
+
+        <div className="ideacard">
+          <a href="/youtube">
+            <img src="/images/projects/youtube.jpg" alt="YouTube channel art" />
+          </a>
+          <div className="idea-card-container">
+            <h3>YouTube channel</h3>
+            <p>TODO: description is missing</p>
+            <p><a href="/youtube">Read more</a></p>
           </div>
         </div>
 
       </div>
-      <h2>Navigation</h2>
-      <p>Here is <a href="/one-page-navigation/">One Page to rule them all</a></p>
-      <hr/>
-      <small>
-      <div>Icons made by <a href="https://www.flaticon.com/free-icon/programmer_2092430" title="srip">srip</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></div>
-      <div>Icons made by <a href="https://www.flaticon.com/free-icon/car_2706107" title="iconixar">iconixar</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></div>
-      <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></div>
-      </small>
     </section>
   </Layout>
 )
