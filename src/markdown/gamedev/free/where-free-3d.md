@@ -10,3 +10,7 @@ title: "Where free 3d?"
 - https://www.turbosquid.com/Search/3D-Models/free
 - https://clara.io/library
 - https://free3d.com/
+
+## Generators
+
+- https://aiartists.org/fractal-art-generators

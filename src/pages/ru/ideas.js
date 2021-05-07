@@ -65,6 +65,12 @@ const IdeasPage = () => (
       от телевизора, новостей и потребительства.
       </p>
 
+      <ul>
+        <li><a href="/ru/projects/hydroponics-overview">Обзор материалов по теме Гидропоника</a></li>
+        <li><a href="/ru/projects/hydroponics-nutrient-film-technique">Nutrient Film Technique (NFT) - гидропонный метод _проточной тонкослойной подачи_ питательного вещества</a></li>
+        <li><a href="/ru/projects/hydroponics-drip-system">Гидропоника: собираем систему капельного орошения</a></li>
+        <li><a href="/ru/projects/hydroponics-sensors">Гидропоника: сенсоры</a></li>
+      </ul>
 
     </section>
   </Layout>
