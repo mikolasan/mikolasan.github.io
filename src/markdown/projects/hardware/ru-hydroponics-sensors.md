@@ -2,14 +2,24 @@
 path: "/ru/projects/hydroponics-sensors"
 date: "2021-04-18"
 title: "Гидропоника: сенсоры"
-tags: ["hardware"]
+tags: ["hydroponics"]
 language: "ru"
 draft: true
 ---
 
 [OpenHydro](https://github.com/Cribstone/OpenHydro) - подробный список сенсоров для Ардуинки (не проверял).
 
+
+## Качество воды (TDS)
+
+https://aliexpress.ru/item/4001010691199.html
+https://aliexpress.ru/item/33050818416.html
+
+
 ## Температура
+
+Похоже это самый крутой обзор/сравнение доступных на рынке датчиков температуры: https://randomnerdtutorials.com/dht11-vs-dht22-vs-lm35-vs-ds18b20-vs-bme280-vs-bmp180/
+где в наглядном графике показано, какие данные вы будете получать от сенсора.
 
 **ASAIR AHT10**
 - [Обзор](https://elchupanibrei.livejournal.com/53764.html)
@@ -20,6 +30,9 @@ draft: true
 **DHT22**
 - [Как подключать](https://www.mouser.com/datasheet/2/737/dht-932870.pdf)
 - [Datasheet](https://files.seeedstudio.com/wiki/Grove-Temperature_and_Humidity_Sensor_Pro/res/AM2302-EN.pdf)
+
+
+**DS18b20 Dallas**
 
 ## Температура / влажность / давление
 

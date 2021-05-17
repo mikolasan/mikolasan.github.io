@@ -2,7 +2,7 @@
 path: "/ru/projects/hydroponics-nutrient-film-technique"
 date: "2021-01-20"
 title: "Nutrient Film Technique"
-tags: ["hardware"]
+tags: ["hydroponics"]
 language: "ru"
 draft: true
 ---

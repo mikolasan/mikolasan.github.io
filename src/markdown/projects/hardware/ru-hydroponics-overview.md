@@ -2,7 +2,7 @@
 path: "/ru/projects/hydroponics-overview"
 date: "2021-01-20"
 title: "Обзор материалов по теме Гидропоника"
-tags: ["hardware"]
+tags: ["hydroponics"]
 language: "ru"
 draft: true
 ---
@@ -20,6 +20,12 @@ draft: true
 - [Пример](https://www.dudegrows.com/build-your-own-controller-monitor/) того, как можно использовать [Home Assistant](https://www.home-assistant.io/) для монотиронга сенсорами и управления реле.
 - [MudPi Smart Garden](https://github.com/mudpi/mudpi-core) - разрабатывается с 2019 и уже доросло до версии 0.10.0. Идея все такая же по использованию Малинки Пи для управления контрольными платами и считыванием сенсоров. Много документации по архитектуре системы (используется PHP 7 и Redis), нет скриншотов текущего UI, вместо этого люди [прикручивают](https://github.com/icyspace/MudPiInflux) к Редису сторонние пакеты по отображению данных - Grafana, Telegraf. Зато лицензия MIT.
 - [Mycodo](https://github.com/kizniche/Mycodo/) - очень популярный репозиторий, один возможный недостаток - это лицензия, но хорошие коммерчиские проекты это е останавливает. На [его сайте](https://kylegabriel.com/projects/2020/06/automated-hydroponic-system-build.html) есть подробная инструкция по постройке гидропоники со списком всех необходимых компонентов.
+
+
+## Конкуренты
+
+- [The Farmstand](https://www.lettucegrow.com/shop) - дизайн, сайт со всем необходимым
+- [FarmBets](https://www.microsoft.com/en-us/garage/wall-of-fame/farmbeats/) https://www.microsoft.com/en-us/research/project/farmbeats-iot-agriculture/ https://novosibirsk.tara.ru/catalog/plastikovye_yashchiki/futura_safe_pro/
 
 ## Kickstarter проекты
 
