@@ -174,7 +174,7 @@ Now it is time to tame the output with filters.
 
 ## Mockup service
 
-As I said earlier, I only want to receive logs from one specific service. Like this simple Python service https://gist.github.com/mikolasan/917455a42152eeab24a0bb3fcb549647.
+As I said earlier, I only want to receive logs from one specific service. Like this simple [Python](/gamedev/why-do-i-hate-python) service: https://gist.github.com/mikolasan/917455a42152eeab24a0bb3fcb549647.
 
 ```
 sudo mkdir /opt/my-python-project
@@ -221,7 +221,7 @@ At this point you may need to wait until all prevoius messages will be ignored. 
 
 ## Add filters
 
-This part must be really straight forward. Just look at the doc https://sematext.com/docs/logagent/input-filter-grep/. But no. The `journald-upload` input plugin  is not producing "raw input". It produces objects. Which means instead of input filters we must use otput filters. It is perfectly explained in ... comments in the source code.
+This part must be really straight forward. Just look at [the doc](https://sematext.com/docs/logagent/input-filter-grep/). But no. The `journald-upload` input plugin  is not producing "raw input". It produces objects. Which means instead of input filters we must use otput filters. It is perfectly explained in ... comments in the source code.
 
 > DATA_RAW events are emitted by input-plugins, producing text lines, and must be handled by text based input-filters and parser.
 
@@ -277,7 +277,7 @@ When we add new `drop-events` filter, one can notice that developers like to deb
 
 ## Send logs to Slack
 
-This part must be really straight forward. Just look at the doc https://sematext.com/docs/logagent/output-plugin-slack/. But no. Slack has new API for their [fancy](https://api.slack.com/messaging/webhooks#advanced_message_formatting) [Block Kit framework](https://api.slack.com/block-kit). 
+This part must be really straight forward. Just look at [the doc](https://sematext.com/docs/logagent/output-plugin-slack/). But no. Slack has new API for their [fancy](https://api.slack.com/messaging/webhooks#advanced_message_formatting) [Block Kit framework](https://api.slack.com/block-kit). 
 
 For the sake of a good example I will show how to print a timestamp from logs. It is not that easy as you think. 
 

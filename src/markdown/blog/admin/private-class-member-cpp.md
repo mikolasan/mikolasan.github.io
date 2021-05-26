@@ -13,11 +13,11 @@ I stumbled upon one implementation from my coworkers where a subclass was extend
 
 To make such system run, one needs at least one dummy class that allows the base to do the thing and then do its dummy part - nothing and stop. Or make the second step customizable by subclasses. I hope you see how public interface can stay clear, while the second step is defined by private abstract functions. 
 
-Wait. Private virtual? Does it make sense? Mayb protected virtual?
+Wait. Private virtual? Does it make sense? Maybe protected virtual?
 
 https://stackoverflow.com/questions/40615470/using-private-abstract-method-in-derived-class
 
-Okay. That is the Tempate Method pattern.
+Okay. That is the Template Method pattern.
 
 Then I asked myself just a theoretical question. If in similar fashion a have private members and I need a getter, where this getter should be defined? Base class? Add virtual keyword?
 

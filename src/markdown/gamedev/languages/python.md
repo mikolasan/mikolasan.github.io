@@ -1,7 +1,7 @@
 ---
-path: /gamedev/python
+path: /gamedev/why-do-i-hate-python
 date: 2020-06-06
-title: Python
+title: Why do I hate Python?
 ---
 
 ## Why do I hate Python?

@@ -1,7 +1,7 @@
 ---
-path: /gamedev/java
+path: /gamedev/why-do-i-hate-java
 date: 2020-04-13
-title: Java
+title: Why do I hate Java?
 ---
 
 ## Why do I hate Java?
