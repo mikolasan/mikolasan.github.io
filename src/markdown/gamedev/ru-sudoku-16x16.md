@@ -1,8 +1,9 @@
 ---
 path: "/ru/gamedev/sudoku-16x16"
-date: "2019-03-05"
+date: "2021-05-26"
 title: Судоку 16х16
 featuredImage: sudoku-game-2.png
+language: "ru"
 ---
 
 ## Как у меня провалилась оценка сроков

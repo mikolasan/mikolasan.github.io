@@ -8,7 +8,7 @@ featuredImage: pyroguelike-1.png
 
 ## Try it now!
 
-In the browser: https://repl.it/@stakanmartini/test-roguelike-11
+In the browser: https://replit.com/@stakanmartini/test-roguelike-11
 
 Source code: https://github.com/mikolasan/pyroguelike
 

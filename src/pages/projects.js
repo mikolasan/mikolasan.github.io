@@ -115,7 +115,7 @@ const Projects = ({ data }) => (
           </a>
           <div className="idea-card-container">
             <h3>Board game</h3>
-            <p>TODO: description is missing</p>
+            <p>If board games you know do not give you joy anymore, then why not create your own?</p>
             <p><a href="/board-games">Read more</a></p>
           </div>
         </div>

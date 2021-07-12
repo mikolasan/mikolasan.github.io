@@ -3,15 +3,19 @@ path: "/projects/tablet-as-keyboard"
 date: "2020-05-16"
 title: "Tablet as a keyboard"
 tags: ["bluetooth", "chromesact"]
+featuredImage: tablet-keyboard-vim-cheatsheet.jpg
+coverImage: "tablet-as-keyboard.jpg"
 idea: creative
 ---
 
-Если положить планшет в горизонтальное положение, то клавиатура имеет приеемлемый размер для печатания двумя руками, но на оставшейся части экрана приложение и ОС соперничают за свободное место и пользователю остается видеть только одну строчку ввода.
+When you put a tablet into landscape orientation the keyboard has a very descent sizе for comfortable typing with two hands. But the rest of the screen is an area of a constant battle between the OS and an app leaving about one line for input preview.
 
-В это же время я начал экспериментировать в vim, пытаясь понять, смогу ли я пользоваться этим редактором для повседневного программирования или же я буду в панике хвататься за мышку.
+![Default keyboard](./tablet-keyboard.jpg)
 
-И вот я посмотрел на телевизор - большой экран, позволяет работать сидя на диване, остается делов-то передавать картинку с приложения с помощью chromecast. А ввод производить с планшета, где на весь экран показывается клавиатура и еще остается место для подсказок (cheatsheet по vim, например).
+Not a long time ago I have started playing with vim, trying to work more efficiently without a mouse.
 
-Или использовать ввод с клавиатуры (с планшета) на обычном компьютере. Планшет будет притворяться bluetooth устройством. Здесь идея хоть и интересная, но у меня дома только ноутбуки, поэтому еще одной клавы пока не надо.
+But when my look stopped for a moment on a TV screen, I imagined that one can seat on a sofa, type on the tablet, and cast a picture from the tablet to the TV screen. If input will be on the TV screen only, then the tablet has some additional space to display hints, tips, and shortcuts (cheatsheet for vim, [for example](https://hamwaves.com/vim.tutorial/en/index.html)).
 
-И есть обратная идея. Использовать удобную клавиатуру подключенную к компьютеру, чтобы печатать на телефоне или планшете.
+![Vim cheat sheet](./tablet-keyboard-vim-cheatsheet.jpg)
+
+Instead of a TV screen, the keyboard app can be remotely connected to a regular PC. They can communicate using Bluetooth.

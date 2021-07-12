@@ -1,6 +1,8 @@
 import React from "react"
+import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Banner from "../components/banner"
+import * as styles from "../templates/blogListTemplate.module.css"
 
 const Index = ({ data }) => (
   <Layout
@@ -18,6 +20,34 @@ const Index = ({ data }) => (
       <p>I am a future artist. I spend a lot of time with C++, but there is not much of intelligible. So I will become an artist, I promise.</p>
     </Banner>
     <section>
+      <h2>New blog posts</h2>
+      <div className={styles.blogcards}>
+        <div className={styles.blogcard}>
+          <Link to="/blog/send-alerts-from-systemd-to-slack"><h3>
+            Send alerts from systemd to Slack
+          </h3></Link>
+          <p className={styles.blogdate}>
+            {new Date(Date.parse("2021-05-12")).toLocaleDateString("en-US", { dateStyle: "full" })}
+          </p>
+          <p>
+            I found logagent from a google search. It should solve a very simple thing: get logs from systemd, focus on one service, format a message…
+            {" "}<Link to="/blog/send-alerts-from-systemd-to-slack">Read more...</Link>
+          </p>
+        </div>
+
+        <div className={styles.blogcard}>
+          <Link to="/blog/add-ca-certificate-to-java-https-client"><h3>
+            Add CA certificate to Java HTTPS client
+          </h3></Link>
+          <p className={styles.blogdate}>
+            {new Date(Date.parse("2021-04-20")).toLocaleDateString("en-US", { dateStyle: "full" })}
+          </p>
+          <p>
+            Consider you have a HTTPS server with ssl certificate, and you do want to use the certificate on your client side. How to write HTTPS client…
+            <Link to="/blog/add-ca-certificate-to-java-https-client">Read more...</Link>
+          </p>
+        </div>
+      </div>
       <h2>Featured projects</h2>
       <div className="ideacards">
         <div className="ideacard">
