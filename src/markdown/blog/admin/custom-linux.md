@@ -203,7 +203,7 @@ Writing superblocks and filesystem accounting information: done
 mkdir mountpoint
 sudo mount -t auto -o loop azathoth.img mountpoint/
 mount | grep azathoth
-/scgames/installer/azathoth.img on /scgames/installer/mountpoint type ext4 (rw,relatime)
+azathoth.img on mountpoint type ext4 (rw,relatime)
 
 sudo dd if=/dev/zero of=root.img bs=1M count=7200
 sudo mkfs -t ext4 root.img

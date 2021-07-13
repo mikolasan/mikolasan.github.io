@@ -22,7 +22,7 @@ export default ({ children, buttonText, buttonLink, secondButtonText, secondButt
       }
     `}
     render={data => (
-      <div className="container">
+      <div className="banner">
         <div style={{height: "400px"}}>
           <GatsbyImage
             image={data.file.childImageSharp.gatsbyImageData}
@@ -30,7 +30,7 @@ export default ({ children, buttonText, buttonLink, secondButtonText, secondButt
             alt="Car forest"
           />
         </div>
-        <div className="container-text">
+        <div className="banner-text">
           <div className="featured-area">
             <div className="featured-text">{children}</div>
             {(buttonText && buttonLink) && (

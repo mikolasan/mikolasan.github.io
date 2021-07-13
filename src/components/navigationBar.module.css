@@ -1,8 +1,6 @@
 .topnav {
   margin: 0;
   padding: 0;
-
-  overflow: hidden;
   font-family: 'Manrope', sans-serif;
   border-bottom: #211a1d solid 0.25rem;
 }
@@ -38,6 +36,22 @@
   color: white;
 }
 
+.mobilenav {
+  display: none;
+}
+
+.burgermenu {
+  width: 50px;
+}
+.searchmenu {
+  width: 50px;
+}
+
+.logomenu {
+  display: inline-block;
+  width: 50px;
+}
+
 a.activelink {
   background: repeating-linear-gradient(
     -45deg,
@@ -70,4 +84,15 @@ a.active.activelink  {
 
 @media all and (max-width: 675px) {
   .topnav { display: none; }
+  .mobilenav {
+    width: 100%;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    font-family: 'Manrope', sans-serif;
+    border-bottom: #211a1d solid 0.25rem;
+  }
 }
+
+
