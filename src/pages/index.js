@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
-import Banner from "../components/banner"
+
 import * as styles from "../templates/blogListTemplate.module.css"
 
 const Index = ({ data }) => (
@@ -9,16 +9,15 @@ const Index = ({ data }) => (
     title="Developer, traveler, snob"
     languageName="Switch to russian version"
     anotherLanguageLink="/ru/projects"
-  >
-    <Banner
-      buttonText="All other projects"
-      buttonLink="/projects"
-      secondButtonText="Blog"
-      secondButtonLink="/blog"
-    >
-      <h1>Nikolay Neupokoev</h1>
+    buttonText="All other projects"
+    buttonLink="/projects"
+    secondButtonText="Blog"
+    secondButtonLink="/blog"
+    bannerParagraph={[
+      <h1>Nikolay Neupokoev</h1>,
       <p>I am a future artist. I spend a lot of time with C++, but there is not much of intelligible. So I will become an artist, I promise.</p>
-    </Banner>
+    ]}
+  >
     <section>
       <h2>New blog posts</h2>
       <div className={styles.blogcards}>

@@ -40,10 +40,12 @@ export default function Template ({ data, pageContext, location }) {
       showLikes={pageContext.showLikes}
       languageName={languageName}
       anotherLanguageLink={anotherLanguageLink}
+      buttonText={frontmatter.buttonText}
+      buttonLink={frontmatter.buttonLink}
     >
       {featuredImgFluid
         && (<FeaturedImage imgFluid={featuredImgFluid} />)
-        || (<Banner buttonText={frontmatter.buttonText} buttonLink={frontmatter.buttonLink}><h1>{frontmatter.title}</h1><p dangerouslySetInnerHTML={{ __html: frontmatter.subtitle }} /></Banner>)
+        || (<Banner><h1>{frontmatter.title}</h1><p dangerouslySetInnerHTML={{ __html: frontmatter.subtitle }} /></Banner>)
       }
       <section>
         {featuredImgFluid && (<h1>{frontmatter.title}</h1>)}

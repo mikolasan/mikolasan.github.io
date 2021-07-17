@@ -1,29 +1,32 @@
+import PropTypes from "prop-types"
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
-export default ({ children, buttonText, buttonLink, secondButtonText, secondButtonLink }) => (
-  <StaticQuery
-    query={graphql`
-      query BannerImageQuery {
-        file(relativePath: { eq: "index-7.jpg" }) {
-          childImageSharp {
-            gatsbyImageData(
-              layout: CONSTRAINED,
-              breakpoints: [576, 768, 922, 1400],
-              transformOptions: {
-                cropFocus: CENTER,
-                fit: COVER,
-              },
-              quality: 100
-            )
-          }
-        }
+const query = graphql`
+  query BannerImageQuery {
+    file(relativePath: { eq: "index-7.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(
+          layout: CONSTRAINED,
+          breakpoints: [576, 768, 922, 1400],
+          transformOptions: {
+            cropFocus: CENTER,
+            fit: COVER,
+          },
+          quality: 100
+        )
       }
-    `}
+    }
+  }
+`
+
+const Banner = ({ children, buttonText, buttonLink, secondButtonText, secondButtonLink }) => (
+  <StaticQuery
+    query={query}
     render={data => (
       <div className="banner">
-        <div style={{height: "400px"}}>
+        <div className="banner-background">
           <GatsbyImage
             image={data.file.childImageSharp.gatsbyImageData}
             style={{height: '400px'}}
@@ -53,3 +56,13 @@ export default ({ children, buttonText, buttonLink, secondButtonText, secondButt
     )}
   />
 )
+
+Banner.propTypes = {
+  children: PropTypes.node.isRequired,
+  buttonText: PropTypes.string.isRequired,
+  buttonLink: PropTypes.string.isRequired,
+  secondButtonText: PropTypes.string.isRequired,
+  secondButtonLink: PropTypes.string.isRequired
+}
+
+export default Banner

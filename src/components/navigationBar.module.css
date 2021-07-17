@@ -1,6 +1,7 @@
 .topnav {
   margin: 0;
   padding: 0;
+  height: 3.2rem;
   font-family: 'Manrope', sans-serif;
   border-bottom: #211a1d solid 0.25rem;
 }
@@ -12,9 +13,11 @@
 
 .topnav a {
   float: left;
+  height: 100%;
+  padding: 0 1.2rem;
+  padding-top: 0.8rem;
   color: #211a1d;
   text-align: center;
-  padding: 12px 16px;
   text-decoration: none;
 }
 

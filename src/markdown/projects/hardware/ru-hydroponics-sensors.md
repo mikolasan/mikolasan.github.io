@@ -1,11 +1,17 @@
 ---
-path: "/ru/projects/hydroponics-sensors"
+path: "/ru/projects/hydroponics/sensors"
 date: "2021-04-18"
 title: "Гидропоника: сенсоры"
 tags: ["hydroponics"]
 language: "ru"
 draft: true
 ---
+
+
+## Более подробные статьи
+
+- [PH кислотность воды](/ru/projects/hydroponics/sensors/ph)
+
 
 [OpenHydro](https://github.com/Cribstone/OpenHydro) - подробный список сенсоров для Ардуинки (не проверял).
 

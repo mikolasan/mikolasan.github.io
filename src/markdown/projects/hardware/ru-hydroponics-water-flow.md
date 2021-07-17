@@ -1,5 +1,5 @@
 ---
-path: "/ru/projects/hydroponics-water-flow"
+path: "/ru/projects/hydroponics/water-flow"
 date: "2021-05-08"
 title: "Гидропоника: течение воды"
 tags: ["hydroponics"]

@@ -3,12 +3,23 @@ import { Helmet } from "react-helmet"
 
 import PropTypes from "prop-types"
 import { graphql, Link, StaticQuery } from "gatsby"
-
+import Banner from "../components/banner"
 import NavigationBar from "../components/navigationBar"
 import LikesPanel from "../components/likesPanel"
 import "./layout.css"
 
-const Layout = ({ children, showLikes, languageName, anotherLanguageLink, title, section }) => (
+const Layout = ({ 
+  children,
+  showLikes,
+  languageName,
+  anotherLanguageLink,
+  title,
+  section,
+  buttonText,
+  buttonLink,
+  secondButtonText,
+  secondButtonLink,
+  bannerParagraph }) => (
   <StaticQuery
     query={graphql`
       query SiteInfoQuery {
@@ -25,6 +36,14 @@ const Layout = ({ children, showLikes, languageName, anotherLanguageLink, title,
         </Helmet>
         <header>
           <NavigationBar active={section} />
+          <Banner
+            buttonText={buttonText}
+            buttonLink={buttonLink}
+            secondButtonText={secondButtonText}
+            secondButtonLink={secondButtonLink}
+          >
+            {bannerParagraph}
+          </Banner>
         </header>
         <main>
           {children}

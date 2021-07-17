@@ -9,7 +9,7 @@ const query = graphql`
     file(relativePath: { eq: "logo.png" }) {
       childImageSharp {
         gatsbyImageData(
-          layout: FIXED
+          layout: CONSTRAINED
         )
       }
     }
@@ -54,7 +54,7 @@ class Navbar extends React.Component {
               <img className={styles.searchmenu} src="" />
             </nav>
             <nav className={styles.topnav}>
-              <GatsbyImage image={data.file.childImageSharp.gatsbyImageData} style={{float: 'left'}} alt="N stands for Nikolay Neupokoev"/>
+              <GatsbyImage image={data.file.childImageSharp.gatsbyImageData} style={{float: 'left', height: '100%'}} alt="N stands for Nikolay Neupokoev"/>
               <Link to="/" className={styles.titlelink} style={{backgroundColor: '#211a1d', color: '#f2f2f2'}}>Nikolay Neupokoev</Link>
               <Link to="/ideas/" { ...(active === "ideas" && { className: styles.activelink }) }>Ideas</Link>
               <Link to="/projects/" { ...(active === "projects" && { className: styles.activelink }) }>Projects</Link>

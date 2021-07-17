@@ -16,6 +16,16 @@ const Projects = ({ data }) => (
 
       <div className="ideacards">
         <div className="ideacard">
+          <a href="/ru/projects/hydroponics">
+            <img src="/images/projects/hydroponics.jpg" alt="Hydroponics"/>
+          </a>
+          <div className="idea-card-container">
+            <h3>Гидропоника</h3>
+            <p>Выращивание еды круглый год в Сибири</p>
+          </div>
+        </div>
+
+        <div className="ideacard">
           <a href="/ru/board-games">
             <img src="/images/projects/board-game.jpg" alt="Prototype playthrough"/>
           </a>
