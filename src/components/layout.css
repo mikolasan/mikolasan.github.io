@@ -51,9 +51,10 @@ section {
   color: #f2f2f2;
   background-color: #000000c2;
 
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 2fr 1fr;
   align-items: center;
-  flex-wrap: wrap;
   justify-content: center;
 }
 
@@ -68,12 +69,16 @@ section {
 }
 
 .featured-text {
+  grid-column: span 4;
   text-align: center;
+  justify-self: center;
   width: 90%;
 }
 
 .featured-action {
-  width: 25%;
+  grid-column: 2 / 3;
+  justify-self: center;
+  
 }
 
 .action-button {
@@ -82,15 +87,18 @@ section {
   color: #232424;
   padding: 0.5em 1em;
   margin: 0.5em;
+  min-width: 150px;
   font-family: 'Manrope', sans-serif;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   border-radius: 0.5rem;
+  
 }
 
 .featured-second-action {
-  width: 25%;
+  grid-column: 3 / 4;
+  justify-self: center;
 }
 
 .second-action-button {
@@ -99,6 +107,7 @@ section {
   color: #181616;
   padding: 0.5em 1em;
   margin: 0.5em;
+  min-width: 120px;
   font-family: 'Manrope', sans-serif;
   text-align: center;
   text-decoration: none;

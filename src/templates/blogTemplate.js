@@ -1,8 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import FeaturedImage from "../components/featuredImage"
-import Banner from "../components/banner"
 import * as styles from "./blogTemplate.module.css"
 
 export default function Template ({ data, pageContext, location }) {
@@ -42,11 +40,12 @@ export default function Template ({ data, pageContext, location }) {
       anotherLanguageLink={anotherLanguageLink}
       buttonText={frontmatter.buttonText}
       buttonLink={frontmatter.buttonLink}
+      featuredImage={featuredImgFluid}
+      bannerParagraph={[
+        <h1>{frontmatter.title}</h1>,
+        <p dangerouslySetInnerHTML={{ __html: frontmatter.subtitle }} />
+      ]}
     >
-      {featuredImgFluid
-        && (<FeaturedImage imgFluid={featuredImgFluid} />)
-        || (<Banner><h1>{frontmatter.title}</h1><p dangerouslySetInnerHTML={{ __html: frontmatter.subtitle }} /></Banner>)
-      }
       <section>
         {featuredImgFluid && (<h1>{frontmatter.title}</h1>)}
         <p className={styles.postedon}>{frontmatter.date}</p>

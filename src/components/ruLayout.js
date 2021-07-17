@@ -3,11 +3,24 @@ import { Helmet } from "react-helmet"
 
 import PropTypes from "prop-types"
 import { graphql, Link, StaticQuery } from "gatsby"
-
+import FeaturedImage from "../components/featuredImage"
+import Banner from "../components/banner"
 import NavigationBar from "../components/ruNavigationBar"
 import "./layout.css"
 
-const RuLayout = ({ children, showLikes, languageName, anotherLanguageLink, title, section }) => (
+const RuLayout = ({ 
+  children,
+  showLikes,
+  languageName,
+  anotherLanguageLink,
+  title,
+  section,
+  buttonText,
+  buttonLink,
+  secondButtonText,
+  secondButtonLink,
+  featuredImage,
+  bannerParagraph }) => (
   <StaticQuery
     query={graphql`
       query RuSiteInfoQuery {
@@ -24,6 +37,18 @@ const RuLayout = ({ children, showLikes, languageName, anotherLanguageLink, titl
         </Helmet>
         <header>
           <NavigationBar active={section} />
+          {featuredImage
+          && (<FeaturedImage imgFluid={featuredImage} />)
+          || (
+            <Banner
+              buttonText={buttonText}
+              buttonLink={buttonLink}
+              secondButtonText={secondButtonText}
+              secondButtonLink={secondButtonLink}
+            >
+              {bannerParagraph}
+            </Banner>
+          )}
         </header>
         <main>
           {children}
@@ -45,11 +70,11 @@ const RuLayout = ({ children, showLikes, languageName, anotherLanguageLink, titl
             </div>
             <div className="bottomxsocial">
               <h2>Сети</h2>
+              <a href="https://twitter.com/stakanmartini">Твиттер</a>
+              <a href="https://www.youtube.com/user/stakanmartini">Ютюб</a>
               <a href="https://github.com/mikolasan">GitHub</a>
+              <a href="https://www.instagram.com/saturdayscode/">Instagram</a>
               <a href="https://www.linkedin.com/in/nikolay-neupokoev-29150065/">LinkedIn</a>
-              <a href="https://www.pinterest.com/nenikolay/">Pinterest</a>
-              <a href="https://twitter.com/stakanmartini">Twitter</a>
-              <a href="https://www.youtube.com/user/stakanmartini">YouTube</a>
             </div>
           </div>
           <div className="copyright">

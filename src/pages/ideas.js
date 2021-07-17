@@ -1,7 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
-import Banner from "../components/banner"
 
 const IdeasPage = () => (
   <Layout
@@ -9,19 +8,18 @@ const IdeasPage = () => (
     section="ideas"
     languageName="Switch to russian version"
     anotherLanguageLink="/ru/ideas"
-  >
-    <Banner
-      buttonText="Try free Idea Generator"
-      buttonLink="/idea-generator/"
-      secondButtonText="Creative ideas for app development"
-      secondButtonLink="/creative-ideas-for-app-development/"
-    >
-      <h1>Ideas for new projects?</h1>
+    buttonText="Try free Idea Generator"
+    buttonLink="/idea-generator/"
+    secondButtonText="Creative ideas for app development"
+    secondButtonLink="/creative-ideas-for-app-development/"
+    bannerParagraph={[
+      <h1>Ideas for new projects?</h1>,
       <p>
       So you want to make a great application.
       It is easy. Get an idea here. This is the first step and it is very important.
       </p>
-    </Banner>
+    ]}
+  >
     <section>
       <h2>Ideas for your next application</h2>
       <ul>

@@ -1,7 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
-import Banner from "../components/banner"
 
 class CreativeIdeas extends React.Component {
   render () {
@@ -11,14 +10,12 @@ class CreativeIdeas extends React.Component {
       <Layout
         title="Creative ideas for app development"
         section="ideas"
-      >
-        <Banner>
-          <h1>Creative ideas for app development</h1>
+        bannerParagraph={[<h1>Creative ideas for app development</h1>,
           <p>
           So you want to make a great application.
           It is easy. Get an idea here. This is the first step and it is very important.
-          </p>
-        </Banner>
+          </p>]}
+      >
         <section>
           <div>
             <div className="ideacards">

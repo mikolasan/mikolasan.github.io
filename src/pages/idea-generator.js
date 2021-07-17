@@ -1,20 +1,19 @@
 import React from "react"
 import Layout from "../components/layout"
-import Banner from "../components/banner"
 import SlotMachine from "../components/slotMachine"
 
 const LuckyIdeaGenerator = () => (
   <Layout
     title="Idea generator"
     section="ideas"
-  >
-    <Banner>
-      <h1>Idea generator</h1>
+    bannerParagraph={[
+      <h1>Idea generator</h1>,
       <p>
       If you want random unpredictable and fun project, then try this totally free slot machine
       from a slot developer who likes throwing cutting edge technologies in production.
       </p>
-    </Banner>
+    ]}
+  >
     
     <section>
       <p>

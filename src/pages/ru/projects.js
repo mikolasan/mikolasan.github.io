@@ -1,6 +1,5 @@
 import React from "react"
 import Layout from "../../components/ruLayout"
-import Banner from "../../components/banner"
 
 const Projects = ({ data }) => (
   <Layout
@@ -8,10 +7,8 @@ const Projects = ({ data }) => (
     section="projects"
     languageName="Switch to english version"
     anotherLanguageLink="/projects"
+    bannerParagraph={[<h1>Проекты</h1>]}
   >
-    <Banner>
-      <h1>Проекты</h1>
-    </Banner>
     <section>
 
       <div className="ideacards">

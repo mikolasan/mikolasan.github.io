@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet"
 
 import PropTypes from "prop-types"
 import { graphql, Link, StaticQuery } from "gatsby"
+import FeaturedImage from "../components/featuredImage"
 import Banner from "../components/banner"
 import NavigationBar from "../components/navigationBar"
 import LikesPanel from "../components/likesPanel"
@@ -19,6 +20,7 @@ const Layout = ({
   buttonLink,
   secondButtonText,
   secondButtonLink,
+  featuredImage,
   bannerParagraph }) => (
   <StaticQuery
     query={graphql`
@@ -36,14 +38,18 @@ const Layout = ({
         </Helmet>
         <header>
           <NavigationBar active={section} />
-          <Banner
-            buttonText={buttonText}
-            buttonLink={buttonLink}
-            secondButtonText={secondButtonText}
-            secondButtonLink={secondButtonLink}
-          >
-            {bannerParagraph}
-          </Banner>
+          {featuredImage
+          && (<FeaturedImage imgFluid={featuredImage} />)
+          || (
+            <Banner
+              buttonText={buttonText}
+              buttonLink={buttonLink}
+              secondButtonText={secondButtonText}
+              secondButtonLink={secondButtonLink}
+            >
+              {bannerParagraph}
+            </Banner>
+          )}
         </header>
         <main>
           {children}
@@ -69,11 +75,11 @@ const Layout = ({
             </div>
             <div className="bottomxsocial">
               <h2>Social</h2>
-              <a href="https://github.com/mikolasan">GitHub</a>
-              <a href="https://www.linkedin.com/in/nikolay-neupokoev-29150065/">LinkedIn</a>
-              <a href="https://www.pinterest.com/nenikolay/">Pinterest</a>
               <a href="https://twitter.com/mikolasan">Twitter</a>
               <a href="https://www.youtube.com/channel/UC7JDwFPt-Wu_rMB4-g-ePug">YouTube</a>
+              <a href="https://github.com/mikolasan">GitHub</a>
+              <a href="https://www.instagram.com/saturdayscode/">Instagram</a>
+              <a href="https://www.linkedin.com/in/nikolay-neupokoev-29150065/">LinkedIn</a>
             </div>
           </div>
           <div className="copyright">

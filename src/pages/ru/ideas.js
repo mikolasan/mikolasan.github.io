@@ -1,7 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
 import Layout from "../../components/ruLayout"
-import Banner from "../../components/banner"
 
 const IdeasPage = () => (
   <Layout
@@ -9,10 +7,8 @@ const IdeasPage = () => (
     section="ideas"
     languageName="Switch to english version"
     anotherLanguageLink="/ideas"
+    bannerParagraph={[<h1>Идеи</h1>]}
   >
-    <Banner>
-      <h1>Идеи</h1>
-    </Banner>
     <section>
 
       <p>

@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/ruLayout"
-import Banner from "../components/banner"
 import * as styles from "./blogListTemplate.module.css"
 
 class BlogIndex extends React.Component {
@@ -26,11 +25,11 @@ class BlogIndex extends React.Component {
         section="blog"
         languageName={languageName}
         anotherLanguageLink={anotherLanguageLink}
-      >
-        <Banner>
-          <h1>Блог</h1>
+        bannerParagraph={[
+          <h1>Блог</h1>,
           <p>бложик...</p>
-        </Banner>
+        ]}
+      >
         <section>
           <div className={styles.blogcards}>
             {posts.map(({ node }) => (

@@ -1,16 +1,13 @@
 import React from "react"
 import Layout from "../../components/ruLayout"
-import Banner from "../../components/banner"
 
 const RuIndex = ({ data }) => (
   <Layout
     title="Программист, турист, сноб"
     languageName="Switch to english version"
     anotherLanguageLink="/"
+    bannerParagraph={[<h1>программист - турист - сноб</h1>]}
   >
-    <Banner>
-      <h1>программист - турист - сноб</h1>
-    </Banner>
     <section>
       <div>
 

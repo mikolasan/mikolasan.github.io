@@ -1,6 +1,5 @@
 import React from "react"
 import Layout from "../components/layout"
-import Banner from "../components/banner"
 
 const About = ({ data }) => (
   <Layout
@@ -8,15 +7,12 @@ const About = ({ data }) => (
     section="about"
     languageName="Switch to russian version"
     anotherLanguageLink="/ru/about"
+    buttonText="Open my latest projects"
+    buttonLink="/projects"
+    secondButtonText="Fresh posts in the blog"
+    secondButtonLink="/blog"
+    bannerParagraph={[<h1>developer - traveler - snob</h1>]}
   >
-    <Banner
-      buttonText="Open my latest projects"
-      buttonLink="/projects"
-      secondButtonText="Fresh posts in the blog"
-      secondButtonLink="/blog"
-    >
-      <h1>developer - traveler - snob</h1>
-    </Banner>
     <section>
       <p>
       I am a full-time developer, once a year traveler and a snob ever since I registered on Instagram.

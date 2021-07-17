@@ -1,6 +1,5 @@
 import React from "react"
 import Layout from "../components/layout"
-import Banner from "../components/banner"
 
 const Projects = ({ data }) => (
   <Layout
@@ -8,10 +7,8 @@ const Projects = ({ data }) => (
     section="projects"
     languageName="Switch to russian version"
     anotherLanguageLink="/ru/projects"
+    bannerParagraph={[<h1>Projects</h1>]}
   >
-    <Banner>
-      <h1>Projects</h1>
-    </Banner>
     <section>
       <h2>Software development</h2>
       <div className="ideacards">
