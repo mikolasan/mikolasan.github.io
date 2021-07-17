@@ -1,0 +1,2 @@
+(self.webpackChunkgatsby_mikolasan_blog=self.webpackChunkgatsby_mikolasan_blog||[]).push([[883],{9616:function(e,l,t){"use strict";t.r(l);var n=t(7294),a=t(8376),o=t(6205);l.default=function(){return n.createElement(a.Z,{title:"404"},n.createElement(o.Z,null),n.createElement("section",null,n.createElement("h1",null,"404"),n.createElement("p",null,"Oops. The page you are looking for ... got lost.")))}}}]);
+//# sourceMappingURL=component---src-pages-404-js-99ad4d5ad7f18be45c0d.js.map
