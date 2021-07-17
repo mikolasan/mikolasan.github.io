@@ -33,29 +33,27 @@ const NavigationPage = ({ data }) => {
   return (
     <Layout title="One page navigation">
       <FeaturedImage />
-      <section>
-        <h1>Navigation</h1>
-        {Array.from(sections.keys()).map(key => {
-          return (
-            <details>
-              <summary><h2>▸ {key.replace("-", " ")}</h2></summary>
-              <ul>
-                {sections.get(key).map(path => {
-                  let title = "< no title :( >"
-                  const edge = edges.find(e => e.node.frontmatter.path === path)
-                  if (edge !== undefined) {
-                    title = edge.node.frontmatter.title
-                  }
-                  if (path.match(/\/ru\//) !== null) {
-                    title = "[RU] " + title
-                  }
-                  return <li><Link to={path}>{title}</Link></li>
-                })}
-              </ul>
-            </details>
-          )
-        })}
-      </section>
+      <h1>Navigation</h1>
+      {Array.from(sections.keys()).map(key => {
+        return (
+          <details>
+            <summary><h2>▸ {key.replace("-", " ")}</h2></summary>
+            <ul>
+              {sections.get(key).map(path => {
+                let title = "< no title :( >"
+                const edge = edges.find(e => e.node.frontmatter.path === path)
+                if (edge !== undefined) {
+                  title = edge.node.frontmatter.title
+                }
+                if (path.match(/\/ru\//) !== null) {
+                  title = "[RU] " + title
+                }
+                return <li><Link to={path}>{title}</Link></li>
+              })}
+            </ul>
+          </details>
+        )
+      })}
     </Layout>
   )
 }

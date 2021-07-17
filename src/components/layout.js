@@ -34,7 +34,7 @@ const Layout = ({
       <>
         <Helmet>
           <title>{title} - Nikolay Neupokoev</title>
-          <link href="https://fonts.googleapis.com/css2?family=Vollkorn+SC:wght@700&family=Manrope:wght@300&family=Nunito:wght@300&display=swap" rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css2?family=Literata:wght@700&family=Manrope:wght@300&family=Nunito:wght@300&display=swap" rel="stylesheet" />
         </Helmet>
         <header>
           <NavigationBar active={section} />
@@ -52,11 +52,33 @@ const Layout = ({
           )}
         </header>
         <main>
-          {children}
+          <section>
+            {!featuredImage && (
+              <div className="mobile-header">
+                {bannerParagraph}
+                {(buttonText && buttonLink) && (
+                  <div className="featured-action">
+                    <a href={buttonLink}>
+                      <button className="action-button">{buttonText}</button>
+                    </a>
+                  </div>
+                ) || ''}
+                {(secondButtonText && secondButtonLink) && (
+                  <div className="featured-second-action">
+                    <a href={secondButtonLink}>
+                      <button className="second-action-button">{secondButtonText}</button>
+                    </a>
+                  </div>
+                ) || ''}
+              </div>
+            )}
+            {children}
+          </section>
           {showLikes && (
             <section>
               <LikesPanel />
-            </section>)}
+            </section>
+          )}
         </main>
         <footer>
           <div className="bottomnav">

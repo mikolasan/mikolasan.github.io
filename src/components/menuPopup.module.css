@@ -5,7 +5,7 @@
   height: 100vh;
   z-index: 100;
   background-color: #f2f2f2;
-  font-family: sans-serif;
+  font-family: 'Manrope', sans-serif;
 }
 
 .back {
@@ -24,13 +24,13 @@
 .menuitem a {
   display: block;
   padding: .7rem 0;
-  color: inherit;
+  color: #211a1d;
   text-decoration: none;
   text-align: center;
 }
 
 .menuitem a:hover {
-  color: inherit;
+  color: #211a1d;
   text-decoration: none;
   background-color: #eee;
 }
@@ -40,7 +40,7 @@
 }
 
 .menuitem a:visited {
-  color: inherit;
+  color: #211a1d;
 }
 
 .active-menu-item {

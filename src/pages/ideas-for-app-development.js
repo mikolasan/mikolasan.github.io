@@ -17,36 +17,34 @@ class AllIdeas extends React.Component {
           It is easy. Get an idea here. This is the first step and it is very important.
           </p>]}
       >
-        <section>
-          {group
-            .sort((a, b) => a.totalCount < b.totalCount ? 1 : -1)
-            .map(tag => (
-              <div>
-                <h2 key={tag.fieldValue}>{tag.fieldValue}</h2>
-                <div className="ideacards">
-                  {tag.nodes
-                    .sort((a, b) => a.frontmatter.date < b.frontmatter.date ? 1 : -1)
-                    .map(node => (
-                      <div className="ideacard" key={node.frontmatter.title}>
-                        <Link to={node.frontmatter.path}>
-                          <img src={node.frontmatter.coverImage ? "/images/projects/" + node.frontmatter.coverImage : "/images/no-cover.jpg"}/>
-                        </Link>
-                        <h3>{node.frontmatter.title}</h3>
-                        <p><Link to={node.frontmatter.path}>Read more</Link></p>
-                        <p><small>
-                          {node.frontmatter.tags
-                            .sort()
-                            .map(t => t === tag.fieldValue ? (<span><b>{t}</b></span>) : (<span>{t}</span>))
-                          }
-                        </small></p>
-                      </div>
-                    ))}
-                </div>
+        {group
+          .sort((a, b) => a.totalCount < b.totalCount ? 1 : -1)
+          .map(tag => (
+            <div>
+              <h2 key={tag.fieldValue}>{tag.fieldValue}</h2>
+              <div className="ideacards">
+                {tag.nodes
+                  .sort((a, b) => a.frontmatter.date < b.frontmatter.date ? 1 : -1)
+                  .map(node => (
+                    <div className="ideacard" key={node.frontmatter.title}>
+                      <Link to={node.frontmatter.path}>
+                        <img src={node.frontmatter.coverImage ? "/images/projects/" + node.frontmatter.coverImage : "/images/no-cover.jpg"}/>
+                      </Link>
+                      <h3>{node.frontmatter.title}</h3>
+                      <p><Link to={node.frontmatter.path}>Read more</Link></p>
+                      <p><small>
+                        {node.frontmatter.tags
+                          .sort()
+                          .map(t => t === tag.fieldValue ? (<span><b>{t}</b></span>) : (<span>{t}</span>))
+                        }
+                      </small></p>
+                    </div>
+                  ))}
               </div>
+            </div>
 
-            ))
-          }
-        </section>
+          ))
+        }
       </Layout>
     )
   }

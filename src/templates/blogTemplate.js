@@ -46,17 +46,15 @@ export default function Template ({ data, pageContext, location }) {
         <p dangerouslySetInnerHTML={{ __html: frontmatter.subtitle }} />
       ]}
     >
-      <section>
-        {featuredImgFluid && (<h1>{frontmatter.title}</h1>)}
-        <p className={styles.postedon}>{frontmatter.date}</p>
-        {frontmatter.draft && (<div className={styles.draftalert}>
-          <img src="/draft.png" alt="Picturing not a whole whale"/>
-          <p>{alertAboutDraftStatus}</p>
-        </div>)}
-        <div
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
-      </section>
+      {featuredImgFluid && (<h1>{frontmatter.title}</h1>)}
+      <p className={styles.postedon}>{frontmatter.date}</p>
+      {frontmatter.draft && (<div className={styles.draftalert}>
+        <img src="/draft.png" alt="Picturing not a whole whale"/>
+        <p>{alertAboutDraftStatus}</p>
+      </div>)}
+      <div
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
     </Layout>
   )
 }

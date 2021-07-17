@@ -33,7 +33,7 @@ const RuLayout = ({
       <>
         <Helmet>
           <title>{title} - Николай Неупокоев</title>
-          <link href="https://fonts.googleapis.com/css2?family=Vollkorn+SC:wght@700&family=Manrope:wght@300&family=Nunito:wght@300&display=swap" rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css2?family=Literata:wght@700&family=Manrope:wght@300&family=Nunito:wght@300&display=swap" rel="stylesheet" />
         </Helmet>
         <header>
           <NavigationBar active={section} />
@@ -51,7 +51,17 @@ const RuLayout = ({
           )}
         </header>
         <main>
-          {children}
+          <section>
+            {!featuredImage && (
+              <div className="mobile-header">{bannerParagraph}</div>
+            )}
+            {children}
+          </section>
+          {showLikes && (
+            <section>
+              <LikesPanel />
+            </section>
+          )}
         </main>
         <footer>
           <div className="bottomnav">

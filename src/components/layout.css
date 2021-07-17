@@ -58,16 +58,6 @@ section {
   justify-content: center;
 }
 
-@media all and (max-width: 870px) {
-
-}
-
-@media all and (max-width: 675px) {
-  .banner {
-    display: none;
-  }
-}
-
 .featured-text {
   grid-column: span 4;
   text-align: center;
@@ -93,7 +83,7 @@ section {
   text-decoration: none;
   display: inline-block;
   border-radius: 0.5rem;
-  
+  cursor: pointer;
 }
 
 .featured-second-action {
@@ -113,6 +103,11 @@ section {
   text-decoration: none;
   display: inline-block;
   border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.mobile-header {
+  display: none;
 }
 
 .cards {
@@ -295,7 +290,6 @@ dfn {
   font-style: italic;
 }
 h1 {
-  font-size: 2em;
   margin: 0.67em 0;
 }
 mark {
@@ -468,10 +462,10 @@ h1 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: 'Vollkorn SC', serif;
+  font-family: 'Literata', serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
-  font-size: 2.25rem;
+  font-size: 2.8rem;
   line-height: 1.1;
 }
 h2 {
@@ -484,10 +478,10 @@ h2 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: 'Vollkorn SC', serif;
+  font-family: 'Literata', serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
-  font-size: 1.62671rem;
+  font-size: 1.8rem;
   line-height: 1.1;
 }
 h3 {
@@ -500,10 +494,10 @@ h3 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: 'Vollkorn SC', serif;
+  font-family: 'Literata', serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
-  font-size: 1.38316rem;
+  font-size: 1.3rem;
   line-height: 1.1;
 }
 h4 {
@@ -516,7 +510,7 @@ h4 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: 'Vollkorn SC', serif;
+  font-family: 'Literata', serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 1rem;
@@ -532,7 +526,7 @@ h5 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: 'Vollkorn SC', serif;
+  font-family: 'Literata', serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 0.85028rem;
@@ -548,7 +542,7 @@ h6 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: 'Vollkorn SC', serif;
+  font-family: 'Literata', serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 0.78405rem;
@@ -871,4 +865,26 @@ a:hover {
 /* selected link */
 a:active {
   color: #6320ee;
+}
+
+@media all and (max-width: 870px) {
+
+}
+
+@media all and (max-width: 675px) {
+  header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+  }
+  .mobile-header {
+    display: inherit;
+    margin-bottom: 3rem;
+  }
+  .banner {
+    display: none;
+  }
+  h1 {
+    font-size: 2.7em;
+  }
 }
