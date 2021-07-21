@@ -140,15 +140,20 @@ section {
 
 .ideacard {
   display: inline-block;
-  width: 284px;
+  max-width: 284px;
   padding: 1rem;
-  margin: 0.5rem;
+  margin: 0.5rem 0.5rem 1.5rem;
   vertical-align: top;
   background-color: #f6f6f6;
+  border-radius: 20px;
+  
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .ideacard img {
+  border-radius: 10px;
   margin-bottom: 0.5rem;
+  border: #211a1d solid 0.25rem;
 }
 
 .ideacard p {
@@ -879,7 +884,7 @@ a:active {
   }
   .mobile-header {
     display: inherit;
-    margin-bottom: 3rem;
+    margin-bottom: 1.2rem;
   }
   .banner {
     display: none;

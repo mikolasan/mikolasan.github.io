@@ -11,7 +11,7 @@ const Projects = ({ data }) => (
   >
     <div className="ideacards">
       <div className="ideacard">
-        <a href="/ru/projects/hydroponics">
+        <a href="/ru/hydroponics">
           <img src="/images/projects/hydroponics.jpg" alt="Hydroponics"/>
         </a>
         <div className="idea-card-container">

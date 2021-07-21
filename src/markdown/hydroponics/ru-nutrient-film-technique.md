@@ -1,5 +1,5 @@
 ---
-path: "/ru/projects/hydroponics/nutrient-film-technique"
+path: "/ru/hydroponics/nutrient-film-technique"
 date: "2021-01-20"
 title: "Nutrient Film Technique"
 tags: ["hydroponics"]

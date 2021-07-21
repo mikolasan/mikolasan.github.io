@@ -38,6 +38,10 @@ export default function Template ({ data, pageContext, location }) {
       showLikes={pageContext.showLikes}
       languageName={languageName}
       anotherLanguageLink={anotherLanguageLink}
+      buttonText={frontmatter.buttonText}
+      buttonLink={frontmatter.buttonLink}
+      secondButtonText={frontmatter.secondButtonText}
+      secondButtonLink={frontmatter.secondButtonLink}
       featuredImage={featuredImgFluid}
       bannerParagraph={[
         <h1>{frontmatter.title}</h1>,
@@ -70,6 +74,8 @@ export const pageQuery = graphql`
         subtitle
         buttonText
         buttonLink
+        secondButtonText
+        secondButtonLink
         featuredImage {
           childImageSharp {
             gatsbyImageData(
