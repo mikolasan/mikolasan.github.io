@@ -45,8 +45,6 @@ const About = ({ data }) => (
       </div>
 
     </div>
-    <h2>Navigation</h2>
-    <p>Here is <a href="/one-page-navigation/">One Page to rule them all</a></p>
     <hr/>
     <small>
     <div>Icons made by <a href="https://www.flaticon.com/free-icon/programmer_2092430" title="srip">srip</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></div>
