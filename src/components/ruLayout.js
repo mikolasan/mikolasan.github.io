@@ -92,7 +92,7 @@ const RuLayout = ({
             <Link style={{marginBottom: '0.5em', textDecoration: 'underline'}} to={anotherLanguageLink}>{languageName}</Link>
             <div className="bottomsmallabout">
               <h2>О себе</h2>
-              <p>Не использую смайлики и эмодзи. Пишу о муках программирования, невостребованных идеях, иногда кидаю чужие ссылки, а иногда свои наблюдения.</p>
+              <p>Нейронные сети, байесовский вывод, разношёрстный девлог, паранормальные экспедиции, настольные игры и ролёвки, пиксель арт</p>
             </div>
             <div className="bottommenu">
               <h2>Меню</h2>
