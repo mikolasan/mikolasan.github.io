@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 
 import * as styles from "../templates/blogListTemplate.module.css"
@@ -20,31 +20,19 @@ const Index = ({ data }) => (
   >
     <h2>New blog posts</h2>
     <div className={styles.blogcards}>
-      <div className={styles.blogcard}>
-        <Link to="/blog/send-alerts-from-systemd-to-slack"><h3>
-          Send alerts from systemd to Slack
+      {data.allMarkdownRemark.edges.map(({ node }) => (
+        <div key={node.id} className={styles.blogcard}>
+        <Link to={node.frontmatter.path}><h3>
+          {node.frontmatter.title}
         </h3></Link>
         <p className={styles.blogdate}>
-          {new Date(Date.parse("2021-05-12")).toLocaleDateString("en-US", { dateStyle: "full" })}
+          {new Date(Date.parse(node.frontmatter.date)).toLocaleDateString("en-US", { dateStyle: "full" })}
         </p>
         <p>
-          I found logagent from a google search. It should solve a very simple thing: get logs from systemd, focus on one service, format a message…
-          {" "}<Link to="/blog/send-alerts-from-systemd-to-slack">Read more...</Link>
+          {node.excerpt}{" "}<Link to={node.frontmatter.path}>Read more...</Link>
         </p>
       </div>
-
-      <div className={styles.blogcard}>
-        <Link to="/blog/add-ca-certificate-to-java-https-client"><h3>
-          Add CA certificate to Java HTTPS client
-        </h3></Link>
-        <p className={styles.blogdate}>
-          {new Date(Date.parse("2021-04-20")).toLocaleDateString("en-US", { dateStyle: "full" })}
-        </p>
-        <p>
-          Consider you have a HTTPS server with ssl certificate, and you do want to use the certificate on your client side. How to write HTTPS client…
-          <Link to="/blog/add-ca-certificate-to-java-https-client">Read more...</Link>
-        </p>
-      </div>
+      ))}
     </div>
     <h2>Featured projects</h2>
     <div className="ideacards">
@@ -108,3 +96,25 @@ const Index = ({ data }) => (
 )
 
 export default Index
+
+export const lastBlogPostsQuery = graphql`
+  query {
+    allMarkdownRemark(
+      limit: 2,
+      sort: { order: DESC, fields: [frontmatter___date]},
+      filter: { frontmatter: { path: { regex: "/^\/blog*/" }}}
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            path
+            date
+          }
+          excerpt
+        }
+      }
+    }
+  }
+`
