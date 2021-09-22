@@ -30,17 +30,19 @@ const RuLayout = ({
       bannerParagraph={bannerParagraph}
     />
     <main>
-      {!featuredImage && (
-        <div className="mobile-header">{bannerParagraph}</div>
-      )}
-      {children}
-      {showLikes && (
-        <aside>
-          <LikesPanel />
-        </aside>
-      )}
+      <div className="main-section">
+        {!featuredImage && (
+          <div className="mobile-header">{bannerParagraph}</div>
+        )}
+        {children}
+        {showLikes && (
+          <aside>
+            <LikesPanel />
+          </aside>
+        )}
+      </div>
     </main>
-    <Footer languageName={languageName} langugeLink={anotherLanguageLink} />
+    <Footer languageName={languageName} languageLink={anotherLanguageLink} />
   </>
 )
 
