@@ -16,12 +16,13 @@ class MenuPopup extends React.Component {
     ]
     this.ruItems = [
       {link: "/ru/", label: "Главная"},
-      {link: "/ru/ideas/", label: "Идеи"},
-      {link: "/ru/projects/", label: "Проекты"},
-      {link: "/ru/science/", label: "Наука"},
-      {link: "/ru/blog/", label: "Блог"},
-      {link: "/ru/about/", label: "О себе"},
-      {link: "/ru/cv/", label: "Резюме"},
+      {link: "/ru/neural-networks", label: "Нейронные сети"},
+      {link: "/ru/make", label: "Мастерская"},
+      {link: "/ru/devlog", label: "Девлог"},
+      {link: "/ru/paranormal", label: "Паранормальное"},
+      {link: "/ru/board-games", label: "Настольные игры"},
+      {link: "/ru/blog", label: "Остальное"},
+      {link: "/ru/about", label: "О себе"},
     ]
     this.language = this.props.language
   }
@@ -37,6 +38,14 @@ class MenuPopup extends React.Component {
   render() {
     return (
       <div className={styles.menu}>
+        <div className={styles.topline}>
+          <img
+            className={styles.close}
+            onClick={this.props.closeCallback}
+            src="/images/cross.svg"
+          />
+        </div>
+        
         <div className={styles.back}>
           {(this.language === "en" ? this.items : this.ruItems).map(i => <div className={styles.menuitem} key={i}>
             <a
@@ -51,11 +60,6 @@ class MenuPopup extends React.Component {
             <p className={styles.hint}>There is also an <a href="#" onClick={this.openEnVersion.bind(this)}>English version</a> of this website</p>
           )}
         </div>
-        <img
-          className={styles.close}
-          onClick={this.props.closeCallback}
-          src="/images/cross.svg"
-        />
       </div>
     )
   }

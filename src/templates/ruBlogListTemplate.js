@@ -1,86 +1,25 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql, } from "gatsby"
 import Layout from "../components/ruLayout"
-import * as styles from "./blogListTemplate.module.css"
+import PostList from "../components/ruPostList"
 
-class BlogIndex extends React.Component {
-  render() {
-    const { data } = this.props
-    const posts = data.allMarkdownRemark.edges
-    const {
-      currentPage,
-      numPages,
-      breadcrumb: { crumbs },
-    } = this.props.pageContext
-    const anotherLanguageLink = '/blog'
-    const languageName = "Switch to english version"
-    const isFirst = currentPage === 1
-    const isLast = currentPage === numPages
-    const prevPage = currentPage - 1 === 1 ? "" : (currentPage - 1).toString()
-    const nextPage = (currentPage + 1).toString()
-    const onePage = isFirst && isLast
-    return (
-      <Layout
-        title="Блог"
-        section="blog"
-        languageName={languageName}
-        anotherLanguageLink={anotherLanguageLink}
-        bannerParagraph={[
-          <h1>Блог</h1>,
-          <p>бложик...</p>
-        ]}
-      >
-        <div className={styles.blogcards}>
-          {posts.map(({ node }) => (
-            <div key={node.id} className={styles.blogcard}>
-              <Link to={node.frontmatter.path}><h3>
-                {node.frontmatter.title}
-              </h3></Link>
-              <p className={styles.blogdate}>
-                {new Date(Date.parse(node.frontmatter.date)).toLocaleDateString("ru-RU", { dateStyle: "full" })}
-              </p>
-              <p>{node.excerpt}{" "}
-                <Link to={node.frontmatter.path}>Читать дальше...</Link>
-              </p>
-            </div>
-          ))}
-        </div>
-        <ul className={styles.blognavigation}>
-          {!isFirst && (
-            <Link to={`/ru/blog/${prevPage}`} rel="prev">
-              ← Пред стр
-            </Link>
-          ) || "← Пред стр"}
-          {Array.from({ length: numPages }, (_, i) => (
-            <li
-              key={`pagination-number${i + 1}`}
-              style={{
-                margin: 0,
-              }}
-            >
-              <Link
-                to={`/ru/blog/${i === 0 ? '' : i + 1}`}
-                style={{
-                  padding: 5,
-                  textDecoration: 'none',
-                  color: i + 1 === currentPage ? '#ffffff' : '',
-                  background: i + 1 === currentPage ? '#007acc' : '',
-                }}
-              >
-                {i + 1}
-              </Link>
-            </li>
-          ))}
-          {!isLast && (
-            <Link to={`/ru/blog/${nextPage}`} rel="next">
-              След стр →
-            </Link>
-          ) || "След стр →"}
-        </ul>
-      </Layout>
-    )
-  }
-}
+const BlogIndex = ({ data, pageContext }) => (
+  <Layout
+    title="Остальное"
+    section="blog"
+    languageName="Switch to english version"
+    anotherLanguageLink="/blog"
+    bannerParagraph={[
+      <h1>Остальное</h1>,
+      <p>И всё остальное остается в этом блоге.</p>
+    ]}
+  >
+    <PostList
+      posts={data.allMarkdownRemark.edges}
+      pageContext={pageContext}
+    />
+  </Layout>
+)
 
 export default BlogIndex
 

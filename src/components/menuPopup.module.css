@@ -1,3 +1,10 @@
+.topline {
+  margin: 0;
+  padding: 0;
+  height: 3.2rem;
+  border-bottom: #211a1d solid 0.25rem;
+}
+
 .menu {
   position: fixed;
   top: 0;
@@ -10,9 +17,9 @@
 
 .back {
   position: relative;
-  top: 50px;
+  top: 0.5rem;
   height: 100%;
-  bottom: -50px;
+  bottom: -2.75rem;
   overflow-y: scroll;
 }
 
@@ -49,12 +56,12 @@
 
 .close {
   position: fixed;
-  top: 0;
-  right: 0.5rem;
-  height: 50px;
+  top: 0.1rem;
+  left: 1rem;
+  height: 2.7rem;
   cursor: pointer;
 }
 
 .hint {
-  margin: 0.8rem 2rem;
+  margin: 3rem 2rem;
 }

@@ -1,5 +1,5 @@
 ---
-path: "/ru/blog/museums-in-nsk"
+path: "/ru/paranormal/museums-in-nsk"
 date: "2021-06-10"
 title: "Музеи в Нск"
 language: "ru"

@@ -1,66 +1,107 @@
 import React from "react"
-import Layout from "../../components/ruLayout"
+import Layout from "../../components/ruNewLayout"
+import * as styles from "./index.module.css"
 
-const RuIndex = ({ data }) => (
+const RuIndex = () => (
   <Layout
-    title="Программист, турист, сноб"
+    title="/"
     languageName="Switch to english version"
     anotherLanguageLink="/"
-    bannerParagraph={[<h1>программист - турист - сноб</h1>]}
+    bannerParagraph={[<h1>/</h1>]}
   >
-    <div>
-
-    <blockquote>
-      <p>Свет в темноте, грохот в тиши:<br/>
-        Шепот ночей, пламя свечи.<br/>
-        Гибель мечты, смерть от любви,<br/>
-        Жизнь без дверей, веришь ли ты?<br/>
-      </p>
-      <p>— Из моих личных записей самых лучших подписей на форумах</p>
-    </blockquote>
-    <p>
-    Здравствуйте.
-    </p>
-
-    <p>
-    Я - программист.
-    </p>
-
-    <p>
-    Я пишу программы, потому что мне нравится идеальный мир организованный внутри компьютера.
-    Когда я пишу код, я на самом деле пишу инструкции, которые затем будут в точности исполнены
-    процессором, а заранее известные данные дадут заранее ожидаемый результат. Все просто идеально.
-    </p>
-
-    <div className="cards">
-      <div className="card">
-        <img src="/card_developer.png" alt="Idea" width="100px" />
-        <div className="card-container">
-          <h3><b>Программист</b></h3>
-          <p>В свободное время я пишу программы в качестве развлечения.</p>
+    <div className={styles.ruindex}>
+      <section>
+        <img src="/images/no-cover.jpg" />
+        <div>
+          <h2>Нейронные сети</h2>
+          <p>
+            Попытка людей понять себя и формализовать свои маленькие нейрончики в надежде, 
+            что все элеметарное - просто, а в совокупности они могут создавать невероятные выводы
+          </p>
+          <div className={styles.action}>
+            <a href="/ru/neural-networks">
+              <button>Перейти к разделу</button>
+            </a>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div className="card">
-        <img src="/card_traveler.png" alt="Code" width="100px" />
-        <div className="card-container">
-          <h3><b>Турист</b></h3>
-          <p>Когда сидеть дома становится в тягость, я отправляюсь в дорогу.</p>
+      <section className={styles.inverse}>
+        <img src="/images/no-cover.jpg" />
+        <div>
+          <h2>Мастерская</h2>
+          <p>
+            Встраиваемые системы, маленькие компьютеры, пайка компонентов, 3Д печать - вот это всё
+          </p>
+          <div className={styles.action}>
+            <a href="/ru/make">
+              <button>Перейти к разделу</button>
+            </a>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div className="card">
-        <img src="/card_snob.png" alt="Art" width="100px" />
-        <div className="card-container">
-          <h3><b>Сноб</b></h3>
-          <p>Больше удовольствия получаешь придираясь к чужому коду.</p>
+      <section>
+        <img src="/images/no-cover.jpg" />
+        <div>
+          <h2>Разношерстный девлог</h2>
+          <p>
+            Процесс разработки завораживает. Как из простых иструкций вырастают системы, как разбросанная логика начинает дружно работать. 
+            Это и просто советы о житейских повседневных проблемах в данном дневнике разработки. Много разных проектов.
+          </p>
+          <div className={styles.action}>
+            <a href="/ru/devlog">
+              <button>Перейти к разделу</button>
+            </a>
+          </div>
         </div>
-      </div>
+      </section>
 
-    </div>
+      <section className={styles.inverse}>
+        <img src="/images/no-cover.jpg" />
+        <div>
+          <h2>Паранормальные экспедиции</h2>
+          <p>
+            Есть ли в Новосибирске haunted места? Такие, с чертовщинкой, 
+            как например Бирмингемский металлургический завод буржуя Слосса или как «Пойма» в национальном заповеднике Блэкуотер.
+          </p>
+          <div className={styles.action}>
+            <a href="/ru/paranormal">
+              <button>Перейти к разделу</button>
+            </a>
+          </div>
+        </div>
+      </section>
 
-    Думаю о своем бизнесе <a href="/ru/plan">здесь</a>.
+      <section>
+        <img src="/images/no-cover.jpg" />
+        <div>
+          <h2>Настольные игры и ролёвки</h2>
+          <p>
+            Так же как книги, фильмы и музыка игры позоволяют погрузиться в совершенно иной вымышленный мир,
+            живущий по своим правилам. Прелесть игровых механик, поиск новых стратегий - это все невероятно интересно,
+            но еще интереснее может оказаться создание своей игры
+          </p>
+          <div className={styles.action}>
+            <a href="/ru/board-games">
+              <button>Перейти к разделу</button>
+            </a>
+          </div>
+        </div>
+      </section>
 
+      <section className={styles.inverse}>
+        <img src="/images/no-cover.jpg" />
+        <div>
+          <h2>Остальное</h2>
+          <p>И всё остальное остается в этом блоге.</p>
+          <div className={styles.action}>
+            <a href="/ru/blog">
+              <button>Перейти к разделу</button>
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   </Layout>
 )

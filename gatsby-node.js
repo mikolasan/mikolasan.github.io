@@ -8,6 +8,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const ruBlogPostTemplate = path.resolve(`./src/templates/ruBlogTemplate.js`)
   const blogListTemplate = path.resolve(`./src/templates/blogListTemplate.js`)
   const ruBlogListTemplate = path.resolve(`./src/templates/ruBlogListTemplate.js`)
+  const ruParanormalListTemplate = path.resolve(`./src/templates/ruParanormalListTemplate.js`)
 
   const result = await graphql(`
     {
@@ -82,7 +83,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   })
 
-  // Pagination
+  // Pagination [/blog]
   const blogResult = await graphql(`
     {
       allMarkdownRemark(
@@ -123,7 +124,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   })
 
-  // Pagination
+  // Pagination [/ru/blog]
   const ruBlogResult = await graphql(`
     {
       allMarkdownRemark(
@@ -159,6 +160,46 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         limit: ruPostsPerPage,
         skip: i * ruPostsPerPage,
         numPages: ruNumPages,
+        currentPage: i + 1,
+      },
+    })
+  })
+
+  // Pagination [/ru/paranormal]
+  const ruParanormalResult = await graphql(`
+    {
+      allMarkdownRemark(
+        limit: 1000,
+        sort: { order: DESC, fields: [frontmatter___date] }
+        filter: { frontmatter: { path: { regex: "/\/ru\/paranormal*/" }}}
+      ) {
+        edges {
+          node {
+            frontmatter {
+              path
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  if (ruParanormalResult.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query for ru paranormal pages.`)
+    return
+  }
+  // Create blog-list pages
+  const ruParanormalPosts = ruParanormalResult.data.allMarkdownRemark.edges
+  const numParanormalPosts = ruParanormalPosts.length
+  const numParanormalPages = Math.ceil(numParanormalPosts / (ruPostsPerPage + 1))
+  Array.from({ length: numParanormalPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/ru/paranormal` : `/ru/paranormal/${i + 1}`,
+      component: ruParanormalListTemplate,
+      context: {
+        limit: ruPostsPerPage,
+        skip: i * ruPostsPerPage,
+        numPages: numParanormalPages,
         currentPage: i + 1,
       },
     })

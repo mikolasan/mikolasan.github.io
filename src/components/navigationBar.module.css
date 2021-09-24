@@ -14,8 +14,7 @@
 .topnav a {
   float: left;
   height: 100%;
-  padding: 0 1.2rem;
-  padding-top: 0.85rem;
+  padding: 0.85rem 0.85rem 0;
   color: #211a1d;
   text-align: center;
   text-decoration: none;
@@ -39,20 +38,37 @@
   color: white;
 }
 
+.toplogo {
+  padding: 0 !important;
+}
+
+.toplogo svg {
+  padding: 0.3rem 0.85rem 0 !important;
+
+  height: 2.75rem;
+  float: left;
+}
+
+.mobilelogo {
+  color: #211a1d;
+  height: 2.75rem;
+}
+
 .mobilenav {
+  height: 3.2rem;
   display: none;
 }
 
 .burgermenu {
-  width: 50px;
+  height: 2.75rem;
 }
 .searchmenu {
-  width: 50px;
+  width: 2.75rem;
 }
 
 .logomenu {
   display: inline-block;
-  width: 50px;
+  width: 2.75rem;
 }
 
 a.activelink {
