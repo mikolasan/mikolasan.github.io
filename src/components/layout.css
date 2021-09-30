@@ -36,10 +36,6 @@ blockquote:before {
   vertical-align: -5rem;
 }
 
-blockquote:after {
-  margin-top: 1rem;
-}
-
 section {
   margin: 0 auto;
   max-width: 960px;
