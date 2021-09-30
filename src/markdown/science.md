@@ -19,7 +19,9 @@ Vityaev, E.E., Neupokoev, N.V.: [Perception and pattern formal model as a fix-po
 
 Here is the annotation from this article:
 <blockquote>
+<p>
 Formalization of the notions of perception and pattern are presented. Perception of some pattern considers as continues process of anticipations (predictions) by the pattern of entering stimulus and control of coincidence of anticipated and real stimulus. As formalization of this process the fix-point of anticipations is proposed. Computer simulations that demonstrate the efficiency of this model are carried out.
+</p>
 </blockquote>
 
 I'm not sure that I understand what it says. I mean, the translation is bad. Mainly because so many concepts needed to be explained in one tiny paragraph. If I change terminology it will become a readable piece.

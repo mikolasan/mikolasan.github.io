@@ -57,6 +57,7 @@ export default function Template ({ data, pageContext, location }) {
       <div
         dangerouslySetInnerHTML={{ __html: html }}
       />
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </Layout>
   )
 }

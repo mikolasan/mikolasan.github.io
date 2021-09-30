@@ -18,6 +18,28 @@ section {
   background-color: #fff;
 }
 
+blockquote {
+  display: inline-block;
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D";
+}
+
+blockquote:before {
+  display: inline;
+  color: #ccc;
+  content: open-quote;
+  font-size: 10rem;
+  line-height: 0.1rem;
+  vertical-align: -5rem;
+}
+
+blockquote:after {
+  margin-top: 1rem;
+}
+
 section {
   margin: 0 auto;
   max-width: 960px;
@@ -665,16 +687,6 @@ table {
 fieldset {
   margin-left: 0;
   margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-}
-blockquote {
-  margin-left: 1.45rem;
-  margin-right: 1.45rem;
   margin-top: 0;
   padding-bottom: 0;
   padding-left: 0;
