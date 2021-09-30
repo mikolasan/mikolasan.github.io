@@ -4,10 +4,11 @@ import * as styles from "./index.module.css"
 
 const RuIndex = () => (
   <Layout
-    title="/"
+    title="👋"
+    section="root"
     languageName="Switch to english version"
     anotherLanguageLink="/"
-    bannerParagraph={[<h1>/</h1>]}
+    bannerParagraph={[<h1>👋</h1>]}
   >
     <div className={styles.ruindex}>
       <section>

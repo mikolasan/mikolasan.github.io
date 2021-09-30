@@ -22,7 +22,7 @@ const RuFooter = ({
             <p>Нейронные сети, байесовский вывод, разношёрстный девлог, паранормальные экспедиции, настольные игры и ролёвки, пиксель арт</p>
           </div>
           <div className="bottommenu">
-            <h2>Меню</h2>
+            <h2>Старое Меню</h2>
             <Link to="/ru/ideas/">Идеи</Link>
             <Link to="/ru/projects/">Проекты</Link>
             <Link to="/ru/science/">Наука</Link>
