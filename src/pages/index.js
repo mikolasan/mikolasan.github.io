@@ -9,7 +9,7 @@ const Index = ({ data }) => (
     title="Developer, traveler, snob"
     section="root"
     languageName="Switch to russian version"
-    anotherLanguageLink="/ru/projects"
+    anotherLanguageLink="/ru"
     buttonText="Projects"
     buttonLink="/projects"
     secondButtonText="Blog"
