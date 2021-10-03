@@ -32,12 +32,11 @@ class BlogIndex extends React.Component {
               <Link to={node.frontmatter.path}><h3>
                 {node.frontmatter.title}
               </h3></Link>
-              <p className={styles.blogdate}>
+              <time className={styles.blogdate}>
                 {new Date(Date.parse(node.frontmatter.date)).toLocaleDateString("en-US", { dateStyle: "full" })}
-              </p>
-              <p>{node.excerpt}{" "}
-                <Link to={node.frontmatter.path}>Read more...</Link>
-              </p>
+              </time>
+              <p>{node.excerpt}</p>
+              <Link className={styles.readmore} to={node.frontmatter.path}>Read more...</Link>
             </article>
           ))}
         </div>
