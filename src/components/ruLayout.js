@@ -20,7 +20,7 @@ const RuLayout = ({
   bannerParagraph
 }) => (
   <>
-    <Title title={title + " - Николай Неупокоев"} />
+    <Title title={title + " - N"} />
     <Header section={section}
       buttonText={buttonText}
       buttonLink={buttonLink}

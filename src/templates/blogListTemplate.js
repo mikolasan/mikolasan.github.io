@@ -25,14 +25,10 @@ class BlogIndex extends React.Component {
         section="blog"
         languageName={languageName}
         anotherLanguageLink={anotherLanguageLink}
-        bannerParagraph={[
-          <h1>Blog</h1>,
-          <p>some text here...</p>
-        ]}
       >
         <div className={styles.blogcards}>
           {posts.map(({ node }) => (
-            <div key={node.id} className={styles.blogcard}>
+            <article key={node.id} className={styles.blogcard}>
               <Link to={node.frontmatter.path}><h3>
                 {node.frontmatter.title}
               </h3></Link>
@@ -42,7 +38,7 @@ class BlogIndex extends React.Component {
               <p>{node.excerpt}{" "}
                 <Link to={node.frontmatter.path}>Read more...</Link>
               </p>
-            </div>
+            </article>
           ))}
         </div>
         <ul className={styles.blognavigation}>

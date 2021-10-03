@@ -2,32 +2,37 @@ import React from "react"
 
 import FeaturedImage from "../components/featuredImage"
 import Banner from "../components/banner"
-import NavigationBar from "../components/ruNavigationBar"
+import NavigationBar from "../components/navigationBar"
 
-const Header = ({
-  section,
-  buttonText,
-  buttonLink,
-  secondButtonText,
-  secondButtonLink,
-  featuredImage,
-  bannerParagraph
-}) => (
-  <header>
-    <NavigationBar active={section} />
-    {featuredImage
-    && (<FeaturedImage imgFluid={featuredImage} />)
-    || (
-      <Banner
-        buttonText={buttonText}
-        buttonLink={buttonLink}
-        secondButtonText={secondButtonText}
-        secondButtonLink={secondButtonLink}
-      >
-        {bannerParagraph}
-      </Banner>
-    )}
-  </header>
-)
+class Header extends React.Component {
+  render() {
+    const {
+      section,
+      buttonText,
+      buttonLink,
+      secondButtonText,
+      secondButtonLink,
+      featuredImage,
+      bannerParagraph
+    } = this.props
+    const wideImage = (<FeaturedImage imgFluid={featuredImage} />)
+    const banner = bannerParagraph && (
+        <Banner
+          buttonText={buttonText}
+          buttonLink={buttonLink}
+          secondButtonText={secondButtonText}
+          secondButtonLink={secondButtonLink}
+        >
+          {bannerParagraph}
+        </Banner>
+      )
+    return (
+      <header>
+        <NavigationBar active={section} />
+        {featuredImage && wideImage || banner}
+      </header>
+    )
+  }
+}
 
 export default Header
