@@ -41,36 +41,30 @@ class BlogIndex extends React.Component {
           ))}
         </div>
         <ul className={styles.blognavigation}>
-          {!isFirst && (
-            <Link to={`/blog/${prevPage}`} rel="prev">
-              ← Previous Page
-            </Link>
-          ) || "← Previous Page"}
+          <li className={styles.prevpage}>
+            {!isFirst && (
+              <Link className={styles.prevpage} to={`/blog/${prevPage}`} rel="prev">
+                ← Previous Page
+              </Link>
+            ) || <span>← Previous Page</span>}
+          </li>
           {Array.from({ length: numPages }, (_, i) => (
             <li
               key={`pagination-number${i + 1}`}
-              style={{
-                margin: 0,
-              }}
+              className={i + 1 === currentPage ? styles.currentpage : ''}
             >
-              <Link
-                to={`/blog/${i === 0 ? '' : i + 1}`}
-                style={{
-                  padding: 5,
-                  textDecoration: 'none',
-                  color: i + 1 === currentPage ? '#ffffff' : '',
-                  background: i + 1 === currentPage ? '#007acc' : '',
-                }}
-              >
+              <Link to={`/blog/${i === 0 ? '' : i + 1}`}>
                 {i + 1}
               </Link>
             </li>
           ))}
-          {!isLast && (
-            <Link to={`/blog/${nextPage}`} rel="next">
-              Next Page →
-            </Link>
-          ) || "Next Page →"}
+          <li className={styles.nextpage}>
+            {!isLast && (
+              <Link to={`/blog/${nextPage}`} rel="next">
+                Next Page →
+              </Link>
+            ) || <span>Next Page →</span>}
+          </li>
         </ul>
       </Layout>
     )
