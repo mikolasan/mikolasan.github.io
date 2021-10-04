@@ -32,7 +32,7 @@ export default function Template ({ data, pageContext, location }) {
       title={frontmatter.title}
       section={frontmatter.section || `blog`}
       showLikes={pageContext.showLikes}
-      crumbs={pageContext.breadcrumbs && pageContext.breadcrumbs.crumbs}
+      crumbs={pageContext.breadcrumb.crumbs}
       languageName={languageName}
       anotherLanguageLink={anotherLanguageLink}
       buttonText={frontmatter.buttonText}

@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
-
+import BlogPreview from "../components/blogPreview"
 import * as styles from "../templates/blogListTemplate.module.css"
 
 const Index = ({ data }) => (
@@ -19,31 +19,28 @@ const Index = ({ data }) => (
       <p>I'm Nikolay. Game developer, slot mathematician, DIY engineer 🎲 Creating apps with C++, Python, JavaScript, Kotlin</p>
     ]}
   >
+    <ul>
+      <li>I’m interested in game development, DIY electronics, and artificial intelligence</li>
+      <li>I’m currently learning Kotlin, revamping data structures and algorithms in GDScript, and basics of electronics</li>
+      <li>I’m looking to collaborate on projects related to robots, games and procedural generation</li>
+      <li>You can reach me on Twitter @mikolasan where once a week I write threads about gamedev and development process</li>
+      <li>Enjoy coding today!</li>
+    </ul>
     <p>
-      <ul>
-        <li>I’m interested in game development, DIY electronics, and artificial intelligence</li>
-        <li>I’m currently learning Kotlin, revamping data structures and algorithms in GDScript, and basics of electronics</li>
-        <li>I’m looking to collaborate on projects related to robots, games and procedural generation</li>
-        <li>You can reach me on Twitter @mikolasan where once a week I write threads about gamedev and development process</li>
-        <li>Enjoy coding today!</li>
-      </ul>
       > <a href="https://github.com/mikolasan">My github profile</a>
     </p>
 
     <h2>New blog posts</h2>
     <div className={styles.blogcards}>
       {data.allMarkdownRemark.edges.map(({ node }) => (
-        <div key={node.id} className={styles.blogcard}>
-          <Link to={node.frontmatter.path}><h3>
-            {node.frontmatter.title}
-          </h3></Link>
-          <p className={styles.blogdate}>
-            {new Date(Date.parse(node.frontmatter.date)).toLocaleDateString("en-US", { dateStyle: "full" })}
-          </p>
-          <p>
-            {node.excerpt}{" "}<Link to={node.frontmatter.path}>Read more...</Link>
-          </p>
-        </div>
+        <BlogPreview
+          key={node.id} 
+          path={node.frontmatter.path}
+          title={node.frontmatter.title}
+          text={node.excerpt}
+          date={new Date(Date.parse(node.frontmatter.date)).toLocaleDateString("en-US", { dateStyle: "full" })}
+          readMore="Read more..."
+        />
       ))}
     </div>
     <h2>Featured projects</h2>

@@ -185,9 +185,8 @@ section {
   margin: 0.5rem 0.5rem 1.5rem;
   vertical-align: top;
   background-color: #f6f6f6;
+  border: #211a1d dashed 0.25rem;
   border-radius: 20px;
-  
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .ideacard img {

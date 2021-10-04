@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import LikesPanel from "../components/likesPanel"
-import Footer from "../components/Footer"
+import Footer from "../components/footer"
 import Header from "../components/header"
 import Title from "../components/title"
 import "./layout.css"

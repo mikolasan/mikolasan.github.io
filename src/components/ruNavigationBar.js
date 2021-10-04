@@ -35,7 +35,7 @@ class RuNavbar extends React.Component {
         <nav className={styles.mobilenav}>
           <img className={styles.burgermenu} onClick={this.openMenu.bind(this)} src="/images/burger.svg" />
           <svg className={styles.mobilelogo} xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 254 289" stroke="none" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1"
               d="M 254.00,289.00
                 C 254.00,289.00 195.93,289.00 195.93,289.00
                   195.93,289.00 136.74,207.29 136.74,207.29
@@ -58,7 +58,7 @@ class RuNavbar extends React.Component {
         <nav className={styles.topnav}>
           <Link to="/ru" { ...(active === "root" && { className: [styles.activelink, styles.toplogo].join(' ') } || { className: styles.toplogo }) }>
             <svg className={styles.toplogo} xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 254 289" stroke="none" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" 
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" 
                 d="M 254.00,289.00
                   C 254.00,289.00 195.93,289.00 195.93,289.00
                     195.93,289.00 136.74,207.29 136.74,207.29
