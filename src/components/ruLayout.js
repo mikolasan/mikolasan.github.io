@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Footer from "../components/ruFooter"
-import Header from "../components/header"
+import Header from "../components/ruHeader"
 import Title from "../components/title"
 import "./layout.css"
 

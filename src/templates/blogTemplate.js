@@ -31,7 +31,8 @@ export default function Template ({ data, pageContext, location }) {
     <Layout
       title={frontmatter.title}
       section={frontmatter.section || `blog`}
-      pageContext={pageContext}
+      showLikes={pageContext.showLikes}
+      crumbs={pageContext.breadcrumbs && pageContext.breadcrumbs.crumbs}
       languageName={languageName}
       anotherLanguageLink={anotherLanguageLink}
       buttonText={frontmatter.buttonText}

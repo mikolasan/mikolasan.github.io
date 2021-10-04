@@ -57,12 +57,4 @@ const Banner = ({ children, buttonText, buttonLink, secondButtonText, secondButt
   />
 )
 
-Banner.propTypes = {
-  children: PropTypes.node.isRequired,
-  buttonText: PropTypes.string.isRequired,
-  buttonLink: PropTypes.string.isRequired,
-  secondButtonText: PropTypes.string.isRequired,
-  secondButtonLink: PropTypes.string.isRequired
-}
-
 export default Banner

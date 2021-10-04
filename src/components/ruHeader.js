@@ -1,5 +1,5 @@
 import React from "react"
-
+import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 import FeaturedImage from "../components/featuredImage"
 import Banner from "../components/banner"
 import NavigationBar from "../components/ruNavigationBar"
@@ -11,8 +11,10 @@ const Header = ({
   secondButtonText,
   secondButtonLink,
   featuredImage,
-  bannerParagraph
-}) => (
+  bannerParagraph,
+  crumbs
+}) => {
+  return (
   <header>
     <NavigationBar active={section} />
     {featuredImage
@@ -27,7 +29,15 @@ const Header = ({
         {bannerParagraph}
       </Banner>
     )}
+    {crumbs &&
+    <div className="breadcrumbs">
+      <Breadcrumb
+        crumbs={crumbs}
+        crumbSeparator=" "
+        title=""
+      />
+    </div>}
   </header>
-)
+)}
 
 export default Header

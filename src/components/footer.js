@@ -7,7 +7,7 @@ const Footer = ({
 }) => (
   <StaticQuery
     query={graphql`
-      query RuSiteInfoQuery {
+      query SiteInfoQuery {
         currentBuildDate {
           currentDate
         }
@@ -16,7 +16,10 @@ const Footer = ({
     render={data => (
       <footer>
         <div className="bottomnav">
-          {anotherLanguageLink && (<Link style={{marginBottom: '0.5em', textDecoration: 'underline'}} to={anotherLanguageLink}>{languageName}</Link>)}
+          {languageLink && (
+          <Link style={{marginBottom: '0.5em', textDecoration: 'underline'}} to={languageLink}>
+            {languageName}
+          </Link>)}
           <div className="bottomsmallabout">
             <h2>About</h2>
             <p>Game developer 🎮|🎰 C++, Python, and JavaScript adventurer. Magistrate in L5R 🎲</p>
