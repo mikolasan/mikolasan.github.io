@@ -2,6 +2,7 @@
 path: "/gamedev/where-free-art"
 date: "2020-05-24"
 title: "Where free 3d?"
+section: gamedev
 ---
 
 

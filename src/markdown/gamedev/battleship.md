@@ -3,7 +3,7 @@ path: "/gamedev/battleship"
 date: "2020-08-19"
 title: Battleship
 featuredImage: battleship_last_step.png
-section: "projects"
+section: gamedev
 ---
 
 A Python implementation of the classic battleship game.

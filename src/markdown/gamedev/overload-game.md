@@ -3,7 +3,7 @@ path: "/gamedev/overload-game"
 date: "2020-03-26"
 title: Overload
 featuredImage: overload-game.png
-section: "projects"
+section: gamedev
 ---
 
 What is better than SDL these days? I bet the answer is raylib.

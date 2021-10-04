@@ -2,7 +2,7 @@
 path: "/gamedev/game-jams"
 date: "2021-06-06"
 title: Game Jams
-section: "projects"
+section: gamedev
 ---
 
 I like jams. But I never win them.

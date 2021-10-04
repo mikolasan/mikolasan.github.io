@@ -78,6 +78,7 @@ class Navbar extends React.Component {
             </svg>
           </Link>
           <Link to="/ideas/" { ...(active === "ideas" && { className: styles.activelink }) }>Ideas</Link>
+          <Link to="/gamedev/" { ...(active === "gamedev" && { className: styles.activelink }) }>Gamedev</Link>
           <Link to="/projects/" { ...(active === "projects" && { className: styles.activelink }) }>Projects</Link>
           <Link to="/science/" { ...(active === "science" && { className: styles.activelink }) }>Science</Link>
           <Link to="/blog/" { ...(active === "blog" && { className: styles.activelink }) }>Blog</Link>
