@@ -136,6 +136,20 @@ section {
   display: none;
 }
 
+.draftalert {
+  background-color: #d81159;
+  font-size: 120%;
+  padding: 2rem;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  margin-bottom: 2rem;
+}
+
+.draftalert img {
+  width: 200px;
+  margin-bottom: 0.5em;
+}
+
 .cards {
   margin: 1em 0;
   overflow: hidden;

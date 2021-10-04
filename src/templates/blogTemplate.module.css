@@ -1,49 +1,4 @@
-.breadcrumbs {
-  display: flex;
-  flex-wrap: wrap;
-  list-style-type: none;
-  margin: 0.1em 0 0.5em 0;
-  padding: 0;
-}
-
-.breadcrumbs ol {
-  display: inline-flex;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.breadcrumbs ol li {
-  margin: 0;
-}
-
-.breadcrumbs ol li a {
-	display: block;
-	float: left;
-	height: 1.5em;
-	text-align: center;
-	padding: 0 0.5em;
-	position: relative;
-  margin: 0;
-
-	text-decoration: none;
-}
-
 .postedon {
   margin: 0 0 1em 0;
   font-size: 85%;
-}
-
-.draftalert {
-  background-color: #d81159;
-  font-size: 120%;
-  padding: 2rem;
-  margin-left: -1.5rem;
-  margin-right: -1.5rem;
-  margin-bottom: 2rem;
-}
-
-.draftalert img {
-  width: 200px;
-  margin-bottom: 0.5em;
 }

@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
+import DraftAlert from "../components/draftAlert"
 import * as styles from "./blogTemplate.module.css"
 
 export default function Template ({ data, pageContext, location }) {
@@ -13,29 +14,24 @@ export default function Template ({ data, pageContext, location }) {
   const linkPath = frontmatter.path
   let anotherLanguageLink = ''
   let languageName = ''
-  let alertAboutDraftStatus = ''
   if (linkPath.startsWith('/ru/blog')) {
     anotherLanguageLink = '/blog'
     languageName = "Switch to english version"
-    alertAboutDraftStatus = 'Статья находится в активной разработке. Она опубликована в таком виде не для издевательства над читателем, а только потому что редактор сказал "можно".'
   } else if (linkPath.startsWith('/blog')) {
     anotherLanguageLink = '/ru/blog'
     languageName = "Switch to russian version"
-    alertAboutDraftStatus = 'This article is not finished and not reviewed thoroughly. If for some reason you want to continue reading, do it at your own risk, but do not forget to come back later to enjoy the final version.'
   } else if (linkPath.startsWith('/ru/')) {
     anotherLanguageLink = linkPath.replace('/ru/', '/')
     languageName = "Switch to english version"
-    alertAboutDraftStatus = 'Статья находится в активной разработке. Она опубликована в таком виде не для издевательства над читателем, а только потому что редактор сказал "можно".'
   } else {
     anotherLanguageLink = '/ru' + linkPath
     languageName = "Switch to russian version"
-    alertAboutDraftStatus = 'This article is not finished and not reviewed thoroughly. If for some reason you want to continue reading, do it at your own risk, but do not forget to come back later to enjoy the final version.'
   }
   return (
     <Layout
       title={frontmatter.title}
       section={frontmatter.section || `blog`}
-      showLikes={pageContext.showLikes}
+      pageContext={pageContext}
       languageName={languageName}
       anotherLanguageLink={anotherLanguageLink}
       buttonText={frontmatter.buttonText}
@@ -50,10 +46,7 @@ export default function Template ({ data, pageContext, location }) {
     >
       {featuredImgFluid && (<h1>{frontmatter.title}</h1>)}
       <p className={styles.postedon}>{frontmatter.date}</p>
-      {frontmatter.draft && (<div className={styles.draftalert}>
-        <img src="/draft.png" alt="Picturing not a whole whale"/>
-        <p>{alertAboutDraftStatus}</p>
-      </div>)}
+      {frontmatter.draft && <DraftAlert linkPath={linkPath} />}
       <div
         dangerouslySetInnerHTML={{ __html: html }}
       />

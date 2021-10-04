@@ -1,5 +1,5 @@
 import React from "react"
-
+import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 import FeaturedImage from "../components/featuredImage"
 import Banner from "../components/banner"
 import NavigationBar from "../components/navigationBar"
@@ -13,7 +13,8 @@ class Header extends React.Component {
       secondButtonText,
       secondButtonLink,
       featuredImage,
-      bannerParagraph
+      bannerParagraph,
+      crumbs
     } = this.props
     const wideImage = (<FeaturedImage imgFluid={featuredImage} />)
     const banner = bannerParagraph && (
@@ -30,6 +31,13 @@ class Header extends React.Component {
       <header>
         <NavigationBar active={section} />
         {featuredImage && wideImage || banner}
+        <div className="breadcrumbs">
+          <Breadcrumb
+            crumbs={crumbs}
+            crumbSeparator=" "
+            title=""
+          />
+        </div>
       </header>
     )
   }
