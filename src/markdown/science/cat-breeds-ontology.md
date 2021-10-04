@@ -3,6 +3,7 @@ path: "/science/cat-breeds-ontology"
 date: "2020-07-11"
 title: "Cat breeds ontology"
 draft: true
+section: science
 ---
 
 First of all, what is an ontology? Does it exist like a file, or a database? Do you need special software to create it? What is the purpose of ontologies, can they do predictions, deductions?

@@ -2,6 +2,7 @@
 path: "/gamedev"
 date: "2020-03-19"
 title: "Gamedev"
+section: "projects"
 ---
 
 ## Python / PyGame

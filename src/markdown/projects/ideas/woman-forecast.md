@@ -5,6 +5,7 @@ title: "Woman forecast"
 subtitle: "Predict why is your girlfriend mad at you"
 tags: ["mobile", "prediction", "calendar"]
 idea: innovative
+section: ideas
 ---
 
 This application should help men to understand their precious significant other better. It is recommended to people who experienced not once when fiancee or wife become angry without any reason. The key component is that a reason always exists, but it is not in your vision field. Usually, because people tend to delay their promises or tasks that are not prioritized accordingly.

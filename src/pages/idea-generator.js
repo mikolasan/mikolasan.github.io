@@ -2,10 +2,11 @@ import React from "react"
 import Layout from "../components/layout"
 import SlotMachine from "../components/slotMachine"
 
-const LuckyIdeaGenerator = () => (
+const LuckyIdeaGenerator = ({ pageContext }) => (
   <Layout
     title="Idea generator"
     section="ideas"
+    crumbs={pageContext.breadcrumb.crumbs}
     bannerParagraph={[
       <h1>Idea generator</h1>,
       <p>

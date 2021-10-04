@@ -2,6 +2,7 @@
 path: "/youtube"
 date: "2020-09-19"
 title: "YouTube"
+section: "projects"
 ---
 
 ## Plan
