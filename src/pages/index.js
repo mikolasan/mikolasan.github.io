@@ -4,10 +4,11 @@ import Layout from "../components/layout"
 import BlogPreview from "../components/blogPreview"
 import * as styles from "../templates/blogListTemplate.module.css"
 
-const Index = ({ data }) => (
+const Index = ({ data, pageContext }) => (
   <Layout
     title="Developer, traveler, snob"
     section="root"
+    crumbs={pageContext.breadcrumb.crumbs}
     languageName="Switch to russian version"
     anotherLanguageLink="/ru"
     buttonText="Projects"

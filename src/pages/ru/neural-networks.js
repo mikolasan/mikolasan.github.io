@@ -1,10 +1,11 @@
 import React from "react"
 import Layout from "../../components/ruNewLayout"
 
-const RuNeuralNetworks = () => (
+const RuNeuralNetworks = ({ pageContext }) => (
   <Layout
     title="Нейронные сети"
     section="neural-networks"
+    crumbs={pageContext.breadcrumb.crumbs}
     languageName="Switch to english version"
     anotherLanguageLink="/"
     bannerParagraph={[

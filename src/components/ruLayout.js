@@ -8,6 +8,7 @@ import "./layout.css"
 const RuLayout = ({
   children,
   showLikes,
+  crumbs,
   languageName,
   anotherLanguageLink,
   title,
@@ -28,6 +29,7 @@ const RuLayout = ({
       secondButtonLink={secondButtonLink}
       featuredImage={featuredImage}
       bannerParagraph={bannerParagraph}
+      crumbs={crumbs}
     />
     <main>
       <div className="main-section">

@@ -41,7 +41,8 @@
 
 .blognavigation {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow: hidden;
   justify-content: center;
   column-gap: 1rem;
   align-items: center;
@@ -88,14 +89,16 @@
 }
 
 .prevpage a {
-  width: fit-content;
+  width: max-content;
 }
 
 .nextpage a {
-  width: fit-content;
+  width: max-content;
 }
 
 .prevpage span {
+  width: max-content;
+  white-space: nowrap;
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -103,6 +106,8 @@
 }
 
 .nextpage span {
+  width: max-content;
+  white-space: nowrap;
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -121,5 +126,17 @@
   .blogcard {
     flex: 100%;
     display: block;
+  }
+  .prevpage a {
+    display: none;
+  }
+  .nextpage a {
+    display: none;
+  }
+  .prevpage span {
+    display: none;
+  }
+  .nextpage span {
+    display: none;
   }
 }

@@ -29,13 +29,16 @@ const Header = ({
         {bannerParagraph}
       </Banner>
     )}
-    {crumbs &&
+    {crumbs && 
     <div className="breadcrumbs">
-      <Breadcrumb
-        crumbs={crumbs}
-        crumbSeparator=" "
-        title=""
-      />
+      <div className="centerpart">
+        <Breadcrumb
+          crumbs={crumbs}
+          crumbSeparator=" "
+          title=""
+        />
+        <div className="nextline"></div>
+      </div>
     </div>}
   </header>
 )}

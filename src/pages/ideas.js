@@ -2,10 +2,11 @@ import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
 
-const IdeasPage = () => (
+const IdeasPage = ({ pageContext }) => (
   <Layout
     title="Ideas"
     section="ideas"
+    crumbs={pageContext.breadcrumb.crumbs}
     languageName="Switch to russian version"
     anotherLanguageLink="/ru/ideas"
     buttonText="Try free Idea Generator"

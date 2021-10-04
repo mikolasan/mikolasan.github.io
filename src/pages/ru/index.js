@@ -2,10 +2,11 @@ import React from "react"
 import Layout from "../../components/ruNewLayout"
 import * as styles from "./index.module.css"
 
-const RuIndex = () => (
+const RuIndex = ({ pageContext }) => (
   <Layout
     title="👋"
     section="root"
+    crumbs={pageContext.breadcrumb.crumbs}
     languageName="Switch to english version"
     anotherLanguageLink="/"
     bannerParagraph={[<h1>👋</h1>]}

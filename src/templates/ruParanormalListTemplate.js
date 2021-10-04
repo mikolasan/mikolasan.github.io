@@ -7,6 +7,7 @@ const RuParanormal = ({ data, pageContext }) => (
   <Layout
     title="Паранормальные экспедиции"
     section="paranormal"
+    crumbs={pageContext.breadcrumb.crumbs}
     languageName="Switch to english version"
     anotherLanguageLink="/"
     bannerParagraph={[
@@ -17,6 +18,7 @@ const RuParanormal = ({ data, pageContext }) => (
   >
     <PostList
       posts={data.allMarkdownRemark.edges}
+      baseUrl="/ru/paranormal"
       pageContext={pageContext}
     />
   </Layout>

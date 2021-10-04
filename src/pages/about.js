@@ -1,10 +1,11 @@
 import React from "react"
 import Layout from "../components/layout"
 
-const About = ({ data }) => (
+const About = ({ pageContext }) => (
   <Layout
     title="Developer, traveler, snob"
     section="about"
+    crumbs={pageContext.breadcrumb.crumbs}
     languageName="Switch to russian version"
     anotherLanguageLink="/ru/about"
     buttonText="Open my latest projects"

@@ -3,10 +3,11 @@ import { graphql, } from "gatsby"
 import Layout from "../components/ruLayout"
 import PostList from "../components/ruPostList"
 
-const BlogIndex = ({ data, pageContext }) => (
+const RuBlogIndex = ({ data, pageContext }) => (
   <Layout
     title="Остальное"
     section="blog"
+    crumbs={pageContext.breadcrumb.crumbs}
     languageName="Switch to english version"
     anotherLanguageLink="/blog"
     bannerParagraph={[
@@ -16,12 +17,13 @@ const BlogIndex = ({ data, pageContext }) => (
   >
     <PostList
       posts={data.allMarkdownRemark.edges}
+      baseUrl="/ru/blog"
       pageContext={pageContext}
     />
   </Layout>
 )
 
-export default BlogIndex
+export default RuBlogIndex
 
 export const query = graphql`
   query RuBlogListQuery($skip: Int!, $limit: Int!) {

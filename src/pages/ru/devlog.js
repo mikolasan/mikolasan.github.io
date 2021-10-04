@@ -1,10 +1,11 @@
 import React from "react"
 import Layout from "../../components/ruNewLayout"
 
-const RuDevlog = () => (
+const RuDevlog = ({ pageContext }) => (
   <Layout
     title="Разношерстный девлог"
     section="devlog"
+    crumbs={pageContext.breadcrumb.crumbs}
     languageName="Switch to english version"
     anotherLanguageLink="/"
     bannerParagraph={[

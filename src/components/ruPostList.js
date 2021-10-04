@@ -1,71 +1,59 @@
 import React from "react"
 import { Link } from "gatsby"
+import BlogPreview from "./blogPreview"
 import * as styles from "../templates/blogListTemplate.module.css"
 
-class RuPostList extends React.Component {
-  render() {
-    const { posts, pageContext } = this.props
-    const {
-      currentPage,
-      numPages,
-      breadcrumb: { crumbs },
-    } = pageContext
-    const isFirst = currentPage === 1
-    const isLast = currentPage === numPages
-    const prevPage = currentPage - 1 === 1 ? "" : (currentPage - 1).toString()
-    const nextPage = (currentPage + 1).toString()
-    return (
-      <>
-        <div className={styles.blogcards}>
-          {posts.map(({ node }) => (
-            <div key={node.id} className={styles.blogcard}>
-              <Link to={node.frontmatter.path}><h3>
-                {node.frontmatter.title}
-              </h3></Link>
-              <p className={styles.blogdate}>
-                {new Date(Date.parse(node.frontmatter.date)).toLocaleDateString("ru-RU", { dateStyle: "full" })}
-              </p>
-              <p>{node.excerpt}{" "}
-                <Link to={node.frontmatter.path}>Читать дальше...</Link>
-              </p>
-            </div>
-          ))}
-        </div>
-        <ul className={styles.blognavigation}>
+const RuPostList = ({ pageContext, posts, baseUrl }) => {
+  const {
+    currentPage,
+    numPages
+  } = pageContext
+  const isFirst = currentPage === 1
+  const isLast = currentPage === numPages
+  const prevPage = currentPage - 1 === 1 ? "" : (currentPage - 1).toString()
+  const nextPage = (currentPage + 1).toString()
+  return (
+    <>
+      <div className={styles.blogcards}>
+        {posts.map(({ node }) => (
+          <BlogPreview
+            key={node.id} 
+            path={node.frontmatter.path}
+            title={node.frontmatter.title}
+            text={node.excerpt}
+            date={new Date(Date.parse(node.frontmatter.date)).toLocaleDateString("ru-RU", { dateStyle: "full" })}
+            readMore="Читать дальше..."
+          />
+        ))}
+      </div>
+      <ul className={styles.blognavigation}>
+        <li className={styles.prevpage}>
           {!isFirst && (
-            <Link to={`/ru/blog/${prevPage}`} rel="prev">
+            <Link to={`${baseUrl}/${prevPage}`} rel="prev">
               ← Пред стр
             </Link>
-          ) || "← Пред стр"}
-          {Array.from({ length: numPages }, (_, i) => (
-            <li
-              key={`pagination-number${i + 1}`}
-              style={{
-                margin: 0,
-              }}
-            >
-              <Link
-                to={`/ru/blog/${i === 0 ? '' : i + 1}`}
-                style={{
-                  padding: 5,
-                  textDecoration: 'none',
-                  color: i + 1 === currentPage ? '#ffffff' : '',
-                  background: i + 1 === currentPage ? '#007acc' : '',
-                }}
-              >
-                {i + 1}
-              </Link>
-            </li>
-          ))}
+          ) || <span>← Пред стр</span>}
+        </li>
+        {Array.from({ length: numPages }, (_, i) => (
+          <li
+            key={`pagination-number${i + 1}`}
+            className={i + 1 === currentPage ? styles.currentpage : ''}
+          >
+            <Link to={`${baseUrl}/${i === 0 ? '' : i + 1}`}>
+              {i + 1}
+            </Link>
+          </li>
+        ))}
+        <li className={styles.nextpage}>
           {!isLast && (
-            <Link to={`/ru/blog/${nextPage}`} rel="next">
+            <Link to={`${baseUrl}/${nextPage}`} rel="next">
               След стр →
             </Link>
-          ) || "След стр →"}
-        </ul>
-      </>
-    )
-  }
+          ) || <span>След стр →</span>}
+        </li>
+      </ul>
+    </>
+  )
 }
 
 export default RuPostList

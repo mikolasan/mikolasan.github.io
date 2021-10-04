@@ -1,10 +1,11 @@
 import React from "react"
 import Layout from "../../components/ruNewLayout"
 
-const RuBoardGames = () => (
+const RuBoardGames = ({ pageContext }) => (
   <Layout
     title="Настольные игры"
     section="board-games"
+    crumbs={pageContext.breadcrumb.crumbs}
     languageName="Switch to english version"
     anotherLanguageLink="/"
     bannerParagraph={[
