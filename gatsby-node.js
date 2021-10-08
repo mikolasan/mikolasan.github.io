@@ -10,6 +10,29 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const ruBlogListTemplate = path.resolve(`./src/templates/ruBlogListTemplate.js`)
   const ruParanormalListTemplate = path.resolve(`./src/templates/ruParanormalListTemplate.js`)
 
+  const recentArticles = await graphql(`
+    {
+      allMarkdownRemark(
+        limit: 5,
+        sort: { order: DESC, fields: [frontmatter___date]},
+        filter: { frontmatter: {language: {ne: "ru"}}}
+      ) {
+        edges {
+          node {
+            frontmatter {
+              path
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  if (recentArticles.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
+  }
+
   const result = await graphql(`
     {
       allMarkdownRemark(
@@ -42,7 +65,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       component: blogPostTemplate,
       context: {
         showLikes: showLikes,
-        pagePath: path
+        pagePath: path,
+        recentArticles: recentArticles
       },
     })
   })

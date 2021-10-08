@@ -1,9 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types"
-import LikesPanel from "../components/likesPanel"
-import Footer from "../components/footer"
-import Header from "../components/header"
-import Title from "../components/title"
+import Reactions from "./likesPanel"
+import Footer from "./footer"
+import Header from "./header"
+import Title from "./title"
+import RelatedArticles from "./recentArticles"
 import "./layout.css"
 import "./breadcrumbs.css"
 
@@ -20,7 +21,8 @@ const Layout = ({
   secondButtonText,
   secondButtonLink,
   featuredImage,
-  bannerParagraph
+  bannerParagraph,
+  recentArticles
 }) => { 
   return (
   <>
@@ -59,10 +61,12 @@ const Layout = ({
       </div>
       {showLikes && (
         <section>
-          <LikesPanel />
+          <Reactions />
         </section>
       )}
+      <RelatedArticles query={recentArticles} />
     </main>
+
     <Footer languageName={languageName} languageLink={anotherLanguageLink} />
   </>
 )}

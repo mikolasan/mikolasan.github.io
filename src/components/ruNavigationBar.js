@@ -77,12 +77,12 @@ class RuNavbar extends React.Component {
               />
             </svg>
           </Link>
-          <Link to="/ru/neural-networks" { ...(active === "neural-networks" && { className: styles.activelink }) }>Нейронные сети</Link>
+          <Link to="/ru/neural-networks" { ...(active === "neural-networks" && { className: styles.activelink }) }>Наука</Link>
           <Link to="/ru/make" { ...(active === "make" && { className: styles.activelink }) }>Мастерская</Link>
           <Link to="/ru/devlog" { ...(active === "devlog" && { className: styles.activelink }) }>Девлог</Link>
           <Link to="/ru/paranormal" { ...(active === "paranormal" && { className: styles.activelink }) }>Паранормальное</Link>
-          <Link to="/ru/board-games" { ...(active === "board-games" && { className: styles.activelink }) }>Настольные игры</Link>
-          <Link to="/ru/blog" { ...(active === "blog" && { className: styles.activelink }) }>Остальное</Link>
+          <Link to="/ru/board-games" { ...(active === "board-games" && { className: styles.activelink }) }>Настолки</Link>
+          <Link to="/ru/blog" { ...(active === "blog" && { className: styles.activelink }) }>И др.</Link>
           <Link to="/ru/about" style={{float: 'right'}} { ...(active === "about" && { className: styles.activelink }) }>О себе</Link>
         </nav>
       </>

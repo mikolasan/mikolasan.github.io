@@ -3,14 +3,14 @@ import Layout from "../../components/ruNewLayout"
 
 const RuBoardGames = ({ pageContext }) => (
   <Layout
-    title="Настольные игры"
+    title="Настолки"
     section="board-games"
     crumbs={pageContext.breadcrumb.crumbs}
     languageName="Switch to english version"
     anotherLanguageLink="/"
     bannerParagraph={[
       <h1>Настольные игры и ролёвки</h1>,
-      <p>Так же как книги, фильмы и музыка игры позоволяют погрузиться в совершенно иной вымышленный мир,
+      <p>Так же как книги, фильмы и музыка, игры позоволяют погрузиться в совершенно иной вымышленный мир,
         живущий по своим правилам. Прелесть игровых механик, поиск новых стратегий - это все невероятно интересно,
         но еще интереснее может оказаться создание своей игры
       </p>

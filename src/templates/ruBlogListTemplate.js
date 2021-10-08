@@ -12,7 +12,7 @@ const RuBlogIndex = ({ data, pageContext }) => (
     anotherLanguageLink="/blog"
     bannerParagraph={[
       <h1>Остальное</h1>,
-      <p>И всё остальное остается в этом блоге.</p>
+      <p>А всё остальное, что пишется в блоге – остается в этом блоге</p>
     ]}
   >
     <PostList

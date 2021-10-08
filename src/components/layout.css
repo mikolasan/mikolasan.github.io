@@ -79,7 +79,7 @@ section {
 
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 2fr 1fr;
+  grid-template-rows: 2fr 0.25fr;
   align-items: center;
   justify-content: center;
 }
@@ -91,7 +91,10 @@ section {
   width: 90%;
 }
 
-.featured-action {
+.featured-text p {
+  font-size: 1.25rem;
+}
+  .featured-action {
   grid-column: 2 / 3;
   justify-self: center;
   

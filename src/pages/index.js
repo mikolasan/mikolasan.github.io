@@ -19,7 +19,9 @@ const Index = ({ data, pageContext }) => (
       <h1>👋 Hi</h1>,
       <p>I'm Nikolay. Game developer, slot mathematician, DIY engineer 🎲 Creating apps with C++, Python, JavaScript, Kotlin</p>
     ]}
+    recentArticles={pageContext.recentArticles}
   >
+    {pageContext.recentArticles && '1' || '2'}
     <ul>
       <li>I’m interested in game development, DIY electronics, and artificial intelligence</li>
       <li>I’m currently learning Kotlin, revamping data structures and algorithms in GDScript, and basics of electronics</li>
