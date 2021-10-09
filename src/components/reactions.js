@@ -2,7 +2,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import { Location } from "@reach/router"
 
-class LikesPanel extends React.Component {
+class Reactions extends React.Component {
   static propTypes = {
     location: PropTypes.object.isRequired
   }
@@ -97,6 +97,6 @@ class LikesPanel extends React.Component {
 
 export default props => (
   <Location>
-    {locationProps => <LikesPanel {...locationProps} {...props} />}
+    {locationProps => <Reactions {...locationProps} {...props} />}
   </Location>
 )

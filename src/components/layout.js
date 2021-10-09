@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Reactions from "./likesPanel"
+import Reactions from "./reactions"
 import Footer from "./footer"
 import Header from "./header"
 import Title from "./title"

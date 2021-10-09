@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import Reactions from "./reactions"
 import Footer from "../components/ruFooter"
 import Header from "../components/ruHeader"
 import Title from "../components/title"
@@ -41,7 +42,7 @@ const RuNewLayout = ({
         {children}
         {showLikes && (
           <aside>
-            <LikesPanel />
+            <Reactions />
           </aside>
         )}
       </div>
