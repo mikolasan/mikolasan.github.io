@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../../components/ruNewLayout"
+import Layout from "../../components/ruLayout"
 import * as styles from "./index.module.css"
 
 const RuIndex = ({ pageContext }) => (

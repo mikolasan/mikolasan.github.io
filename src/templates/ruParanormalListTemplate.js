@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/ruNewLayout"
+import Layout from "../components/ruLayout"
 import PostList from "../components/ruPostList"
 
 const RuParanormal = ({ data, pageContext }) => (

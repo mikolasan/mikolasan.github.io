@@ -10,12 +10,13 @@ import "./breadcrumbs.css"
 
 const Layout = ({ 
   children,
+  title,
+  date,
+  section,
   showLikes,
   crumbs,
   languageName,
   anotherLanguageLink,
-  title,
-  section,
   buttonText,
   buttonLink,
   secondButtonText,
@@ -34,6 +35,8 @@ const Layout = ({
       secondButtonLink={secondButtonLink}
       featuredImage={featuredImage}
       bannerParagraph={bannerParagraph}
+      title={title}
+      date={date}
       crumbs={crumbs}
     />
     <main>

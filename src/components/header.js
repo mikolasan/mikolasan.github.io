@@ -12,19 +12,27 @@ const Header = ({
   secondButtonLink,
   featuredImage,
   bannerParagraph,
+  title,
+  date,
   crumbs
 }) => {
-  const wideImage = (<FeaturedImage imgFluid={featuredImage} />)
+  const wideImage = (
+    <FeaturedImage
+      imgFluid={featuredImage}
+      title={title}
+      date={date}
+    />
+  )
   const banner = bannerParagraph && (
-      <Banner
-        buttonText={buttonText}
-        buttonLink={buttonLink}
-        secondButtonText={secondButtonText}
-        secondButtonLink={secondButtonLink}
-      >
-        {bannerParagraph}
-      </Banner>
-    )
+    <Banner
+      buttonText={buttonText}
+      buttonLink={buttonLink}
+      secondButtonText={secondButtonText}
+      secondButtonLink={secondButtonLink}
+    >
+      {bannerParagraph}
+    </Banner>
+  )
   return (
   <header>
     <NavigationBar active={section} />

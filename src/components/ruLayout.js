@@ -5,6 +5,7 @@ import Footer from "../components/ruFooter"
 import Header from "../components/ruHeader"
 import Title from "../components/title"
 import "./layout.css"
+import "./breadcrumbs.css"
 
 const RuLayout = ({
   children,
@@ -19,7 +20,8 @@ const RuLayout = ({
   secondButtonText,
   secondButtonLink,
   featuredImage,
-  bannerParagraph
+  bannerParagraph,
+  date
 }) => (
   <>
     <Title title={title + " - N"} />
@@ -30,6 +32,7 @@ const RuLayout = ({
       secondButtonLink={secondButtonLink}
       featuredImage={featuredImage}
       bannerParagraph={bannerParagraph}
+      date={date}
       crumbs={crumbs}
     />
     <main>

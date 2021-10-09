@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../../components/ruNewLayout"
+import Layout from "../../components/ruLayout"
 
 const RuNeuralNetworks = ({ pageContext }) => (
   <Layout

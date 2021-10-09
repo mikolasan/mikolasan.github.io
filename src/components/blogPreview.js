@@ -14,7 +14,7 @@ const BlogPreview = ({
       {title}
     </h3></Link>
     <time className={styles.blogdate}>
-      {new Date(Date.parse(date)).toLocaleDateString("en-US", { dateStyle: "full" })}
+      {date}
     </time>
     <p>{text}</p>
     <Link className={styles.readmore} to={path}>{readMore}</Link>

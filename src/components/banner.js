@@ -1,4 +1,3 @@
-import PropTypes from "prop-types"
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
@@ -21,7 +20,13 @@ const query = graphql`
   }
 `
 
-const Banner = ({ children, buttonText, buttonLink, secondButtonText, secondButtonLink }) => (
+const Banner = ({
+  children,
+  buttonText,
+  buttonLink,
+  secondButtonText,
+  secondButtonLink
+}) => (
   <StaticQuery
     query={query}
     render={data => (

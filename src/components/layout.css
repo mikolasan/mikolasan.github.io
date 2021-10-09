@@ -135,6 +135,11 @@ section {
   cursor: pointer;
 }
 
+.post-date {
+  position: absolute;
+  top: 3rem;
+}
+
 .mobile-header {
   display: none;
 }

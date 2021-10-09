@@ -30,6 +30,7 @@ export default function Template ({ data, pageContext, location }) {
   return (
     <Layout
       title={frontmatter.title}
+      date={frontmatter.date}
       section={frontmatter.section || `blog`}
       showLikes={pageContext.showLikes}
       crumbs={pageContext.breadcrumb.crumbs}
@@ -45,8 +46,6 @@ export default function Template ({ data, pageContext, location }) {
         <p dangerouslySetInnerHTML={{ __html: frontmatter.subtitle }} />
       ]}
     >
-      {featuredImgFluid && (<h1>{frontmatter.title}</h1>)}
-      <p className={styles.postedon}>{frontmatter.date}</p>
       {frontmatter.draft && <DraftAlert linkPath={linkPath} />}
       <div
         dangerouslySetInnerHTML={{ __html: html }}
@@ -77,11 +76,7 @@ export const pageQuery = graphql`
               breakpoints: [576, 768, 922],
               transformOptions: {
                 cropFocus: ATTENTION,
-                fit: COVER,
-                duotone: {
-                  highlight: "#5C6784",
-                  shadow: "#1D263B"
-                }
+                fit: COVER
               },
               quality: 100
             )

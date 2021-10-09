@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
+import BlogPreview from "../components/blogPreview"
 import * as styles from "./blogListTemplate.module.css"
 
 const BlogIndex = ({ data, pageContext }) => {
@@ -27,16 +28,14 @@ const BlogIndex = ({ data, pageContext }) => {
     >
       <div className={styles.blogcards}>
         {posts.map(({ node }) => (
-          <article key={node.id} className={styles.blogcard}>
-            <Link to={node.frontmatter.path}><h3>
-              {node.frontmatter.title}
-            </h3></Link>
-            <time className={styles.blogdate}>
-              {new Date(Date.parse(node.frontmatter.date)).toLocaleDateString("en-US", { dateStyle: "full" })}
-            </time>
-            <p>{node.excerpt}</p>
-            <Link className={styles.readmore} to={node.frontmatter.path}>Read more...</Link>
-          </article>
+          <BlogPreview
+            key={node.id} 
+            path={node.frontmatter.path}
+            title={node.frontmatter.title}
+            text={node.excerpt}
+            date={new Date(Date.parse(node.frontmatter.date)).toLocaleDateString("en-US", { dateStyle: "full" })}
+            readMore="Read more..."
+          />
         ))}
       </div>
       <ul className={styles.blognavigation}>

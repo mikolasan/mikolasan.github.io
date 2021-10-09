@@ -12,15 +12,20 @@ const Header = ({
   secondButtonLink,
   featuredImage,
   bannerParagraph,
+  title,
+  date,
   crumbs
 }) => {
   return (
   <header>
     <NavigationBar active={section} />
     {featuredImage
-    && (<FeaturedImage imgFluid={featuredImage} />)
-    || (
-      <Banner
+    && <FeaturedImage
+          imgFluid={featuredImage}
+          title={title}
+          date={date}
+        />
+    || <Banner
         buttonText={buttonText}
         buttonLink={buttonLink}
         secondButtonText={secondButtonText}
@@ -28,7 +33,8 @@ const Header = ({
       >
         {bannerParagraph}
       </Banner>
-    )}
+    }
+    <time className="post-date">{date}</time>
     {crumbs && 
     <div className="breadcrumbs">
       <div className="centerpart">

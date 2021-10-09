@@ -44,10 +44,10 @@ export default function Template ({ data, pageContext, location }) {
         <h1>{frontmatter.title}</h1>,
         <p dangerouslySetInnerHTML={{ __html: frontmatter.subtitle }} />
       ]}
+      date={frontmatter.date}
     >
       {featuredImgFluid && (<h1>{frontmatter.title}</h1>)}
-      <p className={styles.postedon}>{frontmatter.date}</p>
-      {frontmatter.draft && <DraftAlert linkPath={linkPath} />}.
+      {frontmatter.draft && <DraftAlert linkPath={linkPath} />}
       <div
         dangerouslySetInnerHTML={{ __html: html }}
       />
