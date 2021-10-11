@@ -40,6 +40,7 @@ const Layout = ({
       crumbs={crumbs}
     />
     <main>
+      <div className="left-section"></div>
       <div className="main-section">
         {!featuredImage && (
           <div className="mobile-header">
@@ -61,12 +62,12 @@ const Layout = ({
           </div>
         )}
         {children}
+        {showLikes && (
+          <section>
+            <Reactions />
+          </section>
+        )}
       </div>
-      {showLikes && (
-        <section>
-          <Reactions />
-        </section>
-      )}
       <RelatedArticles query={recentArticles} />
     </main>
 

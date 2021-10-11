@@ -37,17 +37,34 @@ blockquote:before {
 }
 
 section {
-  margin: 0 auto;
-  max-width: 960px;
-  padding: 2.5rem 1.5rem 4rem;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.left-section {
+  flex-grow: 1;
+  flex-shrink: 1;
+  max-width: 300px;
+  display: block;
 }
 
 .main-section {
   display: block;
-  background-color: #fff;
-  margin: 0 auto;
+  flex-grow: 2;
+  flex-shrink: 2;
   max-width: 960px;
+  background-color: #fff;
   padding: 2.5rem 1.5rem 4rem;
+}
+
+@media all and (max-width: 1660px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .banner {
@@ -910,7 +927,8 @@ a:active {
 }
 
 @media all and (max-width: 870px) {
-
+  
+  
 }
 
 @media all and (max-width: 675px) {

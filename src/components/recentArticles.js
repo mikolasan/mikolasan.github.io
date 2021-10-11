@@ -1,8 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import BlogPreview from "./blogPreview"
-// import * as styles from "../templates/blogListTemplate.module.css"
-// import "./recentArticles.module.css"
+import * as styles from "./recentArticles.module.css"
 
 const RecentArticles = () => {
   const data = useStaticQuery(graphql`
@@ -28,7 +27,7 @@ const RecentArticles = () => {
   `)
   const posts = data.allMarkdownRemark.edges
   return (
-    <aside className="recent-articles">
+    <aside className={styles.recentarticles}>
       <h2>Recent articles</h2>
       <div className="blogcards">
         {posts.map(({ node }) => (
@@ -37,7 +36,7 @@ const RecentArticles = () => {
             path={node.frontmatter.path}
             title={node.frontmatter.title}
             text={node.excerpt}
-            date={new Date(Date.parse(node.frontmatter.date)).toLocaleDateString("ru-RU", { dateStyle: "full" })}
+            date={new Date(Date.parse(node.frontmatter.date)).toLocaleDateString("en-US", { dateStyle: "full" })}
             readMore="Читать дальше..."
           />
         ))}

@@ -21,12 +21,11 @@ const Index = ({ data, pageContext }) => (
     ]}
     recentArticles={pageContext.recentArticles}
   >
-    {pageContext.recentArticles && '1' || '2'}
     <ul>
       <li>I’m interested in game development, DIY electronics, and artificial intelligence</li>
       <li>I’m currently learning Kotlin, revamping data structures and algorithms in GDScript, and basics of electronics</li>
       <li>I’m looking to collaborate on projects related to robots, games and procedural generation</li>
-      <li>You can reach me on Twitter @mikolasan where once a week I write threads about gamedev and development process</li>
+      <li>You can reach me on Twitter <a href="https://twitter.com/mikolasan">@mikolasan</a> where once a week I write threads about gamedev and development process</li>
       <li>Enjoy coding today!</li>
     </ul>
     <p>
