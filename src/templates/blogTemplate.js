@@ -30,7 +30,8 @@ export default function Template ({ data, pageContext, location }) {
   return (
     <Layout
       title={frontmatter.title}
-      date={frontmatter.date}
+      published={frontmatter.date}
+      lastUpdated={markdownRemark.parent.fields.gitLogLatestDate}
       section={frontmatter.section || `blog`}
       showLikes={pageContext.showLikes}
       crumbs={pageContext.breadcrumb.crumbs}
@@ -81,6 +82,14 @@ export const pageQuery = graphql`
               quality: 100
             )
           }
+        }
+      }
+      parent {
+        ... on File {
+          fields {
+            gitLogLatestDate(formatString: "MMMM DD, YYYY")
+          }
+          name
         }
       }
     }

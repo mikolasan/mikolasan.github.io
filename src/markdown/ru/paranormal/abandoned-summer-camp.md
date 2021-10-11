@@ -1,0 +1,1 @@
+Съездить в [заброшенный лагерь](/ru/paranormal/abandoned-summer-camp)

@@ -1,0 +1,1 @@
+Сделать [гидропонную установку](/ru/make/hydroponics-system)

@@ -9,6 +9,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const blogListTemplate = path.resolve(`./src/templates/blogListTemplate.js`)
   const ruBlogListTemplate = path.resolve(`./src/templates/ruBlogListTemplate.js`)
   const ruParanormalListTemplate = path.resolve(`./src/templates/ruParanormalListTemplate.js`)
+  const ruMakeListTemplate = path.resolve(`./src/templates/ruMakeListTemplate.js`)
+  const ruDevlogListTemplate = path.resolve(`./src/templates/ruDevlogListTemplate.js`)
 
   const recentArticles = await graphql(`
     {
@@ -75,16 +77,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const ruResult = await graphql(`
     {
       allMarkdownRemark(
-        limit: 1000,
-        sort: { order: DESC, fields: [frontmatter___date]},
-        filter: { frontmatter: {language: {eq: "ru"}}}
+        filter: {fileAbsolutePath: { regex: "/\/ru\//"}}
       ) {
-        edges {
-          node {
-            frontmatter {
-              path
-            }
-          }
+        nodes {
+          fileAbsolutePath
         }
       }
     }
@@ -95,14 +91,20 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return
   }
 
-  ruResult.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    if (node.frontmatter.path === null) return
+  ruResult.data.allMarkdownRemark.nodes.forEach(node => {
+    if (node.fileAbsolutePath === null) return
+    const mdRoot = "/src/markdown"
+    const absPath = node.fileAbsolutePath
+    const startPos = absPath.search(mdRoot) + mdRoot.length
+    const endPos = absPath.length - 3
+    const path = absPath.substring(startPos, endPos)
+    console.log(path)
     createPage({
-      path: node.frontmatter.path,
+      path: path,
       component: ruBlogPostTemplate,
       context: {
         showLikes: false,
-        pagePath: node.frontmatter.path
+        pagePath: path
       }, // additional data can be passed via context
     })
   })
@@ -193,16 +195,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const ruParanormalResult = await graphql(`
     {
       allMarkdownRemark(
-        limit: 1000,
-        sort: { order: DESC, fields: [frontmatter___date] }
-        filter: { frontmatter: { path: { regex: "/\/ru\/paranormal*/" }}}
+        filter: {fileAbsolutePath: { regex: "/\/ru\/paranormal\//"}}
       ) {
-        edges {
-          node {
-            frontmatter {
-              path
-            }
-          }
+        nodes {
+          fileAbsolutePath
         }
       }
     }
@@ -213,7 +209,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return
   }
   // Create blog-list pages
-  const ruParanormalPosts = ruParanormalResult.data.allMarkdownRemark.edges
+  const ruParanormalPosts = ruParanormalResult.data.allMarkdownRemark.nodes
   const numParanormalPosts = ruParanormalPosts.length
   const numParanormalPages = Math.ceil(numParanormalPosts / (ruPostsPerPage + 1))
   Array.from({ length: numParanormalPages }).forEach((_, i) => {
@@ -224,6 +220,74 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         limit: ruPostsPerPage,
         skip: i * ruPostsPerPage,
         numPages: numParanormalPages,
+        currentPage: i + 1,
+      },
+    })
+  })
+
+  // Pagination [/ru/make]
+  const ruMakeResult = await graphql(`
+    {
+      allMarkdownRemark(
+        filter: {fileAbsolutePath: { regex: "/\/ru\/make\//"}}
+      ) {
+        nodes {
+          fileAbsolutePath
+        }
+      }
+    }
+  `)
+
+  if (ruMakeResult.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query for ru make pages.`)
+    return
+  }
+  // Create blog-list pages
+  const ruMakePosts = ruMakeResult.data.allMarkdownRemark.nodes
+  const numMakePosts = ruMakePosts.length
+  const numMakePages = Math.ceil(numMakePosts / (ruPostsPerPage + 1))
+  Array.from({ length: numMakePages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/ru/make` : `/ru/make/${i + 1}`,
+      component: ruMakeListTemplate,
+      context: {
+        limit: ruPostsPerPage,
+        skip: i * ruPostsPerPage,
+        numPages: numMakePages,
+        currentPage: i + 1,
+      },
+    })
+  })
+
+  // Pagination [/ru/devlog]
+  const ruDevlogResult = await graphql(`
+    {
+      allMarkdownRemark(
+        filter: {fileAbsolutePath: { regex: "/\/ru\/devlog\//"}}
+      ) {
+        nodes {
+          fileAbsolutePath
+        }
+      }
+    }
+  `)
+
+  if (ruDevlogResult.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query for ru devlog pages.`)
+    return
+  }
+  // Create blog-list pages
+  const ruDevlogPosts = ruDevlogResult.data.allMarkdownRemark.nodes
+  const numDevlogPosts = ruDevlogPosts.length
+  const numDevlogPages = Math.ceil(numDevlogPosts / (ruPostsPerPage + 1))
+  Array.from({ length: numDevlogPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/ru/devlog` : `/ru/devlog/${i + 1}`,
+      component: ruDevlogListTemplate,
+      context: {
+        limit: ruPostsPerPage,
+        skip: i * ruPostsPerPage,
+        numPages: numDevlogPages,
         currentPage: i + 1,
       },
     })

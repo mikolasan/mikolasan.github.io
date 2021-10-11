@@ -13,14 +13,16 @@ const Header = ({
   featuredImage,
   bannerParagraph,
   title,
-  date,
+  published,
+  lastUpdated,
   crumbs
 }) => {
   const wideImage = (
     <FeaturedImage
       imgFluid={featuredImage}
       title={title}
-      date={date}
+      published={published}
+      lastUpdated={lastUpdated}
     />
   )
   const banner = bannerParagraph && (

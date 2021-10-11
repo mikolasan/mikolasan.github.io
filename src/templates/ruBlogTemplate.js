@@ -88,6 +88,14 @@ export const pageQuery = graphql`
           }
         }
       }
+      parent {
+        ... on File {
+          fields {
+            gitLogLatestDate(formatString: "MMMM DD, YYYY")
+          }
+          name
+        }
+      }
     }
   }
 `

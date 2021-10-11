@@ -81,8 +81,13 @@ main {
 .banner-text {
   grid-area: 1/1;
   position: relative;
-  place-items: center;
-  display: grid;
+}
+
+.time-block{
+}
+
+.time-block span{
+  display: block;
 }
 
 .featured-area {

@@ -11,7 +11,8 @@ import "./breadcrumbs.css"
 const Layout = ({ 
   children,
   title,
-  date,
+  published,
+  lastUpdated,
   section,
   showLikes,
   crumbs,
@@ -36,7 +37,8 @@ const Layout = ({
       featuredImage={featuredImage}
       bannerParagraph={bannerParagraph}
       title={title}
-      date={date}
+      published={published}
+      lastUpdated={lastUpdated}
       crumbs={crumbs}
     />
     <main>

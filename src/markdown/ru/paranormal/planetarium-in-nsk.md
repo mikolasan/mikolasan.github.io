@@ -1,0 +1,1 @@
+Сходить в [планетарий](/ru/paranormal/planetarium-in-nsk)
