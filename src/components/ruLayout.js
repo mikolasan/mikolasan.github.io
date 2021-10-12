@@ -5,7 +5,6 @@ import Footer from "../components/ruFooter"
 import Header from "../components/ruHeader"
 import Title from "../components/title"
 import "./layout.css"
-import "./breadcrumbs.css"
 
 const RuLayout = ({
   children,

@@ -3,6 +3,7 @@ import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 import FeaturedImage from "../components/featuredImage"
 import Banner from "../components/banner"
 import NavigationBar from "../components/navigationBar"
+import * as styles from "./header.module.css"
 
 const Header = ({
   section,
@@ -40,8 +41,8 @@ const Header = ({
     <NavigationBar active={section} />
     {featuredImage && wideImage || banner}
     {crumbs && 
-    <div className="breadcrumbs">
-      <div className="centerpart">
+    <div className={styles.breadcrumbs}>
+      <div className={styles.centerpart}>
         <Breadcrumb
           crumbs={crumbs}
           crumbSeparator=" "

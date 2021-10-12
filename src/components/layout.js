@@ -6,7 +6,6 @@ import Header from "./header"
 import Title from "./title"
 import RelatedArticles from "./recentArticles"
 import "./layout.css"
-import "./breadcrumbs.css"
 
 const Layout = ({ 
   children,

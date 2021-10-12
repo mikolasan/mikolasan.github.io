@@ -1,5 +1,7 @@
 const path = require("path")
+const { PassThrough } = require("stream")
 const likesConfig = require("./likes-config")
+const nifty = require("./src/nifty")
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
@@ -63,7 +65,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     const path = node.frontmatter.path
     const showLikes = likesConfig.excludePath.find(p => p === path) === undefined
     createPage({
-      path: path,
+      path: node.frontmatter.path,
       component: blogPostTemplate,
       context: {
         showLikes: showLikes,
@@ -93,18 +95,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   ruResult.data.allMarkdownRemark.nodes.forEach(node => {
     if (node.fileAbsolutePath === null) return
-    const mdRoot = "/src/markdown"
-    const absPath = node.fileAbsolutePath
-    const startPos = absPath.search(mdRoot) + mdRoot.length
-    const endPos = absPath.length - 3
-    const path = absPath.substring(startPos, endPos)
-    console.log(path)
+    const path = nifty.absPathToUrl(node.fileAbsolutePath)
+    console.log(path);
     createPage({
       path: path,
       component: ruBlogPostTemplate,
       context: {
         showLikes: false,
-        pagePath: path
+        absolutePath: node.fileAbsolutePath,
+        url: path
       }, // additional data can be passed via context
     })
   })
@@ -113,16 +112,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const blogResult = await graphql(`
     {
       allMarkdownRemark(
-        limit: 1000,
         sort: { order: DESC, fields: [frontmatter___date] }
-        filter: { frontmatter: { path: { regex: "/^\/blog*/" }}}
+        filter: { fileAbsolutePath: { regex: "/\/blog*/" }}
       ) {
-        edges {
-          node {
-            frontmatter {
-              path
-            }
-          }
+        nodes {
+          fileAbsolutePath
         }
       }
     }
@@ -133,7 +127,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return
   }
   // Create blog-list pages
-  const posts = blogResult.data.allMarkdownRemark.edges
+  const posts = blogResult.data.allMarkdownRemark.nodes
   const postsPerPage = 6
   const numPosts = posts.length
   const numPages = Math.ceil(numPosts / (postsPerPage + 1))
@@ -154,16 +148,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const ruBlogResult = await graphql(`
     {
       allMarkdownRemark(
-        limit: 1000,
         sort: { order: DESC, fields: [frontmatter___date] }
-        filter: { frontmatter: { path: { regex: "/\/ru\/blog*/" }}}
+        filter: { fileAbsolutePath: { regex: "/\/ru\/blog*/" }}
       ) {
-        edges {
-          node {
-            frontmatter {
-              path
-            }
-          }
+        nodes {
+          fileAbsolutePath
         }
       }
     }
@@ -174,7 +163,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return
   }
   // Create blog-list pages
-  const ruPosts = ruBlogResult.data.allMarkdownRemark.edges
+  const ruPosts = ruBlogResult.data.allMarkdownRemark.nodes
   const ruPostsPerPage = 6
   const ruNumPosts = ruPosts.length
   const ruNumPages = Math.ceil(ruNumPosts / (ruPostsPerPage + 1))

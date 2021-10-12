@@ -3,28 +3,33 @@ import { graphql } from "gatsby"
 import Layout from "../components/ruLayout"
 import PostList from "../components/ruPostList"
 
-const RuParanormal = ({ data, pageContext }) => (
+const RuDevlog = ({ data, pageContext }) => (
   <Layout
-    title="Паранормальные экспедиции"
-    section="paranormal"
+    title="Разношерстный девлог"
+    section="devlog"
     crumbs={pageContext.breadcrumb.crumbs}
     languageName="Switch to english version"
     anotherLanguageLink="/"
     bannerParagraph={[
-      <h1>Паранормальные экспедиции</h1>,
-      <p>Есть ли в Новосибирске haunted места? Такие, с чертовщинкой, 
-        как например Бирмингемский металлургический завод буржуя Слосса или как «Пойма» в национальном заповеднике Блэкуотер</p>
+      <h1>Разношерстный девлог</h1>,
+      <p>Процесс разработки завораживает. Как из простых иструкций вырастают системы, как разбросанная логика начинает дружно работать. 
+        Это, а также советы о повседневных проблемах в данном дневнике разработки. Много разных проектов</p>
     ]}
   >
+    <p>Например, осенними вечерами 2021-го я уделяю много времени этим проектам:</p>
+    <ul>
+      <li>Сайт приюта</li>
+      <li>Стратегическая игра с генератором комнат</li>
+    </ul>
     <PostList
       posts={data.allMarkdownRemark.edges}
-      baseUrl="/ru/paranormal"
+      baseUrl="/ru/devlog"
       pageContext={pageContext}
     />
   </Layout>
 )
 
-export default RuParanormal
+export default RuDevlog
 
 export const query = graphql`
   query RuDevlogListQuery($skip: Int!, $limit: Int!) {
@@ -32,7 +37,7 @@ export const query = graphql`
       limit: $limit,
       skip: $skip,
       sort: { fields: [frontmatter___date], order: DESC},
-      filter: { frontmatter: { path: { regex: "/\/ru\/paranormal*/" }}}
+      filter: {fileAbsolutePath: { regex: "/\/ru\/devlog\//"}}
     ) {
       totalCount
       edges {
@@ -40,10 +45,10 @@ export const query = graphql`
           id
           frontmatter {
             title
-            path
             date
           }
           excerpt
+          fileAbsolutePath
         }
       }
     }

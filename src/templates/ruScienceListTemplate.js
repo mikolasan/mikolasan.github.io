@@ -3,10 +3,10 @@ import { graphql } from "gatsby"
 import Layout from "../components/ruLayout"
 import PostList from "../components/ruPostList"
 
-const RuParanormal = ({ data, pageContext }) => (
+const RuScience = ({ data, pageContext }) => (
   <Layout
     title="Паранормальные экспедиции"
-    section="paranormal"
+    section="science"
     crumbs={pageContext.breadcrumb.crumbs}
     languageName="Switch to english version"
     anotherLanguageLink="/"
@@ -18,21 +18,21 @@ const RuParanormal = ({ data, pageContext }) => (
   >
     <PostList
       posts={data.allMarkdownRemark.edges}
-      baseUrl="/ru/paranormal"
+      baseUrl="/ru/science"
       pageContext={pageContext}
     />
   </Layout>
 )
 
-export default RuParanormal
+export default RuScience
 
 export const query = graphql`
-  query RuParanormalListQuery($skip: Int!, $limit: Int!) {
+  query RuScienceListQuery($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
       limit: $limit,
       skip: $skip,
       sort: { fields: [frontmatter___date], order: DESC},
-      filter: { frontmatter: { path: { regex: "/\/ru\/paranormal*/" }}}
+      filter: {fileAbsolutePath: { regex: "/\/ru\/science\//"}}
     ) {
       totalCount
       edges {
@@ -40,10 +40,10 @@ export const query = graphql`
           id
           frontmatter {
             title
-            path
             date
           }
           excerpt
+          fileAbsolutePath
         }
       }
     }

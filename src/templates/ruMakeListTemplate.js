@@ -3,28 +3,27 @@ import { graphql } from "gatsby"
 import Layout from "../components/ruLayout"
 import PostList from "../components/ruPostList"
 
-const RuParanormal = ({ data, pageContext }) => (
+const RuMake = ({ data, pageContext }) => (
   <Layout
-    title="Паранормальные экспедиции"
-    section="paranormal"
+    title="Мастерская"
+    section="make"
     crumbs={pageContext.breadcrumb.crumbs}
     languageName="Switch to english version"
     anotherLanguageLink="/"
     bannerParagraph={[
-      <h1>Паранормальные экспедиции</h1>,
-      <p>Есть ли в Новосибирске haunted места? Такие, с чертовщинкой, 
-        как например Бирмингемский металлургический завод буржуя Слосса или как «Пойма» в национальном заповеднике Блэкуотер</p>
+      <h1>Мастерская</h1>,
+      <p>Встраиваемые системы, маленькие компьютеры, пайка компонентов, 3Д печать - вот это всё</p>
     ]}
   >
     <PostList
       posts={data.allMarkdownRemark.edges}
-      baseUrl="/ru/paranormal"
+      baseUrl="/ru/make"
       pageContext={pageContext}
     />
   </Layout>
 )
 
-export default RuParanormal
+export default RuMake
 
 export const query = graphql`
   query RuMakeListQuery($skip: Int!, $limit: Int!) {
@@ -32,7 +31,7 @@ export const query = graphql`
       limit: $limit,
       skip: $skip,
       sort: { fields: [frontmatter___date], order: DESC},
-      filter: { frontmatter: { path: { regex: "/\/ru\/paranormal*/" }}}
+      filter: {fileAbsolutePath: { regex: "/\/ru\/make\//"}}
     ) {
       totalCount
       edges {
@@ -40,10 +39,10 @@ export const query = graphql`
           id
           frontmatter {
             title
-            path
             date
           }
           excerpt
+          fileAbsolutePath
         }
       }
     }

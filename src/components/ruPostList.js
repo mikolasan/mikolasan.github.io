@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import BlogPreview from "./blogPreview"
+import { absPathToUrl } from "../nifty"
 import * as styles from "../templates/blogListTemplate.module.css"
 
 const RuPostList = ({ pageContext, posts, baseUrl }) => {
@@ -18,7 +19,7 @@ const RuPostList = ({ pageContext, posts, baseUrl }) => {
         {posts.map(({ node }) => (
           <BlogPreview
             key={node.id} 
-            path={node.frontmatter.path}
+            path={absPathToUrl(node.fileAbsolutePath)}
             title={node.frontmatter.title}
             text={node.excerpt}
             date={new Date(Date.parse(node.frontmatter.date)).toLocaleDateString("ru-RU", { dateStyle: "full" })}

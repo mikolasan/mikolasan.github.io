@@ -31,7 +31,7 @@ export const query = graphql`
       limit: $limit,
       skip: $skip,
       sort: { fields: [frontmatter___date], order: DESC},
-      filter: { frontmatter: { path: { regex: "/\/ru\/blog*/" }}}
+      filter: {fileAbsolutePath: { regex: "/\/ru\/blog\//"}}
     ) {
       totalCount
       edges {
@@ -39,10 +39,10 @@ export const query = graphql`
           id
           frontmatter {
             title
-            path
             date
           }
           excerpt
+          fileAbsolutePath
         }
       }
     }
