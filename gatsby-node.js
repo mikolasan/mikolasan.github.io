@@ -1,5 +1,4 @@
 const path = require("path")
-const { PassThrough } = require("stream")
 const likesConfig = require("./likes-config")
 const nifty = require("./src/nifty")
 
@@ -96,7 +95,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   ruResult.data.allMarkdownRemark.nodes.forEach(node => {
     if (node.fileAbsolutePath === null) return
     const path = nifty.absPathToUrl(node.fileAbsolutePath)
-    console.log(path);
     createPage({
       path: path,
       component: ruBlogPostTemplate,

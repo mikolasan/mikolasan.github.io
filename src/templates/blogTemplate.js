@@ -4,35 +4,28 @@ import Layout from "../components/layout"
 import DraftAlert from "../components/draftAlert"
 import * as styles from "./blogTemplate.module.css"
 
-export default function Template ({ data, pageContext, location }) {
-  const { markdownRemark } = data // data.markdownRemark holds our post data
+export default function Template ({ data, pageContext }) {
+  const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
   let featuredImgFluid = null;
   if (frontmatter.featuredImage) {
     featuredImgFluid = frontmatter.featuredImage.childImageSharp.gatsbyImageData
   }
-  const linkPath = frontmatter.path
-  let anotherLanguageLink = ''
-  let languageName = ''
-  if (linkPath.startsWith('/ru/blog')) {
-    anotherLanguageLink = '/blog'
+  const url = pageContext.url
+  let section = url.substring(1, url.indexOf('/', 1))
+  let languageName = "Switch to russian version"
+  let anotherLanguageLink = '/ru'
+  if (url.startsWith('/ru/')) {
     languageName = "Switch to english version"
-  } else if (linkPath.startsWith('/blog')) {
-    anotherLanguageLink = '/ru/blog'
-    languageName = "Switch to russian version"
-  } else if (linkPath.startsWith('/ru/')) {
-    anotherLanguageLink = linkPath.replace('/ru/', '/')
-    languageName = "Switch to english version"
-  } else {
-    anotherLanguageLink = '/ru' + linkPath
-    languageName = "Switch to russian version"
+    anotherLanguageLink = '/'
+    section = url.substring(4, url.indexOf('/', 4))
   }
   return (
     <Layout
       title={frontmatter.title}
       published={frontmatter.date}
       lastUpdated={markdownRemark.parent.fields.gitLogLatestDate}
-      section={frontmatter.section || `blog`}
+      section={section}
       showLikes={pageContext.showLikes}
       crumbs={pageContext.breadcrumb.crumbs}
       languageName={languageName}

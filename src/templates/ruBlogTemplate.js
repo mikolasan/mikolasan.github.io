@@ -3,8 +3,8 @@ import { graphql } from "gatsby"
 import Layout from "../components/ruLayout"
 import DraftAlert from "../components/draftAlert"
 
-export default function Template ({ data, pageContext, location }) {
-  const { markdownRemark } = data // data.markdownRemark holds our post data
+export default function Template ({ data, pageContext }) {
+  const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
   let featuredImgFluid = null;
   if (frontmatter.featuredImage) {
@@ -22,6 +22,8 @@ export default function Template ({ data, pageContext, location }) {
   return (
     <Layout
       title={frontmatter.title}
+      published={frontmatter.date}
+      lastUpdated={markdownRemark.parent.fields.gitLogLatestDate}
       section={section}
       showLikes={pageContext.showLikes}
       crumbs={pageContext.breadcrumb.crumbs}
@@ -36,10 +38,8 @@ export default function Template ({ data, pageContext, location }) {
         <h1>{frontmatter.title}</h1>,
         <p dangerouslySetInnerHTML={{ __html: frontmatter.subtitle }} />
       ]}
-      date={frontmatter.date}
     >
-      {featuredImgFluid && (<h1>{frontmatter.title}</h1>)}
-      {frontmatter.draft && <DraftAlert url={url} />}
+      {frontmatter.draft && <DraftAlert linkPath={url} />}
       <div
         dangerouslySetInnerHTML={{ __html: html }}
       />
@@ -69,11 +69,7 @@ export const pageQuery = graphql`
               breakpoints: [576, 768, 922],
               transformOptions: {
                 cropFocus: ATTENTION,
-                fit: COVER,
-                duotone: {
-                  highlight: "#4B5043",
-                  shadow: "#211A1D"
-                }
+                fit: COVER
               },
               quality: 100
             )
