@@ -39,16 +39,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const result = await graphql(`
     {
       allMarkdownRemark(
-        limit: 1000,
-        sort: { order: DESC, fields: [frontmatter___date]},
-        filter: { frontmatter: {language: {ne: "ru"}}}
+        filter: {fileAbsolutePath: {regex: "/^(?!.*\/ru\/.*)/"}}
       ) {
-        edges {
-          node {
-            frontmatter {
-              path
-            }
-          }
+        nodes {
+          fileAbsolutePath
         }
       }
     }
@@ -59,16 +53,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return
   }
 
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    if (node.frontmatter.path === null) return
-    const path = node.frontmatter.path
+  result.data.allMarkdownRemark.nodes.forEach(node => {
+    if (node.fileAbsolutePath === null) return
+    const path = nifty.absPathToUrl(node.fileAbsolutePath)
     const showLikes = likesConfig.excludePath.find(p => p === path) === undefined
     createPage({
-      path: node.frontmatter.path,
+      path: path,
       component: blogPostTemplate,
       context: {
         showLikes: showLikes,
-        pagePath: path,
+        absolutePath: node.fileAbsolutePath,
+        url: path,
         recentArticles: recentArticles
       },
     })
