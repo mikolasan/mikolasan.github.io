@@ -62,10 +62,7 @@ export const pageQuery = graphql`
             idea
             path
             title
-            coverImage {
-              id
-              base
-            }
+            coverImage
           }
         }
       }
