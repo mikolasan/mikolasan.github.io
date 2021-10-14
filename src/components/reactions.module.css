@@ -1,0 +1,30 @@
+.reactions h3 {
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  padding: 1rem 0;
+  padding-left: 1.5rem;
+  background-color: rgb(212, 212, 212);
+
+}
+
+.reactions ul {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  list-style: none;
+}
+
+.reactions li {
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  background-color: #e0e0e0;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.reactions li:hover {
+  background-color: #ccc;
+  transform: scale(0.9);
+}

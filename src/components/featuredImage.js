@@ -15,7 +15,9 @@ const FeaturedImage = ({ imgFluid, title, published, lastUpdated }) => {
         </div>
         <div className="banner-text">
           <div className="featured-area">
-            <div className="featured-text"><h1>{title}</h1></div>
+            <div className="featured-text">
+              <h1>{title}</h1>
+            </div>
             <div className="time-block">
               <span>Published: <time>{published}</time></span>
               <span>Updated: <time>{lastUpdated}</time></span>

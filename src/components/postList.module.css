@@ -1,0 +1,142 @@
+.blogcards {
+  align-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.blogcard {
+  flex: 30%;
+  padding-right: 2rem;
+  margin-bottom: 1rem;
+}
+
+.blogcard h3 {
+  margin-bottom: 0.75rem;
+}
+
+.blogcard time {
+  display: block;
+  margin-bottom: 0rem;
+}
+
+.blogcard p {
+  border-top: 1px solid #ccc;
+  padding-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.readmore {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 0.5rem 0;
+  padding: 0.2rem 1rem;
+  display: inline-block;
+}
+
+.blogdate {
+  color: #595959;
+  font-size: 90%;
+}
+
+.blognavigation {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  justify-content: center;
+  column-gap: 1rem;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+.blognavigation a {
+  display: block;
+  width: 2.5rem;
+  text-align: center;
+  padding: 0.5rem;
+  margin: 0;
+  color: #232424;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.blognavigation a:hover {
+  background-color: #232424;
+  border-color: #000;
+  color: #f9f9f9;
+}
+
+.currentpage a {
+  display: block;
+  width: 2.5rem;
+  text-align: center;
+  border-color: #000;
+  padding: 0.5rem;
+  margin: 0;
+  text-decoration: none;
+  background: repeating-linear-gradient(
+    -45deg,
+    #5b5356,
+    #5b5356 10px,
+    #211a1d 10px,
+    #211a1d 20px
+  );
+  color: #f9f9f9;
+  font-weight: bold;
+}
+
+.prevpage a {
+  width: max-content;
+}
+
+.nextpage a {
+  width: max-content;
+}
+
+.prevpage span {
+  width: max-content;
+  white-space: nowrap;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #ccc;
+}
+
+.nextpage span {
+  width: max-content;
+  white-space: nowrap;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #ccc;
+}
+
+@media screen and (max-width: 870px) {
+  .blogcard {
+    flex: 50%;
+    display: block;
+
+  }
+}
+
+@media screen and (max-width: 675px) {
+  .blogcard {
+    flex: 100%;
+    display: block;
+  }
+  .prevpage a {
+    display: none;
+  }
+  .nextpage a {
+    display: none;
+  }
+  .prevpage span {
+    display: none;
+  }
+  .nextpage span {
+    display: none;
+  }
+}

@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import BlogPreview from "./blogPreview"
 import { absPathToUrl } from "../nifty"
-import * as styles from "../templates/blogListTemplate.module.css"
+import * as styles from "./postList.module.css"
 
 const RuPostList = ({ pageContext, posts, baseUrl }) => {
   const {

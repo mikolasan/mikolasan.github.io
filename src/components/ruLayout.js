@@ -4,7 +4,6 @@ import Reactions from "./reactions"
 import Footer from "../components/ruFooter"
 import Header from "../components/ruHeader"
 import Title from "../components/title"
-import "./layout.css"
 
 const RuLayout = ({
   children,

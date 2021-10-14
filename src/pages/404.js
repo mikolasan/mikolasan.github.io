@@ -51,7 +51,7 @@ const NotFoundPage = ({ data }) => {
                 if (path.match(/\/ru\//) !== null) {
                   title = "[RU] " + title
                 }
-                return <li><Link to={path}>{title}</Link></li>
+                return <li key={path}><Link to={path}>{title}</Link></li>
               })}
             </ul>
           </details>

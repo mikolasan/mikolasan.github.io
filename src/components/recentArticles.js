@@ -7,7 +7,7 @@ const RecentArticles = () => {
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark(
-        limit: 2,
+        limit: 3,
         sort: { order: DESC, fields: [frontmatter___date]},
         filter: { frontmatter: { path: { regex: "/^\/blog*/" }}}
       ) {

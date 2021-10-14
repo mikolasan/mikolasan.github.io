@@ -1,10 +1,8 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
-import BlogPreview from "../components/blogPreview"
-import * as styles from "../templates/blogListTemplate.module.css"
 
-const Index = ({ data, pageContext }) => (
+const Index = ({ pageContext }) => (
   <Layout
     title="Developer, traveler, snob"
     section="root"
@@ -32,19 +30,6 @@ const Index = ({ data, pageContext }) => (
       > <a href="https://github.com/mikolasan">My github profile</a>
     </p>
 
-    <h2>New blog posts</h2>
-    <div className={styles.blogcards}>
-      {data.allMarkdownRemark.edges.map(({ node }) => (
-        <BlogPreview
-          key={node.id} 
-          path={node.frontmatter.path}
-          title={node.frontmatter.title}
-          text={node.excerpt}
-          date={new Date(Date.parse(node.frontmatter.date)).toLocaleDateString("en-US", { dateStyle: "full" })}
-          readMore="Read more..."
-        />
-      ))}
-    </div>
     <h2>Featured projects</h2>
     <div className="ideacards">
       <div className="ideacard">
@@ -108,24 +93,3 @@ const Index = ({ data, pageContext }) => (
 
 export default Index
 
-export const lastBlogPostsQuery = graphql`
-  query {
-    allMarkdownRemark(
-      limit: 2,
-      sort: { order: DESC, fields: [frontmatter___date]},
-      filter: { frontmatter: { path: { regex: "/^\/blog*/" }}}
-    ) {
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            path
-            date
-          }
-          excerpt
-        }
-      }
-    }
-  }
-`

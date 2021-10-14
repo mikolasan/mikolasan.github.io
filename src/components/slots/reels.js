@@ -320,7 +320,7 @@ function parse_result() {
   for (let i = 0; i < lines.length; ++ i) {
     text_result += `<h3>Idea ${i+1}</h3><p><ul>`
     for (let reel_id = 0; reel_id < n_reels; ++reel_id) {
-      text_result += `<li>${reel_name[reel_id]}: ${symbol_names.get(result[lines[i][reel_id]])}</li>`
+      text_result += `<li key=${reel_id}>${reel_name[reel_id]}: ${symbol_names.get(result[lines[i][reel_id]])}</li>`
     }
     text_result += '</ul></p>'
   }
