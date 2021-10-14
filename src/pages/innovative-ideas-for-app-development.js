@@ -24,7 +24,7 @@ const InnovativeIdeas = ({ data, pageContext }) => {
             .map(({ node }) => (
               <div className="ideacard" key={node.frontmatter.title}>
                 <Link to={node.frontmatter.path}>
-                  <img src={node.frontmatter.coverImage ? "/images/projects/" + node.frontmatter.coverImage : "/images/no-cover.jpg"}/>
+                  <img src={node.frontmatter.coverImage ? "/images/projects/" + node.frontmatter.coverImage.base : "/images/no-cover.jpg"}/>
                 </Link>
                 <h3>{node.frontmatter.title}</h3>
                 <p><Link to={node.frontmatter.path}>Read more</Link></p>
@@ -62,7 +62,10 @@ export const pageQuery = graphql`
             idea
             path
             title
-            coverImage
+            coverImage {
+              id
+              base
+            }
           }
         }
       }

@@ -10,7 +10,7 @@ I actually like Python, because it gives you a chance to prototype your idea rea
 
 However, try to predict an output for the next simple examples?
 
-```
+```python
 class SimpleStructure(object):
     x = []
 
@@ -25,7 +25,7 @@ print(obj1.x, obj2.x)
 
 Any difference if we add a constructor?
 
-```
+```python
 class SimpleStructureWithConstructor(object):
     def __init__(self):
         self.x = []
@@ -39,11 +39,11 @@ print(obj1.x, obj2.x)
 # Guess here
 ```
 
-It is not just an object, it is an instance. So instance and class variables, my friends.
+It is not just an object, it is an instance. So instances and class variables, my friends.
 
-Another example takes a peek at some unclear if statements
+Another example takes a peek at some unclear `if` statements
 
-```
+```python
 x=None
 print("TRUE" if x else "FALSE")
 print("TRUE" if x is not None else "FALSE")

@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
+import { absPathToUrl } from "../nifty"
 import Layout from "../components/layout"
 import BlogPreview from "../components/blogPreview"
 import * as styles from "./blogListTemplate.module.css"
@@ -30,7 +31,7 @@ const BlogIndex = ({ data, pageContext }) => {
         {posts.map(({ node }) => (
           <BlogPreview
             key={node.id} 
-            path={node.frontmatter.path}
+            path={absPathToUrl(node.fileAbsolutePath)}
             title={node.frontmatter.title}
             text={node.excerpt}
             date={new Date(Date.parse(node.frontmatter.date)).toLocaleDateString("en-US", { dateStyle: "full" })}
@@ -76,7 +77,7 @@ export const query = graphql`
       limit: $limit,
       skip: $skip,
       sort: { fields: [frontmatter___date], order: DESC},
-      filter: { frontmatter: { path: { regex: "/^\/blog*/" }}}
+      filter: {fileAbsolutePath: { regex: "/markdown\/blog\//"}}
     ) {
       totalCount
       edges {
@@ -84,10 +85,10 @@ export const query = graphql`
           id
           frontmatter {
             title
-            path
             date
           }
           excerpt
+          fileAbsolutePath
         }
       }
     }

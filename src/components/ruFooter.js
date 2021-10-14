@@ -23,11 +23,11 @@ const RuFooter = ({
           </div>
           <div className="bottommenu">
             <h2>Старое Меню</h2>
-            <Link to="/ru/ideas/">Идеи</Link>
-            <Link to="/ru/projects/">Проекты</Link>
-            <Link to="/ru/science/">Наука</Link>
-            <Link to="/ru/blog/">Блог</Link>
-            <Link to="/ru/cv/">Резюме</Link>
+            <Link to="/ru/ideas">Идеи</Link>
+            <Link to="/ru/projects">Проекты</Link>
+            <Link to="/ru/science">Наука</Link>
+            <Link to="/ru/blog">Блог</Link>
+            <Link to="/ru/cv">Резюме</Link>
           </div>
           <div className="bottomxsocial">
             <h2>Сети</h2>

@@ -1,8 +1,7 @@
 ---
-path: "/youtube"
-date: "2020-09-19"
-title: "YouTube"
-section: "projects"
+date: 2020-09-19
+title: My YouTube channel
+section: projects
 ---
 
 ## Plan

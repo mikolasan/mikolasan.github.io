@@ -10,6 +10,56 @@ const Projects = ({ pageContext }) => (
     anotherLanguageLink="/ru/projects"
     bannerParagraph={[<h1>Projects</h1>]}
   >
+    
+
+    <h2>Sub projects</h2>
+    <div className="ideacards">
+      <div className="ideacard">
+        <a href="/make">
+          <img src="/images/projects/word-clock.jpg" alt="Acrylic parts" />
+        </a>
+        <div className="idea-card-container">
+          <h3>Make</h3>
+          <p>TODO: description is missing</p>
+          <p><a href="/projects/word-clock">Read more</a></p>
+        </div>
+      </div>
+
+      <div className="ideacard">
+        <a href="/youtube">
+          <img src="/images/projects/youtube.jpg" alt="YouTube channel art" />
+        </a>
+        <div className="idea-card-container">
+          <h3>YouTube channel</h3>
+          <p>TODO: description is missing</p>
+          <p><a href="/youtube">Read more</a></p>
+        </div>
+      </div>
+
+      <div className="ideacard">
+        <a href="/board-games">
+          <img src="/images/projects/board-game.jpg" alt="Prototype playthrough"/>
+        </a>
+        <div className="idea-card-container">
+          <h3>My board game</h3>
+          <p>If board games you know do not give you joy anymore, then why not create your own?</p>
+          <p><a href="/board-games">Read more</a></p>
+        </div>
+      </div>
+
+      <div className="ideacard">
+        <a href="/science/book">
+          <img src="/images/projects/science-book.jpg" alt="Scientific chart of unknown nature"/>
+        </a>
+        <div className="idea-card-container">
+          <h3>Science book</h3>
+          <p>TODO: description is missing</p>
+          <p><a href="/science/book">Read more</a></p>
+        </div>
+      </div>
+
+    </div>
+
     <h2>Software development</h2>
     <div className="ideacards">
       <div className="ideacard">
@@ -46,52 +96,6 @@ const Projects = ({ pageContext }) => (
       </div>
     </div>
 
-    <h2>Other aspects of life</h2>
-    <div className="ideacards">
-      <div className="ideacard">
-        <a href="/board-games">
-          <img src="/images/projects/board-game.jpg" alt="Prototype playthrough"/>
-        </a>
-        <div className="idea-card-container">
-          <h3>Board game</h3>
-          <p>If board games you know do not give you joy anymore, then why not create your own?</p>
-          <p><a href="/board-games">Read more</a></p>
-        </div>
-      </div>
-
-      <div className="ideacard">
-        <a href="/science/book">
-          <img src="/images/projects/science-book.jpg" alt="Scientific chart of unknown nature"/>
-        </a>
-        <div className="idea-card-container">
-          <h3>Science book</h3>
-          <p>TODO: description is missing</p>
-          <p><a href="/science/book">Read more</a></p>
-        </div>
-      </div>
-
-      <div className="ideacard">
-        <a href="/youtube">
-          <img src="/images/projects/youtube.jpg" alt="YouTube channel art" />
-        </a>
-        <div className="idea-card-container">
-          <h3>YouTube channel</h3>
-          <p>TODO: description is missing</p>
-          <p><a href="/youtube">Read more</a></p>
-        </div>
-      </div>
-
-      <div className="ideacard">
-        <a href="/projects/word-clock">
-          <img src="/images/projects/word-clock.jpg" alt="Acrylic parts" />
-        </a>
-        <div className="idea-card-container">
-          <h3>Word clock</h3>
-          <p>TODO: description is missing</p>
-          <p><a href="/projects/word-clock">Read more</a></p>
-        </div>
-      </div>
-    </div>
   </Layout>
 )
 

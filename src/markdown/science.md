@@ -1,5 +1,4 @@
 ---
-path: "/science"
 date: "2020-04-06"
 title: "Science"
 section: "science"

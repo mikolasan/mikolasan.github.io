@@ -2,7 +2,6 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import DraftAlert from "../components/draftAlert"
-import * as styles from "./blogTemplate.module.css"
 
 export default function Template ({ data, pageContext }) {
   const { markdownRemark } = data
@@ -24,7 +23,7 @@ export default function Template ({ data, pageContext }) {
     <Layout
       title={frontmatter.title}
       published={frontmatter.date}
-      lastUpdated={markdownRemark.parent.fields.gitLogLatestDate}
+      lastUpdated={markdownRemark.parent.fields && markdownRemark.parent.fields.gitLogLatestDate || null}
       section={section}
       showLikes={pageContext.showLikes}
       crumbs={pageContext.breadcrumb.crumbs}
@@ -40,7 +39,7 @@ export default function Template ({ data, pageContext }) {
         <p dangerouslySetInnerHTML={{ __html: frontmatter.subtitle }} />
       ]}
     >
-      {frontmatter.draft && <DraftAlert linkPath={linkPath} />}
+      {frontmatter.draft && <DraftAlert linkPath={url} />}
       <div
         dangerouslySetInnerHTML={{ __html: html }}
       />
@@ -49,8 +48,8 @@ export default function Template ({ data, pageContext }) {
 }
 
 export const pageQuery = graphql`
-  query blogQuery($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+  query blogQuery($absolutePath: String!) {
+    markdownRemark(fileAbsolutePath: { eq: $absolutePath }) {
       html
       frontmatter {
         date(formatString: "MMMM DD, YYYY")

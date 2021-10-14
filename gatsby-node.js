@@ -105,12 +105,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const blogResult = await graphql(`
     {
       allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
-        filter: { fileAbsolutePath: { regex: "/\/blog*/" }}
+        filter: { fileAbsolutePath: { regex: "/markdown\/blog\//" }}
       ) {
         nodes {
           fileAbsolutePath
         }
+        totalCount
       }
     }
   `)
@@ -122,8 +122,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // Create blog-list pages
   const posts = blogResult.data.allMarkdownRemark.nodes
   const postsPerPage = 6
-  const numPosts = posts.length
-  const numPages = Math.ceil(numPosts / (postsPerPage + 1))
+  const numPosts = blogResult.data.allMarkdownRemark.totalCount
+  const numPages = Math.ceil(numPosts / postsPerPage)
+  console.log(posts.length, numPosts, numPages);
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/blog` : `/blog/${i + 1}`,
@@ -141,7 +142,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const ruBlogResult = await graphql(`
     {
       allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
         filter: { fileAbsolutePath: { regex: "/\/ru\/blog*/" }}
       ) {
         nodes {
@@ -159,7 +159,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const ruPosts = ruBlogResult.data.allMarkdownRemark.nodes
   const ruPostsPerPage = 6
   const ruNumPosts = ruPosts.length
-  const ruNumPages = Math.ceil(ruNumPosts / (ruPostsPerPage + 1))
+  const ruNumPages = Math.ceil(ruNumPosts / ruPostsPerPage)
   Array.from({ length: ruNumPages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/ru/blog` : `/ru/blog/${i + 1}`,
@@ -177,7 +177,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const ruParanormalResult = await graphql(`
     {
       allMarkdownRemark(
-        filter: {fileAbsolutePath: { regex: "/\/ru\/paranormal\//"}}
+        filter: {fileAbsolutePath: { regex: "/\/ru\/paranormal\//" }}
       ) {
         nodes {
           fileAbsolutePath
@@ -193,7 +193,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // Create blog-list pages
   const ruParanormalPosts = ruParanormalResult.data.allMarkdownRemark.nodes
   const numParanormalPosts = ruParanormalPosts.length
-  const numParanormalPages = Math.ceil(numParanormalPosts / (ruPostsPerPage + 1))
+  const numParanormalPages = Math.ceil(numParanormalPosts / ruPostsPerPage)
   Array.from({ length: numParanormalPages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/ru/paranormal` : `/ru/paranormal/${i + 1}`,
@@ -211,7 +211,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const ruMakeResult = await graphql(`
     {
       allMarkdownRemark(
-        filter: {fileAbsolutePath: { regex: "/\/ru\/make\//"}}
+        filter: {fileAbsolutePath: { regex: "/\/ru\/make\//" }}
       ) {
         nodes {
           fileAbsolutePath
@@ -227,7 +227,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // Create blog-list pages
   const ruMakePosts = ruMakeResult.data.allMarkdownRemark.nodes
   const numMakePosts = ruMakePosts.length
-  const numMakePages = Math.ceil(numMakePosts / (ruPostsPerPage + 1))
+  const numMakePages = Math.ceil(numMakePosts / ruPostsPerPage)
   Array.from({ length: numMakePages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/ru/make` : `/ru/make/${i + 1}`,
@@ -245,7 +245,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const ruDevlogResult = await graphql(`
     {
       allMarkdownRemark(
-        filter: {fileAbsolutePath: { regex: "/\/ru\/devlog\//"}}
+        filter: {fileAbsolutePath: { regex: "/\/ru\/devlog\//" }}
       ) {
         nodes {
           fileAbsolutePath
@@ -261,7 +261,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // Create blog-list pages
   const ruDevlogPosts = ruDevlogResult.data.allMarkdownRemark.nodes
   const numDevlogPosts = ruDevlogPosts.length
-  const numDevlogPages = Math.ceil(numDevlogPosts / (ruPostsPerPage + 1))
+  const numDevlogPages = Math.ceil(numDevlogPosts / ruPostsPerPage)
   Array.from({ length: numDevlogPages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/ru/devlog` : `/ru/devlog/${i + 1}`,

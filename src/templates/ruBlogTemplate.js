@@ -23,7 +23,7 @@ export default function Template ({ data, pageContext }) {
     <Layout
       title={frontmatter.title}
       published={frontmatter.date}
-      lastUpdated={markdownRemark.parent.fields.gitLogLatestDate}
+      lastUpdated={markdownRemark.parent.fields && markdownRemark.parent.fields.gitLogLatestDate || null}
       section={section}
       showLikes={pageContext.showLikes}
       crumbs={pageContext.breadcrumb.crumbs}

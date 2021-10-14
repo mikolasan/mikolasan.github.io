@@ -31,7 +31,7 @@ integration.
 _Feb 2018 – present_
 
 - Responsible for analyzing business requirements in all company’s projects and define technical project specifications. Design system architecture.
-- [Designed mathematical models](/slot-mathematician/ideas) for Class III games which were certified in the test laboratory as GLI-11 compliant.
+- Designed mathematical models for Class III games which were certified in the test laboratory as GLI-11 compliant.
 - Led development of server-based system with unique bingo rules imitating gameplay and frequencies of RNG casino games.
 - Architected a database for pull-tab machines compatible among different type of games.
 - Coordinated the development. Introduced into practice TDD by adding unit and integration tests to a legacy project before implementing new features and refactoring.
@@ -66,8 +66,8 @@ _Oct 2012 – Oct 2015_
 ### Core
 
 - C++
-- [Java](/gamedev/java) / Kotlin,
-- Python,
+- [Java](/blog/why-do-i-hate-java) / Kotlin,
+- [Python](/blog/why-do-i-hate-python),
 - Lua,
 - JavaScript,
 
