@@ -2,6 +2,16 @@ const path = require("path")
 const likesConfig = require("./likes-config")
 const nifty = require("./src/nifty")
 
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+  const typeDefs = `
+    type MarkdownRemarkFrontmatter {
+      coverImage: File
+    }
+  `
+  createTypes(typeDefs)
+}
+
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
 
