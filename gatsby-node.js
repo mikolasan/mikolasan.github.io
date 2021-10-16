@@ -6,7 +6,7 @@ exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
   const typeDefs = `
     type MarkdownRemarkFrontmatter {
-      coverImage: File
+      coverImage: String
     }
   `
   createTypes(typeDefs)
