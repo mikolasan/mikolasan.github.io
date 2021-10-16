@@ -79,10 +79,10 @@ class Layout extends React.Component {
             )}
             {children}
             {showLikes && (
-              <section>
+              <>
                 <Reactions errorCallback={this.errorCallback} />
                 <div>{this.state.errorMessage}</div>
-              </section>
+              </>
             )}
           </div>
           <RelatedArticles query={recentArticles} />

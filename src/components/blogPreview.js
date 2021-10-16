@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import * as styles from "../templates/blogListTemplate.module.css"
+import * as styles from "./blogPreview.module.css"
 
 const BlogPreview = ({
   path,

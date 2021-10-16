@@ -29,7 +29,7 @@ const RecentArticles = () => {
   return (
     <aside className={styles.recentarticles}>
       <h2>Recent articles</h2>
-      <div className="blogcards">
+      <div className={styles.blogcards}>
         {posts.map(({ node }) => (
           <BlogPreview
             key={node.id} 
