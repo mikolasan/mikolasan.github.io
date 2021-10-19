@@ -309,7 +309,7 @@ footer {
 .bottomsmallabout {
   display: block;
   float: left;
-  width: 300px;
+  max-width: 300px;
   margin-right: 8rem;
 }
 
@@ -937,10 +937,16 @@ a:active {
 }
 
 @media all and (max-width: 675px) {
+  main {
+    display: block;
+  }
   header {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
+  }
+  .main-section {
+    padding: 2.5rem 1rem 4rem;
   }
   .mobile-header {
     display: inherit;
