@@ -28,6 +28,10 @@
   color: #f9f9f9;
 }
 
+.numberpage {
+  display: block;
+}
+
 .currentpage a {
   display: block;
   width: 2.5rem;
@@ -74,16 +78,10 @@
 }
 
 @media screen and (max-width: 675px) {
-  .prevpage a {
+  .numberpage {
     display: none;
   }
-  .nextpage a {
-    display: none;
-  }
-  .prevpage span {
-    display: none;
-  }
-  .nextpage span {
+  .currentpage {
     display: none;
   }
 }

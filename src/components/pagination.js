@@ -11,7 +11,7 @@ const Pagination = ({ prevPageText, nextPageText, currentPage, numPages, path })
   
   return (
     <ul className={styles.blognavigation}>
-      <li className={styles.prevpage}>
+      <li key="prev" className={styles.prevpage}>
         {!isFirst && (
           <Link className={styles.prevpage} to={`${path}/${prevPage}`} rel="prev">
             {prevPageText}
@@ -21,14 +21,14 @@ const Pagination = ({ prevPageText, nextPageText, currentPage, numPages, path })
       {Array.from({ length: numPages }, (_, i) => (
         <li
           key={`pagination-number${i + 1}`}
-          className={i + 1 === currentPage ? styles.currentpage : ''}
+          className={i + 1 === currentPage ? styles.currentpage : styles.numberpage}
         >
           <Link to={`${path}/${i === 0 ? '' : i + 1}`}>
             {i + 1}
           </Link>
         </li>
       ))}
-      <li className={styles.nextpage}>
+      <li key="next" className={styles.nextpage}>
         {!isLast && (
           <Link to={`${path}/${nextPage}`} rel="next">
             {nextPageText}

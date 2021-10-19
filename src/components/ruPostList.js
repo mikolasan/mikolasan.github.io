@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import BlogPreview from "./blogPreview"
+import Pagination from "./pagination"
 import { absPathToUrl } from "../nifty"
 import * as styles from "./postList.module.css"
 
@@ -9,10 +10,6 @@ const RuPostList = ({ pageContext, posts, baseUrl }) => {
     currentPage,
     numPages
   } = pageContext
-  const isFirst = currentPage === 1
-  const isLast = currentPage === numPages
-  const prevPage = currentPage - 1 === 1 ? "" : (currentPage - 1).toString()
-  const nextPage = (currentPage + 1).toString()
   return (
     <>
       <div className={styles.blogcards}>
@@ -27,32 +24,13 @@ const RuPostList = ({ pageContext, posts, baseUrl }) => {
           />
         ))}
       </div>
-      <ul className={styles.blognavigation}>
-        <li className={styles.prevpage}>
-          {!isFirst && (
-            <Link to={`${baseUrl}/${prevPage}`} rel="prev">
-              ← Пред стр
-            </Link>
-          ) || <span>← Пред стр</span>}
-        </li>
-        {Array.from({ length: numPages }, (_, i) => (
-          <li
-            key={`pagination-number${i + 1}`}
-            className={i + 1 === currentPage ? styles.currentpage : ''}
-          >
-            <Link to={`${baseUrl}/${i === 0 ? '' : i + 1}`}>
-              {i + 1}
-            </Link>
-          </li>
-        ))}
-        <li className={styles.nextpage}>
-          {!isLast && (
-            <Link to={`${baseUrl}/${nextPage}`} rel="next">
-              След стр →
-            </Link>
-          ) || <span>След стр →</span>}
-        </li>
-      </ul>
+      <Pagination
+        prevPageText="← Пред стр"
+        nextPageText="След стр →"
+        currentPage={currentPage}
+        numPages={numPages}
+        path={baseUrl}
+      />
     </>
   )
 }

@@ -47,7 +47,7 @@ class MenuPopup extends React.Component {
         </div>
         
         <div className={styles.back}>
-          {(this.language === "en" ? this.items : this.ruItems).map(i => <div className={styles.menuitem} key={i}>
+          {(this.language === "en" ? this.items : this.ruItems).map(i => <div className={styles.menuitem} key={i.link}>
             <a
               href={i.link}
               onClick={this.props.closeCallback}>
