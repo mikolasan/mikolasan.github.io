@@ -3,6 +3,7 @@ import { graphql, Link } from "gatsby"
 import { absPathToUrl } from "../nifty"
 import Layout from "../components/layout"
 import BlogPreview from "../components/blogPreview"
+import Pagination from "../components/pagination"
 import * as styles from "./blogListTemplate.module.css"
 
 const BlogIndex = ({ data, pageContext }) => {
@@ -14,11 +15,6 @@ const BlogIndex = ({ data, pageContext }) => {
   } = pageContext
   const anotherLanguageLink = '/ru/blog'
   const languageName = "Switch to russian version"
-  const isFirst = currentPage === 1
-  const isLast = currentPage === numPages
-  const prevPage = currentPage - 1 === 1 ? '' : (currentPage - 1).toString()
-  const nextPage = (currentPage + 1).toString()
-  const onePage = isFirst && isLast
   return (
     <Layout
       title="Blog"
@@ -39,32 +35,13 @@ const BlogIndex = ({ data, pageContext }) => {
           />
         ))}
       </div>
-      <ul className={styles.blognavigation}>
-        <li className={styles.prevpage}>
-          {!isFirst && (
-            <Link className={styles.prevpage} to={`/blog/${prevPage}`} rel="prev">
-              ← Previous Page
-            </Link>
-          ) || <span>← Previous Page</span>}
-        </li>
-        {Array.from({ length: numPages }, (_, i) => (
-          <li
-            key={`pagination-number${i + 1}`}
-            className={i + 1 === currentPage ? styles.currentpage : ''}
-          >
-            <Link to={`/blog/${i === 0 ? '' : i + 1}`}>
-              {i + 1}
-            </Link>
-          </li>
-        ))}
-        <li className={styles.nextpage}>
-          {!isLast && (
-            <Link to={`/blog/${nextPage}`} rel="next">
-              Next Page →
-            </Link>
-          ) || <span>Next Page →</span>}
-        </li>
-      </ul>
+      <Pagination
+        prevPageText="← Previous Page"
+        nextPageText="Next Page →"
+        currentPage={currentPage}
+        numPages={numPages}
+        path="/blog"
+      />
     </Layout>
   )
 }
