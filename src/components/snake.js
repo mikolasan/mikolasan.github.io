@@ -1,15 +1,15 @@
 import React from "react"
-import { initSnake } from "./snake/game"
+import { initGame } from "./snake/game"
 import * as styles from "./snake.module.css"
 
 class Snake extends React.Component {
   componentDidMount() {
-    initSnake()
+    initGame()
   }
 
   render() {
     return (
-      <canvas id="snake" className={styles.snake}></canvas>
+      <canvas id="snake" className={styles.snake} tabindex="1"></canvas>
     )
   }
 }
