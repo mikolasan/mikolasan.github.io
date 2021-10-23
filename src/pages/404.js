@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import { graphql, Link } from "gatsby"
+import Snake from "../components/snake"
 
 const NotFoundPage = ({ data }) => {
   const nodes = data.allSitePage.nodes
@@ -32,14 +33,17 @@ const NotFoundPage = ({ data }) => {
   return (
     <Layout 
       title="404"
-      bannerParagraph={[<h1>404 - Not Found</h1>]}
+      bannerParagraph={[<h1 key="1">404 - Not Found</h1>]}
     >
       <p>Oops. The page you are looking for ... got lost.</p>
+
+      <Snake />
+
       <p>But here are all sections of this website. I hope at least this can help</p>
       <h1>Navigation</h1>
       {Array.from(sections.keys()).map(key => {
         return (
-          <details>
+          <details key={key}>
             <summary><h2>▸ {key.replaceAll("-", " ")}</h2></summary>
             <ul>
               {sections.get(key).map(path => {

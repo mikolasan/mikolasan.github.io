@@ -89,7 +89,7 @@ class Navbar extends React.Component {
             <svg className={styles.globe} xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor" stroke="none"
                 viewBox="0 0 511 511" aria-hidden="true">
-              <path stroke-width="1"
+              <path strokeWidth="1"
                     d="M 234.51,510.13
                       C 184.71,506.08 138.36,487.94 97.50,456.50
                         84.89,446.79 61.20,422.56 51.39,409.34
