@@ -38,3 +38,13 @@ Some pros of updating packages manually or one by one:
 - you have time to think if you really need this package. probably it is good time for refactoring 
 
 I hope you always scroll through all answers on StackOverflow. Even just out of curiosity.
+
+## Alternative
+
+Use **yarn**
+
+```
+yarn upgrade --latest
+```
+
+**yarn** has other perks comparing to **npm**.

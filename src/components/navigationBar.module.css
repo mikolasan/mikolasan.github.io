@@ -152,7 +152,7 @@ a.active.activelink  {
   .titlelink { display: none; }
 }
 
-@media all and (max-width: 675px) {
+@media all and (max-width: 768px) {
   .topnav { display: none; }
   .mobilenav {
     width: 100%;

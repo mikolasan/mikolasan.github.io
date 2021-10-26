@@ -935,12 +935,7 @@ a:active {
   color: #6320ee;
 }
 
-@media all and (max-width: 870px) {
-  
-  
-}
-
-@media all and (max-width: 675px) {
+@media all and (max-width: 768px) {
   main {
     display: block;
   }
