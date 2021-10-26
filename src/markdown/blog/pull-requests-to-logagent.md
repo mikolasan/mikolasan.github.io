@@ -1,3 +1,7 @@
+---
+date: 2021-05-17
+title: My pull request to logagent.js
+---
 
 https://github.com/sematext/logagent-js/pull/277
 

@@ -18,6 +18,7 @@
 }
 
 .ruindex section {
+  margin: 2rem 0 4rem 0;
   display: flex;
   column-gap: 2rem;
   flex-direction: row;
@@ -52,6 +53,7 @@
   .ruindex img {
     height: auto;
     width: 100%;
+    max-width: 300px;
   }
   
   .ruindex h2 {
