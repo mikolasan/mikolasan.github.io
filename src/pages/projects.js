@@ -47,17 +47,6 @@ const Projects = ({ pageContext }) => (
         </div>
       </div>
 
-      <div className="ideacard">
-        <a href="/science/book">
-          <img src="/images/projects/science-book.jpg" alt="Scientific chart of unknown nature"/>
-        </a>
-        <div className="idea-card-container">
-          <h3>Science book</h3>
-          <p>TODO: description is missing</p>
-          <p><a href="/science/book">Read more</a></p>
-        </div>
-      </div>
-
     </div>
 
     <h2>Software development</h2>

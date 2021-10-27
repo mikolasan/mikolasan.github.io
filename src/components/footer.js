@@ -29,6 +29,9 @@ const Footer = ({
             <Link to="/ideas">Ideas</Link>
             <Link to="/gamedev">Gamedev</Link>
             <Link to="/projects">Projects</Link>
+            <Link to="/make">Make</Link>
+            <Link to="/board-game">Board Game</Link>
+            <Link to="/youtube">Vlog</Link>
             <Link to="/science">Science</Link>
             <Link to="/blog">Blog</Link>
           </div>

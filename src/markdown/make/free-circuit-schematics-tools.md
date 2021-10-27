@@ -1,7 +1,7 @@
 ---
-path: /blog/free-circuit-schematics-tools
+path: /make/free-circuit-drawing-software
 date: 2021-09-17
-title: Free circuit schematics tools
+title: Free circuit drawing software
 ---
 
 ## Tested
