@@ -1,7 +1,7 @@
 ---
 path: "/blog/hardware-useful-links"
-date: "2021-08-31"
-title: "Useful links for DIY hobbyist"
+date: 2021-08-31
+title: Useful links for DIY hobbyist
 tags: ["hardware", "links"]
 ---
 

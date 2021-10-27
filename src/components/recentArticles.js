@@ -1,5 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import { absPathToUrl } from "../nifty"
 import BlogPreview from "./blogPreview"
 import * as styles from "./recentArticles.module.css"
 
@@ -9,7 +10,7 @@ const RecentArticles = () => {
       allMarkdownRemark(
         limit: 3,
         sort: { order: DESC, fields: [frontmatter___date]},
-        filter: { frontmatter: { path: { regex: "/^\/blog*/" }}}
+        filter: { fileAbsolutePath: {regex: "/^(?!.*\/ru\/.*)/"}}
       ) {
         edges {
           node {
@@ -20,6 +21,7 @@ const RecentArticles = () => {
               date
             }
             excerpt
+            fileAbsolutePath
           }
         }
       }
@@ -33,7 +35,7 @@ const RecentArticles = () => {
         {posts.map(({ node }) => (
           <BlogPreview
             key={node.id} 
-            path={node.frontmatter.path}
+            path={absPathToUrl(node.fileAbsolutePath)}
             title={node.frontmatter.title}
             text={node.excerpt}
             date={new Date(Date.parse(node.frontmatter.date)).toLocaleDateString("en-US", { dateStyle: "full" })}

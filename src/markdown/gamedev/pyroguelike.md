@@ -51,3 +51,4 @@ I'd like to share my experience with pygame on replit with other programmers. He
 - https://github.com/Eronarn/libRPG
 - https://www.pygame.org/project/3957/6108
 - https://github.com/MattR0se/Dungeon-Crusader
+- http://roguebasin.roguelikedevelopment.org/index.php?title=How_to_Write_a_Roguelike_in_15_Steps

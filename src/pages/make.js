@@ -24,6 +24,17 @@ const Make = ({ pageContext }) => (
       </div>
 
       <div className="ideacard">
+        <a href="/make/artnet-on-arduino">
+          <img src="/images/projects/artnet.jpg" alt="wemos board" />
+        </a>
+        <div className="idea-card-container">
+          <h3>Artnet on Arduino</h3>
+          <p>TODO: description is missing</p>
+          <p><a href="/make/artnet-on-arduino">Read more</a></p>
+        </div>
+      </div>
+
+      <div className="ideacard">
         <a href="/make/word-clock">
           <img src="/images/projects/word-clock.jpg" alt="YouTube channel art" />
         </a>
@@ -34,9 +45,10 @@ const Make = ({ pageContext }) => (
         </div>
       </div>
 
+      
       <div className="ideacard">
         <a href="/make/oled-button">
-          <img src="/images/projects/oled-button.jpg" alt="YouTube channel art" />
+          <img src="/images/projects/oled-button.jpg" alt="OLED button" />
         </a>
         <div className="idea-card-container">
           <h3>OLED Button</h3>
@@ -51,7 +63,7 @@ const Make = ({ pageContext }) => (
     <div className="ideacards">
       <div className="ideacard">
         <a href="/make/robot-arm">
-          <img src="/images/projects/robot-arm.jpg" alt="Hydroponics" />
+          <img src="/images/projects/robot-arm.jpg" alt="5 servos" />
         </a>
         <div className="idea-card-container">
           <h3>5 servo robot</h3>
@@ -74,7 +86,13 @@ const Make = ({ pageContext }) => (
 
 
     <h2>Links</h2>
+    <p>
     <a href="/make/free-circuit-drawing-software">Free circuit drawing software</a>
+    </p>
+
+    <p>
+    <a href="/make/useful-links">Useful links for DIY hobbyist</a>
+    </p>
   </Layout>
 )
 
