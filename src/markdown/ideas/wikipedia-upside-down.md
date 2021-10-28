@@ -1,5 +1,5 @@
 ---
-path: "/projects/wikipedia-upside-down"
+path: "/ideas/wikipedia-upside-down"
 date: "2020-05-16"
 title: "Wikipedia upside down"
 subtitle: "(real name in progress) <br/>Knowledge that you really want to know"

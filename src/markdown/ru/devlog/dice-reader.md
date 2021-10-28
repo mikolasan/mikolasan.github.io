@@ -1,6 +1,6 @@
 ---
 path: "/ru/projects/dice-reader"
-date: "2020-05-16"
+date: 2020-06-13
 title: "Настольная игра с кубиками"
 tags: ["neural networks", "mobile", "image recognition"]
 idea: innovative

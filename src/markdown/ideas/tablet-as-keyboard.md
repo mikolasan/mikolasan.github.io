@@ -1,5 +1,5 @@
 ---
-path: "/projects/tablet-as-keyboard"
+path: "/ideas/tablet-as-keyboard"
 date: "2020-05-16"
 title: "Tablet as a keyboard"
 tags: ["bluetooth", "chromesact"]

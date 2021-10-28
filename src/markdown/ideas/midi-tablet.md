@@ -1,5 +1,5 @@
 ---
-path: "/projects/midi-tablet"
+path: "/ideas/midi-tablet"
 date: "2020-05-16"
 title: "MIDI tablet"
 tags: ["mobile"]

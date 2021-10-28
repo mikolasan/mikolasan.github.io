@@ -69,7 +69,7 @@ export const pageQuery = graphql`
       filter: {
         frontmatter: {
           tags: {ne: null},
-          path: {regex: "/^\/projects/"}
+          path: {regex: "/^\/ideas/"}
         }
       }
     ) {

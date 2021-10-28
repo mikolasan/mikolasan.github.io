@@ -1,8 +1,8 @@
 ---
 path: "/ru/projects/my-morrowind"
-date: "2020-05-16"
+date: 2021-09-06
 title: "Мой Morrowind"
-tags: ["c++"]
+tags: ["c++", "game"]
 language: "ru"
 ---
 

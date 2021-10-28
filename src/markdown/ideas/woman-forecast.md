@@ -1,5 +1,5 @@
 ---
-path: "/projects/woman-forecast"
+path: "/ideas/woman-forecast"
 date: "2020-05-16"
 title: "Woman forecast"
 subtitle: "Predict why is your girlfriend mad at you"

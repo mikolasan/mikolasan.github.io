@@ -1,5 +1,5 @@
 ---
-path: "/projects/dice-reader"
+path: "/ideas/dice-reader"
 date: "2020-05-16"
 title: "Dice reader"
 coverImage: "dice-reader.jpg"

@@ -1,0 +1,34 @@
+---
+date: 2021-09-15
+title: The most addictive games
+---
+
+Here is my list of the most addictive games. (I purposely do not include games from the current century 😄)
+
+
+## 1. Yetisports
+
+Where you need to send penguins into a free flight as far as you can. Beating your highscore is always addictive. And sliding penguins are awesome.
+
+![Screenshot of Yetisports](yetisports.jpg)
+
+
+## 2. Need for kill
+
+It's Quake in 2D. The best hot-seat game where 2 friends can play with one keyboard and one mouse.
+
+![Screenshot of Need for Kill](need-for-kill.jpg)
+
+
+## 3. N
+
+Very complex puzzle-muscle game about ninja and his hard way through very gray gray life.
+
+![Screenshot of N](n.jpg)
+
+
+## 4. Crimsonland
+
+Very high pace top view shooter. It's almost the same fun as Serious Sam: Second Encounter, but darker.
+
+![Screenshot of Crimsonland](crimsonland.jpg)

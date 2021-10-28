@@ -1,5 +1,5 @@
 ---
-path: "/projects/universe-simulator"
+path: "/ideas/universe-simulator"
 date: "2020-05-16"
 title: "Universe simulator"
 tags: ["c++"]

@@ -1,6 +1,6 @@
 ---
 path: "/ru/projects/wikipedia-upside-down"
-date: "2020-05-16"
+date: 2020-05-15
 title: "Википедия наоборот"
 tags: ["db", "web", "scraper"]
 idea: innovative

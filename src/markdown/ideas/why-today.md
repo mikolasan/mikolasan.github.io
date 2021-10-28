@@ -1,8 +1,8 @@
 ---
-path: "/projects/why-today"
+path: "/ideas/why-today"
 date: "2020-05-16"
 title: "Why today?"
-tags: ["mobile", "generator", "one-app-per-month", "one-screen-application", "one-button-application"]
+tags: ["mobile", "generator", "one app per month", "one screen application", "one button application"]
 idea: creative
 section: ideas
 ---

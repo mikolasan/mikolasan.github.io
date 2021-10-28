@@ -1,5 +1,5 @@
 ---
-path: "/projects/horoscope-generator"
+path: "/ideas/horoscope-generator"
 date: "2020-05-16"
 title: "Horoscope generator"
 subtitle: "Speaks for itself"
