@@ -1,7 +1,7 @@
 ---
 path: "/ru/blog/garage"
-date: "2020-12-26"
-title: "Гараж"
+date: 2020-12-26
+title: Гараж
 language: "ru"
 ---
 

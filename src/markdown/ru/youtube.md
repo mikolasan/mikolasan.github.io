@@ -18,3 +18,4 @@ language: "ru"
 - [О канале](/ru/youtube/about)
 - [Число подписчиков](/ru/youtube/subscribers)
 - [Цели монетизации](/ru/youtube/monetization)
+- [Бесплатная музыка для ютюб роликов](/ru/youtube/free-music)

@@ -1,6 +1,6 @@
 ---
 path: "/ru/blog/sudoku-generator"
-date: "2019-03-04"
+date: 2019-03-04
 title: "Sudoku generator"
 language: "ru"
 ---

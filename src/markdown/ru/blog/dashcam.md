@@ -1,6 +1,6 @@
 ---
 path: "/ru/blog/dashcam"
-date: "2021-03-25"
+date: 2021-03-25
 title: "Видеорегистратор"
 language: "ru"
 ---

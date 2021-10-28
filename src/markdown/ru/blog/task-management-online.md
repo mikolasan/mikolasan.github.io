@@ -22,14 +22,12 @@ language: "ru"
 
 https://www.reddit.com/r/selfhosted/comments/dp6jd2/pomoday_easy_to_use_yet_powerful_and_flexible/
 
-Pomoday - Easy to use, yet powerful and flexible web-based task management software that you can use with just a keyboard.
-pomoday.com/
-
-
-Hey, I'm the developer of Pomoday. Great to see it posted here and see how you guys responsed to it, especially with the nameeeeee, I don't know what should I feel about it, haha.
-
-For some concern about how the data saved, as of now, it saved directly to your localStorage, sadly uncencrypted, but it's gonna change in the next few commits.
-
-I'm also working on adding a storage server, so you can actually use it across devices. With that coming, I think a Docker config will be added to avoid the hassle of running mulitple services/apps.
-
-Again, thank you so much for all of the feedbacks!
+> [Pomoday](pomoday.com) - Easy to use, yet powerful and flexible web-based task management software that you can use with just a keyboard.
+>
+> Hey, I'm the developer of Pomoday. Great to see it posted here and see how you guys responsed to it, especially with the nameeeeee, I don't know what should I feel about it, haha.
+>
+> For some concern about how the data saved, as of now, it saved directly to your localStorage, sadly uncencrypted, but it's gonna change in the next few commits.
+>
+> I'm also working on adding a storage server, so you can actually use it across devices. With that coming, I think a Docker config will be added to avoid the hassle of running mulitple services/apps.
+>
+> Again, thank you so much for all of the feedbacks!

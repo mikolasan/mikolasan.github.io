@@ -1,6 +1,6 @@
 ---
 path: "/ru/blog/gameplay-in-a-dream"
-date: "2020-11-21"
+date: 2020-11-21
 title: Приснилась игра, в которую я никогда не играл
 language: "ru"
 ---

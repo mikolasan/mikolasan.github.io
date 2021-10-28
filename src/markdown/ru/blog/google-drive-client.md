@@ -1,6 +1,6 @@
 ---
 path: "/ru/blog/google-drive-client"
-date: "2020-12-12"
+date: 2020-12-12
 title: "Клиент для Google Drive"
 language: "ru"
 ---
