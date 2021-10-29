@@ -29,7 +29,7 @@ jobs:
         uses: enriikke/gatsby-gh-pages-action@v2.2.0
         with:
           # A personal access token needed to push your site after it has been built.
-          access-token: ${{ secrets.ACCESS_TOKEN }}
+          access-token: ${{ env.ACCESS_TOKEN }}
           # The commit message used for pushing changes to the deploy branch.
           commit-message: "Deployed by GitHub Actions"
           # The name under which the deploy commit is pushed to the deploy branch.
