@@ -1,0 +1,40 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the gatsby branch
+  push:
+    branches: [ gatsby ]
+  pull_request:
+    branches: [ gatsby ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      - name: Gatsby Publish
+        # You may pin to the exact commit or the version.
+        # uses: enriikke/gatsby-gh-pages-action@fbe063b0cfaa8c16ec4e346cc3c48e9b154cce87
+        uses: enriikke/gatsby-gh-pages-action@v2.2.0
+        with:
+          # A personal access token needed to push your site after it has been built.
+          access-token: $ACCESS_TOKEN
+          # The commit message used for pushing changes to the deploy branch.
+          commit-message: "Deployed by GitHub Actions"
+          # The name under which the deploy commit is pushed to the deploy branch.
+          git-config-name: "Nikolay Neupokoev"
+          # The email adress under which the deploy commit is pushed to the deploy branch.
+          git-config-email: "neupokoev.n@gmail.com"
