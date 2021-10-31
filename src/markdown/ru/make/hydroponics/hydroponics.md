@@ -8,8 +8,8 @@ language: "ru"
 
 ## Содержание
 
-- [Обзор материалов по теме Гидропоника](/ru/hydroponics/overview)
-- [сенсоры](/ru/hydroponics/sensors)
-- [Nutrient Film Technique](/ru/hydroponics/nutrient-film-technique)
-- [течение воды](/ru/hydroponics/water-flow)
-- [собираем систему капельного орошения](/ru/hydroponics/drip-system)
+- [Обзор материалов по теме Гидропоника](/ru/make/hydroponics/overview)
+- [сенсоры](/ru/make/hydroponics/sensors)
+- [Nutrient Film Technique](/ru/make/hydroponics/nutrient-film-technique)
+- [течение воды](/ru/make/hydroponics/water-flow)
+- [собираем систему капельного орошения](/ru/make/hydroponics/drip-system)
