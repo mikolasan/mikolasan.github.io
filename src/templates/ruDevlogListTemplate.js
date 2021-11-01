@@ -10,6 +10,10 @@ const RuDevlog = ({ data, pageContext }) => (
     crumbs={pageContext.breadcrumb.crumbs}
     languageName="Switch to english version"
     anotherLanguageLink="/"
+    buttonText="Игродельная"
+    buttonLink="/ru/gamedev"
+    secondButtonText="Дизайн"
+    secondButtonLink="/ru/design"
     bannerParagraph={[
       <h1>Разношерстный девлог</h1>,
       <p>Процесс разработки завораживает. Как из простых иструкций вырастают системы, как разбросанная логика начинает дружно работать. 
