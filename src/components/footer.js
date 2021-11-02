@@ -37,11 +37,12 @@ const Footer = ({
           </div>
           <div className="bottomxsocial">
             <h2>Social</h2>
+            <a href="https://mikolasan.hashnode.dev/">Hashnode</a>
             <a href="https://twitter.com/mikolasan">Twitter</a>
             <a href="https://www.youtube.com/channel/UC7JDwFPt-Wu_rMB4-g-ePug">YouTube</a>
             <a href="https://github.com/mikolasan">GitHub</a>
-            <a href="https://www.instagram.com/saturdayscode/">Instagram</a>
             <a href="https://www.linkedin.com/in/nikolay-neupokoev-29150065/">LinkedIn</a>
+            <a href="https://www.instagram.com/saturdayscode/">Instagram</a>
           </div>
         </div>
         <div className="copyright">
