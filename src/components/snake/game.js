@@ -72,84 +72,68 @@ function getMousePos(canvas, event) {
 }
 
 function move() {
-  let appleEaten = false;
+  const head = [...snake[snake.length - 1]];
 
   if (direction == DIRECTION.UP) {
-    const head = [...snake[snake.length - 1]];
     head[1] = head[1] - 1;
-    if (world[head[0]][head[1]] === 1) {
-      appleEaten = true;
-      world[head[0]][head[1]] = 0;
-    } else {
-      snake = snake.slice(1);
-    }
-    snake.push(head);
   } else if (direction == DIRECTION.DOWN) {
-    const head = [...snake[snake.length - 1]];
     head[1] = head[1] + 1;
-    if (world[head[0]][head[1]] === 1) {
-      appleEaten = true;
-      world[head[0]][head[1]] = 0;
-    } else {
-      snake = snake.slice(1);
-    }
-    snake.push(head);
   } else if (direction == DIRECTION.LEFT) {
-    const head = [...snake[snake.length - 1]];
     head[0] = head[0] - 1;
-    if (world[head[0]][head[1]] === 1) {
-      appleEaten = true;
-      world[head[0]][head[1]] = 0;
-    } else {
-      snake = snake.slice(1);
-    }
-    snake.push(head);
   } else if (direction == DIRECTION.RIGHT) {
-    const head = [...snake[snake.length - 1]];
     head[0] = head[0] + 1;
-    if (world[head[0]][head[1]] === 1) {
-      appleEaten = true;
-      world[head[0]][head[1]] = 0;
-    } else {
-      snake = snake.slice(1);
-    }
-    snake.push(head);
+  }
+  
+  if (head[0] < 0 || head[1] < 0 || head[0] >= world.length || head[1] >= world[head[0]].length) {
+    resetGame();
+    return;
   }
 
-  if (appleEaten) {
-    spawnApple();
+  for (let i = 0; i < snake.length; ++i) {
+    if (snake[i][0] === head[0] && snake[i][1] === head[1]) {
+      resetGame();
+      return;
+    }
   }
+
+  if (world[head[0]][head[1]] === 1) {
+    spawnApple();
+    world[head[0]][head[1]] = 0;
+  } else {
+    snake = snake.slice(1);
+  }
+  snake.push(head);
 }
 
 function onKeyDown(event) {
-  let successfullMove = false;
-  
-  if (event.keyCode == '38') {
-    // up arrow
+  if (event.key === 'ArrowUp') {
+    event.preventDefault();
+    if (direction == DIRECTION.DOWN) {
+      return;
+    }
     direction = DIRECTION.UP;
-    event.preventDefault();
-    successfullMove = true;
   }
-  else if (event.keyCode == '40') {
-    // down arrow
+  else if (event.key === 'ArrowDown') {
+    event.preventDefault();
+    if (direction == DIRECTION.UP) {
+      return;
+    }
     direction = DIRECTION.DOWN;
-    event.preventDefault();
-    successfullMove = true;
   }
-  else if (event.keyCode == '37') {
-    // left arrow
+  else if (event.key == 'ArrowLeft') {
+    event.preventDefault();
+    if (direction == DIRECTION.RIGHT) {
+      return;
+    }
     direction = DIRECTION.LEFT;
-    event.preventDefault();
-    successfullMove = true;
   }
-  else if (event.keyCode == '39') {
-    // right arrow
+  else if (event.key == 'ArrowRight') {
+    event.preventDefault();
+    if (direction == DIRECTION.LEFT) {
+      return;
+    }
     direction = DIRECTION.RIGHT;
-    event.preventDefault();
-    successfullMove = true;
   }
-  
-  
 }
 
 function setUpCanvas(canvas) {
@@ -172,6 +156,10 @@ function spawnApple() {
   while (true) {
     const x = getRandomInt(0, 10);
     const y = getRandomInt(0, 10);
+    if (world[x][y] === 1) {
+      // do not collide with existing apple
+      continue;
+    }
     let inSnake = false;
     for (let i = 0; i < snake.length; ++i) {
       if (snake[i][0] === x && snake[i][1] === y) {
@@ -257,7 +245,8 @@ function initGame() {
     ctx.clearRect(0, 0, ctx.width, ctx.height);
     // Draw it all again.
     setUpCanvas(canvas);
-    draw(ctx);
+    last_timestamp = 0;
+    draw(ctx, 0);
   });
 
   const drawWrapper = (timestamp) => draw(ctx, timestamp);
