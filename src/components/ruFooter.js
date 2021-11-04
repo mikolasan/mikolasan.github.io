@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql, Link, StaticQuery } from "gatsby"
+import { formatDate } from "../nifty"
 
 const RuFooter = ({
   languageName,
@@ -42,9 +43,7 @@ const RuFooter = ({
           <p>На этом сайте используется Google Analytics. Она собирает и обрабатывает данные о вас. <a href="https://policies.google.com/technologies/partner-sites">
             Как Google использует информацию, собираемую с сайтов</a>
           </p>
-          <p>Сайт работает на генераторе статических сайтов {` `}<a href="https://www.gatsbyjs.org">Gatsby</a>. Последняя сборка: {
-          new Date(Date.parse(data.currentBuildDate.currentDate)).toLocaleDateString("ru-RU", {dateStyle:"full"})
-          }</p>
+          <p>Сайт работает на генераторе статических сайтов {` `}<a href="https://www.gatsbyjs.org">Gatsby</a>. Последняя сборка: {formatDate(data.currentBuildDate.currentDate, 'ru')}</p>
           <p>© Николай Неупокоев, {new Date().getFullYear()}</p>
         </div>
       </footer>

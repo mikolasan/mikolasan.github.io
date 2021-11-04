@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import { absPathToUrl } from "../nifty"
+import { absPathToUrl, formatDate } from "../nifty"
 import Layout from "../components/layout"
 import BlogPreview from "../components/blogPreview"
 import Pagination from "../components/pagination"
@@ -34,7 +34,7 @@ const BlogIndex = ({ data, pageContext }) => {
             path={absPathToUrl(node.fileAbsolutePath)}
             title={node.frontmatter.title}
             text={node.excerpt}
-            date={new Date(Date.parse(node.frontmatter.date)).toLocaleDateString("en-US", { dateStyle: "full" })}
+            date={formatDate(node.frontmatter.date)}
             readMore="Read more..."
           />
         ))}

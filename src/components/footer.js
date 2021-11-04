@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql, Link, StaticQuery } from "gatsby"
+import { formatDate } from "../nifty"
 
 const Footer = ({
   languageName,
@@ -47,9 +48,7 @@ const Footer = ({
         </div>
         <div className="copyright">
           <p>This web site uses Google Analytics. It collects and processes data. <a href="https://policies.google.com/technologies/partner-sites">How Google uses information from sites</a></p>
-          <p>Built with{` `}<a href="https://www.gatsbyjs.org">Gatsby</a>. Last build: {
-          new Date(Date.parse(data.currentBuildDate.currentDate)).toLocaleDateString("en-US", {dateStyle:"full"})
-          }</p>
+          <p>Built with{` `}<a href="https://www.gatsbyjs.org">Gatsby</a>. Last build: {formatDate(data.currentBuildDate.currentDate)}</p>
           <p>Copyright © {new Date().getFullYear()} Nikolay Neupokoev. Some rights reserved.</p>
         </div>
       </footer>

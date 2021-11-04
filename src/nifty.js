@@ -7,4 +7,13 @@ const absPathToUrl = (absPath) => {
   return path
 }
 
+const formatDate = (date, language) => {
+  if (language === 'ru') {
+    return new Date(Date.parse(date)).toLocaleDateString("ru-RU", { dateStyle: "full" })
+  } else {
+    return new Date(Date.parse(date)).toLocaleDateString("en-US", { dateStyle: "full" })
+  }
+}
+
 exports.absPathToUrl = absPathToUrl;
+exports.formatDate = formatDate;

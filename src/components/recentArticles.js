@@ -1,6 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { absPathToUrl } from "../nifty"
+import { absPathToUrl, formatDate } from "../nifty"
 import BlogPreview from "./blogPreview"
 import * as styles from "./recentArticles.module.css"
 
@@ -38,8 +38,8 @@ const RecentArticles = () => {
             path={absPathToUrl(node.fileAbsolutePath)}
             title={node.frontmatter.title}
             text={node.excerpt}
-            date={new Date(Date.parse(node.frontmatter.date)).toLocaleDateString("en-US", { dateStyle: "full" })}
-            readMore="Читать дальше..."
+            date={formatDate(node.frontmatter.date)}
+            readMore="Read more..."
           />
         ))}
       </div>

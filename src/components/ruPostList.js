@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import BlogPreview from "./blogPreview"
 import Pagination from "./pagination"
-import { absPathToUrl } from "../nifty"
+import { absPathToUrl, formatDate } from "../nifty"
 import * as styles from "./postList.module.css"
 
 const RuPostList = ({ pageContext, posts, baseUrl }) => {
@@ -19,7 +19,7 @@ const RuPostList = ({ pageContext, posts, baseUrl }) => {
             path={absPathToUrl(node.fileAbsolutePath)}
             title={node.frontmatter.title}
             text={node.excerpt}
-            date={new Date(Date.parse(node.frontmatter.date)).toLocaleDateString("ru-RU", { dateStyle: "full" })}
+            date={formatDate(node.frontmatter.date, 'ru')}
             readMore="Читать дальше..."
           />
         ))}

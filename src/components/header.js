@@ -32,6 +32,8 @@ const Header = ({
       buttonLink={buttonLink}
       secondButtonText={secondButtonText}
       secondButtonLink={secondButtonLink}
+      published={published}
+      lastUpdated={lastUpdated}
     >
       {bannerParagraph}
     </Banner>
