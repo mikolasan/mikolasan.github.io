@@ -36,6 +36,7 @@
   },
   "license": "private",
   "scripts": {
+    "gulp": "gulp",
     "build": "gatsby build",
     "develop": "gatsby develop -H 0.0.0.0",
     "start": "npm run develop",
@@ -52,6 +53,9 @@
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-standard": "^5.0.0",
-    "gh-pages": "^3.2.3"
+    "gh-pages": "^3.2.3",
+    "gulp": "^4.0.2",
+    "plugin-error": "^1.0.1",
+    "through2": "^4.0.2"
   }
 }
