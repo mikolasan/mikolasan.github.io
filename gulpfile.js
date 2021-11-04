@@ -15,7 +15,7 @@ function addLastModifiedTime(prefixText) {
     throw new PluginError(PLUGIN_NAME, 'Missing prefix text!');
   }
 
-  prefixText = new Buffer(prefixText); // allocate ahead of time
+  prefixText = new Buffer.from(prefixText); // allocate ahead of time
 
   const stream = through.obj((file, enc, cb) => {
     if (file.isBuffer()) {
