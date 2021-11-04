@@ -43,7 +43,11 @@ const Banner = ({
       </a>
     </div>
   ) || ''
-  const publishedDate = published || document.lastModified
+  const timeBlock = (published && lastUpdated) && (<div className="time-block">
+      <span>Published: <time>{published}</time></span>
+      <span>Updated: <time>{lastUpdated}</time></span>
+    </div>
+  ) || ''
 
   return (
     <StaticQuery
@@ -60,10 +64,7 @@ const Banner = ({
           <div className="banner-text">
             <div className="featured-area">
               <div className="featured-text">{children}</div>
-              <div className="time-block">
-                <span>Published: <time>{publishedDate}</time></span>
-                <span>Updated: <time>{lastUpdated}</time></span>
-              </div>
+              {timeBlock}
               {button}
               {secondButton}
             </div>

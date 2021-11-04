@@ -9,7 +9,13 @@ class Snake extends React.Component {
 
   render() {
     return (
-      <canvas id="snake" className={styles.snake} tabindex="1"></canvas>
+      <>
+        <canvas id="snake" className={styles.snake} tabindex="1"></canvas>
+        <p>
+          Tileset: <a href="https://artyom-zagorskiy.itch.io/isometric-medieval-pack">Isometric Medieval Pack</a> by Artyom Zagorskiy.
+        </p>
+        <hr />
+      </>
     )
   }
 }

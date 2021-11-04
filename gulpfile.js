@@ -6,7 +6,14 @@ const PLUGIN_NAME = 'gulp-lastmodifiedtime';
 
 function prefixStream(prefixText) {
   var stream = through();
-  stream.write(prefixText);
+  // catch errors from the streamer and emit a gulp plugin error
+  stream.on('error', () => { this.emit('error', new PluginError(PLUGIN_NAME, 'Streamer error')) });
+  let chunk;
+  // Use a loop to make sure we read all currently available data
+  while (null !== (chunk = stream.read())) {
+    console.log(`Read ${chunk.length} bytes of data...`);
+  }
+  // stream.write(prefixText);
   return stream;
 }
 
@@ -17,18 +24,16 @@ function addLastModifiedTime(prefixText) {
 
   prefixText = new Buffer.from(prefixText); // allocate ahead of time
 
-  const stream = through.obj((file, enc, cb) => {
+  const stream = through.obj(function(file, enc, cb) {
+    console.log(file.contents)
     if (file.isBuffer()) {
       this.emit('error', new PluginError(PLUGIN_NAME, 'Buffers not supported!'));
       return cb();
     }
-    console.log(file.path)
     
     if (file.isStream()) {
       // define the streamer that will transform the content
       var streamer = prefixStream(prefixText);
-      // catch errors from the streamer and emit a gulp plugin error
-      streamer.on('error', this.emit.bind(this, 'error'));
       // start the transformation
       file.contents = file.contents.pipe(streamer);
     }
@@ -43,7 +48,7 @@ function addLastModifiedTime(prefixText) {
 }
 
 function markdownNoDate(cb) {
-  return src('src/markdown/*.md')
+  return src('src/markdown/**/*.md', { buffer: false })
     .pipe(addLastModifiedTime('test'))
     .pipe(dest('noDate'))
 }
