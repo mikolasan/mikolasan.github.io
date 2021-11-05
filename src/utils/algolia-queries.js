@@ -1,4 +1,5 @@
 const escapeStringRegexp = require("escape-string-regexp")
+const nifty = require("../nifty")
 
 const pagePath = `src/markdown`
 const indexName = `Pages`
@@ -22,10 +23,11 @@ const pageQuery = `{
   }
 }`
 
-function pageToAlgoliaRecord({ node: { id, frontmatter, ...rest } }) {
+function pageToAlgoliaRecord({ node: { id, frontmatter, fileAbsolutePath, ...rest } }) {
   return {
     objectID: id,
     ...frontmatter,
+    slug: nifty.absPathToUrl(fileAbsolutePath),
     ...rest,
   }
 }

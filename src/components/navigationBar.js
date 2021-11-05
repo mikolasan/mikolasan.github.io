@@ -2,6 +2,8 @@ import React from "react"
 import { Link } from "gatsby"
 import * as styles from "./navigationBar.module.css"
 import MenuPopup from './menuPopup'
+import Search from "./search"
+const searchIndices = [{ name: `Pages`, title: `Pages` }]
 
 class Navbar extends React.Component {
   constructor (props) {
@@ -84,6 +86,7 @@ class Navbar extends React.Component {
           <Link to="/blog" { ...(active === "blog" && { className: styles.activelink }) }>Blog</Link>
           <Link to="/about" style={{float: 'right'}} { ...(active === "about" && { className: styles.activelink }) }>About</Link>
           <Link to="/cv" style={{float: 'right'}} { ...(active === "cv" && { className: styles.activelink }) }>CV</Link>
+          <Search indices={searchIndices} />
           <div className={styles.language}>
           <Link to="/ru">
             <svg className={styles.globe} xmlns="http://www.w3.org/2000/svg"
