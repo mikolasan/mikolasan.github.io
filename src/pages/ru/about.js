@@ -84,6 +84,21 @@ const RuAbout = ({ pageContext }) => (
           </div>
         </div>
       </section>
+
+      <section>
+        <img src="/images/about/" alt="" />
+        <div>
+          <h2>Зачем этот сайт?</h2>
+          <p>
+            ?
+          </p>
+          <div className={styles.action}>
+            <a href="/ru/why">
+              <button>Зачем?</button>
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   </Layout>
 )

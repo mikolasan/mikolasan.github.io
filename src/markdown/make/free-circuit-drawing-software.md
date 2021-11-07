@@ -4,6 +4,8 @@ date: 2021-09-17
 title: Free circuit drawing software
 ---
 
+Plan for this Saturday: find a software where I can easily draw schematics for my experiments. I need two versions: one colorful with breadboard, Arduino boards and many wires; and more important version is simplistic black and white diagrams (not those vermilion green!).
+
 ## Tested
 
 I've made a video about these circuit schematics tools. It's on my YouTube channel.
