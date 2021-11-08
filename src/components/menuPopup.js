@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from "prop-types"
+import Search from "./search"
 import * as styles from './menuPopup.module.css'
+const searchIndices = [{ name: `Pages`, title: `Pages` }]
 
 class MenuPopup extends React.Component {
   constructor(props) {
@@ -45,7 +47,7 @@ class MenuPopup extends React.Component {
             src="/images/cross.svg"
           />
         </div>
-        
+        <Search indices={searchIndices} />
         <div className={styles.back}>
           {(this.language === "en" ? this.items : this.ruItems).map(i =>
             <div className={styles.menuitem} key={i.link}>

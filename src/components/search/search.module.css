@@ -26,10 +26,6 @@
   border: #222222 solid 1px;
 }
 
-.hasfocus {
-
-}
-
 .box .open {
   width: 10em;
   background: #fff;
@@ -44,7 +40,7 @@
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   position: absolute;
-  z-index: 2;
+  z-index: 200;
   right: 0;
   top: 100%;
   margin-top: 0.5em;
@@ -59,4 +55,50 @@
 
 .show {
   display: block;
+}
+
+@media all and (max-width: 960px) {
+  .root {
+    display: none;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .root {
+    display: block;
+    float: unset;
+    width: 100%;
+    margin: 0;
+    border-bottom: #211a1d solid 0.25rem;
+  }
+
+  .root input {
+    width: 100%;
+    padding: .7rem 0;
+    background-color: #f2f2f2;
+    font-size: 1rem;
+    text-align: center;
+    border: none;
+  }
+
+  .root input:focus {
+    border: none;
+  }
+
+  .result {
+    max-height: 90vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    margin-top: 0.25em;
+    width: 100%;
+    max-width: unset;
+    box-shadow: none;
+    padding: 1em;
+    padding-bottom: 2rem;
+    background: #fff;
+  }
 }

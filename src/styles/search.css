@@ -58,6 +58,10 @@
   padding-left: 0.5rem;
 }
 
+.ais-PoweredBy .ais-PoweredBy-link:hover {
+    background-color: inherit;
+}
+
 .ais-PoweredBy svg {
   width: 70px;
 }

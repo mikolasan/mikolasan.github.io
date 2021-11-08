@@ -16,7 +16,11 @@ const HitCount = connectStateResults(({ searchResults }) => {
     <div className="HitCount">
       {hitCount} result{hitCount !== 1 ? `s` : ``}
     </div>
-  ) : null
+  ) : (
+    <div className="HitCount">
+      Your search did not match any documents
+    </div>
+  )
 })
 
 const PageHit = ({ hit }) => (

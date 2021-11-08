@@ -1,8 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
-import * as styles from "./navigationBar.module.css"
 import MenuPopup from './menuPopup'
 import Search from "./search"
+import * as styles from "./navigationBar.module.css"
 const searchIndices = [{ name: `Pages`, title: `Pages` }]
 
 class Navbar extends React.Component {
