@@ -1,0 +1,63 @@
+.HitCount {
+  margin-bottom: 1rem;
+}
+
+.Hits ul {
+  list-style: none;
+  margin-left: 0;
+}
+
+.Hits li {
+  margin-bottom: 1.8rem;
+}
+
+.Hits ul li a {
+  width: 100%;
+  padding: 0;
+  margin: 0 0 0.3rem;
+  display: block;
+  text-decoration: underline;
+}
+
+.Hits ul li a:hover {
+  background-color: inherit;
+  color: #534349;
+}
+
+.Hits h4 {
+  width: fit-content;
+}
+
+.Hits .ais-Snippet {
+  display: block;
+  color: rgb(87, 87, 87);
+}
+
+.Hits .ais-Highlight-highlighted {
+  color: #222222;
+  background-color: #b8f03c;
+}
+
+.Hits .ais-Snippet-highlighted {
+  color: #222222;
+  background-color: #b8f03c;
+}
+
+.SearchIcon {
+  display: none;
+}
+
+.ais-PoweredBy {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.8rem;
+}
+
+.ais-PoweredBy .ais-PoweredBy-link {
+  padding: 0;
+  padding-left: 0.5rem;
+}
+
+.ais-PoweredBy svg {
+  width: 70px;
+}
