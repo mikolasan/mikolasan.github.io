@@ -18,6 +18,10 @@ section {
   background-color: #fff;
 }
 
+header {
+  z-index: 50;
+}
+
 blockquote {
   display: inline-block;
   background: #f9f9f9;

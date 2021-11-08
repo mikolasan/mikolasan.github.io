@@ -71,7 +71,7 @@ class MenuPopup extends React.Component {
 
 MenuPopup.propTypes = {
   closeCallback: PropTypes.func.isRequired,
-  languange: PropTypes.string.isRequired
+  language: PropTypes.string.isRequired
 }
 
 export default MenuPopup
