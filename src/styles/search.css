@@ -47,6 +47,10 @@
   display: none;
 }
 
+.bsimgx {
+  display: none;
+}
+
 .ais-PoweredBy {
   display: flex;
   justify-content: flex-end;
