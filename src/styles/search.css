@@ -43,14 +43,6 @@
   background-color: #b8f03c;
 }
 
-.SearchIcon {
-  display: none;
-}
-
-.bsimgx {
-  display: none;
-}
-
 .ais-PoweredBy {
   display: flex;
   justify-content: flex-end;
