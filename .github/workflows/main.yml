@@ -36,4 +36,7 @@ jobs:
           git-config-name: "Nikolay Neupokoev"
           # The email adress under which the deploy commit is pushed to the deploy branch.
           git-config-email: "neupokoev.n@gmail.com"
-        
+        env:
+          GATSBY_ALGOLIA_APP_ID: ${{ secrets.GATSBY_ALGOLIA_APP_ID}}
+          GATSBY_ALGOLIA_SEARCH_KEY: ${{ secrets.GATSBY_ALGOLIA_SEARCH_KEY}}
+          ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
