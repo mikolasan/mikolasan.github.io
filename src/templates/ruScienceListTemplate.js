@@ -5,20 +5,20 @@ import PostList from "../components/ruPostList"
 
 const RuScience = ({ data, pageContext }) => (
   <Layout
-    title="Паранормальные экспедиции"
-    section="science"
+    title="Наука"
+    section="neural-networks"
     crumbs={pageContext.breadcrumb.crumbs}
     languageName="Switch to english version"
     anotherLanguageLink="/"
     bannerParagraph={[
-      <h1>Паранормальные экспедиции</h1>,
-      <p>Есть ли в Новосибирске haunted места? Такие, с чертовщинкой, 
-        как например Бирмингемский металлургический завод буржуя Слосса или как «Пойма» в национальном заповеднике Блэкуотер</p>
+      <h1>Наука</h1>,
+      <p>Попытка людей понять себя и формализовать свои маленькие нейрончики в надежде, 
+        что все элеметарное - просто, а в совокупности они могут создавать невероятные выводы</p>
     ]}
   >
     <PostList
       posts={data.allMarkdownRemark.edges}
-      baseUrl="/ru/science"
+      baseUrl="/ru/neural-networks"
       pageContext={pageContext}
     />
   </Layout>
@@ -32,7 +32,7 @@ export const query = graphql`
       limit: $limit,
       skip: $skip,
       sort: { fields: [frontmatter___date], order: DESC},
-      filter: {fileAbsolutePath: { regex: "/\/ru\/science\//"}}
+      filter: {fileAbsolutePath: { regex: "/\/ru\/neural-networks\//"}}
     ) {
       totalCount
       edges {

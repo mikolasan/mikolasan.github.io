@@ -22,6 +22,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const ruParanormalListTemplate = path.resolve(`./src/templates/ruParanormalListTemplate.js`)
   const ruMakeListTemplate = path.resolve(`./src/templates/ruMakeListTemplate.js`)
   const ruDevlogListTemplate = path.resolve(`./src/templates/ruDevlogListTemplate.js`)
+  const ruScienceListTemplate = path.resolve(`./src/templates/ruScienceListTemplate.js`)
 
   const recentArticles = await graphql(`
     {
@@ -279,6 +280,40 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         limit: ruPostsPerPage,
         skip: i * ruPostsPerPage,
         numPages: numDevlogPages,
+        currentPage: i + 1,
+      },
+    })
+  })
+
+  // Pagination [/ru/neural-networks]
+  const ruScienceResult = await graphql(`
+    {
+      allMarkdownRemark(
+        filter: {fileAbsolutePath: { regex: "/\/ru\/neural-networks\//" }}
+      ) {
+        nodes {
+          fileAbsolutePath
+        }
+      }
+    }
+  `)
+
+  if (ruScienceResult.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query for ru neural-networks pages.`)
+    return
+  }
+  // Create blog-list pages
+  const ruSciencePosts = ruScienceResult.data.allMarkdownRemark.nodes
+  const numSciencePosts = ruSciencePosts.length
+  const numSciencePages = Math.ceil(numSciencePosts / ruPostsPerPage)
+  Array.from({ length: numSciencePages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/ru/neural-networks` : `/ru/neural-networks/${i + 1}`,
+      component: ruScienceListTemplate,
+      context: {
+        limit: ruPostsPerPage,
+        skip: i * ruPostsPerPage,
+        numPages: numSciencePages,
         currentPage: i + 1,
       },
     })
