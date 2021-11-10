@@ -4,12 +4,11 @@ date: "2021-07-17"
 title: "Кислотность воды"
 subtitle: "Статья из цикла про гидропонику"
 buttonText: Сенсоры
-buttonLink: /ru/hydroponics/sensors
+buttonLink: /ru/make/hydroponics/sensors
 secondButtonText: Гидропоника
-secondButtonLink: /ru/hydroponics
+secondButtonLink: /ru/make/hydroponics
 tags: ["hydroponics"]
 language: "ru"
-draft: true
 ---
 
 Зондов по измерению кислотности воды на Али Экспресс очень много. Я рассматривал много вариантов и остановился на [одном](https://s.click.aliexpress.com/e/_9Rk02I) от магазина Kmust

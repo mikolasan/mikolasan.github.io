@@ -10,6 +10,10 @@ const RuMake = ({ data, pageContext }) => (
     crumbs={pageContext.breadcrumb.crumbs}
     languageName="Switch to english version"
     anotherLanguageLink="/"
+    buttonText="Гидропоника"
+    buttonLink="/ru/make/hydroponics"
+    secondButtonText="Ютюб"
+    secondButtonLink="/ru/youtube"
     bannerParagraph={[
       <h1>Мастерская</h1>,
       <p>Встраиваемые системы, маленькие компьютеры, пайка компонентов, 3Д печать - вот это всё</p>

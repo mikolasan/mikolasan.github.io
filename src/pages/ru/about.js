@@ -86,7 +86,7 @@ const RuAbout = ({ pageContext }) => (
       </section>
 
       <section>
-        <img src="/images/about/" alt="" />
+        <img src="/images/about/why.jpg" alt="" />
         <div>
           <h2>Зачем этот сайт?</h2>
           <p>

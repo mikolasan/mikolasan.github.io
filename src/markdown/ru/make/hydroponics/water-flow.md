@@ -1,10 +1,9 @@
 ---
 path: "/ru/hydroponics/water-flow"
 date: "2021-05-08"
-title: "Гидропоника: течение воды"
+title: "Все о том, как течет вода"
 tags: ["hydroponics"]
 language: "ru"
-draft: true
 ---
 
 ## Емкость для воды

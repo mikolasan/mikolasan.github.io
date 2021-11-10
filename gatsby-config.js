@@ -126,6 +126,7 @@ module.exports = {
         apiKey: process.env.ALGOLIA_ADMIN_KEY,
         queries: require("./src/utils/algolia-queries")
       },
-    }
+    },
+    `@mediacurrent/gatsby-plugin-silence-css-order-warning`
   ],
 }

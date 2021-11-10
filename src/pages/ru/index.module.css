@@ -30,7 +30,8 @@
 }
 
 .ruindex img {
-  height: 6rem;
+  height: 300px;
+  border-radius: 0.5rem;
 }
 
 .ruindex h2 {

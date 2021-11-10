@@ -13,7 +13,7 @@ const RuIndex = ({ pageContext }) => (
   >
     <div className={styles.ruindex}>
       <section>
-        <img src="/images/no-cover.jpg" />
+        <img src="/images/neural-networks.jpg" />
         <div>
           <h2>Нейронные сети</h2>
           <p>
@@ -29,7 +29,7 @@ const RuIndex = ({ pageContext }) => (
       </section>
 
       <section className={styles.inverse}>
-        <img src="/images/no-cover.jpg" />
+        <img src="/images/make_2.jpg" />
         <div>
           <h2>Мастерская</h2>
           <p>
@@ -44,7 +44,7 @@ const RuIndex = ({ pageContext }) => (
       </section>
 
       <section>
-        <img src="/images/no-cover.jpg" />
+        <img src="/images/devlog.jpg" />
         <div>
           <h2>Разношерстный девлог</h2>
           <p>
@@ -60,7 +60,7 @@ const RuIndex = ({ pageContext }) => (
       </section>
 
       <section className={styles.inverse}>
-        <img src="/images/no-cover.jpg" />
+        <img src="/images/paranormal.jpg" />
         <div>
           <h2>Паранормальные экспедиции</h2>
           <p>
@@ -76,7 +76,7 @@ const RuIndex = ({ pageContext }) => (
       </section>
 
       <section>
-        <img src="/images/no-cover.jpg" />
+        <img src="/images/board-games.jpg" />
         <div>
           <h2>Настольные игры и ролёвки</h2>
           <p>
@@ -93,7 +93,7 @@ const RuIndex = ({ pageContext }) => (
       </section>
 
       <section className={styles.inverse}>
-        <img src="/images/no-cover.jpg" />
+        <img src="/images/blog.jpg" />
         <div>
           <h2>Остальное</h2>
           <p>И всё остальное остается в этом блоге.</p>

@@ -4,7 +4,7 @@ import { InstantSearch } from "react-instantsearch-dom"
 import SearchBox from "./search-box"
 import SearchResult from "./search-result"
 import useClickOutside from "./use-click-outside"
-import * as styles from "./search.module.css"
+import * as styles from "./index.module.css"
 
 export default function Search({ indices }) {
   const rootRef = useRef(null)
@@ -30,7 +30,7 @@ export default function Search({ indices }) {
       >
         <SearchBox 
           onFocus={() => setFocus(true)}
-          className={[styles.box, hasFocus && styles.hasfocus || ''].join(' ')}
+          className={styles.box}
         />
         <SearchResult
           indices={indices}

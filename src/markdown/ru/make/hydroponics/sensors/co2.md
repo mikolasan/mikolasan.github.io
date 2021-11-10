@@ -4,12 +4,11 @@ date: "2021-07-19"
 title: "Сенсор углекислого газа"
 subtitle: "Статья из цикла про гидропонику"
 buttonText: Сенсоры
-buttonLink: /ru/hydroponics/sensors
+buttonLink: /ru/make/hydroponics/sensors
 secondButtonText: Гидропоника
-secondButtonLink: /ru/hydroponics
+secondButtonLink: /ru/make/hydroponics
 tags: ["hydroponics"]
 language: "ru"
-draft: true
 ---
 
 С одной стороны найти дешевый датчик углекислого газа сложно, потому что тема климата и окружающей среды для DIY еще не поставлена на поток, рынок в основном предлагает датчики угарного газа, дыма, алкоголя и другого. С другой стороны всяких разнообразных решений по детектированию углекислого газа намного больше чем датчиков [кислотности воды](/ru/hydroponics/sensors/ph) или [температуры](/ru/hydroponics/sensors/temperature):

@@ -4,13 +4,12 @@ date: "2021-04-18"
 title: "Гидропоника: сенсоры"
 tags: ["hydroponics"]
 language: "ru"
-draft: true
 ---
 
 ## Более подробные статьи
 
-- [PH кислотность воды](/ru/hydroponics/sensors/ph)
-- [CO2 углекислый газ](/ru/hydroponics/sensors/co2)
+- [PH кислотность воды](/ru/make/hydroponics/sensors/ph)
+- [CO2 углекислый газ](/ru/make/hydroponics/sensors/co2)
 
 ----
 

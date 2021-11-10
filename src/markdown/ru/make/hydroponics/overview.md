@@ -4,7 +4,6 @@ date: "2021-01-20"
 title: "Обзор материалов по теме Гидропоника"
 tags: ["hydroponics"]
 language: "ru"
-draft: true
 ---
 
 ## Цель
