@@ -7,7 +7,7 @@ exports.createSchemaCustomization = ({ actions }) => {
   const typeDefs = `
     type MarkdownRemarkFrontmatter {
       coverImage: String
-      featuredImage: File
+      featuredImage: File @fileByRelativePath
     }
   `
   createTypes(typeDefs)

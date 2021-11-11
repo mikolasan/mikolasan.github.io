@@ -2,13 +2,13 @@ import React from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
 import MainImage from "../components/mainImage"
 
-const FeaturedImage = ({ imgFluid, title, published, lastUpdated }) => {
-  if (imgFluid) {
+const FeaturedImage = ({ image, title, published, lastUpdated }) => {
+  if (image) {
     return (
       <div className="banner">
         <div className="banner-background">
           <GatsbyImage
-            image={imgFluid}
+            image={image}
             style={{minHeight:"300px", maxHeight: '400px'}}
             alt="Featured image"
           />

@@ -22,7 +22,7 @@ const Header = ({
     <NavigationBar active={section} />
     {featuredImage
     && <FeaturedImage
-          imgFluid={featuredImage}
+          image={featuredImage}
           title={title}
           date={date}
         />

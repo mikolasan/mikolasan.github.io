@@ -20,7 +20,7 @@ const Header = ({
 }) => {
   const wideImage = (
     <FeaturedImage
-      imgFluid={featuredImage}
+      image={featuredImage}
       title={title}
       published={published}
       lastUpdated={lastUpdated}

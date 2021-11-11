@@ -1,15 +1,13 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { getImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import DraftAlert from "../components/draftAlert"
 
 export default function Template ({ data, pageContext }) {
   const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
-  let featuredImgFluid = null;
-  if (frontmatter.featuredImage) {
-    featuredImgFluid = frontmatter.featuredImage.childImageSharp.gatsbyImageData
-  }
+  const image = getImage(frontmatter.featuredImage);
   const url = pageContext.url
   let section = url.substring(1, url.indexOf('/', 1))
   let languageName = "Switch to russian version"
@@ -33,7 +31,7 @@ export default function Template ({ data, pageContext }) {
       buttonLink={frontmatter.buttonLink}
       secondButtonText={frontmatter.secondButtonText}
       secondButtonLink={frontmatter.secondButtonLink}
-      featuredImage={featuredImgFluid}
+      featuredImage={image}
       bannerParagraph={[
         <h1>{frontmatter.title}</h1>,
         <p dangerouslySetInnerHTML={{ __html: frontmatter.subtitle }} />

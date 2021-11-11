@@ -1,6 +1,6 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 export default () => (
   <StaticQuery
@@ -24,7 +24,7 @@ export default () => (
     render={data => (
       <div style={{minHeight:"350px", maxHeight: "400px"}}>
         <GatsbyImage 
-          image={data.file.childImageSharp.gatsbyImageData}
+          image={getImage(data.file)}
           style={{minHeight:"350px", maxHeight: '400px'}}
           alt="Car forest"
         />
