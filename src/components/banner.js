@@ -1,24 +1,5 @@
 import React from "react"
-import { StaticQuery, graphql } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
-
-const query = graphql`
-  query BannerImageQuery {
-    file(relativePath: { eq: "index-7.jpg" }) {
-      childImageSharp {
-        gatsbyImageData(
-          layout: CONSTRAINED,
-          breakpoints: [576, 768, 922, 1400],
-          transformOptions: {
-            cropFocus: CENTER,
-            fit: COVER,
-          },
-          quality: 100
-        )
-      }
-    }
-  }
-`
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 
 const Banner = ({
   children,
@@ -50,28 +31,31 @@ const Banner = ({
   ) || ''
 
   return (
-    <StaticQuery
-      query={query}
-      render={data => (
-        <div className="banner">
-          <div className="banner-background">
-            <GatsbyImage
-              image={data.file.childImageSharp.gatsbyImageData}
-              style={{height: '400px'}}
-              alt="Car forest"
-            />
-          </div>
-          <div className="banner-text">
-            <div className="featured-area">
-              <div className="featured-text">{children}</div>
-              {timeBlock}
-              {button}
-              {secondButton}
-            </div>
-          </div>
+    <div className="banner">
+      <div className="banner-background">
+        <StaticImage 
+          src="../images/index-7.jpg"
+          alt="Car forest"
+          placeholder="blurred"
+          layout="constrained"
+          breakpoints={[576, 768, 922, 1400]}
+          transformOptions={{
+            cropFocus: "attention",
+            fit: "cover",
+          }}
+          quality={100}
+          style={{minHeight:"400px", maxHeight: '400px'}}
+        />
+      </div>
+      <div className="banner-text">
+        <div className="featured-area">
+          <div className="featured-text">{children}</div>
+          {timeBlock}
+          {button}
+          {secondButton}
         </div>
-      )}
-    />
+      </div>
+    </div>
   )
 }
 
