@@ -1,0 +1,12 @@
+.generator {
+  
+}
+
+.slotmachine:global(#reels) {
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.slotmachine:global(#ui) {
+  display: none;
+}

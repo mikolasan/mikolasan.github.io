@@ -1,4 +1,4 @@
-import { on_spin_started, on_winning_result } from "./interface"
+import { on_spin_clicked, on_spin_slicked, on_spin_started, on_winning_result } from "./interface"
 
 const slot_width = 128;
 const slot_height = 128;
@@ -9,8 +9,10 @@ const invisible_rows = 1; // add these rows to the top and bottom of the reels
 const shift_x = 67;
 const shift_y = 271;
 const reel_gap = 7;
-const width = slot_width * n_reels + reel_gap * (n_reels - 1) + shift_x * 2;
-const height = slot_height * n_rows + shift_y * 2;
+// const width = slot_width * n_reels + reel_gap * (n_reels - 1) + shift_x * 2;
+// const height = slot_height * n_rows + shift_y * 2;
+let width;
+let height;
 
 // backends
 const PY = 'PY';
@@ -249,8 +251,12 @@ function random_symbol(reel_id) {
   return get_strip_symbol(reel_id, random_virtual_stop(reel_id));
 }
 
+function get_slot_image(symbol_id) {
+  return slot_images.get(symbol_id)[1];
+}
+
 function random_slot_image(reel_id) {
-  return slot_images.get(random_symbol(reel_id));
+  return get_slot_image(random_symbol(reel_id));
 }
 
 function init_reel(reel_id) {
@@ -267,7 +273,7 @@ function force_stop() {
     reel_position_offsets[reel_id] = start_offset;
     for (let slot_id = 0; slot_id < n_rows; ++slot_id) {
       const id = reel_id * n_rows + slot_id;
-      reels[reel_id][slot_id + 1] = slot_images.get(result[id]);
+      reels[reel_id][slot_id + 1] = get_slot_image(result[id]);
     }
   }
   on_reels_stopped();
@@ -332,7 +338,7 @@ function generate_next_symbol(reel_id) {
   //console.log(n_slots_spinned[reel_id]  > 2 * slots_per_spin + 1 - n_rows, n_slots_spinned[reel_id], slots_per_spin, n_rows);
   if (n_slots_spinned[reel_id] > 2 * slots_per_spin + 1 - n_rows && 2 * slots_per_spin - n_slots_spinned[reel_id]  + 1 >= 0) {
     const i = 2 * slots_per_spin - n_slots_spinned[reel_id]  + 1; // n_rows - (n_slots_spinned[reel_id] - (2 * slots_per_spin + 1 - n_rows));
-    const slot_image = slot_images.get(result[reel_id * n_rows + i]);
+    const slot_image = get_slot_image(result[reel_id * n_rows + i]);
     //console.log("take result image", reel_id, i, result[reel_id * n_rows + i]);
     reels[reel_id].unshift(slot_image);
   } else {
@@ -426,67 +432,67 @@ function show_result(ctx, dt) {
   ctx.restore();
 }
 
-var previous_frame = 0;
 var background = null;
+let last_timestamp = 0;
 
-function draw(timestamp) {
-  var dt = timestamp - previous_frame;
-  previous_frame = timestamp;
+function draw(ctx, timestamp) {
+  const dt = timestamp - last_timestamp;
+  last_timestamp = timestamp;
   
-  var canvas = document.getElementById('reels');
-  if (!canvas) return;
-  if (canvas.getContext) {
-    var ctx = canvas.getContext('2d');
-    ctx.fillStyle = '#fff'; // background color
-    ctx.fillRect(0, 0, width, height);
+  ctx.fillStyle = '#fff'; // background color
+  ctx.fillRect(0, 0, width, height);
 
-    ctx.drawImage(background, 0, 0);
-    ctx.save();
+  
+  ctx.save();
+  const scale = width / 900;
+  ctx.scale(scale, scale);
+  ctx.drawImage(background, 0, 0);
 
-    // clipping rect
-    ctx.beginPath();
-    ctx.rect(shift_x, shift_y, slot_width * n_reels + reel_gap * (n_reels - 1), slot_height * n_rows);
-    ctx.clip();
+  ctx.save();
+  // clipping rect
+  ctx.beginPath();
+  ctx.rect(shift_x, shift_y, slot_width * n_reels + reel_gap * (n_reels - 1), slot_height * n_rows);
+  ctx.clip();
 
-    // ctx.font = '30px sans-serif';
-    // ctx.fillStyle = '#000';
-    for (let reel_id = 0; reel_id < n_reels; ++reel_id) {
-      // draw a reel
-      for (let i = 0; i < reels[reel_id].length; ++i) {
-        let {x, y} = get_reel_draw_coords(reel_id, i);
-        ctx.drawImage(reels[reel_id][i], shift_x + x + reel_gap * reel_id, shift_y + y);
-        //ctx.fillText(`y: ${y.toFixed(2)}`, x, y+50);
-      }
-      move_reel(reel_id, dt, generate_next_symbol);
-      
+  // ctx.font = '30px sans-serif';
+  // ctx.fillStyle = '#000';
+  for (let reel_id = 0; reel_id < n_reels; ++reel_id) {
+    // draw a reel
+    for (let i = 0; i < reels[reel_id].length; ++i) {
+      let {x, y} = get_reel_draw_coords(reel_id, i);
+      ctx.drawImage(reels[reel_id][i], shift_x + x + reel_gap * reel_id, shift_y + y);
+      //ctx.fillText(`y: ${y.toFixed(2)}`, x, y+50);
     }
-
-    ctx.restore();
-    if (current_state == state_winning) {
-      show_result(ctx, dt);
-    }
-
-    
-    if (!spin_button.enabled) {
-      ctx.drawImage(spin_button.disabled, spin_button.x, spin_button.y)
-    } else if (spin_button.clicked) {
-      ctx.drawImage(spin_button.pressed, spin_button.x, spin_button.y)
-    } else if (spin_button.mouse == 'in') {
-      ctx.drawImage(spin_button.hover, spin_button.x, spin_button.y)
-    } else {
-      highlight_time += dt;
-      if (highlight_time > spin_highlight_delay) {
-        ctx.drawImage(spin_button.highlight, spin_button.x, spin_button.y)
-      } else {
-        ctx.drawImage(spin_button.normal, spin_button.x, spin_button.y)
-      }
-      if (highlight_time > spin_highlight + spin_highlight_delay) {
-        highlight_time -= spin_highlight + spin_highlight_delay;
-      }      
-    }
+    move_reel(reel_id, dt, generate_next_symbol);
     
   }
-  window.requestAnimationFrame(draw);
+  ctx.restore();
+
+  if (current_state == state_winning) {
+    show_result(ctx, dt);
+  }
+  
+  if (!spin_button.enabled) {
+    ctx.drawImage(spin_button.disabled, spin_button.x, spin_button.y)
+  } else if (spin_button.clicked) {
+    ctx.drawImage(spin_button.pressed, spin_button.x, spin_button.y)
+  } else if (spin_button.mouse == 'in') {
+    ctx.drawImage(spin_button.hover, spin_button.x, spin_button.y)
+  } else {
+    highlight_time += dt;
+    if (highlight_time > spin_highlight_delay) {
+      ctx.drawImage(spin_button.highlight, spin_button.x, spin_button.y)
+    } else {
+      ctx.drawImage(spin_button.normal, spin_button.x, spin_button.y)
+    }
+    if (highlight_time > spin_highlight + spin_highlight_delay) {
+      highlight_time -= spin_highlight + spin_highlight_delay;
+    }      
+  }
+  ctx.restore();
+  
+  const drawWrapper = (t) => draw(ctx, t);
+  window.requestAnimationFrame(drawWrapper);
 }
 
 
@@ -517,127 +523,72 @@ function getMousePos(canvas, event) {
 
 // window.addEventListener('keydown', on_key_down);
 function isInside(pos, btn){
-  return Math.pow(pos.x - (btn.x + btn.a), 2) / Math.pow(btn.a, 2) 
-    + Math.pow(pos.y - (btn.y + btn.b), 2) / Math.pow(btn.b, 2) <= 1.0
-  // return pos.x > rect.x && pos.x < rect.x+rect.width && pos.y < rect.y+rect.height && pos.y > rect.y
+  const scale = width / 900;
+  const x = (btn.x + btn.a) * scale;
+  const y = (btn.y + btn.b) * scale;
+  const rx = btn.a * scale;
+  const ry = btn.b * scale;
+  return Math.pow(pos.x - x, 2) / Math.pow(rx, 2) 
+    + Math.pow(pos.y - y, 2) / Math.pow(ry, 2) <= 1.0;
 }
 
 function init_reels() {
-  var go = new Image();
-  var nodejs = new Image();
-  var cpp = new Image();
-  var java = new Image();
-  var rust = new Image();
-  var python = new Image();
-  var ruby = new Image();
-  var scala = new Image();
-  var reactjs = new Image();
-  var angular = new Image();
-  var vuejs = new Image();
-  var dotnet = new Image();
-  var qt = new Image();
-  var android = new Image();
-  var ios = new Image();
-  var mongodb = new Image();
-  var postgresql = new Image();
-  var graphql = new Image();
-  var kafka = new Image();
-  var cassandra = new Image();
-  var hadoop = new Image();
-  var http = new Image();
-  var usb = new Image();
-  var midi = new Image();
-  var protobuf = new Image();
-  var irc = new Image();
-  var xmpp = new Image();
-  var oauth = new Image();
-  var blockchain = new Image();
-  var computerVision = new Image();
-  var machineLearning = new Image();
-  var dashboard = new Image();
-  var languageProcessing = new Image();
-  var internetOfThings = new Image();
-  var microServices = new Image();
-
   slot_images = new Map([
-    [GO, go],
-    [JS, nodejs],
-    [CC, cpp],
-    [JA, java],
-    [RU, rust],
-    [SC, scala],
-    [PY, python],
-    [RB, ruby],
-    [RE, reactjs],
-    [NG, angular],
-    [VU, vuejs],
-    [NE, dotnet],
-    [QT, qt],
-    [AN, android],
-    [IO, ios],
-    [MO, mongodb],
-    [PO, postgresql],
-    [QL, graphql],
-    [KA, kafka],
-    [CA, cassandra],
-    [HA, hadoop],
-    [HT, http],
-    [US, usb],
-    [MI, midi],
-    [PR, protobuf],
-    [IR, irc],
-    [XM, xmpp],
-    [OA, oauth],
-    [BL, blockchain],
-    [CV, computerVision],
-    [ML, machineLearning],
-    [DA, dashboard],
-    [LP, languageProcessing],
-    [IT, internetOfThings],
-    [MS, microServices]
+    [GO, ['/images/idea-generator/go.png']],
+    [JS, ['/images/idea-generator/nodejs.png']],
+    [CC, ['/images/idea-generator/cpp.png']],
+    [JA, ['/images/idea-generator/java.png']],
+    [RU, ['/images/idea-generator/rust.png']],
+    [SC, ['/images/idea-generator/scala.png']],
+    [PY, ['/images/idea-generator/python.png']],
+    [RB, ['/images/idea-generator/ruby.png']],
+    [RE, ['/images/idea-generator/reactjs.png']],
+    [NG, ['/images/idea-generator/angular.png']],
+    [VU, ['/images/idea-generator/vuejs.png']],
+    [NE, ['/images/idea-generator/dotnet.png']],
+    [QT, ['/images/idea-generator/qt.png']],
+    [AN, ['/images/idea-generator/android.png']],
+    [IO, ['/images/idea-generator/ios.png']],
+    [MO, ['/images/idea-generator/mongodb.png']],
+    [PO, ['/images/idea-generator/postgresql.png']],
+    [QL, ['/images/idea-generator/graphql.png']],
+    [KA, ['/images/idea-generator/kafka.png']],
+    [CA, ['/images/idea-generator/cassandra.png']],
+    [HA, ['/images/idea-generator/hadoop.png']],
+    [HT, ['/images/idea-generator/http.png']],
+    [US, ['/images/idea-generator/usb.png']],
+    [MI, ['/images/idea-generator/midi.png']],
+    [PR, ['/images/idea-generator/protobuf.png']],
+    [IR, ['/images/idea-generator/irc.png']],
+    [XM, ['/images/idea-generator/xmpp.png']],
+    [OA, ['/images/idea-generator/oauth.png']],
+    [BL, ['/images/idea-generator/blockchain.png']],
+    [CV, ['/images/idea-generator/opencv.png']],
+    [ML, ['/images/idea-generator/ml.png']],
+    [DA, ['/images/idea-generator/dashboard.png']],
+    [LP, ['/images/idea-generator/opennlp.png']],
+    [IT, ['/images/idea-generator/iot.png']],
+    [MS, ['/images/idea-generator/seneca.png']]
   ]);
-  go.src = '/images/idea-generator/go.png';
-  java.src = '/images/idea-generator/java.png';
-  cpp.src = '/images/idea-generator/cpp.png';
-  nodejs.src = '/images/idea-generator/nodejs.png';
-  scala.src = '/images/idea-generator/scala.png';
-  rust.src = '/images/idea-generator/rust.png';
-  python.src = '/images/idea-generator/python.png';
-  ruby.src = '/images/idea-generator/ruby.png';
-  reactjs.src = '/images/idea-generator/reactjs.png';
-  angular.src = '/images/idea-generator/angular.png';
-  vuejs.src = '/images/idea-generator/vuejs.png';
-  dotnet.src = '/images/idea-generator/dotnet.png';
-  qt.src = '/images/idea-generator/qt.png';
-  android.src = '/images/idea-generator/android.png';
-  ios.src = '/images/idea-generator/ios.png';
-  mongodb.src = '/images/idea-generator/mongodb.png';
-  postgresql.src = '/images/idea-generator/postgresql.png';
-  graphql.src = '/images/idea-generator/graphql.png';
-  kafka.src = '/images/idea-generator/kafka.png';
-  cassandra.src = '/images/idea-generator/cassandra.png';
-  hadoop.src = '/images/idea-generator/hadoop.png';
-  http.src = '/images/idea-generator/http.png';
-  usb.src = '/images/idea-generator/usb.png';
-  midi.src = '/images/idea-generator/midi.png';
-  protobuf.src = '/images/idea-generator/protobuf.png';
-  irc.src = '/images/idea-generator/irc.png';
-  xmpp.src = '/images/idea-generator/xmpp.png';
-  oauth.src = '/images/idea-generator/oauth.png';
-  blockchain.src = '/images/idea-generator/blockchain.png';
-  computerVision.src = '/images/idea-generator/opencv.png';
-  machineLearning.src = '/images/idea-generator/ml.png';
-  dashboard.src = '/images/idea-generator/dashboard.png';
-  languageProcessing.src = '/images/idea-generator/opennlp.png';
-  internetOfThings.src = '/images/idea-generator/iot.png';
-  microServices.src = '/images/idea-generator/seneca.png';
+
+  for (const value of slot_images.values()) {
+    value.push(new Image());
+    value[1].src = value[0];
+  }
   
   reel_positions.fill(start_position);
   reel_position_offsets.fill(start_offset);
   for (let r = 0; r < n_reels; ++r) {
     init_reel(r);
   }
-  var canvas = document.getElementById('reels');
+  
+  
+  const canvas = document.getElementById('reels');
+  if (!canvas) {
+    console.error('no canvas')
+    return;
+  }
+
   canvas.addEventListener('mousemove', function(evt) {
     var mousePos = getMousePos(canvas, evt);
     if (isInside(mousePos,spin_button)) {
@@ -662,6 +613,7 @@ function init_reels() {
     var mousePos = getMousePos(canvas, evt);
     if (isInside(mousePos,spin_button)) {
       spin_button.clicked = false
+      on_spin_clicked();
     }
   }, false);
 
@@ -679,7 +631,39 @@ function init_reels() {
   background = new Image();
   background.src = '/images/idea-generator/slot-frame.png';
 
-  window.requestAnimationFrame(draw);
+  if (!canvas.getContext) {
+    console.error('canvas without context')
+    return;
+  }
+
+  const ctx = canvas.getContext('2d');
+  
+  setUpCanvas(canvas);
+  
+  window.addEventListener('resize', () => {
+    console.log('resize');
+    // Clear the canvas.
+    ctx.clearRect(0, 0, ctx.width, ctx.height);
+    // Draw it all again.
+    setUpCanvas(canvas);
+    last_timestamp = 0;
+    draw(ctx, 0);
+  });
+
+  const drawWrapper = (timestamp) => draw(ctx, timestamp);
+  window.requestAnimationFrame(drawWrapper);
+}
+
+function setUpCanvas(canvas) {
+  // const { clientWidth, clientHeight } = canvas.getBoundingClientRect();
+  const ratio = 900/843;
+  canvas.width = canvas.clientWidth;
+  // canvas.height = canvas.clientHeight;
+  canvas.height = canvas.width / ratio
+  width = canvas.width;
+  height = canvas.height;
+  console.log(width, height);
+
 }
 
 export { init_reels, spin_stop };

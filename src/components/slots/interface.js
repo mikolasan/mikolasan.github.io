@@ -7,36 +7,7 @@ var n_lines = 10;
 var total_bet = bet_per_line * n_lines;
 var win = 0;
 
-//Function to get the mouse position
-function getMousePos(canvas, event) {
-  return {
-    x: event.offsetX,
-    y: event.offsetY
-  };
-}
-
-// window.addEventListener('keydown', on_key_down);
-function isInside(pos, btn){
-  return Math.pow(pos.x - (btn.x + btn.a), 2) / Math.pow(btn.a, 2) 
-    + Math.pow(pos.y - (btn.y + btn.b), 2) / Math.pow(btn.b, 2) <= 1.0
-  // return pos.x > rect.x && pos.x < rect.x+rect.width && pos.y < rect.y+rect.height && pos.y > rect.y
-}
-
-function add_button(canvas, rect, name, click_handler) {
-  var ctx = canvas.getContext('2d');
-  //The rectangle should have x,y,width,height properties
-
-  canvas.addEventListener('click', function(evt) {
-    var mousePos = getMousePos(canvas, evt);
-    if (isInside(mousePos,rect)) {
-      click_handler();
-    }   
-  }, false);
-}
-
 function init_interface() {
-  var canvas = document.getElementById('reels');
-  add_button(canvas, {x:342, y:727, a:53, b:52, width:100, height:50}, 'spin', on_spin_clicked);
   update_all_labels();
 }
 
@@ -116,4 +87,4 @@ function update_all_labels() {
   update_win_label();
 }
 
-export { init_interface, on_spin_started, on_winning_result };
+export { init_interface, on_spin_clicked, on_spin_started, on_winning_result };
