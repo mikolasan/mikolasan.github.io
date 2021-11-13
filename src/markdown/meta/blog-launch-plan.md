@@ -1,7 +1,7 @@
 ---
 path: /blog/blog-launch-plan
 date: 2020-12-19
-title: Blog Launch Plan
+title: Blog launch plan
 ---
 
 I found a Blog Launch Plan on Pinterest.
@@ -15,7 +15,7 @@ No. Blogging is definitely not about me. Next.
 
 ### Set big goals with realistic expectations
 
-My website sited on Wikipedia.
+My website is cited on Wikipedia.
 A neon sign on a skyscraper is displaying my website name. In that building a big team of editors is writing articles about innovative experiments executed by our R&D team.
 
 ### Find your passions

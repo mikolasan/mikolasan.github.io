@@ -1,5 +1,5 @@
 import React from "react"
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
+import { StaticImage } from "gatsby-plugin-image"
 
 const Banner = ({
   children,

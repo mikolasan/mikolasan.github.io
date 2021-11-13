@@ -79,6 +79,7 @@ const Projects = ({ pageContext }) => (
       <h2>Resources</h2>
 
       <ul>
+        <li>My <a href="/gamedev/blogs-channels-links">curated list</a> of gamedev blogs, channels, links etc</li>
         <li>FREE <a href="/free/where-free-art">art</a> <a href="/free/where-free-music">music</a></li>
         <li>Procedural generation with <a href="/gamedev/houdini">Houdini</a></li>
       </ul>
