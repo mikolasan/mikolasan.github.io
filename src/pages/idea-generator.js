@@ -20,6 +20,9 @@ const LuckyIdeaGenerator = ({ pageContext }) => (
     Each reel in this slot machine represents a part from a typical project.
     Normally developers like to use the same language across all parts to spend minimum time setting up only one environment.
     </p>
+
+    <h2>You can only pick 5</h2>
+    <p>New version based on a tweet from <a href="https://twitter.com/chriskalmar/status/1459066591912640529">Chis Kalmar</a></p>
     <SlotMachine />
   </Layout>
 )

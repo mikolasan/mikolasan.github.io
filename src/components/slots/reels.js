@@ -55,6 +55,20 @@ const LP = 'LP';
 const IT = 'IT';
 const MS = 'MS';
 
+const TW = 'TW';
+const MA = 'MA';
+const BS = 'BS';
+const FO = 'FO';
+const SV = 'SV';
+const JQ = 'JQ';
+const SO = 'SO';
+const CS = 'CS';
+const PH = 'PH';
+const RS = 'RS';
+const MY = 'MY';
+const SQ = 'SQ';
+const RD = 'RD';
+
 const symbol_names = new Map([
   [GO, 'Go'],
   [JS, 'NodeJS'],
@@ -91,23 +105,46 @@ const symbol_names = new Map([
   [LP, 'OpenNLP, NLTK (natural language processing)'],
   [IT, 'Internet of Things'],
   [MS, 'Seneca (Microservices)'],
+  
+  [TW, 'Tailwind'],
+  [MA, 'Material'],
+  [BS, 'Bootstrap'],
+  [FO, 'Foundation'],
+  [SV, 'Svelte'],
+  [JQ, 'jQuery'],
+  [SO, 'Solidity'],
+  [CS, 'C#'],
+  [PH, 'PHP'],
+  [RS, 'REST API'],
+  [MY, 'MySQL'],
+  [SQ, 'Microsoft SQL Server'],
+  [RD, 'Redis'],
 ]);
 
+
+const choose_5 = [TW, MA, BS, FO, RE, VU, SV, NG, JQ, JS, PY, SO, CS, JA, PH, RB, QL, RS, MY, SQ, MO, RD];
 const strips = [
-  [CC, JS, GO, JA, CC, CC, RB, JS, RU, CC, JA, SC, PY, RU, RB],
-  [RE, RE, RE, NG, VU, NE, QT, NG, AN, IO, VU, QT],
-  [MO, PO, PO, PO, QL, HA, KA, MO, QL, CA],
-  [HT, US, IR, XM, PR, MI, HT, PR],
-  [DA, BL, MS, ML, BL, BL, CV, OA, BL, DA, OA, IT, LP],
-];
+  choose_5,
+  choose_5,
+  choose_5,
+  choose_5,
+  choose_5
+]
+// const strips = [
+//   [CC, JS, GO, JA, CC, CC, RB, JS, RU, CC, JA, SC, PY, RU, RB],
+//   [RE, RE, RE, NG, VU, NE, QT, NG, AN, IO, VU, QT],
+//   [MO, PO, PO, PO, QL, HA, KA, MO, QL, CA],
+//   [HT, US, IR, XM, PR, MI, HT, PR],
+//   [DA, BL, MS, ML, BL, BL, CV, OA, BL, DA, OA, IT, LP],
+// ];
 
 // 0 3 6 9  12
 // 1 4 7 10 13
 // 2 5 8 11 14
 const lines = [
   [1,4,7,10,13],
-  [0,4,8,10,12],
-  [2,4,6,10,14]
+  // [0,4,8,10,12],
+  // [2,4,6,10,14]
 ];
 
 const spin_button = {
@@ -324,9 +361,11 @@ function parse_result() {
   var text_result = ''
   const reel_name = ['Backend', 'Frontend', 'DB', 'Protocol', 'Killer Feature']
   for (let i = 0; i < lines.length; ++ i) {
-    text_result += `<h3>Idea ${i+1}</h3><p><ul>`
+    // text_result += `<h3>Idea ${i+1}</h3>
+    text_result += `<p><ul>`
     for (let reel_id = 0; reel_id < n_reels; ++reel_id) {
-      text_result += `<li key=${reel_id}>${reel_name[reel_id]}: ${symbol_names.get(result[lines[i][reel_id]])}</li>`
+      // text_result += `<li key=${reel_id}>${reel_name[reel_id]}: ${symbol_names.get(result[lines[i][reel_id]])}</li>`
+      text_result += `<li key=${reel_id}>${symbol_names.get(result[lines[i][reel_id]])}</li>`
     }
     text_result += '</ul></p>'
   }
@@ -568,7 +607,21 @@ function init_reels() {
     [DA, ['/images/idea-generator/dashboard.png']],
     [LP, ['/images/idea-generator/opennlp.png']],
     [IT, ['/images/idea-generator/iot.png']],
-    [MS, ['/images/idea-generator/seneca.png']]
+    [MS, ['/images/idea-generator/seneca.png']],
+
+    [TW, ['/images/idea-generator/tailwind.png']],
+    [MA, ['/images/idea-generator/material.png']],
+    [BS, ['/images/idea-generator/bootstrap.png']],
+    [FO, ['/images/idea-generator/foundation.png']],
+    [SV, ['/images/idea-generator/svelte.png']],
+    [JQ, ['/images/idea-generator/jquery.png']],
+    [SO, ['/images/idea-generator/solidity.png']],
+    [CS, ['/images/idea-generator/c_sharp.png']],
+    [PH, ['/images/idea-generator/php.png']],
+    [RS, ['/images/idea-generator/rest.png']],
+    [MY, ['/images/idea-generator/mysql.png']],
+    [SQ, ['/images/idea-generator/ms_sql.png']],
+    [RD, ['/images/idea-generator/redis.png']],
   ]);
 
   for (const value of slot_images.values()) {
@@ -662,8 +715,6 @@ function setUpCanvas(canvas) {
   canvas.height = canvas.width / ratio
   width = canvas.width;
   height = canvas.height;
-  console.log(width, height);
-
 }
 
 export { init_reels, spin_stop };

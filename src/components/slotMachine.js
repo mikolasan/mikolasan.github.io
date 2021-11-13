@@ -14,7 +14,7 @@ class SlotMachine extends React.Component {
       <div className={styles.generator}>
         <canvas className={styles.slotmachine} id="reels"></canvas>
         <canvas className={styles.slotmachine} id="ui"></canvas>
-        <h2>Results</h2>
+        <h2>The result</h2>
         <div id="slot-machine-result"><p>No results. Press "Spin" to get new ideas.</p></div>
       </div>
     )
