@@ -1,4 +1,4 @@
-const { src, dest } = require('gulp')
+const { series, src, dest } = require('gulp')
 const PluginError = require('plugin-error')
 const Transform = require('stream').Transform;
 const { exec } = require('child_process');
@@ -117,18 +117,99 @@ function markdownNoDate(cb) {
     .pipe(dest('noDate'))
 }
 
+function filterByFrontmatterField(field, options) {
+  options = Object.assign({
+    encoding: 'utf8',
+    notFound: true,
+  }, options);
+  const { notFound } = options;
+
+  return new Transform({
+    objectMode: true,
+    transform(file, enc, callback) {
+      if (file.isNull()) {
+        this.emit('error', new PluginError(PLUGIN_NAME, 'File is null'));
+        return callback();
+      } else if (file.isStream()) {
+        this.emit('error', new PluginError(PLUGIN_NAME, 'Streams not supported!'));
+        return callback();
+      } else  if (file.isBuffer()) {
+        const chunk = file.contents.toString(options.encoding);
+        const re = new RegExp(/---(.*?)---.*/s); // *? - non-greedy
+        const found = chunk.match(re);
+        if (!found) {
+          this.emit('error', new PluginError(PLUGIN_NAME, `No frontmatter found in ${file.path}`));
+          return callback();
+        }
+        const frontmatter = found[1];
+        const lines = frontmatter.split(/[\r\n]+/);
+        const data = lines.filter(line => line.length > 0).map(line => line.split(':'));
+        const fieldFound = data.find(e => e[0] === field) !== undefined;
+        return callback(null, !(fieldFound ^ (!notFound)) ? file : null);
+      }
+      callback();
+    }
+  })
+}
+
+function addPublishedGitTime(field, options) {
+  options = Object.assign({
+    encoding: 'utf8',
+    gitRoot: process.cwd(),
+  }, options);
+
+  return new Transform({
+    objectMode: true,
+    transform(file, enc, callback) {
+      if (file.isNull()) {
+        this.emit('error', new PluginError(PLUGIN_NAME, 'File is null'));
+        return callback();
+      } else if (file.isStream()) {
+        this.emit('error', new PluginError(PLUGIN_NAME, 'Streams not supported!'));
+        return callback();
+      } else  if (file.isBuffer()) {
+        const chunk = file.contents.toString(options.encoding);
+        let path = file.path;
+        if (path.includes(options.gitRoot)) {
+          path = path.substring(options.gitRoot.length + 1);
+        }
+        const published = stdout;
+        const gitLogLast = exec(`git log -n 1 --pretty=format:%as -- ${path}`, function (error, stdout, stderr) {
+          if (error) {
+            console.log(error.stack);
+            console.log('Error code: '+error.code);
+            console.log('Signal received: '+error.signal);
+            this.emit('error', new PluginError(PLUGIN_NAME, 'git error'));
+            return callback();
+          }
+          console.log('Child Process STDOUT: '+stdout);
+          const lastModified = stdout;
+          // chunk += new Buffer.from(lastModified);
+          // console.log('Child Process STDERR: '+stderr);
+          
+          console.log(file_1.path)
+          return callback(null, file_1);
+        });
+      }
+      callback();
+    }
+  })
+}
 
 function markdownAddPublished(cb) {
   return src('src/markdown/**/*.md', { buffer: true })
     .pipe(filterByFrontmatterField("published", { notFound: true}))
     .pipe(addPublishedGitTime())
-    .pipe(dest('noDate'))
+    .pipe(justCheckingWorker('just checking 1'))
+    // .pipe(dest('noDate'))
 }
 
 function markdownUpdateLastModified(cb) {
   return src('src/markdown/**/*.md', { buffer: true })
-    .pipe(setLastModifiedGitTime())
-    .pipe(dest('noDate'))
+    // .pipe(setLastModifiedGitTime())
+    // .pipe(dest('noDate'))
 }
 
-exports.default = markdownNoDate
+exports.markdownAddPublished = markdownAddPublished;
+exports.markdownUpdateLastModified = markdownUpdateLastModified;
+exports.default = series(markdownAddPublished, markdownUpdateLastModified);
