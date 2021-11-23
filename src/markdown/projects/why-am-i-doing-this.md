@@ -2,6 +2,8 @@
 path: "/projects/why-am-i-doing-this"
 date: "2020-08-28"
 title: "Why am I doing this?"
+published: 2020-09-23
+lastModified: 2020-09-23
 ---
 
 My projects. I invested my time and life, but did I get anything back from them?

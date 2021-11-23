@@ -1,6 +1,8 @@
 ---
 date: 2021-11-07
 title: Blog with Metalsmith 
+published: 2021-11-07
+lastModified: 2021-11-07
 ---
 
 I was looking for more flexible static site generator than Jekyll on [Jamstack](https://jamstack.org/generators/). Also I have read few posts where people were [switching to Metalsmith](https://keetology.com/blog/rebuilding-keetology) and [explaining how to mak it](http://blakeembrey.com/articles/2014/09/building-a-blog-with-metalsmith/).

@@ -1,6 +1,8 @@
 ---
 date: 2021-11-09
 title: Бесплатные книги по байесу!
+published: 2021-11-10
+lastModified: 2021-11-10
 ---
 
 ## Bayesian Optimization Book

@@ -4,6 +4,8 @@ date: 2021-06-23
 title: Massive.js vs knex.js
 twitter: https://twitter.com/mikolasan/status/1407645468042145796
 tags: ["JavaScript"]
+published: 2021-10-14
+lastModified: 2021-10-14
 ---
 
 In the field of ORM's for JavaScript there is a dominance of knex.js and Objection.js, don't you think?  

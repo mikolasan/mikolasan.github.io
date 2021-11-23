@@ -6,6 +6,8 @@ subtitle: "<strong>Nikolay Neupokoev</strong> - Mathematician Engineer"
 buttonText: Download PDF version
 buttonLink: /CV-Neupokoev.pdf
 section: "cv"
+published: 2020-05-03
+lastModified: 2021-10-14
 ---
 
 ## Profile

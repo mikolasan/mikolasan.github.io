@@ -2,6 +2,8 @@
 path: /blog/parallel-ssh
 date: 2021-04-06
 title: How to update 30 ubuntu machines connected to one network
+published: 2021-10-14
+lastModified: 2021-10-14
 ---
 
 I usually test on one machine, ensuring that all steps can be executed unnatended and then replicate them with parallel-ssh. For that thing we will need a list of all machines, but we will talk about it later (down the road).

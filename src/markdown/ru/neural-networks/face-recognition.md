@@ -4,6 +4,8 @@ date: "2020-08-09"
 title: Распознавание лиц
 language: "ru"
 draft: true
+published: 2021-10-13
+lastModified: 2021-10-13
 ---
 
 ## Теоретическая база

@@ -1,6 +1,8 @@
 ---
 date: 2021-10-22
 title: Full page screenshot in Chrome
+published: 2021-10-28
+lastModified: 2021-10-28
 ---
 
 I have to use Google Chrome because of one plugin that only supports this browser, and I'm puzzled how to make a full page screenshot. You won't believe how simple to do it in Firefox (right click anywhere on a page).

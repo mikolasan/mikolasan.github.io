@@ -4,6 +4,8 @@ date: 2021-07-15
 title: 'Be careful with "simple" components'
 twitter: https://twitter.com/mikolasan/status/1415741524214796290
 tags: ["web development", "UI/UX"]
+published: 2021-10-14
+lastModified: 2021-10-14
 ---
 
 Be careful with "simple" examples. Especially with some solutions that look too good to be true. 

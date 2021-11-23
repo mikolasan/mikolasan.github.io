@@ -4,6 +4,8 @@ date: 2021-08-31
 title: Perfect class hierarchy
 twitter: https://twitter.com/mikolasan/status/1432756005352480771
 tags: ["Python", "game development"]
+published: 2021-10-14
+lastModified: 2021-10-14
 ---
 
 A story about perfect class hierarchy that is easy to think of, but hard to implement.

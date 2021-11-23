@@ -5,6 +5,8 @@ title: "Imperial Russia: Historic unit converter"
 tags: ["mobile", "kotlin"]
 featuredImage: imperial-russia-screen.png
 coverImage: "imperial-russia.jpg"
+published: 2020-03-27
+lastModified: 2021-10-13
 ---
 
 Opened beta testing! Hurrah!

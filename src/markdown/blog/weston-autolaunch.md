@@ -2,6 +2,8 @@
 path: /blog/weston-autolaunch
 date: 2021-07-19
 title: Weston autolaunch
+published: 2021-10-14
+lastModified: 2021-10-14
 ---
 
 - `~/.config/autostart/` and `/etc/xdg/autostart/` maybe worked in very old version of Weston https://specifications.freedesktop.org/autostart-spec/autostart-spec-latest.html, but not with 9.0.0.

@@ -2,6 +2,8 @@
 path: /blog/center-window-in-weston
 date: 2021-07-24
 title: Center window in Weston
+published: 2021-10-14
+lastModified: 2021-10-14
 ---
 
 I found so many questions on StackOverflow without answer regarding this problem:

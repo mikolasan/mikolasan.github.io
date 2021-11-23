@@ -4,6 +4,8 @@ date: 2021-06-28
 title: npm - upgrade all packages
 twitter: https://twitter.com/mikolasan/status/1409464729072963589
 tags: ["JavaScript"]
+published: 2021-10-14
+lastModified: 2021-10-26
 ---
 
 How often do you find an actual answer on StackOverflow that works for you only at the bottom and it has 0 votes?

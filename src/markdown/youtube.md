@@ -2,6 +2,8 @@
 date: 2020-09-19
 title: My YouTube channel
 section: projects
+published: 2021-02-11
+lastModified: 2021-11-10
 ---
 
 ## Plan

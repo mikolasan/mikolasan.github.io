@@ -3,6 +3,8 @@ path: /blog/private-class-member-cpp
 date: 2021-04-07
 title: "C++: private class member and inheritance"
 draft: true
+published: 2021-10-14
+lastModified: 2021-10-14
 ---
 
 I usually find myself using inheritance when I need to store objects with different qualities in one place and process them later in similar manner. Probably iterating through all of them.

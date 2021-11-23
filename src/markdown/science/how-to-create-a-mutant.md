@@ -2,6 +2,8 @@
 path: /blog/how-to-create-a-mutant
 date: 2020-04-09
 title: How to create a mutant?
+published: 2021-11-13
+lastModified: 2021-11-13
 ---
 
 More specifically is how hard is to make mermaids for real?

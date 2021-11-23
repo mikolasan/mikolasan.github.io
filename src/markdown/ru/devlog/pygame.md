@@ -3,6 +3,8 @@ path: /ru/gamedev/pygame
 date: 2020-08-16
 title: Библиотека PyGame
 language: "ru"
+published: 2021-10-13
+lastModified: 2021-10-13
 ---
 
 ## Можно ли написать игру на PyGame? 

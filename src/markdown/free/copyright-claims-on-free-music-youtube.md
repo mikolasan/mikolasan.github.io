@@ -1,6 +1,8 @@
 ---
 date: 2021-09-27
 title: Copyright claims on free music
+published: 2021-10-28
+lastModified: 2021-10-28
 ---
 
 ## Audio claim

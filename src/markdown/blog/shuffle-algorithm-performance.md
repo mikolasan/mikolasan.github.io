@@ -2,6 +2,8 @@
 path: /blog/shuffle-algorithm-performance
 date: 2021-09-30
 title: Shuffle algorithm performance in JavaScript
+published: 2021-10-14
+lastModified: 2021-10-14
 ---
 
 Let's take a look on slightly different implementations of Fisher-Yates shuffle algorithm.

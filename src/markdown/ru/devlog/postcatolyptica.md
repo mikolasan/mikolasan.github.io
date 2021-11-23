@@ -4,6 +4,8 @@ date: "2020-03-26"
 title: "Project \"PostCATolyptica\""
 tags: ["nodejs", "react", "language processing", "fontend", "backend", "web"]
 language: "ru"
+published: 2021-10-13
+lastModified: 2021-10-13
 ---
 
 Мой первый интерактивный сайт, который обрабатывает запрос и выдает результаты. Нода и искусственный интеллект.

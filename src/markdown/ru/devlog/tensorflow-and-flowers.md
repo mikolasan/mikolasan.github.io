@@ -3,6 +3,8 @@ date: 2020-06-20
 title: TensorFlow и цветочки
 path: /ru/blog/tensorflow-and-flowers
 language: "ru"
+published: 2021-10-28
+lastModified: 2021-10-28
 ---
 
 Нашел квест для себя на субботу

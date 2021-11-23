@@ -1,6 +1,8 @@
 ---
 title: My books
 date: 2021-11-10
+published: 2021-11-10
+lastModified: 2021-11-10
 ---
 
 ## PXE Boot

@@ -4,6 +4,8 @@ date: "2021-04-18"
 title: "Гидропоника: сенсоры"
 tags: ["hydroponics"]
 language: "ru"
+published: 2021-10-13
+lastModified: 2021-11-10
 ---
 
 ## Более подробные статьи

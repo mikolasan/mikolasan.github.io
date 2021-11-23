@@ -5,6 +5,8 @@ title: "Why today?"
 tags: ["mobile", "generator", "one app per month", "one screen application", "one button application"]
 idea: creative
 section: ideas
+published: 2021-10-13
+lastModified: 2021-10-28
 ---
 
 The idea is pretty simple from one side, however, it has potential wide usage and everyday necessity. When something bad happens in our lives, we ask: "Why today?". Why did the computer decide to install an update and restart during the important presentation exactly today?

@@ -3,6 +3,8 @@ path: "/ru/plan"
 date: "2020-09-19"
 title: "План"
 language: "ru"
+published: 2021-10-13
+lastModified: 2021-10-13
 ---
 
 ## Этапы развития компании

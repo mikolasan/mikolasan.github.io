@@ -2,6 +2,8 @@
 path: /blog/if-not-weston
 date: 2021-07-30
 title: If not Weston?
+published: 2021-10-14
+lastModified: 2021-10-14
 ---
 
 My fisrt problem was: [How to center window in Weston?](/blog/center-window-in-weston). My second problem was: [Drop shadow effect in Weston](/blog/drop-shadow-in-weston)

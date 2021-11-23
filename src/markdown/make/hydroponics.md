@@ -1,6 +1,8 @@
 ---
 date: 2021-10-21
 title: Hydroponics system
+published: 2021-10-28
+lastModified: 2021-11-13
 ---
 
 ## Prologue

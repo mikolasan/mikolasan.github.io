@@ -3,6 +3,8 @@ path: "/ru/projects/unsolved-problems"
 date: 2020-03-27
 title: Нерешенные задачи программирования
 language: "ru"
+published: 2021-10-13
+lastModified: 2021-10-28
 ---
 
 

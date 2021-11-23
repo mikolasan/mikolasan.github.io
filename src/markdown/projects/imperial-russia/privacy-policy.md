@@ -2,6 +2,8 @@
 path: "/projects/imperial-russia/privacy-policy"
 date: "2020-04-26"
 title: Privacy Policy
+published: 2021-10-13
+lastModified: 2021-10-13
 ---
 
 Saturday's Code ("We", "Our", "Us") built the Imperial Russia app as an Open Source app. This SERVICE is provided by Saturday's Code at no cost and is intended for use as is.

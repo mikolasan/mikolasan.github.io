@@ -1,6 +1,8 @@
 ---
 date: 2021-04-13
 title: Be ready to screencast!
+published: 2021-10-14
+lastModified: 2021-11-13
 ---
 
 ## Setup OBS

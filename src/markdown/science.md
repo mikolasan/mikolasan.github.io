@@ -2,6 +2,8 @@
 date: "2020-04-06"
 title: "Science"
 section: "science"
+published: 2020-03-19
+lastModified: 2021-10-14
 ---
 
 ## New stuff 🔥

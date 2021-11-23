@@ -2,6 +2,8 @@
 path: /blog/homebrew-like-system
 date: 2020-08-01
 title: Homebrew like system
+published: 2020-08-03
+lastModified: 2021-10-14
 ---
 
 I realized that Google Analytics does not give me information that I want to have about my articles.

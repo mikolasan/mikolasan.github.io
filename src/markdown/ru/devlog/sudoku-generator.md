@@ -3,6 +3,8 @@ path: "/ru/blog/sudoku-generator"
 date: 2019-03-04
 title: "Sudoku generator"
 language: "ru"
+published: 2021-10-28
+lastModified: 2021-10-28
 ---
 
 Я думаю, что об этом стоит рассказать.

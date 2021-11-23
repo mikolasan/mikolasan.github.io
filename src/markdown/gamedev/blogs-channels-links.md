@@ -1,6 +1,8 @@
 ---
 date: 2021-11-12
 title: Gamedev blogs, channels, links etc
+published: 2021-11-13
+lastModified: 2021-11-13
 ---
 
 - Make action RPG in Godot - [YouTube tutorial](https://youtube.com/playlist?list=PL9FzW-m48fn2SlrW0KoLT4n5egNdX-W9a)

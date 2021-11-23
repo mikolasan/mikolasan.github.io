@@ -3,6 +3,8 @@ path: /ru/board-games/cluedo-critique
 date: 2019-10-21
 title: Что улучшить в Клюедо?
 language: "ru"
+published: 2021-10-30
+lastModified: 2021-11-02
 ---
 
 ## Минусы текущей механики

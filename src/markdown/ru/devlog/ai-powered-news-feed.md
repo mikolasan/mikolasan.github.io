@@ -4,6 +4,8 @@ date: 2019-05-01
 title: Новостная лента, которую мы не заслуживаем
 tags: ["python", "django", "db", "scraper", "language processing", "web"]
 language: "ru"
+published: 2021-10-13
+lastModified: 2021-10-28
 ---
 
 - Зачем мне это надо: Попытка понять как на одном только питоне делать приложение для веба.

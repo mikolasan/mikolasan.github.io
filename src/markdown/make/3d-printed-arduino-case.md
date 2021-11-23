@@ -1,6 +1,8 @@
 ---
 title: 3D printed Adrduino case
 date: 2021-11-18
+published: 2021-11-23
+lastModified: 2021-11-23
 ---
 
 Do you know how hard to find a decent 3D model of Arduino case in 2021? Very hard. It apparently was [a thing in 2014](https://extrasensoryobjects.wordpress.com/2014/09/15/test-print-with-new-3d-printer/), but many models today are unavailable. 

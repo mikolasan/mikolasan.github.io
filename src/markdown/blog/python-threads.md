@@ -4,6 +4,8 @@ date: 2021-06-17
 title: Threads in Python
 twitter: https://twitter.com/mikolasan/status/1405495727116193792
 tags: ["Python"]
+published: 2021-10-14
+lastModified: 2021-10-14
 ---
 
 Just a few links where I would start reading about Threads in Python.

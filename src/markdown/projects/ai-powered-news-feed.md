@@ -3,6 +3,8 @@ path: "/projects/ai-powered-news-feed"
 date: "2020-05-16"
 title: "AI-powered news feed"
 tags: ["python", "django", "db", "scraper", "language processing", "web"]
+published: 2020-05-16
+lastModified: 2021-03-27
 ---
 
 - Зачем мне это надо: Попытка понять как на одном только питоне делать приложение для веба.

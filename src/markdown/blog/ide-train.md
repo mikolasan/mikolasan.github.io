@@ -4,6 +4,8 @@ date: 2021-06-30
 title: IDE train
 twitter: https://twitter.com/mikolasan/status/1410299437608493061
 tags: ["Atom", "VS Code", "productivity"]
+published: 2021-10-14
+lastModified: 2021-10-14
 ---
 
 You will be more productive using better tools. So, what is your IDE and how you are satisfied with it?

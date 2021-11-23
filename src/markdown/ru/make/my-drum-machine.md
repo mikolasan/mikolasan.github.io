@@ -4,6 +4,8 @@ date: "2020-05-16"
 title: "Свои электро ударные"
 tags: ["laser cut", "mobile"]
 language: "ru"
+published: 2021-10-13
+lastModified: 2021-10-13
 ---
 
 ## Физическая часть

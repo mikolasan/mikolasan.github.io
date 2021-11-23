@@ -2,6 +2,8 @@
 path: /gamedev/why-do-i-hate-python
 date: 2020-06-06
 title: Why do I hate Python?
+published: 2021-10-14
+lastModified: 2021-10-14
 ---
 
 ## Why do I hate Python?

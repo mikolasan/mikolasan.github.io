@@ -2,6 +2,8 @@
 path: /blog/custom-linux
 date: 2021-06-04
 title: Custom Linux + Installer
+published: 2021-10-14
+lastModified: 2021-10-14
 ---
 
 How to make an installer from one Linux system so that people can replicate it later on any machine without a hassle with extra work in configuration files or with package manager.

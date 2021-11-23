@@ -3,6 +3,8 @@ path: "/ru/youtube/monetization"
 date: "2020-09-27"
 title: "План по монетизации для Ютюб"
 language: "ru"
+published: 2021-10-14
+lastModified: 2021-10-14
 ---
 
 ## Зачем

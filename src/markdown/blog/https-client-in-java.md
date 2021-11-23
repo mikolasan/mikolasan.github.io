@@ -2,6 +2,8 @@
 path: /blog/add-ca-certificate-to-java-https-client
 date: 2021-04-20
 title: "Add CA certificate to Java HTTPS client"
+published: 2021-10-14
+lastModified: 2021-10-14
 ---
 
 Consider you have a HTTPS server with ssl certificate, and you do want to use the certificate on your client side.

@@ -4,6 +4,8 @@ date: "2021-02-06"
 title: "3Д печать машины из Carmageddon."
 tags: ["3d print"]
 language: "ru"
+published: 2021-10-13
+lastModified: 2021-10-13
 ---
 
 Напечатай сам - https://www.thingiverse.com/thing:4751211.

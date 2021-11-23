@@ -4,6 +4,8 @@ date: "2020-11-30"
 title: "Залипают кнопки клавиатуры, тротлинг и перезагрузка ноутбука Dell Inspiron 17 7559"
 tags: ["hardware"]
 language: "ru"
+published: 2021-10-13
+lastModified: 2021-10-13
 ---
 
 Ноутбук Dell Inspiron 17 7559

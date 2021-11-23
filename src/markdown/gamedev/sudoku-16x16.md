@@ -4,6 +4,8 @@ date: "2020-03-26"
 title: Sudoku 16x16
 featuredImage: sudoku-game-2.png
 section: gamedev
+published: 2020-05-17
+lastModified: 2021-10-05
 ---
 
 ## Questions to developers

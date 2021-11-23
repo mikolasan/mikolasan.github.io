@@ -4,6 +4,8 @@ date: "2021-04-16"
 title: "Гидропоника: собираем систему капельного орошения"
 tags: ["hydroponics"]
 language: "ru"
+published: 2021-10-13
+lastModified: 2021-11-10
 ---
 
 Материалы:

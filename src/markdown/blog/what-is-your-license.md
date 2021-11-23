@@ -2,6 +2,8 @@
 path: /blog/what-is-your-license
 date: 2020-05-02
 title: What is your license?
+published: 2020-05-09
+lastModified: 2021-10-14
 ---
 
 What are the essential differences between the BSD and MIT licences? [1](https://opensource.stackexchange.com/q/217)

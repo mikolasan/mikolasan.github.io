@@ -3,6 +3,8 @@ path: "/gamedev/where-free-art"
 date: "2020-05-24"
 title: "Where free 3d?"
 section: gamedev
+published: 2021-10-13
+lastModified: 2021-10-13
 ---
 
 

@@ -1,6 +1,8 @@
 ---
 date: 2021-10-27
 title: Minimalistic cheatsheet for nano
+published: 2021-10-28
+lastModified: 2021-10-28
 ---
 
 > GNU **nano**, a text editor for Unix-like systems

@@ -1,6 +1,8 @@
 ---
 date: 2021-09-15
 title: The most addictive games
+published: 2021-10-28
+lastModified: 2021-10-28
 ---
 
 Here is my list of the most addictive games. (I purposely do not include games from the current century 😄)

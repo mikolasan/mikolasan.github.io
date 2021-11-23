@@ -4,6 +4,8 @@ date: "2021-01-20"
 title: "Nutrient Film Technique"
 tags: ["hydroponics"]
 language: "ru"
+published: 2021-10-13
+lastModified: 2021-11-10
 ---
 
 Nutrient Film Technique (NFT) - гидропонный метод _проточной тонкослойной подачи_ питательного вещества.

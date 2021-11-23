@@ -2,6 +2,8 @@
 path: /blog/styling-qt-app
 date: 2021-07-23
 title: Styling Qt app
+published: 2021-10-14
+lastModified: 2021-10-14
 ---
 
 You have few approaches for styling your Qt app.

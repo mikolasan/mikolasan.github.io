@@ -2,6 +2,8 @@
 path: /slot-mathematician/ideas
 date: 2020-09-23
 title: Идеи слот игр (G2E 2017)
+published: 2021-10-28
+lastModified: 2021-10-28
 ---
 
 ## Бомбы (IGT)

@@ -3,6 +3,8 @@ path: "/ru/projects/limbo"
 date: "2020-03-15"
 title: "Лимб"
 language: "ru"
+published: 2021-10-13
+lastModified: 2021-10-13
 ---
 
 ## Дополнение для Firefox

@@ -4,6 +4,8 @@ date: "2020-07-20"
 title: Добавить свою модель в MMF
 language: "ru"
 draft: true
+published: 2021-10-13
+lastModified: 2021-10-13
 ---
 
 

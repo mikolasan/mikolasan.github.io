@@ -4,6 +4,8 @@ date: "2020-08-26"
 title: Деревья
 language: "ru"
 draft: true
+published: 2021-10-13
+lastModified: 2021-10-13
 ---
 
 Будь-то работа с [CoreNLP библиотекой](/ru/science/modifying-stanford-parser) или [GPT-2](/ru/science/nlp-gpt-2), в любом случае предложение представляется в виде дерева.

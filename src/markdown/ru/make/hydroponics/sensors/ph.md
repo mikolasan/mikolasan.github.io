@@ -9,6 +9,8 @@ secondButtonText: Гидропоника
 secondButtonLink: /ru/make/hydroponics
 tags: ["hydroponics"]
 language: "ru"
+published: 2021-11-10
+lastModified: 2021-11-10
 ---
 
 Зондов по измерению кислотности воды на Али Экспресс очень много. Я рассматривал много вариантов и остановился на [одном](https://s.click.aliexpress.com/e/_9Rk02I) от магазина Kmust

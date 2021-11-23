@@ -3,6 +3,8 @@ path: "/board-games"
 date: "2021-06-01"
 title: "Board games"
 section: "projects"
+published: 2021-10-28
+lastModified: 2021-10-31
 ---
 
 I want to make board games too.

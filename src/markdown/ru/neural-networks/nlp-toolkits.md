@@ -4,6 +4,8 @@ date: "2020-07-26"
 title: Инструменты для обработки естественного языка
 language: "ru"
 draft: true
+published: 2021-10-13
+lastModified: 2021-10-13
 ---
 
 

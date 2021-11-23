@@ -4,6 +4,8 @@ date: 2021-07-02
 title: Practice your skills on StackOverflow
 twitter: https://twitter.com/mikolasan/status/1410972840770351107
 tags: ["Python"]
+published: 2021-10-14
+lastModified: 2021-10-14
 ---
 
 You can practice your programming skills on sites like Codewars and HakerRank. 

@@ -2,6 +2,8 @@
 path: /blog/clean-windows
 date: 2020-09-23
 title: Clean Windows
+published: 2021-03-27
+lastModified: 2021-10-14
 ---
 
 ## Services I disabled

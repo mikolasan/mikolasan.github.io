@@ -4,6 +4,8 @@ date: "2020-07-11"
 title: "Cat breeds ontology"
 draft: true
 section: science
+published: 2020-07-26
+lastModified: 2021-10-05
 ---
 
 First of all, what is an ontology? Does it exist like a file, or a database? Do you need special software to create it? What is the purpose of ontologies, can they do predictions, deductions?

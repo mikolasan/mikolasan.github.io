@@ -4,6 +4,8 @@ date: "2021-05-08"
 title: "Все о том, как течет вода"
 tags: ["hydroponics"]
 language: "ru"
+published: 2021-10-13
+lastModified: 2021-11-10
 ---
 
 ## Емкость для воды

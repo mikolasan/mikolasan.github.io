@@ -5,6 +5,8 @@ title: "Резюме"
 subtitle: "<strong>Nikolay Neupokoev</strong><br />Mathematician Engineer"
 language: "ru"
 section: "cv"
+published: 2021-10-13
+lastModified: 2021-10-13
 ---
 
 ## Profile

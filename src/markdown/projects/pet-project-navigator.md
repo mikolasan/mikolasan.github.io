@@ -5,6 +5,8 @@ title: Pet Project Navigator
 tags: ["java", "db", "mobile"]
 featuredImage: pet-project-navigator-3.png
 coverImage: "pet-project-navigator.jpg"
+published: 2020-03-26
+lastModified: 2021-10-13
 ---
 
 ## Another todo list?

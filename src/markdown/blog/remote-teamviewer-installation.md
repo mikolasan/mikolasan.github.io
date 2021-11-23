@@ -2,6 +2,8 @@
 path: /blog/remote-teamviewer-installation
 date: 2021-04-21
 title: "Remote TeamViewer installation"
+published: 2021-10-14
+lastModified: 2021-10-14
 ---
 
 To succeed with this tutorial you will need to create an account in teamviewer first. It is better to do it from your host application.

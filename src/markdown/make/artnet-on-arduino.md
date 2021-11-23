@@ -3,6 +3,8 @@ path: /blog/artnet-on-arduino
 date: 2021-09-21
 title: Art-Net on Arduino
 tags: ["led", "hardware"]
+published: 2021-10-13
+lastModified: 2021-10-13
 ---
 
 ## DMX512

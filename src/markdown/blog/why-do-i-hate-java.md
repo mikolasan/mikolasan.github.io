@@ -2,6 +2,8 @@
 path: /gamedev/why-do-i-hate-java
 date: 2020-04-13
 title: Why do I hate Java?
+published: 2021-10-14
+lastModified: 2021-10-14
 ---
 
 ## Why do I hate Java?

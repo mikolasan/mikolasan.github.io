@@ -3,6 +3,8 @@ path: "/blog/hardware-useful-links"
 date: 2021-08-31
 title: Useful links for DIY hobbyist
 tags: ["hardware", "links"]
+published: 2021-10-13
+lastModified: 2021-10-28
 ---
 
 Helpful links for DIY hobbyist playing with system on a chip (SoC) and microcontrollers

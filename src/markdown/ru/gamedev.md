@@ -3,6 +3,8 @@ path: "/ru/gamedev"
 date: "2020-03-19"
 title: "Разработка игр"
 language: "ru"
+published: 2021-10-13
+lastModified: 2021-10-13
 ---
 
 [Институт](/ru/gamedev/institute) - крутой сюжет для игры.

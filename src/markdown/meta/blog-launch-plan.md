@@ -2,6 +2,8 @@
 path: /blog/blog-launch-plan
 date: 2020-12-19
 title: Blog launch plan
+published: 2021-11-13
+lastModified: 2021-11-13
 ---
 
 I found a Blog Launch Plan on Pinterest.

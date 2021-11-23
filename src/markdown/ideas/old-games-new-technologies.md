@@ -5,6 +5,8 @@ path: /ideas/old-games-new-technologies
 tags: ["game"]
 idea: creative
 section: ideas
+published: 2021-10-28
+lastModified: 2021-10-28
 ---
 
 Recently I listed [the most addictive games](/blog/most-addictive-games) of my time. But how good they can be with new technologies?

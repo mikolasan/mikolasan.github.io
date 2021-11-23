@@ -3,6 +3,8 @@ path: "/ru/board-games/my-game"
 date: "2020-09-21"
 title: "Моя игра"
 language: "ru"
+published: 2021-10-13
+lastModified: 2021-10-31
 ---
 
 ## Сюжет

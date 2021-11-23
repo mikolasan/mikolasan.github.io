@@ -4,6 +4,8 @@ date: 2021-07-10
 title: "The best navigation on mobile"
 twitter: https://twitter.com/mikolasan/status/1413933539997986818
 tags: ["web development", "UI/UX"]
+published: 2021-10-14
+lastModified: 2021-10-14
 ---
 
 What is the best navigation option for a website on mobile device? 

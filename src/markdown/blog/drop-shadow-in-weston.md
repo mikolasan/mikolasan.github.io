@@ -2,6 +2,8 @@
 path: /blog/drop-shadow-in-weston
 date: 2021-08-19
 title: Drop shadow effect in Weston
+published: 2021-10-14
+lastModified: 2021-10-14
 ---
 
 Weston terminal has a shadow effect. 

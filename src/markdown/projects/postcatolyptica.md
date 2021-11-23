@@ -3,6 +3,8 @@ path: "/projects/postcatolyptica"
 date: "2020-03-26"
 title: "Project \"PostCATolyptica\""
 tags: ["nodejs", "react", "language processing", "fontend", "backend", "web"]
+published: 2020-03-26
+lastModified: 2020-05-25
 ---
 
 Yes, I believe that there is a cat in Apocalyptica. More interesting, how does life look like after apocalypse. Such a fantasy world that can be possible on Earth is interesting for many of us. Who didn't play games like Fallout or S.T.A.L.K.E.R.?

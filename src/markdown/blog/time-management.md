@@ -4,6 +4,8 @@ date: 2021-08-15
 title: About time management
 twitter: https://twitter.com/mikolasan/status/1426966189390155779
 tags: ["time management"]
+published: 2021-10-14
+lastModified: 2021-10-14
 ---
 
 There is no science about time management, everything is clear: you look at your tasks in the issue tracker, you say how long they would take and sum up the numbers. That seems correct, right? Right?

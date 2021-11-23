@@ -1,6 +1,8 @@
 ---
 date: 2021-05-17
 title: My pull request to logagent.js
+published: 2021-10-14
+lastModified: 2021-10-27
 ---
 
 https://github.com/sematext/logagent-js/pull/277

@@ -10,4 +10,6 @@ secondButtonLink: /ru/hydroponics
 tags: ["hydroponics"]
 language: "ru"
 draft: true
+published: 2021-10-13
+lastModified: 2021-10-13
 ---

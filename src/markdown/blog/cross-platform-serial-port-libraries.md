@@ -2,6 +2,8 @@
 path: /blog/cross-platform-serial-port-libraries
 date: 2021-08-27
 title: C++ Cross-platform Serial Port libraries
+published: 2021-10-14
+lastModified: 2021-10-14
 ---
 
 - William Woodall presents https://github.com/wjwwood/serial

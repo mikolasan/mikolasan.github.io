@@ -4,6 +4,8 @@ date: "2021-05-26"
 title: Судоку 16х16
 featuredImage: sudoku-game-2.png
 language: "ru"
+published: 2021-10-13
+lastModified: 2021-10-13
 ---
 
 ## Как у меня провалилась оценка сроков

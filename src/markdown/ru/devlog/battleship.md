@@ -4,6 +4,8 @@ date: "2020-04-06"
 title: Морской бой
 featuredImage: battleship_last_step.png
 language: "ru"
+published: 2021-10-13
+lastModified: 2021-10-13
 ---
 
 Бато йо слагет!
