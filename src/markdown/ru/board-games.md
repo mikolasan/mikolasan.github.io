@@ -20,6 +20,6 @@ lastModified: 2021-10-31
 
 ## Настольные ролевые игры
 
-### [Легенда Пяти Колец](/ru/board-games/legend-of-the-five-rings)
+### [Легенда Пяти Колец](/ru/board-games/legend-of-the-five-rings) и пересказ нашей [первой кампании](/ru/board-games/legend-of-the-five-rings-campaign)
 
 ### [Кубики для ДнД](/ru/make/resin-dice)
