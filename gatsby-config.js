@@ -2,7 +2,7 @@ require("dotenv").config()
 
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://mikolasan.github.io`,
+    siteUrl: `https://neupokoev.xyz`,
     title: `Nikolay Neupokoev - developer, traveler, snob`,
     description: `Nikolay Neupokoev - developer, traveler, snob. Personal blog.`,
     author: `@mikolasan`,
