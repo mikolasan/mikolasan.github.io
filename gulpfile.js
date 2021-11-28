@@ -74,7 +74,6 @@ function execChildProcess(options) {
     }
   }, options);
 
-  options.cmd
   const transform = function(file, enc, cb) {
     let path = file.path;
     if (path.includes(options.gitRoot)) {
@@ -86,7 +85,7 @@ function execChildProcess(options) {
         options.errorHook(error, self);
         return cb();
       }
-      options.stdoutHook(stdout, file, self);
+      options.stdoutHook(stdout, file, self, options);
       return cb();
     });
   };
@@ -102,7 +101,23 @@ const addFrontmatterLine = (name, value, file) => {
   const re = new RegExp(/---(.*?)---.*/sd); // *? - non-greedy, d - add indices to the output
   const match = chunk.match(re);
   if (match) {
-    const newFrontmatter = match[1] + `${name}: ${value}\r\n`;
+    const frontmatter = match[1];
+    const lines = frontmatter.split(/[\r\n]+/);
+    const data = lines.filter(line => line.length > 0).map(line => line.split(':'));
+    const dataIndex = data.findIndex(e => e[0].trim() === name);
+    let newFrontmatter = frontmatter;
+    // if (dataIndex !== -1) {
+    //   console.log(data[dataIndex][1], value, data[dataIndex][1].trim() !== value)
+    // }
+    if (dataIndex === -1) {
+      newFrontmatter = frontmatter + `${name}: ${value}\r\n`;
+    } else if (data[dataIndex][1].trim() !== value) {
+      const re2 = new RegExp(`${name}\\s*:\\s*([\\d-]+)`);
+      newFrontmatter = frontmatter.replace(re2, (match, p1, offset, string) => {
+        return `${name}: ${value}`
+      })
+      // console.log(frontmatter, newFrontmatter)
+    }
     const newChunk = chunk.substring(0, match.indices[1][0]) 
       + newFrontmatter
       + chunk.substring(match.indices[1][1]);
@@ -113,9 +128,12 @@ const addFrontmatterLine = (name, value, file) => {
 function setLastModifiedGitTime() {
   return execChildProcess({
     cmd: (path) => `git log -n 1 --pretty=format:%as -- ${path}`,
-    stdoutHook: (stdout, file, stream) => {
+    excludeDates: ['2021-11-23'],
+    stdoutHook: (stdout, file, stream, options) => {
       const lastModified = String(stdout).trim();
-      addFrontmatterLine('lastModified', lastModified, file);
+      if (options.excludeDates !== undefined && lastModified !== options.excludeDates[0]) {
+        addFrontmatterLine('lastModified', lastModified, file);
+      }
       stream.push(file);
     }
   });
@@ -149,7 +167,7 @@ function markdownUpdateDates(cb) {
   return src('src/markdown/**/*.md', { buffer: true })
     .pipe(addPublishedGitTime())
     .pipe(setLastModifiedGitTime())
-    .pipe(dest('noDate'))
+    .pipe(dest('src/markdown'))
 }
 
 exports.markdownAddPublished = markdownAddPublished;

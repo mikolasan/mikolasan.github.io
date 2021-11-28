@@ -2,7 +2,7 @@
 date: 2021-10-31
 title: Настолки
 published: 2021-10-28
-lastModified: 2021-10-31
+lastModified: 2021-11-26
 ---
 
 ## Моя игра
