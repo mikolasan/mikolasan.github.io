@@ -23,12 +23,13 @@ const RuFooter = ({
             <p>Нейронные сети, байесовский вывод, разношёрстный девлог, паранормальные экспедиции, настольные игры и ролёвки, пиксель арт</p>
           </div>
           <div className="bottommenu">
-            <h2>Старое Меню</h2>
             <Link to="/ru/ideas">Идеи</Link>
             <Link to="/ru/projects">Проекты</Link>
             <Link to="/ru/science">Наука</Link>
             <Link to="/ru/blog">Блог</Link>
             <Link to="/ru/cv">Резюме</Link>
+            <Link to="/ru/terms">Условия</Link>
+            <Link to="/ru/privacy">Конфиденциальность</Link>
           </div>
           <div className="bottomxsocial">
             <h2>Сети</h2>
@@ -40,9 +41,6 @@ const RuFooter = ({
           </div>
         </div>
         <div className="copyright">
-          <p>На этом сайте используется Google Analytics. Она собирает и обрабатывает данные о вас. <a href="https://policies.google.com/technologies/partner-sites">
-            Как Google использует информацию, собираемую с сайтов</a>
-          </p>
           <p>Сайт работает на генераторе статических сайтов {` `}<a href="https://www.gatsbyjs.org">Gatsby</a>. Последняя сборка: {formatDate(data.currentBuildDate.currentDate, 'ru')}</p>
           <p>© Николай Неупокоев, {new Date().getFullYear()}</p>
         </div>

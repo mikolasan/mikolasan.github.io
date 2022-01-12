@@ -77,10 +77,10 @@ class Layout extends React.Component {
                     </div>
                   ) || ''}
                 </div>
-                <div className="time-block">
+                {(published && lastUpdated) && (<div className="time-block">
                   <span>Published: <time>{published}</time></span>
                   <span>Updated: <time>{lastUpdated}</time></span>
-                </div>
+                </div>) || ''}
               </>
             )}
             {children}

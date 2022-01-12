@@ -18,10 +18,10 @@ const FeaturedImage = ({ image, title, published, lastUpdated }) => {
             <div className="featured-text">
               <h1>{title}</h1>
             </div>
-            <div className="time-block">
+            {(published && lastUpdated) && (<div className="time-block">
               <span>Published: <time>{published}</time></span>
               <span>Updated: <time>{lastUpdated}</time></span>
-            </div>
+            </div>) || ''}
           </div>
         </div>
       </div>

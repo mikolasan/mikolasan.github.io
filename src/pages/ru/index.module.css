@@ -1,3 +1,14 @@
+.newproject {
+  background-color: #c8d4ff;
+  font-size: 120%;
+  padding: 2rem;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  margin-bottom: 4rem;
+  margin-top: -2.5rem;
+  padding-top: 2.5rem;
+}
+
 .action button {
   background-color: #b8f03c;
   border: none;
@@ -11,6 +22,10 @@
   display: inline-block;
   border-radius: 0.5rem;
   cursor: pointer;
+}
+
+.hydro button {
+  background-color: #5e7ce2 
 }
 
 .ruindex {
