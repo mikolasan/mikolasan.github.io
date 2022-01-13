@@ -10,7 +10,7 @@ lastModified: 2021-11-10
 
 ## Цель
 
-Выращивать в течении зимы клубнику, чернику, помидоры, салат и килантру.
+Выращивать в течении зимы клубнику, [чернику](/ru/make/hydroponics/blackberry), помидоры, салат и килантру.
 
 ## Open source проекты
 
@@ -74,6 +74,8 @@ $26,391 pledged of $134,967 goal
 
 - MQTT, 
 - HiveMQ https://www.hivemq.com/blog/mqtt-over-websockets-with-hivemq/
+- Balena https://www.balena.io/blog/infarm-uses-balena-to-make-farm-to-table-work/
+- Node RED https://flows.nodered.org/node/node-red-node-pi-gpiod
 
 ## Система капельного орошения
 
