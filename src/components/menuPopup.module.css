@@ -23,6 +23,34 @@
   overflow-y: scroll;
 }
 
+.newtag {
+  position: absolute;
+  width: 3rem;
+  rotate: 30deg;
+  left: -2rem;
+  margin: 0 auto;
+}
+
+.featuredlink {
+  border-bottom: 1px solid #ddd;
+}
+
+.featuredlink img {
+  display: block;
+}
+
+.featuredspace {
+  width: 7rem;
+  margin: 0 auto;
+  position: relative;
+}
+
+.featuredimage {
+
+  margin: 0 auto;
+  padding: 0.85rem 0;
+}
+
 .menuitem {
   border-bottom: 1px solid #ddd;
   margin: 0 auto;
@@ -56,9 +84,9 @@
 
 .close {
   position: fixed;
-  top: 0.1rem;
+  top: 0.2rem;
   left: 1rem;
-  height: 2.7rem;
+  height: 2.6rem;
   cursor: pointer;
 }
 

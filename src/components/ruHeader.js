@@ -44,7 +44,7 @@ const Header = ({
           crumbSeparator=" "
           title=""
         />
-        <div className="nextline"></div>
+        <div className={styles.nextline}></div>
       </div>
     </div>}
   </header>

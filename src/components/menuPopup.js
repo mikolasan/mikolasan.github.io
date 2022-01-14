@@ -49,6 +49,14 @@ class MenuPopup extends React.Component {
         </div>
         <Search indices={searchIndices} />
         <div className={styles.back}>
+          <div className={styles.featuredlink}>
+            <a href="/ru/make/hydroponics">
+              <div className={styles.featuredspace}>
+                <img className={styles.newtag} src="/new.png" />
+                <img className={styles.featuredimage} src="/hydroponic.png"/>
+              </div>
+            </a>
+          </div>
           {(this.language === "en" ? this.items : this.ruItems).map(i =>
             <div className={styles.menuitem} key={i.link}>
               <a
@@ -64,6 +72,8 @@ class MenuPopup extends React.Component {
             <p className={styles.hint}>There is also an <a href="#" onClick={this.openEnVersion.bind(this)}>English version</a> of this website</p>
           )}
         </div>
+        <a href="https://www.flaticon.com/free-icons/hydroponic" title="hydroponic icons">Hydroponic icons created by Good Ware - Flaticon</a>
+        <a href="https://www.flaticon.com/free-icons/new" title="new icons">New icons created by AB Design - Flaticon</a>
       </div>
     )
   }

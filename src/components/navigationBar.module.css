@@ -55,11 +55,23 @@
   float: right;
   height: 3.2rem;
   position: relative;
-  
 }
 
 .language a {
   padding: 0;
+}
+
+.featuredlink {
+  float: left;
+  height: 100%;
+}
+
+.featuredlink a {
+  padding: 0.2rem 0.85rem;;
+}
+
+.featuredlink img {
+  height: 100%;
 }
 
 .globe {
@@ -113,13 +125,14 @@
 .burgermenu {
   height: 2.75rem;
 }
-.searchmenu {
-  width: 2.75rem;
-}
 
-.logomenu {
-  display: inline-block;
-  width: 2.75rem;
+.mobilelanguage {
+  float: right;
+  height: 2.4rem;
+  position: relative;
+}
+.mobilelanguage svg {
+  padding: 0;
 }
 
 a.activelink {
