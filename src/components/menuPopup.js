@@ -49,6 +49,7 @@ class MenuPopup extends React.Component {
         </div>
         <Search indices={searchIndices} />
         <div className={styles.back}>
+        {this.language === "ru" ? (
           <div className={styles.featuredlink}>
             <a href="/ru/make/hydroponics">
               <div className={styles.featuredspace}>
@@ -56,7 +57,7 @@ class MenuPopup extends React.Component {
                 <img className={styles.featuredimage} src="/hydroponic.png"/>
               </div>
             </a>
-          </div>
+          </div>) : ""}
           {(this.language === "en" ? this.items : this.ruItems).map(i =>
             <div className={styles.menuitem} key={i.link}>
               <a

@@ -26,7 +26,7 @@
 .newtag {
   position: absolute;
   width: 3rem;
-  rotate: 30deg;
+  transform: rotate(30deg);
   left: -2rem;
   margin: 0 auto;
 }
