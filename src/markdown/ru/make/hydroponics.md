@@ -20,18 +20,20 @@ lastModified: 2021-11-10
 Разнообразие растений не так велико в некоторых регионах. Сельское хозяйство внутри страны или импорт не справляются с запросами населения.
 
 
-## Что есть на рынке
+## Обзор ресурсов
 
-[Обзор](/ru/make/hydroponics/overview)
+- [Подборка сайтов](/ru/make/hydroponics/online-resources)
+- [Что есть на рынке](/ru/make/hydroponics/readymade)
+- [Вертикальные фермы](/ru/make/hydroponics/vertical-farming)
 
-[Вертикальные фермы](/ru/make/hydroponics/vertical-farming)
 
-## Теория
+### Теория
 
 - Инфографика в статье "Гидропоника для новичков с чего начать"  https://dzagigrow.ru/blog/
 - Правила приготовления питательного раствора https://sadobzor.ru/gidroponika/udobreniya-dlya-gidroponiki.htmlgidroponika-dlya-novichkov-s-chego-nachat/
 - [Nutrient Film Technique](/ru/make/hydroponics/nutrient-film-technique)
 - Система капельного орошения https://floragrowing.com/ru/encyclopedia/sistema-kapelnogo-orosheniya
+
 
 ## Собираю свою систему
 
@@ -49,3 +51,4 @@ lastModified: 2021-11-10
 ## Часто задаваемые вопросы
 
 - сколько ватт лампочка потребляет за час
+- Как сделать водяной насос тише

@@ -1,16 +1,7 @@
 ---
-path: "/ru/hydroponics/overview"
-date: "2021-01-20"
-title: "Обзор материалов по теме Гидропоника"
-tags: ["hydroponics"]
-language: "ru"
-published: 2021-10-13
-lastModified: 2021-11-10
+date: 2022-01-15
+title: Подборка сайтов
 ---
-
-## Цель
-
-Выращивать в течении зимы клубнику, [чернику](/ru/make/hydroponics/blackberry), помидоры, салат и килантру.
 
 ## Open source проекты
 
@@ -28,7 +19,13 @@ lastModified: 2021-11-10
 - [The Farmstand](https://www.lettucegrow.com/shop) - дизайн, сайт со всем необходимым
 - [FarmBets](https://www.microsoft.com/en-us/garage/wall-of-fame/farmbeats/) https://www.microsoft.com/en-us/research/project/farmbeats-iot-agriculture/ https://novosibirsk.tara.ru/catalog/plastikovye_yashchiki/futura_safe_pro/
 
-## Kickstarter проекты
+
+## Социальные сети
+
+- Реддит https://www.reddit.com/r/hydro
+
+
+## Kickstarter
 
 Первые два: маленькие - удались
 
@@ -48,7 +45,7 @@ $23,662 pledged of $20,000 goal
 
 261 backers
 
-## MEG
+### MEG
 
 Большие запросы, провалился
 
@@ -62,24 +59,14 @@ $26,391 pledged of $134,967 goal
 
 Я сходу могу сказать, что за ошибка в их питче. Ведь ясно же, почему она не цепляет и их проект не взлетел. А еще цена этого ящика превышает $5000 - это вызов, я смогу построить такой же ящик за много меньшие... просто за меньшие... просто небольшие деньги.
 
-## 3D печатные проекты
 
-Водопадная система (очень шумная, поэтому есть вариант по типу [проточной тонкослойной подачи (nutrient film technique)](/ru/hydroponics-nutrient-film-technique) https://www.reddit.com/r/hydro/comments/laa76h/i_wanted_to_share_a_project_of_mine_an_opensource/)
+## Сайты в рунете
 
-- [Модульные башни](https://www.thingiverse.com/thing:2403922) Немного видео https://www.youtube.com/channel/UCL1WZQKbyrSAYk2y8n7KtSg?view_as=subscriber
-- [Улучшенная(?) версия](https://www.thingiverse.com/thing:3405964)
-
-
-## Технологии в контроллере
-
-- MQTT, 
-- HiveMQ https://www.hivemq.com/blog/mqtt-over-websockets-with-hivemq/
-- Balena https://www.balena.io/blog/infarm-uses-balena-to-make-farm-to-table-work/
-- Node RED https://flows.nodered.org/node/node-red-node-pi-gpiod
-
-## Система капельного орошения
-
-https://leplants.ru/tsvetovodstvo/sistemy-kapelnogo-orosheniya-v-gidroponike-drip-systems/
+- Дачáру https://dacharu.ru/tovary-dlya-doma/vertikalnoe-ozelenenie/intellektualnaya-plantaciya-na-12-mest
+- Ля плэнтс https://leplants.ru/tsvetovodstvo/sistemy-kapelnogo-orosheniya-v-gidroponike-drip-systems/
 https://www.growertoday.com/top-feed-drip-system-hydroponics/
+- Эко техника https://ecotechnica.com.ua/tag/vertikalnaya-ferma.html
+- Дзагигов https://dzagigrow.ru/blog/
+- Сад-обзор https://sadobzor.ru/gidroponika/udobreniya-dlya-gidroponiki.htmlgidroponika-dlya-novichkov-s-chego-nachat/
+- Флора гробинг https://floragrowing.com/ru/encyclopedia/sistema-kapelnogo-orosheniya
 
-[Своё](/ru/hydroponics-drip-system)
