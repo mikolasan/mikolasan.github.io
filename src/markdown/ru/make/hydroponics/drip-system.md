@@ -8,6 +8,10 @@ published: 2021-10-13
 lastModified: 2021-11-10
 ---
 
+
+Drip system - системы капельного орошения
+
+
 Материалы:
 
 - полипропилен
@@ -21,3 +25,8 @@ lastModified: 2021-11-10
 https://aliexpress.ru/item/2010554488.html набор (распределительная система)
 https://aliexpress.ru/item/32868257464.html система капельного орошения (drippers / капельники?)
 https://aliexpress.ru/item/4000784260626.html отдельно насадки для капельного полива
+
+
+## Ссылки по теме
+
+- https://www.growertoday.com/top-feed-drip-system-hydroponics/

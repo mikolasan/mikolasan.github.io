@@ -79,3 +79,37 @@ There was almost 3 days burn-in period before the sensor stopped drifting. Now i
 
 [Али](https://s.click.aliexpress.com/e/_AmOv9C)
 [Даташит](https://cdn.compacttool.ru/downloads/CCS811_Datasheet.pdf)
+
+
+
+## Другие варианты
+
+**SCD30 Sensirion**
+- [Сайт производителя](https://www.sensirion.com/en/environmental-sensors/carbon-dioxide-sensors/carbon-dioxide-sensors-scd30/)
+- [Купить на али](https://aliexpress.ru/item/1005001392172293.html)
+
+**AMS IAQ-CORE C**
+- [Купить на али](https://aliexpress.ru/item/33044332335.html)
+- [Datasheet](https://www.compel.ru/item-pdf/c232e7e7dbddb20824a26cdc0f748bed/pn/ams~iaq-core-c.pdf)
+
+**Sense Air**
+- [Сайт производителя](https://senseair.com/products/size-counts/s8-residential/)
+- [Купить на али](https://aliexpress.ru/item/32863793412.html)
+
+**Figaro TGS4160**
+
+**WINSEN MG812**
+- [Купить](https://www.chipdip.ru/product0/8000978122)
+- [Datasheet](https://data.electronshik.ru/z/Datasheet/M/mg812-co2-manual-v1_1.pdf)
+
+**WINSEN MG811**
+- [Купить на али](https://aliexpress.ru/item/1005002212335911.html)
+
+**CCS811B**
+- [Купить на али](https://aliexpress.ru/item/1005001376765343.html)
+- [Купить на али 2](https://aliexpress.ru/item/4000073907942.html)
+- [Datasheet](https://cdn.compacttool.ru/downloads/CCS811_Datasheet.pdf)
+
+По поводу последнего датчика CCS811B: нельзя чтобы датчик лежал долго без использования.
+
+> The sensors resistance will drift reversibly if it’s stored for a long time without electrify, this drift is related with storage conditions. Sensors should be stored in airproof bag without volatile silicon compound. For the sensors with long time storage but no electrify, they need to belong galvanized aging time for stability before using. 

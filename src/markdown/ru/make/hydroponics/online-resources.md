@@ -14,10 +14,29 @@ title: Подборка сайтов
 - [Mycodo](https://github.com/kizniche/Mycodo/) - очень популярный репозиторий, один возможный недостаток - это лицензия, но хорошие коммерчиские проекты это е останавливает. На [его сайте](https://kylegabriel.com/2020/06/automated-hydroponic-system-build.html) есть подробная инструкция по постройке гидропоники со списком всех необходимых компонентов.
 - [Farm bot](https://farm.bot/)
 
+
 ## Конкуренты
 
 - [The Farmstand](https://www.lettucegrow.com/shop) - дизайн, сайт со всем необходимым
 - [FarmBets](https://www.microsoft.com/en-us/garage/wall-of-fame/farmbeats/) https://www.microsoft.com/en-us/research/project/farmbeats-iot-agriculture/ https://novosibirsk.tara.ru/catalog/plastikovye_yashchiki/futura_safe_pro/
+
+
+## Облачные решения
+
+Хранения лдогов с датчиков и советы из облака = [Bitponics](https://www.bitponics.com/pricing/), [Growlink](https://cropsteering.growlink.com/)
+
+> Pricing
+> 
+> Free Up to 50 log entries per day. 
+> Email notifications when your garden needs attention. Upload & share up to 500 Photos 6 months of grow history storage.
+> 
+> How It Works
+> 
+> You can enter your own sensor readings or connect your own automation device to continuously monitor your garden’s environment.
+> The Bitponics Cloud runs your personal Grow Plan, crowd-sourced blueprints for full seasons of garden care. 
+> Grow Plan reminders notify you when to take action.
+> And if you have a connected device, the Bitponics Cloud can record real-time sensor readings and automatically turn connected accessories on & off.
+> Manage your garden from any web browser. Track progress over time and swap tips with everyone in the Bitponics community.
 
 
 ## Социальные сети
@@ -36,6 +55,8 @@ title: Подборка сайтов
 $9,218 pledged of $5,000 goal
 
 31 backers
+
+Еще ссылки [1](https://hydro.bot/) [2](https://www.hackster.io/news/hydrobot-open-source-hydroponics-controller-8fb206137e0d) [3](https://www.reddit.com/r/hydro/comments/cxmma5/i_built_an_open_source_automation_system_for/)
 
 ### Bitponics
 
@@ -59,6 +80,10 @@ $26,391 pledged of $134,967 goal
 
 Я сходу могу сказать, что за ошибка в их питче. Ведь ясно же, почему она не цепляет и их проект не взлетел. А еще цена этого ящика превышает $5000 - это вызов, я смогу построить такой же ящик за много меньшие... просто за меньшие... просто небольшие деньги.
 
+## Сайты
+
+- Экология в открытом доступе https://wiki.opensourceecology.org/wiki/Hydroponics
+- Прорасти Сегодня https://www.growertoday.com/top-feed-drip-system-hydroponics/
 
 ## Сайты в рунете
 
@@ -70,3 +95,16 @@ https://www.growertoday.com/top-feed-drip-system-hydroponics/
 - Сад-обзор https://sadobzor.ru/gidroponika/udobreniya-dlya-gidroponiki.htmlgidroponika-dlya-novichkov-s-chego-nachat/
 - Флора гробинг https://floragrowing.com/ru/encyclopedia/sistema-kapelnogo-orosheniya
 
+
+## YouTube
+
+Что посмотреть на Ютюб на тему гидропоники:
+
+- https://www.youtube.com/watch?v=TS5CbtJNr40&t=546s
+- https://www.youtube.com/watch?v=jAUv5YxIkS4
+- https://www.youtube.com/watch?v=jG_p1xrne3Q
+- https://www.youtube.com/watch?v=H4gsnFJRAB0&t=76s
+- https://www.youtube.com/watch?v=VR0CZyN-XFI&t=1218s
+- https://www.youtube.com/watch?v=1IwKWYNycj8
+- https://www.youtube.com/watch?v=BqYrAWssrrY&t=623s
+- https://www.youtube.com/watch?v=FCivsotZEjk

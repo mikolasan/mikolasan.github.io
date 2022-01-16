@@ -33,7 +33,7 @@ lastModified: 2021-11-10
 - Правила приготовления питательного раствора https://sadobzor.ru/gidroponika/udobreniya-dlya-gidroponiki.htmlgidroponika-dlya-novichkov-s-chego-nachat/
 - [Nutrient Film Technique](/ru/make/hydroponics/nutrient-film-technique)
 - Система капельного орошения https://floragrowing.com/ru/encyclopedia/sistema-kapelnogo-orosheniya
-
+- [Чистая вода](/ru/make/hydroponics/clean-water)
 
 ## Собираю свою систему
 
@@ -43,9 +43,16 @@ lastModified: 2021-11-10
 
 - [Система капельного орошения](/ru/make/hydroponics/drip-system)
 - [Все о том, как течет вода](/ru/make/hydroponics/water-flow)
+- Компоненты
+  - [Воздушный насос](/ru/make/hydroponics/air-pump)
+  - [Корпус](/ru/make/hydroponics/frame)/ трубы для посадки/ стеллаж
 - [Сенсоры](/ru/make/hydroponics/sensors)
-  - [Кислотность воды](/ru/make/hydroponics/sensors/ph)
-  - [Сенсор углекислого газа](/ru/make/hydroponics/sensors/co2)
+  - [PH кислотность воды](/ru/make/hydroponics/sensors/ph)
+  - [CO2 углекислый газ](/ru/make/hydroponics/sensors/co2)
+  - [Давление](/ru/make/hydroponics/sensors/pressure)
+  - [Влажность](/ru/make/hydroponics/sensors/humidity)
+  - [Температура](/ru/make/hydroponics/sensors/temperature)
+  - [Датчик солей](/ru/make/hydroponics/sensors/tds)
 
 
 ## Часто задаваемые вопросы

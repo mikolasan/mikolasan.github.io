@@ -11,3 +11,8 @@ title: Программная часть
 - HiveMQ https://www.hivemq.com/blog/mqtt-over-websockets-with-hivemq/
 - Balena https://www.balena.io/blog/infarm-uses-balena-to-make-farm-to-table-work/
 - Node RED https://flows.nodered.org/node/node-red-node-pi-gpiod
+
+
+А есть не так чтобы разрекламированные, а немного эзотеричные проекты. 
+
+Например, виртуальная машина в микропроцессоре для незаметного накатывания обновлений прошивки. Проект называется [Туит](https://blog.toit.io/why-doesnt-v8-fit-on-my-microcontroller-71dc6e2d8f5c)
