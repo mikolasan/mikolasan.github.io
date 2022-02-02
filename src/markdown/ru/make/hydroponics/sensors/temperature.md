@@ -6,6 +6,11 @@ title: Датчик температуры
 Похоже это самый крутой обзор/сравнение доступных на рынке датчиков температуры: https://randomnerdtutorials.com/dht11-vs-dht22-vs-lm35-vs-ds18b20-vs-bme280-vs-bmp180/
 где в наглядном графике показано, какие данные вы будете получать от сенсора.
 
+![График показания разеых датчиков температур](temperature-sensors.webp)
+
+Из которого следует, что я выбираю **BME280** без каких либо сомнений.
+
+
 **ASAIR AHT10**
 - [Обзор](https://elchupanibrei.livejournal.com/53764.html)
 - [Datasheet](https://server4.eca.ir/eshop/AHT10/Aosong_AHT10_en_draft_0c.pdf)

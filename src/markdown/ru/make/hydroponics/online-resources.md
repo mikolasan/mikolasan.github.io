@@ -17,13 +17,14 @@ title: Подборка сайтов
 
 ## Конкуренты
 
+- [Yasai Monogatari Hydroponic Grow Box](https://www.japantrendshop.com/yasai-monogatari-hydroponic-grow-box-p-3936.html) - японская чудо коробочка с приятным внешним видом
 - [The Farmstand](https://www.lettucegrow.com/shop) - дизайн, сайт со всем необходимым
 - [FarmBets](https://www.microsoft.com/en-us/garage/wall-of-fame/farmbeats/) https://www.microsoft.com/en-us/research/project/farmbeats-iot-agriculture/ https://novosibirsk.tara.ru/catalog/plastikovye_yashchiki/futura_safe_pro/
 
 
 ## Облачные решения
 
-Хранения лдогов с датчиков и советы из облака = [Bitponics](https://www.bitponics.com/pricing/), [Growlink](https://cropsteering.growlink.com/)
+Хранения логов с датчиков и советы из облака = [Bitponics](https://www.bitponics.com/pricing/), [Growlink](https://cropsteering.growlink.com/)
 
 > Pricing
 > 

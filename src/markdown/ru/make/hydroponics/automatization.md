@@ -7,3 +7,10 @@ date: 2022-01-15
 
 Это если коротко.
 
+![Home Assistant example](home-assistant-example-1.png)
+
+![Home Assistant example](home-assistant-example-2.png)
+
+![Home Assistant example](home-assistant-example-3.png)
+
+[Как сделать экран красивым?](/ru/make/hydroponics/dashboard-ui)

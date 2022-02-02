@@ -77,7 +77,7 @@ class Layout extends React.Component {
                     </div>
                   ) || ''}
                 </div>
-                {(published && lastUpdated) && (<div className="time-block">
+                {(published && lastUpdated) && (<div className="mobile-time-block">
                   <span>Published: <time>{published}</time></span>
                   <span>Updated: <time>{lastUpdated}</time></span>
                 </div>) || ''}

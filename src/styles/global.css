@@ -106,6 +106,10 @@ main {
   font-weight: 700;
 }
 
+.mobile-time-block {
+  display: none;
+}
+
 .featured-area {
   margin: 0 auto 0;
   width: 100%;
@@ -969,7 +973,7 @@ a:active {
     display: inherit;
     margin-bottom: 1rem;
   }
-  .time-block {
+  .mobile-time-block {
     position: inherit;
     border: none;
     padding: 0;

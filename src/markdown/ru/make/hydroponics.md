@@ -45,7 +45,9 @@ lastModified: 2021-11-10
 - [Все о том, как течет вода](/ru/make/hydroponics/water-flow)
 - Компоненты
   - [Воздушный насос](/ru/make/hydroponics/air-pump)
+  - [Водяной насос](/ru/make/hydroponics/water-pump)
   - [Корпус](/ru/make/hydroponics/frame)/ трубы для посадки/ стеллаж
+  - [Экран с показаниями](/ru/make/hydroponics/dashboard-ui)
 - [Сенсоры](/ru/make/hydroponics/sensors)
   - [PH кислотность воды](/ru/make/hydroponics/sensors/ph)
   - [CO2 углекислый газ](/ru/make/hydroponics/sensors/co2)
@@ -59,3 +61,4 @@ lastModified: 2021-11-10
 
 - сколько ватт лампочка потребляет за час
 - Как сделать водяной насос тише
+- Нужно ли сливать питательный раствор и замешивать его заново? [Вот заметка]()
