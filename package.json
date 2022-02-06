@@ -30,6 +30,7 @@
     "gatsby-source-filesystem": "^4.5.1",
     "gatsby-transformer-remark": "^5.5.1",
     "gatsby-transformer-sharp": "^4.5.0",
+    "lodash": "^4.17.21",
     "node-sass": "^7.0.1",
     "prismjs": "^1.26.0",
     "prop-types": "^15.8.1",

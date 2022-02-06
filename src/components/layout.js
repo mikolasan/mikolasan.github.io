@@ -58,31 +58,27 @@ class Layout extends React.Component {
         <main>
           <div className="left-section"></div>
           <div className="main-section">
-            {!featuredImage && (
-              <>
-                <div className="mobile-header">
-                  {bannerParagraph}
-                  {(buttonText && buttonLink) && (
-                    <div className="featured-action">
-                      <a href={buttonLink}>
-                        <button className="action-button">{buttonText}</button>
-                      </a>
-                    </div>
-                  ) || ''}
-                  {(secondButtonText && secondButtonLink) && (
-                    <div className="featured-second-action">
-                      <a href={secondButtonLink}>
-                        <button className="second-action-button">{secondButtonText}</button>
-                      </a>
-                    </div>
-                  ) || ''}
+            <div className="mobile-header">
+              {bannerParagraph}
+              {(buttonText && buttonLink) && (
+                <div className="featured-action">
+                  <a href={buttonLink}>
+                    <button className="action-button">{buttonText}</button>
+                  </a>
                 </div>
-                {(published && lastUpdated) && (<div className="mobile-time-block">
-                  <span>Published: <time>{published}</time></span>
-                  <span>Updated: <time>{lastUpdated}</time></span>
-                </div>) || ''}
-              </>
-            )}
+              ) || ''}
+              {(secondButtonText && secondButtonLink) && (
+                <div className="featured-second-action">
+                  <a href={secondButtonLink}>
+                    <button className="second-action-button">{secondButtonText}</button>
+                  </a>
+                </div>
+              ) || ''}
+            </div>
+            {(published && lastUpdated) && (<div className="mobile-time-block">
+              <span>Published: <time>{published}</time></span>
+              <span>Updated: <time>{lastUpdated}</time></span>
+            </div>) || ''}
             {children}
             {showLikes && (
               <>

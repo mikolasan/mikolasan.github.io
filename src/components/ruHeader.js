@@ -5,7 +5,7 @@ import Banner from "../components/banner"
 import NavigationBar from "../components/ruNavigationBar"
 import * as styles from "./header.module.css"
 
-const Header = ({
+const RuHeader = ({
   section,
   buttonText,
   buttonLink,
@@ -14,28 +14,40 @@ const Header = ({
   featuredImage,
   bannerParagraph,
   title,
-  date,
+  published,
+  lastUpdated,
   crumbs
 }) => {
-  return (
-  <header>
-    <NavigationBar active={section} />
-    {featuredImage
-    && <FeaturedImage
-          image={featuredImage}
-          title={title}
-          date={date}
-        />
-    || <Banner
+  const wideImage = (
+    <FeaturedImage
+      image={featuredImage}
+      title={title}
+      buttonText={buttonText}
+      buttonLink={buttonLink}
+      secondButtonText={secondButtonText}
+      secondButtonLink={secondButtonLink}
+      published={published}
+      lastUpdated={lastUpdated}
+    >
+      {bannerParagraph}
+    </FeaturedImage>
+  )
+  const banner = (
+    <Banner
         buttonText={buttonText}
         buttonLink={buttonLink}
         secondButtonText={secondButtonText}
         secondButtonLink={secondButtonLink}
+        published={published}
+        lastUpdated={lastUpdated}
       >
         {bannerParagraph}
       </Banner>
-    }
-    <time className="post-date">{date}</time>
+  )
+  return (
+  <header>
+    <NavigationBar active={section} />
+    {featuredImage && wideImage || banner}
     {crumbs && 
     <div className={styles.breadcrumbs}>
       <div className={styles.centerpart}>
@@ -50,4 +62,4 @@ const Header = ({
   </header>
 )}
 
-export default Header
+export default RuHeader

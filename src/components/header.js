@@ -22,11 +22,18 @@ const Header = ({
     <FeaturedImage
       image={featuredImage}
       title={title}
+      buttonText={buttonText}
+      buttonLink={buttonLink}
+      secondButtonText={secondButtonText}
+      secondButtonLink={secondButtonLink}
       published={published}
       lastUpdated={lastUpdated}
-    />
+    >
+      {bannerParagraph}
+    </FeaturedImage>
+    
   )
-  const banner = bannerParagraph && (
+  const banner = (
     <Banner
       buttonText={buttonText}
       buttonLink={buttonLink}

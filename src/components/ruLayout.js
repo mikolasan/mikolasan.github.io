@@ -7,19 +7,21 @@ import Title from "../components/title"
 
 const RuLayout = ({
   children,
+  title,
+  published,
+  lastUpdated,
+  section,
   showLikes,
   crumbs,
   languageName,
   anotherLanguageLink,
-  title,
-  section,
   buttonText,
   buttonLink,
   secondButtonText,
   secondButtonLink,
   featuredImage,
   bannerParagraph,
-  date
+  recentArticles
 }) => (
   <>
     <Title title={title + " - N"} />
@@ -30,14 +32,34 @@ const RuLayout = ({
       secondButtonLink={secondButtonLink}
       featuredImage={featuredImage}
       bannerParagraph={bannerParagraph}
-      date={date}
+      title={title}
+      published={published}
+      lastUpdated={lastUpdated}
       crumbs={crumbs}
     />
     <main>
       <div className="main-section">
-        {!featuredImage && (
-          <div className="mobile-header">{bannerParagraph}</div>
-        )}
+        <div className="mobile-header">
+          {bannerParagraph}
+          {(buttonText && buttonLink) && (
+            <div className="featured-action">
+              <a href={buttonLink}>
+                <button className="action-button">{buttonText}</button>
+              </a>
+            </div>
+          ) || ''}
+          {(secondButtonText && secondButtonLink) && (
+            <div className="featured-second-action">
+              <a href={secondButtonLink}>
+                <button className="second-action-button">{secondButtonText}</button>
+              </a>
+            </div>
+          ) || ''}
+        </div>
+        {(published && lastUpdated) && (<div className="mobile-time-block">
+          <span>Опубликовано: <time>{published}</time></span>
+          <span>Последние правки: <time>{lastUpdated}</time></span>
+        </div>) || ''}
         {children}
         {showLikes && (
           <aside>

@@ -1,6 +1,14 @@
 ---
 date: 2022-01-16
 title: Датчик влажности
+subtitle: "Статья из цикла про гидропонику"
+buttonText: Сенсоры
+buttonLink: /ru/make/hydroponics/sensors
+secondButtonText: Гидропоника
+secondButtonLink: /ru/make/hydroponics
+tags: ["hydroponics"]
+language: "ru"
+
 ---
 
 Температура / влажность

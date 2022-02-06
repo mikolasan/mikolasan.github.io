@@ -24,8 +24,8 @@ lastModified: 2021-11-10
 
 ## Качество воды (TDS)
 
-https://aliexpress.ru/item/4001010691199.html
-https://aliexpress.ru/item/33050818416.html
+- https://aliexpress.ru/item/4001010691199.html
+- https://aliexpress.ru/item/33050818416.html
 
 
 ## Температура / влажность / давление

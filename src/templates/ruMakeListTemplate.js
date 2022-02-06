@@ -12,8 +12,8 @@ const RuMake = ({ data, pageContext }) => (
     anotherLanguageLink="/"
     buttonText="Гидропоника"
     buttonLink="/ru/make/hydroponics"
-    secondButtonText="Ютюб"
-    secondButtonLink="/ru/youtube"
+    secondButtonText="Кубики"
+    secondButtonLink="/ru/make/resin-dice"
     bannerParagraph={[
       <h1>Мастерская</h1>,
       <p>Встраиваемые системы, маленькие компьютеры, пайка компонентов, 3Д печать - вот это всё</p>

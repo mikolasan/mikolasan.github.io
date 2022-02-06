@@ -2,7 +2,37 @@ import React from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
 import MainImage from "../components/mainImage"
 
-const FeaturedImage = ({ image, title, published, lastUpdated }) => {
+const FeaturedImage = ({
+  children,
+  image,
+  title,
+  buttonText,
+  buttonLink,
+  secondButtonText,
+  secondButtonLink,
+  published,
+  lastUpdated
+}) => {
+  const button = (buttonText && buttonLink) && (
+    <div className="featured-action">
+      <a href={buttonLink}>
+        <button className="action-button">{buttonText}</button>
+      </a>
+    </div>
+  ) || ''
+  const secondButton = (secondButtonText && secondButtonLink) && (
+    <div className="featured-second-action">
+      <a href={secondButtonLink}>
+        <button className="second-action-button">{secondButtonText}</button>
+      </a>
+    </div>
+  ) || ''
+  const timeBlock = (published && lastUpdated) && (<div className="time-block">
+      <span>Published: <time>{published}</time></span>
+      <span>Updated: <time>{lastUpdated}</time></span>
+    </div>
+  ) || ''
+
   if (image) {
     return (
       <div className="banner">
@@ -16,12 +46,11 @@ const FeaturedImage = ({ image, title, published, lastUpdated }) => {
         <div className="banner-text">
           <div className="featured-area">
             <div className="featured-text">
-              <h1>{title}</h1>
+              {children}
             </div>
-            {(published && lastUpdated) && (<div className="time-block">
-              <span>Published: <time>{published}</time></span>
-              <span>Updated: <time>{lastUpdated}</time></span>
-            </div>) || ''}
+            {timeBlock}
+            {button}
+            {secondButton}
           </div>
         </div>
       </div>

@@ -1,4 +1,5 @@
 require("dotenv").config()
+const _ = require("lodash");
 
 module.exports = {
   siteMetadata: {
@@ -15,7 +16,9 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 800,
+              maxWidth: 650,
+              linkImagesToOriginal: true,
+              wrapperStyle: fluidResult => `flex:${_.round(fluidResult.aspectRatio, 2)};`,
             },
           },
           {

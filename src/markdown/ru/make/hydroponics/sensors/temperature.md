@@ -1,6 +1,14 @@
 ---
 date: 2022-01-16
 title: Датчик температуры
+subtitle: "Статья из цикла про гидропонику"
+buttonText: Сенсоры
+buttonLink: /ru/make/hydroponics/sensors
+secondButtonText: Гидропоника
+secondButtonLink: /ru/make/hydroponics
+tags: ["hydroponics"]
+language: "ru"
+
 ---
 
 Похоже это самый крутой обзор/сравнение доступных на рынке датчиков температуры: https://randomnerdtutorials.com/dht11-vs-dht22-vs-lm35-vs-ds18b20-vs-bme280-vs-bmp180/
