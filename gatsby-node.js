@@ -222,7 +222,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const ruMakeResult = await graphql(`
     {
       allMarkdownRemark(
-        filter: {fileAbsolutePath: { regex: "/\/ru\/make\//" }}
+        filter: {fileAbsolutePath: { regex: "/\/ru\/make\/(?!hydroponics)/" }}
       ) {
         nodes {
           fileAbsolutePath

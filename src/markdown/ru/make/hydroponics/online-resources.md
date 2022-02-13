@@ -3,6 +3,10 @@ date: 2022-01-15
 title: Подборка сайтов
 ---
 
+## 
+
+- Чап https://chap-solutions.co.uk/projects/
+
 ## Open source проекты
 
 *hydroponic open source*
@@ -85,6 +89,11 @@ $26,391 pledged of $134,967 goal
 
 - Экология в открытом доступе https://wiki.opensourceecology.org/wiki/Hydroponics
 - Прорасти Сегодня https://www.growertoday.com/top-feed-drip-system-hydroponics/
+
+### Статьи
+
+- Ловля улиток - задача не простая - потребовалось 20 лет, чтобы создать робота способного сделать это https://catriona-campbell.medium.com/slugbot-how-ai-is-addressing-a-slimy-problem-8c60b7277c41
+- https://www.cla.org.uk/news/tomorrows-world/
 
 ## Сайты в рунете
 

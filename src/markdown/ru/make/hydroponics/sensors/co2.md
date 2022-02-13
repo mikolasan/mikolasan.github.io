@@ -60,16 +60,6 @@ Technical Parameters
  
 </blockquote>
 
-### PINOUTS
-
-- GND - ground
-- VCC - Input power（5V）
-- SDA - I2C data pin
-- SCL - I2C clock pin
-- RST - Reset pin: connect to ground, sensor will automatically reset.
-- WAKE - WAKE pin should connect to ground to communicate with sensor conveniently
-- INT - This is the interrupt output pin that detects when a new reading is ready or the reading becomes too high or too low. 
-
 ### Комменты
 
 > There was almost 3 days burn-in period before the sensor stopped drifting. Now it seems to read the value well, although I have no way of testing its precision. It also requires 20 minutes of preheat when cold started and baseline calibration.
@@ -81,13 +71,96 @@ Technical Parameters
 
 ## Подключение
 
-5 вольт можно взять с пинов 2 и 4 на малинке
+### PINOUTS
+
+- GND - ground
+- VCC - Input power（5V）
+- SDA - I2C data pin
+- SCL - I2C clock pin
+- RST - Reset pin: connect to ground, sensor will automatically reset.
+- WAKE - WAKE pin should connect to ground to communicate with sensor conveniently
+- INT - This is the interrupt output pin that detects when a new reading is ready or the reading becomes too high or too low. 
+
+### Подключение к Малинке
+
+**VCC, Питание.** 5 вольт можно взять с пинов 2 и 4 на малинке.
 
 ![5-ти вольтовый пин](./5v-Power-Raspberry-Pi.png)
 
 Заметка: использую сайт https://pinout.xyz/pinout/5v_power, который показывает распиновку и подсказки по каждому пину.
 
+Но вот вопрос, а нужно ли подавать 5 вольт? Ведь по даташиту основной чип может принять максимум 3,3 вольта. Протокол общение с хостом - это I2C. Протокол может работать на любом напряжении, но оно должно быть одинаковым у всех устройств. 
 
+Плата рассчитана для подключения к Ардуино и только поэтому в спецификации указано 5V. Давайте взглянем на платку внимательно и изучим первый компонент, который встречается нам по линии VCC. После конденсатора это будет стабилизатор напряжения промаркированный как LPFG, который соответствует модели [LP2985](https://www.ti.com/lit/ds/symlink/lp2985a.pdf) для 3,3 вольта.
+
+![Подключаем к пинам на платке](./co2-5.jpg)
+
+![Подключаем к пинам на Малинке](./co2-6.jpg)
+
+Подтягивающие резисторы присутствуют как в Малинке так и на платке сенсора. Значит SDA между платкой и контроллером соединяем вместе. SCL соединяем с SCL тоже. WAKE идет на общий, чтобы активировать платку.
+
+## Скрипт для Малинки
+
+Допустим, что на Малинке уже [стоит система](/ru/make/raspberry-pi-setup). Вот скрипт для Малинки на Питоне
+
+```python
+
+```
+
+## Подключение к Ардуино
+
+## Скетч для Ардуино
+
+```c
+#include <CCS811.h>
+
+/*
+ * IIC address default 0x5A, the address becomes 0x5B if the ADDR_SEL is soldered.
+ */
+//CCS811 sensor(&Wire, /*IIC_ADDRESS=*/0x5A);
+CCS811 sensor;
+
+void setup(void)
+{
+    Serial.begin(115200);
+    /*Wait for the chip to be initialized completely, and then exit*/
+    while(sensor.begin() != 0){
+        Serial.println("failed to init chip, please check if the chip connection is fine");
+        delay(1000);
+    }
+    /**
+     * @brief Set measurement cycle
+     * @param cycle:in typedef enum{
+     *                  eClosed,      //Idle (Measurements are disabled in this mode)
+     *                  eCycle_1s,    //Constant power mode, IAQ measurement every second
+     *                  eCycle_10s,   //Pulse heating mode IAQ measurement every 10 seconds
+     *                  eCycle_60s,   //Low power pulse heating mode IAQ measurement every 60 seconds
+     *                  eCycle_250ms  //Constant power mode, sensor measurement every 250ms
+     *                  }eCycle_t;
+     */
+    sensor.setMeasCycle(sensor.eCycle_250ms);
+}
+void loop() {
+  delay(1000);
+    if(sensor.checkDataReady() == true){
+        Serial.print("CO2: ");
+        Serial.print(sensor.getCO2PPM());
+        Serial.print("ppm, TVOC: ");
+        Serial.print(sensor.getTVOCPPB());
+        Serial.println("ppb");
+        
+    } else {
+        Serial.println("Data is not ready!");
+    }
+    /*!
+     * @brief Set baseline
+     * @param get from getBaseline.ino
+     */
+    sensor.writeBaseLine(0x847B);
+    //delay cannot be less than measurement cycle
+    //delay(1000);
+}
+```
 
 ## Ссылки
 
