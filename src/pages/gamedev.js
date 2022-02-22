@@ -15,12 +15,23 @@ const Projects = ({ pageContext }) => (
     <div className="ideacards">
       <div className="ideacard">
         <a href="/gamedev/fire">
-          <img src="/images/projects/fire.png" alt="Blue monster"/>
+          <img src="/images/projects/fire.jpg" alt="Pink Cadillac"/>
         </a>
         <div className="idea-card-container">
           <h3><b>Fire!</b></h3>
           <p></p>
           <p><a href="/gamedev/fire">Read more</a></p>
+        </div>
+      </div>
+
+      <div className="ideacard">
+        <a href="/gamedev/tanks">
+          <img src="/images/projects/tanks.png" alt="University lab project"/>
+        </a>
+        <div className="idea-card-container">
+          <h3><b>Tanks (working title)</b></h3>
+          <p></p>
+          <p><a href="/gamedev/tanks">Read more</a></p>
         </div>
       </div>
 

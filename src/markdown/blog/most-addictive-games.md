@@ -31,6 +31,6 @@ Very complex puzzle-muscle game about ninja and his hard way through very gray g
 
 ## 4. Crimsonland
 
-Very high pace top view shooter. It's almost the same fun as Serious Sam: Second Encounter, but darker.
+Very high pace top view shooter. It's almost the same fun as Serious Sam: Second Encounter, but darker. It influenced me a lot during creation of [Fire!](/gamedev/fire)
 
 ![Screenshot of Crimsonland](crimsonland.jpg)

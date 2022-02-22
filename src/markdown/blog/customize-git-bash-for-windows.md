@@ -71,7 +71,11 @@ then
 fi
 ```
 
-I remove the new line - it breaks some output from git, so be ready for messy outcome after commits. Also I remove useless for me `SYSTEM` part. Here is my resulting script
+I remove the new line - it breaks some output from git, so be ready for messy outcome after commits. 
+
+![no newlines](./git-bash-one-line-mess.png)
+
+Also I remove useless for me `SYSTEM` part. Here is my resulting script
 
 ```bash
 if test -f /etc/profile.d/git-sdk.sh

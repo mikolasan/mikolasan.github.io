@@ -2,6 +2,7 @@
 path: /make/free-circuit-drawing-software
 date: 2021-09-17
 title: Free circuit drawing software
+featuredImage: circuit-diagram-thumbnail.jpg
 published: 2021-10-28
 lastModified: 2021-11-07
 ---

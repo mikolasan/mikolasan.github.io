@@ -104,7 +104,7 @@ https://www.growertoday.com/top-feed-drip-system-hydroponics/
 - Дзагигов https://dzagigrow.ru/blog/
 - Сад-обзор https://sadobzor.ru/gidroponika/udobreniya-dlya-gidroponiki.htmlgidroponika-dlya-novichkov-s-chego-nachat/
 - Флора гробинг https://floragrowing.com/ru/encyclopedia/sistema-kapelnogo-orosheniya
-
+- Зеленый рынк https://greenmarkt.ru/catalog/917/obratnyy_klapan_dlya_vozdushnoy_trubki/
 
 ## YouTube
 
