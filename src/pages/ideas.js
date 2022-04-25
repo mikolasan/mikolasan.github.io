@@ -28,7 +28,9 @@ const IdeasPage = ({ pageContext }) => (
       <li><Link to="/ideas-for-app-development/">All of the above</Link></li>
       <li>Weird ones:
         <ul>
-          <li>Combine together cameras from trashed phones</li>
+          <li>Find broken phones for recycling purposes. Salvage only cameras from them. Combine together as many cameras as possible to make pictures with incredible resolution</li>
+          <li>Augmented reality program that reconstructs buildings and landscape of the old city deleting modern objects and restoring ruined ones based on camera view</li>
+          <li>Improve windmill efficiency by changing its design and the form of blades with genetic algorithm</li>
           <li>Add Google drive support to open source file manager</li>
         </ul>
 

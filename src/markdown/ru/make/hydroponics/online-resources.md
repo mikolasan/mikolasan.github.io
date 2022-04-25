@@ -24,7 +24,7 @@ title: Подборка сайтов
 - [Yasai Monogatari Hydroponic Grow Box](https://www.japantrendshop.com/yasai-monogatari-hydroponic-grow-box-p-3936.html) - японская чудо коробочка с приятным внешним видом
 - [The Farmstand](https://www.lettucegrow.com/shop) - дизайн, сайт со всем необходимым
 - [FarmBets](https://www.microsoft.com/en-us/garage/wall-of-fame/farmbeats/) https://www.microsoft.com/en-us/research/project/farmbeats-iot-agriculture/ https://novosibirsk.tara.ru/catalog/plastikovye_yashchiki/futura_safe_pro/
-
+- https://www.smallrobotcompany.com/
 
 ## Облачные решения
 
@@ -89,11 +89,14 @@ $26,391 pledged of $134,967 goal
 
 - Экология в открытом доступе https://wiki.opensourceecology.org/wiki/Hydroponics
 - Прорасти Сегодня https://www.growertoday.com/top-feed-drip-system-hydroponics/
+- Аггрегатор новостей https://www.igrow.news/
+- Разговор: академическая строгость, журналистское чутье https://theconversation.com/global/topics/hydroponics-37058
 
 ### Статьи
 
 - Ловля улиток - задача не простая - потребовалось 20 лет, чтобы создать робота способного сделать это https://catriona-campbell.medium.com/slugbot-how-ai-is-addressing-a-slimy-problem-8c60b7277c41
-- https://www.cla.org.uk/news/tomorrows-world/
+- Разведка с полей https://www.cla.org.uk/news/tomorrows-world/
+- Роботы, собирающие урожай https://www.intorobotics.com/fruit-harvesting-robots/
 
 ## Сайты в рунете
 
@@ -118,3 +121,17 @@ https://www.growertoday.com/top-feed-drip-system-hydroponics/
 - https://www.youtube.com/watch?v=1IwKWYNycj8
 - https://www.youtube.com/watch?v=BqYrAWssrrY&t=623s
 - https://www.youtube.com/watch?v=FCivsotZEjk
+
+
+## Unprocessed
+
+### Babylon
+
+- https://babylonmicrofarms.com/how-it-works/
+- https://pittnews.com/article/170714/arts-and-entertainment/pitt-brings-eco-friendly-babylon-farm-machines-to-the-dining-halls/
+- https://www.igrow.news/post/pitt-brings-eco-friendly-babylon-farm-machines-to-the-dining-halls
+
+### Potatoes
+
+- https://www.igrow.news/post/growing-potatoes-indoors-is-possible-using-aeroponics-here-s-how
+- aeroponics

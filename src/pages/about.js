@@ -15,6 +15,15 @@ const About = ({ pageContext }) => (
     bannerParagraph={[<h1>developer - traveler - snob</h1>]}
   >
     <p>
+    Since early days in school I was reading video game magazines, 
+    I liked playing pithy RPG and rapid action games, 
+    I discussed them with friends and we dreamed about making our own. 
+    </p>
+    <p>
+    Here I am, I have been doing game development for 10 years in the gambling industry.
+    It brings mathematical challenges and the warmth of Las Vegas.
+    </p>
+    <p>
     I am a full-time developer, once a year traveler and a snob ever since I registered on Instagram.
     I have a postgraduate degree in Applied Mathematics and Computer <a href="/science">Science</a>. With its help, I do what I do for a living.
     But besides that, I passionate about <a href="/gamedev">game development</a> and irrational exploitation of computers.
@@ -46,6 +55,18 @@ const About = ({ pageContext }) => (
       </div>
 
     </div>
+
+    <p>
+      I like my mountain bike. It allows me to consume(appreciate) nature with the speed  that enough to see landscape from different angles and as a still image when you liked some composition.
+    </p>
+    <p>
+      I like board games. First of all they represent an art piece. Then they have a story, setting and specific rules in their world.
+    </p>
+    <p>
+      I like hardware, electronic components, limited resources and capabilities.
+    </p>
+
+    <img src="/images/about/brain-wars-stats.png" alt="BrainWars stats" width="400px" />
 
     <p>
     Game developer. C++, Python, and JavaScript adventurer. Magistrate in L5R 🎲.  🎮|🎰 and woodworker. 🏃‍♂️, 🚴‍♂️

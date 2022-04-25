@@ -17,9 +17,13 @@ lastModified: 2021-10-13
 Красивые корпуса [1](https://library.zortrax.com/project/zortrax-robotic-arm/) и [2](https://roboteurs.com/products/rbx1-remix-3d-printed-6-axis-robot-arm-kit?variant=40314908751).
 Найдено в [этой подборке](https://all3dp.com/2/10-best-robot-arms-to-3d-print-or-buy/).
 
+![RBX1](./RBX1.webp)
+
 Нужно еще смотреть на характеристику веса, котрый рука может поднять. Я часто вижу лимит в 100 грамм. Это как-то мало.
 
 AR4 https://www.anninrobotics.com/
+
+Hackaday https://hackaday.com/tag/diy-robot-arm/
 
 ## Fruit picking robot arm
 
@@ -29,3 +33,6 @@ https://www.intorobotics.com/fruit-harvesting-robots/
 
 Можно обойтись без хитростей с пальцами - достаточно иметь трубу способную затягивать предметы с помощью вакуума
 
+Abundant Robotics Apple Harvesting Robot https://www.youtube.com/watch?v=7rNpbyW9kws
+
+Raspberry picking https://www.theguardian.com/technology/2019/may/26/world-first-fruit-picking-robot-set-to-work-artificial-intelligence-farming
