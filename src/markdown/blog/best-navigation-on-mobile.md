@@ -20,4 +20,4 @@ What is the best navigation option for a website on mobile device?
 
 Or I missing something better?
 
-I've read today that with current average size of mobile screens it will be convenient to put nav bar to the bottom side. I believe it's just a theory, whereas UI is usually driven by habits.
+I've read today that with current average size of mobile screens it will be convenient to [put nav bar to the bottom side](https://www.smashingmagazine.com/2019/08/bottom-navigation-pattern-mobile-web-pages/). I believe it's just a theory, whereas UI is usually driven by habits.

@@ -5,7 +5,9 @@ published: 2021-11-07
 lastModified: 2021-11-07
 ---
 
-To add Python to the terminal
+It's possible to add specific terminal to VS Code on Windows machine when you have Anaconda package installed.
+You will have Python interpreter under your fingertips.
+Just add to **settings.json** the following configuration
 
 ```
 "terminal.integrated.shellArgs.windows": [

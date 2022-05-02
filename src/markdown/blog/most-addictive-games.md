@@ -34,3 +34,13 @@ Very complex puzzle-muscle game about ninja and his hard way through very gray g
 Very high pace top view shooter. It's almost the same fun as Serious Sam: Second Encounter, but darker. It influenced me a lot during creation of [Fire!](/gamedev/fire)
 
 ![Screenshot of Crimsonland](crimsonland.jpg)
+
+
+## New technologies
+
+Old games, how good they can be with new technologies?
+
+1. Yetisports using Nintendo Switch controller
+2. NFK on Smart TV with wireless set of keyboard and mouse
+3. N. Looking for gold cubes using augmented reality
+4. Crimsonland in VR.

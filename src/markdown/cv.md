@@ -3,8 +3,10 @@ path: "/cv"
 date: "2019-02-13"
 title: "Curriculum Vitae"
 subtitle: "<strong>Nikolay Neupokoev</strong> - Mathematician Engineer"
-buttonText: Download PDF version
+buttonText: Download PDF
 buttonLink: /CV-Neupokoev.pdf
+secondButtonText: Cover Letter
+secondButtonLink: /cover-letter
 section: "cv"
 published: 2020-05-03
 lastModified: 2021-10-14
