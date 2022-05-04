@@ -3,7 +3,7 @@ import React from "react"
 import { Location } from "@reach/router"
 import * as styles from "./reactions.module.css"
 
-const serverUrl = "https://like-mikolasan.herokuapp.com"
+const serverUrl = "https://reactions-xn8g.onrender.com"
 
 class Reactions extends React.Component {
   static propTypes = {
@@ -27,12 +27,22 @@ class Reactions extends React.Component {
         wild: 0,
         confused: 0,
         boring: 0
-      }
+      },
+      total: "Obtaining results..."
     }
   }
 
+  getZeroScores () {
+    const scores = {...this.state.scores}
+    Object.entries(scores).forEach(([name, score]) => {
+      scores[name] = 0
+    })
+    return scores
+  }
+
   async componentDidMount () {
-    this.errorCallback("Sending request to free Heroku dyno, be patient :)")  
+    const requestStartTime = Date.now()
+    this.errorCallback("Sending request to web service on render.com. I'm using free plan, so be patient :)")  
     const requestOptions = {
       method: "GET",
       headers: {
@@ -52,7 +62,7 @@ class Reactions extends React.Component {
       console.log(response);
       const contentType = response.headers.get('content-type');
       if (!contentType || !contentType.includes('application/json')) {
-        this.errorCallback("Oops, we haven't got JSON!");
+        this.errorCallback("Oops, we haven't got a JSON!");
       }
       // if (!response.bodyUsed) {
       //   this.errorCallback("This page has never been scored. Be the first one!")
@@ -61,16 +71,23 @@ class Reactions extends React.Component {
 
       const data = await response.json()
       if (!("scores" in data) || data.scores === null) {
-        this.errorCallback("no SCORES. Whyyyyyyyyyyyyyyy?")  
+        this.errorCallback("Be the first who adds a reaction to this page!");
+        this.setState({
+          scores: this.getZeroScores(),
+          total: 0
+        })
         return
       }
-      
-      const scores = {...this.state.scores}
+
+      const scores = this.getZeroScores()
       Object.entries(data.scores).forEach(([name, score]) => {
         scores[name] = score
       })
+      const requestTime = Date.now() - requestStartTime
+      this.errorCallback(`Reactions retrieved from Mongo DB and delivered by a Python service in ${Math.floor(requestTime / 1000)} msec`);
       this.setState({
-        scores: scores
+        scores: scores,
+        total: Object.values(scores).reduce((a, b) => a + b, 0)
       })
     
     } catch (err) {
@@ -100,17 +117,17 @@ class Reactions extends React.Component {
     fetch(serverUrl + "/like", requestOptions)
       .then(response => response.json())
       .then(data => {
-        const scores = {...self.scores}
+        const scores = {...self.state.scores}
         scores[data.scoreName] = data.score
         self.setState({
-          scores: scores
+          scores: scores,
+          total: Object.values(scores).reduce((a, b) => a + b, 0)
         })        
       })
       .catch(err => self.errorCallback(`My dear friend! We have encountered this: ${err}`))
   }
 
   render () {
-    const total = Object.values(this.state.scores).reduce((a, b) => a + b, 0)
     return (
       <section className={styles.reactions}>
         <h3>Page reactions</h3>
@@ -120,7 +137,7 @@ class Reactions extends React.Component {
           <li onClick={this.likeClicked.bind(this, "confused")}>😕 {this.state.scores.confused}</li>
           <li onClick={this.likeClicked.bind(this, "boring")}>🥱 {this.state.scores.boring}</li>
         </ul>
-        <p>Total votes: {total}</p>
+        <p>Total votes: {this.state.total}</p>
       </section>
     )
   }

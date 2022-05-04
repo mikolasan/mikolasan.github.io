@@ -11,6 +11,14 @@ const Projects = ({ pageContext }) => (
     bannerParagraph={[<h1>Gamedev</h1>]}
   >
     
+    
+    <h2>Board game development</h2>
+    <ul>
+      <li>Section <a href="/board-games">Board games</a></li>
+      <li></li>
+      <li></li>
+    </ul>
+    
     <h2>Game development</h2>
     <div className="ideacards">
       <div className="ideacard">
