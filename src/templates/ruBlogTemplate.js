@@ -15,7 +15,11 @@ export default function Template ({ data, pageContext }) {
   if (url.startsWith('/ru/')) {
     languageName = "Switch to english version"
     anotherLanguageLink = '/'
-    section = url.substring(4, url.indexOf('/', 4))
+    if (url.startsWith('/ru/make/hydroponics')) {
+      section = 'hydroponics'
+    } else {
+      section = url.substring(4, url.indexOf('/', 4))
+    }
   }
   return (
     <Layout

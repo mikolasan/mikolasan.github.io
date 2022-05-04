@@ -11,12 +11,6 @@ export default function Template ({ data, pageContext }) {
   const url = pageContext.url
   let section = url.substring(1, url.indexOf('/', 1))
   let languageName = "Switch to russian version"
-  let anotherLanguageLink = '/ru'
-  if (url.startsWith('/ru/')) {
-    languageName = "Switch to english version"
-    anotherLanguageLink = '/'
-    section = url.substring(4, url.indexOf('/', 4))
-  }
   return (
     <Layout
       title={frontmatter.title}
