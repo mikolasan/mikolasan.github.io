@@ -253,7 +253,7 @@ class Navbar extends React.Component {
           <Link to="/cv" style={{float: 'right'}} { ...(active === "cv" && { className: styles.activelink }) }>CV</Link>
           
           <div className={styles.language}>
-          <Link to="/ru">
+          <Link to="/ru" title="Русский">
             <svg className={styles.globe} xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor" stroke="none"
                 viewBox="0 0 511 511" aria-hidden="true">

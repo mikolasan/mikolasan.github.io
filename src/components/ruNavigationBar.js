@@ -246,23 +246,23 @@ class RuNavbar extends React.Component {
           </Link>
           <Link to="/ru/neural-networks" { ...(active === "neural-networks" && { className: styles.activelink }) }>Наука</Link>
           <div className={styles.featuredlink}>
-            <Link to="/ru/make/hydroponics" { ...(active === "hydroponics" && { className: styles.activelink }) }><img src="/hydroponics.png" /></Link>
+            <Link to="/ru/make/hydroponics" { ...(active === "hydroponics" && { className: styles.activelink }) }><img src="/hydroponics.png" alt="Гидропоника" title="Гидропоника" /></Link>
           </div>
           <div className={styles.featuredlink}>
-            <Link to="/ru/make" { ...(active === "make" && { className: styles.activelink }) }><img src="/make.png" /></Link>
+            <Link to="/ru/make" { ...(active === "make" && { className: styles.activelink }) }><img src="/make.png" alt="Мастерская" title="Мастерская" /></Link>
           </div>
           <div className={styles.featuredlink}>
-            <Link to="/ru/paranormal" { ...(active === "paranormal" && { className: styles.activelink }) }><img src="/paranormal.png" /></Link>
+            <Link to="/ru/paranormal" { ...(active === "paranormal" && { className: styles.activelink }) }><img src="/paranormal.png" alt="Паранормальное" title="Паранормальное" /></Link>
           </div>
           <Link to="/ru/devlog" { ...(active === "devlog" && { className: styles.activelink }) }>Девлог</Link>
           <div className={styles.featuredlink}>
-            <Link to="/ru/board-games" { ...(active === "board-games" && { className: styles.activelink }) }><img src="/board-games.png" /></Link>
+            <Link to="/ru/board-games" { ...(active === "board-games" && { className: styles.activelink }) }><img src="/board-games.png" alt="Настольные игры" title="Настолки" /></Link>
           </div>
           <Link to="/ru/blog" { ...(active === "blog" && { className: styles.activelink }) }>Блог</Link>
           <Link to="/ru/about" style={{float: 'right'}} { ...(active === "about" && { className: styles.activelink }) }>О себе</Link>
 
           <div className={styles.language}>
-          <Link to="/">
+          <Link to="/" title="English">
             <svg className={styles.globe} xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor" stroke="none"
                 viewBox="0 0 511 511" aria-hidden="true">
