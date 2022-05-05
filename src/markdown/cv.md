@@ -28,11 +28,25 @@ integration.
 
 ## Work experience
 
+### ??? TBA
+
+**Etho Gaming, LLC (US)**
+
+_April 2022 – present_
+
+
+### Entrepreneur
+
+**Saturday's code (Russia)**
+
+_Oct 2020 – March 2022_
+
+
 ### Director of Mathematical department
 
 **Slot Constructor, LLC (US)**
 
-_Feb 2018 – present_
+_Feb 2018 – Sep 2020_
 
 - Responsible for analyzing business requirements in all company’s projects and define technical project specifications. Design system architecture.
 - Designed mathematical models for Class III games which were certified in the test laboratory as GLI-11 compliant.
@@ -69,19 +83,26 @@ _Oct 2012 – Oct 2015_
 
 ### Core
 
-- C++
-- [Java](/blog/why-do-i-hate-java) / Kotlin,
+- C++ ([pull request](https://github.com/godotengine/godot/pull/28205) to Godot)
+- [Java](/blog/why-do-i-hate-java)
+- Kotlin ([app](/projects/imperial-russia) in Google Play),
 - [Python](/blog/why-do-i-hate-python),
 - Lua,
 - JavaScript,
 
+- PostgreSQL
+- Git
+- Gradle (open [pull request](https://github.com/luaj/luaj/pull/80) in Luaj)
+
 ### Frameworks
 
-- Node.js, React, PostgreSQL, Git
+- Node.js ([pull request](https://github.com/sematext/logagent-js/pull/277) to logagent, here is [the research](/blog/parse-systemd-and-post-in-slack) and [summary](/blog/pull-requests-to-logagent))
+- React ([this website](https://github.com/mikolasan/mikolasan.github.io), [post-cat-o-lyptica](https://postcatolyptica.herokuapp.com/) - web search with [ML elements](/projects/postcatolyptica))
+- Vue ([site-template](https://github.com/mikolasan/joy-for-paws) for petcare nonprofit organization)
 
 ### CI/CD
 
-- Docker
+- Docker (article: [Containerized builds with Docker](https://mikolasan.hashnode.dev/containerized-builds-with-docker))
 - Jenkins
 
 ### Management

@@ -40,7 +40,50 @@ sleep 1
 /path/to/the/application &
 ```
 
-It can be a systemd service that calls the script as was mentioned earlier, but in my case, while I'm using InitV in my [custom Linux build](/blog/custom-linux), this bash script goes to **/etc/init.d/** and has the `case` block around main logic:
+It can be a systemd service that calls the script as was mentioned earlier. Such service example:
+
+```
+[Unit]
+Description=Start a wayland application
+After=weston@root.service
+Requires=weston@root.service
+ 
+[Service]
+Restart=on-failure
+Type=forking
+ExecStart=/usr/bin/wayland-app-launch.sh
+RestartSec=1
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Weston service example if needed
+
+```
+[Unit]
+Description=Weston Kiosk mode
+After=network.target
+
+[Service]
+Type=notify
+RuntimeDirectory=weston
+RuntimeDirectoryMode=0755
+Environment="XDG_RUNTIME_DIR=/run/weston"
+ExecStart=/usr/bin/weston --tty=1 --log=/var/log/runeaudio/weston.log \
+              --config=/srv/http/.config/weston.ini --modules=systemd-notify.so
+ExecStop=/usr/bin/pkill -15 weston
+IgnoreSIGPIPE=no
+StandardOutput=journal
+StandardError=journal
+TimeoutSec=infinity
+
+[Install]
+WantedBy=multi-user.target
+```
+
+
+But in my case, while I'm using InitV in my [custom Linux build](/blog/custom-linux), this bash script goes to **/etc/init.d/** and has the `case` block around main logic:
 
 ```bash
 #!/bin/sh
@@ -51,8 +94,8 @@ It can be a systemd service that calls the script as was mentioned earlier, but 
 case "$1" in
   start)
     echo "Starting The Installer..."
-    # writeble partition for weston
-    export XDG_RUNTIME_DIR=/mnt/xdg-runtime-dir
+    # writeble dir for weston
+    export XDG_RUNTIME_DIR=/tmp/xdg-runtime-dir
     rm -rf "${XDG_RUNTIME_DIR}"
     mkdir "${XDG_RUNTIME_DIR}"
     chmod 0700 "${XDG_RUNTIME_DIR}"
@@ -63,7 +106,7 @@ case "$1" in
     while [ ! -e $XDG_RUNTIME_DIR/wayland-0 ]; do sleep 0.1; done
 
     export WAYLAND_DISPLAY=wayland-0
-    some-qt-app -platform wayland
+    /path/to/some-qt-app -platform wayland
     ;;
   stop)
     ;;
