@@ -113,7 +113,7 @@ _Oct 2012 – Oct 2015_
 
 - [Logic game](/gamedev/overload-game) (pure C++, no game engines)
 - [Organizer for hobby projects](/projects/pet-project-navigator) (Java)
-- [Game Jam experience](/gamedev/pyroguelike) (Python),
+- [Game Jam experience](/gamedev/game-jams),
 - [Fullstack project](/projects/postcatolyptica) (JavaScript)
 - and [others](/projects)
 
@@ -129,3 +129,12 @@ _Mechanics and Mathematics department, Novosibirsk State University, Russia_
 Vityaev, E.E., Neupokoev, N.V.: [Formal model of perception based on fix-point of anticipations](http://www.math.nsc.ru/AP/ScientificDiscovery/PDF/model_of_perception_sbornik.pdf). [Approaches to mental modeling](http://urss.ru/cgi-bin/db.pl?lang=en&blang=en&page=Book&id=257246). pp.155-172, Moscow, URSS Editorial (2014)
 
 Vityaev, E.E., Neupokoev, N.V.: [Perception and pattern formal model as a fix-point of anticipations.](http://www.niisi.ru/iont/ni/Journal/V6/N1/VityaevNeupokoev_A.pdf) Vol 6, No 1, pp.28-41, [Neuroinformatics](https://www.niisi.ru/iont/ni/Journal/),  (2012)
+
+
+### Hateful Memes on Driven Data
+
+![my rank](/images/hateful-memes-phase1.png)
+
+### Titanic on kaggle
+
+![my rank](/images/titanic-kaggle.png)

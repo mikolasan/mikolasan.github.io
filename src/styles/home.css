@@ -1,0 +1,27 @@
+.home_title {
+  margin-top: 4rem;
+}
+
+.home_card {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 4rem;
+  border-bottom: 0.5rem dashed #f0f0f0;
+}
+
+.home_card_image {
+  max-width: 300px;
+  flex-shrink: 1;
+}
+
+.home_card_description {
+  flex-shrink: 4;
+}
+
+.home_card_separator {
+}

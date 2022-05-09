@@ -42,7 +42,7 @@ const Footer = ({
             <a href="https://twitter.com/mikolasan">Twitter</a>
             <a href="https://www.youtube.com/channel/UC7JDwFPt-Wu_rMB4-g-ePug">YouTube</a>
             <a href="https://github.com/mikolasan">GitHub</a>
-            <a href="https://www.linkedin.com/in/nikolay-neupokoev-29150065/">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/nikolay-neupokoev">LinkedIn</a>
             <a href="https://www.instagram.com/saturdayscode/">Instagram</a>
           </div>
         </div>

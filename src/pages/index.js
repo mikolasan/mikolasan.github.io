@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Layout from "../components/layout"
+import Layout from "../components/indexLayout"
 
 const Index = ({ pageContext }) => (
   <Layout
@@ -19,75 +19,93 @@ const Index = ({ pageContext }) => (
     ]}
     recentArticles={pageContext.recentArticles}
   >
-    <ul>
-      <li>I’m interested in game development, DIY electronics, and artificial intelligence</li>
-      <li>I’m currently learning Kotlin, revamping data structures and algorithms in GDScript, and basics of electronics</li>
-      <li>I’m looking to collaborate on projects related to robots, games and procedural generation</li>
-      <li>You can reach me on Twitter <a href="https://twitter.com/mikolasan">@mikolasan</a> where once a week I write threads about gamedev and development process</li>
-      <li>Enjoy coding today!</li>
-    </ul>
-    <p>
-      > <a href="https://github.com/mikolasan">My github profile</a>
-    </p>
-
-    <h2>Featured projects</h2>
-    <div className="ideacards">
-      <div className="ideacard">
-        <a href="/projects/imperial-russia">
+    
+    <h1 className="home_title">Developer</h1>
+    <section>
+      <div className="home_card">
+        <a className="home_card_image" href="/projects/imperial-russia">
           <img src="/images/projects/imperial-russia.jpg" alt="Russian village" />
         </a>
-        <div className="idea-card-container">
-          <h3>Imperial Russia</h3>
+        <div className="home_card_description">
+          <h2>Imperial Russia</h2>
           <p>Historic unit converter</p>
           <p><a href="/projects/imperial-russia">Read more</a></p>
         </div>
       </div>
 
-      <div className="ideacard">
-        <a href="/gamedev/overload-godot">
+      <div className="home_card">
+        <a className="home_card_image" href="/gamedev/overload-godot">
           <img src="/images/projects/overload-godot.jpg" alt="" />
         </a>
-        <div className="idea-card-container">
-          <h3>Overload 2</h3>
+        <div className="home_card_description">
+          <h2>Overload 2</h2>
           <p> (Godot 3.1)</p>
           <p><a href="/gamedev/overload-godot">Read more</a></p>
         </div>
       </div>
 
-      <div className="ideacard">
-        <a href="/gamedev/pyroguelike">
+      <div className="home_card">
+        <a className="home_card_image" href="/gamedev/pyroguelike">
           <img src="/images/projects/not-your-fathers-roguelike.jpg" alt="Pixel art level"/>
         </a>
-        <div className="idea-card-container">
-          <h3><b>Roguelike</b></h3>
+        <div className="home_card_description">
+          <h2><b>Roguelike</b></h2>
           <p>Not Your Father's Roguelike. (PyGame)</p>
           <p><a href="/gamedev/pyroguelike">Read more</a></p>
         </div>
       </div>
 
-      <div className="ideacard">
-        <a href="/board-games">
+      <div className="home_card">
+        <a className="home_card_image" href="/board-games">
           <img src="/images/projects/board-game.jpg" alt="Prototype playthrough"/>
         </a>
-        <div className="idea-card-container">
-          <h3>Board game</h3>
+        <div className="home_card_description">
+          <h2>Board game</h2>
           <p>TODO: description is missing</p>
           <p><a href="/board-games">Read more</a></p>
         </div>
       </div>
 
-      <div className="ideacard">
-        <a href="/youtube">
+      <div className="home_card">
+        <a className="home_card_image" href="/youtube">
           <img src="/images/projects/youtube.jpg" alt="YouTube channel art" />
         </a>
-        <div className="idea-card-container">
-          <h3>YouTube channel</h3>
+        <div className="home_card_description">
+          <h2>YouTube channel</h2>
           <p>TODO: description is missing</p>
           <p><a href="/youtube">Read more</a></p>
         </div>
       </div>
 
-    </div>
+    </section>
+
+    <h1 className="home_title">Traveler</h1>
+    <section>
+      <div className="home_card">
+        <a className="home_card_image" href="/projects/imperial-russia">
+          <img src="/images/projects/imperial-russia.jpg" alt="Russian village" />
+        </a>
+        <div className="home_card_description">
+          <h2>Imperial Russia</h2>
+          <p>Historic unit converter</p>
+          <p><a href="/projects/imperial-russia">Read more</a></p>
+        </div>
+      </div>
+    </section>
+
+    <h1 className="home_title">Snob</h1>
+    <section>
+      <div className="home_card">
+        <a className="home_card_image" href="/projects/imperial-russia">
+          <img src="/images/projects/imperial-russia.jpg" alt="Russian village" />
+        </a>
+        <div className="home_card_description">
+          <h2>Imperial Russia</h2>
+          <p>Historic unit converter</p>
+          <p><a href="/projects/imperial-russia">Read more</a></p>
+        </div>
+      </div>
+    </section>
   </Layout>
 )
 

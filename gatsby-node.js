@@ -1,6 +1,20 @@
 const path = require("path")
 const likesConfig = require("./likes-config")
 const nifty = require("./src/nifty")
+const { createFilePath } = require(`gatsby-source-filesystem`)
+
+
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
+  if (node.internal.type === `MarkdownRemark`) {
+    const value = createFilePath({ node, getNode })
+    createNodeField({
+      name: `slug`,
+      node,
+      value,
+    })
+  }
+}
 
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
@@ -133,7 +147,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
   // Create blog-list pages
   const posts = blogResult.data.allMarkdownRemark.nodes
-  const postsPerPage = 6
+  const postsPerPage = 12
   const numPosts = blogResult.data.allMarkdownRemark.totalCount
   const numPages = Math.ceil(numPosts / postsPerPage)
   Array.from({ length: numPages }).forEach((_, i) => {
@@ -168,16 +182,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
   // Create blog-list pages
   const ruPosts = ruBlogResult.data.allMarkdownRemark.nodes
-  const ruPostsPerPage = 6
   const ruNumPosts = ruPosts.length
-  const ruNumPages = Math.ceil(ruNumPosts / ruPostsPerPage)
+  const ruNumPages = Math.ceil(ruNumPosts / postsPerPage)
   Array.from({ length: ruNumPages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/ru/blog` : `/ru/blog/${i + 1}`,
       component: ruBlogListTemplate,
       context: {
-        limit: ruPostsPerPage,
-        skip: i * ruPostsPerPage,
+        limit: postsPerPage,
+        skip: i * postsPerPage,
         numPages: ruNumPages,
         currentPage: i + 1,
       },
@@ -204,14 +217,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // Create blog-list pages
   const ruParanormalPosts = ruParanormalResult.data.allMarkdownRemark.nodes
   const numParanormalPosts = ruParanormalPosts.length
-  const numParanormalPages = Math.ceil(numParanormalPosts / ruPostsPerPage)
+  const numParanormalPages = Math.ceil(numParanormalPosts / postsPerPage)
   Array.from({ length: numParanormalPages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/ru/paranormal` : `/ru/paranormal/${i + 1}`,
       component: ruParanormalListTemplate,
       context: {
-        limit: ruPostsPerPage,
-        skip: i * ruPostsPerPage,
+        limit: postsPerPage,
+        skip: i * postsPerPage,
         numPages: numParanormalPages,
         currentPage: i + 1,
       },
@@ -238,14 +251,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // Create blog-list pages
   const ruMakePosts = ruMakeResult.data.allMarkdownRemark.nodes
   const numMakePosts = ruMakePosts.length
-  const numMakePages = Math.ceil(numMakePosts / ruPostsPerPage)
+  const numMakePages = Math.ceil(numMakePosts / postsPerPage)
   Array.from({ length: numMakePages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/ru/make` : `/ru/make/${i + 1}`,
       component: ruMakeListTemplate,
       context: {
-        limit: ruPostsPerPage,
-        skip: i * ruPostsPerPage,
+        limit: postsPerPage,
+        skip: i * postsPerPage,
         numPages: numMakePages,
         currentPage: i + 1,
       },
@@ -272,14 +285,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // Create blog-list pages
   const ruDevlogPosts = ruDevlogResult.data.allMarkdownRemark.nodes
   const numDevlogPosts = ruDevlogPosts.length
-  const numDevlogPages = Math.ceil(numDevlogPosts / ruPostsPerPage)
+  const numDevlogPages = Math.ceil(numDevlogPosts / postsPerPage)
   Array.from({ length: numDevlogPages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/ru/devlog` : `/ru/devlog/${i + 1}`,
       component: ruDevlogListTemplate,
       context: {
-        limit: ruPostsPerPage,
-        skip: i * ruPostsPerPage,
+        limit: postsPerPage,
+        skip: i * postsPerPage,
         numPages: numDevlogPages,
         currentPage: i + 1,
       },
@@ -306,14 +319,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // Create blog-list pages
   const ruSciencePosts = ruScienceResult.data.allMarkdownRemark.nodes
   const numSciencePosts = ruSciencePosts.length
-  const numSciencePages = Math.ceil(numSciencePosts / ruPostsPerPage)
+  const numSciencePages = Math.ceil(numSciencePosts / postsPerPage)
   Array.from({ length: numSciencePages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/ru/neural-networks` : `/ru/neural-networks/${i + 1}`,
       component: ruScienceListTemplate,
       context: {
-        limit: ruPostsPerPage,
-        skip: i * ruPostsPerPage,
+        limit: postsPerPage,
+        skip: i * postsPerPage,
         numPages: numSciencePages,
         currentPage: i + 1,
       },

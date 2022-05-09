@@ -14,6 +14,19 @@ const About = ({ pageContext }) => (
     secondButtonLink="/blog"
     bannerParagraph={[<h1>developer - traveler - snob</h1>]}
   >
+
+    <ul>
+      <li>I’m interested in game development, DIY electronics, and artificial intelligence</li>
+      <li>I’m currently learning Kotlin, revamping data structures and algorithms in GDScript, and basics of electronics</li>
+      <li>I’m looking to collaborate on projects related to robots, games and procedural generation</li>
+      <li>You can reach me on Twitter <a href="https://twitter.com/mikolasan">@mikolasan</a> where once a week I write threads about gamedev and development process</li>
+      <li>Enjoy coding today!</li>
+    </ul>
+    <p>
+      > <a href="https://github.com/mikolasan">My github profile</a>
+    </p>
+
+
     <p>
     Since early days in school I was reading video game magazines, 
     I liked playing pithy RPG and rapid action games, 

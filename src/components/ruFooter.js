@@ -37,7 +37,7 @@ const RuFooter = ({
             <a href="https://www.youtube.com/user/stakanmartini">Ютюб</a>
             <a href="https://github.com/mikolasan">GitHub</a>
             <a href="https://www.instagram.com/saturdayscode/">Instagram</a>
-            <a href="https://www.linkedin.com/in/nikolay-neupokoev-29150065/">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/nikolay-neupokoev">LinkedIn</a>
           </div>
         </div>
         <div className="copyright">
