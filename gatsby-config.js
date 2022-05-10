@@ -181,7 +181,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "Developer Traveler Snob RSS Feed",
+            title: "Developer Traveler Snob - RSS Feed",
           },
         ],
       },

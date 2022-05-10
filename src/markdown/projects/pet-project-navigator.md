@@ -42,4 +42,7 @@ First thing, I need to share this list across devices (desktop, laptop, tablet) 
 
 But there are big disadvantages that led me to stop using the service almost for a year. It is not controlled formatting. It is just out of control. Even "clear formatting" button does not help! Another thing is constant fear of losing my text while I am typing. 
 
+Did you know that you can type mathematical formulas in Notion?!
+
+
 To be continued...

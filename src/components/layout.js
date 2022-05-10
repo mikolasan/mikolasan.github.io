@@ -55,7 +55,7 @@ class Layout extends React.Component {
           lastUpdated={lastUpdated}
           crumbs={crumbs}
         />
-        <main>
+        <main className="centered">
           <div className="left-section"></div>
           <div className="main-section">
             <div className="mobile-header">

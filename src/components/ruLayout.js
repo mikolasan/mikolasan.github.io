@@ -37,7 +37,7 @@ const RuLayout = ({
       lastUpdated={lastUpdated}
       crumbs={crumbs}
     />
-    <main>
+    <main className="centered">
       <div className="main-section">
         <div className="mobile-header">
           {bannerParagraph}

@@ -1,5 +1,72 @@
+.home_grid {
+  background: #fff;
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr 1fr;
+  grid-auto-rows: minmax(4rem, auto);
+}
+
+.home_grid img {
+  border: #d4d4d4 solid 1px;
+}
+
+.home_grid_box1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  margin: 1rem;
+  
+  border-bottom: #d4d4d4 solid 1px;
+}
+
+.home_grid_box2 {
+  grid-column-start: 3;
+  grid-row-start: 1;
+  grid-row-end: 4;
+  margin: 1rem 0.5rem 1rem 0rem;
+  padding: 0rem 1rem 0rem 1.5rem;
+  border-left: #d4d4d4 solid 1px;
+}
+
+.home_grid_box3 {
+  grid-column-start: 4;
+  grid-row-start: 1;
+  grid-row-end: 4;
+  margin: 1rem 0.5rem 1rem 0rem;
+  padding: 0rem 1rem 0rem 1.5rem;
+  border-left: #d4d4d4 solid 1px;
+}
+
+.home_grid_box4 {
+  grid-column-start: 1;
+  grid-row-start: 2;
+  grid-row-end: 4;
+  margin: 1rem 0rem 1rem 0rem;;
+  padding: 0rem 1rem 0rem 1rem;
+
+  border-right: #d4d4d4 solid 1px;
+}
+
+.home_grid_box5 {
+  grid-column-start: 2;
+  margin: 1rem;
+  padding: 0 0 1.5rem 0;
+  border-bottom: #d4d4d4 solid 1px;
+}
+
+.home_grid_box6 {
+  grid-column-start: 2;
+  margin: 1rem;
+  padding: 0 0 1.5rem 0;
+}
+
 .home_title {
   margin-top: 4rem;
+}
+
+.home_subtitle {
+  margin-bottom: 1.45rem;
+  font-family: 'Literata', serif;
+  font-size: 1.8rem;
+  line-height: 1.1;
 }
 
 .home_card {
@@ -11,17 +78,40 @@
   margin-bottom: 2rem;
   display: flex;
   gap: 4rem;
-  border-bottom: 0.5rem dashed #f0f0f0;
+  border-bottom: 0.5rem dashed #d4d4d4;
 }
 
 .home_card_image {
-  max-width: 300px;
-  flex-shrink: 1;
 }
 
 .home_card_description {
-  flex-shrink: 4;
 }
 
 .home_card_separator {
+}
+
+@media all and (max-width: 1160px) {
+  .home_grid_box2 {
+    grid-column-start: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    margin: 1rem 0.5rem 1rem 0rem;
+    padding: 0rem 1rem 0rem 1.5rem;
+    border-left: #d4d4d4 solid 1px;
+  }
+  .home_grid_box3 {
+    grid-column-start: 3;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    margin: 1rem 0.5rem 1rem 0rem;
+    padding: 0rem 1rem 0rem 1.5rem;
+    border-left: #d4d4d4 solid 1px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .home_grid {
+    display: flex;
+    flex-direction: column;
+  }
 }

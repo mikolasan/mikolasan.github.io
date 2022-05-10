@@ -36,10 +36,8 @@ class IndexLayout extends React.Component {
         <header>
           <NavigationBar active={section} />
         </header>
-        <main>
-          <div>
-            {children}
-          </div>
+        <main className="fullscreen">
+          {children}
         </main>
         <Footer languageName={languageName} languageLink={anotherLanguageLink} />
       </>
