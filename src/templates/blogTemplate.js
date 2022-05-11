@@ -15,8 +15,8 @@ export default function Template ({ data, pageContext }) {
   return (
     <Layout
       title={frontmatter.title}
-      published={frontmatter.date}
-      lastUpdated={markdownRemark.parent.fields && markdownRemark.parent.fields.gitLogLatestDate || null}
+      published={frontmatter.published}
+      lastUpdated={frontmatter.lastUpdated}
       section={section}
       showLikes={pageContext.showLikes}
       crumbs={pageContext.breadcrumb.crumbs}
@@ -46,6 +46,8 @@ export const pageQuery = graphql`
       html
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
+        published(formatString: "MMMM DD, YYYY")
+        lastModified(formatString: "MMMM DD, YYYY")
         path
         title
         section

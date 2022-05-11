@@ -34,7 +34,6 @@ module.exports = {
         path: `${ __dirname }/src/markdown`,
       },
     },
-    `@colliercz/gatsby-transformer-gitinfo`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

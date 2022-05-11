@@ -6,10 +6,10 @@ published: 2020-03-19
 lastModified: 2021-10-14
 ---
 
-## New stuff 🔥
+## New posts
 
+- What is an ontology? Creating [cat breeds ontology](/science/cat-breeds-ontology)
 - [New stuff (in Russian)](/ru/science)
-- [Cat breeds ontology](/science/cat-breeds-ontology)
 
 
 ## Publications
