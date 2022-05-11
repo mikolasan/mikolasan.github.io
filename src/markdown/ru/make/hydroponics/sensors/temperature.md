@@ -9,6 +9,8 @@ secondButtonLink: /ru/make/hydroponics
 tags: ["hydroponics"]
 language: "ru"
 
+published: 2022-01-16
+lastModified: 2022-02-06
 ---
 
 Похоже это самый крутой обзор/сравнение доступных на рынке датчиков температуры: https://randomnerdtutorials.com/dht11-vs-dht22-vs-lm35-vs-ds18b20-vs-bme280-vs-bmp180/

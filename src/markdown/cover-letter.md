@@ -2,6 +2,8 @@
 date: 2020-05-05
 title: Cover Letter template
 section: "cv"
+published: 2022-05-01
+lastModified: 2022-05-01
 ---
 
 Here is my template for a cover letter that consists of 5 main parts: intro paragraph, body paragraph, explanation of why I am a good fit for the company, many highlights I can say about my past experience, and closing paragraph.

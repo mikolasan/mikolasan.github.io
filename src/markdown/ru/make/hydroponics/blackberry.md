@@ -1,6 +1,8 @@
 ---
 date: 2021-10-13
 title: Черника
+published: 2022-01-13
+lastModified: 2022-01-13
 ---
 
 **источник** https://floragrowing.com/ru/encyclopedia/chernika-vyrashchivanie-metodom-gidroponiki

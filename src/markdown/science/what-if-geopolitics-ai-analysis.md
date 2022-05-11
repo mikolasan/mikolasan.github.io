@@ -1,6 +1,8 @@
 ---
 date: 2022-04-24
 title: '"What if" geopolitics AI analysis'
+published: 2022-04-24
+lastModified: 2022-04-29
 ---
 
 I want to create an AI system that would be able to answer theoretical questions about big geopolitical changes. For example

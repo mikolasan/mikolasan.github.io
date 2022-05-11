@@ -4,7 +4,7 @@ date: 2021-04-19
 title: "Новосибирская область: маршруты турпоходов"
 draft: true
 published: 2021-10-13
-lastModified: 2021-10-13
+lastModified: 2022-04-24
 ---
 
 

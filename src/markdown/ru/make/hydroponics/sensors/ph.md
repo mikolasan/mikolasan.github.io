@@ -10,7 +10,7 @@ secondButtonLink: /ru/make/hydroponics
 tags: ["hydroponics"]
 language: "ru"
 published: 2021-11-10
-lastModified: 2021-11-10
+lastModified: 2022-01-16
 ---
 
 ![инфа](./ph-sensor-info.jpg)

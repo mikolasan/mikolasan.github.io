@@ -1,6 +1,8 @@
 ---
 date: 2022-01-10
 title: План и идеи
+published: 2022-01-13
+lastModified: 2022-02-02
 ---
 
 

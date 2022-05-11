@@ -5,6 +5,8 @@ featuredImage: fire_featured.png
 subtitle: Top down shooter made with Game Maker
 buttonText: Download on itch
 buttonLink: https://neup.itch.io/fire
+published: 2022-02-13
+lastModified: 2022-02-22
 ---
 
 It was 2005. 

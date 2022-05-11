@@ -1,6 +1,8 @@
 ---
 date: 2022-02-01
 title: Build Godot game with Jenkins
+published: 2022-02-22
+lastModified: 2022-02-22
 ---
 
 I choose Pipeline project in Jenkeins, this allows me to create one Groovy script instead of doing it in GUI that may not support all features (for example, git LFS). With the script there is a catch though, it differs in syntax depending on what block you are using `pipeline` or `node`. And speaking in terms that Jenkins developers use: [Declarative pipeline](https://www.jenkins.io/doc/book/pipeline/#declarative-pipeline-fundamentals) or [Scripted pipeline](https://www.jenkins.io/doc/book/pipeline/#scripted-pipeline-fundamentals). I will go through both of them and show what advantages they have.

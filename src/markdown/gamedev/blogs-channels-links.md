@@ -2,7 +2,7 @@
 date: 2021-11-12
 title: Gamedev blogs, channels, links etc
 published: 2021-11-13
-lastModified: 2021-11-13
+lastModified: 2022-05-01
 ---
 
 ## Blogs

@@ -4,7 +4,7 @@ date: 2020-11-21
 title: Игра из моего сна
 language: "ru"
 published: 2021-10-13
-lastModified: 2021-10-28
+lastModified: 2022-05-01
 ---
 
 Приснилась игра, в которую я никогда не играл.

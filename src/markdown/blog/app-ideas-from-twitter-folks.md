@@ -1,6 +1,8 @@
 ---
 title: App ideas from twitter folks
 date: 2022-02-03
+published: 2022-02-06
+lastModified: 2022-02-13
 ---
 
 ## Goal manager

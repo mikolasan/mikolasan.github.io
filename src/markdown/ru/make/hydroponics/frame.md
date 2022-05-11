@@ -1,6 +1,8 @@
 ---
 date: 2022-01-13
 title: Корпус
+published: 2022-01-13
+lastModified: 2022-01-16
 ---
 
 Что сейчас имеется в продаже в интернет магазинах по всему миру https://dacharu.ru/tovary-dlya-doma/vertikalnoe-ozelenenie/intellektualnaya-plantaciya-na-12-mest

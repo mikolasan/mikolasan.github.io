@@ -3,7 +3,7 @@ title: Java Guide
 date: 2021-11-23
 draft: true
 published: 2021-11-23
-lastModified: 2021-11-26
+lastModified: 2021-11-28
 ---
 
 ## Java Guide to Classes

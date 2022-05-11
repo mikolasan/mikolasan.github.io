@@ -1,6 +1,8 @@
 ---
 date: 2022-01-16
 title: Чистая вода
+published: 2022-01-16
+lastModified: 2022-01-16
 ---
 
 обратный осмос (Reverse osmosis)

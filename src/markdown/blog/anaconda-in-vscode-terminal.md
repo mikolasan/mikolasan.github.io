@@ -2,7 +2,7 @@
 date: 2020-05-06
 title: Anaconda in VSCode's terminal
 published: 2021-11-07
-lastModified: 2021-11-07
+lastModified: 2022-05-01
 ---
 
 It's possible to add specific terminal to VS Code on Windows machine when you have Anaconda package installed.

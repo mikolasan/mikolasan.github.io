@@ -3,7 +3,7 @@ path: "/projects/what-language-to-choose"
 date: "2020-05-01"
 title: "What language to choose?"
 published: 2021-10-14
-lastModified: 2021-10-14
+lastModified: 2022-05-01
 ---
 
 What programming language to choose? Which one should I learn first?

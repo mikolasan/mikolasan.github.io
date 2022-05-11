@@ -9,6 +9,8 @@ secondButtonLink: /ru/make/hydroponics
 tags: ["hydroponics"]
 language: "ru"
 
+published: 2022-01-16
+lastModified: 2022-02-06
 ---
 
 Температура / влажность

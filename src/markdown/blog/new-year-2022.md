@@ -1,6 +1,8 @@
 ---
 date: 2022-01-01
 title: Recap of my 2021
+published: 2022-04-24
+lastModified: 2022-04-24
 ---
 
 Happy New Year everyone! I hope 2021 was full of great achievements and I wish 2022 to be a new step in your growth 

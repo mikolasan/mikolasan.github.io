@@ -1,6 +1,8 @@
 ---
 date: 2022-02-11
 title: Customize Git Bash for Windows
+published: 2022-02-13
+lastModified: 2022-02-22
 ---
 
 Do you want to see a terminal on Windows like this

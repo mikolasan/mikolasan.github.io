@@ -1,6 +1,8 @@
 ---
 date: 2022-05-01
 title: Почтовые открытки
+published: 2022-05-01
+lastModified: 2022-05-01
 ---
 
 ![Алькатрас](./postcards-alcatraz.jpg)

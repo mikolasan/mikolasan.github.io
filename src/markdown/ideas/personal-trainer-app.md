@@ -4,6 +4,8 @@ date: 2021-11-07
 title: Personal trainer - app
 idea: creative
 tags: ["mobile", "image recognition"]
+published: 2022-05-01
+lastModified: 2022-05-03
 ---
 
 On the main screen depicted a human. A user can pick any muscle and the app will show what set of workouts is recommended to develop the selected muscle.

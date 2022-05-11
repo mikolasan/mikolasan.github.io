@@ -3,7 +3,7 @@ path: /blog/weston-autolaunch
 date: 2021-07-19
 title: Weston autolaunch
 published: 2021-10-14
-lastModified: 2021-10-14
+lastModified: 2022-05-04
 ---
 
 **Update (May 2022):** Back in June 2021 when I was working on my task and was dissecting Weston, this [feature request](https://gitlab.freedesktop.org/wayland/weston/-/issues/171) was open. But now it's merged to upstream! I'm going to test that out. 

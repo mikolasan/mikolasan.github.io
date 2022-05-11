@@ -1,6 +1,8 @@
 ---
 date: 2020-04-28
 title: Slot math consulting
+published: 2022-04-24
+lastModified: 2022-04-24
 ---
 
 ## SWOT Analysis

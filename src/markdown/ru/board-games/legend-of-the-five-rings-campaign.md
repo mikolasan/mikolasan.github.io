@@ -2,7 +2,7 @@
 title: Наша кампания в Легенде
 date:
 published: 2021-11-26
-lastModified: 2021-11-26
+lastModified: 2021-11-28
 ---
 
 Время забавных #ttrpg историй. 

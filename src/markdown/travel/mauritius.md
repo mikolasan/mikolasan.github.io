@@ -1,6 +1,8 @@
 ---
 date: 2021-12-20
 title: "Mauritius"
+published: 2022-04-24
+lastModified: 2022-04-24
 ---
 
 Last good vacation was snowboarding at Thanksgiving on Big Bear Lake. But that was 2019. If not counting 4-day winter fishing on last year, then I didn’t take vacation in years! Because of many circumstances, this year it’s going to be very spontaneous trip to Mauritius.

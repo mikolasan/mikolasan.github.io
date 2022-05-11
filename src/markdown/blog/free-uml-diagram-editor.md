@@ -1,6 +1,8 @@
 ---
 title: Free UML diagram editor
 date: 2022-02-05
+published: 2022-02-06
+lastModified: 2022-02-06
 ---
 
 Diagrams. You may have heard about services like EdrawMax, SmartDraw, Visual Paradigm or Lucidchart. I showed them in [some type of review](https://youtu.be/OCclRU_ILEI) on my channel.
