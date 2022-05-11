@@ -11,7 +11,7 @@ yarn develop
 ## production ready
 
 ```sh 
-yarn gulp # run gulp tasks
+yarn gulp # run gulp tasks to update dates
 yarn build
 yarn serve
 ```

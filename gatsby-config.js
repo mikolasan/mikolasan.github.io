@@ -151,7 +151,7 @@ module.exports = {
               return allMarkdownRemark.edges.map(edge => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
-                  date: edge.node.frontmatter.date,
+                  date: edge.node.frontmatter.lastModified,
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   custom_elements: [{ "content:encoded": edge.node.html }],
@@ -162,7 +162,7 @@ module.exports = {
               {
                 allMarkdownRemark(
                   filter: {fileAbsolutePath: {regex: "/^(?!.*\/ru\/.*)/"}}
-                  sort: { order: DESC, fields: [frontmatter___date] },
+                  sort: { order: DESC, fields: [frontmatter___lastModified] },
                 ) {
                   edges {
                     node {
@@ -171,7 +171,7 @@ module.exports = {
                       fields { slug }
                       frontmatter {
                         title
-                        date
+                        lastModified
                       }
                       fileAbsolutePath
                     }
