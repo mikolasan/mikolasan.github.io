@@ -42,10 +42,10 @@ const RuFooter = ({
         </div>
         <div className="copyright">
           <p>Сайт работает на генераторе статических сайтов {` `}<a href="https://www.gatsbyjs.org">Gatsby</a>. Последняя сборка: {formatDate(data.currentBuildDate.currentDate, 'ru')}</p>
-          <a href="https://www.flaticon.com/free-icons/create" title="create icons">Create icons created by wanicon - Flaticon</a>
-          <a href="https://www.flaticon.com/free-icons/paranormal" title="paranormal icons">Paranormal icons created by Smashicons - Flaticon</a>
-          <a href="https://www.flaticon.com/free-icons/hydroponic" title="hydroponic icons">Hydroponic icons created by Freepik - Flaticon</a>
-          <a href="https://www.flaticon.com/free-icons/board-game" title="board-game icons">Board-game icons created by Freepik - Flaticon</a>
+          <p><a href="https://www.flaticon.com/free-icons/create" title="create icons">Create icons created by wanicon - Flaticon</a></p>
+          <p><a href="https://www.flaticon.com/free-icons/paranormal" title="paranormal icons">Paranormal icons created by Smashicons - Flaticon</a></p>
+          <p><a href="https://www.flaticon.com/free-icons/hydroponic" title="hydroponic icons">Hydroponic icons created by Freepik - Flaticon</a></p>
+          <p><a href="https://www.flaticon.com/free-icons/board-game" title="board-game icons">Board-game icons created by Freepik - Flaticon</a></p>
           <p>© Николай Неупокоев, {new Date().getFullYear()}</p>
         </div>
       </footer>
