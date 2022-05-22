@@ -128,10 +128,10 @@ const addFrontmatterLine = (name, value, file) => {
 function setLastModifiedGitTime() {
   return execChildProcess({
     cmd: (path) => `git log -n 1 --pretty=format:%as -- ${path}`,
-    excludeDates: ['2021-11-23'],
+    excludeDates: new Set(['2021-11-23', '2022-05-10']),
     stdoutHook: (stdout, file, stream, options) => {
       const lastModified = String(stdout).trim();
-      if (options.excludeDates !== undefined && lastModified !== options.excludeDates[0]) {
+      if (options.excludeDates !== undefined && options.excludeDates.has(lastModified)) {
         addFrontmatterLine('lastModified', lastModified, file);
       }
       stream.push(file);
