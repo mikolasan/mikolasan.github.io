@@ -8,6 +8,7 @@ lastModified: 2022-05-10
 
 ## New posts
 
+- [Shitty sentiment analysis](/science/shitty-sentiment-analysis)
 - What is an ontology? Creating [cat breeds ontology](/science/cat-breeds-ontology)
 - [New stuff (in Russian)](/ru/science)
 
