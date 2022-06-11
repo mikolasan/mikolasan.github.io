@@ -17,6 +17,8 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 650,
+              showCaptions: ['title'],
+              markdownCaptions: true,
               linkImagesToOriginal: true,
               wrapperStyle: fluidResult => `flex:${_.round(fluidResult.aspectRatio, 2)};`,
             },
