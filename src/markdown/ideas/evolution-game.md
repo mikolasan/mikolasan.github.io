@@ -6,6 +6,7 @@ subtitle:
 tags: ["game"]
 idea: creative
 section: ideas
+published: 2022-06-07
 ---
 
 It can be an interesting card game, I mean real offline board game. Cruel and educational.

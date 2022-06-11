@@ -3,6 +3,7 @@ path: /projects/coach-robot
 date: 2022-06-08
 title: Coach robot
 tags: ["hardware", "robot"]
+published: 2022-06-10
 ---
 
 Andrew Male https://twitter.com/andym84/status/1521733648051052546?s=12

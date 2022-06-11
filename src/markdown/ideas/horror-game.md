@@ -6,6 +6,7 @@ subtitle:
 tags: ["game"]
 idea: creative
 section: ideas
+published: 2022-06-07
 ---
 
 My favorite scenes in ghost movies are when something creepy happens on the background and out of sight for main characters.
