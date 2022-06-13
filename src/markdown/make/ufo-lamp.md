@@ -1,8 +1,8 @@
 ---
 path: /projects/ufo-lamp
 date: 2022-06-08
-title: Coach robot
-tags: ["hardware", "robot"]
+title: UFO lamp
+tags: ["hardware", "LED"]
 published: 2022-06-10
 ---
 

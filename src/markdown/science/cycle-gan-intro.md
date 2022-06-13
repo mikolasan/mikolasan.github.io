@@ -19,7 +19,7 @@ Or filling a script line by line and executing it?
 - Start https://towardsdatascience.com/how-to-launch-jupyter-notebook-quickly-26e500ad4560
 - Set dark theme https://stackoverflow.com/questions/46510192/change-the-theme-in-jupyter-notebook
 
-```
+```shell
 pip install jupyterthemes  jt -l  jt -t theme-name
 ```
 
@@ -36,6 +36,12 @@ Is there a difference? When you see implementation in all frameworks, which one 
 ## Follow along
 
 ### How to check TensorFlow version
+
+```python
+tf.version.VERSION
+# or
+tf._version__
+```
 
 Just a reminder that there is a big difference between TensorFlow 1 and 2. They hate each other and many projects and tutorials still use version 1. I highly recommend do not try to upgrade projects from 1 to 2. Especially if you do not understand how the project works. Even their creators do not know how it works, so don't even try.
 

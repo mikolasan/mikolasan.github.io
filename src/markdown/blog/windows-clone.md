@@ -2,6 +2,7 @@
 title: Windows clone
 date: 2022-05-23
 published: 2022-06-10
+featuredImage: windows-clone-feature.jpg
 ---
 
 What do you need to know when you clone Windows 10 from one drive to another or How I spent one week without a computer trying to upgrade SSD on my laptop.
@@ -91,6 +92,29 @@ sudo dd if=/dev/sdc1 of=/dev/sda1 conv=noerror
 ```
 
 You probably know the result at this point: additional 200GB of written data is wasted on my new SSD.
+
+### Benchmark SSD read/write speed with dd
+
+In the chapter about `dd`, it would be criminal not to mention how to measure read and write performance of HDD or SSD or NVME (M.2) drive. Because it's so simple.
+
+So **read performance** is measured by reading an existing file and sending it to the void [source](https://www.unixtutorial.org/test-disk-speed-with-dd/):
+
+```
+dd if=./test of=/dev/zero bs=512k count=2048
+```
+
+But before that you need to disable cache optimization
+
+```
+sudo /sbin/sysctl -w vm.drop_caches=3
+```
+
+**Write performance** is similar and simpler, swap `if` and `of` and do not worry about cache:
+
+```
+dd if=/dev/zero of=./test bs=512k count=2048 oflag=direct
+```
+
 
 ## Attempt 3: VHD
 

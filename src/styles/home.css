@@ -17,6 +17,10 @@
   border-bottom: #d4d4d4 solid 1px;
 }
 
+.home_grid_box1 img {
+  /* max-width: 600px; */
+}
+
 .home_grid_box2 {
   grid-column-start: 3;
   grid-row-start: 1;
