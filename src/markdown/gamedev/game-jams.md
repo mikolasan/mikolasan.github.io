@@ -2,7 +2,6 @@
 path: "/gamedev/game-jams"
 date: "2021-06-06"
 title: Game Jams
-section: gamedev
 published: 2021-07-12
 lastModified: 2021-10-05
 ---

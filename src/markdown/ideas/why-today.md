@@ -4,7 +4,6 @@ date: "2020-05-16"
 title: "Why today?"
 tags: ["mobile", "generator", "one app per month", "one screen application", "one button application"]
 idea: creative
-section: ideas
 published: 2021-10-13
 lastModified: 2021-10-28
 ---

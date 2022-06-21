@@ -3,7 +3,6 @@ path: "/gamedev/overload-godot"
 date: "2020-08-07"
 title: Overload
 featuredImage: overload-godot-code.png
-section: gamedev
 published: 2020-04-06
 lastModified: 2021-10-05
 ---

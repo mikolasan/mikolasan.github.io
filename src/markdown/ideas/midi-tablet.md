@@ -4,7 +4,6 @@ date: "2020-05-16"
 title: "MIDI tablet"
 tags: ["mobile"]
 idea: creative
-section: ideas
 published: 2021-10-13
 lastModified: 2021-10-28
 ---

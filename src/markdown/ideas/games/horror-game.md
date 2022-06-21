@@ -3,9 +3,8 @@ path: /ideas/horror-game
 date: 2022-05-26
 title: Horror game
 subtitle: 
-tags: ["game"]
+tags: ["horror"]
 idea: creative
-section: ideas
 published: 2022-06-07
 featuredImage: horror-game-feature.png
 ---

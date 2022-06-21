@@ -5,7 +5,6 @@ title: "Wikipedia upside down"
 subtitle: "(real name in progress) <br/>Knowledge that you really want to know"
 tags: ["db", "web", "scraper"]
 idea: innovative
-section: ideas
 published: 2021-10-13
 lastModified: 2021-10-28
 ---

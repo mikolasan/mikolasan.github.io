@@ -2,9 +2,7 @@
 date: 2021-09-15
 title: Old games - new technologies
 path: /ideas/old-games-new-technologies
-tags: ["game"]
 idea: creative
-section: ideas
 published: 2021-10-28
 lastModified: 2021-10-28
 ---

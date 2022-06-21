@@ -5,7 +5,6 @@ title: "Woman forecast"
 subtitle: "Predict why is your girlfriend mad at you"
 tags: ["mobile", "prediction", "calendar"]
 idea: innovative
-section: ideas
 published: 2021-10-13
 lastModified: 2021-10-28
 ---

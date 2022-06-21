@@ -2,7 +2,6 @@
 path: "/gamedev/best-practices-of-game-jams"
 date: 2022-05-27
 title: Best practices of Game Jams
-section: gamedev
 published: 2022-06-07
 ---
 

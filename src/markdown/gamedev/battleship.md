@@ -3,7 +3,6 @@ path: "/gamedev/battleship"
 date: "2020-08-19"
 title: Battleship
 featuredImage: battleship_last_step.png
-section: gamedev
 published: 2020-04-06
 lastModified: 2021-10-05
 ---

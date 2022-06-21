@@ -5,7 +5,6 @@ title: "Dice reader"
 coverImage: "dice-reader.jpg"
 tags: ["neural networks", "mobile", "image recognition"]
 idea: innovative
-section: ideas
 published: 2021-10-13
 lastModified: 2021-10-28
 ---

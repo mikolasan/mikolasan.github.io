@@ -21,6 +21,15 @@ const IdeasPage = ({ pageContext }) => (
       </p>
     ]}
   >
+    <h2>By category</h2>
+
+    <ul>
+      <li><Link to="/ideas/games/">Games</Link></li>
+      <li><Link to="/ideas/diy/">DIY</Link></li>
+      <li><Link to="/ideas/mobile-app/">Mobile app</Link></li>
+      <li><Link to="/ideas/web-app/">Web app</Link></li>
+    </ul>
+
     <h2>Ideas for your next application</h2>
     <ul>
       <li><Link to="/creative-ideas-for-app-development/">Creative ideas for app development</Link></li>
@@ -28,6 +37,10 @@ const IdeasPage = ({ pageContext }) => (
       <li><Link to="/ideas-for-app-development/">All of the above</Link></li>
       <li>Weird ones:
         <ul>
+          <li>If finding a ship crew is not a problem, then what do I need to make a sailing ship? Wood, a team of woodworkers and a suitable shipyard. Right? How long do you think it takes to make one?</li>
+          <li>App that recognizes simple components and reads labels on chips from your phone camera stream and searches for datasheets.</li>
+          <li>If I’m not mistaken MTG has something unique about its balance, that even randomly generated cards wouldn’t break it. Let’s make an AI that generates completely new board game from user short sentences (using a LLM (like GPT-3), fine tune it with Magic the Gathering card texts to generate the cards. To do the image, use another model for image generation like wombo)</li>
+          <li>"the software engineering urge to get up, quit your job, run away to a ranch and open a farm while living a wholesome lifestyle surrounded by chickens and leaves". I believe software engineers will miss technologies sooner or later. With this idea in mind I propose special digital farms where every perch and stall has monitoring sensor, and big data helps to grow the best crop despite any weather conditions</li>
           <li>Find broken phones for recycling purposes. Salvage only cameras from them. Combine together as many cameras as possible to make pictures with incredible resolution</li>
           <li>Augmented reality program that reconstructs buildings and landscape of the old city deleting modern objects and restoring ruined ones based on camera view</li>
           <li>Augmented reality kitchen. Helps you cook, orders required food from the store</li>

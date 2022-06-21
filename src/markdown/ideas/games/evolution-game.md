@@ -3,9 +3,8 @@ path: /ideas/evolution-game
 date: 2022-05-27
 title: Card game about evolution
 subtitle: 
-tags: ["game"]
+tags: ["card game"]
 idea: creative
-section: ideas
 published: 2022-06-07
 ---
 

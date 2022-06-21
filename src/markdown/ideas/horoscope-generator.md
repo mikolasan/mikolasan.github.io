@@ -7,7 +7,6 @@ tags: ["language processing", "mobile", "generator", "one app per month"]
 featuredImage: horoscope-generator.jpg
 coverImage: "horoscope-generator.jpg"
 idea: innovative
-section: ideas
 published: 2021-10-13
 lastModified: 2021-10-28
 ---

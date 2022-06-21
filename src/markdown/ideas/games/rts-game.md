@@ -3,9 +3,8 @@ path: /ideas/rts-game
 date: 2021-09-26
 title: RTS
 subtitle: 
-tags: ["game"]
+tags: ["RTS"]
 idea: creative
-section: ideas
 published: 2021-10-28
 lastModified: 2021-10-28
 ---

@@ -3,7 +3,6 @@ path: "/gamedev/pyroguelike"
 date: 2019-04-17
 title: "Not your father's roguelike"
 featuredImage: pyroguelike-1.png
-section: gamedev
 published: 2020-04-06
 lastModified: 2021-10-28
 ---

@@ -6,7 +6,6 @@ tags: ["bluetooth", "chromesact"]
 featuredImage: tablet-keyboard-vim-cheatsheet.jpg
 coverImage: "tablet-as-keyboard.jpg"
 idea: creative
-section: ideas
 published: 2021-10-13
 lastModified: 2021-10-28
 ---

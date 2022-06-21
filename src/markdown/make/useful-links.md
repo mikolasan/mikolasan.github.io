@@ -38,4 +38,4 @@ PlatformIO - Arduino IDE alternative which integrates with VS Code
 
 Fritzing - circuit drawing app. Nice breadboard schemes created with it.
 
-![Fritzing](./fritzing.png)
+![Fritzing](./Fritzing.png)

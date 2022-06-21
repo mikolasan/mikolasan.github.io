@@ -3,7 +3,6 @@ path: "/gamedev/overload-game"
 date: "2020-03-26"
 title: Overload
 featuredImage: overload-game.png
-section: gamedev
 published: 2020-04-06
 lastModified: 2021-10-05
 ---

@@ -3,7 +3,6 @@ path: "/ru/science"
 date: "2020-03-19"
 title: "Наука"
 language: "ru"
-section: "science"
 published: 2020-04-06
 lastModified: 2021-10-13
 ---
