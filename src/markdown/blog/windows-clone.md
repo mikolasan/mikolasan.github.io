@@ -36,7 +36,7 @@ Boot into live CD. I use Manjaro installer.
 
 Open Gparted and recreate partition table and partitions on new drive in the likeness of your old system. 
 
-Note: Weirdly enough Windows requires 16MB after ESP partition for its own secret deals. So check out their [official docs about it]([https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/configure-uefigpt-based-hard-drive-partitions?view=windows-11](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/configure-uefigpt-based-hard-drive-partitions?redirectedfrom=MSDN&view=windows-11))
+Note: Weirdly enough Windows requires 16MB after ESP partition for its own secret deals. So check out their [official docs about it](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/configure-uefigpt-based-hard-drive-partitions?redirectedfrom=MSDN&view=windows-11)
 
 Then format, set flags, set partition names and labels.
 
@@ -55,7 +55,7 @@ Any attempt to fix it will fail. Only reinstall will help.
 
 How to diagnose it. Boot Windows system from another drive and look at your new system in File Explorer. If system and hidden folders and files look like normal then you definitely screwed permissions and your system is toast. 
 
-And even if sometime in this universe ALC permissions will be added to Linux drivers, then you will need to fix Windows drive mounting letter in the registry following [these steps]([https://superuser.com/questions/1235910/cloning-windows-10-partition-to-different-drive-not-working-in-dual-boot-setup](https://superuser.com/questions/1235910/cloning-windows-10-partition-to-different-drive-not-working-in-dual-boot-setup))
+And even if sometime in this universe ALC permissions will be added to Linux drivers, then you will need to fix Windows drive mounting letter in the registry following [these steps](https://superuser.com/questions/1235910/cloning-windows-10-partition-to-different-drive-not-working-in-dual-boot-setup)
 
 Even if we would have the ability to read and copy ACL permissions, I was not impressed by the speed of rsync. It was 80MB/s. So let’s move on to another approach.
 
@@ -67,17 +67,17 @@ We will be above it. Actually we will go deeper on a lower layer and will copy d
 
 Using `dd` we can copy one small drive to the beginning of the big drive and then extend the last partition. You can even move partitions like I did: I moved windows recovery partition to the end and then extended system partition that goes behind it.
 
-As before we boot into live USB and [use dd]([https://superuser.com/questions/1712900/how-can-i-clone-a-windows-10-disk-onto-a-larger-disk](https://superuser.com/questions/1712900/how-can-i-clone-a-windows-10-disk-onto-a-larger-disk)) or [cat or pv]([https://unix.stackexchange.com/questions/444019/how-can-i-clone-backup-restore-windows-10-from-linux](https://unix.stackexchange.com/questions/444019/how-can-i-clone-backup-restore-windows-10-from-linux))
+As before we boot into live USB and [use dd](https://superuser.com/questions/1712900/how-can-i-clone-a-windows-10-disk-onto-a-larger-disk) or [cat or pv](https://unix.stackexchange.com/questions/444019/how-can-i-clone-backup-restore-windows-10-from-linux)
 
 Everything goes faster than rsync, I get 500MB/s but then after 100GB it halts after read error. I run it again and it aborts on the same spot. Again, 200GB of written data is wasted on my new SSD.
 
-I [googled the read error problem]([https://askubuntu.com/questions/253117/how-do-i-fix-an-input-output-error-using-dd](https://askubuntu.com/questions/253117/how-do-i-fix-an-input-output-error-using-dd)) and was thinking if I should try [ddrescue]([https://lifeinhex.com/tag/ddrescue/](https://lifeinhex.com/tag/ddrescue/) 
+I [googled the read error problem](https://askubuntu.com/questions/253117/how-do-i-fix-an-input-output-error-using-dd) and was thinking if I should try [ddrescue](https://lifeinhex.com/tag/ddrescue/) 
 
 ```
 sudo ddrescue /dev/sdc1 /dev/sda1 | pv
 ```
 
-or [overwrite sectors with hdparm]([https://web.archive.org/web/20130608003739/http://www.sjvs.nl/forcing-a-hard-disk-to-reallocate-bad-sectors/](https://web.archive.org/web/20130608003739/http://www.sjvs.nl/forcing-a-hard-disk-to-reallocate-bad-sectors/))
+or [overwrite sectors with hdparm](https://web.archive.org/web/20130608003739/http://www.sjvs.nl/forcing-a-hard-disk-to-reallocate-bad-sectors/)
 
 hdparm –write-sector 1261069669 –yes-i-know-what-i-am-doing /dev/sdb
 
@@ -122,7 +122,7 @@ At this point I started worrying that my 5 year old SSD drive is going to die an
 
 ![Intel SSD Drive info](./windows-clone-intel-drive-info.png)
 
-So the priority has changed and I was looking for ways to make a backup first. From my experience, the backup that will work on Linux or Windows machine is a drive image recognized by virtual machines. Virtual Box can work with VHD and Windows has official tool for making such image - [Disk2vhd]([https://docs.microsoft.com/en-us/sysinternals/downloads/disk2vhd](https://docs.microsoft.com/en-us/sysinternals/downloads/disk2vhd)). 
+So the priority has changed and I was looking for ways to make a backup first. From my experience, the backup that will work on Linux or Windows machine is a drive image recognized by virtual machines. Virtual Box can work with VHD and Windows has official tool for making such image - [Disk2vhd](https://docs.microsoft.com/en-us/sysinternals/downloads/disk2vhd). 
 
 ![Disk2vhd going for hours after estimated time](./windows-clone-disk2vhd-past-time.png)
 
@@ -173,7 +173,7 @@ If you found this article from a google search trying to fix a rare message on B
 
 If you see this error then you should take a look on your EFI boot record.
 
-[Read more in this article]([http://woshub.com/how-to-repair-uefi-bootloader-in-windows-8/](http://woshub.com/how-to-repair-uefi-bootloader-in-windows-8/)), where the author understands what applied commands are doing. Comparing to all other copywriters, that appear first in the search results, but have no idea of what they are recommending.
+[Read more in this article](http://woshub.com/how-to-repair-uefi-bootloader-in-windows-8/), where the author understands what applied commands are doing. Comparing to all other copywriters, that appear first in the search results, but have no idea of what they are recommending.
 
 ### Access is denied (bootrec /fixboot)
 
@@ -201,11 +201,11 @@ then you have something broken in C:\windows. Like missing files, wrong permissi
 
 ![Copied empty files](./windows-clone-empty-files.jpg "Working windows on the left, broken backup on the right. Many files just empty")
 
-BCD file itself can be reviewed and possibly fixed if you take a look in [free visual editor]([https://www.boyans.net/](https://www.boyans.net/)), know [basic commands]([http://woshub.com/how-to-rebuild-bcd-file-in-windows-10/](http://woshub.com/how-to-rebuild-bcd-file-in-windows-10/) ), aware of [Windows boot manager settings]([https://docs.microsoft.com/en-us/windows-hardware/drivers/devtest/adding-boot-entries](https://docs.microsoft.com/en-us/windows-hardware/drivers/devtest/adding-boot-entries)), and maybe even know [more commands]([https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/bcd-system-store-settings-for-uefi?view=windows-11](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/bcd-system-store-settings-for-uefi?view=windows-11)). In the end bcdedit has [pages of help information]([https://www.itechguides.com/windows-boot-manager-how-to-edit-bootmgr-and-fix-boot-errors-in-windows-10/](https://www.itechguides.com/windows-boot-manager-how-to-edit-bootmgr-and-fix-boot-errors-in-windows-10/)).
+BCD file itself can be reviewed and possibly fixed if you take a look in [free visual editor](https://www.boyans.net/), know [basic commands](http://woshub.com/how-to-rebuild-bcd-file-in-windows-10/), aware of [Windows boot manager settings](https://docs.microsoft.com/en-us/windows-hardware/drivers/devtest/adding-boot-entries), and maybe even know [more commands](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/bcd-system-store-settings-for-uefi?view=windows-11). In the end bcdedit has [pages of help information](https://www.itechguides.com/windows-boot-manager-how-to-edit-bootmgr-and-fix-boot-errors-in-windows-10/).
 
 ![Visual BCD](./windows-clone-visual-bcd.jpg)
 
-Or it can [magically fix itself]([https://answers.microsoft.com/en-us/windows/forum/all/how-do-you-recover-from-missing-bootmgr-following/b02a0743-1dd5-4b15-a277-74b4f4f2446d](https://answers.microsoft.com/en-us/windows/forum/all/how-do-you-recover-from-missing-bootmgr-following/b02a0743-1dd5-4b15-a277-74b4f4f2446d))
+Or it can [magically fix itself](https://answers.microsoft.com/en-us/windows/forum/all/how-do-you-recover-from-missing-bootmgr-following/b02a0743-1dd5-4b15-a277-74b4f4f2446d)
 
 ## Conclusion
 
