@@ -26,12 +26,14 @@ const CreativeIdeas = ({ data, pageContext }) => {
                 </Link>
                 <h3>{node.frontmatter.title}</h3>
                 <p><Link to={node.frontmatter.path}>Read more</Link></p>
+                {node.frontmatter.tags && (
                 <p><small>
                   {node.frontmatter.tags
                     .sort()
                     .map(tag => (<span key={tag}>{tag}</span>))
                   }
                 </small></p>
+                )}
               </div>
             ))}
         </div>
