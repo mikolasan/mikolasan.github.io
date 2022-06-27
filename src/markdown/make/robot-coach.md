@@ -24,6 +24,8 @@ So it’s like a coach. It should pose an angry reaction when you are out of tra
 
 I'm aiming for a physical device. It will sit on a desk - a physical table where my laptop is. 
 
+### Tank-like robot
+
 Like SMARS [version 1](https://www.thingiverse.com/thing:2662828), [version 4 (lite)](https://cults3d.com/en/3d-model/gadget/smars-v4-lite) created by [Kevin Thomas](https://cults3d.com/en/users/Tuitxy/creations?page=2).
 
 ![smars v4](./smars-v4.jpg)
@@ -32,6 +34,9 @@ I originally saved a link to **Cults 3D** where I saw similar interface to **Thi
 
 But I'm a guy from Soviet Union, which means I am okay to spend some time and create my own version, because engineering is in my blood.
 
+### Dog-like robot
+
+https://www.thingiverse.com/thing:5403752
 
 ## 3D model description
 
@@ -105,4 +110,6 @@ OR
 ## 3D printing
 
 Settings: 0.2mm, 15% infill
+
+Arduino UNO size is 69mm x 53mm. Geometry is in mm (not in)
 
