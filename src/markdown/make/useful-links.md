@@ -1,5 +1,4 @@
 ---
-path: "/blog/hardware-useful-links"
 date: 2021-08-31
 title: Useful links for DIY hobbyist
 tags: ["hardware", "links"]
@@ -39,3 +38,13 @@ PlatformIO - Arduino IDE alternative which integrates with VS Code
 Fritzing - circuit drawing app. Nice breadboard schemes created with it.
 
 ![Fritzing](./Fritzing.png)
+
+## 5. Raspberry Pi Pinout
+
+https://pinout.xyz
+
+Interactive reference to the Raspberry Pi GPIO pins. Interactive!
+
+Also hats!
+
+![pinout](./raspberry-pi-pinout.jpg)

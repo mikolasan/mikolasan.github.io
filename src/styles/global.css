@@ -67,8 +67,15 @@ section {
   flex-grow: 2;
   flex-shrink: 2;
   max-width: 960px;
+  min-width: 960px;
   background-color: #fff;
   padding: 2.5rem 1.5rem 4rem;
+}
+
+@media all and (max-width: 960px) {
+  .main-section {
+    min-width: unset;
+  }
 }
 
 @media all and (max-width: 1660px) {

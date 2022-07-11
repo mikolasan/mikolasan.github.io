@@ -12,7 +12,7 @@ const Index = ({ pageContext }) => (
     {/* <p className="home_title">Tweet Dayly</p> */}
     <div className="home_grid">
       <section className="home_grid_box1">
-        <a className="home_card_image" href="/ideas/horror-game">
+        <a className="home_card_image" href="/ideas/games/horror-game">
           <img src="/images/home/horror-game.jpg" alt="" />
         </a>
         <h1>Horror game</h1>
@@ -83,7 +83,7 @@ const Index = ({ pageContext }) => (
         <p className="home_subtitle">
         Gameplay was highly influenced by Crimsonland and Serious Sam
         </p>
-        <a href="/projects/imperial-russia">Top down shooter made with Game Maker</a>
+        <a href="/gamedev/fire">Top down shooter made with Game Maker</a>
       </section>
 
       

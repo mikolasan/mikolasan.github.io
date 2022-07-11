@@ -15,15 +15,14 @@ lastModified: 2022-05-08
 ## Profile
 
 I enjoy the code that is written well and looks perfect.
-After more than seven years of work with code of different quality, I'm noticing beauty in some projects and appreciate creators behind it.
+After more than nine years of work with code of different quality, I'm noticing beauty in some projects and appreciate the creators behind them.
 At the same time, I realize that perfect code is almost impossible in the real world.
 All the struggles behind the project do not matter if it is shipped in time and serves the business goal well.
 
 I'm a professional software developer with strong mathematics and
-programming background. I have over seven years of experience in the field
+programming background. I have over nine years of experience in the field
 of the gambling industry, such as game development, calculation of PAR
-sheets, deployment of casino systems, and hardware and software
-integration.
+sheets, deployment of casino systems, and hardware-software integration.
 
 
 ## Work experience
