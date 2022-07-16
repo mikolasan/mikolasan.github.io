@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import { getImage, getSrc } from "gatsby-plugin-image"
 import Reactions from "./reactions"
 import Footer from "./footer"
 import Header from "./header"
@@ -40,15 +41,20 @@ class Layout extends React.Component {
       bannerParagraph,
       recentArticles
     } = this.props
+    const imageData = getImage(featuredImage);
+    const imageSrc = getSrc(featuredImage);
     return (
       <>
-        <Title title={title + " - N"} />
+        <Title
+          title={title + " - N"}
+          imageUrl={imageSrc}
+        />
         <Header section={section}
           buttonText={buttonText}
           buttonLink={buttonLink}
           secondButtonText={secondButtonText}
           secondButtonLink={secondButtonLink}
-          featuredImage={featuredImage}
+          featuredImage={imageData}
           bannerParagraph={bannerParagraph}
           title={title}
           published={published}

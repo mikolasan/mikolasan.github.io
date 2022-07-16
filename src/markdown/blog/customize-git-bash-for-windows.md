@@ -292,7 +292,7 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 
 ## Conclusion
 
-This was a goo warm up. So maybe it's time to offer something serious?
+This was a good warm up. So maybe it's time to offer something serious?
 
 A [tiling window manager](https://github.com/LGUG2Z/komorebi) for Windows 10 and 11!
 

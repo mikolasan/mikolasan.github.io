@@ -16,6 +16,8 @@ It's particles and uses position-based dynamics, and it's simulated on the GPU :
 
 The fluid sim is PBF (Position-Based Fluids) with some modifications. PBF uses various ideas from SPH.
 
+![](./liquid-simulation.png)
+
 https://twitter.com/MytinoGames/status/1531462046449008641
 
 **Position based fluids** https://mmacklin.com/pbf_sig_preprint.pdf where they use Newton steps https://en.wikipedia.org/wiki/Newton%27s_method_in_optimization and Gradients https://en.wikipedia.org/wiki/Gradient (not to be confused with ML term _Gradient descent_ https://en.wikipedia.org/wiki/Gradient_descent)
@@ -28,3 +30,5 @@ This was originally written by a PHD from Denmark - John Olsson
 - Code: http://www.lysator.liu.se/~johol/fwmg/source/worldgen.c
 - How it works: http://www.lysator.liu.se/~johol/fwmg/howisitdone.html
 - Homepage: https://www.lysator.liu.se/~johol/fwmg/fwmg.html
+
+![texture in godot](./fractal-world-map-generator.png)

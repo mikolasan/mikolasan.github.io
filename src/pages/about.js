@@ -69,6 +69,20 @@ const About = ({ pageContext }) => (
 
     </div>
 
+    <h2>Testimonials</h2>
+
+    <blockquote class="twitter-tweet" data-conversation="none" data-lang="en" data-dnt="true" data-theme="light">
+      <p lang="en" dir="ltr">Hahaha that&#39;s exactly the kind of out-of-the-box answer I&#39;m looking for, thanks for your creativity!</p>
+      &mdash; Maxime Labonne (@maximelabonne) <a href="https://twitter.com/maximelabonne/status/1548260107732934656?ref_src=twsrc%5Etfw">July 16, 2022</a>
+    </blockquote> 
+
+    <blockquote class="twitter-tweet" data-conversation="none" data-lang="en" data-dnt="true" data-theme="light">
+      <p lang="en" dir="ltr">Gosh and this is what happens when I’m not here for a few hours ?! I love these tech talks so much !!! Hey seriously you two are one of the only reasons I am still on Twitter 😂👑</p>
+      &mdash; (Capuc)+i(ne) (@Cappuccino_Math) <a href="https://twitter.com/Cappuccino_Math/status/1548436485832994820?ref_src=twsrc%5Etfw">July 16, 2022</a>
+    </blockquote>
+
+
+    <h2>I Like</h2>
     <p>
       I like my mountain bike. It allows me to consume(appreciate) nature with the speed  that enough to see landscape from different angles and as a still image when you liked some composition.
     </p>
@@ -79,18 +93,17 @@ const About = ({ pageContext }) => (
       I like hardware, electronic components, limited resources and capabilities.
     </p>
 
+    <h2>Brain characteristics</h2>
     <img src="/images/about/brain-wars-stats.png" alt="BrainWars stats" width="400px" />
 
-    <p>
-    Game developer. C++, Python, and JavaScript adventurer. Magistrate in L5R 🎲.  🎮|🎰 and woodworker. 🏃‍♂️, 🚴‍♂️
-
-    </p>
-    <hr/>
+    
     <small>
     <div>Icons made by <a href="https://www.flaticon.com/free-icon/programmer_2092430" title="srip">srip</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></div>
     <div>Icons made by <a href="https://www.flaticon.com/free-icon/car_2706107" title="iconixar">iconixar</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></div>
     <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></div>
     </small>
+
+    
   </Layout>
 )
 
