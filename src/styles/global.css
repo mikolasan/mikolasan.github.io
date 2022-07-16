@@ -931,6 +931,10 @@ code {
 pre code {
   background: none;
   line-height: 1.42;
+  
+  display: inline-block;
+  width: 80vw;
+  overflow-x: auto;
 }
 code:before,
 code:after,
