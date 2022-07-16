@@ -289,3 +289,13 @@ inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 ```
+
+## Conclusion
+
+This was a goo warm up. So maybe it's time to offer something serious?
+
+A [tiling window manager](https://github.com/LGUG2Z/komorebi) for Windows 10 and 11!
+
+And it's written in Rust!
+
+Source: https://twitter.com/mikolasan/status/1456252757573132292
