@@ -66,16 +66,10 @@ section {
   display: block;
   flex-grow: 2;
   flex-shrink: 2;
+  width: 100%;
   max-width: 960px;
-  min-width: 960px;
   background-color: #fff;
   padding: 2.5rem 1.5rem 4rem;
-}
-
-@media all and (max-width: 960px) {
-  .main-section {
-    min-width: unset;
-  }
 }
 
 @media all and (max-width: 1660px) {
@@ -929,9 +923,7 @@ code {
 pre code {
   background: none;
   line-height: 1.42;
-  
   display: inline-block;
-  width: 80vw;
   overflow-x: auto;
 }
 code:before,
@@ -945,10 +937,12 @@ pre code:before,
 pre code:after,
 pre tt:before,
 pre tt:after {
-  content: "";
+  content: " ";
 }
 .gatsby-highlight pre[class*="language-"] {
   padding: 0 1em;
+  padding-top: 1em;
+  padding-bottom: 0.5em;
   margin: 0;
 }
 
