@@ -26,6 +26,8 @@ class Layout extends React.Component {
     const {
       children,
       title,
+      description,
+      pageUrl,
       published,
       lastUpdated,
       section,
@@ -48,6 +50,8 @@ class Layout extends React.Component {
         <Title
           title={title + " - N"}
           imageUrl={imageSrc}
+          pageUrl={pageUrl}
+          description={description}
         />
         <Header section={section}
           buttonText={buttonText}

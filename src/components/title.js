@@ -3,31 +3,34 @@ import { Helmet } from "react-helmet"
 
 const defaultImageUrl = "https://neupokoev.xyz/images/index-7.jpg";
 const defaultDescription = "Software app ideas, game development blog, tips for embedded engineers, DIY projects with Arduino and other geek stuff";
+const siteUrl = "https://neupokoev.xyz/"
 
 const Title = ({ title, imageUrl, pageUrl, description }) => (
-  <Helmet>
+  <Helmet title={title}>
     <title>{title}</title>
 
     {/* <!-- HTML Meta Tags --> */}
-    <meta name="description" content={description && description || defaultDescription} />
+    <meta name="description" content={description ? description : defaultDescription} />
+    <meta name="image" content={siteUrl + (imageUrl ? imageUrl : defaultImageUrl)} />
 
     {/* <!-- Google / Search Engine Tags --> */}
     <meta itemprop="name" content={title} />
-    <meta itemprop="description" content={description && description || defaultDescription} />
-    <meta itemprop="image" content={imageUrl ? imageUrl : defaultImageUrl} />
+    <meta itemprop="description" content={description ? description : defaultDescription} />
+    <meta itemprop="image" content={siteUrl + (imageUrl ? imageUrl : defaultImageUrl)} />
 
     {/* <!-- Facebook Meta Tags --> */}
     <meta property="og:url" content={pageUrl && pageUrl || "https://neupokoev.xyz"} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="article" />
     <meta property="og:title" content={title} />
-    <meta property="og:description" content={description && description || defaultDescription} />
-    <meta property="og:image" content={imageUrl && imageUrl || defaultImageUrl} />
+    <meta property="og:description" content={description ? description : defaultDescription} />
+    <meta property="og:image" content={siteUrl + (imageUrl ? imageUrl : defaultImageUrl)} />
 
     {/* <!-- Twitter Meta Tags --> */}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description && description || defaultDescription} />
-    <meta name="twitter:image" content={imageUrl && imageUrl || defaultImageUrl} />
+    <meta name="twitter:creator" content="mikolasan" />
+    <meta name="twitter:description" content={description ? description : defaultDescription} />
+    <meta name="twitter:image" content={siteUrl + (imageUrl ? imageUrl : defaultImageUrl)} />
 
     {/* <!-- Meta Tags Generated via http://heymeta.com --> */}
 

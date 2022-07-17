@@ -12,6 +12,7 @@ export default function Template ({ data, pageContext }) {
   let anotherLanguageLink = '/ru'
   return (
     <Layout
+      pageUrl={url}
       title={frontmatter.title}
       published={frontmatter.date}
       lastUpdated={frontmatter.lastModified}
@@ -48,9 +49,9 @@ export const pageQuery = graphql`
         lastModified(formatString: "MMMM DD, YYYY")
         path
         title
+        subtitle
         section
         draft
-        subtitle
         buttonText
         buttonLink
         secondButtonText

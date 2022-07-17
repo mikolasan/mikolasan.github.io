@@ -939,6 +939,10 @@ pre tt:before,
 pre tt:after {
   content: " ";
 }
+.gatsby-highlight {
+  margin-bottom: 2rem;
+}
+
 .gatsby-highlight pre[class*="language-"] {
   padding: 0 1em;
   padding-top: 1em;
