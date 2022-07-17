@@ -1,43 +1,109 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 
 const defaultImageUrl = "https://neupokoev.xyz/images/index-7.jpg";
 const defaultDescription = "Software app ideas, game development blog, tips for embedded engineers, DIY projects with Arduino and other geek stuff";
-const siteUrl = "https://neupokoev.xyz/"
+const siteUrl = "https://neupokoev.xyz"
 
-const Title = ({ title, imageUrl, pageUrl, description }) => (
-  <Helmet title={title}>
-    <title>{title}</title>
+const Title = ({ title, lang, imageUrl, pageUrl, description, meta }) => {
+  const metaDescription = description || defaultDescription
+  const defaultTitle = ``
+  const metaImage = imageUrl ? `${siteUrl}${imageUrl}` : defaultImageUrl
+  const metaUrl = pageUrl ? `${siteUrl}${pageUrl}` : siteUrl
 
-    {/* <!-- HTML Meta Tags --> */}
-    <meta name="description" content={description ? description : defaultDescription} />
-    <meta name="image" content={siteUrl + (imageUrl ? imageUrl : defaultImageUrl)} />
+  return (
+    <Helmet 
+      htmlAttributes={{
+        lang,
+      }}
+      title={title}
+      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+      meta={[
+        {
+          name: `description`,
+          content: metaDescription,
+        },
+        {
+          name: `image`,
+          content: metaImage,
+        },
+        {
+          property: `og:url`,
+          content: metaUrl,
+        },
+        {
+          property: `og:type`,
+          content: `article`,
+        },
+        {
+          property: `og:title`,
+          content: title,
+        },
+        {
+          property: `og:description`,
+          content: metaDescription,
+        },
+        {
+          name: `og:image`,
+          content: metaImage,
+        },
+        {
+          name: `twitter:creator`,
+          content: `@mikolasan`,
+        },
+        {
+          name: `twitter:card`,
+          content: `summary_large_image`,
+        },
+        {
+          name: `twitter:title`,
+          content: title,
+        },
+        {
+          name: `twitter:description`,
+          content: metaDescription,
+        },
+        {
+          name: `twitter:image`,
+          content: metaImage,
+        },
+        {
+          itemprop: `name`,
+          content: title,
+        },
+        {
+          itemprop: `description`,
+          content: metaDescription,
+        },
+        {
+          itemprop: `image`,
+          content: metaImage,
+        },
+      ].concat(meta)}
+    >
+      <title>{title}</title>
 
-    {/* <!-- Google / Search Engine Tags --> */}
-    <meta itemprop="name" content={title} />
-    <meta itemprop="description" content={description ? description : defaultDescription} />
-    <meta itemprop="image" content={siteUrl + (imageUrl ? imageUrl : defaultImageUrl)} />
+      <link href="https://fonts.googleapis.com/css2?family=Literata:wght@700&family=Manrope:wght@300&family=Nunito:wght@300&display=swap" rel="stylesheet" />
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8" />
 
-    {/* <!-- Facebook Meta Tags --> */}
-    <meta property="og:url" content={pageUrl && pageUrl || "https://neupokoev.xyz"} />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description ? description : defaultDescription} />
-    <meta property="og:image" content={siteUrl + (imageUrl ? imageUrl : defaultImageUrl)} />
+    </Helmet>
+  )
+}
 
-    {/* <!-- Twitter Meta Tags --> */}
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:creator" content="mikolasan" />
-    <meta name="twitter:description" content={description ? description : defaultDescription} />
-    <meta name="twitter:image" content={siteUrl + (imageUrl ? imageUrl : defaultImageUrl)} />
+Title.defaultProps = {
+  lang: `en`,
+  meta: [],
+  description: ``,
+}
 
-    {/* <!-- Meta Tags Generated via http://heymeta.com --> */}
-
-    <link href="https://fonts.googleapis.com/css2?family=Literata:wght@700&family=Manrope:wght@300&family=Nunito:wght@300&display=swap" rel="stylesheet" />
-
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8" />
-  </Helmet>
-)
+Title.propTypes = {
+  title: PropTypes.string.isRequired,
+  lang: PropTypes.string,
+  imageUrl: PropTypes.string,
+  pageUrl: PropTypes.string,
+  description: PropTypes.string,
+  meta: PropTypes.arrayOf(PropTypes.object),
+}
 
 export default Title

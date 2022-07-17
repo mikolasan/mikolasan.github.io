@@ -52,6 +52,7 @@ class Layout extends React.Component {
           imageUrl={imageSrc}
           pageUrl={pageUrl}
           description={description}
+          meta={[]}
         />
         <Header section={section}
           buttonText={buttonText}
