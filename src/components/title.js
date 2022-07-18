@@ -65,7 +65,7 @@ const Title = ({ title, lang, imageUrl, pageUrl, description, meta }) => {
           content: metaDescription,
         },
         {
-          name: `twitter:image`,
+          name: `twitter:image:src`,
           content: metaImage,
         },
         {
