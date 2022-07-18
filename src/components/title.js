@@ -21,6 +21,11 @@ const Title = ({ title, lang, imageUrl, pageUrl, description, meta }) => {
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
       meta={[
         {
+          // https://developers.google.com/search/docs/advanced/robots/robots_meta_tag
+          name: `robots`,
+          content: `noarchive, max-image-preview:large`,
+        },
+        {
           name: `description`,
           content: metaDescription,
         },
@@ -49,12 +54,16 @@ const Title = ({ title, lang, imageUrl, pageUrl, description, meta }) => {
           content: metaImage,
         },
         {
-          name: `twitter:creator`,
+          name: `twitter:site`,
           content: `@mikolasan`,
         },
         {
           name: `twitter:card`,
           content: `summary_large_image`,
+        },
+        {
+          name: `twitter:url`,
+          content: metaUrl,
         },
         {
           name: `twitter:title`,
@@ -65,7 +74,7 @@ const Title = ({ title, lang, imageUrl, pageUrl, description, meta }) => {
           content: metaDescription,
         },
         {
-          name: `twitter:image:src`,
+          name: `twitter:image`,
           content: metaImage,
         },
         {
@@ -84,6 +93,7 @@ const Title = ({ title, lang, imageUrl, pageUrl, description, meta }) => {
     >
       <title>{title}</title>
 
+      <link rel="canonical" href={metaUrl} />
       <link href="https://fonts.googleapis.com/css2?family=Literata:wght@700&family=Manrope:wght@300&family=Nunito:wght@300&display=swap" rel="stylesheet" />
       <script async src="https://platform.twitter.com/widgets.js" charset="utf-8" />
 
