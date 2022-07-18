@@ -10,12 +10,23 @@ export default function Template ({ data, pageContext }) {
   let section = url.substring(1, url.indexOf('/', 1))
   let languageName = "Switch to russian version"
   let anotherLanguageLink = '/ru'
+  let published = frontmatter.published || frontmatter.date
+  let lastModified = frontmatter.lastModified || frontmatter.date
+  // date fixes
+  if (lastModified === published) {
+    lastModified = null
+  }
+  let lastModifiedDate = new Date(lastModified)
+  let publishedDate = new Date(published)
+  if (lastModifiedDate < publishedDate) {
+    [published, lastModified] = [lastModified, published];
+  }
   return (
     <Layout
       pageUrl={url}
       title={frontmatter.title}
-      published={frontmatter.date}
-      lastUpdated={frontmatter.lastModified}
+      published={published}
+      lastUpdated={lastModified}
       section={section}
       showLikes={pageContext.showLikes}
       crumbs={pageContext.breadcrumb.crumbs}

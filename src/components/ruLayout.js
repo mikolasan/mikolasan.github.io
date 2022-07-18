@@ -56,7 +56,7 @@ const RuLayout = ({
             </div>
           ) || ''}
         </div>
-        {(published && lastUpdated) && (<div className="mobile-time-block">
+        {(published && lastUpdated) && (<div className="mobile-time-block time-block">
           <span>Опубликовано: <time>{published}</time></span>
           <span>Последние правки: <time>{lastUpdated}</time></span>
         </div>) || ''}

@@ -60,6 +60,7 @@ section {
   flex-shrink: 1;
   max-width: 300px;
   display: block;
+  padding: 2.5rem 1rem 4rem;
 }
 
 .main-section {
@@ -70,13 +71,7 @@ section {
   max-width: 960px;
   background-color: #fff;
   padding: 2.5rem 1.5rem 4rem;
-}
-
-@media all and (max-width: 1660px) {
-  main {
-    flex-direction: column;
-    align-items: center;
-  }
+  border-bottom: none;
 }
 
 .banner {
@@ -95,14 +90,25 @@ section {
   position: relative;
 }
 
-.time-block {
+.left-time-block {
+  position: relative;
+}
+
+.absolute-time-block {
   position: absolute;
   bottom: 1.5rem;
   left: 0rem;
+}
+
+.time-block {
   font-size: 0.85rem;
   padding: 0.2rem 1.5rem 0.2rem 1.5rem;
-  background-color: #fff;
   color: #211a1d;
+}
+
+.mobile-time-block {
+  display: none;
+  position: inherit;
 }
 
 .time-block time {
@@ -112,10 +118,6 @@ section {
 .time-block span {
   display: block;
   font-weight: 700;
-}
-
-.mobile-time-block {
-  display: none;
 }
 
 .featured-area {
@@ -950,11 +952,6 @@ pre tt:after {
   margin: 0;
 }
 
-@media only screen and (max-width: 480px) {
-  html {
-    font-size: 100%;
-  }
-}
 
  /* unvisited link */
  a:link {
@@ -974,39 +971,4 @@ a:hover {
 /* selected link */
 a:active {
   color: #6320ee;
-}
-
-@media all and (max-width: 768px) {
-  main {
-    display: block;
-  }
-  header {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-  }
-  .main-section {
-    padding: 2.5rem 1rem 4rem;
-  }
-  .mobile-header {
-    display: inherit;
-    margin-bottom: 1rem;
-  }
-  .mobile-time-block {
-    position: inherit;
-    border: none;
-    padding: 0;
-    margin-bottom: 3rem;
-    display: flex;
-    column-gap: 1rem;
-    flex-wrap: wrap;
-    
-    border-bottom: #211a1d  0.25rem solid;
-  }
-  .banner {
-    display: none;
-  }
-  h1 {
-    font-size: 2.7em;
-  }
 }

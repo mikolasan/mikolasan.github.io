@@ -43,6 +43,11 @@ class Layout extends React.Component {
       bannerParagraph,
       recentArticles
     } = this.props
+    const timeBlock = <>
+      {published && <span>Published: <time>{published}</time></span>}
+      {lastUpdated && <span>Updated: <time>{lastUpdated}</time></span>}
+    </>
+    
     const imageData = getImage(featuredImage);
     const imageSrc = getSrc(featuredImage);
     return (
@@ -62,12 +67,14 @@ class Layout extends React.Component {
           featuredImage={imageData}
           bannerParagraph={bannerParagraph}
           title={title}
-          published={published}
-          lastUpdated={lastUpdated}
           crumbs={crumbs}
         />
         <main className="centered">
-          <div className="left-section"></div>
+          <div className="left-section">
+            <div className="left-time-block time-block">
+              {timeBlock}
+            </div>
+          </div>
           <div className="main-section">
             <div className="mobile-header">
               {bannerParagraph}
@@ -86,10 +93,9 @@ class Layout extends React.Component {
                 </div>
               ) || ''}
             </div>
-            {(published && lastUpdated) && (<div className="mobile-time-block">
-              <span>Published: <time>{published}</time></span>
-              <span>Updated: <time>{lastUpdated}</time></span>
-            </div>) || ''}
+            <div className="mobile-time-block time-block">
+              {timeBlock}
+            </div>
             {children}
             {showLikes && (
               <>

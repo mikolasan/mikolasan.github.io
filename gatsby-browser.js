@@ -1,4 +1,7 @@
 require("./src/styles/global.css")
 require("./src/styles/search.css")
 require("./src/styles/home.css")
+require("./src/styles/tablet.css")
+require("./src/styles/mobile.css")
+require("./src/styles/tiny.css")
 require("prismjs/themes/prism.css")

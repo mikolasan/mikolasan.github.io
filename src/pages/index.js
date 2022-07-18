@@ -14,8 +14,8 @@ const Index = ({ pageContext }) => (
       <section className="home_grid_box1">
         <a className="home_card_image" href="/ideas/games/horror-game">
           <img src="/images/home/horror-game.jpg" alt="" />
+          <h1>Horror game</h1>
         </a>
-        <h1>Horror game</h1>
         <p className="home_subtitle">What kind of horror games</p>
         <p>with a twist do you miss?</p>
         <p><small>Header picture is created by BeFunky online tool</small></p>
@@ -24,8 +24,8 @@ const Index = ({ pageContext }) => (
       <section className="home_grid_box2">
         <a className="home_card_image" href="/blog/windows-clone">
           <img src="/images/home/windows-clone.jpg" alt="" />
+          <h1>Windows clone</h1>
         </a>
-        <h1>Windows clone</h1>
         <p className="home_subtitle">What do you need to know when you clone Windows 10 from one drive to another?</p>
         <p>
         This way you do backups. Windows and programs can be reinstalled,
@@ -42,8 +42,8 @@ const Index = ({ pageContext }) => (
       <section className="home_grid_box3">
         <a className="home_card_image" href="/make/robot-coach">
           <img src="/images/home/robot-coach.jpg" alt="" />
+          <h1>Coach Robot</h1>
         </a>
-        <h1>Coach Robot</h1>
         <p className="home_subtitle">Robot-companion</p>
         <p> – it is sitting on your desk and monitors you.</p>
         <p>It plans and organizes your work. 
@@ -65,8 +65,8 @@ const Index = ({ pageContext }) => (
       <section className="home_grid_box4">
         <a className="home_card_image" href="/blog/most-addictive-games">
           <img src="/images/home/most-addictive-games.jpg" alt="" />
+          <h1>The most addictive games</h1>
         </a>
-        <h1>The most addictive games</h1>
         <p className="home_subtitle">
         I purposely do not include games from the current century 😄
         </p>
@@ -74,12 +74,16 @@ const Index = ({ pageContext }) => (
       </section>
 
       <section className="home_grid_box5">
-        <h1>Best practices of Game Jams</h1>
+        <a href="/gamedev/best-practices-of-game-jams">
+          <h1>Best practices of Game Jams</h1>
+        </a>
         <a href="/gamedev/best-practices-of-game-jams">3 things you should know before joining a game jam</a>
       </section>
 
       <section className="home_grid_box6">
-        <h1>Fire!</h1>
+        <a href="/gamedev/fire">
+          <h1>Fire!</h1>
+        </a>
         <p className="home_subtitle">
         Gameplay was highly influenced by Crimsonland and Serious Sam
         </p>
