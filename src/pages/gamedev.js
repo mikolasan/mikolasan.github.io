@@ -8,7 +8,6 @@ const Projects = ({ pageContext }) => (
     crumbs={pageContext.breadcrumb.crumbs}
     languageName="Switch to russian version"
     anotherLanguageLink="/ru/projects"
-    bannerParagraph={[<h1>Gamedev</h1>]}
   >
     
     

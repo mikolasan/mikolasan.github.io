@@ -22,6 +22,16 @@ class Layout extends React.Component {
     })
   }
   
+  timeBlock(published, lastUpdated, addClass) {
+    const timeBlock = <>
+      {published && <span>Published: <time>{published}</time></span>}
+      {lastUpdated && <span>Updated: <time>{lastUpdated}</time></span>}
+    </>
+    return (published || lastUpdated) && <div className={addClass + " time-block"}>
+      {timeBlock}
+    </div> || ` `
+  }
+
   render() {
     const {
       children,
@@ -43,10 +53,6 @@ class Layout extends React.Component {
       bannerParagraph,
       recentArticles
     } = this.props
-    const timeBlock = <>
-      {published && <span>Published: <time>{published}</time></span>}
-      {lastUpdated && <span>Updated: <time>{lastUpdated}</time></span>}
-    </>
     
     const imageData = getImage(featuredImage);
     const imageSrc = getSrc(featuredImage);
@@ -71,9 +77,7 @@ class Layout extends React.Component {
         />
         <main className="centered">
           <div className="left-section">
-            <div className="left-time-block time-block">
-              {timeBlock}
-            </div>
+            {this.timeBlock(published, lastUpdated, "left-time-block")}
           </div>
           <div className="main-section">
             <div className="mobile-header">
@@ -93,9 +97,7 @@ class Layout extends React.Component {
                 </div>
               ) || ''}
             </div>
-            <div className="mobile-time-block time-block">
-              {timeBlock}
-            </div>
+            {this.timeBlock(published, lastUpdated, "mobile-time-block")}
             {children}
             {showLikes && (
               <>

@@ -33,7 +33,7 @@ const Header = ({
     </FeaturedImage>
     
   )
-  const banner = (
+  const banner = bannerParagraph && (
     <Banner
       buttonText={buttonText}
       buttonLink={buttonLink}
@@ -44,7 +44,7 @@ const Header = ({
     >
       {bannerParagraph}
     </Banner>
-  )
+  ) || ``
   return (
   <header>
     <NavigationBar active={section} />

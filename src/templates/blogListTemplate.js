@@ -23,10 +23,6 @@ const BlogIndex = ({ data, pageContext }) => {
       languageName={languageName}
       anotherLanguageLink={anotherLanguageLink}
     >
-      <p>
-        Exclusive full articles read on <a href="https://mikolasan.hashnode.dev/">Hashnode</a>
-      </p>
-      <hr />
       <div className={styles.blogcards}>
         {posts.map(({ node }) => (
           <BlogPreview
