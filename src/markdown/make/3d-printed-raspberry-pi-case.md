@@ -72,3 +72,7 @@ https://www.thingiverse.com/thing:4740975
 
 ![tower](./rpi-tower-case.jpg)
 
+## And more
+
+- https://www.thingiverse.com/thing:5183241
+- https://www.thingiverse.com/thing:5190496

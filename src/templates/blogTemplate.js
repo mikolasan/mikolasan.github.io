@@ -13,14 +13,15 @@ export default function Template ({ data, pageContext }) {
   let published = frontmatter.published || frontmatter.date
   let lastModified = frontmatter.lastModified || frontmatter.date
   // date fixes
+  let lastModifiedDate = new Date(lastModified)
+  let publishedDate = new Date(published)
+  if (published && lastModified && lastModifiedDate < publishedDate) {
+    [published, lastModified] = [lastModified, published];
+  }
   if (lastModified === published) {
     lastModified = null
   }
-  let lastModifiedDate = new Date(lastModified)
-  let publishedDate = new Date(published)
-  if (lastModifiedDate < publishedDate) {
-    [published, lastModified] = [lastModified, published];
-  }
+  
   return (
     <Layout
       pageUrl={url}

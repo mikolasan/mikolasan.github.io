@@ -4,7 +4,7 @@ import Pagination from "./pagination"
 import { absPathToUrl, formatDate } from "../nifty"
 import * as styles from "./postList.module.css"
 
-const RuPostList = ({ pageContext, posts, baseUrl }) => {
+const PostList = ({ pageContext, posts, baseUrl }) => {
   const {
     currentPage,
     numPages
@@ -18,14 +18,14 @@ const RuPostList = ({ pageContext, posts, baseUrl }) => {
             path={absPathToUrl(node.fileAbsolutePath)}
             title={node.frontmatter.title}
             text={node.excerpt}
-            date={formatDate(node.frontmatter.date, 'ru')}
-            readMore="Читать дальше..."
+            date={formatDate(node.frontmatter.date)}
+            readMore="Read more..."
           />
         ))}
       </div>
       <Pagination
-        prevPageText="← Пред стр"
-        nextPageText="След стр →"
+        prevPageText="← Previous Page"
+        nextPageText="Next Page →"
         currentPage={currentPage}
         numPages={numPages}
         path={baseUrl}
@@ -34,4 +34,4 @@ const RuPostList = ({ pageContext, posts, baseUrl }) => {
   )
 }
 
-export default RuPostList
+export default PostList

@@ -11,6 +11,7 @@ class MenuPopup extends React.Component {
       {link: "/", label: "Home"},
       {link: "/ideas/", label: "Ideas"},
       {link: "/projects/", label: "Projects"},
+      {link: "/make/", label: "Make"},
       {link: "/science/", label: "Science"},
       {link: "/blog/", label: "Blog"},
       {link: "/about/", label: "About"},

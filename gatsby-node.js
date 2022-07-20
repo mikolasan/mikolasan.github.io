@@ -36,6 +36,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const ruBlogListTemplate = path.resolve(`./src/templates/ruBlogListTemplate.js`)
   const ruParanormalListTemplate = path.resolve(`./src/templates/ruParanormalListTemplate.js`)
   const ruMakeListTemplate = path.resolve(`./src/templates/ruMakeListTemplate.js`)
+  const makeListTemplate = path.resolve(`./src/templates/makeListTemplate.js`)
   const ruDevlogListTemplate = path.resolve(`./src/templates/ruDevlogListTemplate.js`)
   const ruScienceListTemplate = path.resolve(`./src/templates/ruScienceListTemplate.js`)
 
@@ -146,7 +147,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return
   }
   // Create blog-list pages
-  const posts = blogResult.data.allMarkdownRemark.nodes
   const postsPerPage = 12
   const numPosts = blogResult.data.allMarkdownRemark.totalCount
   const numPages = Math.ceil(numPosts / postsPerPage)
@@ -158,6 +158,40 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         limit: postsPerPage,
         skip: i * postsPerPage,
         numPages,
+        currentPage: i + 1,
+      },
+    })
+  })
+
+  // Pagination [/make]
+  const makeResult = await graphql(`
+    {
+      allMarkdownRemark(
+        filter: {fileAbsolutePath: { regex: "/markdown\/make\//" }}
+      ) {
+        nodes {
+          fileAbsolutePath
+        }
+        totalCount
+      }
+    }
+  `)
+
+  if (makeResult.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query for make pages.`)
+    return
+  }
+  // Create blog-list pages
+  const numMakePosts = makeResult.data.allMarkdownRemark.totalCount
+  const numMakePages = Math.ceil(numMakePosts / postsPerPage)
+  Array.from({ length: numMakePages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/make` : `/make/${i + 1}`,
+      component: makeListTemplate,
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        numPages: numMakePages,
         currentPage: i + 1,
       },
     })
@@ -250,16 +284,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
   // Create blog-list pages
   const ruMakePosts = ruMakeResult.data.allMarkdownRemark.nodes
-  const numMakePosts = ruMakePosts.length
-  const numMakePages = Math.ceil(numMakePosts / postsPerPage)
-  Array.from({ length: numMakePages }).forEach((_, i) => {
+  const numRuMakePosts = ruMakePosts.length
+  const numRuMakePages = Math.ceil(numRuMakePosts / postsPerPage)
+  Array.from({ length: numRuMakePages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/ru/make` : `/ru/make/${i + 1}`,
       component: ruMakeListTemplate,
       context: {
         limit: postsPerPage,
         skip: i * postsPerPage,
-        numPages: numMakePages,
+        numPages: numRuMakePages,
         currentPage: i + 1,
       },
     })

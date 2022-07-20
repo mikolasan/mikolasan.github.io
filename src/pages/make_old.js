@@ -8,7 +8,6 @@ const Make = ({ pageContext }) => (
     crumbs={pageContext.breadcrumb.crumbs}
     languageName="Switch to russian version"
     anotherLanguageLink="/ru/make"
-    bannerParagraph={[<h1>Make</h1>]}
   >
     <h2>What did I make recently</h2>
     <div className="ideacards">
