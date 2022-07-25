@@ -1,6 +1,7 @@
 ---
 date: 2022-05-24
 title: Shitty sentiment analysis
+draft: true
 ---
 
 This idea based on [shitty sentiment analysis](https://twitter.com/ImZackAdams/status/1526378770277576704)
@@ -25,3 +26,7 @@ Nevertheless it uses very interesting dataset. Guys from CrowdFlower decided to 
 >
 > CrowdFlower team:
 > <div style="width:100%;height:0;padding-bottom:63%;position:relative;"><iframe src="https://giphy.com/embed/8GclDP2l4qbx6" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/lol-gif-shrugging-shrug-8GclDP2l4qbx6">via GIPHY</a></p>
+
+Reading about it here: https://kdnuggets.com/2015/11/machine-learning-predict-gender.html
+
+Data on kaggle: https://kaggle.com/datasets/crowdflower/twitter-user-gender-classification

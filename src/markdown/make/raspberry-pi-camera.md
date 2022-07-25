@@ -2,6 +2,7 @@
 date: 2022-07-19
 title: Raspberry Pi camera
 tags: ["3d printing"]
+draft: true
 featuredImage: rpi-and-camera-setup.jpg
 ---
 

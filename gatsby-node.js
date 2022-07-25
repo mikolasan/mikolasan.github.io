@@ -141,10 +141,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   const blogListTemplate = path.resolve(`./src/templates/blogListTemplate.js`)
+  const makeListTemplate = path.resolve(`./src/templates/makeListTemplate.js`)
+  const scienceListTemplate = path.resolve(`./src/templates/scienceListTemplate.js`)
+  
   const ruBlogListTemplate = path.resolve(`./src/templates/ruBlogListTemplate.js`)
   const ruParanormalListTemplate = path.resolve(`./src/templates/ruParanormalListTemplate.js`)
   const ruMakeListTemplate = path.resolve(`./src/templates/ruMakeListTemplate.js`)
-  const makeListTemplate = path.resolve(`./src/templates/makeListTemplate.js`)
   const ruDevlogListTemplate = path.resolve(`./src/templates/ruDevlogListTemplate.js`)
   const ruScienceListTemplate = path.resolve(`./src/templates/ruScienceListTemplate.js`)
 
@@ -152,6 +154,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   await createPagination("/markdown\/blog\//", `/blog`, blogListTemplate)
   // Pagination [/make]
   await createPagination("/markdown\/make\//", `/make`, makeListTemplate)
+  // Pagination [/science]
+  await createPagination("/markdown\/science\//", `/science`, scienceListTemplate)
+
   // Pagination [/ru/blog]
   await createPagination("/\/ru\/blog*/", `/ru/blog`, ruBlogListTemplate)
   // Pagination [/ru/paranormal]
