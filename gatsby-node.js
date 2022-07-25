@@ -27,8 +27,56 @@ exports.createSchemaCustomization = ({ actions }) => {
   createTypes(typeDefs)
 }
 
+const nodeReducer = (array, node) => {
+  if (node.fileAbsolutePath !== null) {
+    array.push(node);
+  }
+  return array;
+}
+
+const toPages = (node, template, recentArticles) => {
+  const path = nifty.absPathToUrl(node.fileAbsolutePath)
+  const showLikes = likesConfig.excludePath.find(p => p === path) === undefined
+  return {
+    path: path,
+    component: template,
+    context: {
+      showLikes: showLikes,
+      absolutePath: node.fileAbsolutePath,
+      url: path,
+      recentArticles: recentArticles
+    },
+  }
+}
+
+const pageFactory = (template, recentArticles) => {
+  return (node) => toPages(node, template, recentArticles)
+}
+
+const paginationFor = (result, path, listTemplate, postsPerPage = 12) => {
+  let numPosts = result.data.allMarkdownRemark?.totalCount
+  if (numPosts === undefined) {
+    numPosts = result.data.allMarkdownRemark.nodes.length
+  }
+  const numPages = Math.ceil(numPosts / postsPerPage)
+  return Array.from({ length: numPages }).map((_, i) => {
+    return {
+      path: i === 0 ? `/blog` : `/blog/${i + 1}`,
+      component: listTemplate,
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        numPages,
+        currentPage: i + 1,
+      },
+    }
+  })
+}
+
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
+
+  const pages = []
 
   const blogPostTemplate = path.resolve(`./src/templates/blogTemplate.js`)
   const ruBlogPostTemplate = path.resolve(`./src/templates/ruBlogTemplate.js`)
@@ -80,21 +128,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return
   }
 
-  result.data.allMarkdownRemark.nodes.forEach(node => {
-    if (node.fileAbsolutePath === null) return
-    const path = nifty.absPathToUrl(node.fileAbsolutePath)
-    const showLikes = likesConfig.excludePath.find(p => p === path) === undefined
-    createPage({
-      path: path,
-      component: blogPostTemplate,
-      context: {
-        showLikes: showLikes,
-        absolutePath: node.fileAbsolutePath,
-        url: path,
-        recentArticles: recentArticles
-      },
-    })
-  })
+  result.data.allMarkdownRemark.nodes
+    .reduce(nodeReducer, [])
+    .map(pageFactory(blogPostTemplate, recentArticles))
+    .forEach(page => createPage(page))
 
   // Russian version
   const ruResult = await graphql(`
@@ -114,19 +151,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return
   }
 
-  ruResult.data.allMarkdownRemark.nodes.forEach(node => {
-    if (node.fileAbsolutePath === null) return
-    const path = nifty.absPathToUrl(node.fileAbsolutePath)
-    createPage({
-      path: path,
-      component: ruBlogPostTemplate,
-      context: {
-        showLikes: false,
-        absolutePath: node.fileAbsolutePath,
-        url: path
-      }, // additional data can be passed via context
-    })
-  })
+  ruResult.data.allMarkdownRemark.nodes
+    .reduce(nodeReducer, [])
+    .map(pageFactory(ruBlogPostTemplate, recentArticles))
+    .forEach(page => createPage(page))
 
   // Pagination [/blog]
   const blogResult = await graphql(`
@@ -146,22 +174,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     reporter.panicOnBuild(`Error while running GraphQL query for blog pages.`)
     return
   }
-  // Create blog-list pages
-  const postsPerPage = 12
-  const numPosts = blogResult.data.allMarkdownRemark.totalCount
-  const numPages = Math.ceil(numPosts / postsPerPage)
-  Array.from({ length: numPages }).forEach((_, i) => {
-    createPage({
-      path: i === 0 ? `/blog` : `/blog/${i + 1}`,
-      component: blogListTemplate,
-      context: {
-        limit: postsPerPage,
-        skip: i * postsPerPage,
-        numPages,
-        currentPage: i + 1,
-      },
-    })
-  })
+  
+  paginationFor(blogResult, `/blog`, blogListTemplate)
+    .forEach(page => createPage(page))
 
   // Pagination [/make]
   const makeResult = await graphql(`
@@ -181,21 +196,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     reporter.panicOnBuild(`Error while running GraphQL query for make pages.`)
     return
   }
-  // Create blog-list pages
-  const numMakePosts = makeResult.data.allMarkdownRemark.totalCount
-  const numMakePages = Math.ceil(numMakePosts / postsPerPage)
-  Array.from({ length: numMakePages }).forEach((_, i) => {
-    createPage({
-      path: i === 0 ? `/make` : `/make/${i + 1}`,
-      component: makeListTemplate,
-      context: {
-        limit: postsPerPage,
-        skip: i * postsPerPage,
-        numPages: numMakePages,
-        currentPage: i + 1,
-      },
-    })
-  })
+
+  paginationFor(makeResult, `/make`, makeListTemplate)
+    .forEach(page => createPage(page))
 
   // Pagination [/ru/blog]
   const ruBlogResult = await graphql(`
@@ -214,22 +217,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     reporter.panicOnBuild(`Error while running GraphQL query for ru blog pages.`)
     return
   }
-  // Create blog-list pages
-  const ruPosts = ruBlogResult.data.allMarkdownRemark.nodes
-  const ruNumPosts = ruPosts.length
-  const ruNumPages = Math.ceil(ruNumPosts / postsPerPage)
-  Array.from({ length: ruNumPages }).forEach((_, i) => {
-    createPage({
-      path: i === 0 ? `/ru/blog` : `/ru/blog/${i + 1}`,
-      component: ruBlogListTemplate,
-      context: {
-        limit: postsPerPage,
-        skip: i * postsPerPage,
-        numPages: ruNumPages,
-        currentPage: i + 1,
-      },
-    })
-  })
+
+  paginationFor(ruBlogResult, `/ru/blog`, ruBlogListTemplate)
+    .forEach(page => createPage(page))
 
   // Pagination [/ru/paranormal]
   const ruParanormalResult = await graphql(`
@@ -248,22 +238,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     reporter.panicOnBuild(`Error while running GraphQL query for ru paranormal pages.`)
     return
   }
-  // Create blog-list pages
-  const ruParanormalPosts = ruParanormalResult.data.allMarkdownRemark.nodes
-  const numParanormalPosts = ruParanormalPosts.length
-  const numParanormalPages = Math.ceil(numParanormalPosts / postsPerPage)
-  Array.from({ length: numParanormalPages }).forEach((_, i) => {
-    createPage({
-      path: i === 0 ? `/ru/paranormal` : `/ru/paranormal/${i + 1}`,
-      component: ruParanormalListTemplate,
-      context: {
-        limit: postsPerPage,
-        skip: i * postsPerPage,
-        numPages: numParanormalPages,
-        currentPage: i + 1,
-      },
-    })
-  })
+
+  paginationFor(ruParanormalResult, `/ru/paranormal`, ruParanormalListTemplate)
+    .forEach(page => createPage(page))
 
   // Pagination [/ru/make]
   const ruMakeResult = await graphql(`
@@ -282,22 +259,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     reporter.panicOnBuild(`Error while running GraphQL query for ru make pages.`)
     return
   }
-  // Create blog-list pages
-  const ruMakePosts = ruMakeResult.data.allMarkdownRemark.nodes
-  const numRuMakePosts = ruMakePosts.length
-  const numRuMakePages = Math.ceil(numRuMakePosts / postsPerPage)
-  Array.from({ length: numRuMakePages }).forEach((_, i) => {
-    createPage({
-      path: i === 0 ? `/ru/make` : `/ru/make/${i + 1}`,
-      component: ruMakeListTemplate,
-      context: {
-        limit: postsPerPage,
-        skip: i * postsPerPage,
-        numPages: numRuMakePages,
-        currentPage: i + 1,
-      },
-    })
-  })
+
+  paginationFor(ruMakeResult, `/ru/make`, ruMakeListTemplate)
+    .forEach(page => createPage(page))
 
   // Pagination [/ru/devlog]
   const ruDevlogResult = await graphql(`
@@ -316,22 +280,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     reporter.panicOnBuild(`Error while running GraphQL query for ru devlog pages.`)
     return
   }
-  // Create blog-list pages
-  const ruDevlogPosts = ruDevlogResult.data.allMarkdownRemark.nodes
-  const numDevlogPosts = ruDevlogPosts.length
-  const numDevlogPages = Math.ceil(numDevlogPosts / postsPerPage)
-  Array.from({ length: numDevlogPages }).forEach((_, i) => {
-    createPage({
-      path: i === 0 ? `/ru/devlog` : `/ru/devlog/${i + 1}`,
-      component: ruDevlogListTemplate,
-      context: {
-        limit: postsPerPage,
-        skip: i * postsPerPage,
-        numPages: numDevlogPages,
-        currentPage: i + 1,
-      },
-    })
-  })
+
+  paginationFor(ruDevlogResult, `/ru/devlog`, ruDevlogListTemplate)
+    .forEach(page => createPage(page))
 
   // Pagination [/ru/neural-networks]
   const ruScienceResult = await graphql(`
@@ -350,20 +301,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     reporter.panicOnBuild(`Error while running GraphQL query for ru neural-networks pages.`)
     return
   }
-  // Create blog-list pages
-  const ruSciencePosts = ruScienceResult.data.allMarkdownRemark.nodes
-  const numSciencePosts = ruSciencePosts.length
-  const numSciencePages = Math.ceil(numSciencePosts / postsPerPage)
-  Array.from({ length: numSciencePages }).forEach((_, i) => {
-    createPage({
-      path: i === 0 ? `/ru/neural-networks` : `/ru/neural-networks/${i + 1}`,
-      component: ruScienceListTemplate,
-      context: {
-        limit: postsPerPage,
-        skip: i * postsPerPage,
-        numPages: numSciencePages,
-        currentPage: i + 1,
-      },
-    })
-  })
+
+  paginationFor(ruScienceResult, `/ru/neural-networks`, ruScienceListTemplate)
+    .forEach(page => createPage(page))
 }

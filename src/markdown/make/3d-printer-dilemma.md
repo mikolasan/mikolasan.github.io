@@ -4,6 +4,7 @@ title: 3D printer dilemma
 tags: ["3d printing"]
 published: 2022-07-10
 lastModified: 2022-07-10
+twitter: https://twitter.com/mikolasan/status/1546017428324331520
 ---
 
 A long time ago in a far far… don't worry, the story happened in this galaxy. So, in far far pages of Wikipedia, I was reading about the RepRap project, self-replicating robots, and gray goo. "Gray goo" is a actual scientific term created by Eric Dexter.
@@ -18,7 +19,9 @@ I don't remember why, but I searched for alternatives and found a 3D printer. Th
 
 But do you know what happened? The team never came to a consensus on what they wanted. Then new projects and new deadlines came, and everyone forgot about the Xbox and 3D printers.
 
-I've read a few articles about 3D printers. The technology is so simple. The frame gives 3 axis of movement to a nozzle, and it spits melted plastic layer by layer.  But later on YouTube, I watched that 3D printing is trickier than it seems. And not be surprised if you get not satisfying results.
+I've read a few articles about 3D printers. The technology is so simple. The frame gives 3 axis of movement to a nozzle, and it spits melted plastic layer by layer.  But later on YouTube, I watched that 3D printing [is trickier than it seems](https://www.youtube.com/watch?v=LvGKfevdf_Q). And not be surprised if you get not satisfying results.
+
+![13 thing I wish I knew](./13-things-i-wish-i-knew.png)
 
 Besides, one should be proficient in 3D modeling and know the tools. Blender, for example.
 
@@ -28,3 +31,4 @@ It turned out that my brother thinks the other way around. Or I don't know. He e
 
 And now, I need to print several things: a case for Raspberry Pi and Arduino, a crawler robot, and a mount for the camera. I looked for 3D printing services, I looked for 3D printer prices—I don't know if I should buy one. But even if I do, it's so scary to invest like $1000 into this and get a messy spaghetty out of filament.
 
+![3d printer spaghetti](./3d-print-failed.jpg)

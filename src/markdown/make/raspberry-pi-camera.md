@@ -37,6 +37,12 @@ https://www.ni.com/en-us/support/documentation/supplemental/18/calculating-camer
 
 https://www.myminifactory.com/object/3d-print-3d-printed-photography-lens-mechanism-for-projector-lens-125175
 
+## Dive into physics
+
+![Focal length calculator](./focal-length-calculator.png)
+
+![Lens types](./lens-types.png)
+
 
 ## Software
 
