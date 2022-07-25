@@ -96,18 +96,6 @@ const paginationFor = (result, path, listTemplate, postsPerPage = 12) => {
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
 
-  const pages = []
-
-  const blogPostTemplate = path.resolve(`./src/templates/blogTemplate.js`)
-  const ruBlogPostTemplate = path.resolve(`./src/templates/ruBlogTemplate.js`)
-  const blogListTemplate = path.resolve(`./src/templates/blogListTemplate.js`)
-  const ruBlogListTemplate = path.resolve(`./src/templates/ruBlogListTemplate.js`)
-  const ruParanormalListTemplate = path.resolve(`./src/templates/ruParanormalListTemplate.js`)
-  const ruMakeListTemplate = path.resolve(`./src/templates/ruMakeListTemplate.js`)
-  const makeListTemplate = path.resolve(`./src/templates/makeListTemplate.js`)
-  const ruDevlogListTemplate = path.resolve(`./src/templates/ruDevlogListTemplate.js`)
-  const ruScienceListTemplate = path.resolve(`./src/templates/ruScienceListTemplate.js`)
-
   const recentArticles = await graphql(`
     {
       allMarkdownRemark(
@@ -131,6 +119,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return
   }
 
+  const blogPostTemplate = path.resolve(`./src/templates/blogTemplate.js`)
   const result = await queryByPath(graphql, "/^(?!.*\/ru\/.*)/");
   result.data.allMarkdownRemark.nodes
     .reduce(nodeReducer, [])
@@ -138,46 +127,41 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     .forEach(page => createPage(page))
 
   // Russian version
+  const ruBlogPostTemplate = path.resolve(`./src/templates/ruBlogTemplate.js`)
   const ruResult = await queryByPath(graphql, "/\/ru\//")
   ruResult.data.allMarkdownRemark.nodes
     .reduce(nodeReducer, [])
     .map(pageFactory(ruBlogPostTemplate, recentArticles))
     .forEach(page => createPage(page))
 
+  const createPagination = async (regex, path, listTemplate) => {
+    const result = await queryByPath(graphql, regex)
+    paginationFor(result, path, listTemplate)
+      .forEach(page => createPage(page))  
+  }
+
+  const blogListTemplate = path.resolve(`./src/templates/blogListTemplate.js`)
+  const ruBlogListTemplate = path.resolve(`./src/templates/ruBlogListTemplate.js`)
+  const ruParanormalListTemplate = path.resolve(`./src/templates/ruParanormalListTemplate.js`)
+  const ruMakeListTemplate = path.resolve(`./src/templates/ruMakeListTemplate.js`)
+  const makeListTemplate = path.resolve(`./src/templates/makeListTemplate.js`)
+  const ruDevlogListTemplate = path.resolve(`./src/templates/ruDevlogListTemplate.js`)
+  const ruScienceListTemplate = path.resolve(`./src/templates/ruScienceListTemplate.js`)
+
   // Pagination [/blog]
-  const blogResult = await queryByPath(graphql, "/markdown\/blog\//")
-  paginationFor(blogResult, `/blog`, blogListTemplate)
-    .forEach(page => createPage(page))
-
+  await createPagination("/markdown\/blog\//", `/blog`, blogListTemplate)
   // Pagination [/make]
-  const makeResult = await queryByPath(graphql, "/markdown\/make\//")
-  paginationFor(makeResult, `/make`, makeListTemplate)
-    .forEach(page => createPage(page))
-
+  await createPagination("/markdown\/make\//", `/make`, makeListTemplate)
   // Pagination [/ru/blog]
-  const ruBlogResult = await queryByPath(graphql, "/\/ru\/blog*/")
-  paginationFor(ruBlogResult, `/ru/blog`, ruBlogListTemplate)
-    .forEach(page => createPage(page))
-
+  await createPagination("/\/ru\/blog*/", `/ru/blog`, ruBlogListTemplate)
   // Pagination [/ru/paranormal]
-  const ruParanormalResult = await queryByPath(graphql, "/\/ru\/paranormal\//")
-  paginationFor(ruParanormalResult, `/ru/paranormal`, ruParanormalListTemplate)
-    .forEach(page => createPage(page))
-
+  await createPagination("/\/ru\/paranormal\//", `/ru/paranormal`, ruParanormalListTemplate)
   // Pagination [/ru/make]
-  const ruMakeResult = await queryByPath(graphql, "/\/ru\/make\/(?!hydroponics)/")
-  paginationFor(ruMakeResult, `/ru/make`, ruMakeListTemplate)
-    .forEach(page => createPage(page))
-
+  await createPagination("/\/ru\/make\/(?!hydroponics)/", `/ru/make`, ruMakeListTemplate)
   // Pagination [/ru/devlog]
-  const ruDevlogResult = await queryByPath(graphql, "/\/ru\/devlog\//")
-  paginationFor(ruDevlogResult, `/ru/devlog`, ruDevlogListTemplate)
-    .forEach(page => createPage(page))
-
+  await createPagination("/\/ru\/devlog\//", `/ru/devlog`, ruDevlogListTemplate)
   // Pagination [/ru/neural-networks]
-  const ruScienceResult = await queryByPath(graphql, "/\/ru\/neural-networks\//")
-  paginationFor(ruScienceResult, `/ru/neural-networks`, ruScienceListTemplate)
-    .forEach(page => createPage(page))
+  await createPagination("/\/ru\/neural-networks\//", `/ru/neural-networks`, ruScienceListTemplate)
 
   // catch 
   //reporter.panicOnBuild(e)
