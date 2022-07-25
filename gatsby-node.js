@@ -34,6 +34,26 @@ const nodeReducer = (array, node) => {
   return array;
 }
 
+const queryByPath = async (graphql, regex) => {
+  const result = await graphql(`
+    {
+      allMarkdownRemark(
+        filter: {fileAbsolutePath: { regex: "${regex}" }}
+      ) {
+        nodes {
+          fileAbsolutePath
+        }
+        totalCount
+      }
+    }
+  `)
+
+  if (result.errors) {
+    throw `Error while running GraphQL query for ${regex} pages.`
+  }
+  return result
+}
+
 const toPages = (node, template, recentArticles) => {
   const path = nifty.absPathToUrl(node.fileAbsolutePath)
   const showLikes = likesConfig.excludePath.find(p => p === path) === undefined
@@ -61,7 +81,7 @@ const paginationFor = (result, path, listTemplate, postsPerPage = 12) => {
   const numPages = Math.ceil(numPosts / postsPerPage)
   return Array.from({ length: numPages }).map((_, i) => {
     return {
-      path: i === 0 ? `/blog` : `/blog/${i + 1}`,
+      path: i === 0 ? path : `${path}/${i + 1}`,
       component: listTemplate,
       context: {
         limit: postsPerPage,
@@ -111,197 +131,54 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return
   }
 
-  const result = await graphql(`
-    {
-      allMarkdownRemark(
-        filter: {fileAbsolutePath: {regex: "/^(?!.*\/ru\/.*)/"}}
-      ) {
-        nodes {
-          fileAbsolutePath
-        }
-      }
-    }
-  `)
-
-  if (result.errors) {
-    reporter.panicOnBuild(`Error while running GraphQL query.`)
-    return
-  }
-
+  const result = await queryByPath(graphql, "/^(?!.*\/ru\/.*)/");
   result.data.allMarkdownRemark.nodes
     .reduce(nodeReducer, [])
     .map(pageFactory(blogPostTemplate, recentArticles))
     .forEach(page => createPage(page))
 
   // Russian version
-  const ruResult = await graphql(`
-    {
-      allMarkdownRemark(
-        filter: {fileAbsolutePath: { regex: "/\/ru\//"}}
-      ) {
-        nodes {
-          fileAbsolutePath
-        }
-      }
-    }
-  `)
-
-  if (ruResult.errors) {
-    reporter.panicOnBuild(`Error while running GraphQL query.`)
-    return
-  }
-
+  const ruResult = await queryByPath(graphql, "/\/ru\//")
   ruResult.data.allMarkdownRemark.nodes
     .reduce(nodeReducer, [])
     .map(pageFactory(ruBlogPostTemplate, recentArticles))
     .forEach(page => createPage(page))
 
   // Pagination [/blog]
-  const blogResult = await graphql(`
-    {
-      allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/markdown\/blog\//" }}
-      ) {
-        nodes {
-          fileAbsolutePath
-        }
-        totalCount
-      }
-    }
-  `)
-
-  if (blogResult.errors) {
-    reporter.panicOnBuild(`Error while running GraphQL query for blog pages.`)
-    return
-  }
-  
+  const blogResult = await queryByPath(graphql, "/markdown\/blog\//")
   paginationFor(blogResult, `/blog`, blogListTemplate)
     .forEach(page => createPage(page))
 
   // Pagination [/make]
-  const makeResult = await graphql(`
-    {
-      allMarkdownRemark(
-        filter: {fileAbsolutePath: { regex: "/markdown\/make\//" }}
-      ) {
-        nodes {
-          fileAbsolutePath
-        }
-        totalCount
-      }
-    }
-  `)
-
-  if (makeResult.errors) {
-    reporter.panicOnBuild(`Error while running GraphQL query for make pages.`)
-    return
-  }
-
+  const makeResult = await queryByPath(graphql, "/markdown\/make\//")
   paginationFor(makeResult, `/make`, makeListTemplate)
     .forEach(page => createPage(page))
 
   // Pagination [/ru/blog]
-  const ruBlogResult = await graphql(`
-    {
-      allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/\/ru\/blog*/" }}
-      ) {
-        nodes {
-          fileAbsolutePath
-        }
-      }
-    }
-  `)
-
-  if (ruBlogResult.errors) {
-    reporter.panicOnBuild(`Error while running GraphQL query for ru blog pages.`)
-    return
-  }
-
+  const ruBlogResult = await queryByPath(graphql, "/\/ru\/blog*/")
   paginationFor(ruBlogResult, `/ru/blog`, ruBlogListTemplate)
     .forEach(page => createPage(page))
 
   // Pagination [/ru/paranormal]
-  const ruParanormalResult = await graphql(`
-    {
-      allMarkdownRemark(
-        filter: {fileAbsolutePath: { regex: "/\/ru\/paranormal\//" }}
-      ) {
-        nodes {
-          fileAbsolutePath
-        }
-      }
-    }
-  `)
-
-  if (ruParanormalResult.errors) {
-    reporter.panicOnBuild(`Error while running GraphQL query for ru paranormal pages.`)
-    return
-  }
-
+  const ruParanormalResult = await queryByPath(graphql, "/\/ru\/paranormal\//")
   paginationFor(ruParanormalResult, `/ru/paranormal`, ruParanormalListTemplate)
     .forEach(page => createPage(page))
 
   // Pagination [/ru/make]
-  const ruMakeResult = await graphql(`
-    {
-      allMarkdownRemark(
-        filter: {fileAbsolutePath: { regex: "/\/ru\/make\/(?!hydroponics)/" }}
-      ) {
-        nodes {
-          fileAbsolutePath
-        }
-      }
-    }
-  `)
-
-  if (ruMakeResult.errors) {
-    reporter.panicOnBuild(`Error while running GraphQL query for ru make pages.`)
-    return
-  }
-
+  const ruMakeResult = await queryByPath(graphql, "/\/ru\/make\/(?!hydroponics)/")
   paginationFor(ruMakeResult, `/ru/make`, ruMakeListTemplate)
     .forEach(page => createPage(page))
 
   // Pagination [/ru/devlog]
-  const ruDevlogResult = await graphql(`
-    {
-      allMarkdownRemark(
-        filter: {fileAbsolutePath: { regex: "/\/ru\/devlog\//" }}
-      ) {
-        nodes {
-          fileAbsolutePath
-        }
-      }
-    }
-  `)
-
-  if (ruDevlogResult.errors) {
-    reporter.panicOnBuild(`Error while running GraphQL query for ru devlog pages.`)
-    return
-  }
-
+  const ruDevlogResult = await queryByPath(graphql, "/\/ru\/devlog\//")
   paginationFor(ruDevlogResult, `/ru/devlog`, ruDevlogListTemplate)
     .forEach(page => createPage(page))
 
   // Pagination [/ru/neural-networks]
-  const ruScienceResult = await graphql(`
-    {
-      allMarkdownRemark(
-        filter: {fileAbsolutePath: { regex: "/\/ru\/neural-networks\//" }}
-      ) {
-        nodes {
-          fileAbsolutePath
-        }
-      }
-    }
-  `)
-
-  if (ruScienceResult.errors) {
-    reporter.panicOnBuild(`Error while running GraphQL query for ru neural-networks pages.`)
-    return
-  }
-
+  const ruScienceResult = await queryByPath(graphql, "/\/ru\/neural-networks\//")
   paginationFor(ruScienceResult, `/ru/neural-networks`, ruScienceListTemplate)
     .forEach(page => createPage(page))
+
+  // catch 
+  //reporter.panicOnBuild(e)
 }
