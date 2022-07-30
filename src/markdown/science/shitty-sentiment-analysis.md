@@ -16,7 +16,7 @@ I also want to generate a special pretty badge that you can post to Twitter that
 
 Some threads collect thousands likes, but seems like no one really going through the links. For example [this kaggle](https://www.kaggle.com/code/kanncaa1/applying-text-mining/notebook) about text mining slowly going with string manipulation and regexes, but interesting classification at the end fails because some names are not defined 😖
 
-![error on notebook](./kaggle-applying-text-mining-error.jpg)
+![error in the notebook](./kaggle-applying-text-mining-error.jpg)
 
 Nevertheless it uses very interesting dataset. Guys from CrowdFlower decided to gues gender by text we write. Amazing, right?
 

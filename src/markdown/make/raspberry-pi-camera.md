@@ -19,7 +19,7 @@ That strange cylinder connected with white ribbon is the camera. It only shows p
 - Sensor size: diagonal 7.857 mm (Type 1/2.3) 
 - FPC cable for connection to a Raspberry Pi computer
 
-## Lens
+# Lens
 
 Lens for Raspberry Pi HQ Camera? Anyone?
 
@@ -27,22 +27,73 @@ Speaking of lenses. I'm thinking to make my own lens instead of buying an offici
 
 Of course I first looked up [how to make camera lens DIY](https://www.youtube.com/watch?v=miuhxhodpiQ) so to speak, but then I found sets of glass lenses on Amazon. Which means I need to find a formula and scheme of camera lens.
 
+## What type?
+
 I found a lot on Amazon that offers [6x 50mm Diameter](https://www.amazon.com/Amlong-Crystal-Premium-Optical-Diameter/dp/B07Z3CVFMB/)
 
 - 3 Double Convex (20, 30, 50cm FL) and
-- 3 Double Concave (20, 30, 50cm FL) 
+- 3 Double Concave (20, 30, 50cm FL)
+
+![Lens types](./lens-types.png)
+
+So what do I need? 
+
+Real lenses are complex inside. For example here's Canon EF-S 18-55 mm f/ 3.5-5.6 IS optical design
+
+![camera lens diagram](./lens-groups.gif)
+
+
+
+![lens cross section](./lens-cross-section.webp)
 
 https://www.ni.com/en-us/support/documentation/supplemental/18/calculating-camera-sensor-resolution-and-lens-focal-length.html
 
+## Camera lens inside
+
+- https://www.photoreview.com.au/news/canon-unveils-two-new-lenses/
+- https://www.photonstophotos.net/GeneralTopics/Lenses/Optics_Primer/Optics_Primer.htm
+- https://www.photonstophotos.net/GeneralTopics/Lenses/OpticalBench/OpticalBench.htm
 ![](./lens-mechanism-for-projector-lens.jpg)
 
 https://www.myminifactory.com/object/3d-print-3d-printed-photography-lens-mechanism-for-projector-lens-125175
 
+- depth of field?
+![](./field-of-view.webp)
+- aperture?
+
 ## Dive into physics
+
+### Literature
+
+- https://study.com/academy/lesson/focal-length-definition-equation-examples.html
+- https://escooptics.com/blogs/news/concepts-in-light-and-optics-lenses-part-1
+- https://www.edmundoptics.com/knowledge-center/application-notes/optics/understanding-optical-lens-geometries/
+- macro extension tubes https://www.cambridgeincolour.com/tutorials/macro-extension-tubes-closeup.htm
+
+### Calculators
+
+- https://www.kowa-lenses.com/en/lens-calculator
+- Magnification of lens https://www.omnicalculator.com/other/lens-magnification#optics-101
+- Extension tube magnification https://thingsupclose.com/tools/extension-tube-magnification-calculator/
+- Compound lens focal length calculator https://www.azcalculator.com/calc/compound-lens-focal-length.php
+
+## Two lens system
+
+Let's start with two lens system.
+
+- https://www.livephysics.com/tools/optics-tools/lens-system-tool-image-distance-magnification/
+- https://www.fxsolver.com/browse/formulas/Compound+lens%27+focal+length
 
 ![Focal length calculator](./focal-length-calculator.png)
 
-![Lens types](./lens-types.png)
+
+
+
+https://www.studiobinder.com/blog/focal-length-camera-lenses-explained/
+
+![point of convergence](./focal-length-point-of-convergence.webp)
+
+https://www.photonstophotos.net/GeneralTopics/Lenses/OpticalBench/OpticalBench.htm
 
 
 ## Software
