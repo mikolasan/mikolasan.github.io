@@ -1,5 +1,4 @@
 ---
-path: /ru/gamedev/pygame
 date: 2020-08-16
 title: Библиотека PyGame
 language: "ru"

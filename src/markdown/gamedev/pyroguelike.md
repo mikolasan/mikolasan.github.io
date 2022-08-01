@@ -7,7 +7,7 @@ published: 2020-04-06
 lastModified: 2021-10-28
 ---
 
-Some day I will create a game in new genre – [infinite institute hall crawler](/ideas/infinite-institute-hall-crawler)
+Some day I will create a game in new genre – [infinite institute hall crawler](/ideas/games/infinite-institute-hall-crawler)
 
 ## Try it now!
 

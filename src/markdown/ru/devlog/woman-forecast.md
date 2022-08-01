@@ -1,5 +1,4 @@
 ---
-path: "/ru/projects/woman-forecast"
 date: 2020-05-18
 title: "Детектор женского недовольства"
 tags: ["mobile", "prediction", "calendar"]

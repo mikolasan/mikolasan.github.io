@@ -1,5 +1,4 @@
 ---
-path: "/ru/projects/3d-print-carmageddon"
 date: "2021-02-06"
 title: "3Д печать машины из Carmageddon."
 tags: ["3d printing"]

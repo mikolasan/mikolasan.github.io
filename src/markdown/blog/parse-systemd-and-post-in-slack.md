@@ -176,7 +176,7 @@ Now it is time to tame the output with filters.
 
 ## Mockup service
 
-As I said earlier, I only want to receive logs from one specific service. Like this simple [Python](/gamedev/why-do-i-hate-python) service: https://gist.github.com/mikolasan/917455a42152eeab24a0bb3fcb549647.
+As I said earlier, I only want to receive logs from one specific service. Like this simple [Python](/blog/why-do-i-hate-python) service: https://gist.github.com/mikolasan/917455a42152eeab24a0bb3fcb549647.
 
 ```
 sudo mkdir /opt/my-python-project

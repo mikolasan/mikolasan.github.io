@@ -1,5 +1,4 @@
 ---
-path: "/ru/hardware/wemos-d1"
 date: "2021-07-18"
 title: "Плата Wemos D1"
 tags: ["hardware"]

@@ -1,5 +1,4 @@
 ---
-path: "/ru/projects/laptop-repair"
 date: "2020-11-30"
 title: "Залипают кнопки клавиатуры, тротлинг и перезагрузка ноутбука Dell Inspiron 17 7559"
 tags: ["hardware"]

@@ -1,5 +1,4 @@
 ---
-path: "/ru/projects/surge-protector"
 date: "2020-11-27"
 title: "Что внутри сетевого фильтра?"
 tags: ["hardware"]

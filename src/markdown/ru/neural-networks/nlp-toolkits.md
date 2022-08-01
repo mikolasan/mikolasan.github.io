@@ -1,5 +1,5 @@
 ---
-path: "/ru/science/nlp-toolkits"
+path: "/ru/neural-networks/nlp-toolkits"
 date: "2020-07-26"
 title: Инструменты для обработки естественного языка
 language: "ru"
@@ -18,7 +18,7 @@ lastModified: 2021-10-13
 
 ## Generative Pretrained Transformer
 
-**Расширенная статья:** [Натренированный генерирующий трансформер](/ru/science/nlp-gpt-2)
+**Расширенная статья:** [Натренированный генерирующий трансформер](/ru/neural-networks/gpt-2)
 
 
 ### GPT-1

@@ -1,5 +1,4 @@
 ---
-path: "/ru/projects/pet-project-navigator"
 date: "2020-03-26"
 title: Pet Project Navigator
 tags: ["java", "db", "mobile"]

@@ -1,5 +1,4 @@
 ---
-path: "/ideas/where-free-art"
 date: "2020-05-24"
 title: "Where free art?"
 published: 2021-10-13

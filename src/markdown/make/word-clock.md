@@ -1,5 +1,4 @@
 ---
-path: "/projects/word-clock"
 date: "2020-05-16"
 title: "Word clock"
 tags: ["hardware", "embedded", "laser cut"]

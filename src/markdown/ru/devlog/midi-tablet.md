@@ -1,5 +1,4 @@
 ---
-path: "/ru/projects/midi-tablet"
 date: "2020-05-16"
 title: "MIDI планшет"
 tags: ["mobile"]

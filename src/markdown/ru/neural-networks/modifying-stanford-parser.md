@@ -1,5 +1,5 @@
 ---
-path: "/ru/science/modifying-stanford-parser"
+path: "/ru/neural-networks/modifying-stanford-parser"
 date: "2020-08-02"
 title: Модифицируя Стэнфордовский разбор
 language: "ru"

@@ -1,5 +1,5 @@
 ---
-path: "/ru/science/bayes-home-automation"
+path: "/ru/neural-networks/bayes-home-automation"
 date: "2021-05-19"
 title: Домашняя автоматизация с помощью байесовской модели
 language: "ru"

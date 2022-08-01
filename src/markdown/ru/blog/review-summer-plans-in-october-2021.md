@@ -7,7 +7,7 @@ lastModified: 2021-10-13
 
 Итак, какие планы были у меня на лето:
 
-- Сделать [гидропонную установку](/ru/make/hydroponics-system),
+- Сделать [гидропонную установку](/ru/make/hydroponics),
 - Съездить в [заброшенный лагерь](/ru/paranormal/abandoned-summer-camp)
 - Построить [беседку](/ru/make/gazebo) из развалившегося сарая
 - Встать в 4 утра и следовать из пригорода в город на велосипеде [по подсказкам навигатора](/ru/blog/yandex.navigator-and-2gis-are-not-good)

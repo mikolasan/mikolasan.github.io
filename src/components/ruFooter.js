@@ -25,9 +25,8 @@ const RuFooter = ({
           <div className="bottommenu">
             <Link to="/ru/ideas">Идеи</Link>
             <Link to="/ru/projects">Проекты</Link>
-            <Link to="/ru/science">Наука</Link>
+            <Link to="/ru/neural-networks">Наука</Link>
             <Link to="/ru/blog">Блог</Link>
-            <Link to="/ru/cv">Резюме</Link>
             <Link to="/ru/terms">Условия</Link>
             <Link to="/ru/privacy">Конфиденциальность</Link>
           </div>

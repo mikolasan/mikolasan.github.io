@@ -35,7 +35,7 @@ const Make = ({ pageContext }) => (
 
       <div className="ideacard">
         <a href="/make/word-clock">
-          <img src="/images/projects/word-clock.jpg" alt="YouTube channel art" />
+          <img src="/images/projects/word-clock.jpg" alt="word clock" />
         </a>
         <div className="idea-card-container">
           <h3>Word Clock</h3>

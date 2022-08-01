@@ -1,5 +1,4 @@
 ---
-path: "/ru/gamedev/institute"
 date: 2021-08-28
 title: Новый жанр бродилок - институтские коридоры
 language: "ru"

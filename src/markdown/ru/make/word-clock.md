@@ -1,5 +1,4 @@
 ---
-path: "/ru/projects/word-clock"
 date: "2020-05-16"
 title: "Время словами на часах"
 tags: ["hardware", "laser cut"]

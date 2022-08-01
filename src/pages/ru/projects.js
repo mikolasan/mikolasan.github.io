@@ -11,7 +11,7 @@ const Projects = ({ data }) => (
   >
     <div className="ideacards">
       <div className="ideacard">
-        <a href="/ru/hydroponics">
+        <a href="/ru/make/hydroponics">
           <img src="/images/projects/hydroponics.jpg" alt="Hydroponics"/>
         </a>
         <div className="idea-card-container">
@@ -42,10 +42,10 @@ const Projects = ({ data }) => (
 
     </div>
     <h2>Разработка программ</h2>
-    <p>Что есть интересного на моем GitHub, я кратко перечислил на <a href="/ru/projects/github">отдельной странице</a>.</p>
+    <p>Что есть интересного на моем GitHub, я кратко перечислил на <a href="/ru/devlog/github">отдельной странице</a>.</p>
     <div className="ideacards">
       <div className="ideacard">
-        <a href="/ru/projects/imperial-russia">
+        <a href="/ru/devlog/imperial-russia">
           <img src="/images/projects/imperial-russia.jpg" alt="Russian village" />
         </a>
         <div className="idea-card-container">
@@ -55,7 +55,7 @@ const Projects = ({ data }) => (
       </div>
 
       <div className="ideacard">
-        <a href="/ru/projects/pet-project-navigator">
+        <a href="/ru/devlog/pet-project-navigator">
           <img src="/images/projects/pet-project-navigator.jpg" alt="UI" />
         </a>
         <div className="idea-card-container">
@@ -69,7 +69,7 @@ const Projects = ({ data }) => (
     <a href="/ru/gamedev">Перейти в раздел</a>
     <div className="ideacards">
       <div className="ideacard">
-        <a href="/ru/gamedev/pyroguelike">
+        <a href="/ru/devlog/pyroguelike">
           <img src="/images/projects/not-your-fathers-roguelike.jpg" alt="Pixel art level"/>
         </a>
         <div className="idea-card-container">
@@ -79,7 +79,7 @@ const Projects = ({ data }) => (
       </div>
 
       <div className="ideacard">
-        <a href="/ru/gamedev/battleship">
+        <a href="/ru/devlog/battleship">
           <img src="/images/projects/bato-yo-slaget.jpg" alt="Ship in the acid sea"/>
         </a>
         <div className="idea-card-container">
@@ -89,7 +89,7 @@ const Projects = ({ data }) => (
       </div>
 
       <div className="ideacard">
-        <a href="/ru/gamedev/overload-game">
+        <a href="/ru/devlog/overload-game">
           <img src="/images/projects/overload-cpp.jpg" alt="Synthwave style landscape" />
         </a>
         <div className="idea-card-container">
@@ -99,17 +99,7 @@ const Projects = ({ data }) => (
       </div>
 
       <div className="ideacard">
-        <a href="/ru/gamedev/overload-godot">
-          <img src="/images/projects/overload-godot.jpg" alt="" />
-        </a>
-        <div className="idea-card-container">
-          <h3>Перегрузка 2</h3>
-          <p>Самый праведный игровой движок (Godot 3.1)</p>
-        </div>
-      </div>
-
-      <div className="ideacard">
-        <a href="/ru/gamedev/sudoku-16x16">
+        <a href="/ru/devlog/sudoku-16x16">
           <img src="/images/projects/sudoku.jpg" alt="Game screen" />
         </a>
         <div className="idea-card-container">

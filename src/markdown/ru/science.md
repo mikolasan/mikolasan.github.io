@@ -1,5 +1,5 @@
 ---
-path: "/ru/science"
+path: "/ru/neural-networks"
 date: "2020-03-19"
 title: "Наука"
 language: "ru"
@@ -8,15 +8,15 @@ lastModified: 2021-10-13
 ---
 
 **📣 Новые темы**:
-- [Мемы](/ru/science/memes)
-- [Введение в обработку естественного языка](/ru/science/nlp-introduction), [Инструменты для обработки естественного языка](/ru/science/nlp-toolkits)
-- [Приспосабливаем RNTN модель](/ru/science/adapt-rntn-model), [Модифицируя Стэнфордовский разбор](/ru/science/modifying-stanford-parser), [Рисуем деревья](/ru/science/visualize-sentence-parse-trees)
-- [Запускаем MMF](/ru/science/mmf), [Добавить свою модель в MMF](/ru/science/mmf/add-new-model)
-- [Распознавание лиц](/ru/science/face-recognition), [Распознавание расы по фото](/ru/science/race-recognition)
-- [Онтологии](/ru/science/ontologies)
+- [Мемы](/ru/neural-networks/memes)
+- [Введение в обработку естественного языка](/ru/neural-networks/nlp-introduction), [Инструменты для обработки естественного языка](/ru/neural-networks/nlp-toolkits)
+- [Приспосабливаем RNTN модель](/ru/neural-networks/adapt-rntn-model), [Модифицируя Стэнфордовский разбор](/ru/neural-networks/modifying-stanford-parser), [Рисуем деревья](/ru/neural-networks/visualize-sentence-parse-trees)
+- [Запускаем MMF](/ru/neural-networks/mmf), [Добавить свою модель в MMF](/ru/neural-networks/mmf-add-new-model)
+- [Распознавание лиц](/ru/neural-networks/face-recognition), [Распознавание расы по фото](/ru/neural-networks/race-recognition)
+- [Онтологии](/ru/neural-networks/ontologies)
 
 
-[Публикации](/ru/science/publications)
+[Публикации](/ru/neural-networks/publications)
 
 ## Разные мысли о своей научной работе
 
@@ -28,7 +28,7 @@ lastModified: 2021-10-13
 не может быть отделено от рассмотрения того, что именно запоминается, и поэтому перцептрон стал
 моделью некоторой более общей познающей системы, которая включает в себя как память, так и восприятие&#187;.
 
-[Разные мысли о своей научной работе](/science/roadmap)
+[Разные мысли о своей научной работе](/ru/neural-networks/roadmap)
 
 
 
@@ -53,4 +53,4 @@ lastModified: 2021-10-13
 
 Надо взять как и в [большом эксперименте](http://www.math.nsc.ru/AP/ScientificDiscovery/PDF/natural_classification_systematics_ontology.pdf) 30 экземпляров каждой цифры
 
-[Что получилось](/science/postal-digits)
+[Что получилось](/ru/neural-networks/postal-digits)

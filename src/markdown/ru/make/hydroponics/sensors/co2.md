@@ -1,5 +1,5 @@
 ---
-path: "/ru/hydroponics/sensors/co2"
+path: "/ru/make/hydroponics/sensors/co2"
 date: "2021-07-19"
 title: "Сенсор углекислого газа"
 subtitle: "Статья из цикла про гидропонику"

@@ -1,5 +1,4 @@
 ---
-path: "/ru/projects/github"
 date: "2020-04-06"
 title: "Мой GitHub"
 language: "ru"
@@ -27,7 +26,7 @@ Forked from tybenz/exemplar
 - Как дальше развить: А после релиза добавить в него еще больше функций. Как очень полезных (пример, работа с дробями) так и не очень, но интересных в реализации.
 - Статус: последние баги и публиковать
 
-[Больше деталей о проекте](/ru/projects/imperial-russia)
+[Больше деталей о проекте](/ru/devlog/imperial-russia)
 
 ## pet-project-navigator
 
@@ -35,7 +34,7 @@ Forked from tybenz/exemplar
 - Как дальше развить:
 - Статус: Работа с базой данных более менее написана. Приложение выглядит непрезентабельно и интерфейс по вводу не дружелюбен.
 
-[Больше деталей о проекте](/ru/projects/pet-project-navigator)
+[Больше деталей о проекте](/ru/devlog/pet-project-navigator)
 
 ## yaplakal-scraper
 
@@ -43,7 +42,7 @@ Forked from tybenz/exemplar
 - Как дальше развить: Здесь меня поджидают большие объемы сохраняемые в базу данных, отказоустойчивая система по собиранию материала и какой-то алгоритм по обработке всего этого шлака с последующим отображением результата не хуже оригинала.
 - Статус: Проект очень интересный и очень утомительный из-за того, что ничего не известно.
 
-[Больше деталей о проекте](/ru/projects/ai-powered-news-feed)
+[Больше деталей о проекте](/ru/devlog/ai-powered-news-feed)
 
 ## postcatolyptica-ai
 
@@ -51,7 +50,7 @@ Forked from tybenz/exemplar
 - Как дальше развить:
 - Статус:
 
-[Больше деталей о проекте](/ru/projects/postcatolyptica)
+[Больше деталей о проекте](/ru/devlog/postcatolyptica)
 
 ## postcatolyptica
 
@@ -59,7 +58,7 @@ Forked from tybenz/exemplar
 - Как дальше развить:
 - Статус:
 
-[Больше деталей о проекте](/ru/projects/postcatolyptica)
+[Больше деталей о проекте](/ru/devlog/postcatolyptica)
 
 ## react-native-sudoku
 
@@ -75,4 +74,4 @@ Forked from nihgwu/react-native-sudoku
 - Как дальше развить:
 - Статус:
 
-[Больше деталей о проекте](/ru/projects/my-drum-machine)
+[Больше деталей о проекте](/ru/make/my-drum-machine)

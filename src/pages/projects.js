@@ -20,7 +20,7 @@ const Projects = ({ pageContext }) => (
         <div className="idea-card-container">
           <h3>Make</h3>
           <p>TODO: description is missing</p>
-          <p><a href="/projects/word-clock">Read more</a></p>
+          <p><a href="/make/word-clock">Read more</a></p>
         </div>
       </div>
 

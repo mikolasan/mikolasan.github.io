@@ -1,5 +1,5 @@
 ---
-path: "/ru/hydroponics/drip-system"
+path: "/ru/make/hydroponics/drip-system"
 date: "2021-04-16"
 title: "Гидропоника: собираем систему капельного орошения"
 tags: ["hydroponics"]

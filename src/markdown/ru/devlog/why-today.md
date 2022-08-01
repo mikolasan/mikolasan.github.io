@@ -1,5 +1,4 @@
 ---
-path: "/ru/projects/why-today"
 date: 2020-05-19
 title: "Почему именно сегодня"
 tags: ["mobile", "generator"]

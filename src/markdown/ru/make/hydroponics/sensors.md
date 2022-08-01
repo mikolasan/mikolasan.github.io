@@ -1,5 +1,5 @@
 ---
-path: "/ru/hydroponics/sensors"
+path: "/ru/make/hydroponics/sensors"
 date: "2021-04-18"
 title: "Гидропоника: сенсоры"
 tags: ["hydroponics"]
@@ -12,7 +12,7 @@ lastModified: 2022-02-06
 
 - [PH кислотность воды](/ru/make/hydroponics/sensors/ph)
 - [CO2 углекислый газ](/ru/make/hydroponics/sensors/co2)
-- [Давление](/ru/make/hydroponics/sensors/pressure)
+- [Давление](/ru/make/hydroponics/sensors/temperature)
 - [Влажность](/ru/make/hydroponics/sensors/humidity)
 - [Температура](/ru/make/hydroponics/sensors/temperature)
 - [Датчик солей](/ru/make/hydroponics/sensors/tds)

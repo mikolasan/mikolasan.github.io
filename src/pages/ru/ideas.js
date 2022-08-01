@@ -43,11 +43,11 @@ const IdeasPage = () => (
     </div>
 
     <p>
-    Вот <a href="/ru/projects/unsolved-problems">список разных концептов и мыслей</a>,
+    Вот <a href="/ru/devlog/unsolved-problems">список разных концептов и мыслей</a>,
     которые могут зародить идею для нового проекта.
     </p>
     <p>
-    Есть идеи, которые появляются в голове, но на них не находится времени и они отправляются в <a href="/ru/projects/limbo">Лимб</a>
+    Есть идеи, которые появляются в голове, но на них не находится времени и они отправляются в <a href="/ru/devlog/limbo">Лимб</a>
     </p>
 
     <h2>Аграрный сдвиг 2021</h2>
@@ -60,10 +60,10 @@ const IdeasPage = () => (
     </p>
 
     <ul>
-      <li><a href="/ru/hydroponics/overview">Обзор материалов по теме Гидропоника</a></li>
-      <li><a href="/ru/hydroponics/nutrient-film-technique">Nutrient Film Technique (NFT) - гидропонный метод _проточной тонкослойной подачи_ питательного вещества</a></li>
-      <li><a href="/ru/hydroponics/drip-system">Гидропоника: собираем систему капельного орошения</a></li>
-      <li><a href="/ru/hydroponics/sensors">Гидропоника: сенсоры</a></li>
+      <li><a href="/ru/make/hydroponics/">Обзор материалов по теме Гидропоника</a></li>
+      <li><a href="/ru/make/hydroponics/nutrient-film-technique">Nutrient Film Technique (NFT) - гидропонный метод _проточной тонкослойной подачи_ питательного вещества</a></li>
+      <li><a href="/ru/make/hydroponics/drip-system">Гидропоника: собираем систему капельного орошения</a></li>
+      <li><a href="/ru/make/hydroponics/sensors">Гидропоника: сенсоры</a></li>
     </ul>
   </Layout>
 )

@@ -1,5 +1,4 @@
 ---
-path: "/projects/oled-button"
 date: "2016-03-04"
 title: "OLED button"
 tags: ["hardware", "python"]

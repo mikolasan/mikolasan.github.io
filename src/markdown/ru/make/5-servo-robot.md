@@ -1,5 +1,4 @@
 ---
-path: "/ru/projects/5-servo-robot"
 date: "2020-05-16"
 title: "Робот из 5 серво моторов"
 tags: ["servo", "hardware", "robot"]

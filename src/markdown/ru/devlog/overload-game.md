@@ -1,5 +1,5 @@
 ---
-path: "/ru/gamedev/overload-game"
+path: "/ru/devlog/overload-game"
 date: "2020-03-26"
 title: Overload
 featuredImage: overload-game.png

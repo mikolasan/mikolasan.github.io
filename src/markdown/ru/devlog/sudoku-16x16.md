@@ -1,5 +1,4 @@
 ---
-path: "/ru/gamedev/sudoku-16x16"
 date: "2021-05-26"
 title: Судоку 16х16
 featuredImage: sudoku-game-2.png
@@ -39,7 +38,7 @@ lastModified: 2021-10-13
 
 ## Правильный генератор
 
-И вот здесь здравый смысл в планировании нерезинового вечернего времени затерялся [где-то](https://www.youtube.com/watch?v=QR66rMS_ZfA) за планом о создании тулзы, которая будет [пошагово решать](http://sudopedia.enjoysudoku.com/Cross-Hatching.html) судоку и графически [объяснять каждый ход](http://sudopedia.enjoysudoku.com/Sudoku_Explainer.html). Благо [такая тулза](https://github.com/SudokuMonster/SukakuExplainer) быстро [нашлась](https://sourceforge.net/projects/sudoku-sensei/) на [java](/gamedev/why-do-i-hate-java). Правда я долго тупил, как её запустить в IntelliJ Idea.
+И вот здесь здравый смысл в планировании нерезинового вечернего времени затерялся [где-то](https://www.youtube.com/watch?v=QR66rMS_ZfA) за планом о создании тулзы, которая будет [пошагово решать](http://sudopedia.enjoysudoku.com/Cross-Hatching.html) судоку и графически [объяснять каждый ход](http://sudopedia.enjoysudoku.com/Sudoku_Explainer.html). Благо [такая тулза](https://github.com/SudokuMonster/SukakuExplainer) быстро [нашлась](https://sourceforge.net/projects/sudoku-sensei/) на [java](/blog/why-do-i-hate-java). Правда я долго тупил, как её запустить в IntelliJ Idea.
 
 
 ## Сервер на Кложуре

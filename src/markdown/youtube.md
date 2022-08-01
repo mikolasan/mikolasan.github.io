@@ -14,7 +14,7 @@ lastModified: 2021-11-10
 
 ## Episodes
 
-- [Fan resurrection](/youtube/fan-resurrection)
+- HTML5 game
 
 
 ## FAQ

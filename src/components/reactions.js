@@ -48,7 +48,7 @@ class Reactions extends React.Component {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json"
-      }
+      },
     }
     try {
       const params = new URLSearchParams({

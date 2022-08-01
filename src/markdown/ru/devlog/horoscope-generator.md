@@ -1,5 +1,4 @@
 ---
-path: "/ru/projects/horoscope-generator"
 date: 2020-05-17
 title: "Гороскоп на неделю"
 tags: ["language processing", "mobile", "generator"]

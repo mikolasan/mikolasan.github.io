@@ -7,13 +7,13 @@ lastModified: 2021-10-14
 ---
 
 Consider you have a HTTPS server with ssl certificate, and you do want to use the certificate on your client side.
-How to write HTTPS client in [Java](/gamedev/why-do-i-hate-java)?
+How to write HTTPS client in [Java](/blog/why-do-i-hate-java)?
 
 Normally for HTTPS connections **One way SSL server authentication** is used when the client has CA certificate from the server and it's enough to verify the server and to establish secure connection.
 
 SSL context  must have a file with certificate loaded either using [pure java libraries](https://docs.oracle.com/javase/7/docs/api/javax/net/ssl/TrustManagerFactory.html#init(java.security.KeyStore)) or Apache httpclient. See more examples in [SO answers](https://stackoverflow.com/questions/2893819/accept-servers-self-signed-ssl-certificate-in-java-client).
 
-As a test server I'm going to use simple HTTPS server in [Python](/gamedev/why-do-i-hate-python):
+As a test server I'm going to use simple HTTPS server in [Python](/blog/why-do-i-hate-python):
 
 ```python
 from http.server import HTTPServer, BaseHTTPRequestHandler, SimpleHTTPRequestHandler

@@ -1,5 +1,4 @@
 ---
-path: "/ru/projects/imperial-russia"
 date: "2019-01-09"
 title: "Имперская Россия"
 tags: ["mobile", "kotlin"]

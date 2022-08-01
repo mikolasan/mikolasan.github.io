@@ -1,5 +1,4 @@
 ---
-path: "/ru/projects/sort-bookmarks-in-firefox"
 date: 2018-03-22
 title: "Дополнение для Firefox"
 tags: ["neural networks", "web"]

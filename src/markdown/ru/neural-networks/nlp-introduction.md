@@ -1,5 +1,5 @@
 ---
-path: "/ru/science/nlp-introduction"
+path: "/ru/neural-networks/nlp-introduction"
 date: "2020-07-15"
 title: Введение в обработку естественного языка
 language: "ru"
@@ -184,4 +184,4 @@ https://datascience.stackexchange.com/questions/56476/what-is-the-best-question-
 
 ## Далее
 
-[Инструменты для обработки естественного языка](/ru/science/nlp-toolkits)
+[Инструменты для обработки естественного языка](/ru/neural-networks/nlp-toolkits)

@@ -17,7 +17,7 @@ const RuBoardGames = ({ pageContext }) => (
     ]}
   >
     <ul>
-      <li><a href="/ru/board-games/cluedo-update">Что не так с игрой Клюедо?</a></li>
+      <li><a href="/ru/board-games/cluedo-new-ideas">Что не так с игрой Клюедо?</a></li>
       <li><a href="/ru/board-games/legend-of-the-five-rings">Легенда пяти колец (ролевая игра)</a></li>
       <li><a href="/ru/board-games/my-game">Моя игра</a></li>
     </ul>

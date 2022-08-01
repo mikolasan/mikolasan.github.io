@@ -1,5 +1,4 @@
 ---
-path: "/ru/projects/ai-powered-news-feed"
 date: 2019-05-01
 title: Новостная лента, которую мы не заслуживаем
 tags: ["python", "django", "db", "scraper", "language processing", "web"]

@@ -1,5 +1,5 @@
 ---
-path: "/ru/science/mmf/add-new-model"
+path: "/ru/neural-networks/mmf-add-new-model"
 date: "2020-07-20"
 title: Добавить свою модель в MMF
 language: "ru"
