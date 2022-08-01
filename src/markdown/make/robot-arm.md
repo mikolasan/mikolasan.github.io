@@ -15,6 +15,7 @@ This time I want to create an arm. 5 servos should be enough for one robot arm.
 
 Here is my refernce:
 
+- Legged Robot 9 Servos (hexapod type) https://hackaday.io/project/174470-legged-robot-9-servos-hexapod-type
 - https://www.frontiersin.org/articles/10.3389/frobt.2017.00065/full - just do not reed it for too long ;)
 - https://www.myminifactory.com/object/3d-print-arduino-robotic-arm-open-source-python-control-app-extras-132958 (abs)
 - https://jjshortcut.wordpress.com/2010/08/17/multiply-the-robotic-arm-and-electronics/ (plywood)

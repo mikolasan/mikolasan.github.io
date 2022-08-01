@@ -27,6 +27,11 @@ Speaking of lenses. I'm thinking to make my own lens instead of buying an offici
 
 Of course I first looked up [how to make camera lens DIY](https://www.youtube.com/watch?v=miuhxhodpiQ) so to speak, but then I found sets of glass lenses on Amazon. Which means I need to find a formula and scheme of camera lens.
 
+Also: 
+
+- **Fabrication of optical components using a consumer-grade lithographic printer** ([link](https://opg.optica.org/oe/fulltext.cfm?uri=oe-27-21-30405&id=422075))
+- **3D and 4D printing for optics and metaphotonics** ([link](https://www.degruyter.com/document/doi/10.1515/nanoph-2019-0483/html))
+
 ## What type?
 
 I found a lot on Amazon that offers [6x 50mm Diameter](https://www.amazon.com/Amlong-Crystal-Premium-Optical-Diameter/dp/B07Z3CVFMB/)
