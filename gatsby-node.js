@@ -21,7 +21,6 @@ exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
   const typeDefs = `
     type MarkdownRemarkFrontmatter {
-      coverImage: String
       featuredImage: File @fileByRelativePath
       previewImage: File @fileByRelativePath
     }
@@ -150,6 +149,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   const blogListTemplate = path.resolve(`./src/templates/blogListTemplate.js`)
+  const ideasListTemplate = path.resolve(`./src/templates/ideasListTemplate.js`)
   const makeListTemplate = path.resolve(`./src/templates/makeListTemplate.js`)
   const projectsListTemplate = path.resolve(`./src/templates/projectsListTemplate.js`)
   const scienceListTemplate = path.resolve(`./src/templates/scienceListTemplate.js`)
@@ -162,6 +162,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   // Pagination [/blog]
   await createPagination("/markdown\/blog\//", `/blog`, blogListTemplate)
+  // Pagination [/ideas]
+  await createPagination("/markdown\/ideas\//", `/ideas`, ideasListTemplate)
   // Pagination [/make]
   await createPagination("/markdown\/make\//", `/make`, makeListTemplate)
   // Pagination [/projects]

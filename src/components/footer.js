@@ -35,6 +35,7 @@ const Footer = ({
             <Link to="/youtube">Vlog</Link>
             <Link to="/board-games">Board Games</Link>
             <Link to="/projects">Projects</Link>
+            <Link to="/free">Free Stuff</Link>
           </div>
           <div className="bottomxsocial">
             <h2>Social</h2>

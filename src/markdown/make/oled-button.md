@@ -3,7 +3,7 @@ date: "2016-03-04"
 title: "OLED button"
 tags: ["hardware", "python"]
 featuredImage: oled-button.jpg
-coverImage: "oled-button.jpg"
+previewImage: oled-button.jpg
 published: 2021-10-13
 lastModified: 2021-10-13
 ---

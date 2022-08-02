@@ -4,7 +4,7 @@ date: "2020-05-16"
 title: "Tablet as a keyboard"
 tags: ["bluetooth", "chromesact"]
 featuredImage: tablet-keyboard-vim-cheatsheet.jpg
-coverImage: "tablet-as-keyboard.jpg"
+previewImage: tablet-as-keyboard.jpg
 idea: creative
 published: 2021-10-13
 lastModified: 2021-10-28

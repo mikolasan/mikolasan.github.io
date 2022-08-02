@@ -5,7 +5,7 @@ title: "Horoscope generator"
 subtitle: "Speaks for itself"
 tags: ["language processing", "mobile", "generator", "one app per month"]
 featuredImage: horoscope-generator.jpg
-coverImage: "horoscope-generator.jpg"
+previewImage: horoscope-generator-preview.jpg
 idea: innovative
 published: 2021-10-13
 lastModified: 2021-10-28
