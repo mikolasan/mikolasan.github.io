@@ -29,12 +29,12 @@ const Footer = ({
             <h2>Menu</h2>
             <Link to="/ideas">Ideas</Link>
             <Link to="/gamedev">Gamedev</Link>
-            <Link to="/projects">Projects</Link>
             <Link to="/make">Make</Link>
-            <Link to="/board-games">Board Games</Link>
-            <Link to="/youtube">Vlog</Link>
             <Link to="/science">Science</Link>
             <Link to="/blog">Blog</Link>
+            <Link to="/youtube">Vlog</Link>
+            <Link to="/board-games">Board Games</Link>
+            <Link to="/projects">Projects</Link>
           </div>
           <div className="bottomxsocial">
             <h2>Social</h2>

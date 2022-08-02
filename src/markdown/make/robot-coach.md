@@ -5,6 +5,7 @@ title: Robot-coach
 tags: ["hardware", "robot"]
 published: 2022-06-10
 featuredImage: robot-coach-feature.jpg
+previewImage: smars-v4.jpg
 ---
 
 Andrew Male in [his Twitter asked](https://twitter.com/andym84/status/1521733648051052546?s=12):

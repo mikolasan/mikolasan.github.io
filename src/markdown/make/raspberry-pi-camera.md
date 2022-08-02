@@ -4,6 +4,7 @@ title: Raspberry Pi camera
 tags: ["3d printing"]
 draft: true
 featuredImage: rpi-and-camera-setup.jpg
+previewImage: lens-mechanism-for-projector-lens.jpg
 ---
 
 I wouldn't be so puzzled if I had to choose what I buy, but this was left from [playing cards recognition system](/projects/playing-card-recognition-system) I did at work. Raspberry Pi [High Quality HQ Camera](https://www.adafruit.com/product/4561) requires a lens. A lens!

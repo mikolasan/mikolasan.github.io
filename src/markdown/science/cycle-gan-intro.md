@@ -3,6 +3,7 @@ date: 2022-06-07
 title: Intro to CycleGAN
 draft: true
 twitter: https://twitter.com/mikolasan/status/1534059344353845249
+previewImage: stylegan-my-lucky-zebra.png
 ---
 
 

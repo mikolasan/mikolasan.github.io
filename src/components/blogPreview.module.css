@@ -9,6 +9,21 @@
   flex: 240px;
 }
 
+.blogimage {
+  min-height: 120px;
+  max-height: 120px;
+  margin-bottom: 0.5rem;
+  border: #d4d4d4 solid 1px;
+}
+
+.blogcard a {
+  text-decoration: none;
+}
+
+.blogcard a:hover {
+  text-decoration: underline;
+}
+
 .blogcard h3 {
   margin-bottom: 0.75rem;
 }

@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
 import * as styles from "./blogPreview.module.css"
 
 const BlogPreview = ({
@@ -7,12 +8,31 @@ const BlogPreview = ({
   title,
   date,
   text,
-  readMore
+  readMore,
+  image,
+  altImage
 }) => (
   <article className={styles.blogcard}>
-    <Link to={path}><h3>
-      {title}
-    </h3></Link>
+    {image && (
+    <Link to={path}>
+      <GatsbyImage
+        image={image}
+        alt={altImage}
+        placeholder="blurred"
+        layout="constrained"
+        transformOptions={{
+          cropFocus: "attention",
+          fit: "cover",
+        }}
+        quality={60}
+        className={styles.blogimage}
+      />
+    </Link>)}
+    <Link to={path}>
+      <h3>
+        {title}
+      </h3>
+    </Link>
     <time className={styles.blogdate}>
       {date}
     </time>

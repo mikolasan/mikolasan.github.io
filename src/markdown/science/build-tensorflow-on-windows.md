@@ -3,6 +3,7 @@ date: 2022-06-23
 title: Build TensorFlow on Windows
 draft: true
 featuredImage: cat-cosmonaut-floating-in-deep-space-with-colorful-nebulas-on-the-background.jpg
+previewImage: run-dalle-playground.png
 ---
 
 Prompt for generating a featured picture: cat cosmonaut floating in deep space with colorful nebulas on the background

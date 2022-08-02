@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
+import { getImage, getSrc } from "gatsby-plugin-image"
 import { absPathToUrl, formatDate } from "../nifty"
 import Layout from "../components/layout"
 import BlogPreview from "../components/blogPreview"
@@ -32,6 +33,8 @@ const BlogIndex = ({ data, pageContext }) => {
             text={node.excerpt}
             date={formatDate(node.frontmatter.date)}
             readMore="Read more..."
+            image={getImage(node.frontmatter.previewImage)}
+            altImage="Some alt text for this picture"
           />
         ))}
       </div>
@@ -63,6 +66,19 @@ export const query = graphql`
           frontmatter {
             title
             date
+            previewImage {
+              childImageSharp {
+                gatsbyImageData(
+                  layout: FULL_WIDTH,
+                  breakpoints: [278],
+                  transformOptions: {
+                    cropFocus: ATTENTION,
+                    fit: COVER
+                  },
+                  quality: 70
+                )
+              }
+            }
           }
           excerpt
           fileAbsolutePath

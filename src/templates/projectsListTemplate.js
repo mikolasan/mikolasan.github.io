@@ -3,32 +3,32 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import PostList from "../components/postList"
 
-const Make = ({ data, pageContext }) => (
+const Projects = ({ data, pageContext }) => (
   <Layout
-    title="Make"
-    section="make"
+    title="Projects"
+    section="projects"
     crumbs={pageContext.breadcrumb.crumbs}
     languageName="Switch to russian version"
-    anotherLanguageLink="/ru/make"
+    anotherLanguageLink="/ru"
   >
     <PostList
       posts={data.allMarkdownRemark.edges}
-      baseUrl="/make"
+      baseUrl="/projects"
       pageContext={pageContext}
     />
 
   </Layout>
 )
 
-export default Make
+export default Projects
 
 export const query = graphql`
-  query MakeListQuery($skip: Int!, $limit: Int!) {
+  query ProjectsListQuery($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
       limit: $limit,
       skip: $skip,
       sort: { fields: [frontmatter___date], order: DESC},
-      filter: { fileAbsolutePath: { regex: "/markdown\/make\//"} }
+      filter: { fileAbsolutePath: { regex: "/markdown\/projects\//"} }
     ) {
       totalCount
       edges {

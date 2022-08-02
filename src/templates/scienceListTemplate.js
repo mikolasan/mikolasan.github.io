@@ -37,6 +37,19 @@ export const query = graphql`
           frontmatter {
             title
             date
+            previewImage {
+              childImageSharp {
+                gatsbyImageData(
+                  layout: FULL_WIDTH,
+                  breakpoints: [278],
+                  transformOptions: {
+                    cropFocus: ATTENTION,
+                    fit: COVER
+                  },
+                  quality: 70
+                )
+              }
+            }
           }
           excerpt
           fileAbsolutePath

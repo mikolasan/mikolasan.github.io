@@ -1,3 +1,4 @@
+const redirects = require("./redirects.json");
 const path = require("path")
 const likesConfig = require("./likes-config")
 const nifty = require("./src/nifty")
@@ -22,6 +23,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     type MarkdownRemarkFrontmatter {
       coverImage: String
       featuredImage: File @fileByRelativePath
+      previewImage: File @fileByRelativePath
     }
   `
   createTypes(typeDefs)
@@ -94,7 +96,14 @@ const paginationFor = (result, path, listTemplate, postsPerPage = 12) => {
 }
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
-  const { createPage } = actions
+  const { createPage, createRedirect } = actions
+
+  redirects.forEach(redirect => 
+    createRedirect({
+      fromPath: redirect.fromPath,
+      toPath: redirect.toPath,
+    })
+  )
 
   const recentArticles = await graphql(`
     {
@@ -142,6 +151,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const blogListTemplate = path.resolve(`./src/templates/blogListTemplate.js`)
   const makeListTemplate = path.resolve(`./src/templates/makeListTemplate.js`)
+  const projectsListTemplate = path.resolve(`./src/templates/projectsListTemplate.js`)
   const scienceListTemplate = path.resolve(`./src/templates/scienceListTemplate.js`)
   
   const ruBlogListTemplate = path.resolve(`./src/templates/ruBlogListTemplate.js`)
@@ -154,6 +164,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   await createPagination("/markdown\/blog\//", `/blog`, blogListTemplate)
   // Pagination [/make]
   await createPagination("/markdown\/make\//", `/make`, makeListTemplate)
+  // Pagination [/projects]
+  await createPagination("/markdown\/projects\//", `/projects`, projectsListTemplate)
   // Pagination [/science]
   await createPagination("/markdown\/science\//", `/science`, scienceListTemplate)
 

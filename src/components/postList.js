@@ -1,4 +1,5 @@
 import React from "react"
+import { getImage } from "gatsby-plugin-image"
 import BlogPreview from "./blogPreview"
 import Pagination from "./pagination"
 import { absPathToUrl, formatDate } from "../nifty"
@@ -20,6 +21,8 @@ const PostList = ({ pageContext, posts, baseUrl }) => {
             text={node.excerpt}
             date={formatDate(node.frontmatter.date)}
             readMore="Read more..."
+            image={getImage(node.frontmatter.previewImage)}
+            altImage="Some alt text for this picture"
           />
         ))}
       </div>
