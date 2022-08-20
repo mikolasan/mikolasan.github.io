@@ -1,6 +1,6 @@
 ---
 date: 2022-06-23
-title: Build TensorFlow on Windows
+title: How to run DALL-E locally
 draft: true
 featuredImage: cat-cosmonaut-floating-in-deep-space-with-colorful-nebulas-on-the-background.jpg
 previewImage: run-dalle-playground.png

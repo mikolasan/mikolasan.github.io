@@ -149,6 +149,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   const blogListTemplate = path.resolve(`./src/templates/blogListTemplate.js`)
+  const gamedevListTemplate = path.resolve(`./src/templates/gamedevListTemplate.js`)
   const ideasListTemplate = path.resolve(`./src/templates/ideasListTemplate.js`)
   const makeListTemplate = path.resolve(`./src/templates/makeListTemplate.js`)
   const projectsListTemplate = path.resolve(`./src/templates/projectsListTemplate.js`)
@@ -162,6 +163,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   // Pagination [/blog]
   await createPagination("/markdown\/blog\//", `/blog`, blogListTemplate)
+  // Pagination [/gamedev]
+  await createPagination("/markdown\/gamedev\//", `/gamedev`, gamedevListTemplate)
   // Pagination [/ideas]
   await createPagination("/markdown\/ideas\//", `/ideas`, ideasListTemplate)
   // Pagination [/make]

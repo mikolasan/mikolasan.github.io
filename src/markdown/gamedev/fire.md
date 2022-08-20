@@ -2,6 +2,7 @@
 date: 2022-02-08
 title: Fire!
 featuredImage: fire_featured.png
+previewImage: fire-1.jpg
 subtitle: Top down shooter made with Game Maker
 buttonText: Download on itch
 buttonLink: https://neup.itch.io/fire
