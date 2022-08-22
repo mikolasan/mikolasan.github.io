@@ -5,6 +5,7 @@ tags: ["3d printing"]
 published: 2022-07-10
 lastModified: 2022-07-10
 twitter: https://twitter.com/mikolasan/status/1546017428324331520
+previewImage: 3d-print-failed.jpg
 ---
 
 A long time ago in a far far… don't worry, the story happened in this galaxy. So, in far far pages of Wikipedia, I was reading about the RepRap project, self-replicating robots, and gray goo. "Gray goo" is a actual scientific term created by Eric Dexter.
@@ -32,3 +33,25 @@ It turned out that my brother thinks the other way around. Or I don't know. He e
 And now, I need to print several things: a case for Raspberry Pi and Arduino, a crawler robot, and a mount for the camera. I looked for 3D printing services, I looked for 3D printer prices—I don't know if I should buy one. But even if I do, it's so scary to invest like $1000 into this and get a messy spaghetty out of filament.
 
 ![3d printer spaghetti](./3d-print-failed.jpg)
+
+
+## 3D printing services
+
+Let's review a few services giving for example robot chassis that I need to print. It almost like a can, it has size 70x78x33 mm. I will be considering to print in ABS
+
+### Xometry
+
+![](./3d-printing-service-xometry.png)
+
+### Treatstock
+
+![](./3d-printing-service-treatstock.png)
+
+Another place on the same site
+
+![](./3d-printing-service-treatstock-cheap.png)
+
+### Print a thing
+
+![](./3d-printing-service-printathing.png)
+

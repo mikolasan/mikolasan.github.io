@@ -1,5 +1,6 @@
 ---
-title: 3D printed Adrduino case
+title: 3D printed Arduino case
+previewImage: arduino-case.jpg
 date: 2021-11-18
 published: 2021-11-23
 lastModified: 2021-11-23

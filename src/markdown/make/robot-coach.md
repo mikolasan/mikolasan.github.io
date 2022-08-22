@@ -110,6 +110,8 @@ OR
 
 ## 3D printing
 
+![Reviewing parts for 3d printing.](./smars-3d-models.png)
+
 Settings: 0.2mm, 15% infill
 
 Arduino UNO size is 69mm x 53mm. Geometry is in mm (not in)

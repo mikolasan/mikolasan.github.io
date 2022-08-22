@@ -18,3 +18,5 @@ Articles that are planned for release:
 - Lua
 - C#
 - JavaScript
+
+Everyone should start learning programming! Pascal, C, C++, Java, Fortran, you name it 📖 👨‍💻

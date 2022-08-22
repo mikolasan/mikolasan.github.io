@@ -4,7 +4,7 @@ title: Raspberry Pi camera
 tags: ["3d printing"]
 draft: true
 featuredImage: rpi-and-camera-setup.jpg
-previewImage: lens-mechanism-for-projector-lens.jpg
+previewImage: 3d-camera-lens.png
 ---
 
 I wouldn't be so puzzled if I had to choose what I buy, but this was left from [playing cards recognition system](/projects/playing-card-recognition-system) I did at work. Raspberry Pi [High Quality HQ Camera](https://www.adafruit.com/product/4561) requires a lens. A lens!
@@ -56,10 +56,13 @@ https://www.ni.com/en-us/support/documentation/supplemental/18/calculating-camer
 
 ## Camera lens inside
 
+![](./lens-mechanism-for-projector-lens.jpg)
+
 - https://www.photoreview.com.au/news/canon-unveils-two-new-lenses/
 - https://www.photonstophotos.net/GeneralTopics/Lenses/Optics_Primer/Optics_Primer.htm
 - https://www.photonstophotos.net/GeneralTopics/Lenses/OpticalBench/OpticalBench.htm
-![](./lens-mechanism-for-projector-lens.jpg)
+
+![raytracing in all known camera lenses](./photons-to-photos.png)
 
 https://www.myminifactory.com/object/3d-print-3d-printed-photography-lens-mechanism-for-projector-lens-125175
 
@@ -67,14 +70,21 @@ https://www.myminifactory.com/object/3d-print-3d-printed-photography-lens-mechan
 ![](./field-of-view.webp)
 - aperture?
 
+On the diagrams you can see that lenses usually come by 2-3 touching each other. This has nothing to do with zoom or focus. Their sole purpose is to [fight](https://www.dpreview.com/articles/0173425621/flat-elements-developed-by-harvard-could-make-camera-lenses-smaller-lighter-and-better) with [chromatic abberation](http://hyperphysics.phy-astr.gsu.edu/hbase/geoopt/aber2.html)
+
 ## Dive into physics
 
 ### Literature
 
+- Apparently optics is no joke. Here is a free book **Optics by A.N. Matveev** with differential equations, Fourier transformations and other fun https://archive.org/details/matveev-optics/page/n181/mode/2up
 - https://study.com/academy/lesson/focal-length-definition-equation-examples.html
 - https://escooptics.com/blogs/news/concepts-in-light-and-optics-lenses-part-1
 - https://www.edmundoptics.com/knowledge-center/application-notes/optics/understanding-optical-lens-geometries/
 - macro extension tubes https://www.cambridgeincolour.com/tutorials/macro-extension-tubes-closeup.htm
+
+> My favourite textbook of all time remains Introduction to Fourier Optics by Goodman. There are some chapters I must have read 100s of times!
+>
+> [Stephen Gruppetta](https://twitter.com/s_gruppetta_ct/status/1552345687316205568)
 
 ### Calculators
 
