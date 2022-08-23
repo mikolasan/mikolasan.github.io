@@ -41,7 +41,7 @@ Can Java VM be tiny?
 
 ![elastic dashboard slide 1](./sensor-readings-rpi4-elastic-1.png)
 
-Temperature spikes I can only explain by AC. I have plans to make the whole thing remote and transmit the data by radio. Outside temp will be more adequate I guess
+Temperature spikes I can only explain by AC. I have plans to make [the whole thing remote](https://www.hackster.io/news/you-can-create-your-own-cell-network-with-a-raspberry-pi-and-sdr-238980964b5b.amp) and transmit the data by radio. Outside temp will be more adequate I guess
 
 ![elastic dashboard slide 2](./sensor-readings-rpi4-elastic-2.png)
 
@@ -68,3 +68,11 @@ To collect some intel I will use Dependency Walker. It might tell what libraries
 Where can I find the Intel Overclocking SDK? No plans for overclocking, I'm just looking for a library that gives CPU/GPU temperature. This is for Windows laptop where I'm going to run compilation, GPU computation. External device will receive sensor readings and will shutdown the laptop in case of overheating.
 
 Tentatively C# language. I look at [this](https://github.com/openhardwaremonitor/openhardwaremonitor), but the absence of readme has dispirited me. That's why there's an active fork of **Open Hardware Monitor** - [Libre Hardware Monitor](https://github.com/LibreHardwareMonitor/LibreHardwareMonitor)
+
+
+## Further reading
+
+- Store data in DB https://redis.io/docs/reference/patterns/
+- Cell network on PI https://www.hackster.io/news/you-can-create-your-own-cell-network-with-a-raspberry-pi-and-sdr-238980964b5b.amp
+- GPRS SIM800C GSM GPRS module https://www.amazon.com/Comimark-SIM800C-Module-Bluetooth-Arduino
+- Collect data with Soracom Lagoon https://create.arduino.cc/projecthub/andreiflorian/unifiedwater-v1-13b168?ref=tag&ref_id=gsm&offset=13

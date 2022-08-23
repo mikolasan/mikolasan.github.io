@@ -8,3 +8,10 @@ Very interesting things that have very good write up, but I do not have time to 
 # The List
 
 - Insane house/dungeon generator using Markov algorithms https://github.com/mxgmn/MarkovJunior
+
+
+# Also
+
+## Books that every machine learning enthusiast should read
+
+- **Neural Networks from Scratch eBook** [https://nnfs.io/](https://nnfs.io/)

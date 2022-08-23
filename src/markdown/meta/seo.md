@@ -1,0 +1,1 @@
+read about programmatic SEO https://breaktheweb.agency/seo/programmatic-seo/
