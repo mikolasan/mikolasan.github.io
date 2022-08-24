@@ -4,6 +4,8 @@ title: Calabi-Yau Manifold
 previewImage: string-theory-notes-quora-enlong-chiou.jpg
 ---
 
+I'm a mathematician.
+
 [Explanation](https://analyticphysics.com/Higher%20Dimensions/Visualizing%20Calabi-Yau%20Manifolds.htm) how the manifold can be vizualized 
 
 Codepen - https://codepen.io/mikolasan/pen/WNzKEZO?editors=1111

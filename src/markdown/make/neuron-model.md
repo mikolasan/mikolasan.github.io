@@ -2,13 +2,35 @@
 title: Neuron model
 date: 2022-20-08
 previewImage: neuron-model-3.jpg
+developing: true
 ---
 
 The idea is simple. Find a working example with a small neural network and make all neurons physical, and train it much faster because all neuron is independent. Each neuron is a FPGA that just immediately reacts on incoming signal, adjusts its weights and carry on.
 
-- 3d printed case [like this]()
+- 3d printed case [like this](https://www.thingiverse.com/thing:3505006)
 - led strip
 - FPGA chip: [atmega](/make/arduino-soul-possession)?
+
+
+
+# 3d model
+
+## Inspiration
+
+### Flexible snakes
+
+Model by Cinderwing3D printed with rainbow PLA filament. Called **crystal dragon**
+
+![Flexible dragons/snakes. Printed with rainbow PLA](./3d-printed-flexible-dragon-snake.jpg)
+
+### Mini octopus
+
+Model by McGybeer
+
+![](./3d-print-in-place-mini-octopus.jpeg)
+
+
+# FPGA
 
 
 There are tutorials on [how to program one FPGA to work as a neural network](https://www.youtube.com/watch?v=Qgjawf20v7Y) (even non real FPGA, but [in the cloud](https://towardsdatascience.com/neural-network-inference-on-fpgas-d1c20c479e84)). Such thing use very perfomant chips like
@@ -19,3 +41,5 @@ There are tutorials on [how to program one FPGA to work as a neural network](htt
 - [Alchitry Au](https://www.sparkfun.com/products/16527)
 
 But I want small tiny FPGAs to be independent ([how tiny FPGA could be](https://hackaday.com/2015/07/03/hackaday-prize-entry-they-make-fpgas-that-small/), an example [that still in stock](https://www.adafruit.com/product/4332)), that will allow on physical level to see the process when every activation will be illuminated be LEDs on neuron's case.
+
+

@@ -1,6 +1,7 @@
 ---
 date: 2021-11-14
 title: All that web3 sh*t
+draft: true
 ---
 
 ## I have this 3 links 

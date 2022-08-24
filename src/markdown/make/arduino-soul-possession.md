@@ -2,6 +2,7 @@
 title: Arduino soul possession
 date: 2022-08-19
 previewImage: atmega-connected-to-raspberrypi.jpg
+developing: true
 ---
 
 This is the first step in [my ambitious project](/make/neuron-model) to create a successful geek product.

@@ -96,14 +96,6 @@ const About = ({ pageContext }) => (
     <h2>Brain characteristics</h2>
     <img src="/images/about/brain-wars-stats.png" alt="BrainWars stats" width="400px" />
 
-    
-    <small>
-    <div>Icons made by <a href="https://www.flaticon.com/free-icon/programmer_2092430" title="srip">srip</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></div>
-    <div>Icons made by <a href="https://www.flaticon.com/free-icon/car_2706107" title="iconixar">iconixar</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></div>
-    <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></div>
-    </small>
-
-    
   </Layout>
 )
 

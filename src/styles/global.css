@@ -211,6 +211,24 @@ section {
   margin-bottom: 0.5em;
 }
 
+.__in_progress_alert {
+  background-color: #d81159;
+  font-size: 120%;
+  padding: 2rem;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  margin-bottom: 2rem;
+}
+
+.__in_progress_alert img {
+  width: 150px;
+  margin-bottom: 0.5em;
+}
+
+.__in_progress_alert a {
+  color: #000 !important;
+}
+
 .cards {
   margin: 1em 0;
   overflow: hidden;
@@ -995,4 +1013,25 @@ a:hover {
 /* selected link */
 a:active {
   color: #6320ee;
+}
+
+.license {
+  margin-top: 0.2rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0;
+  padding-left: 0rem;
+  padding-right: 0.4rem;
+  display: block;
+  float: left;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.license img {
+  height: 2rem;
+}
+
+.license_right {
+  position: relative;
+  margin-left: 5rem;
 }

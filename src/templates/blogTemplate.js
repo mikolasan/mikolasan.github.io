@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import DraftAlert from "../components/draftAlert"
+import InProgressAlert from "../components/inProgressAlert"
 
 export default function Template ({ data, pageContext }) {
   const { markdownRemark } = data
@@ -44,6 +45,7 @@ export default function Template ({ data, pageContext }) {
       ]}
     >
       {frontmatter.draft && <DraftAlert linkPath={url} />}
+      {frontmatter.developing && <InProgressAlert linkPath={url} />}
       <div
         dangerouslySetInnerHTML={{ __html: html }}
       />
@@ -64,6 +66,7 @@ export const pageQuery = graphql`
         subtitle
         section
         draft
+        developing
         buttonText
         buttonLink
         secondButtonText

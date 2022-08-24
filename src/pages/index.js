@@ -18,7 +18,9 @@ const Index = ({ pageContext }) => (
             <h1>{title}</h1>
           </a>
           <p className="home_subtitle">{subtitle}</p>
-          {excerpt}
+          <div
+            dangerouslySetInnerHTML={{ __html: excerpt }}
+          />
           {readMore && <a href={url}>{readMore}</a>}
         </section>
       )}

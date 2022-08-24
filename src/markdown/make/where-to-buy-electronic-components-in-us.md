@@ -1,12 +1,14 @@
 ---
 date: 2022-08-21
 title: Where to buy electronic components in US
+developing: true
 ---
 
 Chip shortage updates for 2022!
 
-## 
+## What I plan to buy
 
+- 
 
 ## The list of online stores
 
@@ -28,6 +30,7 @@ We are looking for a site that has a search, vast inventory, fair shipping costs
 - shop.evilmadscientist.com
 - UTSOURCE - http://www.utsource.net
 - Jameco – www.jameco.com
+- http://www.fletcherelectronics.com
 - All Electronics – www.allelectronics.com
 - https://www.allchips.ai
 - onlinecomponents.com

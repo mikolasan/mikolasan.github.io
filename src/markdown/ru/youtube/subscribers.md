@@ -3,8 +3,8 @@ path: "/ru/youtube/subscribers"
 date: "2020-09-27"
 title: "Подписчики Ютюб канала"
 language: "ru"
-published: 2021-10-28
-lastModified: 2021-11-02
+published: 2021-10-14
+lastModified: 2021-10-14
 ---
 
 ### Первые 10 подписчиков
@@ -27,7 +27,7 @@ lastModified: 2021-11-02
 
 ### 5 тысяч подписчиков
 
-Начать стримить на разных площадках. Например, как я играю в [Morrowind в 4K](/ru/devlog/my-morrowind).
+Начать стримить на разных площадках. Например, как я играю в Morrowind.
 
 ### 10 тысяч подписчиков
 

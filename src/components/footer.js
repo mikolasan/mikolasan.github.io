@@ -50,8 +50,19 @@ const Footer = ({
         </div>
         <div className="copyright">
           <p>This web site uses Google Analytics. It collects and processes data. <a href="https://policies.google.com/technologies/partner-sites">How Google uses information from sites</a></p>
+          <p>Icons used on this website require attribution, you can find it on <a href="/credits">credits</a>❤️ page</p>
           <p>Built with{` `}<a href="https://www.gatsbyjs.org">Gatsby</a>. Last build: {formatDate(data.currentBuildDate.currentDate)}</p>
-          <p>Copyright © {new Date().getFullYear()} Nikolay Neupokoev. Some rights reserved.</p>
+          <div class="license">
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+              <img alt="Creative Commons License" src="/cc.svg" />
+            </a>{` `}
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+              <img alt="Creative Commons License" src="/by.svg" />
+            </a>
+          </div>
+          <p class="license_right">Copyright © {new Date().getFullYear()} Nikolay Neupokoev.</p>
+          <p class="license_right">Except where otherwise noted, content on this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
+          </p>
         </div>
       </footer>
     )}
