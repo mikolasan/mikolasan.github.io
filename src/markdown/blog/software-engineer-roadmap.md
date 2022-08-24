@@ -1,6 +1,7 @@
 ---
 date: 2022-07-15
 title: Software engineer roadmap
+draft: true
 ---
 
 Some of my best decisions:

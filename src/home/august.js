@@ -9,7 +9,7 @@ export const articles = [
     and train it much faster because all neuron is independent. 
     Each neuron is a FPGA that just immediately reacts on incoming signal, adjusts its weights and carry on.</p>`,
     readMore: ``,
-    imgSrc: `/images/home/neuron-model.jpg`,
+    imgSrc: `/images/home/3d-printed-neuron.webp`,
     imgAlt: null,
   },
   {

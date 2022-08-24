@@ -1,6 +1,7 @@
 ---
 title: Designing a robot
 date: 2022-07-23
+draft: true
 ---
 
 I'm convinced that any robot should have a creepy aspect. Like big tracking you eyes that can drive people crazy.

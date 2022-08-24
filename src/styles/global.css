@@ -950,13 +950,13 @@ code:after,
 tt:before,
 tt:after {
   letter-spacing: -0.2em;
-  content: " ";
+  content: "";
 }
 pre code:before,
 pre code:after,
 pre tt:before,
 pre tt:after {
-  content: " ";
+  content: "";
 }
 /**
  * Add back the container background-color, border-radius, padding, margin

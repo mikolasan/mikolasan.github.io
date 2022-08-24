@@ -2,6 +2,7 @@
 date: 2022-07-31
 title: Prusa Mini Original
 previewImage: prusa-original-mini-preview.jpg
+draft: true
 ---
 
 # Assembly
