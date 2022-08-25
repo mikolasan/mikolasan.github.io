@@ -19,3 +19,12 @@ Some good finding that looks good, but didn't help https://sii.pl/blog/implement
 For factory class I used `...`-feature (https://en.cppreference.com/w/cpp/language/parameter_pack) which in simple words does: and the rest just pass to the next interested party.
 
 Wait for updates on my Github, I will post dynamic state machine there.
+
+
+## Similar posts
+
+- ["Pointing" arguments](/blog/cpp-pointing-arguments)
+- [const in C++](/blog/cpp-const)
+- [C++ question: exec](/blog/cpp-question-exec)
+- [Variadic templates in C++](/blog/cpp-variadic-templates)
+- [Virtual call in C++](/blog/cpp-virtual-call)

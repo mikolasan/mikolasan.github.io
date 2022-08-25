@@ -4,13 +4,14 @@ export const articles = [
     title: `Neuron model`,
     subtitle: `The idea is simple:`,
     url: `/make/neuron-model`,
-    excerpt: `<p>make all neurons physical objects like balls</p>
+    excerpt: `
+    <p>make all neurons physical objects like balls</p>
     <p>Find a working example with a small neural network and make all neurons physical, 
     and train it much faster because all neuron is independent. 
     Each neuron is a FPGA that just immediately reacts on incoming signal, adjusts its weights and carry on.</p>`,
     readMore: ``,
     imgSrc: `/images/home/3d-printed-neuron.webp`,
-    imgAlt: null,
+    imgAlt: `neuron model by SpaceKnight`,
   },
   {
     style: `box2`,

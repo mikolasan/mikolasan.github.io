@@ -98,3 +98,14 @@ int main(int argc, char const *argv[])
     return 0;
 }
 ```
+
+As usual all code for your experiments and slides are in [**cpp-skill** repository](https://github.com/mikolasan/cpp-skill/tree/master/virtual_call).
+
+
+## Similar posts
+
+- ["Pointing" arguments](/blog/cpp-pointing-arguments)
+- [const in C++](/blog/cpp-const)
+- [C++ question: exec](/blog/cpp-question-exec)
+- [C++ State Machine](/blog/cpp-state-machine)
+- [Variadic templates in C++](/blog/cpp-variadic-templates)
