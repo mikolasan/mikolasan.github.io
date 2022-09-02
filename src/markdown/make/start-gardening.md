@@ -15,3 +15,5 @@ Fully autonomous greenhouse https://www.futurefoodsystems.com.au/byte/autonomous
 Strawberries in Las Vegas https://www.reviewjournal.com/local/local-columns/bob-morris/strawberry-plants-produce-best-fruit-in-spring-fall/amp/
 
 About mulch https://www.landscapinglasvegasnv.com/mulch
+
+Heat water with fresnel lenses https://openbiotecture.wordpress.com/2013/01/21/fresnel-lens-ideas/

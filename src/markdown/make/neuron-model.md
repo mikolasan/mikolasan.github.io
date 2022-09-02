@@ -12,6 +12,20 @@ The idea is simple. Find a working example with a small neural network and make 
 - FPGA chip: [atmega](/make/arduino-soul-possession)?
 
 
+# Research
+
+I started with an article on Wikipedia about neuron. I needed to clear all biological moments, understand new terminology, start with early research on the topic and catch up with the latest results.
+
+## Terminology
+
+- Biological neuron model
+- Hodgkin–Huxley model
+- Synaptic plasticity (https://www.nature.com/articles/1301559)
+
+## Literature
+
+- Handbook of Natural Computing. Chapter 17. Modeling Biological Neural Networks
+- Samuel Johnson, J. Marro, and Joaqu ́ın J. Torres **Functional Optimization in Complex Excitable Networks** [arxiv](https://arxiv.org/abs/0805.1309)
 
 # 3d model
 
@@ -43,3 +57,24 @@ There are tutorials on [how to program one FPGA to work as a neural network](htt
 But I want small tiny FPGAs to be independent ([how tiny FPGA could be](https://hackaday.com/2015/07/03/hackaday-prize-entry-they-make-fpgas-that-small/), an example [that still in stock](https://www.adafruit.com/product/4332)), that will allow on physical level to see the process when every activation will be illuminated be LEDs on neuron's case.
 
 
+## ATMega8
+
+ATmega8 has three multi-bit multipurpose I/O ports: 
+
+- **PORTB** with 8 bits, 
+- **PORTC** with 7 bits, and 
+- **PORTD** with 8 bits. 
+
+Total of 23 bits. Reserve a few bits for I2C communication with an LED strip. With Arduino-type board we a looking for 5V strip
+
+### LED curcuit chips
+
+Chip   | Voltage  | LEDs per chip | Data pins
+-------|----------|---------------|----------
+WS2811 | 12-24V   |  3            |  1
+[WS2812](https://www.amazon.com/BTF-LIGHTING-Individual-Addressable-Flexible-Non-Waterproof/dp/B088FKZWDQ/) | 3.5-5.3V |  1            |  1
+WS2813 | 3.5-5.3V |  1            |  2
+WS2815 | 9-13.5V  |  1            |  2
+WS2818 | 12/24V   |  3            |  2
+
+I don't know if there's good LED review in English, but [this one](https://alexgyver.ru/ws2812_guide/) is all you need 🔥

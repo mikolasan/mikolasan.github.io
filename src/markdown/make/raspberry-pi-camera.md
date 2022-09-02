@@ -40,6 +40,8 @@ I found a lot on Amazon that offers [6x 50mm Diameter](https://www.amazon.com/Am
 - 3 Double Convex (20, 30, 50cm FL) and
 - 3 Double Concave (20, 30, 50cm FL)
 
+Or what if made out of acrylic https://www.amazon.com/Hemobllo-Pcs-Optical-Lens-Magnifying/dp/B083Y27K3S. And I guess that 1.5" is accurate size https://www.amazon.com/Optical-Double-Convex-Diameter-Length/dp/B00CLC7USU
+
 ![Lens types](./lens-types.png)
 
 So what do I need? 
@@ -112,7 +114,9 @@ https://www.studiobinder.com/blog/focal-length-camera-lenses-explained/
 https://www.photonstophotos.net/GeneralTopics/Lenses/OpticalBench/OpticalBench.htm
 
 
-## Software
+## Photo, video and streaming
+
+So how to take pictures, record video and stream from the camera?
 
 What software to use, and how to stream covered in [this article](https://www.tomshardware.com/how-to/use-raspberry-pi-camera-with-bullseye)
 

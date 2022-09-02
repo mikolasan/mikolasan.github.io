@@ -70,6 +70,14 @@ Where can I find the Intel Overclocking SDK? No plans for overclocking, I'm just
 Tentatively C# language. I look at [this](https://github.com/openhardwaremonitor/openhardwaremonitor), but the absence of readme has dispirited me. That's why there's an active fork of **Open Hardware Monitor** - [Libre Hardware Monitor](https://github.com/LibreHardwareMonitor/LibreHardwareMonitor)
 
 
+## Pi camera
+
+I dedicated special post to [Pi Camera](/make/raspberry-pi-camera), because it took me out of guard. Camera but without a lens. For some reason I decided to make my research about lenses instead of ordering one for $50. I found a niche in other words.
+
+### Stream camera feed
+
+It raises another problem: overheating. I have a simple radiator without active cooling, no case. But I become concerned when Raspberry Pi processes the camera input. It become so hot > 90C and I think it requires appropriate cooling system. Which means I need to buy proper radiators, and a fan, and [print a case](/make/3d-printed-raspberry-pi-case). At this point I [was already considering purchasing a 3D printer](/make/3d-printer-dilemma) and the project has been set on pause. ([one week I was building Prusa Original Mini](/make/prusa-mini-original))
+
 ## Further reading
 
 - Store data in DB https://redis.io/docs/reference/patterns/

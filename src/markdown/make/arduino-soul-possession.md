@@ -149,6 +149,10 @@ Sad face :(
 
 I'm getting back the same `AC 53 00 00`. Strange.
 
+> The Serial Programming instructions will not work if the communication is out of synchronization. When in sync. the second byte (0x53), will echo back when issuing the third byte of the Programming Enable instruction. Whether the echo is correct or not, all four bytes of the instruction must be transmitted. If the 0x53 did not echo back, give RESET a positive pulse and issue a new Programming Enable command
+> 
+> AVR-microcontroller-ATmega8_L_datasheet
+
 I successfully tested the same procedure with a firm ISP connector on Arduino UNO R3. But I still think my chips are dead than it's the wiring.
 
 Test SPI https://importgeek.wordpress.com/2017/09/11/raspberry-pi-spi-loopback-testing/
@@ -159,6 +163,18 @@ Currently I'm going to use ATMega328P from Arduino UNO, but I'll try to find ans
 - How to test ATMega8 chips if they are bricked or not? What minimum board/equipment is required?
 
 
+## From Arduino to ATMega8
+
+This is [my path](https://electronics.stackexchange.com/questions/205055/using-avrdude-to-program-attiny-via-arduino-as-isp) now: 
+
+- Connect arduino to the laptop
+- Install Arduino ISP sketch  on it (Arduino IDE 1.8.15: File -> Examples -> 11. ArduinoISP)
+- Now forget that it's an Arduino that's connected to the laptop—it's a programmer. While it's still connected to USB port, it communicates over serial protocol with the laptop, but it will use ISP on the side between itself (Arduino) and another chip. Be careful with serial communication—[use the same baud rate on both sides](https://techbird.wordpress.com/2014/03/31/programming-atmega8-using-arduino-uno-rev3/)
+- Connect ATMega8 to the programmer (miso, mosi, clk, reset, power, gnd)
+- Run `avrdude` with programmer set to `avrisp` and flash ATMege chip with a program (hex file)
+- Boom! 💥
+
+Also [this](https://create.arduino.cc/projecthub/hami/programming-atmega8-using-arduino-ide-90c2ad) tutorial a bit off, but it shows how to connect a crystal to ATMega8 
 
 ## Reference
 
@@ -170,6 +186,7 @@ Currently I'm going to use ATMega328P from Arduino UNO, but I'll try to find ans
 
 - I found [this blog](https://desertbot.io/blog/page/2)
 - and another https://blog.podkalicki.com/how-to-compile-and-burn-the-code-to-avr-chip-on-linuxmacosxwindows/
+- one more https://denilson.sa.nom.br/blog/2008-02-02/first-contact-with-atmega8-microcontroller-part-4
 - Fuses http://code.rancidbacon.com/LearningAboutArduinoATMega8
 - Restore locked AVR https://www.avrfreaks.net/forum/tutsoft-recovering-locked-out-avr
 - Lower frequency of communication (ATMega8 without external crystal works on 1MHz) https://www.avrfreaks.net/forum/problem-mega128-programming-using-avrdude-bsd
