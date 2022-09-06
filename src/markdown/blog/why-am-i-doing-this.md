@@ -1,5 +1,4 @@
 ---
-path: "/projects/why-am-i-doing-this"
 date: "2020-08-28"
 title: "Why am I doing this?"
 published: 2020-09-23

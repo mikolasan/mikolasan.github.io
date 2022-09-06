@@ -21,5 +21,7 @@ draft: true
 
 ## Test prints
 
+- test stringing https://www.thingiverse.com/thing:533472
+- temperature tower https://www.thingiverse.com/thing:2615842
 - fancy bency https://www.printables.com/model/124521-voronoi-lattice-benchy#preview
 - all angles, holes, and columns. it takes hours to print though, so I skipped it https://www.printables.com/model/112181-complete-3d-printer-test-all-in-one-stress-test-be/comments
