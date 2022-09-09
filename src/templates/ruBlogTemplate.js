@@ -6,7 +6,7 @@ import DraftAlert from "../components/draftAlert"
 
 export default function Template ({ data, pageContext }) {
   const { markdownRemark } = data
-  const { frontmatter, html } = markdownRemark
+  const { frontmatter, html, excerpt } = markdownRemark
   const image = getImage(frontmatter.featuredImage);
   const url = pageContext.url
   let section = url.substring(1, url.indexOf('/', 1))
@@ -24,7 +24,7 @@ export default function Template ({ data, pageContext }) {
   return (
     <Layout
       title={frontmatter.title}
-      description={frontmatter.excerpt}
+      description={excerpt}
       published={frontmatter.date}
       lastUpdated={frontmatter.lastModified}
       section={section}

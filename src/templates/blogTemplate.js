@@ -6,7 +6,7 @@ import InProgressAlert from "../components/inProgressAlert"
 
 export default function Template ({ data, pageContext }) {
   const { markdownRemark } = data
-  const { frontmatter, html } = markdownRemark
+  const { frontmatter, html, excerpt } = markdownRemark
   const url = pageContext.url
   let section = url.substring(1, url.indexOf('/', 1))
   let languageName = "Switch to russian version"
@@ -27,7 +27,7 @@ export default function Template ({ data, pageContext }) {
     <Layout
       pageUrl={url}
       title={frontmatter.title}
-      description={frontmatter.excerpt}
+      description={excerpt}
       published={published}
       lastUpdated={lastModified}
       section={section}
