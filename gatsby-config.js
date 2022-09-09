@@ -25,6 +25,13 @@ module.exports = {
           },
           {
             resolve: `gatsby-remark-prismjs`,
+          },
+          {
+            resolve: `gatsby-remark-copy-linked-files`,
+            options: {
+              destinationDir: `assets`,
+              ignoreFileExtensions: [`png`, `jpg`, `jpeg`, `bmp`, `tiff`],
+            },
           }
         ],
       },

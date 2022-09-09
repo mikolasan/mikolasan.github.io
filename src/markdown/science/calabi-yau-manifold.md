@@ -4,13 +4,16 @@ title: Calabi-Yau Manifold
 previewImage: string-theory-notes-quora-enlong-chiou.jpg
 ---
 
-I'm a mathematician. On my homepage I want to have something that would highlight this. Like an animation of some elusive manifold. A good friend of mine found mesmeraizing aimation of Calabi-Yau manifold. So let's implement it!
+I'm a mathematician. On my homepage I want to have something that would highlight this. Like an animation of some elusive manifold. A good friend of mine [found mesmeraizing aimation](https://www.reddit.com/r/DMT/comments/evy01l/have_you_seen_this_its_a_calabiyau_manifold/) of Calabi-Yau manifold. So let's implement it!
 
+![mesmeraizing aimation of Calabi-Yau manifold](./calabi-yau-manifold.gif)
 
 ## The math
 
+
 So to bring this animation to my website, I need to undestand the math behind it. Here is an [explanation how the manifold can be vizualized](https://analyticphysics.com/Higher%20Dimensions/Visualizing%20Calabi-Yau%20Manifolds.htm).
 
+- About hidden dimensions https://plus.maths.org/content/hidden-dimensions
 
 ## The code
 
