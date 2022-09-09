@@ -24,6 +24,7 @@ export default function Template ({ data, pageContext }) {
   return (
     <Layout
       title={frontmatter.title}
+      description={frontmatter.excerpt}
       published={frontmatter.date}
       lastUpdated={frontmatter.lastModified}
       section={section}
@@ -53,6 +54,7 @@ export const pageQuery = graphql`
   query RuBlogQuery($absolutePath: String!) {
     markdownRemark(fileAbsolutePath: { eq: $absolutePath }) {
       html
+      excerpt
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         published(formatString: "MMMM DD, YYYY")
