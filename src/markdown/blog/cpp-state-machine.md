@@ -28,3 +28,4 @@ Wait for updates on my Github, I will post dynamic state machine there.
 - [C++ question: exec](/blog/cpp-question-exec)
 - [Variadic templates in C++](/blog/cpp-variadic-templates)
 - [Virtual call in C++](/blog/cpp-virtual-call)
+- [Leak in std::map](/blog/cpp-leak-in-std-map)

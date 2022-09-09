@@ -2,7 +2,7 @@
 date: 2022-06-23
 title: How to run DALL-E locally
 draft: true
-featuredImage: cat-cosmonaut-floating-in-deep-space-with-colorful-nebulas-on-the-background.jpg
+featuredImage: a_cat_in_a_cosmonaut_costume_floating_in_deep_space_with_colorful_nebulas_on_the_background.png
 previewImage: run-dalle-playground.png
 ---
 

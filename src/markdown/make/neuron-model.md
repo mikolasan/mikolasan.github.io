@@ -11,8 +11,15 @@ The idea is simple. Find a working example with a small neural network and make 
 - led strip
 - FPGA chip: [atmega](/make/arduino-soul-possession)?
 
+It should be cute and interactive as japanese toy Tuttuki Bako (ツッツキバコ - easy to remember: 3 smiles, high-voltage power line, uphill, downhill and me on the bike, then dead end...)
+
 
 # Research
+
+First a quick overview of current branches in machine learning (by [Oleksii Trekhleb](https://github.com/trekhleb/homemade-machine-learning))
+
+![ML roadmap](./machine-learning-map.png)
+
 
 
 ## My roadmap
@@ -51,6 +58,12 @@ The idea is simple. Find a working example with a small neural network and make 
 - Handbook of Natural Computing. Chapter 17. Modeling Biological Neural Networks
 - Samuel Johnson, J. Marro, and Joaqu ́ın J. Torres **Functional Optimization in Complex Excitable Networks** [arxiv](https://arxiv.org/abs/0805.1309)
 - Rabinovich MI, Huerta R, Varona P, Afraimovich VS (2008) [Transient cognitive dynamics, metastability, and decision making](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000072)
+
+
+## Links
+
+- [robomimic](https://robomimic.github.io/) is a framework for robot learning from demonstration
+
 
 # 3d model
 

@@ -13,6 +13,7 @@ Very interesting things that have very good write up, but I do not have time to 
 - Reservoir computing
 - AI Dungeon (text adventure game)
 - Position based fluids
+- Homemade machine learning https://github.com/trekhleb/homemade-machine-learning
 
 # Also
 

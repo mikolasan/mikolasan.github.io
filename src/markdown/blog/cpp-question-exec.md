@@ -34,3 +34,4 @@ The exec() function replaces new child process with whatever is in the long_proc
 - [C++ State Machine](/blog/cpp-state-machine)
 - [Variadic templates in C++](/blog/cpp-variadic-templates)
 - [Virtual call in C++](/blog/cpp-virtual-call)
+- [Leak in std::map](/blog/cpp-leak-in-std-map)

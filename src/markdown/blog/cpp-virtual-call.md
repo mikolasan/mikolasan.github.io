@@ -109,3 +109,4 @@ As usual all code for your experiments and slides are in [**cpp-skill** reposito
 - [C++ question: exec](/blog/cpp-question-exec)
 - [C++ State Machine](/blog/cpp-state-machine)
 - [Variadic templates in C++](/blog/cpp-variadic-templates)
+- [Leak in std::map](/blog/cpp-leak-in-std-map)

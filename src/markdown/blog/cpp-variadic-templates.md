@@ -96,3 +96,4 @@ As usual all code for your experiments and slides are in [**cpp-skill** reposito
 - [C++ question: exec](/blog/cpp-question-exec)
 - [C++ State Machine](/blog/cpp-state-machine)
 - [Virtual call in C++](/blog/cpp-virtual-call)
+- [Leak in std::map](/blog/cpp-leak-in-std-map)
