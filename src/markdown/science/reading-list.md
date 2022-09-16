@@ -19,4 +19,5 @@ Very interesting things that have very good write up, but I do not have time to 
 
 ## Books that every machine learning enthusiast should read
 
-- **Neural Networks from Scratch eBook** [https://nnfs.io/](https://nnfs.io/)
+- **Neuronal Dynamics: From single neurons to networks and models of cognition** [online book](https://neuronaldynamics.epfl.ch/index.html)
+- **Neural Networks from Scratch** [eBook](https://nnfs.io/)

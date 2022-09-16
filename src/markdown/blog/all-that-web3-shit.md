@@ -50,6 +50,7 @@ There is registration period and voting period. Anyone can register. Anyone can 
 
 Very good practive for roulette/horse racing app, where also there is a period for bets and show time later.
 
+Before writing these projects, the architecture shouold be reviewed in terms of ["Understanding and Discovering Attacks on Ethereum Decentralized Applications"](https://www.usenix.org/system/files/sec21summer_su.pdf)
 
 ## Further reading
 

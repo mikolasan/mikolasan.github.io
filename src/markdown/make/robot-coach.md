@@ -37,7 +37,23 @@ But I'm a guy from Soviet Union, which means I am okay to spend some time and cr
 
 ### Dog-like robot
 
-https://www.thingiverse.com/thing:5403752
+![Small robot dog](./robot-dog.jpg)
+
+From https://www.thingiverse.com/thing:5403752
+
+
+### Kawaii robot
+
+![Stack-chan owl](./stack-chan-robot-owl.gif)
+
+[Stack-chan](https://hackaday.io/project/181344-stack-chan-javascript-driven-super-kawaii-robot) robots created by [Shinya Ishikawa](https://twitter.com/meganetaaan) and its community. For example [this](https://protopedia.net/prototype/3299) sad yellow lizard by [Namako](https://twitter.com/KantenNamako)
+
+![sad yellow lizard](./robot-sad-yellow-lizard.png)
+
+It has "stack" in it's name because it uses [M5Stack](https://m5stack.com/) which is a tiny box 5 cm on the side with a screen based on very popular low-cost system on a chip - **ESP32**. I remember first hearing about M5 from [YouTube video reviewing](https://www.youtube.com/watch?v=v9sNzmtMSXo) their [E-ink display kit](https://shop.m5stack.com/products/m5paper-esp32-development-kit-comm-edition)
+
+
+https://protopedia.net/prototype/3277
 
 ## 3D model description
 
@@ -116,3 +132,6 @@ Settings: 0.2mm, 15% infill
 
 Arduino UNO size is 69mm x 53mm. Geometry is in mm (not in)
 
+> The joints of the tracks are simply pieces of 1.75mm filament cutted at the right length.
+
+I used toothpicks instead :) [Also possible](https://www.thingiverse.com/thing:3710272) to use binding rivets (size 1/8") as pins

@@ -87,5 +87,24 @@ Test print in progress. I still don’t understand why it poops before the start
 
 - test stringing https://www.thingiverse.com/thing:533472 http://domoticx.com/3d-printer-retraction-instellen-en-calibreren/
 - temperature tower https://www.thingiverse.com/thing:2615842
-- fancy bency https://www.printables.com/model/124521-voronoi-lattice-benchy#preview
+- fancy benchy https://www.printables.com/model/124521-voronoi-lattice-benchy#preview
 - all angles, holes, and columns. it takes hours to print though, so I skipped it https://www.printables.com/model/112181-complete-3d-printer-test-all-in-one-stress-test-be/comments
+
+
+## Problems, questions
+
+- Stringing. Increase retraction (5mm distance), lower nozzle temperature (200C PLA)
+- Unloading a filament is hard because a big blob is created on the end melted by the nozzle
+- During auto bed leveling and preheating filament pured a little and then wiped on the south edge. It's expected behaviour, but no one will tell you that.
+- Some models are terrible to print and might need an adjustment in 3D editor (not in the slicer)
+- G-code is a set of instructions very specific to the printer and they include all settings you carefully tinker in the slicer. So normally you cannot find them online.
+- 15% infill makes nozzle to quickly move, so against such jolts you need to make the print to stick to bed (increase temperature and lower the speed)
+
+- How to make small support platform?
+
+## Extra equipment
+
+- Isopropyl alcohol > 90%
+- Paper towels
+- Container for spools (dry box) - under discussion
+- 
