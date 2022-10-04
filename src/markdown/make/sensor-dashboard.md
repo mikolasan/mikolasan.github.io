@@ -59,7 +59,7 @@ The Pi requires so many accessories 😑
 
 ## Measuring the laptop temperature
 
-For the next thing, CPU temperature monitoring, I was using fancy program pre-installed by Acer. I wonder, can I quickly rewrite it and add reports? My assumption is that they use some library, that gives all data and they simply draw it.
+For the next thing, CPU temperature monitoring, I was using fancy program pre-installed by Acer (`C:\Program Files (x86)\Acer\PredatorSense`). I wonder, can I quickly rewrite it and add reports? My assumption is that they use some library, that gives all data and they simply draw it.
 
 To collect some intel I will use Dependency Walker. It might tell what libraries are important for the program.
 
@@ -67,7 +67,12 @@ To collect some intel I will use Dependency Walker. It might tell what libraries
 
 Where can I find the Intel Overclocking SDK? No plans for overclocking, I'm just looking for a library that gives CPU/GPU temperature. This is for Windows laptop where I'm going to run compilation, GPU computation. External device will receive sensor readings and will shutdown the laptop in case of overheating.
 
-Tentatively C# language. I look at [this](https://github.com/openhardwaremonitor/openhardwaremonitor), but the absence of readme has dispirited me. That's why there's an active fork of **Open Hardware Monitor** - [Libre Hardware Monitor](https://github.com/LibreHardwareMonitor/LibreHardwareMonitor)
+I'm leaving review of this application for future where my plans to try C# analysis tools such as
+
+- .Net Reflector
+- NDepend
+
+As for now I will search for sensor library, tentatively C# language. I look at [this](https://github.com/openhardwaremonitor/openhardwaremonitor), but the absence of readme has dispirited me. That's why there's an active fork of **Open Hardware Monitor** - [Libre Hardware Monitor](https://github.com/LibreHardwareMonitor/LibreHardwareMonitor)
 
 
 ## Pi camera
@@ -84,3 +89,6 @@ It raises another problem: overheating. I have a simple radiator without active 
 - Cell network on PI https://www.hackster.io/news/you-can-create-your-own-cell-network-with-a-raspberry-pi-and-sdr-238980964b5b.amp
 - GPRS SIM800C GSM GPRS module https://www.amazon.com/Comimark-SIM800C-Module-Bluetooth-Arduino
 - Collect data with Soracom Lagoon https://create.arduino.cc/projecthub/andreiflorian/unifiedwater-v1-13b168?ref=tag&ref_id=gsm&offset=13
+- Robot [tools from Intel](https://www.intel.com/content/www/us/en/developer/tools/software-catalog/overview.html?s=Newest)
+- [Robot kit](https://www.intel.com/content/www/us/en/develop/documentation/ei4amr-2022-2-get-started-robot-kit/top.html)
+- ROS and [tutorials](https://medium.com/exploring-ros-robotics)

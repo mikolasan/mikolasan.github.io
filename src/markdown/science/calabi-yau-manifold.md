@@ -4,6 +4,9 @@ title: Calabi-Yau Manifold
 previewImage: string-theory-notes-quora-enlong-chiou.jpg
 ---
 
+_Math club notes_
+
+
 I'm a mathematician. On my homepage I want to have something that would highlight this. Like an animation of some elusive manifold. A good friend of mine [found mesmeraizing aimation](https://www.reddit.com/r/DMT/comments/evy01l/have_you_seen_this_its_a_calabiyau_manifold/) of Calabi-Yau manifold. So let's implement it!
 
 ![mesmeraizing aimation of Calabi-Yau manifold](./calabi-yau-manifold.gif)

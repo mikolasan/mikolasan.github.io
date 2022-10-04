@@ -21,21 +21,7 @@ While this artcicle is in draft state I'm going to keep here only my questions a
 
 ### Jupyter notebook or Python interpreter?
 
-Or filling a script line by line and executing it?
-
-**Jupyter** http://jupyter.org/. 
-
-- Start https://towardsdatascience.com/how-to-launch-jupyter-notebook-quickly-26e500ad4560
-- Set dark theme https://stackoverflow.com/questions/46510192/change-the-theme-in-jupyter-notebook
-
-```shell
-pip install jupyterthemes  jt -l  jt -t theme-name
-```
-
-- Try it https://mybinder.org/v2/gh/ipython/ipython-in-depth/master?filepath=binder/Index.ipynb
-- Also on repl.it (select Python)
-
-
+[Jupyter notebook](/science/everything-you-need-to-know-about-jupyter-notebook) or filling a script line by line and executing it?
 
 
 ### Keras vs PyTorch vs TensorFlow

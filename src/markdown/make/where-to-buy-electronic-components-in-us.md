@@ -8,7 +8,7 @@ Chip shortage updates for 2022!
 
 ## What I plan to buy
 
-- 
+- Micro Gearmotor
 
 ## The list of online stores
 

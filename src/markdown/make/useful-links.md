@@ -48,3 +48,9 @@ Interactive reference to the Raspberry Pi GPIO pins. Interactive!
 Also hats!
 
 ![pinout](./raspberry-pi-pinout.jpg)
+
+## 6. ProtoPedia
+
+https://protopedia.net/prototype/3299
+
+Collection of fun robot projects from Japan. Similar to [hackaday](https://hackaday.io/project/181344-stack-chan-javascript-driven-super-kawaii-robot).

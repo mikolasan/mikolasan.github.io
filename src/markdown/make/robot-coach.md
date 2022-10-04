@@ -33,7 +33,7 @@ Like SMARS [version 1](https://www.thingiverse.com/thing:2662828), [version 4 (l
 
 I originally saved a link to **Cults 3D** where I saw similar interface to **Thingeverse** and the download button. But that doen't allow you to take the files. And then I noticed that in one year the creator has made 3000 euro selling this model by 5 euro for the zip. Looks like a good business model for hobby. 
 
-But I'm a guy from Soviet Union, which means I am okay to spend some time and create my own version, because engineering is in my blood.
+But I'm a guy from Soviet Union, which means I am okay to spend some time and create my own version, because engineering is in my blood. Here's helpful [design walkthrough](https://www.smarsfan.com/learn/design/) from Kevin McAleer.
 
 ### Dog-like robot
 

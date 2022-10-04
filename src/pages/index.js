@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/indexLayout"
-import { articles } from "../home/august"
+import { articles } from "../home/october"
 
 const Index = ({ pageContext }) => (
   <Layout
