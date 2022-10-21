@@ -1,6 +1,7 @@
 ---
 date: 2022-07-16
 title: Multi agent systems
+topic: true
 ---
 
 > Intuitively, intelligence and consciousness seem to be highly correlated. The smartest animals we know of are also the ones that show the greatest evidence of self-awareness and hints of consciousness. However, on a closer look, this relationship is anything but clear.

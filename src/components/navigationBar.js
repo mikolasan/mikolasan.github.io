@@ -249,9 +249,10 @@ class Navbar extends React.Component {
           <Link to="/make" { ...(active === "make" && { className: styles.activelink }) }>Make</Link>
           <Link to="/science" { ...(active === "science" && { className: styles.activelink }) }>Science</Link>
           <Link to="/blog" { ...(active === "blog" && { className: styles.activelink }) }>Blog</Link>
-          <Link to="/about" style={{float: 'right'}} { ...(active === "about" && { className: styles.activelink }) }>About</Link>
-          <Link to="/cv" style={{float: 'right'}} { ...(active === "cv" && { className: styles.activelink }) }>CV</Link>
-          
+          {/* <Link to="/about" style={{float: 'right'}} { ...(active === "about" && { className: styles.activelink }) }>About</Link> */}
+          {/* <Link to="/cv" style={{float: 'right'}} { ...(active === "cv" && { className: styles.activelink }) }>CV</Link> */}
+          <Link to="/sitemap" style={{float: 'right'}} { ...(active === "sitemap" && { className: styles.activelink }) }>Sitemap</Link>
+
           <div className={styles.language}>
           <Link to="/ru" title="Русский">
             <svg className={styles.globe} xmlns="http://www.w3.org/2000/svg"

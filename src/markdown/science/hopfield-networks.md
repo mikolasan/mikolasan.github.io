@@ -1,7 +1,7 @@
 ---
 date: 2022-08-17
 title: Hopfield Networks
-developing: true
+topic: true
 ---
 
 [Full crash course](http://www.scholarpedia.org/article/Hopfield_network) about Hopfiled networks.

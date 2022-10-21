@@ -10,7 +10,10 @@ const RecentArticles = () => {
       allMarkdownRemark(
         limit: 3,
         sort: { order: DESC, fields: [frontmatter___date]},
-        filter: { fileAbsolutePath: {regex: "/^(?!.*\/ru\/.*)/"}}
+        filter: {
+          fileAbsolutePath: {regex: "/^(?!.*\/ru\/.*)/"},
+          frontmatter: { topic: {ne: true}, article: {ne: true}}
+        }
       ) {
         edges {
           node {

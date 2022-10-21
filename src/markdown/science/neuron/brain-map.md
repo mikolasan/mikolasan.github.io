@@ -1,5 +1,7 @@
 ---
 title: Brain map
+topic: true
+description: ""
 ---
 
 - [Data](https://portal.brain-map.org/explore/connectivity/synaptic-physiology/interact) provided by Allen Institute

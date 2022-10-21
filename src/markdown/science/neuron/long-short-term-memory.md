@@ -1,8 +1,8 @@
 ---
 title: Long Short-Term Memory
+topic: true
+description: ""
 ---
-
-TOPIC
 
 - Main paper [PDF](https://www.bioinf.jku.at/publications/older/2604.pdf)
 - stacking lstms https://stats.stackexchange.com/questions/163304/what-are-the-advantages-of-stacking-multiple-lstms

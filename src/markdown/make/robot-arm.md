@@ -21,6 +21,8 @@ Here is my refernce:
 - https://jjshortcut.wordpress.com/2010/08/17/multiply-the-robotic-arm-and-electronics/ (plywood)
 - https://www.thingiverse.com/thing:2433 (plywood)
 - http://www.oomlout.com/a/products/rarm/index.htm (acrilic) (https://www.thingiverse.com/thing:387)
+- uses NN to learn https://www.instructables.com/Automated-Robotic-Arm-That-Learns-Ft-Tinkercad-Ard/
+- nice touch controller https://www.instructables.com/Arduino-Robotic-Arm-Controlled-by-Touch-Interface/
 
 Then put it into super duper cool enslosure
 
@@ -31,3 +33,4 @@ Then put it into super duper cool enslosure
 - acrilic or plywood or ABS?
 - in another words: laser cut or 3d print?
 - joints. at least I know, that they should be rigid (https://www.thingiverse.com/thing:2727176) not pulled be lines (https://www.thingiverse.com/thing:3105948)
+

@@ -4,6 +4,9 @@ date: 2022-07-23
 draft: true
 ---
 
+
+## The look
+
 ![uncanny valley graph by Mori](./uncanny-valley-1.jpg)
 
 I'm convinced that any robot should have a creepy aspect. Like big tracking you eyes that can drive people crazy.
@@ -17,3 +20,14 @@ I'm convinced that any robot should have a creepy aspect. Like big tracking you 
 
 
 ![picture from the article shows very disturbing robot](./uncanny-valley-2.jpg)
+
+
+## Electrical components
+
+Motors normally require higher voltage (6V, 12V, 24V) and current, and it's a good practice to keep motors, LEDs, switches electronically seperated from the logic (3.3V). But how do you decouple it when the whole project should work from the battery? 
+
+Do you use two batteries? Just imagine what a headache is to keep two separate batteries charged. I can only think about sophisticated system where assumed that motors can kill the battery often, but at the same time the main brain must continue operating therefore it remains only the option to send signal about help to other robots. But I've never seen such design.
+
+So what normal people use instead? 
+
+Power supply needs to be protected from Back EMF when motors abruptly stop or reverse the rotation direction. But rechargeable battery only wins from this effect. The only concern is values above maximum ratings (li-poly batteries very sensitive)

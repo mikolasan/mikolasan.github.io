@@ -3,7 +3,7 @@ date: 2022-09-27
 title: Knots
 ---
 
-_Math club notes_
+_Math club notes_.
 
 I've never heard about [knots (in mathematics)](https://en.wikipedia.org/wiki/Knot_(mathematics)) and Khovanov homology invariants. Its calculation is, I quote, "prohibitively hard".
 

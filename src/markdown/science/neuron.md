@@ -1,6 +1,7 @@
 ---
 title: Neuron
 date: 2022-08-28
+topic: true
 ---
 
 
@@ -81,6 +82,8 @@ For example Recurrent Neural Networks (RNN) have connection loops and specific m
 22. Also temporal encoding of analog data is really intriguing topic that I want to figure out. Can be found in [this online book](https://neuronaldynamics.epfl.ch/online/index.html) that I immediately added to [my reading list](/science/reading-list).
 23.
 24. But then [research from Google team](https://arxiv.org/pdf/1907.13223.pdf) very disappointed me. It must be a method of how to encode temporal data, that everyone citing to. And indeed, they encoded data, but just like programmers would do just to replace time with data that has weights that can be trained with very familiar practive of backpropagation.
+
+## Sensorimotor 
 23. I'll try to focus only on [motor information](https://www.jneurosci.org/content/35/30/10888). When I started reading this paper, I thought: Every robotics engineer must read this and think in such terms.
 24. There are already many attempts to create a neuron out of silicone (meaning by designing an integrated circuit) [Nullcline-Based Design of a Silicon Neuron](https://0795f079-a-62cb3a1a-s-sites.googlegroups.com/site/arindambasu/writings/2010_J2.pdf) that I found from in [a big report](https://apps.dtic.mil/sti/pdfs/AD1101848.pdf) by Yang Yi: Enabling Brain-Inspired Processors Through Energy-Efficient Delayed Feedback Reservoir Computing Integrated Circuits.
 
@@ -89,6 +92,16 @@ For example Recurrent Neural Networks (RNN) have connection loops and specific m
 The paper says that reservoir computing is good, essentially it just converts the problem to a higher dimension (why? when everyone tries to simplify the problem instead), implementation in software is slow, digital circuits are slow too, so let's do analog systems. And they provide circuits and explanation. Good, but no extensive comparison and explanation of reservoir benefits in the beginning. Only some simple tests in the end.
 24. [Neural networks and manifolds](http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/), [visualization of the learning process](https://cs.stanford.edu/people/karpathy/convnetjs//demo/classify2d.html)
 25. 2001 S. Bressler, J. Kelso - Cortical coordination dynamics and cognition [PDF](http://www.ccs.fau.edu/~bressler/pdf/TICS01.pdf)
+
+- [ANN 101](https://quantdare.com/understanding-neural-networks-with-graphs/)
+- [Amazing NN catalogue](https://web.archive.org/web/20160221220505/http://tocs.ulb.tu-darmstadt.de/110876539.pdf) but in German only
+- [DNN with cyclic connections](https://www.researchgate.net/publication/352493209_User_Driven_FPGA-Based_Design_Automated_Framework_of_Deep_Neural_Networks_for_Low-Power_Low-Cost_Edge_Computing)
+- [2020 Cyclic graph multilayer perceptron](https://openreview.net/pdf?id=S1xSzyrYDB) - bleeding edge
+- [Graph Neural Networks](https://distill.pub/2021/gnn-intro/)
+- 2021 [DIRECTED ACYCLIC GRAPH NEURAL NETWORKS](https://jiechenjiechen.github.io/pub/dagnn.pdf)
+- I believe that there is a homomorphism between ANN and SNN. Wait, but can xNN be defined as an algebraic structure? Of course: [Modelling a neural network using an algebraic method](https://www.semanticscholar.org/paper/Modelling-a-neural-network-using-an-algebraic-Sugunnasil-Somhom/3de6d2dd204958731f0d3eeccdc317547b5a9413)
+- [Algebraic Neural Networks](https://arxiv.org/pdf/2009.01433.pdf)
+- Very optimistic article about [Reinforcment learning](https://www.semanticscholar.org/paper/Reinforcement-learning-in-artificial-and-biological-Neftci-Averbeck/951af7222535d934ca2b401ca0cd2181b28284f9). At the end it says that SNN will change the world and overthrow Moore's law. But it answers many questions about neverending learning and about using the same neurons on different timescales - by different systems (learning vs predicting)
 
 ## LSTM
 
@@ -127,6 +140,11 @@ The paper says that reservoir computing is good, essentially it just converts th
 > Filip Piekniewski et al, 2016
 
 https://twitter.com/filippie509/status/1575512408566603776
+
+
+> I think what is missing here is the “survival” module.  The only sentient systems we know are in perpetual survival mode. All their qualities, including sentience and reproduction are there to assure survival.
+> 
+> Anonymous https://twitter.com/locoqf2/status/1581326320738238464
 
 
 ## Literature

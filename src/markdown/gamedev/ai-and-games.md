@@ -6,6 +6,8 @@ lastModified: 2021-11-28
 draft: true
 ---
 
+**UPDATE:** Generate textured 3d models with this [NVIDIA tool](https://nv-tlabs.github.io/GET3D/)
+
 I always struggle with finding the right assets and because I only look for free assets the choice is limited. I’m thinking to learn about procedural generation and also use some AI method to generate completely new assets. But it’s a huge task so I rather choose another hobby. Just kidding.
 
 _Andraz Vene_: Procedural assets sound like a big one indeed! Have you considering focusing on a genre, where assets are more available, or they are more "programmer art" that can look well? I.e. so not some platformer with characters, but i.e. regular shapes or something?

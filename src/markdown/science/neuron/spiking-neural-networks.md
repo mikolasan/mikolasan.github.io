@@ -1,8 +1,8 @@
 ---
 title: Spiking Neural Networks
+topic: true
+description: ""
 ---
-
-TOPIC
 
 - https://en.wikipedia.org/wiki/Spiking_neural_network
 - https://cnvrg.io/spiking-neural-networks/

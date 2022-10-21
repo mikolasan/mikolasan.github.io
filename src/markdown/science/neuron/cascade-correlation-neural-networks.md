@@ -1,5 +1,7 @@
 ---
 title: Cascade Correlation Neural Networks
+topic: true
+description: ""
 ---
 
 they start with a minimal topology (just input and output unit) and recruit new hidden units as learning progresses
