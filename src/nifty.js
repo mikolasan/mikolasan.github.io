@@ -15,5 +15,14 @@ const formatDate = (date, language) => {
   }
 }
 
+const removeTrailingSlash = (str) => {
+  if (str.charAt(str.length - 1) === '/') {
+    return str.slice(-1);
+  } else {
+    return str;
+  }
+}
+
 exports.absPathToUrl = absPathToUrl;
 exports.formatDate = formatDate;
+exports.removeTrailingSlash = removeTrailingSlash;

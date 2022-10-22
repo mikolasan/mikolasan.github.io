@@ -1,13 +1,17 @@
 require("dotenv").config()
 const _ = require("lodash");
+const nifty = require("./src/nifty")
+
+const siteUrl = `https://neupokoev.xyz`
 
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://neupokoev.xyz`,
+    siteUrl: siteUrl,
     title: `Nikolay Neupokoev - developer, traveler, snob`,
     description: `Nikolay Neupokoev - developer, traveler, snob. Personal blog.`,
     author: `@mikolasan`,
   },
+  trailingSlash: `never`,
   plugins: [
     {
       resolve: `gatsby-transformer-remark`,
@@ -88,29 +92,51 @@ module.exports = {
         },
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-prefetch-google-fonts`,
-    //   options: {
-    //     fonts: [
-    //       {
-    //         family: `Vollkorn SC`,
-    //         variants: [`700`]
-    //       },
-    //       {
-    //         family: `Manrope`,
-    //         variants: [`300`]
-    //       },
-    //       {
-    //         family: `Nunito`,
-    //         variants: [`300`]
-    //       },
-    //     ],
-    //     encode: false,
-    //     filename: "google-fonts.css",
-    //     formats: ["woff2", "woff", "ttf", "eof"]
-    //   },
-    // },
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        query: `
+        {
+          allSitePage {
+            nodes {
+              path
+            }
+          }
+          allMarkdownRemark {
+            nodes {
+              fileAbsolutePath
+              frontmatter {
+                lastModified
+              }
+            }
+          }
+        }
+      `,
+        resolveSiteUrl: () => siteUrl,
+        resolvePages: ({
+          allSitePage: { nodes: allPages },
+          allMarkdownRemark: { nodes: allMarkdownNodes },
+        }) => {
+          const mdNodeMap = allMarkdownNodes.reduce((acc, node) => {
+            const { fileAbsolutePath } = node
+            const uri = nifty.absPathToUrl(fileAbsolutePath)
+            acc[uri] = node.frontmatter
+            return acc
+          }, {})
+
+          return allPages.map(page => {
+            path = nifty.removeTrailingSlash(page.path)
+            return { ...page, ...mdNodeMap[path] }
+          })
+        },
+        serialize: ({ path, lastModified }) => {
+          return {
+            url: path,
+            lastmod: lastModified,
+          }
+        },
+      },
+    },
     {
       resolve: `gatsby-plugin-build-date`,
       options: {
@@ -193,6 +219,28 @@ module.exports = {
           },
         ],
       },
-    }
+    },
+    // {
+    //   resolve: `gatsby-plugin-prefetch-google-fonts`,
+    //   options: {
+    //     fonts: [
+    //       {
+    //         family: `Vollkorn SC`,
+    //         variants: [`700`]
+    //       },
+    //       {
+    //         family: `Manrope`,
+    //         variants: [`300`]
+    //       },
+    //       {
+    //         family: `Nunito`,
+    //         variants: [`300`]
+    //       },
+    //     ],
+    //     encode: false,
+    //     filename: "google-fonts.css",
+    //     formats: ["woff2", "woff", "ttf", "eof"]
+    //   },
+    // },
   ],
 }

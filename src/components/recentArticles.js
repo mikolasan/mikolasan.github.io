@@ -20,7 +20,6 @@ const RecentArticles = () => {
             id
             frontmatter {
               title
-              path
               date
             }
             excerpt

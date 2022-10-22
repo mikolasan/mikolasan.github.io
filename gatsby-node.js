@@ -107,30 +107,31 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   )
 
-  const recentArticles = await graphql(`
-    {
-      allMarkdownRemark(
-        limit: 5,
-        sort: { order: DESC, fields: [frontmatter___date]},
-        filter: {
-          frontmatter: {language: {ne: "ru"}, topic: {ne: true}, article: {ne: true}}
-        }
-      ) {
-        edges {
-          node {
-            frontmatter {
-              path
-            }
-          }
-        }
-      }
-    }
-  `)
+  const recentArticles = {} // TODO
+  // await graphql(`
+  //   {
+  //     allMarkdownRemark(
+  //       limit: 5,
+  //       sort: { order: DESC, fields: [frontmatter___date]},
+  //       filter: {
+  //         frontmatter: {language: {ne: "ru"}, topic: {ne: true}, article: {ne: true}}
+  //       }
+  //     ) {
+  //       edges {
+  //         node {
+  //           frontmatter {
+  //             path
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
 
-  if (recentArticles.errors) {
-    reporter.panicOnBuild(`Error while running GraphQL query.`)
-    return
-  }
+  // if (recentArticles.errors) {
+  //   reporter.panicOnBuild(`Error while running GraphQL query.`)
+  //   return
+  // }
 
   const blogPostTemplate = path.resolve(`./src/templates/blogTemplate.js`)
   const result = await queryByPath(graphql, "/^(?!.*\/ru\/.*)/");

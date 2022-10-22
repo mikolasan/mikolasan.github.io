@@ -1,6 +1,8 @@
 import React from "react"
 import Layout from "../components/layout"
 
+const updated = React.createContext('2022-10-15')
+
 const About = ({ pageContext }) => (
   <Layout
     title="Developer, traveler, snob"
@@ -99,4 +101,5 @@ const About = ({ pageContext }) => (
   </Layout>
 )
 
+About.useContext = updated
 export default About
