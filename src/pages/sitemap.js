@@ -12,7 +12,7 @@ const SitemapPage = ({ data }) => {
       title="Sitemap"
     >
       <h1>Sitemap</h1>
-      <h2>Science topics</h2>
+      <h2>Cognitive science topics</h2>
       {scienceNodes.map(node => {
         return (
           <div>

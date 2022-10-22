@@ -40,6 +40,7 @@ export const query = graphql`
           frontmatter {
             title
             date
+            developing
             previewImage {
               childImageSharp {
                 gatsbyImageData(

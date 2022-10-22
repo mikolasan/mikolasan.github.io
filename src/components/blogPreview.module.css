@@ -10,10 +10,26 @@
 }
 
 .blogimage {
+  width: 100%;
   min-height: 120px;
   max-height: 120px;
   margin-bottom: 0.5rem;
   border: #d4d4d4 solid 1px;
+}
+
+.stack {
+  display: block;
+}
+
+.developing {
+  display: block;
+  background: #ffdd26c2;
+  color: #a70046 ;
+  padding: 0 1rem;
+  padding-bottom: 0.4rem;
+  margin: 0;
+  border: 5px dashed #a70046  !important;
+  font-weight: 700;
 }
 
 .blogcard a {

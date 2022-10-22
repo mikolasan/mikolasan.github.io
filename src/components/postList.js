@@ -23,6 +23,7 @@ const PostList = ({ pageContext, posts, baseUrl }) => {
             readMore="Read more..."
             image={getImage(node.frontmatter.previewImage)}
             altImage="Some alt text for this picture"
+            developing={node.frontmatter.developing}
           />
         ))}
       </div>

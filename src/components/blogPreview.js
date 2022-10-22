@@ -10,7 +10,8 @@ const BlogPreview = ({
   text,
   readMore,
   image,
-  altImage
+  altImage,
+  developing
 }) => (
   <article className={styles.blogcard}>
     {image && (
@@ -33,6 +34,7 @@ const BlogPreview = ({
         {title}
       </h3>
     </Link>
+    {developing && <p className={styles.developing}>Under development</p>}
     <time className={styles.blogdate}>
       {date}
     </time>

@@ -39,7 +39,10 @@ const queryByPath = async (graphql, regex) => {
   const result = await graphql(`
     {
       allMarkdownRemark(
-        filter: {fileAbsolutePath: { regex: "${regex}" }}
+        filter: {
+          frontmatter: { topic: {ne: true}, article: {ne: true}}
+          fileAbsolutePath: { regex: "${regex}" }
+        }
       ) {
         nodes {
           fileAbsolutePath
@@ -109,7 +112,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       allMarkdownRemark(
         limit: 5,
         sort: { order: DESC, fields: [frontmatter___date]},
-        filter: { frontmatter: {language: {ne: "ru"}}}
+        filter: {
+          frontmatter: {language: {ne: "ru"}, topic: {ne: true}, article: {ne: true}}
+        }
       ) {
         edges {
           node {
