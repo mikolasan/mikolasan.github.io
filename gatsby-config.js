@@ -126,12 +126,14 @@ module.exports = {
 
           return allPages.map(page => {
             path = nifty.removeTrailingSlash(page.path)
-            return { ...page, ...mdNodeMap[path] }
+            return { ...page, ...mdNodeMap[path], originalPath: path }
           })
         },
-        serialize: ({ path, lastModified }) => {
+        serialize: ({ path, lastModified, originalPath }) => {
           return {
             url: path,
+            changefreq: "daily",
+            priority: originalPath === "/" ? 1.0 : 0.7,
             lastmod: lastModified,
           }
         },
