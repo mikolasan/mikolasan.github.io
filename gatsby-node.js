@@ -4,6 +4,68 @@ const likesConfig = require("./likes-config")
 const nifty = require("./src/nifty")
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage, deletePage } = actions
+  if (`updated` in page.context) {
+    return
+  }
+
+  const updated = {
+    'about': `2022-10-22`,
+    'creative-ideas-for-app-development': `2022-10-22`,
+    'credits': `2022-10-22`,
+    'd3-test': `2022-10-22`,
+    'gamedev_old': `2022-10-22`,
+    'idea-generator': `2022-10-22`,
+    'ideas-for-app-development': `2022-10-22`,
+    'ideas_old': `2022-10-22`,
+    'index': `2022-10-22`,
+    'innovative-ideas-for-app-development': `2022-10-22`,
+    'make_old': `2022-10-22`,
+    'projects_old': `2022-10-22`,
+    'site-map': `2022-10-22`,
+    'sitemap': `2022-10-22`,
+    'projects/calm-place': `2022-10-22`,
+    'ru/about': `2022-10-22`,
+    'ru/ideas': `2022-10-22`,
+    'ru/index': `2022-10-22`,
+    'ru/projects': `2022-10-22`,
+    'ideas/ai': `2022-10-22`,
+    'ideas/ar': `2022-10-22`,
+    'ideas/diy': `2022-10-22`,
+    'ideas/games': `2022-10-22`,
+    'ideas/life': `2022-10-22`,
+    'ideas/mobile-app': `2022-10-22`,
+    'ideas/web-app': `2022-10-22`,
+  }
+  const path = page.componentPath
+  const match = path.match(/.*\/src\/pages\/(.*)\.js/)
+  if (match && match.length > 1) {
+    pageName = match[1]
+    if (pageName in updated) {
+      console.log(pageName, updated[pageName])
+      deletePage(page)
+      createPage({
+        ...page,
+        context: {
+          ...page.context,
+          updated: updated[pageName],
+        },
+      })
+    }
+  }
+  
+
+  // deletePage(page)
+  // // You can access the variable "house" in your page queries now
+  // createPage({
+  //   ...page,
+  //   context: {
+  //     ...page.context,
+  //     updated: '1',
+  //   },
+  // })
+}
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
@@ -35,7 +97,29 @@ const nodeReducer = (array, node) => {
   return array;
 }
 
-const queryByPath = async (graphql, regex) => {
+const queryAllByPath = async (graphql, regex) => {
+  const result = await graphql(`
+    {
+      allMarkdownRemark(
+        filter: {
+          fileAbsolutePath: { regex: "${regex}" }
+        }
+      ) {
+        nodes {
+          fileAbsolutePath
+        }
+        totalCount
+      }
+    }
+  `)
+
+  if (result.errors) {
+    throw `Error while running GraphQL query for ${regex} pages.`
+  }
+  return result
+}
+
+const queryPagesByPath = async (graphql, regex) => {
   const result = await graphql(`
     {
       allMarkdownRemark(
@@ -134,7 +218,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // }
 
   const blogPostTemplate = path.resolve(`./src/templates/blogTemplate.js`)
-  const result = await queryByPath(graphql, "/^(?!.*\/ru\/.*)/");
+  const result = await queryAllByPath(graphql, "/^(?!.*\/ru\/.*)/");
   result.data.allMarkdownRemark.nodes
     .reduce(nodeReducer, [])
     .map(pageFactory(blogPostTemplate, recentArticles))
@@ -142,14 +226,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   // Russian version
   const ruBlogPostTemplate = path.resolve(`./src/templates/ruBlogTemplate.js`)
-  const ruResult = await queryByPath(graphql, "/\/ru\//")
+  const ruResult = await queryAllByPath(graphql, "/\/ru\//")
   ruResult.data.allMarkdownRemark.nodes
     .reduce(nodeReducer, [])
     .map(pageFactory(ruBlogPostTemplate, recentArticles))
     .forEach(page => createPage(page))
 
   const createPagination = async (regex, path, listTemplate) => {
-    const result = await queryByPath(graphql, regex)
+    const result = await queryPagesByPath(graphql, regex)
     paginationFor(result, path, listTemplate)
       .forEach(page => createPage(page))  
   }
@@ -167,30 +251,33 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const ruDevlogListTemplate = path.resolve(`./src/templates/ruDevlogListTemplate.js`)
   const ruScienceListTemplate = path.resolve(`./src/templates/ruScienceListTemplate.js`)
 
-  // Pagination [/blog]
-  await createPagination("/markdown\/blog\//", `/blog`, blogListTemplate)
-  // Pagination [/gamedev]
-  await createPagination("/markdown\/gamedev\//", `/gamedev`, gamedevListTemplate)
-  // Pagination [/ideas]
-  await createPagination("/markdown\/ideas\//", `/ideas`, ideasListTemplate)
-  // Pagination [/make]
-  await createPagination("/markdown\/make\//", `/make`, makeListTemplate)
-  // Pagination [/projects]
-  await createPagination("/markdown\/projects\//", `/projects`, projectsListTemplate)
-  // Pagination [/science]
-  await createPagination("/markdown\/science\//", `/science`, scienceListTemplate)
+  try {
+    await Promise.all([
+      // Pagination [/blog]
+      createPagination("/markdown\/blog\//", `/blog`, blogListTemplate),
+      // Pagination [/gamedev]
+      createPagination("/markdown\/gamedev\//", `/gamedev`, gamedevListTemplate),
+      // Pagination [/ideas]
+      createPagination("/markdown\/ideas\//", `/ideas`, ideasListTemplate),
+      // Pagination [/make]
+      createPagination("/markdown\/make\//", `/make`, makeListTemplate),
+      // Pagination [/projects]
+      createPagination("/markdown\/projects\//", `/projects`, projectsListTemplate),
+      // Pagination [/science]
+      createPagination("/markdown\/science\//", `/science`, scienceListTemplate),
 
-  // Pagination [/ru/blog]
-  await createPagination("/\/ru\/blog*/", `/ru/blog`, ruBlogListTemplate)
-  // Pagination [/ru/paranormal]
-  await createPagination("/\/ru\/paranormal\//", `/ru/paranormal`, ruParanormalListTemplate)
-  // Pagination [/ru/make]
-  await createPagination("/\/ru\/make\/(?!hydroponics)/", `/ru/make`, ruMakeListTemplate)
-  // Pagination [/ru/devlog]
-  await createPagination("/\/ru\/devlog\//", `/ru/devlog`, ruDevlogListTemplate)
-  // Pagination [/ru/neural-networks]
-  await createPagination("/\/ru\/neural-networks\//", `/ru/neural-networks`, ruScienceListTemplate)
-
-  // catch 
-  //reporter.panicOnBuild(e)
+      // Pagination [/ru/blog]
+      createPagination("/\/ru\/blog*/", `/ru/blog`, ruBlogListTemplate),
+      // Pagination [/ru/paranormal]
+      createPagination("/\/ru\/paranormal\//", `/ru/paranormal`, ruParanormalListTemplate),
+      // Pagination [/ru/make]
+      createPagination("/\/ru\/make\/(?!hydroponics)/", `/ru/make`, ruMakeListTemplate),
+      // Pagination [/ru/devlog]
+      createPagination("/\/ru\/devlog\//", `/ru/devlog`, ruDevlogListTemplate),
+      // Pagination [/ru/neural-networks]
+      createPagination("/\/ru\/neural-networks\//", `/ru/neural-networks`, ruScienceListTemplate),
+    ])
+  } catch (e) {
+    reporter.panicOnBuild(e)
+  }
 }

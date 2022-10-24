@@ -31,3 +31,9 @@ Do you use two batteries? Just imagine what a headache is to keep two separate b
 So what normal people use instead? 
 
 Power supply needs to be protected from Back EMF when motors abruptly stop or reverse the rotation direction. But rechargeable battery only wins from this effect. The only concern is values above maximum ratings (li-poly batteries very sensitive)
+
+## PCB
+
+### Eagle
+
+- https://www.youtube.com/watch?v=Eu5XMEh79XM

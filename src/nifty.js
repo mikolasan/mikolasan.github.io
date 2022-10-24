@@ -1,10 +1,15 @@
 
-const absPathToUrl = (absPath) => {
-  const mdRoot = "/src/markdown"
-  const startPos = absPath.search(mdRoot) + mdRoot.length
-  const endPos = absPath.length - 3
-  const path = absPath.substring(startPos, endPos)
-  return path
+const absPathToUrl = (absPath, src_dir = "markdown") => {
+  const regex = new RegExp(String.raw`\/src\/${src_dir}(.*)\..*`)
+  const match = absPath.match(regex)
+  if (match && match.length > 0) {
+    return match[1]
+  }
+  // const mdRoot = "/src/markdown"
+  // const startPos = absPath.search(mdRoot) + mdRoot.length
+  // const endPos = absPath.length - 3 // only works for .md/.js but not .html
+  // const path = absPath.substring(startPos, endPos)
+  // return path
 }
 
 const formatDate = (date, language) => {

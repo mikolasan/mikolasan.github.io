@@ -31,6 +31,8 @@ There are simplified models, but the main question is how to train them. For exa
 
 I read [Chapter 17](https://link.springer.com/referenceworkentry/10.1007/978-3-540-92910-9_17) from **Handbook of Natural Computing** (2012), where I notice one big omission after reading Wikipedia. The synapse can be either electrical or chemical. This must be included into next improved roadmap version as the second step.
 
+What are the key examples of the use of computational methods in the study of biological neural networks? [Q](https://psychology.stackexchange.com/questions/1391/what-are-the-key-examples-of-the-use-of-computational-methods-in-the-study-of-bi?rq=1)
+
 
 ## Network organization
 
@@ -61,6 +63,13 @@ But again, I don't want to mimic connections from a real brain. Thus next I find
 
 [Training algorithm](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2559979/) to teach real neurons. Wild. Maybe I'll return back to this article, but as they write: "Even though many details of cellular biology and electrode physics were absent from the model network...".
 
+**DNN cyclic inter layer connections**. _Deep neural networks using a single neuron: folded-in-time architecture using feedback-modulated delay loops_ (https://www.nature.com/articles/s41467-021-25427-4)
+
+
+## Piaget's theory of cognitive development
+
+- https://en.m.wikipedia.org/wiki/Piaget%27s_theory_of_cognitive_development
+- behavior. An artificial visual cortex drives behavioral evolution in co-evolved predator and prey robots https://dl.acm.org/doi/10.1145/2330784.2330838
 
 ## Multi network system
 
@@ -83,9 +92,18 @@ For example Recurrent Neural Networks (RNN) have connection loops and specific m
 23.
 24. But then [research from Google team](https://arxiv.org/pdf/1907.13223.pdf) very disappointed me. It must be a method of how to encode temporal data, that everyone citing to. And indeed, they encoded data, but just like programmers would do just to replace time with data that has weights that can be trained with very familiar practive of backpropagation.
 
-## Sensorimotor 
+## Sensorimotor
+
+[Sensory-motor coupling](https://en.m.wikipedia.org/wiki/Sensory-motor_coupling)
+
 23. I'll try to focus only on [motor information](https://www.jneurosci.org/content/35/30/10888). When I started reading this paper, I thought: Every robotics engineer must read this and think in such terms.
 24. There are already many attempts to create a neuron out of silicone (meaning by designing an integrated circuit) [Nullcline-Based Design of a Silicon Neuron](https://0795f079-a-62cb3a1a-s-sites.googlegroups.com/site/arindambasu/writings/2010_J2.pdf) that I found from in [a big report](https://apps.dtic.mil/sti/pdfs/AD1101848.pdf) by Yang Yi: Enabling Brain-Inspired Processors Through Energy-Efficient Delayed Feedback Reservoir Computing Integrated Circuits.
+
+
+
+- Coordination Dynamics in Cognitive Neuroscience - https://www.frontiersin.org/articles/10.3389/fnins.2016.00397/full
+- Cortical coordination dynamics and cognition by Steven L. Bressler and J.A. Scott Kelso http://www.ccs.fau.edu/~bressler/pdf/TICS01.pdf (found at https://www.semanticscholar.org/paper/Cortical-coordination-dynamics-and-cognition-Bressler-Kelso/1a10508b6fdc44a2f1cc0a62659b0c87e46f8642)
+- Toward a self-organizing pre-symbolic neural model representing sensorimotor primitives https://www.frontiersin.org/articles/10.3389/fnbeh.2014.00022/full
 
 [Reservoir Computing](/science/neuron/reservoir-computing) sounds very interesting. I've heard about it and abiout _Liquid State Machines_ when I was doing a search about Finite State Machines, and someone probably by mistake attached it into related articles.
 
@@ -102,6 +120,12 @@ The paper says that reservoir computing is good, essentially it just converts th
 - I believe that there is a homomorphism between ANN and SNN. Wait, but can xNN be defined as an algebraic structure? Of course: [Modelling a neural network using an algebraic method](https://www.semanticscholar.org/paper/Modelling-a-neural-network-using-an-algebraic-Sugunnasil-Somhom/3de6d2dd204958731f0d3eeccdc317547b5a9413)
 - [Algebraic Neural Networks](https://arxiv.org/pdf/2009.01433.pdf)
 - Very optimistic article about [Reinforcment learning](https://www.semanticscholar.org/paper/Reinforcement-learning-in-artificial-and-biological-Neftci-Averbeck/951af7222535d934ca2b401ca0cd2181b28284f9). At the end it says that SNN will change the world and overthrow Moore's law. But it answers many questions about neverending learning and about using the same neurons on different timescales - by different systems (learning vs predicting)
+
+
+## Embodied Cognition
+
+- https://plato.stanford.edu/entries/embodied-cognition/#FoilInspForEmboCogn
+
 
 ## LSTM
 
@@ -164,6 +188,7 @@ https://twitter.com/filippie509/status/1575512408566603776
 
 ## Links
 
+- [Neural Engineering Framework](https://web.archive.org/web/20121204133835/http://ctnsrv.uwaterloo.ca/cnrglab/node/215)
 - [robomimic](https://robomimic.github.io/) is a framework for robot learning from demonstration
 - [nice blog](http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/)
 - [nice post](https://maziarraissi.github.io/research/7_multistep_neural_networks/)

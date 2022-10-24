@@ -43,6 +43,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `images`,
+        path: `${ __dirname }/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `markdown-pages`,
         path: `${ __dirname }/src/markdown`,
       },
@@ -50,10 +57,11 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${ __dirname }/src/images`,
+        name: `js-pages`,
+        path: `${ __dirname }/src/pages/`,
       },
     },
+    `gatsby-transformer-gitinfo`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
@@ -102,6 +110,14 @@ module.exports = {
               path
             }
           }
+          allFile(filter: {sourceInstanceName: {eq: "js-pages"}}) {
+            nodes {
+              fields {
+                gitLogLatestDate
+              }
+              absolutePath
+            }
+          }
           allMarkdownRemark {
             nodes {
               fileAbsolutePath
@@ -116,17 +132,25 @@ module.exports = {
         resolvePages: ({
           allSitePage: { nodes: allPages },
           allMarkdownRemark: { nodes: allMarkdownNodes },
+          allFile: { nodes: allJsNodes },
         }) => {
-          const mdNodeMap = allMarkdownNodes.reduce((acc, node) => {
+          const nodeMap = allMarkdownNodes.reduce((acc, node) => {
             const { fileAbsolutePath } = node
             const uri = nifty.absPathToUrl(fileAbsolutePath)
             acc[uri] = node.frontmatter
             return acc
           }, {})
-
+          
+          allJsNodes.reduce((acc, node) => {
+            const { absolutePath, fields } = node
+            const uri = nifty.absPathToUrl(absolutePath, "pages")
+            acc[uri] = { lastModified: fields.gitLogLatestDate }
+            return acc
+          }, nodeMap)
+          
           return allPages.map(page => {
             path = nifty.removeTrailingSlash(page.path)
-            return { ...page, ...mdNodeMap[path], originalPath: path }
+            return { ...page, ...nodeMap[path], originalPath: path }
           })
         },
         serialize: ({ path, lastModified, originalPath }) => {

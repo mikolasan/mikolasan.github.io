@@ -10,6 +10,8 @@ description: ""
 - A minimal sNN network https://thesai.org/Downloads/IJARAI/Volume4No7/Paper_1-A_Minimal_Spiking_Neural_Network_to_Rapidly_Train.pdf
 - sNN Toolbox https://snntoolbox.readthedocs.io/en/latest/guide/intro.html
 - online book https://neuronaldynamics.epfl.ch/online/Ch7.S1.html
+- Local connectivity and synaptic dynamics in mouse and human neocortex https://www.science.org/stoken/author-tokens/ST-374/full
+
 
 ## New
 

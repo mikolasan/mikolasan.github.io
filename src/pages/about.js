@@ -1,10 +1,7 @@
-import React, { useContext } from "react"
+import React from "react"
 import Layout from "../components/layout"
 
-// const updated = React.createContext('2022-10-15')
-
-const About = ({ pageContext, context }) => {
-  const updated = useContext('2022-10-15')
+const About = ({ pageContext }) => {
   return (
     <Layout
       title="Developer, traveler, snob"
@@ -19,7 +16,7 @@ const About = ({ pageContext, context }) => {
       bannerParagraph={[<h1>developer - traveler - snob</h1>]}
     >
 
-      <p>Updated: {updated}</p>
+      <p>Updated: {pageContext.updated}</p>
       <ul>
         <li key="l1">I’m interested in game development, DIY electronics, and artificial intelligence</li>
         <li key="l2">I’m currently learning Kotlin, revamping data structures and algorithms in GDScript, and basics of electronics</li>
@@ -106,4 +103,3 @@ const About = ({ pageContext, context }) => {
 }
 
 export default About
-// About.contextType = updated

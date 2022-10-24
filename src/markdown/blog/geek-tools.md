@@ -20,3 +20,8 @@ https://twitter.com/antisocial_eng/status/1401139055555919872 from reddit: https
 ## Flipper One
 
 https://flipperzero.one/
+
+
+## Other
+
+- https://upperstory.com/spintronics/

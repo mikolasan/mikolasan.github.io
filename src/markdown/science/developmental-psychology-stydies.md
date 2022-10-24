@@ -124,6 +124,6 @@ They are making their way into neuroscience tho. And I've seen more and more pap
 - https://en.m.wikipedia.org/wiki/Functionalism_(philosophy_of_mind)
 - https://link.springer.com/article/10.1007/BF02688634
 - https://edisciplinas.usp.br/pluginfile.php/4283976/mod_folder/content/0/19_-_Teoria_dos_sistemas_funcionais_na_escola_cient%C3%ADfica_de_P._K._Anokhin%20%282%29.pdf?forcedownload=1
-- https://www.frontiersin.org/articles/10.3389/fnhum.2014.00070/full
+- Voluntary out-of-body experience: an fMRI study https://www.frontiersin.org/articles/10.3389/fnhum.2014.00070/full (out-of-body experience in frame of psychology)
 - 
 - https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.121.5549&rep=rep1&type=pdf
