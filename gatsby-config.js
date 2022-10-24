@@ -156,9 +156,9 @@ module.exports = {
         serialize: ({ path, lastModified, originalPath }) => {
           return {
             url: path,
-            changefreq: "daily",
-            priority: originalPath === "/" ? 1.0 : 0.7,
             lastmod: lastModified,
+            // changefreq: "daily",
+            // priority: originalPath === "/" ? 1.0 : 0.7,
           }
         },
       },
