@@ -2,8 +2,9 @@
   background-color: #211a1d;
 }
 .centerpart {
-  margin: 0 auto;
   max-width: 960px;
+  height: 2rem;
+  margin: 0 auto;
   display: flex;
   background-color: #f2f2f2;
 }
@@ -102,4 +103,12 @@
     #211a1d 10px,
     #211a1d 20px
   );
+}
+
+.titleimg {
+  height: 100%;
+  width: 3rem;
+  background-color: #211a1d;
+  padding-left: 1rem;
+  margin-right: -1rem;
 }

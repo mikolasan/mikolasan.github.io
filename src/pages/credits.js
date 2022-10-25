@@ -19,6 +19,7 @@ const Credits = ({ pageContext }) => (
     <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></div>
     <a href="https://www.flaticon.com/free-icons/global" title="global icons">Global icons created by Freepik - Flaticon</a>
     <a href="https://www.flaticon.com/free-icons/system-update" title="system update icons">System update icons created by Freepik - Flaticon</a>
+    <a href="https://www.flaticon.com/free-icons/pagoda" title="pagoda icons">Pagoda icons created by Pause08 - Flaticon</a>
     </p>
 
   </Layout>

@@ -55,7 +55,7 @@ const Header = ({
         <Breadcrumb
           crumbs={crumbs}
           crumbSeparator=" "
-          title=""
+          title={<img src="/images/pagoda.svg" className={styles.titleimg} />}
         />
         <div className={styles.nextline}></div>
       </div>

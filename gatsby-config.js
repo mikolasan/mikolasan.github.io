@@ -83,7 +83,8 @@ module.exports = {
       resolve: `gatsby-plugin-breadcrumb`,
       options: {
         useAutoGen: true,
-        autoGenHomeLabel: `Home`,
+        autoGenHomeLabel: `    `,
+        trailingSlashes: false,
       }
     },
     {
