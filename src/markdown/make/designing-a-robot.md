@@ -4,6 +4,13 @@ date: 2022-07-23
 draft: true
 ---
 
+Design a robot in three easy steps:
+
+- 3d print
+- buy components
+- assemble
+
+mu-ha-ha in reality you need a little bit more steps
 
 ## The look
 
@@ -26,14 +33,59 @@ I'm convinced that any robot should have a creepy aspect. Like big tracking you 
 
 Motors normally require higher voltage (6V, 12V, 24V) and current, and it's a good practice to keep motors, LEDs, switches electronically seperated from the logic (3.3V). But how do you decouple it when the whole project should work from the battery? 
 
-Do you use two batteries? Just imagine what a headache is to keep two separate batteries charged. I can only think about sophisticated system where assumed that motors can kill the battery often, but at the same time the main brain must continue operating therefore it remains only the option to send signal about help to other robots. But I've never seen such design.
+Do you use two batteries? Just imagine what a headache is to keep two separate batteries charged. I can only think about sophisticated system where there is an assumption that motors can kill the battery often, but at the same time the main brain must continue operating, therefore it remains only one option: to send a signal about help to other robots. But I've never seen such design.
 
 So what normal people use instead? 
 
-Power supply needs to be protected from Back EMF when motors abruptly stop or reverse the rotation direction. But rechargeable battery only wins from this effect. The only concern is values above maximum ratings (li-poly batteries very sensitive)
+Power supply needs to be protected from Back EMF when motors abruptly stop or reverse the rotation direction. But rechargeable battery only wins from this effect. The only concern will be values above maximum ratings especially for li-poly batteries that are very sensitive.
 
-## PCB
 
+### Battery charger
+
+Let's design our custom board for powering the robot from one lithium polymer battery, say 3.7V and 2500mAh.
+
+First of all, even before using the battery in any way, we should think about charging it. Here's a [battery charger](https://www.adafruit.com/product/259) from Adafruit based on [MCP73833](https://cdn.sparkfun.com/assets/b/a/7/6/8/MCP73833Datasheet.pdf) (evaluation board [doc](https://ww1.microchip.com/downloads/en/DeviceDoc/51626a.pdf)). For a second I thought that I found cheaper option - [MCP73831](https://ww1.microchip.com/downloads/en/DeviceDoc/MCP73831-Family-Data-Sheet-DS20001984H.pdf) on Digi-Key in a 5-lead SOT-23 package, but it consumes 4x times less current during charging which means that it's going charge much slower and has less indication signals. 
+
+Old alternative for these chips is [MAX1555](https://datasheets.maximintegrated.com/en/ds/MAX1551-MAX1555.pdf).
+
+Additional components: 3x LED, 
+
+
+### Step up voltage regulator
+
+We need to boost 3.7V voltage from our battery to 5V level where Arduino and motors can work. Preferably we should supply 3.3V to logic board and separate 5V or 6V or even more to motors. But the we must keep first version simple.
+
+Again we start with a popular at this time [breakout board](https://www.adafruit.com/product/2190) and look at the main chip (TPS63060). For logic board AND motors I found 1.8A [TPS613222](https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=http%253A%252F%252Fwww.ti.com%252Flit%252Fgpn%252Ftps61322) and 4A [TPS61032](https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Ftps61030) switch current boost converters from Texas Instruments 
+
+Old alternative for these chips is [TPS6109](https://www.ti.com/lit/ds/symlink/tps61090.pdf?ts=1666623681120&ref_url=https%253A%252F%252Fwww.ti.com%252Fproduct%252FTPS61090).
+
+Additional components: 3x LED, 
+
+
+### Motors
+
+Main question here is power and torque which is created by series of spur gears called a _gear train_. It could be simple as 2 gears or **planetary gear train** (higher gear reduction, very compact) and this can be implemented in non-circular form 🤤 (They are not as compact as round ones, and at specific points they hold higher stalled resistance than in others which makes movement obviously uneven.) Planetary gearing (or **epicyclic gearing**) is cool, but there is also **cycloidal drive**, that eliminates a _backlash_ - it's that imperfection between gear teeth that is noticeable when rotation direction has been changed. And the last but not least in this list is **strain wave gearing** that is used in the wheels of Apollo Lunar Rover. It requires a flexible spline, but oversteps advantages of the above systems.
+
+I'll try micro gear motors with 75 RPM and 155 RPM.
+
+
+### Motor driver
+
+Motor driver [breakout board](https://www.adafruit.com/product/2448) based on [TB6612](https://cdn-shop.adafruit.com/datasheets/TB6612FNG_datasheet_en_20121101.pdf) that supports 2 motors and 1.2A per channel. Or [DRV8833C] (0.7) or [DRV8836](https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fdrv8836) (1.5)
+
+Bipolar motor driver [SIP2100](https://www.vishay.com/docs/63949/sip2100.pdf) from Vishay
+
+### Connectors
+
+
+### Shopping list
+
+- battery charger https://www.digikey.com/en/products/detail/microchip-technology/MCP73833T-AMI-MF/1223181
+- boost converter https://www.digikey.com/en/products/detail/texas-instruments/TPS61032PWPR/550687
+- motors 75 RPM https://www.digikey.com/en/products/detail/pimoroni-ltd/COM0806/6873670
+- motors 155 RPM https://www.digikey.com/en/products/detail/dfrobot/FIT0483/7087160
+- accelerometer https://www.adafruit.com/product/2019 vs https://www.digikey.com/en/products/detail/stmicroelectronics/IIS328DQTR/5268013
+- motor driver https://www.adafruit.com/product/2448 vs https://www.digikey.com/en/products/detail/vishay-siliconix/SIP2100DY-T1-GE3/5086514
 ### Eagle
 
 - https://www.youtube.com/watch?v=Eu5XMEh79XM
