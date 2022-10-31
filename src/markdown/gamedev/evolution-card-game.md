@@ -21,7 +21,9 @@ and actions
 - Weight check
 - Scold (criticism)
 
-While I was thinking about evolution factors, the concept has been developed a little bit further and the tamagotchi interface is going to control not just one pet, but a population. For the first prototype I will go with simple arithmetic, but I also have a thought to try Lotka-Volterra competition model (That’s the only thing I remember from the course of mathematical models, but this name just stuck in my head for the end of my life 🙂)
+While I was thinking about evolution factors, the concept has been developed a little bit further and the tamagotchi interface is going to control not just one pet, but a population. For the first prototype I will go with simple arithmetic, but I also have a thought to try Lotka-Volterra competition model. That’s the only thing I remember from the course of mathematical models, but this name just stuck in my head for the end of my life 🙂 
+
+I found [super cool visualization](https://observablehq.com/@mbostock/predator-and-prey) of dynamic predator–prey interaction by Mike Bostock
 
 It can be an interesting card game, I mean real offline board game. Cruel and educational.But apparently there is already [such board game](https://boardgamegeek.com/boardgame/155703/evolution)! (facepalm) 
 
