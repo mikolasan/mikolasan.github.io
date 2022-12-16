@@ -17,7 +17,7 @@ export const articles = [
     style: `box2`,
     title: `Developmental Psychology studies`,
     subtitle: ``,
-    url: `/science/developmental-psychology-stydies`,
+    url: `/science/developmental-psychology-studies`,
     excerpt: `<p>So here is the story how tiny plan stayed with me for 2 month.</p>
     <p>Basic install of elasticsearch with only system metrics takes 2.3GB of memory.</p>
     <p>I'm not saying that it created a nice dashboard, it could be better. But I like that the system is very modular, 
@@ -31,16 +31,27 @@ export const articles = [
     title: `How to use PyTorch`,
     subtitle: `Explain like I am 5`,
     url: `/science/explain-like-i-am-5-how-to-use-pytorch`,
-    excerpt: ``,
-    readMore: ``,
-    imgSrc: null,
+    excerpt: `<p>One morning I see in my timeline one tweet. 
+    It exlaims about transformer model abilities</p>
+    <p><i>NN learns <b>how to learn</b> linear regression, decision trees, 2-layer ReLU nets 😲
+    furthermore: outperforms XGBoost, does Lasso in one-pass, seems not to rely on nearest-neighbor.</i></p>
+    <p>I looked carefully through the article. 
+    The example looks simple, and I want to play with linear approximation and find its limitation. 
+    Good thing they published model and training scripts.</p>
+    <p>At work we recently deployed POS (point of sale) software written in Python. 
+    Web server, DB connector, abstract classes, function decorators. 
+    It is great. 
+    Python is great. 
+    But when I read implementation of a ML algorithm from this paper I’m starting to hate Python.</p>`,
+    readMore: `Understand Models in PyTorch`,
+    imgSrc: `/images/home/stock-price-model.png`,
     imgAlt: null,
   },
   {
     style: `box4`,
     title: `Prusa Mini Original`,
     subtitle: `Assembly`,
-    url: `/make/3d-printer-dilemma`,
+    url: `/make/prusa-mini-original`,
     excerpt: `<p>What’s funny that one night I had a dream
       where I followed a step by step tutorial similar to what I used in the last 3 evenings. 
       But in the dream that tutorial was explaining how to hide a treasure

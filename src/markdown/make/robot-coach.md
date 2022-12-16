@@ -35,6 +35,9 @@ I originally saved a link to **Cults 3D** where I saw similar interface to **Thi
 
 But I'm a guy from Soviet Union, which means I am okay to spend some time and create my own version, because engineering is in my blood. Here's helpful [design walkthrough](https://www.smarsfan.com/learn/design/) from Kevin McAleer.
 
+Similar [tank from Japan](https://burariweb.info/electronic-work/mini-tank-esp8266.html).
+
+
 ### Dog-like robot
 
 ![Small robot dog](./robot-dog.jpg)

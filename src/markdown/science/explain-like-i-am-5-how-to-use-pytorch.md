@@ -7,9 +7,10 @@ One morning I see in my timeline [this tweet](https://twitter.com/davidandrzej/s
 
 > NN learns **how to learn** linear regression, decision trees, 2-layer ReLU nets 😲 furthermore: outperforms XGBoost, does Lasso in one-pass, seems not to rely on nearest-neighbor.
 
-It refers to [this work](https://arxiv.org/abs/2208.01066). I look carefully through the artcicle. The example looks simple, and I want to play with linear approximation and find its limitation. Good thing they published [model and training scripts](https://github.com/dtsip/in-context-learning).
+It refers to [this work](https://arxiv.org/abs/2208.01066). I look carefully through the article. The example looks simple, and I want to play with linear approximation and find its limitation. Good thing they published [model and training scripts](https://github.com/dtsip/in-context-learning).
 
 At work we recently deployed POS (point of sale) software written in Python. Web server, DB connector, abstract classes, function decorators. It is great. Python is great. But when I read implementation of a ML algorithm from this paper I’m starting to hate Python.
+
 
 ## Prerequisites
 
@@ -28,7 +29,8 @@ Also the following modules will be required:
 - `numpy` - vectors and matrices (`@` operator which is a short for `matmul`)
 - `xgboost`
 - `munch` - config reading
-- `tqdm` - progress bar in terminal
+- `tqdm` - fancy progressbar for terminal
+
 
 ## Understand Models in PyTorch
 
@@ -52,3 +54,5 @@ class Model(nn.Module):
 ```
 
 Clearly it has something to do with [2D convolutions](https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html) that process 1 channel on the first layer and 20 channels on second. Channels? [Easy](https://medium.com/apache-mxnet/multi-channel-convolutions-explained-with-ms-excel-9bbf8eb77108) [peasy](https://towardsdatascience.com/a-comprehensive-introduction-to-different-types-of-convolutions-in-deep-learning-669281e58215). Kernel size is 5. Signal between layers simplified by rectified linear unit (ReLU).
+
+Still nothing makes sense? Okay, let me tell this one more time. Given two dimensional data (in the case of stock price graph it's stock price VS closing time) we want to catch patterns and correlations and apply them in the future. This data is on the first layer. Then 

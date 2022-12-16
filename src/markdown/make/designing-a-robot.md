@@ -48,7 +48,7 @@ Let's design our custom board for powering the robot from one lithium polymer ba
 
 First of all, even before using the battery in any way, we should think about charging it. Here's a [battery charger](https://www.adafruit.com/product/259) from Adafruit based on [MCP73833](https://cdn.sparkfun.com/assets/b/a/7/6/8/MCP73833Datasheet.pdf) (evaluation board [doc](https://ww1.microchip.com/downloads/en/DeviceDoc/51626a.pdf)). For a second I thought that I found cheaper option - [MCP73831](https://ww1.microchip.com/downloads/en/DeviceDoc/MCP73831-Family-Data-Sheet-DS20001984H.pdf) on Digi-Key in a 5-lead SOT-23 package, but it consumes 4x times less current during charging which means that it's going to charge much slower and has less indication signals. The datasheet provides PCB layout example.
 
-Old alternative for these chips is [MAX1555](https://datasheets.maximintegrated.com/en/ds/MAX1551-MAX1555.pdf).
+Old alternative for these chips is [MAX1555](https://datasheets.maximintegrated.com/en/ds/MAX1551-MAX1555.pdf) and [TP4056](https://dlnmh9ip6v2uc.cloudfront.net/datasheets/Prototyping/TP4056.pdf).
 
 ![](./battery-charger-typical-application.png)
 
@@ -85,6 +85,7 @@ Main question here is power and torque which is created by series of spur gears 
 
 I'll try micro gear motors with [75 RPM](https://www.digikey.com/en/products/detail/pimoroni-ltd/COM0806/6873670) and [155 RPM](https://www.digikey.com/en/products/detail/dfrobot/FIT0483/7087160).
 
+_Note:_ voltage defines RPM, not current
 
 ### Motor driver
 
@@ -122,6 +123,11 @@ Alternative: [TMC7300](https://www.mouser.com/datasheet/2/256/TMC7300_Datasheet_
 
 - create schematics document in Eagle
 - Edit -> Add... -> Scroll down to **frames**, Choose LETTER_L
+
+Add 3D models to the library https://support.snapeda.com/en/articles/3545085-how-to-import-a-3d-model-into-eagle
+- [Design Rules files for OSHPARK](https://docs.oshpark.com/design-tools/eagle/design-rules-files/)
+
+https://docs.oshpark.com/design-tools/eagle/cutouts-and-slots/
 
 ## Miscellaneous
 
@@ -162,3 +168,72 @@ SMD Package Type | Dimensions (mm) | Dimensions (inches)
 0402 | 1.0 x 0.5 | 0.04 x 0.02
 0201 | 0.6 x 0.3 | 0.02 x 0.01
 01005 | 0.4 x 0.2 | 0.016 x 0.008
+
+
+
+## Review
+
+Unwise to power an H-bridge with two d-a's, forward and reverse, you run risk of powering both sides on at once. This destroys the H-bridge and can destroy the motor. Be really careful. Using direction and power, this is impossible. You can only power one at a time.
+
+**The letter from Tony's Engineer**
+
+One more thing I advise him to do, is to put in an a-d to verify current control. 
+Mosfets have a turn on current, and then a rise current. 
+That's if it's range is 5 volts, and it's turn on is one point five volts, you only have a 3.5 volt overall range. 
+Also once the turn on current is reached, there is a bit of breakdown so that once it crosses 1.5 volts, it's activation current is now only 1.2 volts. 
+You need to tailor the overall current. 
+An a-d does an excellent job however that is not conclusive. 
+The actual conclusion should be reached from the actual performance. 
+
+Example. I want a motor to rotate at 3.5 RPM. 
+Current says that should be 3.2 volts. 
+I can set my a-d to keep my d-a at 3.2 volts. 
+However that does not guarantee that the motor will travel at 3.5 RPM. 
+The only way to guarantee that (?) is to put in an encoder and set the control to 3.5 RPM.
+However if at 3.2 volts, I do not achieve 3.5 RPM, there is additional load and drag. 
+If this is too great, we have a problem and should abort. 
+It's a lot of extra work, but it achieves a significantly _superior product_.
+
+I need to know more about what he is using it for.
+If for positioning, it is different than if for speed control.
+
+Also, have him look up snubber circuits. These take the backflow and shunt it into a cap to reduce feedback voltage. It helps us not blow up on an instant reverse. 
+
+On positioning, if exact is needed and it's fair mass, 
+then you need a ramp up, down, and hold function.
+This needs encoder feedback.
+There is a 1 chip control solution but is fairly expensive.
+
+Drive power should always tailor to the load and thus discrete components. 
+
+Let me know what he wants to do with it and I'll give more. 
+Microchip and stm are great control chips for high power apps.
+Also let me know if the control needs to be synced with other controls.
+
+
+
+
+ The purpose of the bulk capacitor is to overcome the voltage drop caused by the inductive effects of PCB traces. 
+
+
+## Stacking boards
+
+Today I'm thinking about the best way to stack boards (to support extensions in other words). In my search I [stumbled upon](https://hallmanlabs.com/2020/07/20/discrete-review-update-isoregen-over-troubled-dip8-waters/) these DIP adapters
+
+![DIP adapters](./dip-stacking.webp)
+
+I find Arduino shields bulky. And they can only grow upwards. I want to have flexibility in this regard.
+
+There's such technique as "[castellated vias](https://learn.sparkfun.com/tutorials/how-to-solder-castellated-mounting-holes/all)" where connections are on the edge of the board. Like through holes that metallized inside but located on the edge and cut in half
+
+First I shook off this idea, because it's used mainly for adding daughter boards, so I was considering pinheads. But they restrict the direction of attachments—it only goes in the way it's designed to go.
+
+But then I revisited initial limitations, and soldering wasn't in the list. The credit goes to [Jeremy Cook](https://jeremyscook.com/) and his [LED cubes](https://hackaday.com/2022/03/15/led-flower-bouquet-is-a-radiant-hacker-desk-decoration/)
+
+![Cube of PCBs](./cube-of-pcbs.jpg)
+
+I'm thinking about an extension board for 2 more bi-directional motors. I put one full row of vias on the edge and get castellated edge (I do the bottom row as well). OSH Park [can manufacture such edge](https://docs.oshpark.com/tips+tricks/castellation/) but with possible imperfections
+
+## Drills
+
+[Drill specs](https://docs.oshpark.com/submitting-orders/drill-specs/)

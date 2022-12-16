@@ -100,11 +100,18 @@ Test print in progress. I still don’t understand why it poops before the start
 - G-code is a set of instructions very specific to the printer and they include all settings you carefully tinker in the slicer. So normally you cannot find them online.
 - 15% infill makes nozzle to quickly move, so against such jolts you need to make the print to stick to bed (increase temperature and lower the speed)
 
-- How to make small support platform?
+- How to make small/minimal support platform in PrusaSlicer? Print Settings -> Support material -> Overhang threshold = 0 (auto)
+
+![Support material settings for pumpkin head print](./support-material-settings.png)
+
+- [Prusa profiles for cura](https://help.prusa3d.com/guide/how-to-import-profiles-to-cura-4-x-windows-macos_17848#17856). Just use the new path `C:\Program Files\Ultimaker Cura 5.2.1\share\cura\resources`
+
+More tips on [dedicated page](/make/3d-printer-lessons)
 
 ## Extra equipment
 
 - Isopropyl alcohol > 90%
 - Paper towels
+- Brass brush
 - Container for spools (dry box) - under discussion
 - 
