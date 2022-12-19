@@ -6,6 +6,8 @@ module.exports = {
     "/science",
     "/idea-generator",
     "/cv",
-    "/about"
+    "/about",
+    "/ru/privacy",
+    "/ru/terms"
   ]
 }
