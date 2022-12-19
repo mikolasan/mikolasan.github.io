@@ -245,18 +245,30 @@ class RuNavbar extends React.Component {
             </svg>
           </Link>
           <Link to="/ru/neural-networks" { ...(active === "neural-networks" && { className: styles.activelink }) }>Наука</Link>
-          <div className={styles.featuredlink}>
-            <Link to="/ru/make/hydroponics" { ...(active === "hydroponics" && { className: styles.activelink }) }><img src="/hydroponics.png" alt="Гидропоника" title="Гидропоника" /></Link>
+          <div className={[styles.featuredlink, styles.tooltip].join(' ')}>
+            <Link to="/ru/make/hydroponics" { ...(active === "hydroponics" && { className: styles.activelink }) }>
+              <img src="/hydroponics.png" alt="Гидропоника" title="" />
+              <span className={styles.tooltiptext}>Гидропоника</span>
+            </Link>
           </div>
-          <div className={styles.featuredlink}>
-            <Link to="/ru/make" { ...(active === "make" && { className: styles.activelink }) }><img src="/make.png" alt="Мастерская" title="Мастерская" /></Link>
+          <div className={[styles.featuredlink, styles.tooltip].join(' ')}>
+            <Link to="/ru/make" { ...(active === "make" && { className: styles.activelink }) }>
+              <img src="/make.png" alt="Мастерская" title="Мастерская" />
+              <span className={styles.tooltiptext}>Мастерская</span>
+            </Link>
           </div>
-          <div className={styles.featuredlink}>
-            <Link to="/ru/paranormal" { ...(active === "paranormal" && { className: styles.activelink }) }><img src="/paranormal.png" alt="Паранормальное" title="Паранормальное" /></Link>
+          <div className={[styles.featuredlink, styles.tooltip].join(' ')}>
+            <Link to="/ru/paranormal" { ...(active === "paranormal" && { className: styles.activelink }) }>
+              <img src="/paranormal.png" alt="Паранормальное" title="" />
+              <span className={styles.tooltiptext}>Паранормальное</span>
+            </Link>
           </div>
           <Link to="/ru/devlog" { ...(active === "devlog" && { className: styles.activelink }) }>Девлог</Link>
-          <div className={styles.featuredlink}>
-            <Link to="/ru/board-games" { ...(active === "board-games" && { className: styles.activelink }) }><img src="/board-games.png" alt="Настольные игры" title="Настолки" /></Link>
+          <div className={[styles.featuredlink, styles.tooltip].join(' ')}>
+            <Link to="/ru/board-games" { ...(active === "board-games" && { className: styles.activelink }) }>
+              <img src="/board-games.png" alt="Настольные игры" title="" />
+              <span className={styles.tooltiptext}>Настолки</span>
+            </Link>
           </div>
           <Link to="/ru/blog" { ...(active === "blog" && { className: styles.activelink }) }>Блог</Link>
           <Link to="/ru/about" style={{float: 'right'}} { ...(active === "about" && { className: styles.activelink }) }>О себе</Link>
