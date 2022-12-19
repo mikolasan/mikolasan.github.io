@@ -1,4 +1,5 @@
 ---
+section: brain
 title: Temporal Coding in Spiking Neural Networks
 subtitle: "with Alpha Synaptic Function: Learning with Backpropagation"
 article: true

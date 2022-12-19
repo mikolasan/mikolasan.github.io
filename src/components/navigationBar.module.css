@@ -3,7 +3,7 @@
   padding: 0;
   height: 3.2rem;
   font-family: 'Manrope', sans-serif;
-  border-bottom: #211a1d solid 0.25rem;
+  border-bottom: #5b5356 solid 0.25rem;
 }
 
 .topnav img {
@@ -50,7 +50,7 @@
 .tooltip .tooltiptext {
   visibility: hidden;
   width: auto;
-  background-color: #211a1d;
+  background-color: #5b5356;
   color: #fff;
   text-align: center;
   padding: 5px 15px;

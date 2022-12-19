@@ -1,4 +1,5 @@
 ---
+section: brain
 title: Spiking Neural Networks
 topic: true
 description: ""

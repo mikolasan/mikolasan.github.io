@@ -13,14 +13,28 @@ const Credits = ({ pageContext }) => (
       </p>
     ]}
   >
-    <p>
-    <div>Icons made by <a href="https://www.flaticon.com/free-icon/programmer_2092430" title="srip">srip</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></div>
-    <div>Icons made by <a href="https://www.flaticon.com/free-icon/car_2706107" title="iconixar">iconixar</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></div>
-    <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></div>
-    <a href="https://www.flaticon.com/free-icons/global" title="global icons">Global icons created by Freepik - Flaticon</a>
-    <a href="https://www.flaticon.com/free-icons/system-update" title="system update icons">System update icons created by Freepik - Flaticon</a>
-    <a href="https://www.flaticon.com/free-icons/pagoda" title="pagoda icons">Pagoda icons created by Pause08 - Flaticon</a>
-    </p>
+    <h2>Icons</h2>
+    <h3>From <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></h3>
+    <ul>
+      <li>
+        <a href="https://www.flaticon.com/free-icon/programmer_2092430" title="programmer icons">Programmer icon created by srip</a>
+      </li>
+      <li>
+        <a href="https://www.flaticon.com/free-icon/car_2706107" title="travel icons">Travel icon created by iconixar</a>
+      </li>
+      <li>
+        <a href="https://www.flaticon.com/free-icons/global" title="global icons">Global icon created by Freepik</a>
+      </li>
+      <li>
+        <a href="https://www.flaticon.com/free-icon/system-update_7409684" title="system update icons">System update icon created by Freepik</a>
+      </li>
+      <li>
+        <a href="https://www.flaticon.com/free-icon/pagoda_858330" title="pagoda icons">Pagoda icon created by Pause08</a>
+      </li>
+      <li>
+        <a href="https://www.flaticon.com/free-icon/neuron_1756394" title="neuron icons">Neuron icons created by Freepik</a>
+      </li>
+    </ul>
 
   </Layout>
 )

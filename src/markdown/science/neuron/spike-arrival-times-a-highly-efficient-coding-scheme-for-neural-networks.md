@@ -1,4 +1,5 @@
 ---
+section: brain
 title: Spike arrival times
 subtitle: A highly efficient coding scheme for neural networks
 article: true
