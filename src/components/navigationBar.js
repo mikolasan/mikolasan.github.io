@@ -246,9 +246,9 @@ class Navbar extends React.Component {
           </Link>
           <Link to="/make" { ...(active === "make" && { className: styles.activelink }) }>Make</Link>
           <div className={[styles.featuredlink, styles.tooltip].join(' ')}>
-            <Link to="/science/neuron" { ...(active === "brain" && { className: styles.activelink }) }>
-              <img src="/brain.png" alt="Brain" title="" />
-              <span className={styles.tooltiptext}>Brain</span>
+            <Link to="/brain-model" { ...(active === "brain" && { className: styles.activelink }) }>
+              <img src="/brain.png" alt="Brain model" title="" />
+              <span className={styles.tooltiptext}>Brain model</span>
             </Link>
           </div>
           <Link to="/science" { ...(active === "science" && { className: styles.activelink }) }>Science</Link>

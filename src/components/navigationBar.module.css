@@ -53,6 +53,7 @@
   background-color: #5b5356;
   color: #fff;
   text-align: center;
+  white-space: nowrap;
   padding: 5px 15px;
   border-radius: 6px;
 
@@ -164,13 +165,17 @@
 }
 
 .burgermenu {
+  cursor: pointer;
   height: 2.75rem;
+  padding: 0 0.5rem;
 }
 
 .mobilelanguage {
-  float: right;
+  cursor: pointer;
   height: 2.4rem;
+  padding: 0 0.5rem;
   position: relative;
+  float: right;
 }
 .mobilelanguage svg {
   padding: 0;
@@ -210,7 +215,7 @@ a.active.activelink  {
   .topnav { display: none; }
   .mobilenav {
   width: 100%;
-  padding: 0 1rem;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content:space-between;

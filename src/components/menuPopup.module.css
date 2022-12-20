@@ -46,7 +46,6 @@
 }
 
 .featuredimage {
-
   margin: 0 auto;
   padding: 0.85rem 0;
 }
@@ -85,7 +84,7 @@
 .close {
   position: fixed;
   top: 0.2rem;
-  left: 1rem;
+  left: 0.5rem;
   height: 2.6rem;
   cursor: pointer;
 }
