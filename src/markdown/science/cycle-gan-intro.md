@@ -4,6 +4,8 @@ title: Intro to CycleGAN
 draft: true
 twitter: https://twitter.com/mikolasan/status/1534059344353845249
 previewImage: stylegan-my-lucky-zebra.png
+published: 2022-06-10
+lastModified: 2022-10-03
 ---
 
 

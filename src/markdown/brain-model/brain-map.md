@@ -3,6 +3,8 @@ section: brain
 title: Brain map
 topic: true
 description: ""
+published: 2022-12-20
+lastModified: 2022-12-20
 ---
 
 - [Data](https://portal.brain-map.org/explore/connectivity/synaptic-physiology/interact) provided by Allen Institute

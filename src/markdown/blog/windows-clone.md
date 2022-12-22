@@ -4,6 +4,7 @@ date: 2022-05-23
 published: 2022-06-10
 featuredImage: windows-clone-feature.jpg
 previewImage: windows-clone-fix-partitions.jpg
+lastModified: 2022-08-20
 ---
 
 What do you need to know when you clone Windows 10 from one drive to another or How I spent one week without a computer trying to upgrade SSD on my laptop.

@@ -3,6 +3,8 @@ section: brain
 title: Neuron
 date: 2022-08-28
 topic: true
+published: 2022-10-03
+lastModified: 2022-12-19
 ---
 
 

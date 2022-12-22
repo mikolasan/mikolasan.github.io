@@ -1,6 +1,8 @@
 ---
 title: Code snippets
 date: 2022-08-02
+published: 2022-08-20
+lastModified: 2022-08-20
 ---
 
 

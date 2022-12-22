@@ -3,6 +3,8 @@ title: OLED display SSD1306
 date: 2022-08-29
 featuredImage: oled-display-ssd1306.jpg
 previewImage: oled-display-ssd1306.jpg
+published: 2022-09-01
+lastModified: 2022-10-03
 ---
 
 I have OLED monochrome display module 128x64 pixels blue color based on SSD1306 chip. It's can take 3.3V and 5V as well. We are going to connect it to Arduino UNO using I2C. Also I2C wil be shared with [the temperature sensor](/make/temperature-sensor-rpi4).

@@ -3,6 +3,8 @@ date: 2022-08-13
 title: Quantum Supremacy
 previewImage: quantum-supremacy.jpg
 developing: true
+published: 2022-08-22
+lastModified: 2022-08-23
 ---
 
 Welcome to the first unpublished episode of my podcast: _About cheesy article from Science and a little step into quantum computing_.

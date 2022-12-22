@@ -3,6 +3,8 @@ title: Neuron model
 date: 2022-08-25
 previewImage: neuron-model-3.jpg
 developing: true
+published: 2022-08-22
+lastModified: 2022-10-03
 ---
 
 The idea is simple. Find a working example with a small neural network and make all neurons physical, and train it much faster because all neuron is independent. Each neuron is a FPGA that just immediately reacts on incoming signal, adjusts its weights and carry on.

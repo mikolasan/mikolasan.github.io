@@ -1,6 +1,8 @@
 ---
 title: Prototype 1
 date: 2022-12-20
+published: 2022-12-20
+lastModified: 2022-12-20
 ---
 
 

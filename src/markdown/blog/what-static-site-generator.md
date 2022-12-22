@@ -1,8 +1,8 @@
 ---
 date: 2021-11-07
 title: What static site generator does this site use?
-published: 2021-11-07
-lastModified: 2022-08-23
+published: 2022-08-22
+lastModified: 2022-08-22
 ---
 
 I was looking for more flexible static site generator than Jekyll on [Jamstack](https://jamstack.org/generators/). 

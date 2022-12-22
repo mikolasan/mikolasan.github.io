@@ -3,7 +3,7 @@ path: /blog/send-alerts-from-systemd-to-slack
 date: 2021-05-12
 title: Send alerts from systemd to Slack
 published: 2021-10-14
-lastModified: 2021-10-14
+lastModified: 2022-07-31
 ---
 
 I found logagent from a google search. It should solve a very simple thing: get logs from systemd, focus on one service, format a message and send to Slack with webhooks. After six months I have found some time to make another effort and make it finally work.

@@ -3,7 +3,8 @@ title: How I tried Rust for the first time
 date: 2022-07-19
 featuredImage: rust-hello.png
 previewImage: rust-hello.png
-lastModified: 2022-09-07
+lastModified: 2022-09-08
+published: 2022-08-23
 ---
 
 

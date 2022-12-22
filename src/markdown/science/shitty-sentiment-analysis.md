@@ -2,6 +2,8 @@
 date: 2022-05-24
 title: Shitty sentiment analysis
 draft: true
+published: 2022-06-07
+lastModified: 2022-07-30
 ---
 
 This idea based on [shitty sentiment analysis](https://twitter.com/ImZackAdams/status/1526378770277576704)

@@ -2,6 +2,8 @@
 date: 2022-08-10
 title: Calabi-Yau Manifold
 previewImage: string-theory-notes-quora-enlong-chiou.jpg
+published: 2022-08-22
+lastModified: 2022-10-03
 ---
 
 _Math club notes_

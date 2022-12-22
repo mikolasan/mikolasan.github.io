@@ -1,6 +1,8 @@
 ---
 date: 2020-05-02
 title: Formal model of perception based on fix-point of anticipations
+published: 2022-07-24
+lastModified: 2022-07-24
 ---
 
 Here is the annotation from this article:

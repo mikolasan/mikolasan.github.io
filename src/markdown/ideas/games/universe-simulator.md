@@ -4,8 +4,8 @@ date: "2020-05-16"
 title: "Universe simulator"
 tags: ["c++"]
 idea: creative
-published: 2021-10-13
-lastModified: 2021-10-28
+published: 2022-06-21
+lastModified: 2022-07-16
 ---
 
 ## Liquid simulation

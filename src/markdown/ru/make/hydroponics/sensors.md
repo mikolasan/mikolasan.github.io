@@ -5,7 +5,7 @@ title: "Гидропоника: сенсоры"
 tags: ["hydroponics"]
 language: "ru"
 published: 2021-10-13
-lastModified: 2022-02-06
+lastModified: 2022-07-31
 ---
 
 ## Более подробные статьи

@@ -4,6 +4,8 @@ title: Prusa Mini Original
 previewImage: prusa-original-mini-assembly-15.jpg
 featuredImage: prusa-original-mini-assembly-1.jpg
 developing: true
+published: 2022-07-31
+lastModified: 2022-12-16
 ---
 
 # Assembly

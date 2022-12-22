@@ -2,6 +2,8 @@
 title: Robot appearance design
 date: 2022-07-23
 featuredImage: uncanny-valley-discover-magazine.jpg
+published: 2022-12-20
+lastModified: 2022-12-20
 ---
 
 I'm convinced that any robot should have a creepy aspect. Like [tracking you big eyes](https://www.adafruit.com/product/3813) that can drive people crazy.

@@ -1,6 +1,8 @@
 ---
 title: 3D printer lessons
 date: 2022-12-15
+published: 2022-12-16
+lastModified: 2022-12-16
 ---
 
 ## Warping, curling

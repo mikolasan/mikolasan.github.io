@@ -6,8 +6,8 @@ tags: ["bluetooth", "chromesact"]
 featuredImage: tablet-keyboard-vim-cheatsheet.jpg
 previewImage: tablet-as-keyboard.jpg
 idea: creative
-published: 2021-10-13
-lastModified: 2021-10-28
+published: 2022-06-21
+lastModified: 2022-08-02
 ---
 
 When you put a tablet into landscape orientation the keyboard has a very descent sizе for comfortable typing with two hands. But the rest of the screen is an area of a constant battle between the OS and an app leaving about one line for input preview.

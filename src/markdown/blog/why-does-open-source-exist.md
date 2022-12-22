@@ -2,7 +2,7 @@
 date: 2021-10-21
 title: Why does Open Source exist?
 published: 2021-10-28
-lastModified: 2021-10-28
+lastModified: 2022-07-10
 ---
 
 So here is my take on "Why does Open Source exist?".

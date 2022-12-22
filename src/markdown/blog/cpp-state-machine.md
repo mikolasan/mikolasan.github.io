@@ -3,7 +3,7 @@ path: /blog/cpp-state-machine
 date: 2021-10-01
 title: C++ State Machine
 published: 2021-10-14
-lastModified: 2021-10-14
+lastModified: 2022-09-08
 ---
 
 So state machine in C++. Obviously I go to StackOverflow and find https://stackoverflow.com/questions/14676709/c-code-for-state-machine. 

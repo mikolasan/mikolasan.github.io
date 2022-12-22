@@ -2,6 +2,8 @@
 date: 2021-11-14
 title: All that web3 sh*t
 draft: true
+published: 2022-08-22
+lastModified: 2022-09-16
 ---
 
 The roadmap for understanding WTF blockchain developer is. I'm [curious](https://twitter.com/mikolasan/status/1440242044518027268) if this technology can find its application in the gambling industry.

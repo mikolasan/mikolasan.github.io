@@ -1,6 +1,8 @@
 ---
 title: Power board
 date: 2022-10-20
+published: 2022-12-20
+lastModified: 2022-12-21
 ---
 
 ## Alternatives

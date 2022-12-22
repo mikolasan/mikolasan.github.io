@@ -2,6 +2,8 @@
 date: 2022-07-24
 title: Geek tools
 draft: true
+published: 2022-08-22
+lastModified: 2022-10-23
 ---
 
 ## Pwnagotchi

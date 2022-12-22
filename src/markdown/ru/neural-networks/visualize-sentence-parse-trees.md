@@ -5,7 +5,7 @@ title: Деревья
 language: "ru"
 draft: true
 published: 2021-10-13
-lastModified: 2021-10-13
+lastModified: 2022-07-31
 ---
 
 Будь-то работа с [CoreNLP библиотекой](/ru/neural-networks/modifying-stanford-parser) или [GPT-2](/ru/neural-networks/gpt-2), в любом случае предложение представляется в виде дерева.

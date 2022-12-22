@@ -1,6 +1,8 @@
 ---
 title: PCB design 101
 date: 2022-11-08
+published: 2022-12-20
+lastModified: 2022-12-20
 ---
 
 ## Eagle

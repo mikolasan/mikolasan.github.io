@@ -5,6 +5,8 @@ subtitle: A highly efficient coding scheme for neural networks
 article: true
 year: 1990
 authors: Simon J Thorpe
+published: 2022-12-20
+lastModified: 2022-12-20
 ---
 
 [PDF](https://web.archive.org/web/20120215151304/http://pop.cerco.ups-tlse.fr/fr_vers/documents/thorpe_sj_90_91.pdf)

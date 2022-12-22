@@ -2,6 +2,8 @@
 date: 2021-11-01
 title: '"Pointing" arguments'
 twitter: https://twitter.com/mikolasan/status/1453969005140611072
+published: 2022-08-22
+lastModified: 2022-09-08
 ---
 
 Honestly, I encounter this problem not for the first time ☹️ Because after languages like Java, Python, JavaScript where non trivial objects passed by reference, you may forget that in C/C++ values are passed by value. In another words, functions always work with copies.

@@ -1,6 +1,8 @@
 ---
 title: C++ send UDP example
 date: 2021-10-04
+published: 2022-08-02
+lastModified: 2022-08-02
 ---
 
 

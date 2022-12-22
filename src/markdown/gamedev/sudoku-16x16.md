@@ -5,7 +5,7 @@ title: Sudoku 16x16
 featuredImage: sudoku-game-2.png
 previewImage: sudoku-game-2.png
 published: 2020-05-17
-lastModified: 2021-10-05
+lastModified: 2022-08-20
 ---
 
 ## Questions to developers

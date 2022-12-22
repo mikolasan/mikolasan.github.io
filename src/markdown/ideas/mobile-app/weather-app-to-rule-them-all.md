@@ -1,8 +1,9 @@
 ---
 title: Weather app to rule them all
 date: 2021-06-06
-lastModified: 2022-08-20
+lastModified: 2022-08-23
 draft: true
+published: 2022-08-22
 ---
 
 ![carrot mobile design](./carrot-weather-app.jpeg)

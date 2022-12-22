@@ -4,7 +4,7 @@ title: "Плата Wemos D1"
 tags: ["hardware"]
 language: "ru"
 published: 2021-10-13
-lastModified: 2021-10-13
+lastModified: 2022-07-31
 ---
 
 [Даташит](https://docs.ai-thinker.com/_media/esp8266/docs/esp-12f_product_specification_en.pdf)

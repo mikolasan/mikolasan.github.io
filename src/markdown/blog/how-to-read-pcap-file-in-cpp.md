@@ -1,6 +1,8 @@
 ---
 date: 2021-10-01
 title: How to read pcap file in C++
+published: 2022-08-02
+lastModified: 2022-08-02
 ---
 
 gist link: https://gist.github.com/mikolasan/a90ae8db29803a2519fed9f812aeb2ee

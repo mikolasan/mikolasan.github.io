@@ -1,6 +1,8 @@
 ---
 title: Technical illustrations in Blender
 date: 2022-09-23
+published: 2022-10-03
+lastModified: 2022-10-03
 ---
 
 When you need to present your model for 3D printing community, you need an illustration made in the style like technical instructions. Also can be called CAD style or _technical drawing_.

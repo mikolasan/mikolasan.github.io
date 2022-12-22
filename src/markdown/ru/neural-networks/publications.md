@@ -3,7 +3,7 @@ path: "/ru/neural-networks/publications"
 date: "2020-04-06"
 title: "Публикации"
 published: 2021-10-13
-lastModified: 2021-10-13
+lastModified: 2022-07-31
 ---
 
 Отдельный раздел трудов, которым занимается мой научный руководитель, - это [моделирование восприятия](http://math.nsc.ru/AP/ScientificDiscovery/pages/Brain%20activity%20perception_rus.html). Вот мой небольшой вклад в науку.

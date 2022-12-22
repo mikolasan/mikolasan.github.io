@@ -1,6 +1,8 @@
 ---
 date: 2022-03-15
 title: Version control for gamedev
+published: 2022-08-22
+lastModified: 2022-08-23
 ---
 
 Have you ever used any other version control than Git?

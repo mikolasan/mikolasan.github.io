@@ -1,6 +1,8 @@
 ---
 title: First preliminary review
 date: 2022-11-11
+published: 2022-12-20
+lastModified: 2022-12-20
 ---
 
 **Tony:** Unwise to power an H-bridge with two d-a's, forward and reverse, you run risk of powering both sides on at once. This destroys the H-bridge and can destroy the motor. Be really careful. Using direction and power, this is impossible. You can only power one at a time.

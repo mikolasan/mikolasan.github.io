@@ -5,6 +5,7 @@ title: UFO lamp
 tags: ["hardware", "LED"]
 published: 2022-06-10
 previewImage: ufo-lamp-and-unity.jpg
+lastModified: 2022-08-02
 ---
 
 I need a lamp for my desk, so I’m [adding one project](https://twitter.com/mikolasan/status/1528078099568414721) to my todo list. Here’s a reference

@@ -2,6 +2,8 @@
 date: 2022-08-13
 title: Start gardening
 previewImage: start-gardening.jpg
+published: 2022-08-22
+lastModified: 2022-09-01
 ---
 
 https://www.printables.com/model/61902-small-self-watering-seed-starter

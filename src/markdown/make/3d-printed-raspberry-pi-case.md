@@ -1,8 +1,8 @@
 ---
 title: 3D printed Raspberry Pi case
 date: 2022-07-11
-published: 2022-07-11
-lastModified: 2022-07-11
+published: 2022-07-16
+lastModified: 2022-08-02
 previewImage: rpi-case-minecraft-gumroad.jpg
 ---
 

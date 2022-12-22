@@ -1,6 +1,8 @@
 ---
 title: Arduino drone projects
 date: 2022-12-20
+published: 2022-12-20
+lastModified: 2022-12-21
 ---
 
 - [YMFC-AL](http://www.brokking.net/ymfc-al_main.html) ?

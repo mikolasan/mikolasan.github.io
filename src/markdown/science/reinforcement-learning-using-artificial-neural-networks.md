@@ -1,6 +1,8 @@
 ---
 title: Reinforcement Learning using ANN
 date: 2022-10-25
+published: 2022-10-25
+lastModified: 2022-10-30
 ---
 
 **Guest star: @mathuccino**

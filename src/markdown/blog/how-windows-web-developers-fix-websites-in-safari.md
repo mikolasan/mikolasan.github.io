@@ -3,6 +3,8 @@ date: 2021-10-17
 title: How Windows web developers fix websites in Safari?
 subtitle: Story when I pushed without prior testing
 featuredImage: safari.jpg
+published: 2022-07-17
+lastModified: 2022-07-17
 ---
 
 <i>Photo by <a href="https://unsplash.com/@randyfath?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Randy Fath</a> on <a href="https://unsplash.com/s/photos/safari?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></i>

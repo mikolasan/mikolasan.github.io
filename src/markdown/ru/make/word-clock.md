@@ -4,7 +4,7 @@ title: "Время словами на часах"
 tags: ["hardware", "laser cut"]
 language: "ru"
 published: 2021-10-13
-lastModified: 2021-10-13
+lastModified: 2022-07-31
 ---
 
 Следуя руководству из журнала Make сделал часы, которые показывают время словами.

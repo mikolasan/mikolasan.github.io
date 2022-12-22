@@ -1,6 +1,8 @@
 ---
 title: Logic model of the world
 date: 2022-09-28
+published: 2022-10-03
+lastModified: 2022-10-20
 ---
 
 _Math club notes_

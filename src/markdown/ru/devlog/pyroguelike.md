@@ -5,7 +5,7 @@ title: "Not your father's roguelike"
 featuredImage: pyroguelike-1.png
 language: "ru"
 published: 2021-10-13
-lastModified: 2021-10-13
+lastModified: 2022-07-31
 ---
 
 Первый игровой джем (game jam), в котором я серьезно поучавствовал. Главный приз был 1 биткоин (что на тот момент было ни много ни мало $5,000).

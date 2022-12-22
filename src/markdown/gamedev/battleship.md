@@ -5,7 +5,7 @@ title: Battleship
 featuredImage: battleship_last_step.png
 previewImage: battleship_gameplay.png
 published: 2020-04-06
-lastModified: 2021-10-05
+lastModified: 2022-08-20
 ---
 
 A Python implementation of the classic battleship game.

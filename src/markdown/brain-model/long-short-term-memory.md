@@ -3,6 +3,8 @@ section: brain
 title: Long Short-Term Memory
 topic: true
 description: ""
+published: 2022-12-20
+lastModified: 2022-12-20
 ---
 
 - Main paper [PDF](https://www.bioinf.jku.at/publications/older/2604.pdf)

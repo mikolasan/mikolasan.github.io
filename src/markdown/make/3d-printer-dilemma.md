@@ -3,7 +3,7 @@ date: 2022-07-10
 title: 3D printer dilemma
 tags: ["3d printing"]
 published: 2022-07-10
-lastModified: 2022-07-10
+lastModified: 2022-08-22
 twitter: https://twitter.com/mikolasan/status/1546017428324331520
 previewImage: 3d-print-failed.jpg
 ---

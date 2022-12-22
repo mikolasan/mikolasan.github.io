@@ -1,6 +1,8 @@
 ---
 title: Getting started with rapidyaml
 date: 2021-10-13
+published: 2022-08-02
+lastModified: 2022-08-02
 ---
 
 gist link: https://gist.github.com/mikolasan/d9306a03b23a9a85e4166e69810414b1

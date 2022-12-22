@@ -4,7 +4,7 @@ date: "2020-05-16"
 title: "AI-powered news feed"
 tags: ["python", "django", "db", "scraper", "language processing", "web"]
 published: 2020-05-16
-lastModified: 2021-03-27
+lastModified: 2022-08-20
 ---
 
 # AI-powered news feed

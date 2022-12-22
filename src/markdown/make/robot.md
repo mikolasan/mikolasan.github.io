@@ -3,6 +3,7 @@ title: Designing a robot
 date: 2022-07-23
 lastModified: 2022-12-21
 draft: true
+published: 2022-12-20
 ---
 
 Design a robot in three easy steps:

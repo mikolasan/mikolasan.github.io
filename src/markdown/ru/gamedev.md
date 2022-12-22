@@ -4,7 +4,7 @@ date: "2020-03-19"
 title: "Разработка игр"
 language: "ru"
 published: 2021-10-13
-lastModified: 2021-10-13
+lastModified: 2022-07-31
 ---
 
 [Институт](/ru/devlog/infinite-institute-hall-crawler) - крутой сюжет для игры.

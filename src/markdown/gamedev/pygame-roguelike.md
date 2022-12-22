@@ -4,8 +4,8 @@ date: 2019-04-17
 title: "Not your father's roguelike"
 featuredImage: pyroguelike-1.png
 previewImage: pyroguelike-1.png
-published: 2020-04-06
-lastModified: 2021-10-28
+published: 2022-08-20
+lastModified: 2022-08-20
 ---
 
 Some day I will create a game in new genre – [infinite institute hall crawler](/ideas/games/infinite-institute-hall-crawler)

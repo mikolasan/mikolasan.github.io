@@ -1,6 +1,8 @@
 ---
 title: Developmental Psychology studies
 date: 2022-09-25
+published: 2022-12-16
+lastModified: 2022-12-16
 ---
 
 _With Jorge Romero comments_

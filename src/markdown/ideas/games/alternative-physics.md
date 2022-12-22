@@ -1,6 +1,8 @@
 ---
 title: Alternative physics
 date: 2021-03-31
+published: 2022-09-05
+lastModified: 2022-09-05
 ---
 
 Laws of physics with different constants. Gravitation, time, space - all of it mostly applies to platformers.

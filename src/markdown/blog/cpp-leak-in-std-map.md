@@ -2,6 +2,8 @@
 date: 2022-06-23
 title: Leak in std::map
 twitter: https://twitter.com/mikolasan/status/1540107301784154113
+published: 2022-09-01
+lastModified: 2022-09-08
 ---
 
 I find it quite interesting. Do you think it is going to compile?

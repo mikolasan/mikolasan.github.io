@@ -2,6 +2,8 @@
 section: brain
 title: Reinforcement Learning
 topic: true
+published: 2022-12-20
+lastModified: 2022-12-20
 ---
 
 - 2019 Neftci - Reinforcement learning in artificial and biological systems https://www.gwern.net/docs/reinforcement-learning/model-free/2019-neftci.pdf

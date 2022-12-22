@@ -3,6 +3,8 @@ section: brain
 title: Cascade Correlation Neural Networks
 topic: true
 description: ""
+published: 2022-12-20
+lastModified: 2022-12-20
 ---
 
 ## Neural networks with biologically plausible accounts of neurogenesis

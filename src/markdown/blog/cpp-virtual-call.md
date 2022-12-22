@@ -2,6 +2,8 @@
 date: 2022-07-07
 title: Virtual call in C++
 twitter: https://twitter.com/mikolasan/status/1545085274438262784
+published: 2022-08-24
+lastModified: 2022-09-08
 ---
 
 

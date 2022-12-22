@@ -3,6 +3,8 @@ date: 2021-10-15
 title: Containerized builds with Docker
 subtitle: Build C++ app written with the new standard (c++20) on Ubuntu 18.04 in 2022
 featuredImage: steelworks.jpg
+published: 2022-07-17
+lastModified: 2022-07-17
 ---
 
 <i>Photo by <a href="https://unsplash.com/@rozetsky?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ant Rozetsky</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></i>

@@ -1,6 +1,8 @@
 ---
 date: 2022-07-10
 title: Small business software essentials
+published: 2022-07-16
+lastModified: 2022-07-16
 ---
 
 - Debian - server OS

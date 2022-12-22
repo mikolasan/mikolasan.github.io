@@ -5,7 +5,7 @@ title: Распознавание лиц
 language: "ru"
 draft: true
 published: 2021-10-13
-lastModified: 2021-10-13
+lastModified: 2022-07-31
 ---
 
 ## Теоретическая база

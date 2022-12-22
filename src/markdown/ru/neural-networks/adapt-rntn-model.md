@@ -5,7 +5,7 @@ title: Приспосабливаем RNTN модель
 language: "ru"
 draft: true
 published: 2021-10-13
-lastModified: 2021-10-13
+lastModified: 2022-07-31
 ---
 
 RNTN - Recursive Neural Tensor Network - тензорнон обобщение рекурсивной нейронной сети.

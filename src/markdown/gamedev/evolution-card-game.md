@@ -1,6 +1,8 @@
 ---
 title: "Evolution: card game"
 date: 2022-06-07
+published: 2022-09-05
+lastModified: 2022-10-30
 ---
 
 I’m going to go with tamagotchi idea for [this game jam](/gamedev/game-jams). It’s the only thing that fits good in my mind with the **evolution** theme.

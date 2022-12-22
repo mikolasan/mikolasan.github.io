@@ -3,8 +3,8 @@ date: 2021-09-15
 title: Old games - new technologies
 path: /ideas/old-games-new-technologies
 idea: creative
-published: 2021-10-28
-lastModified: 2021-10-28
+published: 2022-06-21
+lastModified: 2022-06-21
 ---
 
 Recently I listed [the most addictive games](/blog/most-addictive-games) of my time. But how good they can be with new technologies?

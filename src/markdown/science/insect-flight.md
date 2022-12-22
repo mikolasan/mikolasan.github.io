@@ -2,6 +2,8 @@
 date: 2022-07-28
 title: Insect flight
 draft: true
+published: 2022-09-08
+lastModified: 2022-09-08
 ---
 
 So why we don't have planes that flap wings?

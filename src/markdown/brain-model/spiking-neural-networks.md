@@ -3,6 +3,8 @@ section: brain
 title: Spiking Neural Networks
 topic: true
 description: ""
+published: 2022-12-20
+lastModified: 2022-12-20
 ---
 
 - https://en.wikipedia.org/wiki/Spiking_neural_network

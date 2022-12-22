@@ -5,7 +5,7 @@ tags: ["java", "db", "mobile"]
 featuredImage: pet-project-navigator-3.png
 language: "ru"
 published: 2021-10-13
-lastModified: 2021-10-13
+lastModified: 2022-07-31
 ---
 
 Приложение по выбору хобби проекта для программиста. 

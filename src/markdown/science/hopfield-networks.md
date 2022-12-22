@@ -2,6 +2,8 @@
 date: 2022-08-17
 title: Hopfield Networks
 topic: true
+published: 2022-08-22
+lastModified: 2022-10-20
 ---
 
 [Full crash course](http://www.scholarpedia.org/article/Hopfield_network) about Hopfiled networks.

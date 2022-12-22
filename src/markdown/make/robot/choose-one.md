@@ -1,6 +1,8 @@
 ---
 title: All shapes and forms
 date: 2022-06-27
+published: 2022-12-20
+lastModified: 2022-12-20
 ---
 
 ### Tank-like robot

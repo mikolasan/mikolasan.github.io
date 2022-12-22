@@ -2,7 +2,7 @@
 date: 2022-04-24
 title: '"What if" geopolitics AI analysis'
 published: 2022-04-24
-lastModified: 2022-04-29
+lastModified: 2022-06-26
 ---
 
 ## Idea

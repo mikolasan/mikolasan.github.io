@@ -1,6 +1,8 @@
 ---
 date: 2022-07-31
 title: Graph of inbound links
+published: 2022-08-22
+lastModified: 2022-08-22
 ---
 
 I'm having a depression and I've been working on my website this weekend 😑 I post different stuff, but it definitely lacks interconnections. I'm going to visialize the current situation and later I will use it as a site map (something like a brain map, but for navigation).

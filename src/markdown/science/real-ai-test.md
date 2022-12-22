@@ -2,6 +2,8 @@
 title: Real AI test
 date: 2022-09-11
 draft: true
+published: 2022-09-16
+lastModified: 2022-10-20
 ---
 
 Just collecting links for this article about real tough AI test that no system can pass. About ARC

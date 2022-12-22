@@ -5,7 +5,7 @@ title: "C++ question: exec"
 twitter: https://twitter.com/mikolasan/status/1412463032379248641
 tags: ["C++", "puzzle"]
 published: 2021-10-14
-lastModified: 2021-10-14
+lastModified: 2022-09-08
 ---
 
 Today I found this code extremely confusing.

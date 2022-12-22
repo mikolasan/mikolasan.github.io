@@ -1,6 +1,8 @@
 ---
 date: 2022-07-10
 title: '"Why do I hate ...?" article series'
+published: 2022-07-10
+lastModified: 2022-08-22
 ---
 
 All programming languages have they own quirks. That is why I started "Why do I hate ...?" article series.

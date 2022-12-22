@@ -3,7 +3,7 @@ date: "2020-04-06"
 title: "Мой GitHub"
 language: "ru"
 published: 2021-10-13
-lastModified: 2021-10-13
+lastModified: 2022-07-31
 ---
 
 ## mikolasan.github.io

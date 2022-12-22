@@ -4,7 +4,7 @@ date: "2021-09-25"
 title: "5 servo robot"
 tags: ["servo", "hardware", "robot"]
 published: 2021-10-28
-lastModified: 2021-10-28
+lastModified: 2022-12-16
 ---
 
 A new spin to my strange purchase of 5 servo drives. Why strange? Because 5 servos is not enough to make a spider (a hexapod robot).

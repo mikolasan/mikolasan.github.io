@@ -4,7 +4,7 @@ title: "Word clock"
 tags: ["hardware", "embedded", "laser cut"]
 coverImage: "word-clock.jpg"
 published: 2021-10-13
-lastModified: 2021-10-13
+lastModified: 2022-12-16
 ---
 
 I followed instructions from Make magazine (Volume 67) and I made a word clock.

@@ -4,7 +4,7 @@ date: "2020-03-19"
 title: "Наука"
 language: "ru"
 published: 2020-04-06
-lastModified: 2021-10-13
+lastModified: 2022-07-31
 ---
 
 **📣 Новые темы**:

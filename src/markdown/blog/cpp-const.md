@@ -2,6 +2,8 @@
 date: 2021-09-17
 title: const in C++
 twitter: https://twitter.com/mikolasan/status/1438759829120638982
+published: 2022-08-24
+lastModified: 2022-09-08
 ---
 
 Can I just show four slides. They are totally self-exlanatory

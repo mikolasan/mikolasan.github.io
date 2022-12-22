@@ -3,8 +3,8 @@ date: 2022-07-05
 title: Temperature sensor for Raspberry Pi 4
 tags: ["hardware", "sensor"]
 previewImage: temperature-sensor-bme280-rpi4.jpg
-published: 2022-07-05
-lastModified: 2022-07-05
+published: 2022-07-10
+lastModified: 2022-08-22
 ---
 
 ## BME 280

@@ -2,6 +2,8 @@
 title: Stacking boards
 date: 2022-12-16
 blog: true
+published: 2022-12-20
+lastModified: 2022-12-20
 ---
 
 Today I'm thinking about the best way to stack boards (to support extensions in other words). In my search I [stumbled upon](https://hallmanlabs.com/2020/07/20/discrete-review-update-isoregen-over-troubled-dip8-waters/) these DIP adapters

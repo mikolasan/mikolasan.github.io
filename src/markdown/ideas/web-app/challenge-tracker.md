@@ -4,8 +4,8 @@ date: 2021-11-07
 title: Challenge tracker
 idea: creative
 tags: ["web development", "web", "time management", "one app per month"]
-published: 2022-05-01
-lastModified: 2022-05-03
+published: 2022-06-21
+lastModified: 2022-06-21
 ---
 
 This app offers a list of different challenges grouped by categories:

@@ -1,6 +1,8 @@
 ---
 title: ELI5 How to use PyTorch
 date: 2022-09-21
+published: 2022-10-03
+lastModified: 2022-12-16
 ---
 
 One morning I see in my timeline [this tweet](https://twitter.com/davidandrzej/status/1570969380284141570?s=12). It exlaims about transformer model abilities

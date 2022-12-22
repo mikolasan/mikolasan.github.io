@@ -5,8 +5,8 @@ title: RTS
 subtitle: 
 tags: ["RTS"]
 idea: creative
-published: 2021-10-28
-lastModified: 2021-10-28
+published: 2022-06-21
+lastModified: 2022-06-21
 ---
 
 Speaking of RTS. I always wanted to make/play RTS where you control armies on the scale of thousands units. You gather armies, you select them and direct to the positions, the battle begins, and you can choose one unit and switch to hack’n slash mode.

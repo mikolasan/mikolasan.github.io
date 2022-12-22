@@ -3,8 +3,8 @@ path: "/ru/youtube/about"
 date: "2020-09-27"
 title: "О Ютюб канале"
 language: "ru"
-published: 2021-10-14
-lastModified: 2022-04-24
+published: 2021-10-28
+lastModified: 2022-08-23
 ---
 
 

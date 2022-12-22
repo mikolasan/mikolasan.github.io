@@ -1,6 +1,8 @@
 ---
 title: "Download releases from command line"
 date: 2022-07-21
+published: 2022-07-22
+lastModified: 2022-07-22
 ---
 
 Atlassian has vast documentation, but I have a problem with it. I had a hard time understanding how to get an access token simply to download archives from private repositories. 

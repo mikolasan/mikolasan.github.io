@@ -1,6 +1,8 @@
 ---
 title: Programs that rewrite themselves
 date: 2022-09-08
+published: 2022-09-16
+lastModified: 2022-09-16
 ---
 
 In computer science there’s an interesting exercise when you need to make a program that prints itself. In similar manner what about programs that can change themselves?

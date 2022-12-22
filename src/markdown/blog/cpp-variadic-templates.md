@@ -2,6 +2,8 @@
 date: 2022-07-28
 title: Variadic templates in C++
 twitter: https://twitter.com/mikolasan/status/1552758594344390656
+published: 2022-08-24
+lastModified: 2022-09-08
 ---
 
 I found a use of variadic templates in C++. This is `constexpr` max function that finds the max element in the list of arguments at compile time. Very strange that the standard library doesn't have it. 

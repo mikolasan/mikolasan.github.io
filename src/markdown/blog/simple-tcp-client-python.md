@@ -1,6 +1,8 @@
 ---
 title: Simple Python TCP client
 date: 2022-01-01
+published: 2022-08-02
+lastModified: 2022-08-02
 ---
 
 ## Features

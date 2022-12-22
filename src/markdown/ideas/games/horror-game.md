@@ -5,8 +5,9 @@ title: Horror game
 subtitle: 
 tags: ["horror"]
 idea: creative
-published: 2022-06-07
+published: 2022-06-21
 featuredImage: horror-game-feature.png
+lastModified: 2022-06-21
 ---
 
 My favorite scenes in ghost movies are when something creepy happens on the background and out of sight for main characters.

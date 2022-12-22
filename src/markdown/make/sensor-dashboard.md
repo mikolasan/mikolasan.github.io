@@ -2,6 +2,8 @@
 title: Sensor dashboard
 date: 2022-08-21
 previewImage: sensor-readings-rpi4-elastic-3.png
+published: 2022-08-22
+lastModified: 2022-10-03
 ---
 
 I had an ambitious plan for a long 3 day weekend. I stuck with the first item for a week. Then the next weekend I did a good progress striking out half of all that was planned. So here is the story how tiny plan stayed with me for 2 month.

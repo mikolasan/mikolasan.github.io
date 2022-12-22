@@ -3,7 +3,7 @@ path: "/ru/neural-networks/postal-digits"
 date: "2020-03-19"
 title: "Цифры почтового индекса"
 published: 2021-10-13
-lastModified: 2021-10-13
+lastModified: 2022-07-31
 ---
 
 

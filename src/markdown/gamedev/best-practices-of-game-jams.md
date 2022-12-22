@@ -3,6 +3,7 @@ date: 2022-05-27
 title: Best practices of Game Jams
 previewImage: gogodot3jam.jpg
 published: 2022-06-07
+lastModified: 2022-08-22
 ---
 
 Jamming gives very unique feeling that I've never had at work.

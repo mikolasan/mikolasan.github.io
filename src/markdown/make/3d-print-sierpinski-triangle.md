@@ -3,6 +3,8 @@ date: 2022-07-27
 title: Sierpinski triangle
 twitter: https://twitter.com/mikolasan/status/1552318503968878592
 previewImage: my-sierpinski-pyramid.jpg
+published: 2022-07-31
+lastModified: 2022-12-16
 ---
 
 ![Fractal pyramid in quantum (dichromatic) PLA](./sierpinski-pyramid.png)

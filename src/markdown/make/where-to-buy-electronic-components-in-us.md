@@ -2,6 +2,8 @@
 date: 2022-08-21
 title: Where to buy electronic components in US
 developing: true
+published: 2022-08-22
+lastModified: 2022-10-03
 ---
 
 Chip shortage updates for 2022!

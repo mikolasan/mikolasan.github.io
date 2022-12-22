@@ -4,7 +4,7 @@ title: Судоку 16х16
 featuredImage: sudoku-game-2.png
 language: "ru"
 published: 2021-10-13
-lastModified: 2021-10-13
+lastModified: 2022-07-31
 ---
 
 ## Как у меня провалилась оценка сроков

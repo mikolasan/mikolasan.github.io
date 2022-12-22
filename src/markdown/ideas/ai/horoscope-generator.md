@@ -7,8 +7,8 @@ tags: ["language processing", "mobile", "generator", "one app per month"]
 featuredImage: horoscope-generator.jpg
 previewImage: horoscope-generator-preview.jpg
 idea: innovative
-published: 2021-10-13
-lastModified: 2021-10-28
+published: 2022-06-21
+lastModified: 2022-08-02
 ---
 
 This application tries to guess user's birthday. It has 365 attempts to do that because it will not ask any questions that normally narrow down an interval of possible answers. The app deliberately chooses the hard way. It gives broad descriptions of what should happen in person's life pretending that life is defined by the Universe, stars, and the zodiac. Thereby every day (week) the user receives a new prophecy and, depending on when it must happen, only after that moment he or she can rate the prophecy, discard it and take a new one.

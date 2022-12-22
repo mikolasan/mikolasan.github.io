@@ -1,6 +1,8 @@
 ---
 date: 2022-09-27
 title: Knots
+published: 2022-10-03
+lastModified: 2022-10-20
 ---
 
 _Math club notes_.

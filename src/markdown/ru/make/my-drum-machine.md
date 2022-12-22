@@ -4,7 +4,7 @@ title: "Свои электро ударные"
 tags: ["laser cut", "mobile"]
 language: "ru"
 published: 2021-10-13
-lastModified: 2021-10-13
+lastModified: 2022-07-31
 ---
 
 ## Физическая часть

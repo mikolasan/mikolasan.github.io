@@ -7,7 +7,7 @@ subtitle: Top down shooter made with Game Maker
 buttonText: Download on itch
 buttonLink: https://neup.itch.io/fire
 published: 2022-02-13
-lastModified: 2022-02-22
+lastModified: 2022-08-20
 ---
 
 It was 2005. 

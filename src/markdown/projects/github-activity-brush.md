@@ -2,6 +2,8 @@
 title: GitHub Activity Brush
 date: 2022-07-13
 draft: true
+published: 2022-08-23
+lastModified: 2022-08-23
 ---
 
 It's second name is [GutHub Brush](https://guthub-brush.netlify.app/)

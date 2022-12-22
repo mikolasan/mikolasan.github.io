@@ -2,6 +2,8 @@
 date: 2022-08-21
 title: Reading list
 twitter: https://twitter.com/mikolasan/status/1539443012303921152
+published: 2022-08-22
+lastModified: 2022-10-30
 ---
 
 Very interesting things that have very good write up, but I do not have time to read it all at the day when I see it and it's not usually aligned with current projects, but damn it's sooo good that I cannot lose it from my point of view. Link copied. Saved in git. Page saved on the drive. Backed up. 🤞
