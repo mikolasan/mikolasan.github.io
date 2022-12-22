@@ -3,6 +3,10 @@ title: Motor board
 date: 2022-10-30
 ---
 
+## Alternatives
+
+- [A-Star 32U4 Robot Controller LV with Raspberry Pi Bridge](https://www.pololu.com/product/3117)
+
 
 ## Motors
 

@@ -3,6 +3,13 @@ title: Power board
 date: 2022-10-20
 ---
 
+## Alternatives
+
+Power distribution boards
+
+- HobbyKing Matek PDB-XT60 w/BEC
+- Matek Systems PDB Supports 3S Battery for FPV Racing Drone HUB5V12V
+
 ## Power source
 
 Motors normally require higher voltage (6V, 12V, 24V) and current, and it's a good practice to keep motors, LEDs (like very long strips of LEDs), switches electronically seperated from the logic (3.3V). But **how do you decouple it** when the whole project should work from the battery? 
@@ -59,3 +66,9 @@ Old alternative for these chips is [TPS6109](https://www.ti.com/lit/ds/symlink/t
 - Battery to the board - [JST PH Connector](https://www.digikey.com/en/products/detail/jst-sales-america-inc/S2B-PH-K-S-LF-SN/926626)
 - For charging USB cable let's be modern and use type C - [USB Type C Female](https://www.digikey.com/en/products/detail/adam-tech/USB-C31-S-VT-CS4-BK-PP-T-R/9832222)
 
+
+## Q&A
+
+- Why capacitors are basically everywhere?
+
+![schematics with many capacitors](./capacitors-q-a.png "Capacitors are everywhere. Or at least in many places where the power is applied")

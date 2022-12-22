@@ -256,7 +256,7 @@ class Navbar extends React.Component {
           <Link to="/blog" { ...(active === "blog" && { className: styles.activelink }) }>Blog</Link>
           <Link to="/about" style={{float: 'right'}} { ...(active === "about" && { className: styles.activelink }) }>About</Link>
 
-          <div className={styles.language}>
+          <div className={[styles.language, styles.tooltip].join(' ')}>
           <Link to="/ru" title="Русский">
             <svg className={styles.globe} xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor" stroke="none"
@@ -420,6 +420,7 @@ class Navbar extends React.Component {
                         434.48,118.99 434.48,118.99 434.48,118.99 Z
                       M 637.00,398.00" />
             </svg>
+            <span className={styles.tooltiptext}>Русский</span>
             <img className={styles.russian} src="/images/soviet.svg" />
             {/* <img className={styles.flag} src="/images/flag.svg" /> */}
           </Link>
