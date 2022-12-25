@@ -34,6 +34,9 @@ const Credits = ({ pageContext }) => (
       <li>
         <a href="https://www.flaticon.com/free-icon/neuron_1756394" title="neuron icons">Neuron icons created by Freepik</a>
       </li>
+      <li>
+        <a href="https://www.flaticon.com/free-icon/robot_862511" title="robot icons">Robot icons created by Good Ware</a>
+      </li>
     </ul>
 
   </Layout>

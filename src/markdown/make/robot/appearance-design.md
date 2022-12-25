@@ -1,4 +1,5 @@
 ---
+section: robot
 title: Robot appearance design
 date: 2022-07-23
 featuredImage: uncanny-valley-discover-magazine.jpg

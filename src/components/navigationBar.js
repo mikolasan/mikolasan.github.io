@@ -246,15 +246,21 @@ class Navbar extends React.Component {
           </Link>
           <Link to="/make" { ...(active === "make" && { className: styles.activelink }) }>Make</Link>
           <div className={[styles.featuredlink, styles.tooltip].join(' ')}>
-            <Link to="/brain-model" { ...(active === "brain" && { className: styles.activelink }) }>
+            <Link to="/make/robot" { ...(active === "robot" && { className: styles.activelink }) }>
+              <img src="/robot.png" alt="Robot" title="" />
+              <span className={styles.tooltiptext}>Robot</span>
+            </Link>
+          </div>
+          <Link to="/science" { ...(active === "science" && { className: styles.activelink }) }>Science</Link>
+          <div className={[styles.featuredlink, styles.tooltip].join(' ')}>
+            <Link to="/brain-model" { ...(active === "ai" && { className: styles.activelink }) }>
               <img src="/brain.png" alt="Brain model" title="" />
               <span className={styles.tooltiptext}>Brain model</span>
             </Link>
           </div>
-          <Link to="/science" { ...(active === "science" && { className: styles.activelink }) }>Science</Link>
+          <Link to="/code" { ...(active === "code" && { className: styles.activelink }) }>Code</Link>
           <Link to="/gamedev" { ...(active === "gamedev" && { className: styles.activelink }) }>Gamedev</Link>
-          <Link to="/blog" { ...(active === "blog" && { className: styles.activelink }) }>Blog</Link>
-          <Link to="/about" style={{float: 'right'}} { ...(active === "about" && { className: styles.activelink }) }>About</Link>
+          <Link to="/blog" style={{float: 'right'}} { ...(active === "blog" && { className: styles.activelink }) }>Blog</Link>
 
           <div className={[styles.language, styles.tooltip].join(' ')}>
           <Link to="/ru" title="Русский">

@@ -5,22 +5,6 @@ published: 2022-12-20
 lastModified: 2022-12-20
 ---
 
-## Eagle
-
-- https://www.youtube.com/watch?v=Eu5XMEh79XM
-
-- create schematics document in Eagle
-- Edit -> Add... -> Scroll down to **frames**, Choose LETTER_L
-
-Add 3D models to the library https://support.snapeda.com/en/articles/3545085-how-to-import-a-3d-model-into-eagle
-- [Design Rules files for OSHPARK](https://docs.oshpark.com/design-tools/eagle/design-rules-files/)
-
-https://docs.oshpark.com/design-tools/eagle/cutouts-and-slots/
-
-## Miscellaneous
-
-The purpose of the bulk capacitor is to overcome the voltage drop caused by the inductive effects of PCB traces. 
-
 ### Film vs ceramic vs electrolytic vs tantalum
 
 Ceramic - high frequency response due to lower inductance (therefore good HF filtering bypass incoming and outgoing noise), non-polar
@@ -35,11 +19,30 @@ Film - linear characteristics (voltage-temperature-capacitance)
 
 **Reference**: [1](https://electronics.stackexchange.com/questions/232631/ceramic-caps-vs-electrolytic-what-are-the-tangible-differences-in-use), [2](https://electronics.stackexchange.com/questions/69919/ceramic-vs-film-capacitor-which-one-is-preferred-in-audio-circuits)
 
+
 ### Selecting voltage rating for capacitors
 
 Multiply voltage by 4/3 or 3/2 (electoolytic caps) and up to 2 (ceramic caps)
 
 **Reference**: [1](https://electronics.stackexchange.com/questions/15700/selecting-voltage-rating-for-capacitors), [2](http://www.learningaboutelectronics.com/Articles/What-does-the-voltage-rating-on-a-capacitor-mean), [3](https://resources.pcb.cadence.com/blog/2022-ceramic-capacitor-voltage-ratings-here-is-what-you-need-to-know)
+
+## Eagle
+
+- https://www.youtube.com/watch?v=Eu5XMEh79XM
+
+- create schematics document in Eagle
+- Edit -> Add... -> Scroll down to **frames**, Choose LETTER_L
+
+Add 3D models to the library https://support.snapeda.com/en/articles/3545085-how-to-import-a-3d-model-into-eagle
+- [Design Rules files for OSHPARK](https://docs.oshpark.com/design-tools/eagle/design-rules-files/)
+
+https://docs.oshpark.com/design-tools/eagle/cutouts-and-slots/
+
+
+## Drills
+
+[Drill specs](https://docs.oshpark.com/submitting-orders/drill-specs/)
+
 
 ### SMD Package Types
 
@@ -61,7 +64,6 @@ SMD Package Type | Dimensions (mm) | Dimensions (inches)
 
 
 
+## Miscellaneous
 
-## Drills
-
-[Drill specs](https://docs.oshpark.com/submitting-orders/drill-specs/)
+The purpose of the bulk capacitor is to overcome the voltage drop caused by the inductive effects of PCB traces. 

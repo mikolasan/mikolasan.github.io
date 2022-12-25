@@ -1,6 +1,6 @@
 ---
 date: "2021-02-06"
-title: "3Д печать машины из Carmageddon."
+title: 3Д печать машины из Carmageddon
 tags: ["3d printing"]
 language: "ru"
 published: 2021-10-13

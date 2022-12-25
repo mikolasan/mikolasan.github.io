@@ -7,13 +7,6 @@ published: 2022-07-31
 lastModified: 2022-12-16
 ---
 
-![Fractal pyramid in quantum (dichromatic) PLA](./sierpinski-pyramid.png)
-
-## Reference
-
-- 1 https://twitter.com/iceslapp/status/1552690889868431363
-- 2 https://www.reddit.com/r/3Dprinting/comments/w5h6q3/one_of_the_trippiest_prints_ive_done_fractal/
-
 > I used to make these on graphing calculators and on my x386 33MHZ computer in the 90s. It’s called a Sierpinski triangle. I was memorized by them. I should print one.
 >
 > _Gswindle76_
@@ -23,7 +16,7 @@ I was going to fix a surface that supposed to be one flat  piece but was created
 
 ![An artifact](./pyramid-bottom-merged.png)
 
-## Need
+Here is what you need:
 
 - [3-color silk PLA filament](https://www.amazon.com/dp/B0B3JVCMNW?th=1) is awesome for such things. The perfect fit. [dual color PLA filament](https://www.amazon.ca/ERYONE-Filament-Printer-1-75mm-0-03mm/dp/B09X2VNKM9/) ?
 - 3D model on [Thingiverse](https://www.thingiverse.com/thing:1356547/files)
@@ -42,3 +35,12 @@ I was going to fix a surface that supposed to be one flat  piece but was created
  So I blamed the model. But then I tried the Surface mode in Cura and OMG I love these pyramids and colors 😍
 
  ![Printed pyramids](./my-sierpinski-pyramid.jpg)
+
+
+ ## Reference
+
+![Fractal pyramid in quantum (dichromatic) PLA](./sierpinski-pyramid.png)
+
+- 1 https://twitter.com/iceslapp/status/1552690889868431363
+- 2 https://www.reddit.com/r/3Dprinting/comments/w5h6q3/one_of_the_trippiest_prints_ive_done_fractal/
+

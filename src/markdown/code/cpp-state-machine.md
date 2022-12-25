@@ -1,5 +1,5 @@
 ---
-path: /blog/cpp-state-machine
+path: /code/cpp-state-machine
 date: 2021-10-01
 title: C++ State Machine
 published: 2021-10-14
@@ -23,9 +23,9 @@ Wait for updates on my Github, I will post dynamic state machine there.
 
 ## Similar posts
 
-- ["Pointing" arguments](/blog/cpp-pointing-arguments)
-- [const in C++](/blog/cpp-const)
-- [C++ question: exec](/blog/cpp-question-exec)
-- [Variadic templates in C++](/blog/cpp-variadic-templates)
-- [Virtual call in C++](/blog/cpp-virtual-call)
-- [Leak in std::map](/blog/cpp-leak-in-std-map)
+- ["Pointing" arguments](/code/cpp-pointing-arguments)
+- [const in C++](/code/cpp-const)
+- [C++ question: exec](/code/cpp-question-exec)
+- [Variadic templates in C++](/code/cpp-variadic-templates)
+- [Virtual call in C++](/code/cpp-virtual-call)
+- [Leak in std::map](/code/cpp-leak-in-std-map)

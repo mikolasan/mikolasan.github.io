@@ -1,4 +1,5 @@
 ---
+section: robot
 title: SMARS clone
 date: 2022-06-10
 published: 2022-12-20

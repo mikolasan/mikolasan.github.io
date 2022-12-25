@@ -9,7 +9,7 @@ lastModified: 2022-08-20
 # C++
 
 - [UDP send](/blog/udp-send-cpp)
-- [State Machine](/blog/cpp-state-machine)
+- [State Machine](/code/cpp-state-machine)
 - [YAML Parser](/blog/getting-started-with-rapidyaml)
 - [Read pcap files](/blog/how-to-read-pcap-file-in-cpp)
 

@@ -93,9 +93,9 @@ As usual all code for your experiments and slides are in [**cpp-skill** reposito
 
 ## Similar posts
 
-- ["Pointing" arguments](/blog/cpp-pointing-arguments)
-- [const in C++](/blog/cpp-const)
-- [C++ question: exec](/blog/cpp-question-exec)
-- [C++ State Machine](/blog/cpp-state-machine)
-- [Virtual call in C++](/blog/cpp-virtual-call)
-- [Leak in std::map](/blog/cpp-leak-in-std-map)
+- ["Pointing" arguments](/code/cpp-pointing-arguments)
+- [const in C++](/code/cpp-const)
+- [C++ question: exec](/code/cpp-question-exec)
+- [C++ State Machine](/code/cpp-state-machine)
+- [Virtual call in C++](/code/cpp-virtual-call)
+- [Leak in std::map](/code/cpp-leak-in-std-map)

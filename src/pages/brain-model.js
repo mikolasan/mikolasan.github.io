@@ -4,25 +4,16 @@ import { graphql, Link } from "gatsby"
 import { absPathToUrl } from "../nifty"
 
 const BrainModelPage = ({ data }) => {
-  const scienceNodes = data.scienceNodes.nodes
-  const codingNodes = data.codingNodes.nodes
+  const aiNodes = data.aiNodes.nodes
 
   return (
     <Layout 
-      title="Sitemap"
+      title="Brain model"
+      section="ai"
     >
-      <h1>Sitemap</h1>
-      <h2>Cognitive science topics</h2>
-      {scienceNodes.map(node => {
-        return (
-          <div>
-            <Link to={absPathToUrl(node.fileAbsolutePath)}><h3>{node.frontmatter.title}</h3></Link>
-            <p>{node.frontmatter?.description}</p>
-          </div>
-        )})
-      }
-      <h2>Development topics</h2>
-      {codingNodes.map(node => {
+      <h1>Brain model</h1>
+      <h2>Big topics A-Z</h2>
+      {aiNodes.map(node => {
         return (
           <div>
             <Link to={absPathToUrl(node.fileAbsolutePath)}><h3>{node.frontmatter.title}</h3></Link>
@@ -39,25 +30,9 @@ export default BrainModelPage
 
 export const query = graphql`
   query SitemapQuery {
-    scienceNodes: allMarkdownRemark(
+    aiNodes: allMarkdownRemark(
       filter: {
-        fileAbsolutePath: { regex: "/markdown\/science\//"},
-        frontmatter: {topic: {eq: true}}
-      }
-      sort: {order: ASC, fields: fileAbsolutePath}
-    ) {
-      nodes {
-        frontmatter {
-          title
-          description
-        }
-        fileAbsolutePath
-        id
-      }
-    }
-    codingNodes: allMarkdownRemark(
-      filter: {
-        fileAbsolutePath: { regex: "/markdown\/coding\//"},
+        fileAbsolutePath: { regex: "/markdown\/ai\//"},
         frontmatter: {topic: {eq: true}}
       }
       sort: {order: ASC, fields: fileAbsolutePath}

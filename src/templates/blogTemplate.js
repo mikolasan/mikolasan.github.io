@@ -30,7 +30,7 @@ export default function Template ({ data, pageContext }) {
       description={excerpt}
       published={published}
       lastUpdated={lastModified}
-      section={section}
+      section={frontmatter.section || section}
       showLikes={pageContext.showLikes}
       crumbs={pageContext.breadcrumb.crumbs}
       languageName={languageName}

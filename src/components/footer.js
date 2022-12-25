@@ -37,6 +37,7 @@ const Footer = ({
             <Link to="/projects">Projects</Link>
             <Link to="/free">Free Stuff</Link>
             <Link to="/code-snippets">Code Snippets</Link>
+            <Link to="/ebooks">My ebooks</Link>
           </div>
           <div className="bottomxsocial">
             <h2>Social</h2>

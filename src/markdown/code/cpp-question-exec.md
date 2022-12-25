@@ -1,5 +1,5 @@
 ---
-path: /blog/cpp-question-exec
+path: /code/cpp-question-exec
 date: 2021-07-06
 title: "C++ question: exec"
 twitter: https://twitter.com/mikolasan/status/1412463032379248641
@@ -29,9 +29,9 @@ The exec() function replaces new child process with whatever is in the long_proc
 
 ## Similar posts
 
-- ["Pointing" arguments](/blog/cpp-pointing-arguments)
-- [const in C++](/blog/cpp-const)
-- [C++ State Machine](/blog/cpp-state-machine)
-- [Variadic templates in C++](/blog/cpp-variadic-templates)
-- [Virtual call in C++](/blog/cpp-virtual-call)
-- [Leak in std::map](/blog/cpp-leak-in-std-map)
+- ["Pointing" arguments](/code/cpp-pointing-arguments)
+- [const in C++](/code/cpp-const)
+- [C++ State Machine](/code/cpp-state-machine)
+- [Variadic templates in C++](/code/cpp-variadic-templates)
+- [Virtual call in C++](/code/cpp-virtual-call)
+- [Leak in std::map](/code/cpp-leak-in-std-map)

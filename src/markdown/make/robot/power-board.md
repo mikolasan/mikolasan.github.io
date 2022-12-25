@@ -1,4 +1,5 @@
 ---
+section: robot
 title: Power board
 date: 2022-10-20
 published: 2022-12-20
@@ -9,7 +10,7 @@ lastModified: 2022-12-21
 
 Power distribution boards
 
-- HobbyKing Matek PDB-XT60 w/BEC
+- [Matek PDB-XT60 w/ BEC 5V & 12V](http://www.mateksys.com/?portfolio=pdb-xt60)
 - Matek Systems PDB Supports 3S Battery for FPV Racing Drone HUB5V12V
 
 ## Power source

@@ -108,7 +108,7 @@ Test print in progress. I still don’t understand why it poops before the start
 
 - [Prusa profiles for cura](https://help.prusa3d.com/guide/how-to-import-profiles-to-cura-4-x-windows-macos_17848#17856). Just use the new path `C:\Program Files\Ultimaker Cura 5.2.1\share\cura\resources`
 
-More tips on [dedicated page](/make/3d-printer-lessons)
+From my constant experience with different filaments and models I collect tips on [a dedicated page](/make/3d-printer-lessons). That is going to be a complete collection of lessons you need to know on order to make perfect prints. Keep that page bookmarked and check for the updates.
 
 ## Extra equipment
 
