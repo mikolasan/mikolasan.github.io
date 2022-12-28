@@ -7,6 +7,45 @@ lastModified: 2022-12-20
 ---
 
 
+## 3D printing
+
+### Tracks
+
+PLA Prusament Black Galaxy
+
+![Small batch printed to test settings](./mechanical-tracks-1.jpg)
+
+![Toothpicks cut in small pieces and tracks](./mechanical-tracks-2.jpg)
+
+![Fully assembled tracks](./mechanical-tracks-3.jpg)
+
+
+### Wheels
+
+2x Yellow PLA Prusament, 2x PETG
+
+![Two failed prints and one finished](./wheel-1.jpg)
+
+![Finished PETG print of a yellow wheel](./wheel-2.jpg)
+
+![Back side, showing the texture of the first printed layer](./wheel-3.jpg)
+
+![Slightly different yellow color of PLA filament. Tracks wrapped around the wheel](./wheel-4.jpg)
+
+
+### Body
+
+Yellow PETG
+
+![Hexcomb infill just started to be covered with bridges](./body-1.jpg)
+
+![Warping on one edge](./body-2.jpg)
+
+![First layer texture](./body-3.jpg)
+
+![Top layer texture](./body-4.jpg)
+
+
 ## Shopping list
 
 - battery charger [Digi-Key](https://www.digikey.com/en/products/detail/microchip-technology/MCP73833T-AMI-MF/1223181)

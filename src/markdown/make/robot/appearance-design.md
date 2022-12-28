@@ -53,7 +53,7 @@ Also I can say that thatcher effect is worth considering though. But why not to 
 
 ## Conclusion
 
-The article in the magazine and a few robot pictures made me create this post. I'm curious to get practical recommendations on how to get (or avoid) the effect when you design a robot. And I'm not saying about very realistic robots when it is all about their moves. But I'm not satisfied neither with classification nor the term applied to robotics by mass media. That's why I created this page as a starting point. This is all I've got about creepy robots for now., but I just started my research and development.
+The article in the magazine and a few robot pictures made me create this post. I'm curious to get practical recommendations on how to get (or avoid) the effect when you design a robot. And I'm not saying about very realistic robots when it is all about their moves. But I'm not satisfied neither with classification nor the term applied to robotics by mass media. That's why I created this page as a starting point. This is all I've got about creepy robots for now, but I just started [my research and development](/make/robot).
 
 
 ## Reference

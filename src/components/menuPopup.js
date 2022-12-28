@@ -9,13 +9,17 @@ class MenuPopup extends React.Component {
     super(props)
     this.items = [
       {link: "/", label: "Home"},
-      {link: "/ideas/", label: "Ideas"},
-      {link: "/projects/", label: "Projects"},
-      {link: "/make/", label: "Make"},
-      {link: "/science/", label: "Science"},
-      {link: "/blog/", label: "Blog"},
-      {link: "/about/", label: "About"},
-      {link: "/cv/", label: "CV"},
+      {link: "/make", label: "Make"},
+      {link: "/make/robot", label: "Robot"},
+      {link: "/science", label: "Science"},
+      {link: "/brain-model", label: "Brain Model"},
+      {link: "/code", label: "Code"},
+      {link: "/gamedev", label: "Gamedev"},
+      {link: "/projects", label: "Projects"},
+      {link: "/blog", label: "Blog"},
+      {link: "/about", label: "About"},
+      {link: "/ideas", label: "Ideas"},
+      {link: "/cv", label: "CV"},
     ]
     this.ruItems = [
       {link: "/ru/", label: "Главная"},

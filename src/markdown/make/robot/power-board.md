@@ -8,6 +8,9 @@ lastModified: 2022-12-21
 
 ## Alternatives
 
+- [PCB design alternative](https://grabcad.com/library/stbc08-high-current-lipo-battery-charger-1)
+- [LiPo charger from Adafruit](https://learn.adafruit.com/li-ion-and-lipoly-batteries/downloads)
+
 Power distribution boards
 
 - [Matek PDB-XT60 w/ BEC 5V & 12V](http://www.mateksys.com/?portfolio=pdb-xt60)
@@ -71,6 +74,8 @@ Old alternative for these chips is [TPS6109](https://www.ti.com/lit/ds/symlink/t
 
 
 ## Q&A
+
+- Do you know that batteries can have multiple cells. One cell is **3.7V**. 2 cells (2S) - **7.4V**. 3 cells (3S) - **11.1V**
 
 - Why capacitors are basically everywhere?
 

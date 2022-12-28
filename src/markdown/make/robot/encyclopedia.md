@@ -1,6 +1,7 @@
 ---
 section: robot
-title: All shapes and forms
+title: Robot encyclopedia
+subtitle: All shapes and forms
 date: 2022-06-27
 published: 2022-12-20
 lastModified: 2022-12-20

@@ -1,5 +1,6 @@
 ---
-title: Stacking boards
+title: Castellated vias
+subtile: As the way to "stack" extension boards
 date: 2022-12-16
 blog: true
 published: 2022-12-20

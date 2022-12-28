@@ -26,6 +26,7 @@ Here is what you need:
 
 > And I printed at 0.16mm layer height, spiralize outer contours turned on in Cura, and since my printer is upgraded I printed it at 150mm/s for speed, 1500mm/s^2 accel.
 > I've upgraded my printer to use an Orbiter V2 direct drive extruder, the HeroMe Gen6 fan ducts, and I'm running Klipper, all of which allow me to print a bit faster. You can increase the max speed an acceleration in your printers configuration file for Klipper or changed in the firmware before flashing for Marlin
+>
 > _bkw_17_
 
  Luckily I found out that Cura slicer can make this print retraction free. I was shocked by the result of PrusaSlicer. It was producing ridiculous second layer. 
