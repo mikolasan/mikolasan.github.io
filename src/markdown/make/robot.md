@@ -54,4 +54,5 @@ Before really doing [version 1](/make/robot/prototype-1) I plan to look closer i
  
 ## See also
 
-To make the ball rolling you can watch Kevin McAleer's video [How to design and make a robot](https://www.youtube.com/watch?v=lKxJUViQsW8)
+- To make the ball rolling you can watch Kevin McAleer's video [How to design and make a robot](https://www.youtube.com/watch?v=lKxJUViQsW8)
+- Perception of sensors and actuation of motors reviewed alos from [developmental psychology perspective](/science/developmental-psychology-studies)

@@ -16,20 +16,30 @@ export const articles = [
   },
   {
     style: `box2`,
-    title: `Developmental Psychology studies`,
-    subtitle: ``,
+    title: `Developmental psychology`,
+    subtitle: `Studies, edge cases`,
     url: `/science/developmental-psychology-studies`,
-    excerpt: `<p>So here is the story how tiny plan stayed with me for 2 month.</p>
-    <p>Basic install of elasticsearch with only system metrics takes 2.3GB of memory.</p>
-    <p>I'm not saying that it created a nice dashboard, it could be better. But I like that the system is very modular, 
-    so maybe I should take a look at the sources and strip it.</p>`,
-    readMore: `Can Java VM be tiny?`,
+    excerpt: `<p>Lets try to frame the problem in a scientific form. 
+    There are motors connected to random pins. 
+    There are sensors also connected to random pins, and they receive information about the environment. 
+    How to figure out which motor you need to actuate in order to move the whole system in one specific direction? 
+    I consider SNN and RNN, but looking for alternative training methods. 
+    That’s how I ended up with Piaget’s stages.</p>
+    
+    <p>Jorge tends to think that the question is inherently flawed. 
+    He believes that movements are not achieved by applying torque on a set of motors. 
+    Instead it is more like a controlled fall, when the tension of muscles is dynamically updated 
+    based on the online feedback from the environment. 
+    And there is no central computer calculating movement based on input, 
+    instead the cause of movement is proprioception, the force of gravity, and thoughts combined. 
+    </p>`,
+    readMore: `And how did we come to embodied cognition? Again.`,
     imgSrc: `/images/home/sensor-dashboard.jpg`,
     imgAlt: null,
   },
   {
     style: `box3`,
-    title: `How to use PyTorch`,
+    title: `PyTorch`,
     subtitle: `Explain like I am 5`,
     url: `/science/explain-like-i-am-5-how-to-use-pytorch`,
     excerpt: `<p>One morning I see in my timeline one tweet. 
