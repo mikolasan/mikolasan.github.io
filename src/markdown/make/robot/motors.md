@@ -42,9 +42,10 @@ And the last but not least in this list is **strain wave gearing** that is used 
 
 ## Micro gearmotors
 
-For [the first prototype](/make/robot/prototype-1) I will try micro gear motors with [75 RPM](https://www.digikey.com/en/products/detail/pimoroni-ltd/COM0806/6873670) and [155 RPM](https://www.digikey.com/en/products/detail/dfrobot/FIT0483/7087160).
+For [the first prototype](/make/robot/prototype-1) I will try brushed DC micro gear motors with [75 RPM](https://www.digikey.com/en/products/detail/pimoroni-ltd/COM0806/6873670) and [155 RPM](https://www.digikey.com/en/products/detail/dfrobot/FIT0483/7087160).
 
 ![Microgear motor](./micro_gearmotor.jpg)
 
-_Note:_ voltage defines RPM, not current
+_Note:_ voltage defines RPM, not current. 
 
+[Brushless DC motors VS brushed DC motors](https://www.renesas.com/us/en/support/engineer-school/brushless-dc-motor-01-overview). Controlling BLDC is not a trivial task, but Field oriented control (FOC) algorithm is not that hard. Look at this [Arduino implementation](https://docs.simplefoc.com/)

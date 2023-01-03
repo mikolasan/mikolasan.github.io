@@ -5,122 +5,148 @@ published: 2022-10-25
 lastModified: 2022-10-30
 ---
 
-**Guest star: @mathuccino**
 
-My advice is 
+> My advice is **don't focus too much on articles**
+>
+> _@mathuccino_
 
-> don't focus too much on articles
-
-
-## A primer
-
-[This](https://www.sciencedirect.com/science/article/pii/S0896627320307054) is the article I was reading, it is said to be a "primer" but actually covers the mathematical foundational aspects as well as the code for "hands on" experience
-
-I found it good to begin with because it's a "primer", which means it's simple enough for you to play with it
-
-You can find the repo [here](https://github.com/gyyang/multitask)
+Practice, practice, practice!
 
 
-But this is still a bit vague for what you asked I think
-
-It's a compilation of examples, they have around 30
-
-Some are from biology as I can see
-
-But it's the "basics"
+> ANN are universal function approximators
+>
+> Julien Pascal [mentioning the theorem and writing code in Julia](https://julienpascal.github.io/post/ann_1/)
 
 
-## Applying Evolutionary Artificial Neural Networks
+## The simpliest ANN
 
-[This repo](https://github.com/ArztSamuel/Applying_EANNs) simulates a car that mustn't touch walls
+First of all lets create the simpliest but non trivial perceptron - [neuron system that works as a XOR function](https://medium.com/mlearning-ai/learning-xor-with-pytorch-c1c11d67ba8e).
+Two input neurons, two in the hidden layer, and one neuron - output. Simple as that:
 
-It made me think of your research because the README file states 
+```py
+"""
+Original code:
+https://courses.cs.washington.edu/courses/cse446/18wi/sections/section8/XOR-Pytorch.html
 
-> A car has five front-facing sensors which measure the distance to obstacles in a given direction. The readings of these sensors serve as the input of the car's neural network.
+Another reference from:
+https://medium.com/mlearning-ai/learning-xor-with-pytorch-c1c11d67ba8e
+https://colab.research.google.com/drive/1sKJfB5YAfAUD9PU-SNDGlMdKa9M7yCcH?usp=sharing
 
-Here, the official description 
+Made it work in Python 3, PyTorch 1.11
+"""
 
->A 2D Unity simulation in which cars learn to navigate themselves through different courses. The cars are steered by a feedforward neural network. The weights of the network are trained using a modified genetic algorithm.
+import torch
+from torch.autograd import Variable
+import torch.nn as nn
+import numpy as np
+import matplotlib.pyplot as plt
+# %matplotlib inline
 
+# for reproducible results
+# torch.manual_seed(2)
+# np.random.seed(2)
 
-## Machine learning without any libraries
-
-You have [this very basic implemetation](https://github.com/pavankalyan1997/Machine-learning-without-any-libraries/blob/master/8.%20ANN/ANN.py) of ANNs in Python with one hidden layer and no hidden dependencies
-
-
-## Value Iteration Network (VIN)
-
-There is this repo [here](https://github.com/itdxer/neupy)
-
-> Exploring world with Value Iteration Network (VIN) One of the basic applications of the Value Iteration Network that learns how to find an optimal path between two points in the environment with obstacles.
-
-from an article (2017 Aviv Tamar, Yi Wu, Garrett Thomas, Sergey Levine, and Pieter Abbeel - [Value Iteration Networks](https://arxiv.org/pdf/1602.02867.pdf))
-
-> We introduce the value iteration network (VIN): a fully differentiable neural network with a ‘planning module’ embedded within. VINs can learn to plan, and are suitable for predicting outcomes that involve planning-based reasoning, such as policies for reinforcement learning.
-
-![VIN figure 1](./vin-figure-1.jpg "Typical example of use")
-
-Here's a bold claim accusing RL in only maximizing one action over a smart strategy
-
-> [Typical NNs] are inherently reactive, and in particular, lack explicit planning computation. The success of reactive policies in sequential problems is due to the learning algorithm, which essentially trains a reactive policy to select actions that have good long-term consequences in its training domain.
+epochs = 2001
+X = torch.Tensor([ [0,0], [0,1], [1,0], [1,1] ])
+Y = torch.Tensor([0,1,1,0]).view(-1,1)
 
 
-## Simplest artificial neural network
-
-Do you code in Go? If you do, there is [this approach](https://github.com/gokadin/ai-simplest-network), the simplest one
-
-To keep in a corner because it's the "bone structure" of the way it works
-
-
-## Building Neural Networks using NumPy
-
-But we need a matrix at some point so how to generate it?
-
-[Another resource](https://github.com/ahmedfgad/NumPyANN) you might want to use. And [it seems](https://pygad.readthedocs.io/en/latest/README_pygad_nn_ReadTheDocs.html) pretty handy
-
-![PyGAD docs](./pygad-docs.jpg)
+class XOR(nn.Module):
+    def __init__(self, input_dim = 2, output_dim=1):
+        super(XOR, self).__init__()
+        self.linear1 = nn.Linear(input_dim, 2)
+        self.linear2 = nn.Linear(2, output_dim)
+    
+    def forward(self, x):
+        x = self.linear1(x)
+        x = torch.sigmoid(x)
+        x = self.linear2(x)
+        return x
 
 
-## Conclusion
+def train(model):
+    def weights_init(model):
+        # initialize the weight tensor and bias
+        linear_layers = [m for m in model.modules() if isinstance(m, nn.Linear)]
+        for m in linear_layers:
+                # here we use a normal distribution
+                m.weight.data.normal_(0, 1)
+                # print(f'Initial weights: {m.weight}')
 
-That's what I have for now. I think it is better to start with a popular repo that works and that has been tested by many before, these are projects with many collaborators so they have visibility
+    weights_init(model)
+    mseloss = nn.MSELoss() # mean squared error
+    optimizer = torch.optim.SGD(model.parameters(), lr=0.02, momentum=0.9)
+    # optimizer = torch.optim.Adam(model.parameters(), lr=0.03)
 
-Then you will focus on finding articles if needed. I am still not sure how the generation of a matrix works in your project so these approaches deserve to be compared
+    for i in range(epochs):
+        y_hat = model.forward(X)
+        loss = mseloss(y_hat, Y)
+        loss.backward()
+        optimizer.step()
+        optimizer.zero_grad()
+
+        if i % 500 == 0:
+            print(f'Epoch: {i}, Loss: {loss.item()}') 
 
 
-## Testing
+def plot_model(model):
+    model_params = list(model.parameters()) # returns weights and biases
+    model_weights = model_params[0].data.numpy()
+    print(f' Model weights: {model_weights}')
+    model_bias = model_params[1].data.numpy()
+    print(f' Model bias: {model_bias}')
 
-I'm eager to see what will come out of this approach of running examples before reading articles.  need to check them. I don't need the solution that works. I need the solution that "thinks"
+    plt.scatter(X.numpy()[[0,-1], 0], X.numpy()[[0, -1], 1], s=50)
+    plt.scatter(X.numpy()[[1,2], 0], X.numpy()[[1, 2], 1], c='red', s=50)
 
-I checked only a few links today. 
+    x_1 = np.arange(-0.1, 1.1, 0.1)
+    y_1 = ((x_1 * model_weights[0,0]) + model_bias[0]) / (-model_weights[0,1])
+    plt.plot(x_1, y_1)
 
-A Primer has Python issues, cannot run theirs http://paper.py. Maybe I need to match their environment to the T, but I don't want to break my tensorflow 2 install. 
+    x_2 = np.arange(-0.1, 1.1, 0.1)
+    y_2 = ((x_2 * model_weights[1,0]) + model_bias[1]) / (-model_weights[1,1])
+    plt.plot(x_2, y_2)
+    plt.legend(["neuron_1", "neuron_2"], loc=8)
+    plt.show()
 
-Cars on C# is basically a "game" made on Unity game engine - hard to use as a standalone project. It was created 6 years ago - may be problems to run it on current Unity version. Also training by genetic algorithm is no go. The result is cool tho. I saw this project somewhere before. 
 
-So I skipped simple ANN implementations and tried VIN.I had git problems here. I found a fork with a fix. Stopped at reading how to train and how it works. I also found that VIN is implemented in PyTorch and TensorFlow which means I don't need to use neupy library. 
+if __name__ == "__main__":
+    model = XOR()
+    train(model)
+    plot_model(model)
+```
 
-I thought that this will be faster. At the same time I started recording my screen: how I install and run examples in order to make educational reels for Instagram. As you understand I have no results to show atm. I have your links and description saved - it will not be lost.
+![Output](./pytorch-ann-xor-function.png)
+
+Later you might be tempted to review such simple systems further
+
+- [ANN Primer](https://www.sciencedirect.com/science/article/pii/S0896627320307054) for Neuroscientists. It covers the mathematical foundational aspects as well as the code for "hands on" experience. Around 30 examples are in [the repo](https://github.com/gyyang/multitask) (written for Tensorflow 1.8.0, Python 2.7 / 3.6)
+- [Very basic implemetation](https://github.com/pavankalyan1997/Machine-learning-without-any-libraries/blob/master/8.%20ANN/ANN.py) of ANNs in Python with one hidden layer and no hidden dependencies (requires: numpy, pandas, scikit-learn, matplotlib)
+- [The simplest artificial neural network possible](https://github.com/gokadin/ai-simplest-network) explained and demonstrated. Even if you don't code in Go, check out the theory - it's the "bone structure" you need to understand
+- [ANN module](https://pygad.readthedocs.io/en/latest/README_pygad_nn_ReadTheDocs.html) in PyGAD library
+- [NumPy only dependency](https://github.com/ahmedfgad/NumPyANN/blob/master/TutorialProject/ann_numpy.py)
+
+
+So if you think library for machine learning is not making this example any simpler, then look how it would look with no external libraries (only numpy for matrix operations)
+
+```py
+```
 
 
 ## Function approximation
 
-https://machinelearningmastery.com/neural-networks-are-function-approximators/
+Then let's [approximate the sin function](https://machinelearningmastery.com/neural-networks-are-function-approximators/) and generalize our knowledge for any function. What requirements stand for functions in order to be approximable by neural networks?
 
-- function sophistication
-- function properties (differentiable, continuous, smooth)
+Later we will focus out research on aspects such as
+
+- function sophistication (hypothesis: you get an excellent approximation but with apparently many more epochs needed)
+- function properties: differentiable, continuous, smooth
 - sinusoid and exponential (infinitely differentiable so no problems) -> approx with linear regression
-- strctural limitations of the network
+- structural limitations of the network
 - accuracy control
 
-[article](https://blog.cubieserver.de/2019/approximate-function-with-neural-network/) contains source code and very good approx with 20 to 50 neurons
+[Here is a blog post](https://blog.cubieserver.de/2019/approximate-function-with-neural-network/) which tackles a few of the last bullet points.
 
-
-> ANN are universal function approximators
-
-For a slightly more complicated function, you get an excellent approximation but with apparently many more epochs needed (the log scale for the ration Training Loss/Epoch)
-
-https://julienpascal.github.io/post/ann_1/
 
 
 ## Deep Q-learning
@@ -176,3 +202,7 @@ Activity Recognition with Adaptive Neural Networks - [Notebook](https://www.kagg
 I somewhat satisfied how many topics we tackled this week. Even though I didn't train a single ANN (I think conventional "training" is wrong because it stops once errors on test set are minimized which obviously reveals the flaw - the network can only do what it trained to do), but I see that ANN can approximate functions, can follow logical statements, can store information as memory. It creates a base for my theory. Some insights can be borrowed from neuroscience to advance ANN quality, but there must be a way to transfer connections into symbolism - extract functions, logic and memories encoded in ANN. So what we just did, but in reverse.
 
 
+
+## Bonus reading
+
+[This repo](https://github.com/ArztSamuel/Applying_EANNs) simulates a car that mustn't touch walls. "A 2D Unity simulation in which cars learn to navigate themselves through different courses. The cars are steered by a feedforward neural network. The weights of the network are trained using a modified genetic algorithm." Cars on C# is basically a "game" made on Unity game engine - hard to use as a standalone project. It was created 6 years ago - may be problems to run it on current Unity version. Also training by genetic algorithm is no go. The result is cool tho. (Unity, Genetic algorithm)

@@ -80,7 +80,7 @@ Note: Pay attention to a paragraph about bulk resistance
 
 - [Adafruit TB6612 1.2A DC/Stepper Motor Driver Breakout Board](https://www.adafruit.com/product/2448) (TB6612)
 - [A-Star 32U4 Robot Controller LV with Raspberry Pi Bridge](https://www.pololu.com/product/3117) (DRV8838). Using [their schematics](https://www.pololu.com/file/0J950/a-star-32u4-robot-controller-lv-with-raspberry-pi-bridge-schematic.pdf) I verified that there is no need to add more capacitors or resistors to the original scheme.
-
+- [X-NUCLEO-IHM08M1](https://www.st.com/en/ecosystems/x-nucleo-ihm08m1.html) (L6398). Half bridge, but oriented on brushless motors that require a special algorithm to supply power, which is a part of hardware.
 
 ## Questions
 

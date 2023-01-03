@@ -41,3 +41,8 @@ Drive power should always tailor to the load and thus discrete components.
 Let me know what he wants to do with it and I'll give more. 
 Microchip and stm are great control chips for high power apps.
 Also let me know if the control needs to be synced with other controls.
+
+
+---------
+
+Mosfets are controlled by voltage (opposite to normal transistors that are controlled by current)

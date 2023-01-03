@@ -7,7 +7,6 @@ published: 2022-10-03
 lastModified: 2022-12-19
 ---
 
-
 First a quick overview of current branches in machine learning (by [Oleksii Trekhleb](https://github.com/trekhleb/homemade-machine-learning))
 
 ![ML roadmap](./machine-learning-map.png)
