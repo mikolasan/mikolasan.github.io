@@ -5,7 +5,7 @@ published: 2022-10-03
 lastModified: 2022-10-03
 ---
 
-It would be strange to learn Machine Learning and never use [Jupyter](http://jupyter.org) notebooks. Data scientist LOVE Jupyter notebooks. It's what they use on **kaggle** and **Google Colab**. So let's begin.
+It would be strange to learn Machine Learning and never use [Jupyter](http://jupyter.org) notebooks. Data scientists LOVE Jupyter notebooks. It's what they use on **kaggle** and **Google Colab**. So let's begin.
 
 ## Install
 
