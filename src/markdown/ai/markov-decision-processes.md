@@ -35,7 +35,7 @@ May be good for the implementation
 - https://github.com/infer-actively/pymdp
 
 
-## Value Iteration Network (VIN)
+## Value Iteration Networks
 
 There is this repo [here](https://github.com/itdxer/neupy)
 
@@ -52,4 +52,4 @@ Here's a bold claim accusing RL in only maximizing one action over a smart strat
 > [Typical NNs] are inherently reactive, and in particular, lack explicit planning computation. The success of reactive policies in sequential problems is due to the learning algorithm, which essentially trains a reactive policy to select actions that have good long-term consequences in its training domain.
 
 
-So I skipped simple ANN implementations and tried VIN.I had git problems here. I found a fork with a fix. I also found that VIN is implemented in PyTorch and TensorFlow which means I don't need to use neupy library. 
+So I skipped simple ANN implementations and [tried VIN](https://github.com/avivt/VIN). I had git problems here. I found a fork with a fix. I also found that VIN is implemented in [PyTorch](https://github.com/kentsommer/pytorch-value-iteration-networks) and [TensorFlow](https://github.com/TheAbhiKumar/tensorflow-value-iteration-networks) which means I don't need to use neupy library. 

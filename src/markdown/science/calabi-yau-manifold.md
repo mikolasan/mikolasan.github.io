@@ -22,6 +22,8 @@ By the way, check this out, the [quadridimensional version](http://www.lactamme.
 - Formulae, explanation and d3.js code https://observablehq.com/@sw1227/calabi-yau-manifold-3d
 - Wireframe version with Three.js https://analyticphysics.com/Higher%20Dimensions/Visualizing%20Calabi-Yau%20Manifolds.htm
 
+![Example illustration of the manifold](./calabi-yau-manifold-observablehq.png "exponent=5 projection=3.6 Credit: @sw1227")
+
 ## The math
 
 

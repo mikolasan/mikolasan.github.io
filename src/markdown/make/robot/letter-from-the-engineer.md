@@ -46,3 +46,8 @@ Also let me know if the control needs to be synced with other controls.
 ---------
 
 Mosfets are controlled by voltage (opposite to normal transistors that are controlled by current)
+
+More links:
+
+- https://www.nutsvolts.com/magazine/article/power_mosfets
+- https://www.electronics-tutorials.ws/transistor/tran_7.html

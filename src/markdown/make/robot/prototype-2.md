@@ -14,3 +14,4 @@ lastModified: 2022-12-26
 - get power straight from PSU when in charge mode (something like [TPS2113](https://www.ti.com/lit/ds/symlink/tps2113.pdf))
 - add to power board logic level 3.3V
 - brushless DC motors
+- look into adjustable output regulator based on [L78M](https://datasheetspdf.com/pdf-file/1045179/STMicroelectronics/78M12/1) and [LS141](https://datasheetspdf.com/pdf-file/237025/SGS/LS141/1)

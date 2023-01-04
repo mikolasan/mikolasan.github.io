@@ -34,7 +34,7 @@ Multiply voltage by 4/3 or 3/2 (electrolytic caps) and up to 2 (ceramic caps)
 - Eagle PCB tutorials by Ilya Mikhelson: [Layout part 1](https://www.youtube.com/watch?v=a1l6N7BVINA&t=1135s), [part 2](https://www.youtube.com/watch?v=Eu5XMEh79XM)
 - Keep your components in one library: [Custom library](https://www.youtube.com/watch?v=yvRGmltr_P8), [Add 3D models to the library](https://support.snapeda.com/en/articles/3545085-how-to-import-a-3d-model-into-eagle)
 - Manufacturer specifications: [Design Rules files for OSHPARK](https://docs.oshpark.com/design-tools/eagle/design-rules-files/), [Cutouts](https://docs.oshpark.com/design-tools/eagle/cutouts-and-slots/), [Drill specs](https://docs.oshpark.com/submitting-orders/drill-specs/)
-
+- Arduino shield template for Eagle [from Adafruit library](https://github.com/adafruit/Adafruit-Eagle-Library): ARDUINOR3 -> ARDUINOR3-BPLACE
 
 ### Cheatsheet
 

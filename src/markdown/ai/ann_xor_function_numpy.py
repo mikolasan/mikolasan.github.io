@@ -7,13 +7,11 @@ https://raw.githubusercontent.com/ahmedfgad/NumPyANN/master/TutorialProject/ann_
 import numpy
 
 
-def sigmoid(inpt):
-    return 1.0 / (1 + numpy.exp(-1 * inpt))
+def sigmoid(x):
+    return 1.0 / (1 + numpy.exp(-1 * x))
 
-def relu(inpt):
-    result = inpt
-    result[inpt < 0] = 0
-    return result
+def relu(x):
+    return max(0, x)
 
 def update_weights(weights, learning_rate):
     new_weights = weights - learning_rate * weights
@@ -25,7 +23,7 @@ def train_network(num_iterations,
                   data_inputs,
                   data_outputs,
                   learning_rate,
-                  activation="relu"):
+                  activation=relu):
     for iteration in range(num_iterations):
         print("Itreation ", iteration)
         
@@ -35,10 +33,7 @@ def train_network(num_iterations,
             for idx in range(len(weights) - 1):
                 curr_weights = weights[idx]
                 x = numpy.matmul(x, curr_weights)
-                if activation == "relu":
-                    x = relu(x)
-                elif activation == "sigmoid":
-                    x = sigmoid(x)
+                x = activation(x)
             curr_weights = weights[-1]
             x = numpy.matmul(x, curr_weights)
             predicted_label = numpy.where(x == numpy.max(x))[0][0]
@@ -49,7 +44,7 @@ def train_network(num_iterations,
     return (weights, biases)
 
 
-def predict_outputs(weights, data_inputs, activation="relu"):
+def predict_outputs(weights, data_inputs, activation=relu):
     predictions = numpy.zeros(shape=(data_inputs.shape[0]))
     for sample_idx in range(data_inputs.shape[0]):
         x = data_inputs[sample_idx, :]
@@ -78,7 +73,7 @@ weights_tarined, biases_tarined = train_network(num_iterations=10,
                         data_inputs=data_inputs,
                         data_outputs=data_outputs,
                         learning_rate=0.01,
-                        activation="relu")
+                        activation=relu)
 
 print(weights_tarined)
 print(biases_tarined)

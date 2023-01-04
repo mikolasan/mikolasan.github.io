@@ -5,17 +5,22 @@ published: 2022-10-25
 lastModified: 2022-10-30
 ---
 
+In this post we collect known research about Artificial Neural Networks and their property to approximate non-linear functions and logical statements. We review simple examples, and in the end we implement Reinforcement Learning purely as a Neural Network.
+
+> ANN are universal function approximators
+>
+> Julien Pascal [mentioning the theorem and writing code in Julia](https://julienpascal.github.io/post/ann_1/)
+
+This is our first step that carries important hypotesis that **any algorithm can be approximated by Neural Networks**.
+
+But before we start, one word from our guest star, Mathuccino.
 
 > My advice is **don't focus too much on articles**
 >
 > _@mathuccino_
 
-Practice, practice, practice!
 
-
-> ANN are universal function approximators
->
-> Julien Pascal [mentioning the theorem and writing code in Julia](https://julienpascal.github.io/post/ann_1/)
+So practice, practice, practice! We focus on examples implemented with PyTorch and also very transparent version without any ML framework.
 
 
 ## The simpliest ANN
@@ -23,28 +28,12 @@ Practice, practice, practice!
 First of all lets create the simpliest but non trivial perceptron - [neuron system that works as a XOR function](https://medium.com/mlearning-ai/learning-xor-with-pytorch-c1c11d67ba8e).
 Two input neurons, two in the hidden layer, and one neuron - output. Simple as that:
 
+- [nn.Module](https://pytorch.org/docs/stable/generated/torch.nn.Module.html)
+- [MSELoss](https://pytorch.org/docs/stable/generated/torch.nn.MSELoss.html)
+
 ```py
-"""
-Original code:
-https://courses.cs.washington.edu/courses/cse446/18wi/sections/section8/XOR-Pytorch.html
-
-Another reference from:
-https://medium.com/mlearning-ai/learning-xor-with-pytorch-c1c11d67ba8e
-https://colab.research.google.com/drive/1sKJfB5YAfAUD9PU-SNDGlMdKa9M7yCcH?usp=sharing
-
-Made it work in Python 3, PyTorch 1.11
-"""
-
 import torch
-from torch.autograd import Variable
 import torch.nn as nn
-import numpy as np
-import matplotlib.pyplot as plt
-# %matplotlib inline
-
-# for reproducible results
-# torch.manual_seed(2)
-# np.random.seed(2)
 
 epochs = 2001
 X = torch.Tensor([ [0,0], [0,1], [1,0], [1,1] ])
@@ -65,18 +54,14 @@ class XOR(nn.Module):
 
 
 def train(model):
-    def weights_init(model):
-        # initialize the weight tensor and bias
-        linear_layers = [m for m in model.modules() if isinstance(m, nn.Linear)]
-        for m in linear_layers:
-                # here we use a normal distribution
-                m.weight.data.normal_(0, 1)
-                # print(f'Initial weights: {m.weight}')
+    # initialize the weight tensor and bias
+    linear_layers = [m for m in model.modules() if isinstance(m, nn.Linear)]
+    for m in linear_layers:
+        # here we use a normal distribution
+        m.weight.data.normal_(0, 1)
 
-    weights_init(model)
     mseloss = nn.MSELoss() # mean squared error
     optimizer = torch.optim.SGD(model.parameters(), lr=0.02, momentum=0.9)
-    # optimizer = torch.optim.Adam(model.parameters(), lr=0.03)
 
     for i in range(epochs):
         y_hat = model.forward(X)
@@ -85,49 +70,24 @@ def train(model):
         optimizer.step()
         optimizer.zero_grad()
 
-        if i % 500 == 0:
-            print(f'Epoch: {i}, Loss: {loss.item()}') 
-
-
-def plot_model(model):
-    model_params = list(model.parameters()) # returns weights and biases
-    model_weights = model_params[0].data.numpy()
-    print(f' Model weights: {model_weights}')
-    model_bias = model_params[1].data.numpy()
-    print(f' Model bias: {model_bias}')
-
-    plt.scatter(X.numpy()[[0,-1], 0], X.numpy()[[0, -1], 1], s=50)
-    plt.scatter(X.numpy()[[1,2], 0], X.numpy()[[1, 2], 1], c='red', s=50)
-
-    x_1 = np.arange(-0.1, 1.1, 0.1)
-    y_1 = ((x_1 * model_weights[0,0]) + model_bias[0]) / (-model_weights[0,1])
-    plt.plot(x_1, y_1)
-
-    x_2 = np.arange(-0.1, 1.1, 0.1)
-    y_2 = ((x_2 * model_weights[1,0]) + model_bias[1]) / (-model_weights[1,1])
-    plt.plot(x_2, y_2)
-    plt.legend(["neuron_1", "neuron_2"], loc=8)
-    plt.show()
-
-
-if __name__ == "__main__":
-    model = XOR()
-    train(model)
-    plot_model(model)
 ```
+
+[Full code](./ann_xor_function_pytorch.py) (plotting function is skipped for clarity)
 
 ![Output](./pytorch-ann-xor-function.png)
 
+I have a problem with 2000 epochs on some seed values. [This](https://machinelearningmastery.com/introduction-to-regularization-to-reduce-overfitting-and-improve-generalization-error/) might give an answer.
+
 Later you might be tempted to review such simple systems further
 
-- [ANN Primer](https://www.sciencedirect.com/science/article/pii/S0896627320307054) for Neuroscientists. It covers the mathematical foundational aspects as well as the code for "hands on" experience. Around 30 examples are in [the repo](https://github.com/gyyang/multitask) (written for Tensorflow 1.8.0, Python 2.7 / 3.6)
-- [Very basic implemetation](https://github.com/pavankalyan1997/Machine-learning-without-any-libraries/blob/master/8.%20ANN/ANN.py) of ANNs in Python with one hidden layer and no hidden dependencies (requires: numpy, pandas, scikit-learn, matplotlib)
 - [The simplest artificial neural network possible](https://github.com/gokadin/ai-simplest-network) explained and demonstrated. Even if you don't code in Go, check out the theory - it's the "bone structure" you need to understand
-- [ANN module](https://pygad.readthedocs.io/en/latest/README_pygad_nn_ReadTheDocs.html) in PyGAD library
+- [Very basic implemetation](https://github.com/pavankalyan1997/Machine-learning-without-any-libraries/blob/master/8.%20ANN/ANN.py) of ANNs in Python with one hidden layer and no hidden dependencies (requires: numpy, pandas, scikit-learn, matplotlib)
 - [NumPy only dependency](https://github.com/ahmedfgad/NumPyANN/blob/master/TutorialProject/ann_numpy.py)
+- [ANN module](https://pygad.readthedocs.io/en/latest/README_pygad_nn_ReadTheDocs.html) in PyGAD library
+- [ANN Primer](https://www.sciencedirect.com/science/article/pii/S0896627320307054) for Neuroscientists. It covers the mathematical foundational aspects as well as the code for "hands on" experience. Around 30 examples are in [the repo](https://github.com/gyyang/multitask) (written for Tensorflow 1.8.0, Python 2.7 / 3.6)
 
 
-So if you think library for machine learning is not making this example any simpler, then look how it would look with no external libraries (only numpy for matrix operations)
+So if you think library for machine learning is not making this example any simpler, then look how it would look with no external libraries (only numpy for matrix operations [don't know numpy - help!](https://numpy.org/devdocs/user/absolute_beginners.html)) 
 
 ```py
 ```
@@ -147,36 +107,34 @@ Later we will focus out research on aspects such as
 
 [Here is a blog post](https://blog.cubieserver.de/2019/approximate-function-with-neural-network/) which tackles a few of the last bullet points.
 
+![3d function approximation](./ann-function-approximation.png)
 
+## Numerical differentiation
 
-## Deep Q-learning
+### Lotka Volterra model
 
-https://observablehq.com/@mbostock/predator-and-prey
+[Theory and graphs](https://observablehq.com/@mbostock/predator-and-prey)
 
 So I'm trying to find Python library for numerical differentiation. numpy should do it, but I don't see an example for function of two variables f(x, y) that depend on time - x(t), y(t).
 
-And in math explanation I noticed one thing. I said Riemann sums, but I actually meant Taylor series expansion which is also about approximation, but in Taylor series accuracy grows with more operands we take into account.
-
-So Python code from Jack's blog works, but I didn't put my function because I need to make an array of differentiated values. Not sure why. I wanted just to play around with things. And I stopped reading on [this](https://www.tensorflow.org/agents/tutorials/0_intro_rl)
-
-Which is maybe what we are looking.
-
-
-## Logic statements in ANN
-
-I've found two articles, more of a good read than a coding tutorial, it seems relevant:
-
-1. [Emulating logical gates with a neural network](https://towardsdatascience.com/emulating-logical-gates-with-a-neural-network-75c229ec4cc9)
-2. [How to teach logic to your neural networks](https://medium.com/autonomous-agents/how-to-teach-logic-to-your-neuralnetworks-116215c71a49) And in this last link, you will find [a link](https://playground.tensorflow.org/#activation=sigmoid&regularization=L2&batchSize=10&dataset=xor&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=0&networkShape=2,2,1&seed=0.00814&showTestData=false&discretize=false&percTrainData=90&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false) to TensorFlow Playground, that could help you visualize your network. And the associated [GitHub page](https://github.com/tensorflow/playground)
-
-
-Ok for the multivariable thing you don't use numpy but [SymPy](https://docs.sympy.org/latest/tutorials/intro-tutorial/calculus.html). [A more digestible tuto](https://www.askpython.com/python/examples/derivatives-in-python-sympy). It also explains how to use the chain rule
+For the multivariable thing you don't use numpy but [SymPy](https://docs.sympy.org/latest/tutorials/intro-tutorial/calculus.html).
+[A more digestible tuto](https://www.askpython.com/python/examples/derivatives-in-python-sympy).
+It also explains how to use the chain rule
 
 For Lotka-Volterra ordinary differential equations
 
 - sympy and scipi http://bebi103.caltech.edu.s3-website-us-east-1.amazonaws.com/2015/tutorials/r6_sympy.html
 - algebraic solution with sympy https://ipython-books.github.io/157-analyzing-a-nonlinear-differential-system-lotka-volterra-predator-prey-equations/
 - scipy with plot https://scientific-python.readthedocs.io/en/latest/notebooks_rst/3_Ordinary_Differential_Equations/02_Examples/Lotka_Volterra_model.html
+
+![Lotka Volterra graph](./lotka-volterra-graph.png)
+
+## Logic statements in ANN
+
+I've found two articles, more of a good read than a coding tutorial, it seems relevant:
+
+1. [Emulating logical gates with a neural network](https://towardsdatascience.com/emulating-logical-gates-with-a-neural-network-75c229ec4cc9)
+2. [How to teach logic to your neural networks](https://medium.com/autonomous-agents/how-to-teach-logic-to-your-neuralnetworks-116215c71a49). And in this last link, you will find a link to [TensorFlow Playground](https://playground.tensorflow.org/#activation=sigmoid&regularization=L2&batchSize=10&dataset=xor&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=0&networkShape=2,2,1&seed=0.00814&showTestData=false&discretize=false&percTrainData=90&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false), that could help you visualize your network. And the associated [GitHub page](https://github.com/tensorflow/playground)
 
 
 ## Develop new actions
@@ -199,7 +157,7 @@ Activity Recognition with Adaptive Neural Networks - [Notebook](https://www.kagg
 [Multi Layer Perceptron](https://scikit-learn.org/stable/modules/neural_networks_supervised.html) - I don't like this approach too much but just sending in case
 
 
-I somewhat satisfied how many topics we tackled this week. Even though I didn't train a single ANN (I think conventional "training" is wrong because it stops once errors on test set are minimized which obviously reveals the flaw - the network can only do what it trained to do), but I see that ANN can approximate functions, can follow logical statements, can store information as memory. It creates a base for my theory. Some insights can be borrowed from neuroscience to advance ANN quality, but there must be a way to transfer connections into symbolism - extract functions, logic and memories encoded in ANN. So what we just did, but in reverse.
+I think conventional "training" is wrong because it stops once errors on test set are minimized which obviously reveals the flaw - the network can only do what it trained to do), but I see that ANN can approximate functions, can follow logical statements, can store information as memory. It creates a base for my theory. Some insights can be borrowed from neuroscience to advance ANN quality, but there must be a way to transfer connections into symbolism - extract functions, logic and memories encoded in ANN. So what we just did, but in reverse.
 
 
 
