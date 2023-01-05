@@ -34,7 +34,7 @@ export const articles = [
     instead the cause of movement is proprioception, the force of gravity, and thoughts combined. 
     </p>`,
     readMore: `And how did we come to embodied cognition? Again.`,
-    imgSrc: `/images/home/sensor-dashboard.jpg`,
+    imgSrc: `/images/home/feel-like-i-ramen.jpg`,
     imgAlt: null,
   },
   {
