@@ -29,18 +29,27 @@ Multiply voltage by 4/3 or 3/2 (electrolytic caps) and up to 2 (ceramic caps)
 
 **Reference**: [1](https://electronics.stackexchange.com/questions/15700/selecting-voltage-rating-for-capacitors), [2](http://www.learningaboutelectronics.com/Articles/What-does-the-voltage-rating-on-a-capacitor-mean), [3](https://resources.pcb.cadence.com/blog/2022-ceramic-capacitor-voltage-ratings-here-is-what-you-need-to-know)
 
+
 ## Eagle
 
 - Eagle PCB tutorials by Ilya Mikhelson: [Layout part 1](https://www.youtube.com/watch?v=a1l6N7BVINA&t=1135s), [part 2](https://www.youtube.com/watch?v=Eu5XMEh79XM)
 - Keep your components in one library: [Custom library](https://www.youtube.com/watch?v=yvRGmltr_P8), [Add 3D models to the library](https://support.snapeda.com/en/articles/3545085-how-to-import-a-3d-model-into-eagle)
 - Manufacturer specifications: [Design Rules files for OSHPARK](https://docs.oshpark.com/design-tools/eagle/design-rules-files/), [Cutouts](https://docs.oshpark.com/design-tools/eagle/cutouts-and-slots/), [Drill specs](https://docs.oshpark.com/submitting-orders/drill-specs/)
 - Arduino shield template for Eagle [from Adafruit library](https://github.com/adafruit/Adafruit-Eagle-Library): ARDUINOR3 -> ARDUINOR3-BPLACE
+- Footprints and 3D model collections: [SnapEDA](https://www.snapeda.com/), [Ultra Librarian](https://www.ultralibrarian.com/), [SamacSys](https://componentsearchengine.com/) on Mouser
+- Change PCB color: Board view -> Manufacturing -> Configure Preview -> Copper Color / Soldermask Color
 
 ### Cheatsheet
 
 - create schematics document in Eagle
 - Edit -> Add... -> Scroll down to **frames**, Choose LETTER_L
 - ...
+
+
+## Fusion 360
+
+- Change PCB color: go back to Eagle
+
 
 ## SMD Package Types
 
