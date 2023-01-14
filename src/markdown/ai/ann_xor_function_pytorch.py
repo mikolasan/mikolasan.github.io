@@ -68,6 +68,10 @@ def plot_model(model):
     print(f' Model weights: {model_weights}')
     model_bias = model_params[1].data.numpy()
     print(f' Model bias: {model_bias}')
+    # model_weights = model_params[2].data.numpy()
+    # print(f' Model weights: {model_weights}')
+    # model_bias = model_params[3].data.numpy()
+    # print(f' Model bias: {model_bias}')
 
     plt.scatter(X.numpy()[[0,-1], 0], X.numpy()[[0, -1], 1], s=50)
     plt.scatter(X.numpy()[[1,2], 0], X.numpy()[[1, 2], 1], c='red', s=50)
