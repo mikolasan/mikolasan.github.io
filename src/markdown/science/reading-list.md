@@ -23,4 +23,7 @@ Very interesting things that have very good write up, but I do not have time to 
 ## Books that every machine learning enthusiast should read
 
 - **Neuronal Dynamics: From single neurons to networks and models of cognition** [online book](https://neuronaldynamics.epfl.ch/index.html)
+- Neural Networks and Deep Learning by Michael Nielsen [Online](http://neuralnetworksanddeeplearning.com/)
+- Bayesian Optimization by Roman Garnett [PDF](https://bayesoptbook.com/book/bayesoptbook.pdf)
+- Reinforcement Learning: An Introduction by Richard S. Sutton and Andrew G. Barto [Link](http://incompleteideas.net/book/the-book.html)
 - **Neural Networks from Scratch** [eBook](https://nnfs.io/)

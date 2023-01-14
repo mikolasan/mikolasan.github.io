@@ -23,6 +23,19 @@ But before we start, one word from our guest star, Mathuccino.
 So practice, practice, practice! We focus on examples implemented with PyTorch and also very transparent version without any ML framework.
 
 
+## Backpropagation formally introduced
+
+- superscript indecies for layers in [this big SO question](https://stats.stackexchange.com/questions/154879/a-list-of-cost-functions-used-in-neural-networks-alongside-applications) based on [free online book](http://neuralnetworksanddeeplearning.com/) by Michael Neilsen
+- sequence of matrix-vector tuples in [Limitations of neural network training due to numerical instability of backpropagation](https://arxiv.org/pdf/2210.00805.pdf)
+- multivariate vector-valued function [An induction proof of the backpropagation algorithm in matrix notation](https://arxiv.org/pdf/2107.09384.pdf)
+- function on matrices [The Convex Geometry of Backpropagation: Neural Network Gradient Flows Converge to Extreme Points of the Dual Convex](https://arxiv.org/pdf/2110.06488.pdf)
+- tensors, preactivation, activation finctions and Hadamard product in [DITHERED BACKPROP: A SPARSE AND QUANTIZED BACKPROPAGATION ALGORITHM FOR MORE EFFICIENT DEEP NEURAL NETWORK TRAINING](https://arxiv.org/pdf/2004.04729.pdf)
+- neuron is a tree in [Backpropagation Neural Tree](https://arxiv.org/pdf/2202.02248.pdf)
+- composition of functions in [INVARIANT BACKPROPAGATION: HOW TO TRAIN A TRANSFORMATION-INVARIANT NEURAL NETWORK](https://arxiv.org/pdf/1502.04434.pdf)
+- Moore-Penrose pseudoinverse of a matrix in [ZORB: A Derivative-Free Backpropagation Algorithm for Neural Networks](https://arxiv.org/pdf/2011.08895.pdf)
+- integrate-and-fire neurons with integration variable and threshold in [SpikeGrad: An ANN-equivalent Computation Model for Implementing Backpropagation with Spikes](https://arxiv.org/pdf/1906.00851.pdf)
+
+
 ## The simpliest ANN
 
 First of all lets create the simpliest but non trivial perceptron - [neuron system that works as a XOR function](https://medium.com/mlearning-ai/learning-xor-with-pytorch-c1c11d67ba8e).
@@ -80,13 +93,14 @@ I have a problem with 2000 epochs on some seed values. [This](https://machinelea
 
 Later you might be tempted to review such simple systems further
 
-- [The simplest artificial neural network possible](https://github.com/gokadin/ai-simplest-network) explained and demonstrated. Even if you don't code in Go, check out the theory - it's the "bone structure" you need to understand.
-- But if in the first place you want **math stuff**, then here is a [simple explanation](https://towardsdatascience.com/applied-deep-learning-part-1-artificial-neural-networks-d7834f67a4f6), or [detailed one](https://cs231n.github.io/optimization-2/).
-- [Very basic implemetation](https://github.com/pavankalyan1997/Machine-learning-without-any-libraries/blob/master/8.%20ANN/ANN.py) of ANNs in Python with one hidden layer and no hidden dependencies (requires: numpy, pandas, scikit-learn, matplotlib)
-- [NumPy only dependency](https://github.com/ahmedfgad/NumPyANN/blob/master/TutorialProject/ann_numpy.py)
-- [ANN module](https://pygad.readthedocs.io/en/latest/README_pygad_nn_ReadTheDocs.html) in PyGAD library
+- [The simplest artificial neural network possible](https://github.com/gokadin/ai-simplest-network) explained and demonstrated. Even if you don't code in Go, check out the theory - it's the "bone structure" you need to understand. [Better matrix pictures](https://towardsdatascience.com/understanding-backpropagation-algorithm-7bb3aa2f95fd)
+- But if in the first place you want **math stuff**, then here is a [simple explanation](https://towardsdatascience.com/applied-deep-learning-part-1-artificial-neural-networks-d7834f67a4f6), or [about gradients](https://cs231n.github.io/optimization-2/), or [this chapter from free book](http://neuralnetworksanddeeplearning.com/chap2.html).
+- [Very basic implemetation](https://github.com/pavankalyan1997/Machine-learning-without-any-libraries/blob/master/8.%20ANN/ANN.py) of ANNs in Python with one hidden layer and no hidden dependencies (requires: numpy, pandas, scikit-learn, matplotlib).
+- To do it clearly with no libraries, check out unbeatable and legendary Jason Brownlee [here](https://machinelearningmastery.com/implement-backpropagation-algorithm-scratch-python/). He has _some_ explanation about backpropaganation to the hidden layer (about multiplication on the weight matrix).
 - [ANN Primer](https://www.sciencedirect.com/science/article/pii/S0896627320307054) for Neuroscientists. It covers the mathematical foundational aspects as well as the code for "hands on" experience. Around 30 examples are in [the repo](https://github.com/gyyang/multitask) (written for Tensorflow 1.8.0, Python 2.7 / 3.6)
-
+- [Why cross-entropy better than mean squared error](https://jamesmccaffrey.wordpress.com/2013/11/05/why-you-should-use-cross-entropy-error-instead-of-classification-error-or-mean-squared-error-for-neural-network-classifier-training/) (better converges to 0 1 limits if we are using softmax on output)
+- Play with another [cost functions](https://stats.stackexchange.com/questions/154879/a-list-of-cost-functions-used-in-neural-networks-alongside-applications)
+- Very ugly [NumPy only version](https://github.com/ahmedfgad/NumPyANN/blob/master/TutorialProject/ann_numpy.py). My mistake, I started fiddling with this code. Don't repeat my mistakes. Another options: [this](https://towardsdatascience.com/how-to-build-a-deep-neural-network-without-a-framework-5d46067754d5) [code](https://github.com/marcopeix/Deep_Learning_AI/blob/master/1.Neural%20Networks%20and%20Deep%20Learning/4.Deep%20Neural%20Networks/dnn_utils_v2.py)
 
 So if you think library for machine learning is not making this example any simpler, then look how it would look with no external libraries (only numpy for matrix operations [don't know numpy - help!](https://numpy.org/devdocs/user/absolute_beginners.html)) 
 
@@ -167,3 +181,5 @@ I think conventional "training" is wrong because it stops once errors on test se
 [This repo](https://github.com/ArztSamuel/Applying_EANNs) simulates a car that mustn't touch walls. "A 2D Unity simulation in which cars learn to navigate themselves through different courses. The cars are steered by a feedforward neural network. The weights of the network are trained using a modified genetic algorithm." Cars on C# is basically a "game" made on Unity game engine - hard to use as a standalone project. It was created 6 years ago - may be problems to run it on current Unity version. Also training by genetic algorithm is no go. The result is cool tho. (Unity, Genetic algorithm)
 
 [Neural Network Zoo](https://www.asimovinstitute.org/neural-network-zoo/) and [a prequel](https://www.asimovinstitute.org/neural-network-zoo-prequel-cells-layers/) by Fjodor van Veen
+
+Just another Python library - PyGAD. It's focused on optimization algorithms and genetic algorithms. Specifically [ANN module](https://pygad.readthedocs.io/en/latest/README_pygad_nn_ReadTheDocs.html) can be interesting in regards the current topic.
