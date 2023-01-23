@@ -1,6 +1,18 @@
 [
-  { 
-	  "fromPath": "/ai",
-	  "toPath": "/brain-model"
+  {
+    "fromPath": "/ai",
+    "toPath": "/brain-model"
+  },
+  {
+    "fromPath": "/blog/weston-autolaunch",
+    "toPath": "/code/weston-autolaunch"
+  },
+  {
+    "fromPath": "/blog/custom-linux",
+    "toPath": "/code/custom-linux"
+  },
+  {
+    "fromPath": "/blog/blog-with-metalsmith",
+    "toPath": "/blog/what-static-site-generator"
   }
 ]
