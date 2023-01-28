@@ -31,3 +31,9 @@ date: 2023-01-12
 
 6. Open it in TeXworks
 7. (Optional) Edit -> Preferences -> Editor: set font to Source Code Pro 11 pt
+
+
+## Cheat sheets
+
+- Small, only basice stuff https://wch.github.io/latexsheet/latexsheet.pdf
+- Very robust http://www.ccas.ru/voron/download/voron05latex.pdf (rus)

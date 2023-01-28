@@ -194,3 +194,4 @@ https://twitter.com/filippie509/status/1575512408566603776
 - [robomimic](https://robomimic.github.io/) is a framework for robot learning from demonstration
 - [nice blog](http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/)
 - [nice post](https://maziarraissi.github.io/research/7_multistep_neural_networks/)
+- Logical approach [McCulloch & Pitt's article: "A logical calculus of the ideas immanent in neural activity"](https://www.cs.cmu.edu/~./epxing/Class/10715/reading/McCulloch.and.Pitts.pdf)

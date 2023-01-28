@@ -12,6 +12,7 @@ Made it work in Python 3, PyTorch 1.11
 import torch
 import torch.nn as nn
 import numpy as np
+
 import matplotlib.pyplot as plt
 # %matplotlib inline
 
