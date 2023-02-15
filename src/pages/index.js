@@ -4,7 +4,7 @@ import { articles } from "../home/october"
 
 const Index = ({ pageContext }) => (
   <Layout
-    title="Developer, traveler, snob"
+    title="Robots, science, gamedev"
     section="root"
     languageName="Switch to russian version"
     anotherLanguageLink="/ru"

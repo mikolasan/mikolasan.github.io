@@ -1,8 +1,8 @@
 {
   "name": "gatsby-mikolasan-blog",
   "private": true,
-  "description": "Nikolay Neupokoev - developer, traveler, snob. Personal blog.",
-  "version": "0.1.0",
+  "description": "Awesome blog on Gatsby",
+  "version": "1.0.0",
   "author": "Nikolay Neupokoev <neupokoev.n@gmail.com>",
   "dependencies": {
     "@mediacurrent/gatsby-plugin-silence-css-order-warning": "^1.0.0",

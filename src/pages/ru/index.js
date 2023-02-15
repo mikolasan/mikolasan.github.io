@@ -4,12 +4,12 @@ import * as styles from "./index.module.css"
 
 const RuIndex = ({ pageContext }) => (
   <Layout
-    title="👋"
+    title="Наука, мастерская, девлог"
     section="root"
     crumbs={pageContext.breadcrumb.crumbs}
     languageName="Switch to english version"
     anotherLanguageLink="/"
-    bannerParagraph={[<h1>👋</h1>]}
+    bannerParagraph={[<h1>Наука, мастерская, девлог</h1>]}
   >
     <div className={styles.newproject}>
       <h2>Новый проект!</h2>

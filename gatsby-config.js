@@ -7,8 +7,8 @@ const siteUrl = `https://neupokoev.xyz`
 module.exports = {
   siteMetadata: {
     siteUrl: siteUrl,
-    title: `Nikolay Neupokoev - developer, traveler, snob`,
-    description: `Nikolay Neupokoev - developer, traveler, snob. Personal blog.`,
+    title: `Robots, science, gamedev - N`,
+    description: `Magazine, blog and knowledgebase for geeks`,
     author: `@mikolasan`,
   },
   trailingSlash: `never`,
@@ -242,7 +242,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "Developer Traveler Snob - RSS Feed",
+            title: "N - Robots, science, gamedev - RSS Feed",
           },
         ],
       },
