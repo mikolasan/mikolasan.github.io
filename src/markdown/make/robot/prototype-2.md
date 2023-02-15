@@ -19,6 +19,12 @@ lastModified: 2022-12-26
 
 ## Control voltage with microcontroller
 
+Good ref: https://www.analog.com/en/technical-articles/digital-adjustment-of-dcdc-converter-output-voltage-in-portable-applications.html
+
+###  Digitally Adjustable Boost Converter
+
+Like [TPS61045](https://www.ti.com/lit/ds/symlink/tps61045.pdf) or [MAX686](https://www.pacificdisplay.com/ics_app%20notes/dc-dc%20converters/MAX686.pdf)
+
 ### Digipots and opamp
 
 MCU controllable resistor - digital potentiometer (aka digipot)

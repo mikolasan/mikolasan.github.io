@@ -26,6 +26,11 @@ Similar [tank from Japan](https://burariweb.info/electronic-work/mini-tank-esp82
 
 From https://www.thingiverse.com/thing:5403752
 
+And [similar dog](https://cults3d.com/en/3d-model/gadget/conveyor-for-ore-sorting) called by the creator: conveyor for ore sorting 🤣
+
+![conveyor for ore sorting](./dog-robot-1.jpg)
+
+![conveyor for ore sorting](./dog-robot-2.jpg)
 
 ### Kawaii robot
 

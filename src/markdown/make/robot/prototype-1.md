@@ -46,6 +46,22 @@ Yellow PETG
 ![Top layer texture](./body-4.jpg)
 
 
+## One evening example
+
+What's left
+
+- switch after battery [toggle](https://www.mouser.com/ProductDetail/NKK-Switches/B12JH?qs=44TLCAUTxJv3Lb2ZvYgQ9w%3D%3D) or [slide](https://www.mouser.com/ProductDetail/TE-Connectivity-Alcoswitch/MHS133G04?qs=iWbXB9lueyBUmB9gQm6y%2FQ%3D%3D)
+- led indicator for battery input
+- led indicator for 5v out
+- with dashed line define where boost components, where charger components
+- check voltage in for the motors
+- draw the battery contour
+- replace micro usb connector
+- move CR1 down
+- (bonus) battery level indicator
+- (bonus) pwm input indicator
+
+
 ## Shopping list
 
 - battery charger [Digi-Key](https://www.digikey.com/en/products/detail/microchip-technology/MCP73833T-AMI-MF/1223181)

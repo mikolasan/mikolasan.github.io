@@ -25,6 +25,13 @@ TODO: result will be concluded <here>
 
 # 3d model
 
+I'm looking for cute neuron
+
+- https://sketchfab.com/3d-models/neuron-03a5173f3d2e46958b6f8be81b1c88be
+- https://www.turbosquid.com/3d-models/neuron-cell-max/412770#
+- https://cults3d.com/en/3d-model/game/76-spydyr
+
+
 ## Inspiration
 
 ### Flexible snakes

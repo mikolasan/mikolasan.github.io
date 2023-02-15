@@ -36,12 +36,11 @@ It worth looking through [popular designs](/make/robot/encyclopedia). I started 
 - Battery charger and step up voltage regulator in one [power board](/make/robot/power-board)
 - [Motors](/make/robot/motors)
 - [Motor driver board](/make/robot/motor-board) in case we decide to add motors for any purpose
-- Accelerometer
+- [Sensor board](/make/robot/sensor-board) (accelerometer, ultrasonic sensor)
 - Gyro
 - Tilt sensor
-- Ultrasonic sensor
 - Time of flight sensor
-- 
+- https://www.electroschematics.com/motor-speed-sensor/
 
 To design a printed circuit board you will need to learn at least some basics of CAD software like Eagle, Fusion 360, KiCAD. Here is mine notes: [PCB design 101](/make/pcb-design-101)
 
@@ -58,6 +57,7 @@ Many other things get postponed to [version 2](/make/robot/prototype-2).
 
 - If it looks too intimidating, then take a look on Kevin McAleer's video [How to design and make a robot](https://www.youtube.com/watch?v=lKxJUViQsW8) that will show how simple it can be
 - Perception of sensors and actuation of motors reviewed alos from [developmental psychology perspective](/science/developmental-psychology-studies)
+- SmartCar [1](https://www.pcbway.com/project/shareproject/Smartcar___Motors_board.html) [2](https://github.com/rosmo-robot/smartcar_shield#platform)
 - #Tiny4WD on Twiter
 
 ![Tiny4WD](./robot/tiny-4wd.jpg)
