@@ -24,3 +24,14 @@ And reverse:
 > Let **T** be a binary tree. Start in the root of **T**. If you can go down left in **T**, do it and go up in your Dyck Path. If you can’t, then go up until you can go down right where you haven’t been before in **T** and go down in the Dyck Path.
 
 Maybe related [about tree traversal](https://cs.stackexchange.com/questions/136923/why-does-my-code-work-bijecting-binary-trees-to-dyck-paths)
+
+
+
+To my big surprise researchers are trying to use Large Language Models like GPT to predict word endings in the Dyck language. Found in [Big Bench benchmark](https://github.com/google/BIG-bench/tree/main/bigbench/benchmark_tasks/dyck_languages)
+
+![predicting dyck words with GPT models](./dyck-language-gpt.png)
+
+
+For some reason I looked into the bijection between binary trees and Dyck words. It's not a trivial thing I must say.
+
+But how do we encode alphabet or words from English language as binary trees? Morse code?

@@ -28,6 +28,10 @@ When it comes to **Global Optimisation** tasks (i.e. attempting to find a global
 8. [**Target Propagation**][7]
 9. [**Alternating Descent Method of Multipliers**][8] (ADMM)
 10. [**Zeroth-Order Relaxed Backpropagation**][9] (ZORB)
+11. Finito https://arxiv.org/abs/1407.2710
+12. Stochastic Dual Coordinate Ascent (SDCA) https://arxiv.org/abs/1209.1873
+13. Stochastic Optimization with Variance Reduction https://hal.inria.fr/hal-01375816v1/document
+
 
 As mentioned above, *Simulated Annealing, Particle Swarm Optimisation and Genetic Algorithms* are good global optimisation algorithms that navigate well through huge search spaces and unlike *Gradient Descent* do not need any information about the gradient and could be successfully used with black-box objective functions and problems that require running simulations.
 
