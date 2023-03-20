@@ -19,6 +19,7 @@ But I'm a guy from Soviet Union, which means I am okay to spend some time and cr
 
 Similar [tank from Japan](https://burariweb.info/electronic-work/mini-tank-esp8266.html).
 
+[Quad pod version](https://cults3d.com/en/3d-model/gadget/smars-quad-mod) of SMARS. Compare with another small [quadruped robot](https://cults3d.com/en/3d-model/gadget/kame-8dof-small-quadruped-robot).
 
 ### Dog-like robot
 
@@ -44,3 +45,21 @@ It has "stack" in it's name because it uses [M5Stack](https://m5stack.com/) whic
 
 
 https://protopedia.net/prototype/3277
+
+## Bi-pedal
+
+- cute https://cults3d.com/en/3d-model/gadget/rofi-bipedal-robot
+- just a model, but impressing mech https://cults3d.com/en/3d-model/game/heavy-armored-thiccboi-of-brutality
+
+## Retro style
+
+- [Horikawa style](https://cults3d.com/en/3d-model/game/robot-horikawa-style)
+
+![retro robot](./robot-horikawa-style.jpg)
+
+- [Dokibot](https://cults3d.com/en/3d-model/gadget/dokibot-desktop-toy-applepencil-1-charging-dock-hanknobles)
+
+![tiny legs, big head](https://cults3d.com/en/3d-model/gadget/dokibot-desktop-toy-applepencil-1-charging-dock-hanknobles)
+
+- art deco style tank https://cults3d.com/en/3d-model/tool/tank-hydra-mega-arduino
+- quadpod, nice legs https://cults3d.com/en/3d-model/game/tetratankoped

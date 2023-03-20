@@ -16,3 +16,5 @@ lastModified: 2022-12-20
 - 2019 Neftci - Reinforcement learning in artificial and biological systems https://www.gwern.net/docs/reinforcement-learning/model-free/2019-neftci.pdf
 - neurorobotics can be used to explain how neural network activity leads to behavior. [Neurorobots as a Means Toward Neuroethology and Explainable AI](https://www.frontiersin.org/articles/10.3389/fnbot.2020.570308/full)
 - [TensorFlow tutorials](https://www.tensorflow.org/agents/tutorials/0_intro_rl)
+- Explnataion-based learning VS Reinforcement learning [Dietterich 1997](https://link.springer.com/article/10.1023/A:1007355226281)
+- HOT! (According to [Ignacio de Gregorio](https://medium.com/@ignacio.de.gregorio.noblejas/offline-rl-680450c472c), pulp fiction writer: In a paper that’s not even been officially presented yet, Google has announced pre-trained robots that are capable of doing multiple different activities and also be easily trained to ambitious downstream tasks.) https://arxiv.org/pdf/2211.15144.pdf

@@ -24,7 +24,10 @@ When it comes to **Global Optimisation** tasks (i.e. attempting to find a global
 4. [*Surrogate Optimisation*][4] that uses a *surrogate* model to approximate the objective function. This method can be used when the objective function is expensive to evaluate.
 5. [Multi-objective Optimisation][5] (also known as *Pareto optimisation*) which can be used for the problem that cannot be expressed in a form that has a single objective function (but rather a vector of objectives).
 6. [*Simulated Annealing*][6], which uses the concept of *annealing* (or temperature) to trade-off exploration and exploitation. It proposes new points for evaluation at each iteration, but as the number of iteration increases, the "temperature" drops and the algorithm becomes less and less likely to explore the space thus "converging" towards its current best candidate.
-12. Backpropagation Neural Tree (BNeuralT)
+7. Backpropagation Neural Tree (BNeuralT)
+8. [**Target Propagation**][7]
+9. [**Alternating Descent Method of Multipliers**][8] (ADMM)
+10. [**Zeroth-Order Relaxed Backpropagation**][9] (ZORB)
 
 As mentioned above, *Simulated Annealing, Particle Swarm Optimisation and Genetic Algorithms* are good global optimisation algorithms that navigate well through huge search spaces and unlike *Gradient Descent* do not need any information about the gradient and could be successfully used with black-box objective functions and problems that require running simulations.
 
@@ -35,12 +38,20 @@ As mentioned above, *Simulated Annealing, Particle Swarm Optimisation and Geneti
   [4]: https://www.mathworks.com/help/gads/surrogate-optimization-algorithm.html
   [5]: https://en.wikipedia.org/wiki/Multi-objective_optimization
   [6]: https://en.wikipedia.org/wiki/Simulated_annealing
+  [7]: https://arxiv.org/abs/1412.7525#
+  [8]: https://arxiv.org/abs/1605.02026
+  [9]: https://arxiv.org/abs/2011.08895
 
 Source: https://stats.stackexchange.com/questions/97014/what-are-alternatives-of-gradient-descent https://arxiv.org/pdf/2202.02248.pdf
 
 Also: https://stackoverflow.com/questions/23554606/what-are-alternatives-of-gradient-descent
 
 
-## Extreme Learning Machines
+## Extreme Learning
 
-[wiki](https://en.wikipedia.org/wiki/Extreme_learning_machine), [paper](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7140733)
+- [official](https://web.njit.edu/~usman/courses/cs675_fall20/ELM-NC-2006.pdf) (?) 
+- [matrix notation](https://pdfs.semanticscholar.org/13be/dd5a3299a115ecc425eff6e7853741c81816.pdf)
+- [lame explanation](https://erdem.pl/2020/05/introduction-to-extreme-learning-machines)
+- [python code](https://github.com/burnpiro/elm-pure/blob/master/model.py)
+- [wiki](https://en.wikipedia.org/wiki/Extreme_learning_machine)
+- [paper](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7140733)

@@ -43,7 +43,7 @@ Multiply voltage by 4/3 or 3/2 (electrolytic caps) and up to 2 (ceramic caps)
 
 - create schematics document in Eagle
 - Edit -> Add... -> Scroll down to **frames**, Choose LETTER_L
-- ...
+- If silkscreen and soldermask colors are swapped in Fusion 360, then check silkscreen contours outside of the board. Also measurements are not allowed
 
 
 ## Fusion 360

@@ -19,4 +19,4 @@ explain how neuron can code digital and analog data
 
 ## My understanding
 
-Funny, it's a small note that proposes use of time (relative time between spikes) for encoding. It looks as a simple change, but for ANN models it's something radically new. In respect of that I should read about [Spiking Neural Networks](/science/neuron/spiking-neural-networks).
+Funny, it's a small note that proposes use of time (relative time between spikes) for encoding. It looks as a simple change, but for ANN models it's something radically new. In respect of that I should read about [Spiking Neural Networks](/ai/spiking-neural-networks).

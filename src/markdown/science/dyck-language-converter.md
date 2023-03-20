@@ -22,3 +22,5 @@ According to the notes (from someone's howework (?)):
 And reverse:
 
 > Let **T** be a binary tree. Start in the root of **T**. If you can go down left in **T**, do it and go up in your Dyck Path. If you can’t, then go up until you can go down right where you haven’t been before in **T** and go down in the Dyck Path.
+
+Maybe related [about tree traversal](https://cs.stackexchange.com/questions/136923/why-does-my-code-work-bijecting-binary-trees-to-dyck-paths)

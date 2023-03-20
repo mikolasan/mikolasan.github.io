@@ -44,4 +44,4 @@ Here is what you need:
 
 - 1 https://twitter.com/iceslapp/status/1552690889868431363
 - 2 https://www.reddit.com/r/3Dprinting/comments/w5h6q3/one_of_the_trippiest_prints_ive_done_fractal/
-
+- Someone also found that the spiral vase mode amazing for this print https://www.printables.com/model/2311-spiral-vase-mode-sierpinski-pyramid/comments
