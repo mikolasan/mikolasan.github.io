@@ -28,6 +28,7 @@ Appropriate keywords:
 - Dynamic states with fixed initial one https://finale.seas.harvard.edu/files/finale/files/doshi-velez-tpami-2015.pdf
 - Dynamic state space https://www.frontiersin.org/articles/10.3389/fncom.2021.784592/full <<<=== this is something very related to what I was - hoping to find. It's 2022, imagine how fresh it is!
 - When there is a reward function and values assigned to the states, some of them receive significant values which makes them standout across the others. Such special states we call goals - because they apparently very important for the agent. With some logic added to this we can decompose goals and have more meaningfull model. **Prioritized Goal Decomposition of Markov Decision Processes: Toward a Synthesis of Classical and Decision Theoretic Planning** [PDF](https://www.cs.toronto.edu/~cebly/Papers/decomposition.pdf)
+- [GLAMOR](https://openreview.net/pdf?id=V6BjBgku7Ro) - learn the world models by modeling inverse dynamics. [Code](https://github.com/keirp/glamor). Use conditional probabilities and Bayes' rule to find the best sequence of actions (like language sequences of tokens)
 
 
 ## Code 
@@ -43,6 +44,9 @@ My implementation of MDP didn't converge. In reinforcement learning the reward f
 
 > When the problem solver reaches a goal state, we can provide a fixed reward (e.g., zero) and terminate the search (i.e., the goal states are absorbing states). With this reward function, the cumulative reward of a policy is equal to the negative of the cost of solving the problem using that policy. Hence, the optimal policy will be the policy that solves the problem most efficiently.
 
+### Examples
+
+- [Social media bot](/ai/mdp-example-social-media-bot)
 
 
 ## Value Iteration Networks
@@ -74,3 +78,4 @@ Because if we add that information to the state, then all states must include th
 Here's an illustration of two connected worlds I found in the article: one without mail in the mailbox (M = false) and another when a postman delivered mail (M = true). Otherwise the loop is the same.
 
 ![Illustration from Decision-Theoretic Planning](./mdp-transition-graph.png)
+

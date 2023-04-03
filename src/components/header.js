@@ -45,11 +45,7 @@ const Header = ({
       {bannerParagraph}
     </Banner>
   ) || ``
-  return (
-  <header>
-    <NavigationBar active={section} />
-    {featuredImage && wideImage || banner}
-    {crumbs && 
+  const crumbsLine = crumbs && (
     <div className={styles.breadcrumbs}>
       <div className={styles.centerpart}>
         <Breadcrumb
@@ -59,7 +55,12 @@ const Header = ({
         />
         <div className={styles.nextline}></div>
       </div>
-    </div>}
+    </div>) || ``
+  return (
+  <header>
+    <NavigationBar active={section} />
+    {featuredImage && wideImage || banner}
+    {crumbsLine}
   </header>
 )}
 

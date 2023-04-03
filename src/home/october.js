@@ -11,7 +11,7 @@ export const articles = [
     Or maybe a strict robot-coach that meticulously plans your time.</p>
     <p></p>`,
     readMore: ``,
-    imgSrc: `/images/home/robot-new-year.jpg`,
+    imgSrc: `/images/home/power-motor-board-pcb-design.png`,
     imgAlt: null,
   },
   {

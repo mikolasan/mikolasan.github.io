@@ -35,6 +35,7 @@ class IndexLayout extends React.Component {
         <Title title={title + " - N"} />
         <header>
           <NavigationBar active={section} />
+          <div className="bottomline"></div>
         </header>
         <main className="fullscreen">
           {children}

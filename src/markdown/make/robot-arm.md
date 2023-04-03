@@ -9,7 +9,7 @@ lastModified: 2022-12-16
 
 A new spin to my strange purchase of 5 servo drives. Why strange? Because 5 servos is not enough to make a spider (a hexapod robot).
 
-This time I want to create an arm. 5 servos should be enough for one robot arm.
+This time I want to create an arm. 5 servos should be enough for single arm robot.
 
 ## Moodboard
 

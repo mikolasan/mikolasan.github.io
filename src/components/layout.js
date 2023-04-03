@@ -12,6 +12,7 @@ class Layout extends React.Component {
     super(props)
     this.errorCallback = this.errorCallback.bind(this)
     this.state = {
+      menuOpen: false,
       errorMessage: "null"
     }
   }
@@ -22,6 +23,14 @@ class Layout extends React.Component {
     })
   }
   
+  openMenu () {
+    this.setState({ menuOpen: true })
+  }
+
+  closeMenu () {
+    this.setState({ menuOpen: false })
+  }
+
   timeBlock(published, lastUpdated, addClass) {
     const timeBlock = <>
       {published && <span>Published: <time>{published}</time></span>}
@@ -65,6 +74,12 @@ class Layout extends React.Component {
           description={description}
           meta={[]}
         />
+        {this.state.menuOpen && (
+          <MenuPopup
+            language="en"
+            closeCallback={this.closeCallback}
+          />
+        ) || (<>
         <Header section={section}
           buttonText={buttonText}
           buttonLink={buttonLink}
@@ -110,6 +125,7 @@ class Layout extends React.Component {
         </main>
 
         <Footer languageName={languageName} languageLink={anotherLanguageLink} />
+        </>)}
       </>
     )
   }
