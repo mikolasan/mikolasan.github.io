@@ -1,9 +1,10 @@
 import React from "react"
-import Layout from "../components/indexLayout"
+import Layout from "../components/layout"
 import { articles } from "../home/october"
 
 const Index = ({ pageContext }) => (
   <Layout
+    mainConf="fullscreen"
     title="Robots, science, gamedev"
     section="root"
     languageName="Switch to russian version"

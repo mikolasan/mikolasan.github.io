@@ -59,7 +59,7 @@ class MenuPopup extends React.Component {
             <a href="/ru/make/hydroponics">
               <div className={styles.featuredspace}>
                 <img className={styles.newtag} src="/new.png" />
-                <img className={styles.featuredimage} src="/hydroponic.png"/>
+                <img className={styles.featuredimage} src="/hydroponics.png" />
               </div>
             </a>
           </div>) : ""}
@@ -73,9 +73,13 @@ class MenuPopup extends React.Component {
             </div>
           )}
           {this.language === "en" && (
-            <p className={styles.hint}>There is also a <a href="#" onClick={this.openRuVersion.bind(this)}>Russian version</a> of this website</p>
+            <p className={styles.hint}>
+              There is also a <a href="#" onClick={this.openRuVersion.bind(this)}>Russian version</a> of this website
+            </p>
           ) || (
-            <p className={styles.hint}>There is also an <a href="#" onClick={this.openEnVersion.bind(this)}>English version</a> of this website</p>
+            <p className={styles.hint}>
+              There is also an <a href="#" onClick={this.openEnVersion.bind(this)}>English version</a> of this website
+            </p>
           )}
         </div>
         <a href="https://www.flaticon.com/free-icons/hydroponic" title="hydroponic icons">Hydroponic icons created by Good Ware - Flaticon</a>
