@@ -86,19 +86,20 @@
   }
 
   .result {
-    max-height: 90vh;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
-    position: absolute;
-    right: 0;
-    top: 100%;
-    margin-top: 0.25em;
-    width: 100%;
+    max-height: unset;
     max-width: unset;
+    overflow-x: unset;
+    overflow-y: unset;
+    -webkit-overflow-scrolling: unset;
+    position: unset;
+    right: unset;
+    top: unset;
+    width: 100%;
+    margin-top: 0.25em;
     box-shadow: none;
     padding: 1em;
     padding-bottom: 2rem;
     background: #fff;
+    border-top: #211a1d solid 0.25rem;
   }
 }

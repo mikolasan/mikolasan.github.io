@@ -1,16 +1,17 @@
 .topline {
+  position: sticky;
+  top: 0;
+  z-index: 300;
   margin: 0;
   padding: 0;
   height: 3.2rem;
   border-bottom: #211a1d solid 0.25rem;
+  background-color: #f2f2f2;
 }
 
 .menu {
-  position: fixed;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 100;
+  width: 100%;
+  height: 100%;
   background-color: #f2f2f2;
   font-family: 'Manrope', sans-serif;
 }
@@ -18,9 +19,6 @@
 .back {
   position: relative;
   top: 0.5rem;
-  height: 100%;
-  bottom: -2.75rem;
-  overflow-y: scroll;
 }
 
 .newtag {

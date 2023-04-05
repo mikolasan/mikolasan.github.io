@@ -15,8 +15,8 @@ const MainCentered = ({
   secondButtonLink,
   children,
   showLikes,
-  errorCallback,
   recentArticles,
+  errorCallback,
   errorMessage
 }) => {
   const timeBlock = (published, lastUpdated, addClass) => {

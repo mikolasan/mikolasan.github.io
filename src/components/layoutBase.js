@@ -5,6 +5,7 @@ import { getImage, getSrc } from "gatsby-plugin-image"
 import Banner from "../components/banner"
 import FeaturedImage from "../components/featuredImage"
 import MainBase from "./mainBase"
+import MenuPopup from "./menuPopup"
 import Footer from "./footer"
 import Header from "./header"
 import Title from "./title"
@@ -113,25 +114,11 @@ class LayoutBase extends React.Component {
             />
             {featuredImage && wideImage || banner}
             <MainBase
-              mainConf={this.props.mainConf}
-              {...this.props}
-            />
-            <MainBase
-              mainConf="center"
               children={children}
-              publishedText={publishedText}
-              published={published}
-              updatedText={updatedText}
-              lastUpdated={lastUpdated}
-              showLikes={showLikes}
-              buttonText={buttonText}
-              buttonLink={buttonLink}
-              secondButtonText={secondButtonText}
-              secondButtonLink={secondButtonLink}
-              bannerParagraph={bannerParagraph}
-              recentArticles={recentArticles}
+              mainConf={this.props.mainConf}
               errorCallback={this.errorCallback}
               errorMessage={this.state.errorMessage}
+              {...this.props}
             />
             <Footer language={this.props.languageName} languageLink={anotherLanguageLink} />
           </>

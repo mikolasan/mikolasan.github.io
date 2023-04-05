@@ -37,6 +37,12 @@ const Credits = ({ pageContext }) => (
       <li>
         <a href="https://www.flaticon.com/free-icon/robot_862511" title="robot icons">Robot icons created by Good Ware</a>
       </li>
+      <li>
+        <a href="https://www.flaticon.com/free-icons/hydroponic" title="hydroponic icons">Hydroponic icons created by Good Ware - Flaticon</a>
+      </li>
+      <li>
+        <a href="https://www.flaticon.com/free-icons/new" title="new icons">New icons created by AB Design - Flaticon</a>
+      </li>
     </ul>
 
   </Layout>

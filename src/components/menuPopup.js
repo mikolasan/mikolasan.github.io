@@ -82,8 +82,6 @@ class MenuPopup extends React.Component {
             </p>
           )}
         </div>
-        <a href="https://www.flaticon.com/free-icons/hydroponic" title="hydroponic icons">Hydroponic icons created by Good Ware - Flaticon</a>
-        <a href="https://www.flaticon.com/free-icons/new" title="new icons">New icons created by AB Design - Flaticon</a>
       </div>
     )
   }

@@ -15,7 +15,9 @@ const MainBase = ({
   secondButtonText,
   secondButtonLink,
   bannerParagraph,
-  recentArticles
+  recentArticles,
+  errorCallback,
+  errorMessage
 }) => {
   return mainConf === "fullscreen" && (
     <MainFullscreen>
@@ -35,8 +37,8 @@ const MainBase = ({
       secondButtonLink={secondButtonLink}
       bannerParagraph={bannerParagraph}
       recentArticles={recentArticles}
-      errorCallback={this.errorCallback}
-      errorMessage={this.state.errorMessage}
+      errorCallback={errorCallback}
+      errorMessage={errorMessage}
     >
       {children}
     </MainCentered>
