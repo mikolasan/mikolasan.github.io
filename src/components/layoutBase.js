@@ -14,7 +14,7 @@ class LayoutBase extends React.Component {
   constructor(props) {
     super(props)
     this.errorCallback = this.errorCallback.bind(this)
-    this.menuClicked = this.openMenu.bind(this)
+    this.menuClicked = this.menuClicked.bind(this)
     this.closeCallback = this.closeMenu.bind(this)
     this.state = {
       menuOpen: false,
@@ -28,6 +28,10 @@ class LayoutBase extends React.Component {
     })
   }
   
+  menuClicked () {
+    this.setState({ menuOpen: !this.state.menuOpen })
+  }
+
   openMenu () {
     this.setState({ menuOpen: true })
   }
@@ -100,10 +104,20 @@ class LayoutBase extends React.Component {
           meta={[]}
         />
         {this.state.menuOpen && (
-          <MenuPopup
-            language={this.props.languageName}
-            closeCallback={this.closeCallback}
-          />
+          <>
+            <Header
+              crumbs={crumbs}
+              language={this.props.languageName}
+              menuOpen={this.state.menuOpen}
+              menuClickedCallback={this.menuClicked}
+              section={section}
+            />
+            <MenuPopup
+              language={this.props.languageName}
+              closeCallback={this.closeCallback}
+            />
+            <Footer language={this.props.languageName} languageLink={anotherLanguageLink} />
+          </>
         ) || (
           <>
             <Header

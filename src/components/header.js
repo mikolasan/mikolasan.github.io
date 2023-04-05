@@ -6,6 +6,7 @@ import * as styles from "./header.module.css"
 const Header = ({
   crumbs,
   language,
+  menuOpen,
   menuClickedCallback,
   section
 }) => {
@@ -15,7 +16,7 @@ const Header = ({
         <Breadcrumb
           crumbs={crumbs}
           crumbSeparator=" "
-          title={<img src="/images/pagoda.svg" className={styles.titleimg} />}
+          title={<p className={styles.titleimg}>N</p>}
         />
         <div className={styles.nextline}></div>
       </div>
@@ -29,6 +30,7 @@ const Header = ({
       <NavigationBar 
         active={section}
         language={language}
+        menuOpen={menuOpen}
         menuClickedCallback={menuClickedCallback}
       />
       {crumbsLine}

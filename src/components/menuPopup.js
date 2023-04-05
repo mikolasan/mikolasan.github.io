@@ -45,13 +45,6 @@ class MenuPopup extends React.Component {
   render() {
     return (
       <div className={styles.menu}>
-        <div className={styles.topline}>
-          <img
-            className={styles.close}
-            onClick={this.props.closeCallback}
-            src="/images/cross.svg"
-          />
-        </div>
         <Search indices={searchIndices} />
         <div className={styles.back}>
         {this.language === "ru" ? (

@@ -81,5 +81,6 @@
   .blogcard {
     flex: 100%;
     display: block;
+    overflow-x: auto;
   }
 }

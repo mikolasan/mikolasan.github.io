@@ -30,7 +30,7 @@
 }
 
 .topnav a:hover {
-  background-color: #211a1d;
+  background-color: #5941a9;
   color: #f2f2f2;
   transition: background-color 300ms ease-out;
 }
@@ -154,20 +154,30 @@
   opacity: 1;
 }
 
-.mobilelogo {
-  color: #211a1d;
-  height: 2.5rem;
-}
 
 .mobilenav {
   height: 3.2rem;
   display: none;
 }
 
+.logobutton {
+  height: 2.4rem;
+  width: 2.2rem;
+}
+
+.mobilelogo {
+  color: #211a1d;
+}
+
 .burgermenu {
   cursor: pointer;
-  height: 2.75rem;
-  padding: 0 0.5rem;
+  height: 1.8rem;
+  width: 2rem;
+  margin-left: 0.5rem;
+}
+
+.burgermenuopen {
+  padding: 0.1rem 0;
 }
 
 .mobilelanguage {
@@ -182,13 +192,7 @@
 }
 
 a.activelink {
-  background: repeating-linear-gradient(
-  -45deg,
-  #5b5356,
-  #5b5356 10px,
-  #211a1d 10px,
-  #211a1d 20px
-  );
+  background: #514f59;
   color: #f2f2f2;
 }
 
@@ -201,7 +205,7 @@ a:visited.activelink  {
 
 a:hover.activelink {
   background: unset;
-  background-color: #211a1d;
+  background-color: #5941a9;
 }
 
 a.active.activelink  {

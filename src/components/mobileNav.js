@@ -4,11 +4,22 @@ import { Link } from "gatsby"
 import LogoButton from "./logoButton"
 import GlobeButton from "./globeButton"
 import * as styles from "./navigationBar.module.css"
+import { style } from "d3"
 
-const MobileNav = ({ menuClickedCallback }) => (
+const MobileNav = ({ menuOpen, menuClickedCallback }) => (
   <nav className={styles.mobilenav}>
-    <img className={styles.burgermenu} onClick={menuClickedCallback} src="/images/bars.png" />
-    <LogoButton style={styles.mobilelogo} />
+    <div className={[styles.burgermenu, menuOpen && styles.burgermenuopen || ""].join(" ")} onClick={menuClickedCallback}>
+      <svg id="burgericon" className={menuOpen && "open" || ""} viewBox="0 0 100 80" width="100%" height="100%">
+        <rect class="frstbar" width="100" height="20"></rect>
+        <rect class="scndbar" y="30" width="100" height="20"></rect>
+        <rect class="thrdbar" y="60" width="100" height="20"></rect>
+      </svg>
+    </div>
+    <div className={styles.logobutton}>
+      <Link to="/">
+        <LogoButton style={styles.mobilelogo} />
+      </Link>
+    </div>
     <div className={styles.mobilelanguage}>
       <Link to="/ru">
         <GlobeButton style={styles.globe} />

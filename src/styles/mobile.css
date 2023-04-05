@@ -1,3 +1,26 @@
+.frstbar,.scndbar,.thrdbar {
+  transition: all 0.1s linear;
+  transform: rotate(0deg);
+}
+
+.frstbar {
+  transform-origin: 50% 0;
+}
+.thrdbar {
+  transform-origin: 50% 100%;
+}
+
+#burgericon.open .frstbar {
+  transform: translateX(0.2rem) translateY(1.8rem) rotate(45deg);
+}
+#burgericon.open .thrdbar {
+  transform: translateX(0.2rem) translateY(-1.8rem) rotate(-45deg);
+}
+#burgericon.open .scndbar {
+  width: 0;
+  opacity: 0;
+}
+
 
 @media all and (max-width: 768px) {
   main {
