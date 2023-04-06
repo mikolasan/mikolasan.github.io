@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   height: 3.2rem;
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Outfit', sans-serif;
   border-bottom: #5b5356 solid 0.25rem;
 }
 
@@ -18,26 +18,37 @@
   color: #211a1d;
   text-align: center;
   text-decoration: none;
-  transition: background-color 300ms ease-out;
+  font-weight: 700;
+  font-size: 1rem;
+}
+a.activelink {
+  background: unset;
+  text-decoration: underline solid;
+  text-decoration-color: #D72638;
+  text-decoration-thickness: 5px;
+  text-underline-offset: 0.3rem;
 }
 
 .topnav a:link {
   color: #211a1d;
 }
-
-.topnav a:visited {
-  color: #211a1d;
+a:link.activelink  {
 }
 
 .topnav a:hover {
-  background-color: #5941a9;
+  background-color: #FF661F;
   color: #f2f2f2;
-  transition: background-color 300ms ease-out;
+}
+a:hover.activelink {
+  background-color: #FF661F;
+  color: #f2f2f2;
 }
 
-.topnav a.active {
-  background-color: #6320ee;
-  color: white;
+.topnav a:visited {
+
+}
+a:visited.activelink  {
+
 }
 
 .tooltip {
@@ -141,26 +152,6 @@
 
 .userbutton {
   height: 2.6rem;
-}
-
-a.activelink {
-  background: #514f59;
-  color: #f2f2f2;
-}
-
-a:link.activelink  {
-}
-
-a:visited.activelink  {
-  color: #f2f2f2;
-}
-
-a:hover.activelink {
-  background: unset;
-  background-color: #5941a9;
-}
-
-a.active.activelink  {
 }
 
 @media all and (max-width: 870px) {
