@@ -43,6 +43,15 @@ const Credits = ({ pageContext }) => (
       <li>
         <a href="https://www.flaticon.com/free-icons/new" title="new icons">New icons created by AB Design - Flaticon</a>
       </li>
+      <li>
+        <a href="https://www.flaticon.com/free-icons/create" title="create icons">Create icons created by wanicon - Flaticon</a>
+      </li>
+      <li>
+        <a href="https://www.flaticon.com/free-icons/paranormal" title="paranormal icons">Paranormal icons created by Smashicons - Flaticon</a>
+      </li>
+      <li>
+        <a href="https://www.flaticon.com/free-icons/board-game" title="board-game icons">Board-game icons created by Freepik - Flaticon</a>
+      </li>
     </ul>
 
   </Layout>

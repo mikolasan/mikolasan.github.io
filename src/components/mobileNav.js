@@ -2,11 +2,9 @@ import React from "react"
 import { Link } from "gatsby"
 
 import LogoButton from "./logoButton"
-import GlobeButton from "./globeButton"
 import * as styles from "./navigationBar.module.css"
-import { style } from "d3"
 
-const MobileNav = ({ menuOpen, menuClickedCallback }) => (
+const MobileNav = ({ language, menuOpen, menuClickedCallback }) => (
   <nav className={styles.mobilenav}>
     <div className={[styles.burgermenu, menuOpen && styles.burgermenuopen || ""].join(" ")} onClick={menuClickedCallback}>
       <svg id="burgericon" className={menuOpen && "open" || ""} viewBox="0 0 100 80" width="100%" height="100%">
@@ -16,14 +14,13 @@ const MobileNav = ({ menuOpen, menuClickedCallback }) => (
       </svg>
     </div>
     <div className={styles.logobutton}>
-      <Link to="/">
+      <Link to={language === "en" ? "/" : "/ru"}>
         <LogoButton style={styles.mobilelogo} />
       </Link>
     </div>
     <div className={styles.mobilelanguage}>
-      <Link to="/about">
+      <Link to={language === "en" ? "/about" : "/ru/about"}>
         <img src="/user.png" className={styles.userbutton} />
-        {/* <GlobeButton style={styles.globe} /> */}
       </Link>
     </div>
   </nav>

@@ -6,7 +6,8 @@ import RuNav from "./ruNav"
 
 const Navbar = ({ active, language, menuOpen, menuClickedCallback }) => (
   <>
-    <MobileNav 
+    <MobileNav
+      language={language}
       menuOpen={menuOpen}
       menuClickedCallback={menuClickedCallback}
     />

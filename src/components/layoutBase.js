@@ -6,7 +6,7 @@ import Banner from "../components/banner"
 import FeaturedImage from "../components/featuredImage"
 import MainBase from "./mainBase"
 import MenuPopup from "./menuPopup"
-import Footer from "./footer"
+import Footer from "./footerBase"
 import Header from "./header"
 import Title from "./title"
 
@@ -133,7 +133,7 @@ class LayoutBase extends React.Component {
               errorMessage={this.state.errorMessage}
               {...this.props}
             />
-            <Footer language={this.props.languageName} languageLink={anotherLanguageLink} />
+            <Footer language={this.props.languageName} />
           </>
         )}
       </>

@@ -2,10 +2,7 @@ import React from "react"
 import { graphql, Link, StaticQuery } from "gatsby"
 import { formatDate } from "../nifty"
 
-const RuFooter = ({
-  languageName,
-  languageLink
-}) => (
+const RuFooter = () => (
   <StaticQuery
     query={graphql`
       query RuSiteInfoQuery {
@@ -17,34 +14,39 @@ const RuFooter = ({
     render={data => (
       <footer>
         <div className="bottomnav">
-          <Link style={{marginBottom: '0.5em', textDecoration: 'underline'}} to={languageLink}>{languageName}</Link>
           <div className="bottomsmallabout">
             <h2>О себе</h2>
             <p>Нейронные сети, байесовский вывод, разношёрстный девлог, паранормальные экспедиции, настольные игры и ролёвки, пиксель арт</p>
           </div>
           <div className="bottommenu">
-            <Link to="/ru/ideas">Идеи</Link>
-            <Link to="/ru/projects">Проекты</Link>
-            <Link to="/ru/neural-networks">Наука</Link>
-            <Link to="/ru/blog">Блог</Link>
-            <Link to="/ru/terms">Условия</Link>
-            <Link to="/ru/privacy">Конфиденциальность</Link>
+            <h2>Разделы</h2>
+            <div className="bottomlist">
+              <Link to="/ru/ideas">Идеи</Link>
+              <Link to="/ru/projects">Проекты</Link>
+              <Link to="/ru/neural-networks">Наука</Link>
+              <Link to="/ru/blog">Блог</Link>
+            </div>
+          </div>
+          <div className="bottommenu">
+            <h2>Ещё</h2>
+            <div className="bottomlist">
+              <Link to="/ru/terms">Условия</Link>
+              <Link to="/ru/privacy">Конфиденциальность</Link>
+            </div>
           </div>
           <div className="bottomxsocial">
             <h2>Сети</h2>
-            <a href="https://twitter.com/stakanmartini">Твиттер</a>
-            <a href="https://www.youtube.com/user/stakanmartini">Ютюб</a>
-            <a href="https://github.com/mikolasan">GitHub</a>
-            <a href="https://www.instagram.com/saturdayscode/">Instagram</a>
-            <a href="https://www.linkedin.com/in/nikolay-neupokoev">LinkedIn</a>
+            <div className="bottomlist">
+              <a href="https://twitter.com/stakanmartini">Твиттер</a>
+              <a href="https://www.youtube.com/user/stakanmartini">Ютюб</a>
+              <a href="https://github.com/mikolasan">Гитхаб</a>
+            </div>
           </div>
         </div>
         <div className="copyright">
           <p>Сайт работает на генераторе статических сайтов {` `}<a href="https://www.gatsbyjs.org">Gatsby</a>. Последняя сборка: {formatDate(data.currentBuildDate.currentDate, 'ru')}</p>
-          <p><a href="https://www.flaticon.com/free-icons/create" title="create icons">Create icons created by wanicon - Flaticon</a></p>
-          <p><a href="https://www.flaticon.com/free-icons/paranormal" title="paranormal icons">Paranormal icons created by Smashicons - Flaticon</a></p>
-          <p><a href="https://www.flaticon.com/free-icons/hydroponic" title="hydroponic icons">Hydroponic icons created by Freepik - Flaticon</a></p>
-          <p><a href="https://www.flaticon.com/free-icons/board-game" title="board-game icons">Board-game icons created by Freepik - Flaticon</a></p>
+          <p>Иконки нарисованы художниками, и все необходимые <a href="/credits">кредиты</a>❤️ возданы</p>
+          <p>There is also an <a href="/">English version</a> of this website</p>
           <p>© Николай Неупокоев, {new Date().getFullYear()}</p>
         </div>
       </footer>

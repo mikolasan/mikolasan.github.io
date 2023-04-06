@@ -10,6 +10,14 @@ const Header = ({
   menuClickedCallback,
   section
 }) => {
+  // TODO:
+  // if (crumbs && language !== "en") {
+  //   const root = crumbs.shift(); // remove the first element
+  //   if (crumbs.length > 0) {
+  //     // update the crumb label, keep `pathname`
+  //     crumbs[0].crumbLabel = root.crumbLabel
+  //   }
+  // }
   const crumbsLine = crumbs && (
     <div className={styles.breadcrumbs}>
       <div className={styles.centerpart}>
@@ -25,6 +33,7 @@ const Header = ({
     <div className="bottomline"></div>
   )
 
+  // console.log("crumbs", crumbs)
   return (
     <header>
       <NavigationBar 

@@ -103,58 +103,6 @@
   height: 100%;
 }
 
-.globe {
-  padding: 0.9rem;
-  height: 100%;
-  opacity: 1;
-  /* transition: 0.5s;   */
-}
-
-.globe:hover {
-  /* opacity: 0.2; */
-}
-
-.russian {
-  height: 95%;
-  position: absolute;
-  left: -1.2rem;
-  z-index: 2;
-  transition: 0.5s;
-  opacity: 0;
-}
-
-.globe:hover+.russian {
-  left: -1.9rem;
-  opacity: 1;
-}
-
-.american {
-  height: 95%;
-  position: absolute;
-  left: -1.2rem;
-  z-index: 2;
-  transition: 0.5s;
-  opacity: 0;
-}
-
-.globe:hover+.american {
-  left: -3rem;
-  opacity: 1;
-}
-.flag {
-  height: 100%;
-  position: absolute;
-  left: -3.2rem;
-  z-index: 1;
-  opacity: 0.5;
-  transition: 0.5s;
-}
-
-.globe:hover+.flag {
-  opacity: 1;
-}
-
-
 .mobilenav {
   height: 3.2rem;
   display: none;
