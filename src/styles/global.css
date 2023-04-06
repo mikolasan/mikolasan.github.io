@@ -320,6 +320,9 @@ footer {
 }
 
 .bottomnav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   margin: 0 auto;
   padding-top: 4rem;
   padding-bottom: 2rem;
@@ -362,21 +365,33 @@ footer {
 
 .bottomsmallabout {
   display: block;
-  float: left;
   max-width: 300px;
-  margin-right: 8rem;
+  margin-top: 1rem;
+  margin-right: 4rem;
 }
 
 .bottommenu {
   display: block;
-  float: left;
-  margin-right: 6rem;
+  margin-top: 1rem;
+  margin-right: 4rem;
 }
 
 .bottomxsocial {
   display: block;
-  float: left;
-  margin-right: 2rem;
+  margin-top: 1rem;
+  margin-right: 4rem;
+
+}
+
+.bottomlist {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.bottomxsocial .bottomlist {
+  flex-direction: row;
+  column-gap: 2rem;
 }
 
 audio,
@@ -1022,7 +1037,6 @@ a:active {
   padding-left: 0rem;
   padding-right: 0.4rem;
   display: block;
-  float: left;
   border: none;
   border-radius: 0.5rem;
 }
@@ -1032,6 +1046,4 @@ a:active {
 }
 
 .license_right {
-  position: relative;
-  margin-left: 5rem;
 }

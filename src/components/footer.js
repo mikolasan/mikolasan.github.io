@@ -26,27 +26,37 @@ const Footer = ({
             <p>Game developer 🎮|🎰 C++, Python, and JavaScript adventurer. Magistrate in L5R 🎲</p>
           </div>
           <div className="bottommenu">
-            <h2>Menu</h2>
-            <Link to="/ideas">Ideas</Link>
-            <Link to="/gamedev">Gamedev</Link>
-            <Link to="/make">Make</Link>
-            <Link to="/science">Science</Link>
-            <Link to="/blog">Blog</Link>
-            <Link to="/youtube">Vlog</Link>
-            <Link to="/board-games">Board Games</Link>
-            <Link to="/projects">Projects</Link>
-            <Link to="/free">Free Stuff</Link>
-            <Link to="/code-snippets">Code Snippets</Link>
-            <Link to="/ebooks">My ebooks</Link>
+            <h2>Topics</h2>
+            <div className="bottomlist">
+              <Link to="/science">Science</Link>
+              <Link to="/make">Make</Link>
+              <Link to="/blog">Blog</Link>
+              <Link to="/coding">Coding</Link>
+            </div>
+          </div>
+          <div className="bottommenu">
+            <h2>More</h2>
+            <div className="bottomlist">
+              <Link to="/ideas">Ideas</Link>
+              <Link to="/gamedev">Gamedev</Link>
+              <Link to="/youtube">Vlog</Link>
+              <Link to="/board-games">Board Games</Link>
+              <Link to="/projects">Projects</Link>
+              <Link to="/free">Free Stuff</Link>
+              <Link to="/code-snippets">Code Snippets</Link>
+              <Link to="/ebooks">My ebooks</Link>
+            </div>
           </div>
           <div className="bottomxsocial">
             <h2>Social</h2>
-            <a href="https://mikolasan.hashnode.dev/">Hashnode</a>
-            <a href="https://twitter.com/mikolasan">Twitter</a>
-            <a href="https://www.youtube.com/channel/UC7JDwFPt-Wu_rMB4-g-ePug">YouTube</a>
-            <a href="https://github.com/mikolasan">GitHub</a>
-            <a href="https://www.linkedin.com/in/nikolay-neupokoev">LinkedIn</a>
-            <a href="https://www.instagram.com/saturdayscode/">Instagram</a>
+            <div className="bottomlist">
+              <a href="https://mikolasan.hashnode.dev/">Hashnode</a>
+              <a href="https://twitter.com/mikolasan">Twitter</a>
+              <a href="https://www.youtube.com/channel/UC7JDwFPt-Wu_rMB4-g-ePug">YouTube</a>
+              <a href="https://github.com/mikolasan">GitHub</a>
+              <a href="https://www.linkedin.com/in/nikolay-neupokoev">LinkedIn</a>
+              <a href="https://www.instagram.com/saturdayscode/">Instagram</a>
+            </div>
           </div>
         </div>
         <div className="copyright">

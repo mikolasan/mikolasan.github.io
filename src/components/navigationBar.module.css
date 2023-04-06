@@ -191,6 +191,10 @@
   padding: 0;
 }
 
+.userbutton {
+  height: 2.6rem;
+}
+
 a.activelink {
   background: #514f59;
   color: #f2f2f2;

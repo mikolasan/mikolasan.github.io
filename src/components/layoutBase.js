@@ -116,7 +116,6 @@ class LayoutBase extends React.Component {
               language={this.props.languageName}
               closeCallback={this.closeCallback}
             />
-            <Footer language={this.props.languageName} languageLink={anotherLanguageLink} />
           </>
         ) || (
           <>

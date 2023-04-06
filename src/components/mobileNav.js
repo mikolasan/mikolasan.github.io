@@ -21,8 +21,9 @@ const MobileNav = ({ menuOpen, menuClickedCallback }) => (
       </Link>
     </div>
     <div className={styles.mobilelanguage}>
-      <Link to="/ru">
-        <GlobeButton style={styles.globe} />
+      <Link to="/about">
+        <img src="/user.png" className={styles.userbutton} />
+        {/* <GlobeButton style={styles.globe} /> */}
       </Link>
     </div>
   </nav>
