@@ -24,7 +24,7 @@
 a.activelink {
   background: unset;
   text-decoration: underline solid;
-  text-decoration-color: #D72638;
+  text-decoration-color: #166fce;
   text-decoration-thickness: 5px;
   text-underline-offset: 0.3rem;
 }
@@ -36,11 +36,11 @@ a:link.activelink  {
 }
 
 .topnav a:hover {
-  background-color: #FF661F;
+  background-color: #0c4480;
   color: #f2f2f2;
 }
 a:hover.activelink {
-  background-color: #FF661F;
+  background-color: #0c4480;
   color: #f2f2f2;
 }
 

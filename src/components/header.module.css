@@ -1,4 +1,5 @@
 .breadcrumbs {
+  font-family: 'Barlow', sans-serif;
   background-color: #211a1d;
 }
 .centerpart {
@@ -74,24 +75,24 @@
   border-left-color: #2878CC;
 }
 .breadcrumbs li a:hover {
-  background-color: #FF661F;
+  background-color: #0c4480;
 }
 .breadcrumbs li a:hover:before {
-  border-color: #FF661F;
+  border-color: #0c4480;
   border-left-color: transparent;
 }
 .breadcrumbs li a:hover:after {
-  border-left-color: #FF661F;
+  border-left-color: #0c4480;
 }
 .breadcrumbs li a:active {
-  background-color: #FF661F;
+  background-color: #0c4480;
 }
 .breadcrumbs li a:active:before {
-  border-color: #FF661F;
+  border-color: #0c4480;
   border-left-color: transparent;
 }
 .breadcrumbs li a:active:after {
-  border-left-color: #FF661F;
+  border-left-color: #0c4480;
 }
 .breadcrumbs .nextline {
   display: block;

@@ -61,6 +61,13 @@
   display: inline-block;
 }
 
+a.readmore:link {
+  color: #166fce;
+}
+a.readmore:visited {
+  color: #166fce;
+}
+
 .blogdate {
   color: #595959;
   font-size: 80%;

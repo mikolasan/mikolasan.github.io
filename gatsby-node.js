@@ -161,7 +161,7 @@ const pageFactory = (template, recentArticles) => {
   return (node) => toPages(node, template, recentArticles)
 }
 
-const paginationFor = (result, path, listTemplate, postsPerPage = 12) => {
+const paginationFor = (result, path, listTemplate, postsPerPage = 6) => {
   let numPosts = result.data.allMarkdownRemark?.totalCount
   if (numPosts === undefined) {
     numPosts = result.data.allMarkdownRemark.nodes.length
