@@ -11,7 +11,8 @@
 }
 
 .home_grid img {
-  border: #d4d4d4 solid 1px;
+  border: #9c9c9c solid 1px;
+  border-radius: 0.25rem;
   width: 100%;
   max-height: 300px;
   object-fit: cover;
@@ -76,7 +77,7 @@
 
 .home_subtitle {
   margin-bottom: 1.45rem;
-  font-family: 'Barlow', serif;
+  font-family: 'Barlow', sans-serif;
   font-size: 1.8rem;
   line-height: 1.1;
 }

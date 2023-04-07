@@ -39,7 +39,7 @@ const FeaturedImage = ({
         <div className="banner-background">
           <GatsbyImage
             image={image}
-            style={{minHeight:"300px", maxHeight: '400px'}}
+            style={{minHeight:"300px", maxHeight: '300px'}}
             alt="Featured image"
           />
         </div>

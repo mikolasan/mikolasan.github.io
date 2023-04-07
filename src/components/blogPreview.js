@@ -34,10 +34,13 @@ const BlogPreview = ({
         {title}
       </h3>
     </Link>
-    {developing && <p className={styles.developing}>Under development</p>}
-    <time className={styles.blogdate}>
-      {date}
-    </time>
+    {developing && (
+      <p className={styles.developing}>Under development</p>
+    ) || (
+      <time className={styles.blogdate}>
+        {date}
+      </time>
+    )}
     <p>{text}</p>
     <Link className={styles.readmore} to={path}>{readMore}</Link>
   </article>

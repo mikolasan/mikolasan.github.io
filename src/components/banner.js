@@ -44,7 +44,7 @@ const Banner = ({
             fit: "cover",
           }}
           quality={100}
-          style={{minHeight:"400px", maxHeight: '400px'}}
+          style={{minHeight:"300px", maxHeight: '300px'}}
         />
       </div>
       <div className="banner-text">

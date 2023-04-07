@@ -25,10 +25,10 @@
   display: block;
   background: #ffdd26c2;
   color: #a70046 ;
-  padding: 0 1rem;
-  padding-bottom: 0.4rem;
-  margin: 0;
-  border: 5px dashed #a70046  !important;
+  padding: 0 0.1rem;
+  padding-bottom: 0.1rem;
+  border-top: 2px solid #a70046;
+  border-bottom: 2px solid #a70046;
   font-weight: 700;
 }
 
@@ -46,27 +46,24 @@
 
 .blogcard time {
   display: block;
+  border-bottom: 1px solid #ccc;
   margin-bottom: 0rem;
 }
 
 .blogcard p {
-  border-top: 1px solid #ccc;
   padding-top: 0.5rem;
   margin-bottom: 0.5rem;
+  overflow-wrap: anywhere;
 }
 
 .readmore {
-  background-color: #f9f9f9;
-  border: 1px solid #ccc;
-  border-radius: 5px;
   margin: 0.5rem 0;
-  padding: 0.2rem 1rem;
   display: inline-block;
 }
 
 .blogdate {
   color: #595959;
-  font-size: 90%;
+  font-size: 80%;
 }
 
 @media screen and (max-width: 870px) {

@@ -2,7 +2,7 @@ import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 
 export default () => (
-  <div style={{minHeight:"350px", maxHeight: "400px"}}>
+  <div style={{minHeight:"300px", maxHeight: "300px"}}>
     <StaticImage 
       src="../images/index-7.jpg"
       alt="Car forest"
@@ -14,7 +14,7 @@ export default () => (
         fit: "cover",
       }}
       quality={100}
-      style={{minHeight:"400px", maxHeight: '400px'}}
+      style={{minHeight:"300px", maxHeight: '300px'}}
     />
   </div>
 )

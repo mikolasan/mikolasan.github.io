@@ -103,11 +103,13 @@ const Title = ({ title, lang, imageUrl, pageUrl, description, meta }) => {
       <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet"></link>
       <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet"></link>
       <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet"></link>
+      <link href="https://fonts.googleapis.com/css2?family=Cardo&display=swap" rel="stylesheet"></link>
       
       {/* Titles */}
       <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap" rel="stylesheet"></link>
       <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet"></link>
       <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&display=swap" rel="stylesheet"></link>
+      <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet"></link>
     </Helmet>
   )
 }
