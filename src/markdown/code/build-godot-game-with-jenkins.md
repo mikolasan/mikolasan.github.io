@@ -326,3 +326,5 @@ pipeline {
 Also you might be interested in reading these useful resources
 
 - https://hub.docker.com/r/barichello/godot-ci
+- Jenkins Docker Workflow plugin - A look at inside() https://echorand.me/posts/jenkins-docker-workflow-inside/
+- Docker Workflow plugin sources https://github.com/jenkinsci/docker-workflow-plugin/blob/74a2370901f41e8b5b541d768b440e2ab1cd1b18/src/main/java/org/jenkinsci/plugins/docker/workflow/client/DockerClient.java#L109

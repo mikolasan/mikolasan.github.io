@@ -15,6 +15,7 @@ I'm a mathematician. On my homepage I want to have something that would highligh
 
 By the way, check this out, the [quadridimensional version](http://www.lactamme.polytechnique.fr/Mosaic/images/CAYA.K1.0129.21.1.M.D/display.html)
 
+
 ### Other vizualizations
 
 - http://members.wolfram.com/jeffb/visualization/stringtheory2.shtml
@@ -24,13 +25,14 @@ By the way, check this out, the [quadridimensional version](http://www.lactamme.
 
 ![Example illustration of the manifold](./calabi-yau-manifold-observablehq.png "exponent=5 projection=3.6 Credit: @sw1227")
 
-## The math
 
+## The math
 
 So to bring this animation to my website, I need to [undestand the math behind it](http://www.scholarpedia.org/article/Calabi-Yau_manifold). And then understand [how the manifold can be vizualized](https://analyticphysics.com/Higher%20Dimensions/Visualizing%20Calabi-Yau%20Manifolds.htm).
 
 - About hidden dimensions https://plus.maths.org/content/hidden-dimensions
 - About each of 10 dimensions https://phys.org/news/2014-12-universe-dimensions.html
+
 
 ## The code
 
