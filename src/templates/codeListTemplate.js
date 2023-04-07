@@ -17,56 +17,56 @@ const Code = ({ data, pageContext }) => (
       baseUrl="/code"
       pageContext={pageContext}
     />
+    <div className="ideacards">
+      <h2>Topics</h2>
+      <SectionCard
+        title="Linux"
+        url="/linux"
+      >
+        <p>Tips and tricks for Linux users.
+          Something commands carefully crafted, some knowledge found from the first source when no documentation is not available.
+        </p>
+        <p>
+          Also this section is dedicated to custom linux development.
+        </p>
+      </SectionCard>
 
-    <h2>Topics</h2>
-    <SectionCard
-      title="Linux"
-      url="/linux"
-    >
-      <p>Tips and tricks for Linux users.
-        Something commands carefully crafted, some knowledge found from the first source when no documentation is not available.
-      </p>
-      <p>
-        Also this section is dedicated to custom linux development.
-      </p>
-    </SectionCard>
+      <SectionCard
+        title="C++"
+        url="/code/cpp"
+      >
+        <p>
+          Develop skills in C++ language by taking easy questionarries. 
+        </p>
+      </SectionCard>
 
-    <SectionCard
-      title="C++"
-      url="/code/cpp"
-    >
-      <p>
-        Develop skills in C++ language by taking easy questionarries. 
-      </p>
-    </SectionCard>
+      <SectionCard
+        title="Gamedev"
+        url="/gamedev"
+      >
+        <p>
+          I dreamed about game developement since school. And now I'm professionally developing games for slot machines.
+        </p>
+      </SectionCard>
 
-    <SectionCard
-      title="Gamedev"
-      url="/gamedev"
-    >
-      <p>
-        I dreamed about game developement since school. And now I'm professionally developing games for slot machines.
-      </p>
-    </SectionCard>
+      <SectionCard
+        title="Projects"
+        url="/projects"
+      >
+        <p>
+          My coding projects
+        </p>
+      </SectionCard>
 
-    <SectionCard
-      title="Projects"
-      url="/projects"
-    >
-      <p>
-        My coding projects
-      </p>
-    </SectionCard>
-
-    <SectionCard
-      title="Ideas"
-      url="/ideas"
-    >
-      <p>
-        Ideas for new projects. 
-      </p>
-    </SectionCard>
-
+      <SectionCard
+        title="Ideas"
+        url="/ideas"
+      >
+        <p>
+          Ideas for new projects. 
+        </p>
+      </SectionCard>
+    </div>
   </Layout>
 )
 
@@ -77,7 +77,7 @@ export const query = graphql`
     allMarkdownRemark(
       limit: $limit,
       skip: $skip,
-      sort: { fields: [frontmatter___lastModified], order: DESC},
+      sort: { frontmatter: {lastModified: DESC}},
       filter: { fileAbsolutePath: { regex: "/markdown\/code\//"} }
     ) {
       totalCount

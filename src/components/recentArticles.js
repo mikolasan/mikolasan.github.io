@@ -9,7 +9,7 @@ const RecentArticles = () => {
     query {
       allMarkdownRemark(
         limit: 3,
-        sort: { order: DESC, fields: [frontmatter___date]},
+        sort: { frontmatter: {date: DESC}},
         filter: {
           fileAbsolutePath: {regex: "/^(?!.*\/ru\/.*)/"},
           frontmatter: { topic: {ne: true}, article: {ne: true}}

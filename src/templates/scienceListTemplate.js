@@ -17,15 +17,17 @@ const Science = ({ data, pageContext }) => (
       baseUrl="/science"
       pageContext={pageContext}
     />
-    <h2>Topics</h2>
-    <SectionCard
-      title="AI"
-      url="/brain-model"
-    >
-      <p>
-        Research about current development in Artificial Intellegence, crytical analysis and new ideas
-      </p>
-    </SectionCard>
+    <div className="ideacards">
+      <h2>Topics</h2>
+      <SectionCard
+        title="AI"
+        url="/brain-model"
+      >
+        <p>
+          Research about current development in Artificial Intellegence, crytical analysis and new ideas
+        </p>
+      </SectionCard>
+    </div>
   </Layout>
 )
 
@@ -36,7 +38,7 @@ export const query = graphql`
     allMarkdownRemark(
       limit: $limit,
       skip: $skip,
-      sort: { fields: [frontmatter___date], order: DESC},
+      sort: { frontmatter: {date: DESC}},
       filter: {
         fileAbsolutePath: { regex: "/markdown\/science\//"},
         frontmatter: { topic: {ne: true}, article: {ne: true}}

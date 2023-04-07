@@ -18,6 +18,9 @@ const pageQuery = `{
         }
         excerpt(pruneLength: 5000)
         fileAbsolutePath
+        internal {
+          contentDigest
+        }
       }
     }
   }

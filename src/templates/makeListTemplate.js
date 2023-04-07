@@ -17,16 +17,17 @@ const Make = ({ data, pageContext }) => (
       baseUrl="/make"
       pageContext={pageContext}
     />
-
-    <h2>Topics</h2>
-    <SectionCard
-      title="Robot"
-      url="/make/robot"
-    >
-      <p>
-        Developing unique robot constructor with modular design
-      </p>
-    </SectionCard>
+    <div className="ideacards">
+      <h2>Topics</h2>
+      <SectionCard
+        title="Robot"
+        url="/make/robot"
+      >
+        <p>
+          Developing unique robot constructor with modular design
+        </p>
+      </SectionCard>
+    </div>
   </Layout>
 )
 
@@ -37,7 +38,7 @@ export const query = graphql`
     allMarkdownRemark(
       limit: $limit,
       skip: $skip,
-      sort: { fields: [frontmatter___lastModified], order: DESC},
+      sort: { frontmatter: {lastModified: DESC}},
       filter: { fileAbsolutePath: { regex: "/markdown\/make\/(?!robot)/"} }
     ) {
       totalCount

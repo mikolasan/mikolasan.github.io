@@ -68,7 +68,7 @@ class LayoutBase extends React.Component {
 
     const wideImage = (
       <FeaturedImage
-        image={featuredImage}
+        image={imageData}
         title={title}
         buttonText={buttonText}
         buttonLink={buttonLink}

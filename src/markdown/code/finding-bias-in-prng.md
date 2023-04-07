@@ -19,7 +19,7 @@ http://simul.iro.umontreal.ca/testu01/tu01.html
 
 ## String to binary output
 
-```c++
+```cpp
 // add code
 ```
 

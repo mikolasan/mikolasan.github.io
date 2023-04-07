@@ -35,7 +35,7 @@ export const query = graphql`
     allMarkdownRemark(
       limit: $limit,
       skip: $skip,
-      sort: { fields: [frontmatter___date], order: DESC},
+      sort: { frontmatter: {date: DESC}},
       filter: { fileAbsolutePath: { regex: "/\/ru\/make\/(?!hydroponics)/"} }
     ) {
       totalCount

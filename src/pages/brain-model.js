@@ -63,7 +63,7 @@ export const query = graphql`
         fileAbsolutePath: { regex: "/markdown\/ai\//"},
         frontmatter: {topic: {eq: true}}
       }
-      sort: {order: ASC, fields: fileAbsolutePath}
+      sort: {fileAbsolutePath: ASC}
     ) {
       nodes {
         frontmatter {
@@ -78,7 +78,7 @@ export const query = graphql`
         fileAbsolutePath: { regex: "/markdown\/ai\//"},
         frontmatter: {article: {eq: true}}
       }
-      sort: {order: ASC, fields: fileAbsolutePath}
+      sort: {fileAbsolutePath: ASC}
     ) {
       nodes {
         frontmatter {

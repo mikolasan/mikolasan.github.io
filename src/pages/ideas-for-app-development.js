@@ -73,7 +73,7 @@ export const pageQuery = graphql`
         }
       }
     ) {
-      group(field: frontmatter___tags) {
+      group(field: {frontmatter: {tags: SELECT}}) {
         nodes {
           frontmatter {
             date

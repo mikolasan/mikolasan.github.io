@@ -43,10 +43,7 @@ const RuNav = ({ active }) => (
     <Link to="/ru/about" style={{float: 'right'}} { ...(active === "about" && { className: styles.activelink }) }>О себе</Link>
 
     <div className={styles.language}>
-    <Link to="/" title="English">
-      <GlobeButton style={styles.globe} />
-      <img className={styles.american} src="/images/liberty-2.svg" />
-    </Link>
+    <Link to="/" title="English">EN</Link>
     </div>
     <Search indices={searchIndices} />
   </nav>

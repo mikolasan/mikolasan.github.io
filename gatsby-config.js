@@ -224,7 +224,7 @@ module.exports = {
               {
                 allMarkdownRemark(
                   filter: {fileAbsolutePath: {regex: "/^(?!.*\/ru\/.*)/"}}
-                  sort: { order: DESC, fields: [frontmatter___lastModified] },
+                  sort: { frontmatter: {lastModified: DESC} },
                 ) {
                   edges {
                     node {
@@ -247,27 +247,5 @@ module.exports = {
         ],
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-prefetch-google-fonts`,
-    //   options: {
-    //     fonts: [
-    //       {
-    //         family: `Vollkorn SC`,
-    //         variants: [`700`]
-    //       },
-    //       {
-    //         family: `Manrope`,
-    //         variants: [`300`]
-    //       },
-    //       {
-    //         family: `Nunito`,
-    //         variants: [`300`]
-    //       },
-    //     ],
-    //     encode: false,
-    //     filename: "google-fonts.css",
-    //     formats: ["woff2", "woff", "ttf", "eof"]
-    //   },
-    // },
   ],
 }

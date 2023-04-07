@@ -43,7 +43,7 @@ exports.onCreatePage = ({ page, actions }) => {
   if (match && match.length > 1) {
     pageName = match[1]
     if (pageName in updated) {
-      console.log(pageName, updated[pageName])
+      // console.log(pageName, updated[pageName])
       deletePage(page)
       createPage({
         ...page,
@@ -196,7 +196,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   //   {
   //     allMarkdownRemark(
   //       limit: 5,
-  //       sort: { order: DESC, fields: [frontmatter___date]},
+  //       sort: { frontmatter: {date: DESC}},
   //       filter: {
   //         frontmatter: {language: {ne: "ru"}, topic: {ne: true}, article: {ne: true}}
   //       }
