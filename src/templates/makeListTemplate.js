@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import PostList from "../components/postList"
+import SectionCard from "../components/sectionCard"
 
 const Make = ({ data, pageContext }) => (
   <Layout
@@ -17,6 +18,15 @@ const Make = ({ data, pageContext }) => (
       pageContext={pageContext}
     />
 
+    <h2>Topics</h2>
+    <SectionCard
+      title="Robot"
+      url="/make/robot"
+    >
+      <p>
+        Developing unique robot constructor with modular design
+      </p>
+    </SectionCard>
   </Layout>
 )
 

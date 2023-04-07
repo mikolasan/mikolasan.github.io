@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import PostList from "../components/postList"
+import SectionCard from "../components/sectionCard"
 
 const Science = ({ data, pageContext }) => (
   <Layout
@@ -16,7 +17,15 @@ const Science = ({ data, pageContext }) => (
       baseUrl="/science"
       pageContext={pageContext}
     />
-
+    <h2>Topics</h2>
+    <SectionCard
+      title="AI"
+      url="/brain-model"
+    >
+      <p>
+        Research about current development in Artificial Intellegence, crytical analysis and new ideas
+      </p>
+    </SectionCard>
   </Layout>
 )
 
