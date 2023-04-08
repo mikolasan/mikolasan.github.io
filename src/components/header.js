@@ -10,28 +10,43 @@ const Header = ({
   menuClickedCallback,
   section
 }) => {
-  // TODO:
-  // if (crumbs && language !== "en") {
-  //   const root = crumbs.shift(); // remove the first element
-  //   if (crumbs.length > 0) {
-  //     // update the crumb label, keep `pathname`
-  //     crumbs[0].crumbLabel = root.crumbLabel
-  //   }
-  // }
-  const crumbsLine = crumbs && (
-    <div className={styles.breadcrumbs}>
-      <div className={styles.centerpart}>
-        <Breadcrumb
-          crumbs={crumbs}
-          crumbSeparator=" "
-          title={<p className={styles.titleimg}>N</p>}
-        />
-        <div className={styles.nextline}></div>
+  let crumbsLine = <div className="bottomline"></div>
+  if (crumbs) {
+    let _crumbs = [...crumbs]
+    if (language !== "en") {
+      const root = _crumbs.shift(); // remove the first element
+      if (_crumbs.length == 1) {
+        _crumbs = []
+      } else if (_crumbs.length > 0) {
+        // update the crumb label, keep `pathname`
+        _crumbs[0].crumbLabel = root.crumbLabel
+      }
+    }
+    const n = _crumbs.length
+    if (n > 0) {
+      const lastLabel = _crumbs[n - 1].crumbLabel
+      if (n > 3
+          || lastLabel !== "neural-networks" 
+          && lastLabel !== "board-games" 
+          && lastLabel !== "3d-prints" 
+          && lastLabel.indexOf("-") != -1) {
+        _crumbs.pop()
+      }
+    }
+
+    crumbsLine = (
+      <div className={styles.breadcrumbs}>
+        <div className={styles.centerpart}>
+          <Breadcrumb
+            crumbs={_crumbs}
+            crumbSeparator=" "
+            title={<p className={styles.titleimg}>N</p>}
+          />
+          <div className={styles.nextline}></div>
+        </div>
       </div>
-    </div>
-  ) || (
-    <div className="bottomline"></div>
-  )
+    )
+  }
 
   // console.log("crumbs", crumbs)
   return (

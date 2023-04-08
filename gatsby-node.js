@@ -238,10 +238,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       .forEach(page => createPage(page))  
   }
 
+  const printsListTemplate = path.resolve(`./src/templates/3dPrintsListTemplate.js`)
   const blogListTemplate = path.resolve(`./src/templates/blogListTemplate.js`)
   const codeListTemplate = path.resolve(`./src/templates/codeListTemplate.js`)
+  const cppListTemplate = path.resolve(`./src/templates/cppListTemplate.js`)
   const gamedevListTemplate = path.resolve(`./src/templates/gamedevListTemplate.js`)
   const ideasListTemplate = path.resolve(`./src/templates/ideasListTemplate.js`)
+  const linuxListTemplate = path.resolve(`./src/templates/linuxListTemplate.js`)
   const makeListTemplate = path.resolve(`./src/templates/makeListTemplate.js`)
   const projectsListTemplate = path.resolve(`./src/templates/projectsListTemplate.js`)
   const scienceListTemplate = path.resolve(`./src/templates/scienceListTemplate.js`)
@@ -254,16 +257,22 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   try {
     await Promise.all([
+      // Pagination [/make/3d-prints]
+      createPagination("/markdown\/make\/3d-prints\//", `/make/3d-prints`, printsListTemplate),
       // Pagination [/blog]
       createPagination("/markdown\/blog\//", `/blog`, blogListTemplate),
+      // Pagination [/code/cpp]
+      createPagination("/markdown\/code\/cpp\//", `/code/cpp`, cppListTemplate),
       // Pagination [/code]
-      createPagination("/markdown\/code\//", `/code`, codeListTemplate),
+      createPagination("/markdown\/code\/(?!cpp)/", `/code`, codeListTemplate),
       // Pagination [/gamedev]
       createPagination("/markdown\/gamedev\//", `/gamedev`, gamedevListTemplate),
       // Pagination [/ideas]
       createPagination("/markdown\/ideas\//", `/ideas`, ideasListTemplate),
+      // Pagination [/linux]
+      createPagination("/markdown\/linux\//", `/linux`, linuxListTemplate),
       // Pagination [/make]
-      createPagination("/markdown\/make\//", `/make`, makeListTemplate),
+      createPagination("/markdown\/make\/(?!robot|3d-prints)/", `/make`, makeListTemplate),
       // Pagination [/projects]
       createPagination("/markdown\/projects\//", `/projects`, projectsListTemplate),
       // Pagination [/science]

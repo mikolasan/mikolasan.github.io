@@ -78,7 +78,7 @@ export const query = graphql`
       limit: $limit,
       skip: $skip,
       sort: { frontmatter: {lastModified: DESC}},
-      filter: { fileAbsolutePath: { regex: "/markdown\/code\//"} }
+      filter: { fileAbsolutePath: { regex: "/markdown\/code\/(?!cpp)/"} }
     ) {
       totalCount
       edges {
