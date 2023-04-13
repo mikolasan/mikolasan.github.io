@@ -23,6 +23,17 @@ jupyter notebook
 
 On Windows make sure that `C:\Users\<user_name>\AppData\Local\Programs\Python\Python38\Scripts\` is in your user environment variables
 
+
+## Updates
+
+```
+pip install jupyter --upgrade
+pip install notebook --upgrade
+```
+
+* **Jupyter** is metapackage that allows you to install all the Jupyter components in one go.
+
+
 ## Dark theme
 
 Set dark theme (more info in [this StackOverflow question](https://stackoverflow.com/questions/46510192/change-the-theme-in-jupyter-notebook))

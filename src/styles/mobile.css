@@ -4,20 +4,20 @@
 }
 
 .frstbar {
-  transform-origin: 50% 0;
+  transform-origin: 10% 5%;
 }
 .thrdbar {
-  transform-origin: 50% 100%;
+  transform-origin: 10% 95%;
 }
 
 #burgericon.open .frstbar {
-  transform: translateX(0.2rem) translateY(1.8rem) rotate(45deg);
+  transform: translateX(1.2rem) translateY(0.3rem) rotate(45deg);
 }
 #burgericon.open .thrdbar {
-  transform: translateX(0.2rem) translateY(-1.8rem) rotate(-45deg);
+  transform: translateX(1.2rem) translateY(-0.3rem) rotate(-45deg);
 }
 #burgericon.open .scndbar {
-  width: 0;
+  /* width: 0; */
   opacity: 0;
 }
 

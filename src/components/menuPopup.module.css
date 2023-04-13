@@ -49,16 +49,23 @@
 }
 
 .menuitem {
+  display: flex;
+  align-items: baseline;
+  margin: 0;
   border-bottom: 1px solid #ddd;
-  margin: 0 auto;
+}
+
+.menuitem h2 {
+  margin: 1rem 0;
 }
 
 .menuitem a {
   display: block;
   padding: .7rem 0;
+  margin-left: 2rem;
   color: #211a1d;
   text-decoration: none;
-  text-align: center;
+  text-align: start;
 }
 
 .menuitem a:hover {
@@ -73,6 +80,11 @@
 
 .menuitem a:visited {
   color: #211a1d;
+}
+
+.menuitem p {
+  margin: 0;
+  margin-left: 2rem;
 }
 
 .active-menu-item {

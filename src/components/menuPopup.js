@@ -8,28 +8,28 @@ class MenuPopup extends React.Component {
   constructor(props) {
     super(props)
     this.items = [
-      {link: "/", label: "Home"},
-      {link: "/make", label: "Make"},
-      {link: "/make/robot", label: "Robot"},
-      {link: "/science", label: "Science"},
-      {link: "/brain-model", label: "Brain Model"},
-      {link: "/code", label: "Code"},
-      {link: "/gamedev", label: "Gamedev"},
-      {link: "/projects", label: "Projects"},
-      {link: "/blog", label: "Blog"},
-      {link: "/about", label: "About"},
-      {link: "/ideas", label: "Ideas"},
-      {link: "/cv", label: "CV"},
+      {link: "/", label: "Home", description: "Main news feed updated frequently"},
+      {link: "/make", label: "Make", description: "DIY stuff, Raspberry Pi, Arduino projects"},
+      {link: "/make/robot", label: "Robot", description: "Developing my platform, PCB and software, all open source"},
+      {link: "/science", label: "Science", description: "Popularizing articles about math"},
+      {link: "/ai", label: "AI", description: "Honest review of current methods. No BS"},
+      {link: "/code", label: "Code", description: "Software developer corner"},
+      {link: "/gamedev", label: "Gamedev", description: "My game projects"},
+      {link: "/projects", label: "Projects", description: "Just interesting stuff, possible startup ideas"},
+      {link: "/ideas", label: "Ideas", description: "More wild ideas"},
+      {link: "/blog", label: "Blog", description: "Different topics from my personal perspective"},
+      {link: "/about", label: "About", description: "Short introduction"},
+      {link: "/cv", label: "CV", description: "My experience in one page"},
     ]
     this.ruItems = [
-      {link: "/ru/", label: "Главная"},
-      {link: "/ru/neural-networks", label: "Нейронные сети"},
-      {link: "/ru/make", label: "Мастерская"},
-      {link: "/ru/devlog", label: "Девлог"},
-      {link: "/ru/paranormal", label: "Паранормальное"},
-      {link: "/ru/board-games", label: "Настольные игры"},
-      {link: "/ru/blog", label: "Остальное"},
-      {link: "/ru/about", label: "О себе"},
+      {link: "/ru/", label: "Главная", description: ""},
+      {link: "/ru/neural-networks", label: "Нейронные сети", description: ""},
+      {link: "/ru/make", label: "Мастерская", description: ""},
+      {link: "/ru/devlog", label: "Девлог", description: ""},
+      {link: "/ru/paranormal", label: "Паранормальное", description: ""},
+      {link: "/ru/board-games", label: "Настольные игры", description: ""},
+      {link: "/ru/blog", label: "Остальное", description: ""},
+      {link: "/ru/about", label: "О себе", description: ""},
     ]
     this.language = this.props.language
   }
@@ -58,11 +58,15 @@ class MenuPopup extends React.Component {
           </div>) : ""}
           {(this.language === "en" ? this.items : this.ruItems).map(i =>
             <div className={styles.menuitem} key={i.link}>
-              <a
-                href={i.link}
-                onClick={this.props.closeCallback}>
-                {i.label}
-              </a>
+              <h2>
+                <a
+                  href={i.link}
+                  onClick={this.props.closeCallback}
+                >
+                  {i.label}
+                </a>
+              </h2>
+              <p>{i.description}</p>
             </div>
           )}
           {this.language === "en" && (

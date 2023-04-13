@@ -11,8 +11,8 @@ lastModified: 2022-10-03
 
 My plan is to play with CycleGAN and to read 2 papers
 
-- [2018] Large Scale GAN Training for High Fidelity Natural Image Synthesis
-- [2017] Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks
+- \[[2018](https://arxiv.org/abs/1809.11096)] Large Scale GAN Training for High Fidelity Natural Image Synthesis
+- \[[2017](https://arxiv.org/abs/1703.10593)] Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks
 
 
 I'm following the tutorial from [TensorFlow documentation](https://www.tensorflow.org/tutorials/generative/cyclegan)
@@ -37,7 +37,7 @@ Is there a difference? When you see implementation in all frameworks, which one 
 ```python
 tf.version.VERSION
 # or
-tf._version__
+tf.__version__
 ```
 
 Just a reminder that there is a big difference between TensorFlow 1 and 2. They hate each other and many projects and tutorials still use version 1. I highly recommend do not try to upgrade projects from 1 to 2. Especially if you do not understand how the project works. Even their creators do not know how it works, so don't even try.
