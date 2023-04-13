@@ -21,7 +21,7 @@ const Science = ({ data, pageContext }) => (
       <h2>Topics</h2>
       <SectionCard
         title="AI"
-        url="/brain-model"
+        url="/ai"
       >
         <p>
           Research about current development in Artificial Intellegence, crytical analysis and new ideas

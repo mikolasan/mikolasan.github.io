@@ -1,9 +1,5 @@
 [
   {
-    "fromPath": "/ai",
-    "toPath": "/brain-model"
-  },
-  {
     "fromPath": "/blog/weston-autolaunch",
     "toPath": "/code/weston-autolaunch"
   },
