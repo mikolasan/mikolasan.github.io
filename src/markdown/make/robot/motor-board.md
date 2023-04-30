@@ -10,7 +10,7 @@ twitter: https://twitter.com/mikolasan/status/1589868745606172675
 
 ## H-Bridge
 
-[H-bridge](https://www.uni-weimar.de/kunst-und-gestaltung/wiki/H-Bridge), also called as _full bridge_ (but not half bridge), is a motor driver that allows the motor to rotate forward and back. H-Bridge can be created with the help of four MOSFETs and diodes.
+[H-bridge](https://www.uni-weimar.de/kunst-und-gestaltung/wiki/H-Bridge), also called as _full bridge_ (but not half bridge), is a motor driver that allows the motor to rotate forward and backward. With independent movement of every wheel we will implement [skid-steer drive](https://groups.csail.mit.edu/drl/courses/cs54-2001s/skidsteer.html). H-Bridge can be created with the help of four MOSFETs and diodes.
 
 > Unwise to power an H-bridge with two d-a's, forward and reverse, you run risk of powering both sides on at once. This destroys the H-bridge and can destroy the motor. Be really careful. You can only power one at a time.
 >
@@ -80,6 +80,7 @@ Note: Pay attention to a paragraph about bulk resistance
 
 ![Arduino shield](./Arduino-shield-L293D-bird-tokyo.png "Credit: @bird_tokyo")
 
+- [ROSRider](http://rosrider.com/)
 - [Adafruit TB6612 1.2A DC/Stepper Motor Driver Breakout Board](https://www.adafruit.com/product/2448) (TB6612)
 - [A-Star 32U4 Robot Controller LV with Raspberry Pi Bridge](https://www.pololu.com/product/3117) (DRV8838). Using [their schematics](https://www.pololu.com/file/0J950/a-star-32u4-robot-controller-lv-with-raspberry-pi-bridge-schematic.pdf) I verified that there is no need to add more capacitors or resistors to the original scheme.
 - [X-NUCLEO-IHM08M1](https://www.st.com/en/ecosystems/x-nucleo-ihm08m1.html) (L6398). Half bridge, but oriented on brushless motors that require a special algorithm to supply power, which is a part of hardware.

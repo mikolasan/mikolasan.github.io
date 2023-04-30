@@ -21,6 +21,13 @@ I was trying to understand the "inverse-dynamics model" block in the paper by [M
 - MIT, [Introduction to Robotics, Chapter 7](https://ocw.mit.edu/courses/2-12-introduction-to-robotics-fall-2005/c7caaa2376b8ec01e270328a3b80b029_chapter7.pdf)
 - Purdue University, [Chapter 5](https://www.purdue.edu/freeform/me274/wp-content/uploads/sites/15/2020/04/Lecture_27_Filled.pdf)
 - Inverse kinematics https://scaron.info/robotics/inverse-kinematics.html
+- [Lagrange's equation of motion](https://phys.libretexts.org/Bookshelves/Classical_Mechanics/Classical_Mechanics_(Tatum)/13%3A_Lagrangian_Mechanics/13.04%3A_The_Lagrangian_Equations_of_Motion)
+
+### 4 wheel robot
+
+- **[A skid-steering wheeled robot](https://www.mdpi.com/1424-8220/15/5/9681)**
+- [Unified framework](https://hal.science/hal-00578090/document) A lot of heavy formulas. Not good for the beginner. Maybe will return later
+- [Mecnum wheels](https://www.researchgate.net/publication/269757704_An_approach_to_the_kinematics_and_dynamics_of_a_four-wheeled_mecanum_vehicles)
 
 ## See also
 

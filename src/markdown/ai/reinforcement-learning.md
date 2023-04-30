@@ -12,7 +12,7 @@ lastModified: 2022-12-20
 
 ## Articles
 
-
+- soccer bi-pedal robot recover after push with Deep Reinforcement Learning [site](https://sites.google.com/view/op3-soccer?pli=10) [paper](https://arxiv.org/abs/2304.13653)
 - 2019 Neftci - Reinforcement learning in artificial and biological systems https://www.gwern.net/docs/reinforcement-learning/model-free/2019-neftci.pdf
 - neurorobotics can be used to explain how neural network activity leads to behavior. [Neurorobots as a Means Toward Neuroethology and Explainable AI](https://www.frontiersin.org/articles/10.3389/fnbot.2020.570308/full)
 - [TensorFlow tutorials](https://www.tensorflow.org/agents/tutorials/0_intro_rl)

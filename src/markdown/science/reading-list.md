@@ -20,6 +20,8 @@ Very interesting things that have very good write up, but I do not have time to 
 # Also
 
 - [Classic papers](https://scholar.google.com/citations?view_op=list_classic_articles&hl=en&by=2006&vq=eng_artificialintelligence) by Google Scholar
+- [A Brief History of Neural Nets and Deep Learning](https://www.skynettoday.com/overviews/neural-net-history)
+
 ## Books that every machine learning enthusiast should read
 
 - **Neuronal Dynamics: From single neurons to networks and models of cognition** [online book](https://neuronaldynamics.epfl.ch/index.html)
