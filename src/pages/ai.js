@@ -9,7 +9,7 @@ const BrainModelPage = ({ data }) => {
 
   return (
     <Layout 
-      title="Brain model"
+      title="AI"
       section="ai"
     >
       <h1>Brain model</h1>
