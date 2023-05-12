@@ -34,3 +34,5 @@ Our main protagonist is a guy who studies at the university and falls in love wi
 
 One day she disappears, and the guy finds the courage to ask around. But unexpectedly, people who knew her began revealing strange facts about her life. Some secret project she was conducting at night. A bit of mystery, a bit of conspiracy...
 
+## Main characters
+

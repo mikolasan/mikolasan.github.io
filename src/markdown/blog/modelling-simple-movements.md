@@ -66,8 +66,11 @@ Using physics-based equations, such as Lagrange, Euler, or Newton equations, to 
 
 One weakness of the Hamiltonian approach is that it assumes knowledge of the canonical coordinates q, p. In general our observed data from a dynamical system may not match up against this canonical structure. An alternative is to instead parameterise the Lagrangian.
 
-Look for [solution of double pendulum problem](https://arxiv.org/abs/2009.09457)
+Take simple perceptron and train it with the first derivative, but it learns the original function. [Basics of NN for ODE](https://colab.research.google.com/drive/12ztGwxR1TK8Ka6H3bOsSt57kB71ieQ-W?usp=sharing).
+Then we take a Hamiltonian and approximate it. [here](https://greydanus.github.io/2019/05/15/hamiltonian-nns/)
+Hamiltonian is from [this paper](https://arxiv.org/abs/1909.12077) ([code](https://github.com/Physics-aware-AI/Symplectic-ODENet)) 
 
-Hamiltonian is from [this paper](https://arxiv.org/abs/1909.12077) (code [https://github.com/Physics-aware-AI/Symplectic-ODENet](https://github.com/Physics-aware-AI/Symplectic-ODENet) ) [Basics of NN for ODE](https://colab.research.google.com/drive/12ztGwxR1TK8Ka6H3bOsSt57kB71ieQ-W?usp=sharing)
 
-[Big review](https://arxiv.org/abs/2202.02435) of Neural Differential Equations
+- Look for [solution of double pendulum problem](https://arxiv.org/abs/2009.09457)
+- [Big review](https://arxiv.org/abs/2202.02435) of Neural Differential Equations
+- Lagrangian Deep Networks https://openreview.net/forum?id=BklHpjCqKm

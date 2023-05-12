@@ -22,12 +22,22 @@ I was trying to understand the "inverse-dynamics model" block in the paper by [M
 - Purdue University, [Chapter 5](https://www.purdue.edu/freeform/me274/wp-content/uploads/sites/15/2020/04/Lecture_27_Filled.pdf)
 - Inverse kinematics https://scaron.info/robotics/inverse-kinematics.html
 - [Lagrange's equation of motion](https://phys.libretexts.org/Bookshelves/Classical_Mechanics/Classical_Mechanics_(Tatum)/13%3A_Lagrangian_Mechanics/13.04%3A_The_Lagrangian_Equations_of_Motion)
+- Sensor-Based Intelligent Navigation and Control of Autonomous Mobile Robots for Advanced Terrain Missions [paper](https://www.researchgate.net/publication/268394926_Sensor-Based_Intelligent_Navigation_and_Control_of_Autonomous_Mobile_Robots_for_Advanced_Terrain_Missions)
 
 ### 4 wheel robot
 
-- **[A skid-steering wheeled robot](https://www.mdpi.com/1424-8220/15/5/9681)**
+- **[A skid-steering wheeled robot](https://www.mdpi.com/1424-8220/15/5/9681)** - analysis and experimental kinematics 
 - [Unified framework](https://hal.science/hal-00578090/document) A lot of heavy formulas. Not good for the beginner. Maybe will return later
 - [Mecnum wheels](https://www.researchgate.net/publication/269757704_An_approach_to_the_kinematics_and_dynamics_of_a_four-wheeled_mecanum_vehicles)
+
+
+## Examples
+
+- Autonomous ground vehicle (i.e., wheeled mobile robot) [simulation examples in Python](https://github.com/botprof/agv-examples)
+
+![Ackermann kinematic](./ackermann_kinematic.gif)
+
+
 
 ## See also
 
@@ -35,3 +45,4 @@ I was trying to understand the "inverse-dynamics model" block in the paper by [M
 \[[1](https://am.is.mpg.de/uploads_file/attachment/attachment/302/paper.pdf)]
 \[[2](https://h2t.anthropomatik.kit.edu/pdf/Hitzler2019.pdf)].
 - OMG this [web site](https://scaron.info/robotics/inverse-kinematics.html)
+- Kalman filters

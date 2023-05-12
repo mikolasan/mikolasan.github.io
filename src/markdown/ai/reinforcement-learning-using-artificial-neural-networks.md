@@ -43,6 +43,8 @@ So practice, practice, practice! We focus on examples implemented with PyTorch a
 First of all lets create the simpliest but non trivial perceptron - [neuron system that works as a XOR function](https://medium.com/mlearning-ai/learning-xor-with-pytorch-c1c11d67ba8e).
 Two input neurons, two in the hidden layer, and one neuron - output. Simple as that:
 
+### Pytorch
+
 - [nn.Module](https://pytorch.org/docs/stable/generated/torch.nn.Module.html)
 - [MSELoss](https://pytorch.org/docs/stable/generated/torch.nn.MSELoss.html)
 
@@ -93,6 +95,103 @@ def train(model):
 
 I have a problem with 2000 epochs on some seed values. [This](https://machinelearningmastery.com/introduction-to-regularization-to-reduce-overfitting-and-improve-generalization-error/) might give an answer.
 
+### Keras
+
+```py
+from keras.layers import Dense
+from keras.models import Sequential
+import numpy as np
+import pandas as pd
+
+import matplotlib.pyplot as plt
+
+X = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
+Y = np.array([0, 1, 1, 0])
+
+
+model = Sequential()
+model.add(Dense(1, input_shape=(2,), activation='sigmoid'))
+model.compile('adam', 'binary_crossentropy', metrics=['accuracy'])
+history = model.fit(X, Y, verbose=1, epochs=20)
+```
+
+### Tensorflow (no Keras)
+
+Start with the [official docs](https://www.tensorflow.org/guide/core/mlp_core)
+
+### No frameworks
+
+
+So if you think library for machine learning is not making this example any simpler, then look how it would look with no external libraries (only numpy for matrix operations [don't know numpy - help!](https://numpy.org/devdocs/user/absolute_beginners.html)) 
+
+```py
+import numpy as np
+
+def sigmoid(x):
+    return 1 / (1 + np.exp(-1 * x))
+
+def relu(x):
+    return max(0, x)
+
+epochs = 3000
+learning_rate = 0.1
+data_inputs = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
+data_outputs = np.array([0, 1, 1, 0])
+n_neurons_per_layer = [data_inputs.shape[1], 2, 1]
+
+weights_1 = np.random.randn(n_neurons_per_layer[0], n_neurons_per_layer[1]) * 0.1
+weights_2 = np.random.randn(n_neurons_per_layer[1], n_neurons_per_layer[2]) * 0.1
+bias_1 = np.zeros((1, n_neurons_per_layer[1]))
+bias_2 = np.zeros((1, n_neurons_per_layer[2]))
+
+for i in range(epochs):
+    n_training_steps = data_inputs.shape[0]
+    for idx in range(n_training_steps):
+        x = data_inputs[idx, :]
+        y = data_outputs[idx] # scalar
+        
+        x = x[:, np.newaxis].T # column vector
+        # first hidden layer
+        y_1 = np.dot(x, weights_1) + bias_1 # why x is first? (bias - column vector)
+        y_1 = sigmoid(y_1) # column vector
+        # output
+        y_2 = np.dot(y_1, weights_2) + bias_2 # column vector (just one row)
+        # y_2 = sigmoid(y_2)
+        y_2 = relu(y_2)
+        
+        diff = y - y_2 # 1 element matrix (column vector)
+        
+        grad_2 = 1 # y_2 * (1 - y_2) # sigmoid derivative
+        d_2 = diff * grad_2 # 1 element matrix (column vector)
+        # np.sum(dZ2,axis=1,keepdims=True)
+        dw2 = y_1.T.dot(d_2)
+        weights_2 += learning_rate * dw2
+        bias_2 += learning_rate * d_2
+        
+        grad_1 = y_1 * (1 - y_1) # sigmoid derivative
+        d_1 = (weights_2.T * d_2) * grad_1
+        dw1 = x.T.dot(d_1)
+        weights_1 += learning_rate * dw1
+        bias_1 += learning_rate * d_1
+
+def network_forward(x):
+    global weights_1, weights_2, bias_1, bias_2
+    y_1 = np.dot(x, weights_1) + bias_1
+    y_1 = sigmoid(y_1)
+    y_2 = np.dot(y_1, weights_2) + bias_2
+    y_2 = relu(y_2)
+    if isinstance(y_2, np.ndarray):
+        y_2 = y_2.item()
+    return y_2
+
+print(network_forward(np.array([0,0])))
+print(network_forward(np.array([0,1])))
+print(network_forward(np.array([1,0])))
+print(network_forward(np.array([1,1])))
+```
+
+
+
 Later you might be tempted to review such simple systems further
 
 - [The simplest artificial neural network possible](https://github.com/gokadin/ai-simplest-network) explained and demonstrated. Even if you don't code in Go, check out the theory - it's the "bone structure" you need to understand. [Better matrix pictures](https://towardsdatascience.com/understanding-backpropagation-algorithm-7bb3aa2f95fd)
@@ -106,12 +205,6 @@ Later you might be tempted to review such simple systems further
 - [Why cross-entropy better than mean squared error](https://jamesmccaffrey.wordpress.com/2013/11/05/why-you-should-use-cross-entropy-error-instead-of-classification-error-or-mean-squared-error-for-neural-network-classifier-training/) (better converges to 0 1 limits if we are using softmax on output)
 - Play with another [cost functions](https://stats.stackexchange.com/questions/154879/a-list-of-cost-functions-used-in-neural-networks-alongside-applications)
 
-
-
-So if you think library for machine learning is not making this example any simpler, then look how it would look with no external libraries (only numpy for matrix operations [don't know numpy - help!](https://numpy.org/devdocs/user/absolute_beginners.html)) 
-
-```py
-```
 
 
 ## Function approximation
@@ -189,3 +282,12 @@ I think conventional "training" is wrong because it stops once errors on test se
 [Neural Network Zoo](https://www.asimovinstitute.org/neural-network-zoo/) and [a prequel](https://www.asimovinstitute.org/neural-network-zoo-prequel-cells-layers/) by Fjodor van Veen
 
 Just another Python library - PyGAD. It's focused on optimization algorithms and genetic algorithms. Specifically [ANN module](https://pygad.readthedocs.io/en/latest/README_pygad_nn_ReadTheDocs.html) can be interesting in regards the current topic.
+
+
+## Best notation
+
+1. [Ostwald 2021](https://arxiv.org/pdf/2107.09384.pdf)
+1. [Neilsen's book](https://stats.stackexchange.com/questions/154879/a-list-of-cost-functions-used-in-neural-networks-alongside-applications)
+1. [Wiedemann 2020](https://arxiv.org/pdf/2004.04729.pdf)
+1. [Xiong 2022](https://arxiv.org/pdf/2202.06316.pdf)
+1. [Wang 2021](https://arxiv.org/pdf/2110.06488.pdf)

@@ -79,3 +79,41 @@ if let Some(command_object) = factory.create_command(command) {
 ```
 
 Using this approach, you can easily swap out the `CommandFactory` implementation to use a different set of commands, or to allow plugins to define new commands without modifying the server code.
+
+
+## Non blocking TCP client
+
+In client's implementation messages should be sent and received asynchronously. While a user can trigger special messages and send them non blocking, the client can receive responses to old and new messages in the background
+
+```rust
+async fn handle_server(stream: TcpStream) -> io::Result<()> {
+    let (read, write) = tokio::io::split(stream);
+    
+    let token = CancellationToken::new();
+    let cloned_token = token.clone();
+    
+    let reader = BufReader::new(read);
+    let read_handle = tokio::spawn(async move {
+        process_server_responses(reader, &token).await;
+    });
+    let write_handle = tokio::spawn(async move {
+        process_user_input(write, &cloned_token).await;
+    });
+
+    read_handle.await?;
+    write_handle.await?;
+
+    Ok(())  
+}
+```
+
+
+## Solid Pods
+
+Exactly said - alongside. IRC protocol defines the basics of communication design: channels, private messages, moderators. It's implemented in many popular platforms like Slack and Discord. But they are all centralized. I want to add decentralization feature to IRC by using Pods if it's possible.
+
+create an IRC client that is integrated with Solid Pods. This client could store IRC data, such as channels and private messages, in the user's Solid Pod. The client could also use decentralized authentication, such as WebID, to authenticate users without relying on a centralized server.
+
+Another approach would be to create a Solid Pod server that can act as an IRC server. This would allow users to connect to the IRC network using a decentralized, peer-to-peer architecture, rather than relying on a centralized server. The Solid Pod server could use existing IRC clients, such as IRCCloud or HexChat, to communicate with users.
+
+Both of these approaches would require some development work to implement, but they could provide a way to add decentralization features to IRC using Solid Pods.

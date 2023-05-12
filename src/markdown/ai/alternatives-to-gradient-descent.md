@@ -13,6 +13,8 @@ First let's review improvements for Gradient Descent. They are still GD by its n
 10. Root-mean-square gradient propagation (RMSprop)
 11. Adaptive moment estimation (Adam)
 
+Source: from an alternative ANN architecture - **Backpropagation Neural Tree** [paper](https://arxiv.org/pdf/2202.02248.pdf)
+
 
 ## Alternatives
 
@@ -26,7 +28,7 @@ When it comes to **Global Optimisation** tasks (i.e. attempting to find a global
 6. [*Simulated Annealing*][6], which uses the concept of *annealing* (or temperature) to trade-off exploration and exploitation. It proposes new points for evaluation at each iteration, but as the number of iteration increases, the "temperature" drops and the algorithm becomes less and less likely to explore the space thus "converging" towards its current best candidate.
 7. Backpropagation Neural Tree (BNeuralT)
 8. [**Target Propagation**][7]
-9. [**Alternating Descent Method of Multipliers**][8] (ADMM)
+9. [**Alternating Descent Method of Multipliers**][8] (ADMM) (You need 7000 CPU cores on a supercomputer, while I can have 1280 GPU cores on my old laptop with GeForce GTX 1060)
 10. [**Zeroth-Order Relaxed Backpropagation**][9] (ZORB)
 11. Finito https://arxiv.org/abs/1407.2710
 12. Stochastic Dual Coordinate Ascent (SDCA) https://arxiv.org/abs/1209.1873
@@ -46,9 +48,7 @@ As mentioned above, *Simulated Annealing, Particle Swarm Optimisation and Geneti
   [8]: https://arxiv.org/abs/1605.02026
   [9]: https://arxiv.org/abs/2011.08895
 
-Source: https://stats.stackexchange.com/questions/97014/what-are-alternatives-of-gradient-descent https://arxiv.org/pdf/2202.02248.pdf
-
-Also: https://stackoverflow.com/questions/23554606/what-are-alternatives-of-gradient-descent
+Source: [1](https://stats.stackexchange.com/questions/97014/what-are-alternatives-of-gradient-descent) [2](https://stackoverflow.com/questions/23554606/what-are-alternatives-of-gradient-descent)
 
 
 ## Extreme Learning

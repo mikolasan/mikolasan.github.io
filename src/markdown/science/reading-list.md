@@ -21,6 +21,7 @@ Very interesting things that have very good write up, but I do not have time to 
 
 - [Classic papers](https://scholar.google.com/citations?view_op=list_classic_articles&hl=en&by=2006&vq=eng_artificialintelligence) by Google Scholar
 - [A Brief History of Neural Nets and Deep Learning](https://www.skynettoday.com/overviews/neural-net-history)
+- Code explained in every block [StyleGAN](https://nn.labml.ai/gan/stylegan/index.html)
 
 ## Books that every machine learning enthusiast should read
 
