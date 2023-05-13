@@ -65,6 +65,17 @@ Pretrained models:
 Let's assume that the agent's emotional state can be represented by a vector E, where each element corresponds to one of the emotions
 
 
+## Interpolation path in latent space
+
+You say What? Yes, this wasn't easy to figure out what I need. I knew that GAN models can do some transformation: transform from one person to another, from a person to an animal. It's done by messing with vectors in latent space. The purpose of GAN networks is to generate a picture of some type (zebras) by another picture of another type (horses). The best part is that no labels or exact match are required for training.
+
+To explain the latent space, let me briefly tell you about GAN internal architecture. It has two networks inside. One is a discriminator, it takes an input image and with convolutional layers "compresses" the image from 1024x1024x3 (1024 is a common maximum size, but it can be smaller, 3 = 3 colors) to an vector of high-level features (common size is 512 real value numbers). This vector is an input for the second network - generator. Generator works in reverse it uses convolutional layers to create an image from that encoded information.
+
+In some way these 512 numbers define the whole picture. Values and correlation between them is important. And if we forget for a moment about the input image and the discriminator and play with the numbers that work as input to the generator network we can make that transformation.
+
+If we want to transform from one image to another, then we process the on the discriminator, evaluate two vectors. Using these two ectors we can interpolate some vectors in between, and then pass all these vectors to the generator. The generator will generate us pictures of desired transformation. Then we combine all the pictures in the video file.
+
+
 ## TODO
 
 - Get full [AffectNet trainset](https://mohammadmahoor.com/affectnet/)

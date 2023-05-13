@@ -159,6 +159,6 @@ working_directory: C:\Users\neupo\
 
 Beautiful!
 
-A usual finale of this evening (and more samples of Source Pro font)
+A usual finale of this evening is a long output of errors but this time I was [compiling ROCM on Linux](/blog/build-rocm-from-source) (and more samples of Source Pro font)
 
 ![Alacritty showcase](./alacritty-showcase.png)
