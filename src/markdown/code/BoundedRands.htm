@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Efficiently Generating a Number in a Range | PCG, A Better Random Number Generator</title>
+<link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/html4css1.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_rst.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+<link rel="canonical" href="http://www.pcg-random.org/posts/bounded-rands.html">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="M.E. O'Neill">
+<link rel="prev" href="some-prng-implementations.html" title="Some (More) C++ PRNG Implementations" type="text/html">
+<meta property="og:site_name" content="PCG, A Better Random Number Generator">
+<meta property="og:title" content="Efficiently Generating a Number in a Range">
+<meta property="og:url" content="http://www.pcg-random.org/posts/bounded-rands.html">
+<meta property="og:description" content="The vast majority of my posts about random number generation have focused on looking at the properties of different generation schemes.  But, perhaps surprisingly, the performance of your randomized a">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2018-07-22T14:12:28-07:00">
+<meta property="article:tag" content="gjrand">
+<meta property="article:tag" content="jsf">
+<meta property="article:tag" content="lcg">
+<meta property="article:tag" content="mt19937">
+<meta property="article:tag" content="pcg">
+<meta property="article:tag" content="performance">
+<meta property="article:tag" content="sfc">
+<meta property="article:tag" content="splitmix">
+<meta property="article:tag" content="xoroshiro">
+<meta property="article:tag" content="xorshift*">
+<meta property="article:tag" content="xoshiro">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://www.pcg-random.org/">
+
+                <span id="blog-title">PCG, A Better Random Number Generator</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../download.html">Download</a>
+                </li>
+<li>
+<a href="../using-pcg.html">Docs</a>
+                </li>
+<li>
+<a href="../paper.html">Paper</a>
+                </li>
+<li>
+<a href="stanford-colloquium-talk.html">Video</a>
+                </li>
+<li>
+<a href="../blog/">Blog</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+<article class="post-text h-entry hentry postpage col-md-8" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Efficiently Generating a Number in a Range</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    M.E. O'Neill
+            </span></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2018-07-22T14:12:28-07:00" itemprop="datePublished" title="2018-07-22 14:12">2018-07-22 14:12</time></a></p>
+            
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>The vast majority of my posts about random number generation have focused on looking at the properties of different generation schemes.  But, perhaps surprisingly, the performance of your randomized algorithm may hinge not on the generation scheme you chose, but on other factors.  In this post (inspired by and building on an excellent <a href="https://arxiv.org/abs/1805.10941">recent paper by Daniel Lemire</a>), we'll explore a common source of overhead in random number generation that frequently outweighs PRNG engine performance.</p>
+<!-- TEASER_END -->
+
+<p>Imagine this scenario: </p>
+<p>For their homework, Huan and Sasha both sit down to implement the same randomized algorithm in C++, running it on the same machine at the university on the same data sets.  Their code is almost identical except for random number generation. Huan is eager to get to music practice and so just uses the Mersenne Twister.  Sasha, on the other hand, spends several extra hours doing lots of investigation.  Sasha benchmarks several fast PRNGs that have been touted lately on social media, and picks the fastest.  When Huan and Sasha meet up, Huan can't wait to show off, asking Sasha, “What did you use as your PRNG?”</p>
+<p>“Oh, I just used the Mersenne Twister—it's built in and it seemed to work well,” says Huan.</p>
+<p>“Ha!” says Sasha. “I used <code>jsf32</code>.  It goes much faster than something old and slow like the Mersenne Twister!  My program was done in three minutes fifteen seconds!”.</p>
+<p>“Hmm, well, mine got done in under a minute,” says Huan and shrugs.  “Anyhow, I'm off to a concert.  Want to come?”</p>
+<p>“No,” says Sasha. “I, uh, want to take another look at my code….”</p>
+<p>This embarrassing fictional scenario is <em>not</em> particularly contrived; it is actually based on real-world results. If your randomized algorithm isn't running as fast as you'd like and the bottleneck seems to be generating random numbers, somewhat counterintuitively the problem might not be with your random number generator!</p>
+<h3 id="background-random-numbers-in-practice">Background: Random Numbers in Practice</h3>
+<p>Most modern good-quality random number generators produce machine words filled with random bits, thus typically generating numbers in the range [0..2<sup>32</sup>) or [0..2<sup>64</sup>).  But in many use cases users need numbers in a particular range—simple examples such as rolling a die or choosing a random playing card require numbers in small fixed ranges, but many algorithms from <a href="https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle">shuffling</a> to <a href="https://en.wikipedia.org/wiki/Reservoir_sampling">reservoir sampling</a> to <a href="https://doi.org/10.1145/274787.274812">randomized BSTs</a> all need numbers drawn from different ranges.</p>
+<h3 id="methods">Methods</h3>
+<p>We'll cover a number of different methods.  To simplify the discussion, rather than generate in the range [<em>i</em>..<em>j</em>) or [<em>i</em>..<em>j</em>] we will generate numbers in the range [0..<em>k</em>).  With such a scheme in hand, we can, for example, generate numbers in the range [<em>i</em>..<em>j</em>) by setting <em>k</em> = <em>j</em> - <em>i</em>, generating a number in the range [0..<em>k</em>) and then adding <em>i</em> to it.</p>
+<h4 id="c-built-in-techniques">C++ Built-In Techniques</h4>
+<p>In many languages there are built-in facilities for getting a random number in a range. For example, to draw a card from a 52-card deck using scripting languages like Perl and Python we can say <code>int(rand(52))</code> and <code>random.randint(0,52)</code>, respectively.  In C++, we can similarly use <code>uniform_int_distribution</code>.</p>
+<p>The C++ code to implement this approach is just</p>
+<pre><code>uint32_t bounded_rand(rng_t&amp; rng, uint32_t range) {
+    std::uniform_int_distribution&lt;uint32_t&gt; dist(0, range-1);
+
+    return dist(rng);
+}
+</code></pre>
+
+<p>Typically, built-in approaches use one of the other techniques we will describe below, but most users will simply use the facilities provided without thinking too deeply about what is happening behind the scenes, assuming that they are well enough engineered and sufficiently efficient.  In C++, the built-in techniques are more complex because they must be able to deal with quite arbitrary generation engines—a generator that produces values between -3 and 17 would be quite legal and can be used with <code>std::uniform_int_distribution</code> to produce numbers in any range, such as [0..1000).  C++'s built-in facilities are thus over-engineered for most of the uses to which they are put.</p>
+<h4 id="classic-modulo-biased">Classic Modulo (Biased)</h4>
+<p>Let's move from an over-engineered approach to an under-engineered one.<br>
+When I was learning to program, we generated numbers in a range (e.g., to draw a card from a 52-card deck) using the modulo operator by writing something like <code>rand() % 52</code> to get a random number in the range [0..52).</p>
+<p>In C++, we could write this approach as</p>
+<pre><code>uint32_t bounded_rand(rng_t&amp; rng, uint32_t range) {
+    return rng() % range;
+}
+</code></pre>
+
+<p>Although this approach is simple, it also illustrates why getting numbers within a range is typically slow—it requires division (to calculate the remainder produced by the <code>%</code> operator).  Division is typically at least an order of magnitude slower than other arithmetical operations, and so this single arithmetic operation takes longer than all the work done by a fast PRNG.</p>
+<p>But in addition to being slow, it is also <em>biased</em>.  To understand why <code>rand() % 52</code> produces biased numbers, if we assume that <code>rand()</code> produces numbers in the range [0..2<sup>32</sup>), observe that 52 does not perfectly divide 2<sup>32</sup>, it divides it 82,595,524 times with remainder 48. Meaning that if we use <code>rand() % 52</code>, there will be 82,595,525 ways to select the first 48 cards from our 52-card deck and only 82,595,524 ways to select the final four cards .  In other words, there is a 0.00000121% bias against these last four cards (perhaps these are the kings!).  Back when I was a student writing homework assignments rolling dice or drawing cards, no one really worried about these tiny biases, but as the range increases, the bias increases linearly. For a 32-bit PRNG, a bounded range of less than 2<sup>24</sup> has a bias of less than 0.5% but above 2<sup>31</sup> the bias is 50%—some numbers will occur half as often as others.</p>
+<p>In this article, our primary focus is on techniques that adopt strategies to avoid bias, but it's probably worth realizing that for a 64-bit PRNG the amount of bias in typical use cases is likely to be negligible.</p>
+<p>One other concern we might have is that some generators have weak low-order bits.  For example, the Xoroshiro+ and Xoshiro+ families of PRNGs have low-order bits that fail statistical tests.  When we perform <code>% 52</code> (because 52 is even) we pass the lowest bit straight through into the output.</p>
+<h4 id="fp-multiply-biased">FP Multiply (Biased)</h4>
+<p>Another common technique is to use a PRNG that generates floating point numbers in the unit interval [0..1), and then convert those numbers into the desired range.  Perl adopts this approach, <a href="https://metacpan.org/pod/distribution/perl/pod/perlfunc.pod#rand-EXPR">recommending</a> using <code>int(rand(10))</code> to generate an integer in the range [0..10) by generating a floating-point number and then rounding it down.</p>
+<p>In C++, we would write this approach as</p>
+<pre><code>static uint32_t bounded_rand(rng_t&amp; rng, uint32_t range) {
+    double zeroone = 0x1.0p-32 * rng();
+    return range * zeroone;
+}
+</code></pre>
+
+<p>(Note that <code>0x1.0p-32</code> is a binary floating point constant for 2<sup>-32</sup> that we use to convert a random integer value in the range [0..2<sup>32</sup>)  into a double in the unit interval; we could instead perform this conversion using <code>ldexp(rng(), -32)</code> but when I benchmarked this approach, it proved to be much slower option.)</p>
+<p>This approach is just as biased as the classic modulo approach, but the bias manifests itself differently.  For example, if we were choosing numbers in the range [0..52), the numbers 0, 13, 26 and 39 would appear once less often than the others.</p>
+<p>This version is also more annoying to generalize to 64 bits because it requires a floating point type with at least 64 bits of mantissa. On x86 Linux and macOS we can use <code>long double</code> to access x86 extended precision floating point which has a 64-bit mantissa, but <code>long double</code> is not universally portable—on some systems <code>long double</code> is equivalent to <code>double</code>.</p>
+<p>On the positive side, this approach works better than modulo-based approaches on PRNGs that have weak low order bits.</p>
+<h4 id="integer-multiplication-biased">Integer Multiplication (Biased)</h4>
+<p>The multiplication method can be adjusted to used fixed-point arithmetic rather than floating point.  Essentially we just multiply throughout by 2<sup>32</sup>,</p>
+<pre><code>uint32_t bounded_rand(rng_t&amp; rng, uint32_t range) {
+    uint32_t x = rng();
+    uint64_t m = uint64_t(x) * uint64_t(range);
+    return m &gt;&gt; 32;
+}
+</code></pre>
+
+<p>It might appear that this version requires 64-bit arithmetic, but on x86 CPUs, a good compiler will compile this code to a 32-bit <code>mult</code> instruction (which yields two 32-bit outputs, one of which is the return value).  We should expect this version to be fast, but biased in exactly the same way as the floating-point multiplication method.</p>
+<h4 id="division-with-rejection-unbiased">Division with Rejection (Unbiased)</h4>
+<p>We can rearrange the above fixed-point–multiplication scheme into a division-based scheme.  Instead of calculating <code>x * range / 2**32</code>, we calculate <code>x / (2**32 / range)</code>.  Because we are doing integer arithmetic, this version has different rounding behavior and will sometimes generate values outside of the desired range.  If we reject those values (i.e., throw them away and generate new ones), we end up with an unbiased technique.</p>
+<p>For example, in the case of drawing a card using a 32-bit PRNG, we can generate a 32-bit number and divide it by 2<sup>32</sup>/52 = 82,595,524 to choose our card.  This method works when the random value from the 32-bit PRNG is less than 52 × 82595524 = 2<sup>32</sup>/32 – 48.  If the random value from the PRNG is one of the final 48 values at the top end of the range of the generator, it must be rejected and another sought.</p>
+<p>Our code for this version uses a trick to divide 2<sup>32</sup> by <code>range</code> without using any 64-bit math.  Calculating <code>2**32 / range</code> directly requires us to represent 2<sup>32</sup>, which is too big (by one!) to be represented in a 32-bit integer. Instead, we observe that for unsigned integers, unary negation of <code>range</code> calculates the positive value 2<sup>32</sup> – <code>range</code>; dividing this value by <code>range</code> will produce an answer one less than <code>2**32 / range</code>.</p>
+<p>Thus C++ code to generate numbers via division with rejection is</p>
+<pre><code>uint32_t bounded_rand(rng_t&amp; rng, uint32_t range) {
+    // calculates divisor = 2**32 / range
+    uint32_t divisor = ((-range) / range) + 1;
+    if (divisor == 0) // overflow, it's really 2**32
+        return 0;
+    for (;;) {
+        uint32_t val = rng() / divisor;
+        if (val &lt; range)
+            return val;
+    }
+}
+</code></pre>
+
+<p>Of course, this approach requires two slow division-based operations which are typically slower than other arithmetic operations, so we should not expect it to be quick.  </p>
+<h4 id="debiased-modulo-twice-openbsds-method">Debiased Modulo (Twice) — OpenBSD's Method</h4>
+<p>We can also apply a rejection approach to debias the classic modulo method.  In our playing card example, we will again need to reject 48 values.  In this version, rather than reject the <em>last</em> 48 values, we (equivalently) reject the <em>first</em> 48 values.</p>
+<p>Here's a C++ implementation of this approach:</p>
+<pre><code>uint32_t bounded_rand(rng_t&amp; rng, uint32_t range) {
+    // calculates 2**32 % range
+    uint32_t t = (-range) % range;
+    for (;;) {
+        uint32_t r = rng();
+        if (r &gt;= t)
+            return r % range;
+    }
+}
+</code></pre>
+
+<p>This technique eliminates bias, but it requires two time-consuming modulo operations for each output (and may require the underlying generator to produce more than one number).  Thus we should expect it to be about half the speed of the classic biased approach.</p>
+<p>The <a href="http://cvsweb.openbsd.org/cgi-bin/cvsweb/src/lib/libc/crypt/arc4random.c?rev=1.22&amp;content-type=text/x-cvsweb-markup">code for OpenBSD's <code>arc4random_uniform</code></a> (which is also used on OS X and iOS) adopts this strategy. </p>
+<h4 id="debiased-modulo-once-javas-method">Debiased Modulo (Once) — Java's Method</h4>
+<p>Java adopts a different approach to generating a number in a range that manages to use only one modulo operation except in the relatively rare occasions when rejection occurs.  The code is</p>
+<pre><code>static uint32_t bounded_rand(rng_t&amp; rng, uint32_t range) {
+    uint32_t x, r;
+    do {
+        x = rng();
+        r = x % range;
+    } while (x - r &gt; (-range));
+    return r;
+}
+</code></pre>
+
+<p>It may take a little thought to figure out why this variant works.  Unlike the previous version based on remainders, which removes bias by removing some of the lowest values from the underlying generation engine, this version filters out values from the top part of the engine's range.</p>
+<h4 id="debiased-integer-multiplication-lemires-method">Debiased Integer Multiplication — Lemire's Method</h4>
+<p>Much as we removed bias from the modulo technique, we can also remove bias from the integer multiplication method.  This method was devised by Lemire.</p>
+<pre><code>uint32_t bounded_rand(rng_t&amp; rng, uint32_t range) {
+    uint32_t t = (-range) % range;
+    do {
+        uint32_t x = rng();
+        uint64_t m = uint64_t(x) * uint64_t(range);
+        uint32_t l = uint32_t(m);
+    } while (l &lt; t);
+    return m &gt;&gt; 32;
+}
+</code></pre>
+
+<h4 id="bitmask-with-rejection-unbiased-apples-method">Bitmask with Rejection (Unbiased) — Apple's Method</h4>
+<p>Our final approach avoids division and remainder operations entirely.  Instead it uses a simple masking operation to get a random number in the range [0..2<sup><em>k</em></sup>) where <em>k</em> is the smallest value such that 2<sup><em>k</em></sup> is greater than the range.  If the value is too large for our range, we discard and try another.  Code below:</p>
+<pre><code>uint32_t bounded_rand(rng_t&amp; rng, uint32_t range) {
+    uint32_t mask = ~uint32_t(0);
+    --range;
+    mask &gt;&gt;= __builtin_clz(range|1);
+    uint32_t x;
+    do {
+        x = rng() &amp; mask;
+    } while (x &gt; range);
+    return x;
+}
+</code></pre>
+
+<p>This approach was adopted by Apple when (in the macOS Sierra release) they made their <a href="https://opensource.apple.com/source/Libc/Libc-1158.50.2/gen/FreeBSD/arc4random.c">own revision</a> to the code for <code>arc4random_uniform</code>.</p>
+<h3 id="benchmarking-the-basic-approaches">Benchmarking the Basic Approaches</h3>
+<p>We now have several approaches to evaluate.  Unfortunately, benchmarking is tricky when we're concerned about the cost of a single division operation.  No benchmark is going to capture all the factors that might be in play in your application and there's no guarantee that what is best for your application is necessarily best for mine.</p>
+<p>We'll use three benchmarks, and test with a plethora of different PRNGs.</p>
+<h4 id="large-shuffle-benchmark">Large-Shuffle Benchmark</h4>
+<p>Perhaps the most obvious benchmark to run is a shuffle benchmark.  In this benchmark we will simulate performing a large shuffle.  To sort an array of size <em>N</em>, we must generate numbers in the ranges [0..<em>N</em>), [0..(<em>N</em>-1)), … , [0..1).  For this benchmark, we will assume <em>N</em> is as large as possible (2<sup>32</sup>-1 for <code>uint32_t</code>).  The code is</p>
+<pre><code>for (uint32_t i = 0xffffffff; i &gt; 0; --i) {
+    uint32_t bval = bounded_rand(rng, i);
+    assert(bval &lt; i);
+    sum += bval;
+}
+</code></pre>
+<p>Note that we “use” each number by adding it to <code>sum</code> (to avoid it being optimized away) but do not actually do any shuffling to keep the focus on number generation.</p>
+<p>To test 64-bit generation, we have an analogous test, but it is not practical to run a test corresponding to shuffling an array of size 2<sup>64</sup> – 1 (because this larger-sized benchmark would take many thousands of years to run).  Instead we cross the entire 64-bit range but generate the same number of outputs as the 32-bit test.  The code is</p>
+<pre><code>for (uint32_t i = 0xffffffff; i &gt; 0; --i) {
+    uint64_t bound = (uint64_t(i)&lt;&lt;32) | i;
+    uint64_t bval = bounded_rand(rng, bound );
+    assert(bval &lt; bound);
+    sum += bval;
+}
+</code></pre>
+<h5 id="mersenne-twister-results">Mersenne-Twister Results</h5>
+<p>The results below show the performance of this benchmark for each of the methods we've discussed, using the Mersenne Twister and testing at both 32-bit (with <code>libstdc++</code>'s <code>std::mt19937</code>) as discussed in this article and analogous 64-bit code (with <code>libstdc++</code>'s <code>std:mt19937_64</code>).  Results are the geometric mean of 15 runs with different seeds, then normalized to make the classic biased-mod method have unit time.</p>
+<p><img alt="Large-Shuffle Benchmark, Mersenne Twister" src="../figures/bounded-rand-mt1.svg"></p>
+<p>It might appear that we have some clear answers about performance—we seem to have a clear progression of better techniques and might also perhaps wonder what the designers of <code>libstdc++</code> were thinking when they wrote such a terrible implementation for 32-bit sizes—but as is so often the case with benchmarking, the situation is more complex than these results might seem to show.  First, there is a risk that our results might somehow be specific to the Mersenne Twister, so we will broaden the set of PRNGs tested.  Second, there may be a subtle issue with the benchmark itself.  Let's address the first problem first.</p>
+<h5 id="multiple-prngs-results">Multiple-PRNGs Results</h5>
+<p>For 32-bit PRNGs, we'll test with <code>arc4_rand32</code>, <code>chacha8r</code>, <code>gjrand32</code>, <code>jsf32</code>, <code>mt19937</code>, <code>pcg32</code>, <code>pcg32_fast</code>, <code>sfc32</code>, <code>splitmix32</code>, <code>xoroshiro64+</code>, <code>xorshift*64/32</code>, <code>xoshiro128+</code>, and <code>xoshiro128**</code>, and for 64-bit PRNGs we'll use <code>gjrand64</code>, <code>jsf64</code>, <code>mcg128</code>, <code>mcg128_fast</code>, <code>mt19937_64</code>, <code>pcg64</code>, <code>pcg64_fast</code>, <code>sfc64</code>, <code>splitmix64</code>, <code>xoroshiro128+</code>, <code>xorshift*128/64</code>, <code>xoshiro256+</code>, and <code>xoshiro256*</code>.  These collections give us some slow PRNGs and a number of very fast ones.  </p>
+<p>Here are the results:</p>
+<p><img alt="Large-Shuffle Benchmark, Many PRNGs" src="../figures/bounded-rand-all1.svg"></p>
+<p>We can see some key differences from our early Mersenne-Twister-only results.  Faster PRNGs will shift the balance towards the bounding code and thus the differences between our various approaches become more pronounced, especially for 64-bit PRNGs.  With this broader collection of PRNGs the <code>libstc++</code> implementation now no longer seems terrible.</p>
+<h5 id="conclusions">Conclusions</h5>
+<p>In this benchmark, the biased multiplication-based approach is fastest by a significant margin.  There are many situations where bounds will be small relative to the size of the PRNG and performance is absolutely critical. In these situations a negligible amount of bias may be unlikely to have any noticeable effect but PRNG speed will.  One such example is random-pivot Quicksort.  For unbiased approaches, the bitmask technique also seems promising.</p>
+<p>But before we draw too many conclusions, we should recognize that a significant issue with this benchmark is that the bulk of the time is spent with very high bounds, which likely overemphasizes large ranges.  Thus we shall move on to a second benchmark.</p>
+<h4 id="small-shuffle-benchmark">Small-Shuffle Benchmark</h4>
+<p>This benchmark is similar to the previous one, but performs a much smaller “array shuffle” (executing it multiple times).   The code is</p>
+<pre><code>for (uint32_t j = 0; j &lt; 0xffff; ++j) {
+    for (uint32_t i = 0xffff; i &gt; 0; --i) {
+        uint32_t bval = bounded_rand(rng, i);
+        assert(bval &lt; i);
+        sum += bval;
+    }
+}
+</code></pre>
+<h5 id="mersenne-twister-results_1">Mersenne-Twister Results</h5>
+<p><img alt="Small-Shuffle Benchmark, Mersenne Twister" src="../figures/bounded-rand-mt2.svg"></p>
+<h5 id="multiple-prngs-results_1">Multiple PRNGs Results</h5>
+<p><img alt="Small-Shuffle Benchmark, Many PRNGs" src="../figures/bounded-rand-all2.svg"></p>
+<h5 id="conclusions_1">Conclusions</h5>
+<p>This benchmark avoids overemphasis on larger bounds and more accurately reflects real use cases, but now omits larger bounds entirely.</p>
+<h4 id="all-ranges-benchmark">All-Ranges Benchmark</h4>
+<p>This benchmark aims to avoid the deficiencies of the previous two by doing some testing at each power-of-two size, ensuring that each size is represented but not overrepresented.</p>
+<pre><code>for (uint32_t bit = 1; bit != 0; bit &lt;&lt;= 1) {
+    for (uint32_t i = 0; i &lt; 0x1000000; ++i) {
+        uint32_t bound = bit | (i &amp; (bit - 1));
+        uint32_t bval = bounded_rand(rng, bound);
+        assert(bval &lt; bound);
+        sum += bval;
+    }
+}
+</code></pre>
+<h5 id="mersenne-twister-results_2">Mersenne-Twister Results</h5>
+<p><img alt="All-Ranges Benchmark, Mersenne Twister" src="../figures/bounded-rand-mt3.svg"></p>
+<h5 id="multiple-prngs-results_2">Multiple-PRNGs Results</h5>
+<p><img alt="All-Ranges Benchmark, Many PRNGs" src="../figures/bounded-rand-all3.svg"></p>
+<h5 id="conclusions_2">Conclusions</h5>
+<p>Many of our conclusions remain. The biased-multiply method is fast if we can tolerate bias, and the bitmask scheme seems like a good all-rounder. </p>
+<p>We could be done at this point if we weren't willing to go back, look critically at our code, and make some adjustments.</p>
+<h4 id="small-constant-benchmark">Small-Constant Benchmark</h4>
+<p>Although the all-ranges benchmark is probably the most representative one, we'll finish with two other benchmarks for the special case where the compiler knows that the range is a constant and can optimize the algorithms accordingly.  Typically the compiler can produce code that is specialized for that particular range (e.g., modulo by a constant can avoid using the mod instruction).  </p>
+<p>For this benchmark, we use the small constant 52 as our range:</p>
+<pre><code>for (uint32_t i = 0; i &lt; 0x80000000; ++i) {
+    uint32_t bval = bounded_rand(rng, 52);
+    assert(bval &lt; 52);
+    sum += bval;
+}
+</code></pre>
+<h5 id="mersenne-twister-results_3">Mersenne-Twister Results</h5>
+<p><img alt="Small-Constant Benchmark, Mersenne Twister" src="../figures/bounded-rand-mt4.svg"></p>
+<h5 id="multiple-prngs-results_3">Multiple-PRNGs Results</h5>
+<p><img alt="Small-Constant Benchmark, Many PRNGs" src="../figures/bounded-rand-all4.svg"></p>
+<h5 id="conclusions_3">Conclusions</h5>
+<p>Even though the compiler can and does optimize the bitmask version (precalculating the necessary mask) this algorithm rejects much more often than the other unbiased methods, spoiling its performance in this context.  Versions based on integer multiplication win out, but the margin between them and versions based on division or modulo is much smaller.</p>
+<h4 id="large-constant-benchmark">Large-Constant Benchmark</h4>
+<p>This benchmark is similar to the previous one, but uses range closer to the maximum possible value rather than the minimum possible.</p>
+<pre><code>for (uint32_t i = 0; i &lt; 0x80000000; ++i) {
+    uint32_t bval = bounded_rand(rng, uint32_t(-52));
+    assert(bval &lt; uint32_t(-52));
+    sum += bval;
+}
+</code></pre>
+<h5 id="mersenne-twister-results_4">Mersenne-Twister Results</h5>
+<p><img alt="Small-Constant Benchmark, Mersenne Twister" src="../figures/bounded-rand-mt5.svg"></p>
+<h5 id="multiple-prngs-results_4">Multiple-PRNGs Results</h5>
+<p><img alt="Small-Constant Benchmark, Many PRNGs" src="../figures/bounded-rand-all5.svg"></p>
+<h5 id="conclusions_4">Conclusions</h5>
+<p>In this case, the bitmask version is not rejecting more often than the other techniques and so has similar performance.  The 64-bit <code>long double</code> floating point code is apparently harder to optimize and actually turns in performance more than 8× worse than classic mod.</p>
+<h3 id="making-improvements">Making Improvements</h3>
+<p>Thus far, all of our debiasing approaches require the use of an extra modulo operation, which causes them to run considerably slower than their biased counterparts.  It would be helpful if we could find ways to reduce this overhead.</p>
+<h4 id="faster-threshold-based-discarding">Faster Threshold-Based Discarding</h4>
+<p>A few of our algorithms have code involving a threshold, such as</p>
+<pre><code>uint32_t bounded_rand(rng_t&amp; rng, uint32_t range) {
+    // calculates 2**32 % range
+    uint32_t t = (-range) % range;
+    for (;;) {
+        uint32_t r = rng();
+        if (r &gt;= t)
+            return r % range;
+    }
+}
+</code></pre>
+
+<p>When <code>range</code> is small compared to the output range of the PRNG, most of the time the number will be <em>much greater</em> than the threshold.  Thus if we can have an estimate of the threshold that might be a little high, we can save an expensive modulo operation.</p>
+<p>The code below achieves this goal:</p>
+<pre><code>uint32_t bounded_rand(rng_t&amp; rng, uint32_t range) {
+    uint32_t r = rng();
+    if (r &lt; range) {
+        uint32_t t = (-range) % range;
+        while (r &lt; t)
+            r = rng();
+    }
+    return r % range;
+}
+</code></pre>
+
+<p>This change can be applied to both the “Debiased Mod (Twice)” method (above) and the “Debiased Integer Multiply” approach.  The idea is Lemire's, who applied it to the latter approach (but not the former).</p>
+<h5 id="large-shuffle-benchmark-results">Large-Shuffle Benchmark Results</h5>
+<p>This optimization results in notable improvements for the 64-bit benchmark (where modulo is even slower), but actually very slightly worsens performance in the 32-bit benchmark. Despite improvements, the bitmask approach still wins.</p>
+<p><img alt="Large Shuffle Benchmark, Many PRNGs, Threshold Optimized" src="../figures/bounded-rand-all-topt1.svg"></p>
+<h5 id="small-shuffle-benchmark-results">Small-Shuffle Benchmark Results</h5>
+<p>On the other hand, this change significantly speeds the small-shuffle benchmark for both the integer-multiply approach and the two-modulo approach, in each case moving their performance close to that of their unbiased variants.  For the two-modulo (OpenBSD) approach, its performance is now almost identical to the single-modulo (Java) approach.</p>
+<p><img alt="Small Shuffle Benchmark, Many PRNGs, Threshold Optimized" src="../figures/bounded-rand-all-topt2.svg"></p>
+<h5 id="all-ranges-benchmark-results">All-Ranges Benchmark Results</h5>
+<p>We see similar improvement in the all-ranges benchmark.</p>
+<p><img alt="All Ranges Benchmark, Many PRNGs, Threshold Optimized" src="../figures/bounded-rand-all-topt3.svg"></p>
+<p>It seems like we can declare a new winner overall: Lemire's optimized debiased–integer-multiplication method. </p>
+<h5 id="constant-benchmark-results">Constant Benchmark Results</h5>
+<p>We see little effect on the small-constant and large-constant benchmarks.</p>
+<p><img alt="Small-Constant Benchmark, Many PRNGs, Threshold Optimized" src="../figures/bounded-rand-all-topt4.svg"></p>
+<p><img alt="Large-Constant Benchmark, Many PRNGs, Threshold Optimized" src="../figures/bounded-rand-all-topt5.svg"></p>
+<h4 id="optimizing-modulo">Optimizing Modulo</h4>
+<p>Usually calculating <code>a % b</code> requires division, but in situations where <code>a &lt; b</code> the result is simply <code>a</code> with no division required, and, when <code>a/2 &lt; b</code>, the result is simply <code>a - b</code>.  Thus, rather than calculate</p>
+<pre><code>a %= b;
+</code></pre>
+<p>we can instead run</p>
+<pre><code>if (a &gt;= b) {
+    a -= b;
+    if (a &gt;= b) 
+        a %= b;
+}
+</code></pre>
+<p>Division is sufficiently expensive that the added overhead of this more complex code may pay off by the time saved by avoiding division.</p>
+<h5 id="large-shuffle-benchmark-results_1">Large-Shuffle Benchmark Results</h5>
+<p>Adding this optimization noticeably helps the large-shuffle benchmark. Again, it is more noticeable for 64-bit code where modulo is more expensive.  For the two-modulo approach (OpenBSD-style), we show versions with the optimization made for just one of its modulo operations and the other applying it to both.</p>
+<p><img alt="Large Shuffle Benchmark, Many PRNGs, Threshold Optimized" src="../figures/bounded-rand-all-mopt1.svg"></p>
+<p>In this benchmark, the bitmask approach is still the winner but the margin between it and Lemire's approach has narrowed significantly.</p>
+<h5 id="small-shuffle-benchmark-results_1">Small-Shuffle Benchmark Results</h5>
+<p>Adding this optimization does not improve performance in the small-shuffle benchmark, so the question becomes whether it adds any noticeable cost.  In some cases it does not, but in other cases it does add modest overhead.</p>
+<p><img alt="Small Shuffle Benchmark, Many PRNGs, Threshold Optimized" src="../figures/bounded-rand-all-mopt2.svg"></p>
+<h5 id="all-ranges-benchmark-results_1">All-Ranges Benchmark Results</h5>
+<p>Similarly, there is little change in the all-ranges benchmark.</p>
+<p><img alt="All Ranges Benchmark, Many PRNGs, Threshold Optimized" src="../figures/bounded-rand-all-mopt3.svg"></p>
+<h5 id="constant-benchmark-results_1">Constant Benchmark Results</h5>
+<p>Again, we see little effect on the small-constant and large-constant benchmarks.</p>
+<p><img alt="Small-Constant Benchmark, Many PRNGs, Threshold Optimized" src="../figures/bounded-rand-all-mopt4.svg"></p>
+<p><img alt="Large-Constant Benchmark, Many PRNGs, Threshold Optimized" src="../figures/bounded-rand-all-mopt5.svg"></p>
+<h4 id="bonus-results-prngs-compared">Bonus Results, PRNGs Compared</h4>
+<p>The main reason for using a constellation of multiple PRNGs to test our number-in-range schemes was to avoid unintentionally skewing the results due to the peculiarities of one particular PRNG scheme.  But we can also use the same underlying test results to compare the generation schemes themselves.</p>
+<h5 id="32-bitoutput-prngs">32-Bit–Output PRNGs</h5>
+<p>The graph below shows the performance of different 32-bit generation schemes, averaged across all the techniques and fifteen runs, normalized to the performance of the 32-bit Mersenne Twister:</p>
+<p><img alt="32-Bit PRNGs Compared" src="../figures/bounded-rand-gen32.svg"></p>
+<p>We can see that there is greater improvement relative to the Mersenne Twister for the small-constant and large-constant benchmarks.  This effect should not be a surprise—as we lower the cost of the number-in-a-range aspect, the performance of the generation engine becomes a greater factor in performance.</p>
+<p>On the one hand, I'm pleased to see that <code>pcg32_fast</code> is indeed fast.  But it also shows why I rarely get too wound up about the performance of most modern high-performance general-purpose PRNGs—the differences between different techniques are very modest.  In particular, the fastest four schemes differ in performance by less than 5%, which I consider to be “in the noise”.</p>
+<h5 id="64-bitoutput-prngs">64-Bit–Output PRNGs</h5>
+<p>The graph below shows the performance of different 64-bit generation schemes, averaged across all the techniques and fifteen runs, normalized to the performance of the 32-bit Mersenne Twister. It might seem strange to normalize to the 32-bit Mersenne Twister, but doing so helps us see the added cost of using 64-bit generation when 32-bit generation would have been sufficient.</p>
+<p><img alt="64-Bit PRNGs Compared" src="../figures/bounded-rand-gen64.svg"></p>
+<p>These results confirm that <code>mcg128_fast</code> is blazingly fast, but again the last four techniques differ by only about 5% so there is very little to choose between the fastest methods.  <code>pcg64</code> and <code>pcg64_fast</code> must necessarily be slower than <code>mcg128_fast</code> because they have 128-bit LCGs and 128-bit MCGs as their base generators.  Despite not being the fastest techniques in this collection, <code>pcg64</code> is still from 20% to 33% faster than the 64-bit Mersenne Twister.</p>
+<p>But perhaps more importantly, these results also show that if you don't actually need 64-bit output, using a 64-bit PRNG is usually slower than using a 32-bit PRNG.</p>
+<h3 id="conclusions_5">Conclusions</h3>
+<p>From our benchmarks, we can see that switching from a commonly-used PRNG (e.g., the 32-bit Mersenne Twister) to a faster PRNG reduced the execution time of our benchmarks by 45%.  But switching from a commonly used method for finding a number in a range to our fastest method reduced our benchmark time by about 66%, in other words reducing execution time to one third of the original time.</p>
+<p>The fastest (unbiased) method is Lemire's (with an extra tweak from me).  Here it is:</p>
+<pre><code>uint32_t bounded_rand(rng_t&amp; rng, uint32_t range) {
+    uint32_t x = rng();
+    uint64_t m = uint64_t(x) * uint64_t(range);
+    uint32_t l = uint32_t(m);
+    if (l &lt; range) {
+        uint32_t t = -range;
+        if (t &gt;= range) {
+            t -= range;
+            if (t &gt;= range) 
+                t %= range;
+        }
+        while (l &lt; t) {
+            x = rng();
+            m = uint64_t(x) * uint64_t(range);
+            l = uint32_t(m);
+        }
+    }
+    return m &gt;&gt; 32;
+}
+</code></pre>
+
+<p>Using Lemire's method will make more of a difference to the performance of most randomized algorithms than switching from a fast generation engine to a slightly faster one. </p>
+<h3 id="appendix-test-notes">Appendix: Test Notes</h3>
+<p>Code for all of the tests is <a href="https://github.com/imneme/bounded-rands">on GitHub</a>.  Overall, I tested 23 methods for <code>bounded_rand</code> using 26 different PRNGs (13 32-bit PRNGs and 13 64-bit PRNGs), across two compilers, GCC 8 and and LLVM 6, resulting in 26 * 23 * 2 = 1196 executables, each of which was run with the same 15 seeds, resulting in 1196 * 15 = 17,940 distinct test runs, each combining three benchmarks.  I ran tests primarily on a 48-core machine with four Xeon E7-4830v3 CPUs running at 2.1 GHz.  Running the full set of tests required a little less than a month of CPU time.</p>
+<p>Finally, returning to our test scenario from the introduction, we imagine that Sasha used <code>jsf32.STD-libc++</code> whereas Huan used <code>mt19937.BIASED_FP_MULT_SCALE</code>. On Benchmark 3, the latter code takes 69.6% less time.  Thus the times in the scenario are based on real-world data.</p>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../categories/gjrand.html" rel="tag">gjrand</a></li>
+            <li><a class="tag p-category" href="../categories/jsf.html" rel="tag">jsf</a></li>
+            <li><a class="tag p-category" href="../categories/lcg.html" rel="tag">lcg</a></li>
+            <li><a class="tag p-category" href="../categories/mt19937.html" rel="tag">mt19937</a></li>
+            <li><a class="tag p-category" href="../categories/pcg.html" rel="tag">pcg</a></li>
+            <li><a class="tag p-category" href="../categories/performance.html" rel="tag">performance</a></li>
+            <li><a class="tag p-category" href="../categories/sfc.html" rel="tag">sfc</a></li>
+            <li><a class="tag p-category" href="../categories/splitmix.html" rel="tag">splitmix</a></li>
+            <li><a class="tag p-category" href="../categories/xoroshiro.html" rel="tag">xoroshiro</a></li>
+            <li><a class="tag p-category" href="../categories/xorshift.html" rel="tag">xorshift*</a></li>
+            <li><a class="tag p-category" href="../categories/xoshiro.html" rel="tag">xoshiro</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="some-prng-implementations.html" rel="prev" title="Some (More) C++ PRNG Implementations">Previous post</a>
+            </li>
+        </ul></nav></aside></article>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2018         <a href="mailto:oneill@pcg-random.org">M.E. O'Neill</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../assets/js/jquery.min.js"></script><script src="../assets/js/bootstrap.min.js"></script><script src="../assets/js/moment-with-locales.min.js"></script><script src="../assets/js/fancydates.js"></script><script src="../assets/js/jquery.colorbox-min.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates -->
+</body>
+</html>

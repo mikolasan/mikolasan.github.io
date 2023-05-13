@@ -6,12 +6,18 @@ lastModified: 2023-04-22
 twitter: https://twitter.com/mikolasan/status/1650395555645001728
 ---
 
-- ROCM 5.4.2
-- GCC 12.2.1
-- OS Manjaro 4/22/23
-- TensorFlow 2.12
-- AMD Ryzen 9 5900X 12-Core Processor
-- Navi 22 Radeon RX 6700
+- TensorFlow 2.12 (ROCM fork)
+- ROCM 5.4.3 (yay -S opencl-amd-dev)
+- gcc 12.2.1
+- JAX 0.4.8 (git)
+- XLA (git)
+- Python 3.10.10
+
+**CPU**: AMD Ryzen 9 5900X 12-Core
+
+**GPU**: Navi 22 Radeon RX 6700
+
+OS Manjaro 4/22/23
 
 For some reason [this AUR package](https://aur.archlinux.org/packages/tensorflow-rocm) didn't compile for me. I tried to improve the **PKGBUILD** file, but to no avail.
 

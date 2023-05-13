@@ -17,6 +17,12 @@ openssl x509 -noout -fingerprint -sha1 -inform pem -in api.crt
 openssl x509 -noout -serial -in api.crt
 ```
 
+## Expiration date
+
+```
+openssl x509 -enddate -noout -in api.crt
+```
+
 ## Convert to Java keystore
 
 ```bash

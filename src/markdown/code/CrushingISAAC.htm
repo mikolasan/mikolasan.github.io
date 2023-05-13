@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Crushing ISAAC &middot; jtobin.io
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+  <!-- Google analytics code -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22260080-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          jtobin.io
+        </a>
+      </h1>
+    </div>
+
+    <nav class="sidebar-nav">
+      
+      
+        
+          
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about">About</a>
+          
+          
+        
+      
+        
+          
+          
+            <a class="sidebar-nav-item" href="/archive">Archive</a>
+          
+        
+      
+        
+      
+        
+          
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/pgp">PGP</a>
+          
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/software">Software</a>
+          
+          
+        
+      
+        
+          
+          
+        
+      
+        
+          
+          
+        
+      
+        
+          
+          
+        
+      
+        
+          
+          
+        
+      
+        
+          
+          
+        
+      
+        
+          
+          
+        
+      
+    </nav>
+
+    <p class="small">&copy; 2023 Jared Tobin.  <a href="https://creativecommons.org/licenses/by/4.0/legalcode">CC BY 4.0</a>.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">Crushing ISAAC</h1>
+  <span class="post-date">07 Oct 2018</span>
+  <p>(<strong>UPDATE 2020/06/30</strong>: the good people at <a href="https://www.tweag.io/blog/2020-06-29-prng-test/">tweag.io</a> have since
+published a <a href="https://github.com/tweag/random-quality">Nix shell environment</a> that appears to make testing
+arbitrary PRNGs much less of a pain.  I recommend you check it out!)</p>
+
+<p>I recently needed a good cryptographically-secure and seedable pseudorandom
+number generator for Javascript.  This didn’t turn out to be as trivial a
+procedure as I figured it’d be: most Javascript CSPRNGs I found didn’t appear
+to be manually seedable, instead automatically seeding themselves
+behind-the-scenes using a trusted high-quality entropy source like /dev/urandom
+(as per the <a href="https://www.w3.org/TR/WebCryptoAPI/#Crypto-description">WebCryptoAPI spec</a>).</p>
+
+<p>But!  I want to use my own entropy source.  So I could either implement my own
+cryptographically-secure PRNG, which I would obviously need to test rigorously,
+or I could find an existing implementation that had already been vetted widely
+by use.  I settled on the <a href="https://en.wikipedia.org/wiki/ISAAC_(cipher)">ISAAC PRNG/stream cipher</a>, both because it
+seemed like a reasonable choice of PRNG (it is used in things like coreutils’
+<em>shred</em>, and there are no known practical attacks against it), and also because
+there was a Javascript implementation floating around on the internet.  But the
+interesting thing was that the implementation did <em>not</em> really seem to be
+vetted widely – it hadn’t been updated in five years or so, and both the
+<a href="https://github.com/StefanoBalocco/isaac.js">Github repository</a> and the <a href="https://www.npmjs.com/package/isaac">npm package</a> seem to show very little
+activity around it in general.</p>
+
+<p>(<strong>Update</strong>: Stefano, the author of the fork I used, later emailed me to point
+out that the original version of this ISAAC code is located <a href="https://github.com/rubycon/isaac.js">here</a>.  His
+fork, on the other hand, is node-friendly.)</p>
+
+<p>I was going to be using this thing in an application that made some nontrivial
+demands in terms of security.  So while the PRNG itself seemed to fit the bill,
+I wanted to be assured that the implementation satisfied at least some basic
+criteria for pseudorandomness.  I assumed that it <em>probably works</em> – I just
+wanted to have some reasonable confidence in making that assumption.</p>
+
+<p>There are a number of statistical suites for testing PRNGs out there: I am
+aware of at least the <a href="https://nvlpubs.nist.gov/nistpubs/legacy/sp/nistspecialpublication800-22r1a.pdf">NIST statistical test suite</a>, the <a href="https://en.wikipedia.org/wiki/Diehard_tests">DieHard</a>
+suite, and <a href="https://en.wikipedia.org/wiki/TestU01">TestU01</a>, being most familiar with the latter (this is not
+saying much).  The TestU01 suite is implemented in C; you provide it with a
+PRNG represented as a function pointer that returns 32-bit integers, and it
+will run the desired battery of tests (SmallCrush, Crush, or BigCrush – each
+of increasing size and scope) for you.  These more or less consist of
+frequentist tests involving the chi-square distribution, with more specialised
+test statistics appearing on occasion.  Results are provided in terms of
+p-values on these statistics.</p>
+
+<p>I found <a href="http://www.pcg-random.org/posts/how-to-test-with-testu01.html">this page</a> that gave some instructions for using TestU01, but
+the ISAAC implementation I wanted to test is of course written in Javascript.
+So I knew there was some FFI hackery to be done in order to get the two
+codebases to play nicely together.  I also discovered that Jan de Mooij <a href="https://github.com/jandem/TestU01.js">did
+some work</a> on testing JS’s basic ‘Math.random’ generator with TestU01
+using <a href="https://github.com/kripken/emscripten">Emscripten</a>, an LLVM-to-JS compiler, so these two resources seemed
+a useful place to start.</p>
+
+<p>After several hours of <del>bashing my way through emcc compilation and linker
+errors</del> careful and methodical programming, I managed to get everything to
+work.  Since the documentation for these tools can be kind of sparse, I figured
+I’d outline the steps to run the tests here, and hopefully save somebody else a
+little bit of time and effort in the future.  But that said, this is inevitably
+a somewhat tricky procedure – when trying to reproduce my steps, I ran into a
+few strange errors that required additional manual fiddling.  The following
+should be <em>about</em> right, but may require some tweaking on your end.</p>
+
+<h2 id="emscripten-and-testu01">Emscripten and TestU01</h2>
+
+<p>Install and activate <a href="https://kripken.github.io/emscripten-site/docs/getting_started/downloads.html">Emscripten</a> in the current terminal.  To go from
+the official git repo:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git clone https://github.com/juj/emsdk.git
+$ cd emsdk
+$ ./emsdk install latest
+$ ./emsdk activate latest
+$ source ./emsdk_env.sh
+</code></pre></div></div>
+
+<p>Emscripten provides a couple of wrappers over existing tools; notably, there’s
+<code class="language-plaintext highlighter-rouge">emconfigure</code> and <code class="language-plaintext highlighter-rouge">emmake</code> for specialising make builds for compilation via
+<code class="language-plaintext highlighter-rouge">emcc</code>, the Emscripten compiler itself.</p>
+
+<p>In some other directory, grab the TestU01 suite from the <a href="http://simul.iro.umontreal.ca/testu01/tu01.html">Université de
+Montréal website</a> and extract it:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ wget http://simul.iro.umontreal.ca/testu01/TestU01.zip
+$ unzip -q TestU01.zip
+</code></pre></div></div>
+
+<p>This is some oldish, gnarly academic C code that uses a very wonky
+autoconf/automake-based build system.  There is probably a better way to do it,
+but the easiest way to get this thing built without too much grief is to build
+it <em>twice</em> – once as per normal, specifying the appropriate base directory,
+and once again to specialise it for Emscripten’s use:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ basedir=`pwd`
+$ cd TestU01-1.2.3
+$ ./configure --prefix="$basedir"
+$ make -j 2
+$ make -j 2 install
+</code></pre></div></div>
+
+<p>If all goes well you’ll see ‘bin’, ‘include’, ‘lib’, and ‘share’ directories
+pop up in ‘basedir’.  Repeat the analogous steps for emscripten; note that
+you’ll get some “no input files” errors here when the configure script checks
+dynamic linker characteristics, but these are inconsequential:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ emconfigure ./configure --prefix="$basedir"
+$ emmake make -j 2
+$ emmake make -j 2 install
+</code></pre></div></div>
+
+<p>Similarly, you’ll notice some warnings re: dynamic linking when building.
+We’ll handle these later.  In the meantime, you can return to your ‘basedir’ to
+continue working:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd $basedir
+</code></pre></div></div>
+
+<h2 id="a-test-shim-for-isaac">A Test Shim for ISAAC</h2>
+
+<p>Check out the <a href="https://raw.githubusercontent.com/StefanoBalocco/isaac.js/master/isaac.js">raw ISAAC code</a>.  It’s structured in a sort-of-object-y
+way; the state of the PRNG is held in a bunch of opaque internal variables, and
+the whole thing is initialised by calling the ‘isaac’ function and binding the
+result as a variable.  One then iterates the PRNG by calling either the ‘rand’
+or ‘random’ property of that variable for a random integer or double,
+respectively.</p>
+
+<p>We need to write the actual testing code in C.  You can get away with the
+following, which I’ve adapted from <a href="http://www.pcg-random.org/posts/how-to-test-with-testu01.html">M.E. O’Neill’s code</a> – call it
+something like ‘test-isaac.c’:</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;emscripten.h&gt;
+#include "TestU01.h"
+</span>
+<span class="k">extern</span> <span class="kt">void</span> <span class="nf">isaac_init</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+<span class="k">extern</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nf">isaac_rand</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">isaac_init</span><span class="p">();</span>
+
+    <span class="n">unif01_Gen</span><span class="o">*</span> <span class="n">gen</span> <span class="o">=</span> <span class="n">unif01_CreateExternGenBits</span><span class="p">(</span><span class="s">"ISAAC"</span><span class="p">,</span> <span class="n">isaac_rand</span><span class="p">);</span>
+
+    <span class="n">bbattery_SmallCrush</span><span class="p">(</span><span class="n">gen</span><span class="p">);</span>
+
+    <span class="n">unif01_DeleteExternGenBits</span><span class="p">(</span><span class="n">gen</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Note the two external functions I’m declaring here: the first mimics calling
+the ‘isaac’ function in Javascript and binding it to a variable, ‘isaac’, and
+the second mimics a call to <code class="language-plaintext highlighter-rouge">isaac.rand()</code>.  The testing code follows the same
+pattern: <code class="language-plaintext highlighter-rouge">isaac_init()</code> initialises the generator state, and <code class="language-plaintext highlighter-rouge">isaac_rand</code>
+produces a value from it.  The surrounding code passes <code class="language-plaintext highlighter-rouge">isaac_rand</code> in as the
+generator to use for the SmallCrush battery of tests.</p>
+
+<h2 id="c-to-llvm-bitcode">C to LLVM Bitcode</h2>
+
+<p>We can compile this to LLVM IR as it is, via Emscripten.  But first, recall
+those dynamic linker warnings from the initial setup step.  Emscripten deals
+with a lot of files, compile targets, etc. based on file extension.  We thus
+need to rename all the .dylib files in the ‘lib’ directory, which are in fact
+all LLVM bitcode, to have the appropraite .bc extension.  From the ‘lib’
+directory itself, one can just do the following in bash:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ for old in *.dylib; do mv $old `basename $old .dylib`.bc; done
+</code></pre></div></div>
+
+<p>When that’s done, we can compile the C code to LLVM with <code class="language-plaintext highlighter-rouge">emcc</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ emcc -O3 -o test-isaac.bc \
+    -I/$basedir/include \
+    -L/$basedir/lib \
+    -ltestu01 -lprobdist -lmylib -lm -I/usr/local/include \
+    test-isaac.c
+</code></pre></div></div>
+
+<p>Again, Emscripten decides what its compile target should be via its file
+extension – thus here, an output with the <code class="language-plaintext highlighter-rouge">.bc</code> extension means we’re
+compiling to LLVM IR.</p>
+
+<h2 id="llvm-to-javascript-and-wasm">LLVM to Javascript and WASM</h2>
+
+<p>Now, to provide the requisite <code class="language-plaintext highlighter-rouge">isaac_init</code> and <code class="language-plaintext highlighter-rouge">isaac_rand</code> symbols to the
+compiled LLVM bitcode, we need to pass the ISAAC library itself.  This is
+another finicky procedure, but there is a method to the madness, and one can
+find a bit of documentation on it <a href="https://kripken.github.io/emscripten-site/docs/porting/connecting_cpp_and_javascript/Interacting-with-code.html#implement-a-c-api-in-javascript">here</a>.</p>
+
+<p>Helpfully, Evan Wallace at Figma wrote an emscripten JS <a href="https://github.com/evanw/emscripten-library-generator">library generation
+helper</a> that makes this task a little less painful.  Install that via npm
+as follows:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ npm install -g emscripten-library-generator
+</code></pre></div></div>
+
+<p>To wrap the ISAAC code up in the appropriate format, one needs to make a few
+small modifications to it.  I won’t elaborate on this too much, but one needs
+to:</p>
+
+<ul>
+  <li>Change the <code class="language-plaintext highlighter-rouge">String.prototype.toIntArray</code> function declaration to a simple
+<code class="language-plaintext highlighter-rouge">function toIntArray(string)</code> declaration, and alter its use in the code
+appropriately,</li>
+  <li>Change the <code class="language-plaintext highlighter-rouge">var isaac = ...</code> function declaration/execution binding to a
+simple <code class="language-plaintext highlighter-rouge">function isaac()</code> declaration, and,</li>
+  <li>
+    <p>Declare the two functions used in our C shim:</p>
+
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">isaac_init</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">isaac_initialised</span> <span class="o">=</span> <span class="nx">isaac</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">isaac_rand</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">isaac_initialised</span><span class="p">.</span><span class="nx">rand</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>Then we can package it up in an emscripten-friendly format as follows:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ emscripten-library-generator isaac-mod.js &gt; isaac-lib.js
+</code></pre></div></div>
+
+<p>You’ll need to make one last adjustment.  In the <code class="language-plaintext highlighter-rouge">isaac-lib.js</code> file just
+generated for us, add the following emscripten <a href="https://kripken.github.io/emscripten-site/docs/porting/connecting_cpp_and_javascript/Interacting-with-code.html#javascript-limits-in-library-files">‘postset’ instruction</a>
+above the ‘isaac’ property:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>isaac__postset: 'var isaac_initialised = _isaac();',   // add me
+isaac: function () {                                   // leave me alone
+</code></pre></div></div>
+
+<p>This makes sure that the <code class="language-plaintext highlighter-rouge">isaac_initialised</code> variable referred to in
+<code class="language-plaintext highlighter-rouge">isaac_rand</code> is accessible.</p>
+
+<p>Whew.  Ok, with all that done, we’ll compile our LLVM bytecode to a Javascript
+and <a href="https://webassembly.org/">wasm</a> pair.  You’ll need to bump up the total memory option in order
+to run the resulting code – I think I grabbed the amount I used from Jan de
+Mooij’s example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ emcc --js-library isaac-lib.js \
+    lib/libtestu01.0.0.1.bc \
+    -o test-isaac.js \
+    -s TOTAL_MEMORY=536870912 \
+    test-isaac.bc
+</code></pre></div></div>
+
+<h2 id="running-smallcrush">Running SmallCrush</h2>
+
+<p>That’s about it.  If all has gone well, you should have seen no compilation or
+linking errors when running emcc, and you should have a couple of
+‘test-isaac.js’ and ‘test-isaac.wasm’ files kicking around in your ‘basedir’.</p>
+
+<p>To (finally) run the Small Crush suite, execute ‘test-isaac.js’ with node:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ node test-isaac.js
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                 Starting SmallCrush
+                 Version: TestU01 1.2.3
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+***********************************************************
+HOST = emscripten, Emscripten
+
+ISAAC
+
+
+smarsa_BirthdaySpacings test:
+-----------------------------------------------
+   N =  1,  n = 5000000,  r =  0,    d = 1073741824,    t = 2,    p = 1
+
+
+      Number of cells = d^t = 1152921504606846976
+      Lambda = Poisson mean =      27.1051
+
+
+----------------------------------------------------
+Total expected number = N*Lambda      :      27.11
+Total observed number                 :      27
+p-value of test                       :    0.53
+
+
+-----------------------------------------------
+CPU time used                    :  00:00:00.00
+
+Generator state:
+
+&lt;more output omitted&gt;
+
+========= Summary results of SmallCrush =========
+
+ Version:          TestU01 1.2.3
+ Generator:        ISAAC
+ Number of statistics:  15
+ Total CPU time:   00:00:00.00
+
+ All tests were passed
+</code></pre></div></div>
+
+<p>Et voilà, your SmallCrush battery output is dumped to stdout.  You need only to
+tweak the C code shim and recompile if you want to run the more intensive Crush
+or BigCrush suites.  Similarly, you can dump generator output to stdout with
+<code class="language-plaintext highlighter-rouge">console.log()</code> if you want to reassure yourself that the generator is running
+correctly.</p>
+
+<h2 id="fin">Fin</h2>
+
+<p>So: the Javascript ISAAC PRNG indeed passes TestU01.  Nice!  It was satisfying
+enough to get this hacky sequence of steps to actually <em>run</em>, but it was even
+better to see the tests actually pass, as I’d both hoped and expected.</p>
+
+<p>I did a few extra things to convince myself that ISAAC was really passing the
+tests as it seemed to be doing.  I ran TestU01 on a cheap little xorshift
+generator (which failed several tests) and also did some ad-hoc analysis of
+values that I had ISAAC log to stdout.  And, I even looked at the code, and
+compared it with a reference implementation by eye.  At this point, I’m
+convinced it operates as advertised, and I feel very comfortable using it in my
+application.</p>
+
+
+</div>
+
+
+    </div>
+
+  </body>
+</html>

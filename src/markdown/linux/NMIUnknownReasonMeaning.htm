@@ -1,0 +1,221 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html> <head>
+	<title> Chris&#39;s Wiki :: blog/linux/NMIUnknownReasonMeaning </title>
+	<link href="/~cks/dwiki/dwiki.css" rel="stylesheet" type="text/css"> 
+	<meta name="viewport" content="width=device-width">
+	<link rel="alternate" type="application/atom+xml" href="/~cks/space/blog/?atom">
+	
+</head>
+<body>
+<div id="header">
+	<div class="left"><a href="/~cks/">Chris Siebenmann</a> ::
+<span class="breadcrumbs"><a href="/~cks/space/">CSpace</a> &raquo;
+       <a href="/~cks/space/blog/">blog</a> &raquo;
+       <a href="/~cks/space/blog/linux/">linux</a> &raquo;
+       NMIUnknownReasonMeaning</span></div>
+	<div class="right">Welcome, guest.</div>
+</div>
+
+<div id="documentbody">
+<div class="wtblog">
+<div class="maintext"> 
+	   <div class="wikitext titlehack"><h2>What Linux kernel "unknown reason" NMI messages mean</h2>
+
+	<div class="posttitle" style="opacity: 0.6;"><small>October  8, 2021</small></div>
+</div>
+<div class="wikitext"><p>Today, <a href="/~cks/space/blog/linux/WorkMachine2017">my office workstation</a> logged a kernel message
+(well, a set of them) that I've seen versions of before, and perhaps you
+have too:</p>
+
+
+<blockquote><pre style="white-space: pre-wrap;">
+Uhhuh. NMI received for unknown reason 31 on CPU 13.
+Do you have a strange power saving mode enabled?
+Dazed and confused, but trying to continue
+</pre>
+</blockquote>
+
+<p>While I (still) don't know what caused this and what to do about it
+(other than reboot the machine in the hopes that it stops happening),
+this time I looked into the kernel source to at least figure out what
+the 'reason 31' means and what is generally going on here. I will put
+the summary up front: the specific reason number is probably meaningless
+and at least somewhat random. I don't think it tells you anything about
+the potential causes.</p>
+
+<p>The 'NMI' here is short for <a href="https://en.wikipedia.org/wiki/Non-maskable_interrupt">Non-maskable interrupt</a>; the <a href="https://wiki.osdev.org/Non_Maskable_Interrupt">OSDev
+wiki has an x86-focused page on them</a>. In the Linux kernel,
+NMIs can be generated for various reasons, some of which are specific
+for a single CPU and some of which are general and may be handled
+by any CPU. When a kernel driver enables something that may generate
+NMIs (of either type), it registers a NMI handler for it. Typical
+source of and handlers for non CPU specific NMIs include watchdog
+timers and the kernel debugger. NMI handlers are called on every
+NMI and each is expected to check its NMI source and tell the kernel
+if the NMI came from it (well, more or less). If no handler speaks
+up to say it handled the NMI and certain other conditions are true,
+the kernel will generate this particular 'unknown reason' message.</p>
+
+<p>(Actually, the 'local' NMI handlers are called first. If any of them say
+they handled an NMI, the kernel assumes the entire NMI was for a per-CPU
+reason and stops there.)</p>
+
+<p>On normal x86 hardware, the reason number in the message comes from
+reading a specific <a href="https://wiki.osdev.org/I/O_Ports">x86 I/O port</a>,
+what the OSDev wiki calls 'System Control Port B (0x61)'. This port
+is actually 8 separate status bits together, and the Linux kernel's
+reason is reported in hex, not decimal, so the reason here should
+be decoded from hex to binary, where we will find out that it's
+0b110001, with bits 6, 5, and 1 set.</p>
+
+<p>When the Linux kernel handles a non CPU specific NMI in
+<a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/arch/x86/kernel/nmi.c#n306"><code>default_do_nmi()</code></a>,
+it starts out by seeing if either or both of bit 8, <code>NMI_REASON_SERR</code>,
+or bit 7, <code>NMI_REASON_IOCHK</code>, are set. If bit 8 is set and no
+SERR handler take the NMI, the kernel will report:</p>
+
+<blockquote><pre style="white-space: pre-wrap;">
+NMI: PCI system error (SERR) for reason ... on CPU ...
+</pre>
+</blockquote>
+
+<p>If bit 8 is not set and bit 7 is set (and no IOCHK handler takes the
+NMI), the kernel will report:</p>
+
+<blockquote><pre style="white-space: pre-wrap;">
+NMI: IOCK error (debug interrupt?) for reason ... on CPU ...
+</pre>
+</blockquote>
+
+<p>(The bit is called <code>IOCHK</code> but the message really does say 'IOCK'
+instead.)</p>
+
+<p>If either bit is set, the "unknown reason" kernel message is skipped
+for this NMI; it's considered handled by the PCI or IOCK handler.
+So as far as I can tell, the largest "unknown reason" number you'll
+ever see is 3f (remember, this is hex), because anything larger
+than that sets at least one of the high two bits and will take the
+SERR or IOCK path.</p>
+
+<p>(All of this is in <a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/arch/x86/kernel/nmi.c">nmi.c</a>.)</p>
+
+<p>In theory <a href="https://wiki.osdev.org/Non_Maskable_Interrupt">the OSDev wiki page</a> has a nice table
+of what the low five bits in System Control Port B tell you about
+your uknown NMI. In practice the information seems relatively
+inscrutable and meaningless. For instance, in the original IBM PC
+designs, bit 5 toggled back and forth on every DRAM refresh, bit 6
+was system timer 2's output pin state, and bits 3 and 4 seemed to
+reflect whether or not you had enabled parity checks (bit 8) and
+channel checks (bit 7). What these mean on modern x86 hardware is
+anyone's guess; they may mean very little. Linux only cares about
+bits 8 and 7.</p>
+
+<p>Based on all of this, I think that the 'unknown reason' likely says
+nothing about what caused the NMI to be generated or about what the
+(interesting) state of the hardware is. An 'unknown reason' NMI came
+from some source that was not recognized by any handler, which means
+that either there is no handler registered for its source (for example
+hardware is generating unexpected NMIs) or the handler didn't recognize
+that its hardware caused the NMI. Based on the kernel message about
+power savings mode, these seem to have at one point been a fruitful
+source of surprise NMIs.</p>
+
+<p>(That kernel message seems to go back quite a way, although it's hard
+to trace it because code has moved around a lot between files. I think
+there's a way to do this in git, but I lack the energy to work it out
+right now.)</p>
+</div>
+<hr>
+<h3> <a name="comments">Comments</a> on this page: </h3>
+<div class="comments">
+<div class="comment">
+<div class="entryid"> By Andy Balholm at <a name="guest-20211008140029">2021-10-08 14:00:29</a>: </div>
+<blockquote> <div class="wikitext"><p>I decided to try to track down that message in Git. Rather than figuring out how to track code that moved from one file to another, I did a "pickaxe" search:</p>
+
+<p>git log -S 'strange power saving mode'</p>
+
+<p>It was already there in 2005 when Linus imported the kernel sources into Git.</p>
+</div> </blockquote> </div>
+<div class="comment">
+<div class="entryid"> By Vincent Bernat at <a name="guest-20211009114528">2021-10-09 11:45:28</a>: </div>
+<blockquote> <div class="wikitext"><p>This string was introduced in 2.1.37pre7.</p>
+
+<pre>
+ asmlinkage void do_nmi(struct pt_regs * regs, long error_code)
+ {
+-       show_registers(regs);
+-#ifdef CONFIG_SMP_NMI_INVAL
+-       smp_flush_tlb_rcv();
+-#else
+-#ifndef CONFIG_IGNORE_NMI
+-       printk("Uhhuh. NMI received. Dazed and confused, but trying to continue\n");
+-       printk("You probably have a hardware problem with your RAM chips or a\n");
+-       printk("power saving mode enabled.\n");
+-#endif
+-#endif
+-       enable_NMI();
++       unsigned char reason = inb(0x61);
++
++       if (reason &amp; 0x80)
++               mem_parity_error(reason, regs);
++       if (reason &amp; 0x40)
++               io_check_error(reason, regs);
++       if (!(reason &amp; 0xc0))
++               unknown_nmi_error(reason, regs);
+ }
+</pre>
+
+<p>The generic NMI error was already present in 0.97.</p>
+</div> </blockquote> </div>
+
+</div>
+	<small>Written on <a href="/~cks/space/blog/2021/10/08/">08</a> <a href="/~cks/space/blog/2021/10/">October</a> <a href="/~cks/space/blog/2021/">2021</a>.</small> <br>
+<table border=0 width="100%"> 
+<tr> <td width="50%" style="padding-right: 0.5em"> <table> <tr> <td> &laquo; </td> <td> <a href="/~cks/space/blog/sysadmin/OpenSSHAuthConfigLimits">The OpenSSH server has limits on what user authentication you can use</a> </td> </tr> </table> </td>
+     <td width="50%" style="padding-left: 0.5em; border-left: 1px dotted;"> <table> <tr> <td> <a href="/~cks/space/blog/sysadmin/OurYubikeyToMFAMove">We've migrated from Yubikey 2FA to the university's MFA</a> </td> <td> &raquo; </td> </tr> </table> </td> </tr>
+</table>
+</div>
+<div class="sidebar">
+	<div class="readme"> <div class="wikitext"><p>These are my <a href="/~cks/space/blog/">WanderingThoughts</a> <br>
+(<a href="/~cks/space/AboutBlog">About the blog</a>)</p>
+
+<p><a href="/~cks/space/blog/__Index">Full index of entries</a> <br>
+<a href="/~cks/space/blog/__RecentComments">Recent comments</a></p>
+
+<p>This is part of <a href="/~cks/space/FrontPage">CSpace</a>, and is written by <a href="/~cks/space/People/ChrisSiebenmann">ChrisSiebenmann</a>. <br>
+Mastodon: <a href="https://mastodon.social/@cks">@cks</a> <br>
+<strike>Twitter</strike>: <a href="https://twitter.com/thatcks/">@thatcks</a></p>
+
+<p align="center">* * *</p>
+
+<p>Categories: <a href="/~cks/space/blog/links/">links</a>, <a href="/~cks/space/blog/linux/">linux</a>, <a href="/~cks/space/blog/programming/">programming</a>, <a href="/~cks/space/blog/python/">python</a>, <a href="/~cks/space/blog/snark/">snark</a>, <a href="/~cks/space/blog/solaris/">solaris</a>, <a href="/~cks/space/blog/spam/">spam</a>, <a href="/~cks/space/blog/sysadmin/">sysadmin</a>, <a href="/~cks/space/blog/tech/">tech</a>, <a href="/~cks/space/blog/unix/">unix</a>, <a href="/~cks/space/blog/web/">web</a> <br>
+Also: <a href="/~cks/space/blog/__Topics">(Sub)topics</a></p>
+
+<p>This is a <a href="/~cks/space/dwiki/DWiki">DWiki</a>. <br>
+<a href="/~cks/space/help/GettingAround">GettingAround</a> <br>
+(<a href="/~cks/space/help/Help">Help</a>)</p>
+</div> </div>
+<div class="sidesearch" style="font-size: small"> <form method=get action="/~cks/space/">Search: <input name=search size=15></form> </div>
+</div>
+</div>
+ 
+</div>
+
+<hr> Page tools: <a href="/~cks/space/blog/linux/NMIUnknownReasonMeaning?source" rel="nofollow">View Source</a>, <a href="/~cks/space/blog/linux/NMIUnknownReasonMeaning">View Normal</a>, <a href="/~cks/space/blog/linux/NMIUnknownReasonMeaning?writecomment" rel="nofollow">Add Comment</a>. 
+<div class="bottombar">
+	<div class="left"><form method=get action="/~cks/space/">Search: <input name=search size=15></form></div>
+	<div class="right"><form method=post action="/~cks/space/.login">
+Login: <input name=login size=10>
+Password: <input type=password name=password size=10>
+<input type=hidden name=view value=login>
+<input type=hidden name=page value="blog/linux/NMIUnknownReasonMeaning">
+<input type=submit value="Login"></form></div> <div class="clear"></div>
+</div>
+<div id="atomfeeds">Atom Syndication: <a type="application/atom+xml" href="/~cks/space/blog/linux/NMIUnknownReasonMeaning?atomcomments" rel="nofollow">Recent Comments</a>.</div>
+
+<hr> Last modified: Fri Oct  8 00:02:51 2021 <br>
+<address>This dinky wiki is brought to you by the Insane Hackers
+Guild, Python sub-branch.</address>
+</body>
+</html>
