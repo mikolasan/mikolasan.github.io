@@ -1,5 +1,6 @@
 ---
-title: "Download releases from command line"
+title: BitBucket 101
+subtitle: Get access token
 date: 2022-07-21
 published: 2022-07-22
 lastModified: 2022-07-22
@@ -48,3 +49,19 @@ curl -X POST -u "{client_id}:{client_secret}" \
 curl https://api.bitbucket.org/2.0/repositories/{workspace_name} \
 --header "Authorization: Bearer {access_token}
 ```
+
+----
+
+This was [my answer](https://stackoverflow.com/questions/70393902/how-do-i-obtain-an-http-access-token-from-a-bitbucket-repository-on-bitbucket-cl)
+
+
+## Reference
+
+- https://support.atlassian.com/bitbucket-cloud/docs/use-oauth-on-bitbucket-cloud/
+- https://developer.atlassian.com/cloud/bitbucket/rest/intro/
+- https://developer.atlassian.com/cloud/bitbucket/rest/api-group-downloads/?utm_source=%2Fbitbucket%2Fapi%2F2%2Freference%2Fresource%2Frepositories%2F%257Bworkspace%257D%2F%257Brepo_slug%257D%2Fdownloads&utm_medium=302#post
+- https://bitbucket.org/neupokoev/workspace/settings/api
+- https://rauth.readthedocs.io/en/latest/ (addition to requests)
+- https://requests.readthedocs.io/en/latest/api/#requests.Response.content
+- https://stackoverflow.com/questions/47169474/parallel-asynchronous-io-in-pythons-coroutines
+- https://docs.python.org/3/library/asyncio-task.html#asyncio.run
