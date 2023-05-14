@@ -8,11 +8,18 @@ published: 2022-08-20
 lastModified: 2022-09-08
 ---
 
-Prompt for generating a featured picture: cat cosmonaut floating in deep space with colorful nebulas on the background
+Prompt for generating a featured picture: _cat cosmonaut floating in deep space with colorful nebulas on the background_
 
 # Crazy data scientist diary
 
 Full collection of tricks and fixes required to run TensorFlow on Windows compiled with the latest Visual Studio 2022.
+
+- Windows 10 64 bit
+- CUDA 11.3
+- cudnn 8.4.1.50
+- Microsoft Visual Studio 2022
+- Python 3.8.1
+- MSYS2 (2018-05-31)
 
 ![running dalle playground](./run-dalle-playground.png)
 
@@ -21,11 +28,11 @@ Full collection of tricks and fixes required to run TensorFlow on Windows compil
 
 https://twitter.com/mikolasan/status/1536575253312221185
 
-I want to create AI-generated cover pictures for my articles. I want to try DALL-E for this purpose, but mini online version is so popular that it even cannot handle all requests.
+I want to create AI-generated cover pictures for my articles. I want to try [DALL-E Mini](https://github.com/borisdayma/dalle-mini) for this purpose, but [the online version](https://www.craiyon.com/) is so popular that it even cannot handle all requests.
 
 ![Too much trafic please try again](./crazy-data-scientist-diary-day-3.png)
 
-Thus I'm installing a local version onto my laptop.
+Thus I'm installing a [local version](https://github.com/saharmor/dalle-playground) on my laptop.
 
 So the first step is to install the correct tools. I'm going with
 
@@ -99,8 +106,21 @@ Maybe I don't understand bazel, but it always restarts the build from the beginn
 
 ![memory spike](./crazy-data-scientist-diary-day-4-3.png)
 
+So in the nutshell
 
+1. install requirements
+2. clone jax
+3. switch to a specific tag
+4. ignore new compilers
+5. fix type conversion
+6. compile with options that make build process more stable (hint: use only one CPU)
+7. install the wheel and the module (the same version)
+8. install also from sources [dalle-mini](https://github.com/borisdayma/dalle-mini) (0.1.1) and flax (0.5.2)
 
+Links:
+
+- https://github.com/google/jax#installation
+- https://jax.readthedocs.io/en/latest/developer.html#building-from-source
 
 ## Day 5
 
@@ -157,8 +177,15 @@ working_directory: C:\Users\neupo\
 
 ```
 
-Beautiful!
+The command to build TensorFlow
 
-A usual finale of this evening is a long output of errors but this time I was [compiling ROCM on Linux](/blog/build-rocm-from-source) (and more samples of Source Pro font)
+```powershell
+bazel build --local_ram_resources=4096 --local_cpu_resources=1 --config=opt --config=cuda --copt=-nvcc_options=disable-warnings --define=no_tensorflow_py_deps=true //tensorflow/tools/pip_package:build_pip_package
+```
+
+Think about `/arch:AVX2` ([MSVC compiler reference about the `/arch` option](https://docs.microsoft.com/en-us/cpp/build/reference/arch-x64?view=msvc-170))
+
+
+A usual finale of this evening is a long output of errors but this time I was [compiling ROCM on Linux](/blog/build-rocm-from-source). However, you can simply enjoy more Source Pro font samples.
 
 ![Alacritty showcase](./alacritty-showcase.png)

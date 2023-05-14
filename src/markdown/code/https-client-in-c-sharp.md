@@ -162,3 +162,18 @@ namespace TortoiseUWP
     }
 }
 ```
+
+## References
+
+- https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?view=net-6.0
+- https://docs.microsoft.com/en-us/windows/uwp/networking/httpclient
+- https://stackoverflow.com/questions/26218764/patch-async-requests-with-windows-web-http-httpclient-class
+- https://docs.microsoft.com/en-us/uwp/api/windows.storage.applicationdatacontainer?view=winrt-22000#methods
+- https://docs.microsoft.com/en-us/answers/questions/4410/accessing-certificate-in-code-with-thumbprint.html
+- https://stackoverflow.com/questions/9810887/export-x509certificate2-to-byte-array-with-the-private-key
+
+
+## Port UWP to Linux
+
+- https://platform.uno/docs/articles/get-started-with-linux.html#setting-up-for-archlinux-5814-or-later--manjaro
+- https://ian.bebbs.co.uk/posts/UnoLinux

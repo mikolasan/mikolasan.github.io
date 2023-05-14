@@ -62,3 +62,5 @@ You stop programming and this feeling disappears. You change the development sta
 I felt this when I returned to my old friend C++ after Python/JavaScript, I estimated new project twice smaller than it took in reality. 
 
 That's it for today. Thank you for reading.
+
+And, there is a [part 2](/blog/time-management-part-2)

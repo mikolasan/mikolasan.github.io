@@ -3,7 +3,7 @@ title: Elegant C code
 date: 2022-12-24
 ---
 
-
+What the result of this code will be?
 
 ```c
 #include <stdio.h>
@@ -23,5 +23,10 @@ int main() {
     return 0;
 }
 ```
+
+
+## Answer
+
+The output of this program will be a rectangular grid of ASCII characters, where each character is either an underscore, a space, a vertical bar, or a newline character, depending on the values in the `u` string. The grid will have `R` rows and `C` columns.
 
 https://godbolt.org/z/b3j9n853K

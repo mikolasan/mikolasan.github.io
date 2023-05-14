@@ -32,6 +32,8 @@ Is there a difference? When you see implementation in all frameworks, which one 
 
 ## Follow along
 
+I'm running the tutorial on my laptop with Windows 10 and CUDA 11.3 on Nvidia GeForce GTX 1060. TensorFlow 2.3 [compiled from source](/science/how-to-run-dalle-locally)
+
 ### How to check TensorFlow version
 
 ```python
@@ -39,14 +41,14 @@ tf.version.VERSION
 # or
 tf.__version__
 ```
+2.9 is [the latest version](https://www.tensorflow.org/versions) at the time of this writing.
 
 Just a reminder that there is a big difference between TensorFlow 1 and 2. They hate each other and many projects and tutorials still use version 1. I highly recommend do not try to upgrade projects from 1 to 2. Especially if you do not understand how the project works. Even their creators do not know how it works, so don't even try.
 
-## Fixing tensorflow_datasets
 
-Are you still wondering why data scientist jobs pay so well?
+### AUTOTUNE
 
-I run just the beginning in Python interpreter
+Are you still wondering why data scientist jobs pay so well? I ran in Python interpreter just the beginning of the tutorial, and it failed with an error. This code
 
 ```python
 """
@@ -64,22 +66,48 @@ import time
 import matplotlib.pyplot as plt
 from IPython.display import clear_output
 
-AUTOTUNE = tf.data.experimental.AUTOTUNE
-plt.interactive(True) # for windows when running from python interpreter
-
+AUTOTUNE = tf.data.AUTOTUNE
 dataset, metadata = tfds.load('cycle_gan/horse2zebra',
                               with_info=True, as_supervised=True)
 ```
 
-and it fails with this error
+The error message
 
-![error downloading dataset](./expected-binary-or-unicode-string-got-windowsgpath.png)
+```
+AttributeError: module 'tensorflow._api.v2.data' has no attribute 'AUTOTUNE'
+```
+
+According to the [TensorFlow 2.3 documentation](https://www.tensorflow.org/versions/r2.3/api_docs/python/tf/data/experimental#other_members), `AUTOTUNE` lies under the `tensorflow.data.experimental` namespace. Simple enough:
+
+```python
+AUTOTUNE = tf.data.experimental.AUTOTUNE
+```
+
+## WindowsGPath
+
+Next line, another error
+
 
 ```
 TypeError: Expected binary or unicode string, got WindowsGPath('C:\\Users\\<and so on>')
 ```
 
-Hell yeah, I fixed it! And please don't tell me that it's already been fixed in version >= 2.3 of TensorFlow (yes, it's fixed ). In TensorFlow 2.3 you need to fix one function in **python/util/compat.py**
+`WindowsGPath`? Google even cannot give a single result about such type.
+
+![error downloading dataset](./expected-binary-or-unicode-string-got-windowsgpath.png)
+
+But searching locally with the power of MSYS shell
+
+```bash
+grep -rn WindowsGPath /c/Users/neupo/AppData/Local/Programs/Python/Python38/lib/site-packages
+```
+
+I found that there is such class in [etils/epath/gpath.py:257](https://github.com/google/etils/blob/main/etils/epath/gpath.py)
+
+
+![adding support for WindowsGPath](./patching-tensorflow-to-work-with-windows-path.png)
+
+So, in TensorFlow 2.3 I fixed that by converting `WindowsGPath` (a special class from eclectic utils from Google) to array of bytes in **python/util/compat.py**
 
 ```python{8-10}
 def as_bytes(bytes_or_text, encoding='utf-8'):
@@ -97,14 +125,21 @@ def as_bytes(bytes_or_text, encoding='utf-8'):
                     (bytes_or_text,))
 ```
 
-![adding support for WindowsGPath](./patching-tensorflow-to-work-with-windows-path.png)
+And please don't tell me that it's already been fixed in version >= 2.3 of TensorFlow (yes, it's fixed ).
 
-
-I remember back in the day I had a few dates when a girl was very talkative. It didn't end well. For me it was a first sign that she is not my type.
+I don't know why my terminal window is flooded with text. Very long warning message. Too long that I think it's an error.
 
 ![Very long warning message](./tensorflow-very-long-warning-message.png)
 
-Very long warning message. Too long that I think it's an error.
+I remember back in the day I had a few dates when a girl was very talkative. It didn't end well. For me it was a first sign that she is not my type.
+
+### Display plot windows
+
+You need to run just one command somewhere before all plot commands:
+
+```python
+plt.interactive(True)
+```
 
 ## Experiments
 

@@ -3,7 +3,9 @@ title: Fix Grub rescue
 date: 2023-01-31
 ---
 
-The following answer is copied from [Unix&Linux Stack Exchange](https://unix.stackexchange.com/questions/114429/short-read-while-trying-to-open-partition/193778#193778) by [Ivan Bartsov](https://unix.stackexchange.com/a/193778/78773)
+The following answer by [Ivan Bartsov](https://unix.stackexchange.com/a/193778/78773) is copied from [Unix&Linux Stack Exchange](https://unix.stackexchange.com/questions/114429/short-read-while-trying-to-open-partition/193778#193778) 
+
+----
 
 *Ext* filesystems store backups of the superblock -- for an occasion just like this one.
 

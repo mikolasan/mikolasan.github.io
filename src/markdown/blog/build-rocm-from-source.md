@@ -6,6 +6,8 @@ lastModified: 2023-04-22
 twitter: https://twitter.com/mikolasan/status/1650395555645001728
 ---
 
+[Previously I compiled](/science/how-to-run-dalle-locally) TensorFlow 2.3 on Windows. This time I want to use a more powerful Linux workstation with an AMD graphics card. Thus I'm compiling TensorFlow with ROCM support.
+
 - TensorFlow 2.12 (ROCM fork)
 - ROCM 5.4.3 (yay -S opencl-amd-dev)
 - gcc 12.2.1
