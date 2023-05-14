@@ -21,11 +21,13 @@ For factory class I used `...`-feature (https://en.cppreference.com/w/cpp/langua
 Wait for updates on my Github, I will post dynamic state machine there.
 
 
+----
+
 ## Similar posts
 
-- ["Pointing" arguments](/code/cpp-pointing-arguments)
-- [const in C++](/code/cpp-const)
-- [C++ question: exec](/code/cpp-question-exec)
-- [Variadic templates in C++](/code/cpp-variadic-templates)
-- [Virtual call in C++](/code/cpp-virtual-call)
-- [Leak in std::map](/code/cpp-leak-in-std-map)
+- ["Pointing" arguments](/code/cpp/pointing-arguments)
+- [const in C++](/code/cpp/const-ness)
+- [C++ question: exec](/code/cpp/exec-function)
+- [C++ State Machine](/code/cpp/finite-state-machine)
+- [Variadic templates in C++](/code/cpp/variadic-templates)
+- [Leak in std::map](/code/cpp/leak-in-std-map)

@@ -1,6 +1,6 @@
 ---
 date: 2022-08-10
-title: Read temperature without extra tools
+title: Read performance for one process
 published: 2022-08-10
 lastModified: 2022-08-10
 ---

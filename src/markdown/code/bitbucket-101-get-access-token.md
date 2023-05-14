@@ -1,5 +1,5 @@
 ---
-title: BitBucket 101
+title: BitBucket 101 - access token
 subtitle: Get access token
 date: 2022-07-21
 published: 2022-07-22

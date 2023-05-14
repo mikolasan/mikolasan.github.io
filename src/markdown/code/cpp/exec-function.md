@@ -27,11 +27,13 @@ Believe me, I ran this code many times today, and it prints "parent done" only o
 The exec() function replaces new child process with whatever is in the long_process.sh script. So at line 11 the child fully transforms into another program.
 
 
+----
+
 ## Similar posts
 
-- ["Pointing" arguments](/code/cpp-pointing-arguments)
-- [const in C++](/code/cpp-const)
-- [C++ State Machine](/code/cpp-state-machine)
-- [Variadic templates in C++](/code/cpp-variadic-templates)
-- [Virtual call in C++](/code/cpp-virtual-call)
-- [Leak in std::map](/code/cpp-leak-in-std-map)
+- ["Pointing" arguments](/code/cpp/pointing-arguments)
+- [const in C++](/code/cpp/const-ness)
+- [C++ question: exec](/code/cpp/exec-function)
+- [C++ State Machine](/code/cpp/finite-state-machine)
+- [Variadic templates in C++](/code/cpp/variadic-templates)
+- [Leak in std::map](/code/cpp/leak-in-std-map)

@@ -1,4 +1,9 @@
 ---
+date: 2023-04-26
+title: IRC "hype" chat
+subtitle: Interesting Rust code scraps
+published: 2023-05-05
+lastModified: 2023-05-05
 ---
 
 ## Countdown

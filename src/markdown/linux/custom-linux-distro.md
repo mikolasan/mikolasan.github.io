@@ -36,13 +36,13 @@ Reference:
 - https://www.viatech.com/en/2015/06/buildroot/
 
 
-## FAT 32
+### FAT 32
 
 - https://wiki.gentoo.org/wiki/FAT
 - https://unix.stackexchange.com/questions/172607/verify-linux-fat32-support
 
 
-## UEFI version
+### UEFI version
 
 kernel in buildroot should be adjusted, enable all:
 
@@ -52,6 +52,24 @@ CONFIG_FRAMEBUFFER_CONSOLE=y
 CONFIG_EFI=y
 CONFIG_EFI_VARS=y
 ```
+
+### M.2 and NVME
+
+```
+<*> NVM Express block device
+[*] NVMe multipath support
+[*] NVMe hardware monitoring
+<M> NVM Express over Fabrics FC host driver
+<M> NVM Express over Fabrics TCP host driver
+<M> NVMe Target support
+  [*]   NVMe Target Passthrough support
+  <M>   NVMe loopback device support
+  <M>   NVMe over Fabrics FC target driver
+  < >     NVMe over Fabrics FC Transport Loopback Test driver (NEW)
+  <M>   NVMe over Fabrics TCP target support
+```
+
+Source: https://wiki.gentoo.org/wiki/NVMe
 
 
 ## Autostart

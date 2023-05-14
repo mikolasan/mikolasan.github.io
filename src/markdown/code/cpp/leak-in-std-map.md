@@ -95,10 +95,13 @@ Here's a screenshot from **valgrind**
 As usual all code for your experiments and slides are in [**cpp-skill** repository](https://github.com/mikolasan/cpp-skill/tree/master/weird_map).
 
 
+----
+
 ## Similar posts
 
-- ["Pointing" arguments](/code/cpp-pointing-arguments)
-- [C++ question: exec](/code/cpp-question-exec)
-- [C++ State Machine](/code/cpp-state-machine)
-- [Variadic templates in C++](/code/cpp-variadic-templates)
-- [Virtual call in C++](/code/cpp-virtual-call)
+- ["Pointing" arguments](/code/cpp/pointing-arguments)
+- [const in C++](/code/cpp/const-ness)
+- [C++ question: exec](/code/cpp/exec-function)
+- [C++ State Machine](/code/cpp/finite-state-machine)
+- [Variadic templates in C++](/code/cpp/variadic-templates)
+- [Leak in std::map](/code/cpp/leak-in-std-map)
