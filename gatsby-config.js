@@ -91,13 +91,13 @@ module.exports = {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         trackingIds: [
-          `UA-165261437-1`
+          `G-FNWV0QFPSH`
         ],
         pluginConfig: {
           // Puts tracking script in the head instead of the body
           head: true,
           // using Google Global Site Tag does not necessarily constitute Tracking
-          respectDNT: false,
+          respectDNT: true,
         },
       },
     },
