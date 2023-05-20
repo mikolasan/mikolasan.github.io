@@ -75,7 +75,12 @@ In some way these 512 numbers define the whole picture. Values and correlation b
 
 If we want to transform from one image to another, then we process the on the discriminator, evaluate two vectors. Using these two ectors we can interpolate some vectors in between, and then pass all these vectors to the generator. The generator will generate us pictures of desired transformation. Then we combine all the pictures in the video file.
 
+I remember seeing a demo of transfomation from a human into animal. So I started searching for that. The idea of using GAN model to generate images of new crossbreed species is cool. But the GAN cannot deal with this task because it doesn't understand what's displayed in the picture in 3D sense.
+
+- [Ganimals](https://ganimals.media.mit.edu/discover_em) (just refresh the page to get a new result). It uses [BigGAN](https://arxiv.org/abs/1809.11096)
+- [Humanimals](https://www.vice.com/en/article/884wek/ai-algorithm-turns-humans-into-animals) (StyleGAN v2)
 
 ## TODO
 
 - Get full [AffectNet trainset](https://mohammadmahoor.com/affectnet/)
+- If I understand it correctly, [VQVAE-2](https://arxiv.org/abs/1906.00446) is a quility improvement technique

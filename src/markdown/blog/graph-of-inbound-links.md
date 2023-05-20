@@ -14,7 +14,7 @@ I was thinking do crawl my site [with JavaScript](https://github.com/rchipka/nod
 
 ## Generators in Python
 
-I'm building a graph of interlinks, using Scrapy for that. I found something interesting about generators in Python.
+I'm building a graph of interlinks, using **Scrapy** for that. I found something interesting about generators in Python.
 
 A quick tutorial on how to make generators. We want to achieve this simple behavior and the same output:
 
@@ -46,7 +46,9 @@ Note: about text response https://docs.scrapy.org/en/latest/topics/request-respo
 
 ## Drawing
 
-Nevertheless for drawing we are going to use a JS library. There are so many of them, and I don't have any preference, so my choice it more or less random here. It's Cytoscape.
+Nevertheless for drawing we are going to use a JS library. There are so many of them, and I don't have any preference, so my choice it more or less random here.
+
+It's goint to be **Cytoscape**.
 
 I check [their examples](https://github.com/cytoscape/cytoscape.js-popper/blob/master/demo.html) and from there I see how the result should be formatted on its way of recursive search
 

@@ -4,7 +4,7 @@ title: Robot appearance design
 date: 2022-07-23
 featuredImage: uncanny-valley-discover-magazine.jpg
 published: 2022-12-20
-lastModified: 2022-12-20
+lastModified: 2023-05-20
 ---
 
 I'm convinced that any robot should have a creepy aspect. Like [tracking you big eyes](https://www.adafruit.com/product/3813) that can drive people crazy.
@@ -51,6 +51,18 @@ Also I can say that thatcher effect is worth considering though. But why not to 
 [Why Pokemon Detective Works, but Sonic the Hedgehog does not](https://www.writingintotheether.com/the-uncanny-valley-why-pokemon-detective-works-but-sonic-the-hedgehog-does-not/) post by Amy Ether
 
 
+## Examples of cute robots
+
+Cute but still dangerous cat ([source](https://www.prompthunt.com/prompt/clfo6tpjl0007mk0786609v5r))
+
+![A iron robot cat superhero on two feet](./cat-robot.jpeg "Full prompt nonsense: cinematic, Film texture, Film light, Hyper detailed, Hyper realistic, masterpiece, atmospheric, High resolution, 8k, HDR, 500px,  Cinematic, Photography, Sharp, Hasselblad, Dramatic Lighting, Depth of field, Medium shot, Soft color palette, 80mm, Incredibly high detailed, Lightroom gallery")
+
+![An iron cat on four feet](./cat-robot-2.jpeg)
+
+Six feet chinese war robot ([source](https://www.alibaba.com/product-detail/Six-Feet-B-O-Dancing-Robot_1600060530606.html)). It's a little robot with six legs (six feet is not about its size) and two little arms, found on chinese marketplace. It has **WAR** label on it but it might be abbreviation for some of it cute functionalities
+
+![Little cute robot with six legs and two little arms, ](./six-feet-chinese-war-robot.webp)
+
 ## Conclusion
 
 The article in the magazine and a few robot pictures made me create this post. I'm curious to get practical recommendations on how to get (or avoid) the effect when you design a robot. And I'm not saying about very realistic robots when it is all about their moves. But I'm not satisfied neither with classification nor the term applied to robotics by mass media. That's why I created this page as a starting point. This is all I've got about creepy robots for now, but I just started [my research and development](/make/robot).
@@ -65,3 +77,4 @@ The article in the magazine and a few robot pictures made me create this post. I
 
 
 ![picture from the article shows very disturbing robot](./uncanny-valley-discover-magazine.jpg)
+
