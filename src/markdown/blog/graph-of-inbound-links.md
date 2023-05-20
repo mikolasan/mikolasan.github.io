@@ -9,34 +9,12 @@ I'm having a depression and I've been working on my website this weekend 😑 I 
 
 Thus we need to find all links on the home page, filter them and keep only the ones that point to another pages of our site, but not any that lead us outside. Then use the list of links from the home page and on every page repeat the same thing. Sometimes links will direct us back to the home page, or to another page that we already visited on the step before - remember such things otherwise we will go circles. 
 
-I was thinking do crawl my site [with JavaScript](https://github.com/rchipka/node-osmosis) first, but then looked on API and changed my mind. 
-
-
-## Generators in Python
-
-I'm building a graph of interlinks, using **Scrapy** for that. I found something interesting about generators in Python.
-
-A quick tutorial on how to make generators. We want to achieve this simple behavior and the same output:
-
-![slide 1](./python-generator-1.jpg)
-
-Define a function where each call to 'yield' makes a new step in the loop that uses this generator:
-
-![slide 2](./python-generator-2.jpg)
-
-Here is where the interesting stuff starts. What if on each step you have more than one value ready to deliver. Then there is such thing as 'yield from'
-
-![slide 3](./python-generator-3.jpg)
-
-The way how yield stops the execution in the generator itself is strange for my brain, so here's one more test: what if we have 2 loops, in what order the yield will be called?
-
-![slide 4](./python-generator-4.jpg)
-
-
 
 ## Scraping
 
-After such experiments one can better understand the example from scrapy's main page. 
+I was thinking do crawl my site [with JavaScript](https://github.com/rchipka/node-osmosis) first, but then looked on API and changed my mind. 
+
+I'm building a graph of interlinks, using **Scrapy** for that. I found something interesting about [generators in Python](/code/generators-in-python). After such experiments one can better understand the example from scrapy's main page. 
 
 ![Scrapy's home page](./scrapy-home-page.png)
 

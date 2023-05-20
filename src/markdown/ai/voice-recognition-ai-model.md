@@ -11,10 +11,10 @@ First thing you may find is [Whisper](https://github.com/openai/whisper) by Open
 git clone https://github.com/ggerganov/whisper.cpp.git
 cd whisper.cpp
 models\download-ggml-model.cmd medium
-```
 
 cmake -DCMAKE_BUILD_TYPE=Release -S . -B build
 cmake --build build --target all
+```
 
 Install **ffmpeg** from [here](https://www.gyan.dev/ffmpeg/builds/) for example. I have this folder in `PATH` for my user account `C:\Users\neupo\.local\bin`, so I extract `ffmpeg.exe` there.
 
@@ -35,8 +35,13 @@ done
 popd
 ```
 
+```
 main.exe -m c:\Users\neupo\robot\whisper.cpp\models\ggml-medium.bin -f "c:\Users\neupo\robot\whisper.cpp\samples\New Recording 8.wav"
+```
 
+## Output
+
+```
 c:\Users\neupo\robot\whisper.cpp>main.exe -m c:\Users\neupo\robot\whisper.cpp\models\ggml-medium.bin -f "c:\Users\neupo\robot\whispe
 r.cpp\samples\New Recording 8.wav"
 whisper_init_from_file_no_state: loading model from 'c:\Users\neupo\robot\whisper.cpp\models\ggml-medium.bin'
@@ -126,9 +131,11 @@ whisper_print_timings:   sample time =  3030.49 ms /   721 runs (    4.20 ms per
 whisper_print_timings:   encode time = 439502.44 ms /    15 runs (29300.16 ms per run)
 whisper_print_timings:   decode time = 83150.84 ms /   719 runs (  115.65 ms per run)
 whisper_print_timings:    total time = 532588.44 ms
+```
 
+## CUDA optimized version
 
-
+```
 -- Building for: Visual Studio 17 2022
 -- Selecting Windows SDK version 10.0.20348.0 to target Windows 10.0.19045.
 -- The C compiler identification is MSVC 19.32.31332.0
@@ -167,18 +174,19 @@ See also "C:/Users/neupo/robot/whisper.cpp/build/CMakeFiles/CMakeError.log".
 c:\Users\neupo\robot\whisper.cpp>nvcc --help
 
 Usage  : nvcc [options] <inputfile>
+```
 
 
-
-
+```
 cmake -G "Visual Studio 17 2022" -T version=19.32,cuda=11.3,host=x64,VCTargetsPath="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.3\ext
 ras\visual_studio_integration\MSBuildExtensions" -DCMAKE_BUILD_TYPE=Release -DWHISPER_CUBLAS=ON -S . -B build
-
+```
 
 copy files from `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.3\extras\visual_studio_integration\MSBuildExtensions` to `C:\Program Files\Microsoft Visual Studio\2022\Community\Msbuild\Microsoft\VC\v170\BuildCustomizations`
 
 https://stackoverflow.com/questions/56636714/cuda-compile-problems-on-windows-cmake-error-no-cuda-toolset-found
 
+```
 cmake -G "Visual Studio 17 2022" -A x64 -DCMAKE_BUILD_TYPE=Release -DWHISPER_CUBLAS=ON -S . -B build
 devenv build\whisper.cpp.sln /build
-
+```

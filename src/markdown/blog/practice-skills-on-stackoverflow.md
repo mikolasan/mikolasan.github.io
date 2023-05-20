@@ -35,5 +35,5 @@ Here is the main question. Why would you bother making the effort solving someon
 
 That was my quest for the night, because I do not play regular computer games.
 
-I was practicing.
+I was practicing. As it turned out I practived [generators in Python](/code/generators-in-python).
 
