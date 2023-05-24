@@ -2,8 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 
-const defaultImageUrl = "https://neupokoev.xyz/images/index-7.jpg";
-const defaultDescription = "Software app ideas, game development blog, tips for embedded engineers, DIY projects with Arduino and other geek stuff";
+const defaultImageUrl = "https://neupokoev.xyz/images/preview.jpg";
+const defaultDescription = "Magazine, blog and knowledgebase for embedded engineers, game developers and geeks";
 const siteUrl = "https://neupokoev.xyz"
 
 const Title = ({ title, lang, imageUrl, pageUrl, description, meta }) => {

@@ -22,9 +22,10 @@ I'd recommend to ignore it. Instead go to [the docs](https://docs.scrapy.org/en/
 
 Note: about text response https://docs.scrapy.org/en/latest/topics/request-response.html?highlight=htmlresponse#scrapy.http.TextResponse
 
+
 ## Drawing
 
-Nevertheless for drawing we are going to use a JS library. There are so many of them, and I don't have any preference, so my choice it more or less random here.
+In [my historical unit converter app](/projects/imperial-russia) I used [GraphStream](https://graphstream-project.org/). Nevertheless for drawing here we are going to use a JS library. There are so many of them, and I don't have any preference, so my choice it more or less random here.
 
 It's goint to be **Cytoscape**.
 

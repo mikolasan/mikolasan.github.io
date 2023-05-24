@@ -33,6 +33,11 @@ Stimulator adds neuromodulators into the system. Presence of specific modulators
 
 I’ll go through a [list of projects](https://github.com/MarkMoHR/Awesome-Sketch-Synthesis) focusing on sketch synthesis. I will feed [Face expression recognition dataset](https://paperswithcode.com/datasets?task=facial-expression-recognition&page=1) Initially I found FER2013 on kaggle as my first result on google. 7 categories are exactly what I was looking for, but 48x48 pixel grayscale images will not do good.
 
+That's why I targeted the AffectNet trainset and convert all photos to sketches.
+
+- https://github.com/yiranran/QMUPD
+
+
 [https://github.com/aliprf/Ad-Corre](https://github.com/aliprf/Ad-Corre) - model: any picture to a feeling name
 
 [https://peterwang512.github.io/GANSketching/](https://peterwang512.github.io/GANSketching/)
@@ -78,9 +83,65 @@ If we want to transform from one image to another, then we process the on the di
 I remember seeing a demo of transfomation from a human into animal. So I started searching for that. The idea of using GAN model to generate images of new crossbreed species is cool. But the GAN cannot deal with this task because it doesn't understand what's displayed in the picture in 3D sense.
 
 - [Ganimals](https://ganimals.media.mit.edu/discover_em) (just refresh the page to get a new result). It uses [BigGAN](https://arxiv.org/abs/1809.11096)
-- [Humanimals](https://www.vice.com/en/article/884wek/ai-algorithm-turns-humans-into-animals) (StyleGAN v2)
+- [Humanimals](https://www.vice.com/en/article/884wek/ai-algorithm-turns-humans-into-animals) (StyleGAN v2) ([StyleGAN 3](https://github.com/NVlabs/stylegan3) for reference)
+- [HomoInterpGAN](https://openaccess.thecvf.com/content_CVPR_2019/papers/Chen_Homomorphic_Latent_Space_Interpolation_for_Unpaired_Image-To-Image_Translation_CVPR_2019_paper.pdf) ([code](https://github.com/yingcong/HomoInterpGAN))
+- [StarGAN](https://arxiv.org/abs/1711.09020) - facial attribute transfer and a facial expression synthesis ([code](https://github.com/yunjey/stargan))
+
+StyleClip
+GANSpace
+SeFa
+
+## HomoInterpGAN
+
+For `matplotlib` (version 2.2.4) download zip-s and extract
+
+- freetype https://github.com/ubawurinna/freetype-windows-binaries/releases/tag/v2.13.0
+- zlib https://www.zlib.net/
+- libpng https://sourceforge.net/projects/libpng/files/libpng16/1.6.39/
+
+Add 
+
+```
+target_link_directories(png PUBLIC ${ZLIB_LIBRARY_DIRS})
+target_link_directories(png_static PUBLIC ${ZLIB_LIBRARY_DIRS})
+target_link_directories(png-fix-itxt PUBLIC ${ZLIB_LIBRARY_DIRS})
+```
+
+to CMakeLists.txt for libpng in appropriate places
+
+And then build!
+
+```
+cd ..\zlib-1.2.13
+cmake -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="C:/Users/neupo/develop/thirdparty" -S . -B build
+cmake --build build --target all
+cmake --build build --target install
+
+cd ..\lpng1639
+cmake -G "NMake Makefiles" -DZLIB_INCLUDE_DIRS="C:/Users/neupo/develop/thirdparty/include" -DZLIB_LIBRARY_DIRS="C:/Users/neupo/develop/thirdparty/lib" -DZLIB_LIBRARIES="zlib" -DPNG_BUILD_ZLIB=ON -DPNG_TESTS=NO -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="C:/Users/neupo/develop/thirdparty" -S . -B build
+cmake --build build --target all
+cmake --build build --target install
+
+cd ..\HomoInterpGAN
+pip install --global-option=build_ext --global-option="IC:/Users/neupo/develop/thirdparty/include" --global-option="-LC:/Users/neupo/develop/thirdparty/lib" matplotlib==2.2.4
+
+pip install https://download.lfd.uci.edu/pythonlibs/archived/matplotlib-2.2.5-cp38-cp38-win_amd64.whl
+
+```
+
+- just take a wheel https://stackoverflow.com/questions/38608698/error-with-pip-install-scikit-image/38618044#38618044
+
+
+## StarGAN
+
+- v1 PyTorch https://github.com/yunjey/stargan
+- v2 PyTorch https://github.com/clovaai/stargan-v2
+- v2 TensorFlow https://github.com/clovaai/stargan-v2-tensorflow
 
 ## TODO
 
 - Get full [AffectNet trainset](https://mohammadmahoor.com/affectnet/)
+- Get full [RaFD](https://web.archive.org/web/20210617170920/http://www.socsci.ru.nl:8180/RaFD2/RaFD) (WebArchive)
+- Get full [RAF-DB](http://www.whdeng.cn/raf/model1.html)
 - If I understand it correctly, [VQVAE-2](https://arxiv.org/abs/1906.00446) is a quility improvement technique
+- Other face datasets https://pics.stir.ac.uk/Other_face_databases.htm
