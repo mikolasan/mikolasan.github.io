@@ -4,7 +4,7 @@ date: 2021-05-21
 published: 2023-05-21
 lastModified: 2023-05-21
 cover: https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/eI-nOb1K5gE/upload/0da5eb21a691b6e0ea6ce634aceacb23.jpeg
-tags: github, git, bitbucket, gitcommands
+tags: ["github", "git", "bitbucket", "gitcommands"]
 ---
 
 ## First, introduce yourself
