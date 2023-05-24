@@ -8,7 +8,6 @@ import MainBase from "./mainBase"
 import MenuPopup from "./menuPopup"
 import Footer from "./footerBase"
 import Header from "./header"
-import Title from "./title"
 
 class LayoutBase extends React.Component {
   constructor(props) {
@@ -96,13 +95,6 @@ class LayoutBase extends React.Component {
 
     return (
       <>
-        <Title
-          title={title + this.props.titleEnding}
-          imageUrl={imageSrc}
-          pageUrl={pageUrl}
-          description={description}
-          meta={[]}
-        />
         {this.state.menuOpen && (
           <>
             <Header

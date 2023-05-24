@@ -12,7 +12,7 @@ export const articles = [
     <p></p>`,
     readMore: ``,
     imgSrc: `/images/home/power-motor-board-pcb-design.png`,
-    imgAlt: null,
+    imgAlt: `A pink printed circuit board (PCB) design made in Autodesk Fusion 360. The board looks like an Arduino shield with some connectors on it. The board is designed for connecting DC motors and sensors to Arduino board.`,
   },
   {
     style: `box2`,
@@ -35,7 +35,7 @@ export const articles = [
     </p>`,
     readMore: `And how did we come to embodied cognition? Again.`,
     imgSrc: `/images/home/feel-like-i-ramen.jpg`,
-    imgAlt: null,
+    imgAlt: `Ramen bowl poster with a writing: Damn, I feel like ramen`,
   },
   {
     style: `box3`,
@@ -56,7 +56,7 @@ export const articles = [
     But when I read implementation of a ML algorithm from this paper I’m starting to hate Python.</p>`,
     readMore: `Understand Models in PyTorch`,
     imgSrc: `/images/home/stock-price-model.png`,
-    imgAlt: null,
+    imgAlt: `TSLA index chart with future predictions`,
   },
   {
     style: `box4`,
@@ -70,7 +70,7 @@ export const articles = [
     `,
     readMore: `I successfully finished the assembly of my first 3d printer`,
     imgSrc: `/images/home/prusa-original-mini-assembly-1.jpg`,
-    imgAlt: null,
+    imgAlt: `Unboxed Prusa 3D printer`,
   },
   {
     style: `box5`,

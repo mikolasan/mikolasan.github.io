@@ -170,7 +170,6 @@ module.exports = {
         formatAsDateString: false,
       }
     },
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-nprogress`,
       options: {

@@ -13,3 +13,5 @@ const Layout = (props) => (
 );
 
 export default Layout;
+
+export { Head } from "./head"
