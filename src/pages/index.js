@@ -31,3 +31,4 @@ const Index = ({ pageContext }) => (
 
 export default Index
 
+export { Head } from "./../components/head"

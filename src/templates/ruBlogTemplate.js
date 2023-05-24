@@ -85,3 +85,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export { Head } from "./../components/head"

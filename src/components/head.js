@@ -7,10 +7,10 @@ export const Head = ({ location, params, data, pageContext }) => {
   const defaultImageUrl = "https://neupokoev.xyz/images/preview.jpg";
   const defaultDescription = "Magazine, blog and knowledgebase for embedded engineers, game developers and geeks";
   const siteUrl = "https://neupokoev.xyz"
-  const metaDescription = description || defaultDescription
-  const defaultTitle = ``
-  const metaImage = imageUrl ? `${siteUrl}${imageUrl}` : defaultImageUrl
-  const metaUrl = pageUrl ? `${siteUrl}${pageUrl}` : siteUrl
+  const metaDescription = defaultDescription // description || 
+  // const defaultTitle = ``
+  const metaImage = defaultImageUrl // imageUrl ? `${siteUrl}${imageUrl}` : 
+  const metaUrl = siteUrl // pageUrl ? `${siteUrl}${pageUrl}` : 
   const meta=[
     {
       // https://developers.google.com/search/docs/advanced/robots/robots_meta_tag
