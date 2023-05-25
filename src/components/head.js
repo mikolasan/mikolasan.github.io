@@ -1,52 +1,92 @@
 import React from "react"
 
+const siteUrl = `https://neupokoev.xyz`
+const siteTitle = `Robots, science, gamedev`
+const siteDescription = `Magazine, blog and knowledgebase for embedded engineers, game developers and geeks`
+const siteImageUrl = `https://neupokoev.xyz/images/preview.jpg`
+const siteImageAlt = `A pink printed circuit board (PCB) design made in Autodesk Fusion 360. The board looks like an Arduino shield with some connectors on it. The board is designed for connecting DC motors and sensors to Arduino board.`
+const defaultImage = `https://neupokoev.xyz/images/image-7.jpg`
+const defaultImageAlt = `Probably no text description for this placeholder picture, but I will work on that`
+
 export const Head = ({ location, params, data, pageContext }) => {
-  // data.page.description
-  // location.pathname
-  const title = pageContext.title
-  const defaultImageUrl = "https://neupokoev.xyz/images/preview.jpg";
-  const defaultDescription = "Magazine, blog and knowledgebase for embedded engineers, game developers and geeks";
-  const siteUrl = "https://neupokoev.xyz"
-  const metaDescription = defaultDescription // description || 
-  // const defaultTitle = ``
-  const metaImage = defaultImageUrl // imageUrl ? `${siteUrl}${imageUrl}` : 
-  const metaUrl = siteUrl // pageUrl ? `${siteUrl}${pageUrl}` : 
-  const meta=[
+  let metaType = `website`
+
+  const pageUrl = location.pathname // pageContext.url
+  if (pageUrl === "/") {
+    metaType = `website`
+  }
+  let checkFrontmatter = data?.markdownRemark?.frontmatter // from blog template
+  if (checkFrontmatter) {
+    metaType = `article`
+  }
+
+  // if (metaType === `website`)
+  let url = siteUrl
+  let title = siteTitle
+  let description = siteDescription
+  let image = siteImageUrl
+  let imageAlt = siteImageAlt
+
+  if (metaType === `article`) {
+    url = `${siteUrl}${pageUrl}`
+    title = data?.markdownRemark?.frontmatter?.title
+    description = data?.markdownRemark?.frontmatter?.description || `TODO: add description for this article`
+    image = data?.markdownRemark?.frontmatter?.featuredImage || defaultImage
+    imageAlt = data?.markdownRemark?.frontmatter?.featuredImageAlt || defaultImageAlt
+  }
+  
+  title += ` - N`
+  
+  // property = RDF / HTML5
+  // itemProp = Microdata
+  const meta = [
     {
       // https://developers.google.com/search/docs/advanced/robots/robots_meta_tag
       name: `robots`,
       content: `noarchive, max-image-preview:large`,
     },
     {
+      name: `author`,
+      content: `Nikolay Neupokoev`,
+    },
+    {
       name: `description`,
-      content: metaDescription,
+      itemProp: `description`,
+      property: `og:description`,
+      content: description,
     },
     {
       name: `image`,
-      content: metaImage,
+      itemProp: `image`,
+      property: `og:image`,
+      content: image,
     },
     {
-      property: `og:url`,
-      content: metaUrl,
+      property: `og:image:alt`,
+      content: imageAlt
     },
     {
-      property: `og:type`,
-      content: `article`,
+      property: `og:locale`,
+      content: `en_US`,
     },
     {
+      itemProp: `name`,
       property: `og:title`,
       content: title,
     },
     {
-      property: `og:description`,
-      content: metaDescription,
+      property: `og:type`,
+      content: metaType,
     },
     {
-      name: `og:image`,
-      content: metaImage,
+      property: `og:url`,
+      content: url,
     },
+    // Twitter cards use `name` and `content`.
+    // Though Twitter’s parser will fall back to using `property` and `content`
+    // https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/getting-started
     {
-      name: `twitter:site`,
+      name: `twitter:creator`,
       content: `@mikolasan`,
     },
     {
@@ -55,7 +95,7 @@ export const Head = ({ location, params, data, pageContext }) => {
     },
     {
       name: `twitter:url`,
-      content: metaUrl,
+      content: url,
     },
     {
       name: `twitter:title`,
@@ -63,35 +103,44 @@ export const Head = ({ location, params, data, pageContext }) => {
     },
     {
       name: `twitter:description`,
-      content: metaDescription,
+      content: description,
     },
     {
       name: `twitter:image`,
-      content: metaImage,
-    },
-    {
-      itemprop: `name`,
-      content: title,
-    },
-    {
-      itemprop: `description`,
-      content: metaDescription,
-    },
-    {
-      itemprop: `image`,
-      content: metaImage,
+      content: image,
     },
   ]
+  
+  if (metaType === `article`) {
+    meta.push({
+      property: `og:site_name`,
+      content: `Neupokoev XYZ`
+    })
+  }
+
+  // TODO:
+  // article:published_time - datetime - When the article was first published.
+  // article:modified_time - datetime - When the article was last changed.
+  // article:expiration_time - datetime - When the article is out of date after.
+  // article:author - profile array - Writers of the article.
+  // article:section - string - A high-level section name. E.g. Technology
+  // article:tag - string array - Tag words associated with this article.
+
 
   return (
     <>
-      {meta.map(({ name, content }) => (
-        <meta name={name} content={content} />
+      {meta.map(({ name, property, itemProp, content }) => (
+        <meta name={name} property={property} itemProp={itemProp} content={content} />
       ))}
+
+      {/* <meta name="test input location" content={JSON.stringify(location)} />
+      <meta name="test input params" content={JSON.stringify(params)} />
+      <meta name="test input data" content={JSON.stringify(data)} />
+      <meta name="test input pageContext" content={JSON.stringify(pageContext)} /> */}
 
       <title>{title}</title>
 
-      <link rel="canonical" href={metaUrl} />
+      <link rel="canonical" href={url} />
       <link href="https://fonts.googleapis.com/css2?family=Literata:wght@700&family=Manrope:wght@300&family=Nunito:wght@300&display=swap" rel="stylesheet" />
       <link rel="preconnect" href="https://fonts.googleapis.com"></link>
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
