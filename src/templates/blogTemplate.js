@@ -48,7 +48,11 @@ export default function Template ({ data, pageContext }) {
     >
       {frontmatter.draft && <DraftAlert linkPath={url} />}
       {frontmatter.developing && <InProgressAlert linkPath={url} />}
-      <span itemScope itemType="http://schema.org/Article" itemRef="_name1 _author2 _datePublished3 _url5 _aggregateRating6">
+      <span 
+        itemScope="true"
+        itemType="http://schema.org/Article"
+        itemRef="_name1 _datePublished3 _aggregateRating6"
+      >
         <div id="_articleBody4" itemProp="articleBody"
           dangerouslySetInnerHTML={{ __html: html }}
         />

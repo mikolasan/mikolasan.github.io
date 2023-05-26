@@ -137,9 +137,16 @@ class Reactions extends React.Component {
           <li onClick={this.likeClicked.bind(this, "confused")}>😕 {this.state.scores.confused}</li>
           <li onClick={this.likeClicked.bind(this, "boring")}>🥱 {this.state.scores.boring}</li>
         </ul>
-        <p>
+        <p
+          id="_aggregateRating6"
+          itemProp="aggregateRating"
+          itemScope="true"
+          itemType="http://schema.org/AggregateRating"
+        >
           Total votes:
-          <span id="_aggregateRating6" itemProp="aggregateRating" itemScope itemType="http://schema.org/AggregateRating">
+          <span 
+            itemProp="ratingCount"
+          >
             {this.state.total}
           </span>
         </p>
