@@ -22,10 +22,10 @@ export default function Template ({ data, pageContext }) {
   if (lastModified === published) {
     lastModified = null
   }
-  const banner = (
-    <h1 id="_name1" itemprop="name">{frontmatter.title}</h1>,
-    <p dangerouslySetInnerHTML={{ __html: frontmatter.subtitle }} />
-  )
+  const banner = [
+    <h1 key="title" id="_name1" itemProp="name">{frontmatter.title}</h1>,
+    <p key="content" dangerouslySetInnerHTML={{ __html: frontmatter.subtitle }} />
+  ]
 
   return (
     <Layout
@@ -48,8 +48,8 @@ export default function Template ({ data, pageContext }) {
     >
       {frontmatter.draft && <DraftAlert linkPath={url} />}
       {frontmatter.developing && <InProgressAlert linkPath={url} />}
-      <span itemscope itemtype="http://schema.org/Article" itemref="_name1 _author2 _datePublished3 _url5 _aggregateRating6">
-        <div id="_articleBody4" itemprop="articleBody"
+      <span itemScope itemType="http://schema.org/Article" itemRef="_name1 _author2 _datePublished3 _url5 _aggregateRating6">
+        <div id="_articleBody4" itemProp="articleBody"
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </span>

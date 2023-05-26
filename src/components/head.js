@@ -52,12 +52,18 @@ export const Head = ({ location, params, data, pageContext }) => {
     {
       name: `description`,
       itemProp: `description`,
-      property: `og:description`,
       content: description,
     },
     {
       name: `image`,
       itemProp: `image`,
+      content: image,
+    },
+    {
+      property: `og:description`,
+      content: description,
+    },
+    {
       property: `og:image`,
       content: image,
     },
@@ -143,7 +149,7 @@ export const Head = ({ location, params, data, pageContext }) => {
       <link rel="canonical" href={url} />
       <link href="https://fonts.googleapis.com/css2?family=Literata:wght@700&family=Manrope:wght@300&family=Nunito:wght@300&display=swap" rel="stylesheet" />
       <link rel="preconnect" href="https://fonts.googleapis.com"></link>
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"></link>
 
       {/* Text */}
       <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet"></link>

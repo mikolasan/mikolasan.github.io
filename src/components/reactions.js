@@ -139,7 +139,7 @@ class Reactions extends React.Component {
         </ul>
         <p>
           Total votes:
-          <span id="_aggregateRating6" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+          <span id="_aggregateRating6" itemProp="aggregateRating" itemScope itemType="http://schema.org/AggregateRating">
             {this.state.total}
           </span>
         </p>
