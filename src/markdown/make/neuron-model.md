@@ -1,7 +1,8 @@
 ---
 title: Neuron model
 date: 2022-08-25
-previewImage: neuron-model-3.jpg
+featuredImage: brain-model.jpeg
+previewImage: brain-model.jpeg
 developing: true
 published: 2022-08-22
 lastModified: 2022-10-03

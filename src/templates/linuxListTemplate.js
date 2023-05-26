@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import PostList from "../components/postList"
+import CompactList from "../components/compactList"
 import SectionCard from "../components/sectionCard"
 
 const Linux = ({ data, pageContext }) => (
@@ -12,7 +12,7 @@ const Linux = ({ data, pageContext }) => (
     languageName="Switch to russian version"
     anotherLanguageLink="/ru/devlog"
   >
-    <PostList
+    <CompactList
       posts={data.allMarkdownRemark.edges}
       baseUrl="/linux"
       pageContext={pageContext}

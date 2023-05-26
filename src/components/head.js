@@ -2,7 +2,7 @@ import React from "react"
 
 const siteUrl = `https://neupokoev.xyz`
 const siteTitle = `Robots, science, gamedev`
-const siteDescription = `Magazine, blog and knowledgebase for embedded engineers, game developers and geeks`
+const siteDescription = `Magazine, blog and knowledge base for embedded engineers, game developers and geeks`
 const siteImageUrl = `https://neupokoev.xyz/images/preview.jpg`
 const siteImageAlt = `A pink printed circuit board (PCB) design made in Autodesk Fusion 360. The board looks like an Arduino shield with some connectors on it. The board is designed for connecting DC motors and sensors to Arduino board.`
 const defaultImage = `https://neupokoev.xyz/images/image-7.jpg`

@@ -1,6 +1,5 @@
 .blogcards {
   align-content: space-between;
-  display: flex;
   flex-wrap: wrap;
   gap: 2rem;
 }

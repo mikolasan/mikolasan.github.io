@@ -1,9 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-import * as styles from "./blogPreview.module.css"
+import * as styles from "./shortPreview.module.css"
 
-const BlogPreview = ({
+const ShortPreview = ({
   path,
   title,
   date,
@@ -46,4 +46,4 @@ const BlogPreview = ({
   </article>
 )
 
-export default BlogPreview
+export default ShortPreview

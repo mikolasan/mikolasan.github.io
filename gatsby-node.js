@@ -232,9 +232,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     .map(pageFactory(ruBlogPostTemplate, recentArticles))
     .forEach(page => createPage(page))
 
-  const createPagination = async (regex, path, listTemplate) => {
+  const createPagination = async (regex, path, listTemplate, postsPerPage = 6) => {
     const result = await queryPagesByPath(graphql, regex)
-    paginationFor(result, path, listTemplate)
+    paginationFor(result, path, listTemplate, postsPerPage)
       .forEach(page => createPage(page))  
   }
 
@@ -260,17 +260,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       // Pagination [/make/3d-prints]
       createPagination("/markdown\/make\/3d-prints\//", `/make/3d-prints`, printsListTemplate),
       // Pagination [/blog]
-      createPagination("/markdown\/blog\//", `/blog`, blogListTemplate),
+      createPagination("/markdown\/blog\//", `/blog`, blogListTemplate, 18),
       // Pagination [/code/cpp]
       createPagination("/markdown\/code\/cpp\//", `/code/cpp`, cppListTemplate),
       // Pagination [/code]
-      createPagination("/markdown\/code\/(?!cpp)/", `/code`, codeListTemplate),
+      createPagination("/markdown\/code\/(?!cpp)/", `/code`, codeListTemplate, 9),
       // Pagination [/gamedev]
       createPagination("/markdown\/gamedev\//", `/gamedev`, gamedevListTemplate),
       // Pagination [/ideas]
       createPagination("/markdown\/ideas\//", `/ideas`, ideasListTemplate),
       // Pagination [/linux]
-      createPagination("/markdown\/linux\//", `/linux`, linuxListTemplate),
+      createPagination("/markdown\/linux\//", `/linux`, linuxListTemplate, 25),
       // Pagination [/make]
       createPagination("/markdown\/make\/(?!robot|3d-prints)/", `/make`, makeListTemplate),
       // Pagination [/projects]

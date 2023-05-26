@@ -16,7 +16,7 @@ const Footer = () => (
         <div className="bottomnav">
           <div className="bottomsmallabout">
             <h2>About</h2>
-            <p>Game developer 🎮|🎰 C++, Python, and JavaScript adventurer. Magistrate in L5R 🎲</p>
+            <p>N is a magazine, blog and knowledge base for embedded engineers, game developers and geeks</p>
           </div>
           <div className="bottommenu">
             <h2>Topics</h2>
