@@ -22,7 +22,11 @@ export default function Template ({ data, pageContext }) {
   if (lastModified === published) {
     lastModified = null
   }
-  
+  const banner = (
+    <h1 id="_name1" itemprop="name">{frontmatter.title}</h1>,
+    <p dangerouslySetInnerHTML={{ __html: frontmatter.subtitle }} />
+  )
+
   return (
     <Layout
       pageUrl={url}
@@ -40,16 +44,15 @@ export default function Template ({ data, pageContext }) {
       secondButtonText={frontmatter.secondButtonText}
       secondButtonLink={frontmatter.secondButtonLink}
       featuredImage={frontmatter.featuredImage}
-      bannerParagraph={[
-        <h1>{frontmatter.title}</h1>,
-        <p dangerouslySetInnerHTML={{ __html: frontmatter.subtitle }} />
-      ]}
+      bannerParagraph={banner}
     >
       {frontmatter.draft && <DraftAlert linkPath={url} />}
       {frontmatter.developing && <InProgressAlert linkPath={url} />}
-      <div
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
+      <span itemscope itemtype="http://schema.org/Article" itemref="_name1 _author2 _datePublished3 _url5 _aggregateRating6">
+        <div id="_articleBody4" itemprop="articleBody"
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
+      </span>
     </Layout>
   )
 }
