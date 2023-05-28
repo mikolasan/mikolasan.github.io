@@ -4,12 +4,25 @@ const likesConfig = require("./likes-config")
 const nifty = require("./src/nifty")
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
+const replacePath = (path) => path.endsWith(".html") ? path : `${path}.html`
+
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions
+
+  // fix "no trailing slash" for GitHub pages
+  const oldPath = page.path
+  const newPath = replacePath(oldPath)
+  if (oldPath !== "/" && oldPath !== "/404" && newPath !== oldPath) {
+    deletePage(page)
+    page.path = newPath
+    page.matchPath = oldPath
+    createPage(page)
+  }
+
+  // add `updated` pageContext to JS pages (not Markdown, not pagination)
   if (`updated` in page.context) {
     return
   }
-
   const updated = {
     'about': `2022-10-22`,
     'creative-ideas-for-app-development': `2022-10-22`,
@@ -52,19 +65,12 @@ exports.onCreatePage = ({ page, actions }) => {
           updated: updated[pageName],
         },
       })
+      return
     }
   }
-  
 
-  // deletePage(page)
-  // // You can access the variable "house" in your page queries now
-  // createPage({
-  //   ...page,
-  //   context: {
-  //     ...page.context,
-  //     updated: '1',
-  //   },
-  // })
+  // add more ???
+
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
