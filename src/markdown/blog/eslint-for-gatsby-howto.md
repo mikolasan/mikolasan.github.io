@@ -59,18 +59,18 @@ module.exports = {
     ],
 
     // options to emulate prettier setup
-    // semi: ["error", "never"],
-    // quotes: ["error", "double",  { "allowTemplateLiterals": true }],
+    // semi: ["warn", "never"],
+    // quotes: ["warn", "double",  { "allowTemplateLiterals": true }],
     "max-len": ["error", { code: 160 }],
-    "template-curly-spacing": ["error", "always"],
+    "template-curly-spacing": ["error", "never"],
     "arrow-parens": ["error", "as-needed"],
 
     // standard.js
     "space-before-function-paren": [
       "error",
       {
-        named: "always",
-        anonymous: "always",
+        named: "never",
+        anonymous: "never",
         asyncArrow: "always",
       },
     ],
@@ -91,3 +91,12 @@ module.exports = {
 ## Notes
 
 - I made it working without **gatsby-plugin-eslint**. If I understand it correctly that plugin makes the build fail if you have any linter errors.
+- To disable a rule globally set it to `"off"` in **.eslintrc.js** file:
+
+```js
+module.exports = {
+  rules: {
+    "react/prop-types": "off",
+  }
+}
+```

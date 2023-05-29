@@ -12,7 +12,8 @@ module.exports = {
     "react/jsx-indent": [2, 2, {indentLogicalExpressions: true}],
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
-    
+    "react/prop-types": "off",
+
     "prefer-const": "error", // ?
     "no-var": "error", // optional, recommended when using es6+
     "no-unused-vars": 1, // recommended
