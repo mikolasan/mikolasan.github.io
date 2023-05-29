@@ -151,6 +151,7 @@ a:visited.activelink  {
 
 .userbutton {
   height: 2.6rem;
+  width: 2.6rem;
 }
 
 @media all and (max-width: 870px) {
