@@ -51,7 +51,7 @@ export default function Template ({ data, pageContext }) {
       <span 
         itemScope="true"
         itemType="http://schema.org/Article"
-        itemRef="_name1 _datePublished3 _aggregateRating6"
+        itemRef="_name1 _datePublished3"
       >
         <div id="_articleBody4" itemProp="articleBody"
           dangerouslySetInnerHTML={{ __html: html }}

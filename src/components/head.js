@@ -11,6 +11,7 @@ const defaultImageAlt = `Probably no text description for this placeholder pictu
 export const Head = ({ location, params, data, pageContext }) => {
   let metaType = `website`
 
+  const lang = location.pathname.startsWith("/ru") ? "ru" : "en"
   const pageUrl = location.pathname // pageContext.url
   if (pageUrl === "/") {
     metaType = `website`
@@ -135,6 +136,8 @@ export const Head = ({ location, params, data, pageContext }) => {
 
   return (
     <>
+      <html lang={lang} />
+
       {meta.map(({ name, property, itemProp, content }) => (
         <meta name={name} property={property} itemProp={itemProp} content={content} />
       ))}

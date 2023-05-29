@@ -28,7 +28,7 @@ class Reactions extends React.Component {
         confused: 0,
         boring: 0
       },
-      total: "Obtaining results..."
+      total: "0 (probably). Fetching new results..."
     }
   }
 
@@ -137,18 +137,8 @@ class Reactions extends React.Component {
           <li onClick={this.likeClicked.bind(this, "confused")}>😕 {this.state.scores.confused}</li>
           <li onClick={this.likeClicked.bind(this, "boring")}>🥱 {this.state.scores.boring}</li>
         </ul>
-        <p
-          id="_aggregateRating6"
-          itemProp="aggregateRating"
-          itemScope="true"
-          itemType="http://schema.org/AggregateRating"
-        >
-          Total votes:
-          <span 
-            itemProp="ratingCount"
-          >
-            {this.state.total}
-          </span>
+        <p>
+          Total votes: {this.state.total}
         </p>
       </section>
     )
