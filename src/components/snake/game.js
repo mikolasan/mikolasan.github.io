@@ -9,7 +9,7 @@ const DIRECTION = {
 let direction;
 const speed = 200;
 
-let roads = {};
+const roads = {};
 let grass;
 let ground;
 let tree;
@@ -59,7 +59,7 @@ function draw(ctx, timestamp) {
     }
   }
 
-  const drawWrapper = (t) => draw(ctx, t);
+  const drawWrapper = t => draw(ctx, t);
   window.requestAnimationFrame(drawWrapper);
 }
 
@@ -215,18 +215,18 @@ function initGame() {
   tree.src = '/images/snake/tree(1).png';
 
   canvas.addEventListener('mousemove', function(evt) {
-    var mousePos = getMousePos(canvas, evt);
+    const mousePos = getMousePos(canvas, evt);
   }, false);
   canvas.addEventListener('mousedown', function(evt) {
-    var mousePos = getMousePos(canvas, evt);
+    const mousePos = getMousePos(canvas, evt);
   }, false);
   canvas.addEventListener('mouseup', function(evt) {
-    var mousePos = getMousePos(canvas, evt);
+    const mousePos = getMousePos(canvas, evt);
   }, false);
   canvas.addEventListener('click', function(evt) {
-    var mousePos = getMousePos(canvas, evt);
+    const mousePos = getMousePos(canvas, evt);
   }, false);
-  canvas.addEventListener('keydown', (event) => {
+  canvas.addEventListener('keydown', event => {
     onKeyDown(event);
   }, false);
 
@@ -249,7 +249,7 @@ function initGame() {
     draw(ctx, 0);
   });
 
-  const drawWrapper = (timestamp) => draw(ctx, timestamp);
+  const drawWrapper = timestamp => draw(ctx, timestamp);
   window.requestAnimationFrame(drawWrapper);
 
   

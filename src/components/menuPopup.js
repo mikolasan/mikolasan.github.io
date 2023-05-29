@@ -47,15 +47,15 @@ class MenuPopup extends React.Component {
       <div className={styles.menu}>
         <Search indices={searchIndices} />
         <div className={styles.back}>
-        {this.language === "ru" ? (
-          <div className={styles.featuredlink}>
-            <a href="/ru/make/hydroponics">
-              <div className={styles.featuredspace}>
-                <img className={styles.newtag} src="/new.png" />
-                <img className={styles.featuredimage} src="/hydroponics.png" />
-              </div>
-            </a>
-          </div>) : ""}
+          {this.language === "ru" ? (
+            <div className={styles.featuredlink}>
+              <a href="/ru/make/hydroponics">
+                <div className={styles.featuredspace}>
+                  <img className={styles.newtag} src="/new.png" />
+                  <img className={styles.featuredimage} src="/hydroponics.png" />
+                </div>
+              </a>
+            </div>) : ""}
           {(this.language === "en" ? this.items : this.ruItems).map(i =>
             <div className={styles.menuitem} key={i.link}>
               <h2>

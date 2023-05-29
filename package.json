@@ -48,6 +48,7 @@
   "license": "private",
   "scripts": {
     "eslint": "npx eslint src/components/**/*.js",
+    "eslint-fix": "npx eslint --fix src/components/**/*.js",
     "gulp": "gulp",
     "build": "gatsby build",
     "develop": "gatsby develop",

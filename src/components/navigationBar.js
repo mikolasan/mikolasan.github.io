@@ -13,7 +13,7 @@ const Navbar = ({ active, language, menuOpen, menuClickedCallback }) => (
     />
     {language === "en" && 
       <Nav active={active} /> || 
-      <RuNav active={active} />
+        <RuNav active={active} />
     }
   </>
 )

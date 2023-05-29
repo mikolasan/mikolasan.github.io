@@ -1,7 +1,7 @@
 import React from "react"
 import LayoutBase from "./layoutBase";
 
-const Layout = (props) => (
+const Layout = props => (
   <LayoutBase
     {...props}
     languageName="en"

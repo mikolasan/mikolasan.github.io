@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function DraftAlert ({ linkPath }) {
+export default function DraftAlert({ linkPath }) {
   let alertAboutDraftStatus = ''
   if (linkPath.startsWith('/ru/blog') || linkPath.startsWith('/ru/')) {
     alertAboutDraftStatus = 'Статья находится в активной разработке. Она опубликована в таком виде не для издевательства над читателем, а только потому что редактор сказал "можно".'

@@ -16,7 +16,7 @@ export const Head = ({ location, params, data, pageContext }) => {
   if (pageUrl === "/") {
     metaType = `website`
   }
-  let checkFrontmatter = data?.markdownRemark?.frontmatter // from blog template
+  const checkFrontmatter = data?.markdownRemark?.frontmatter // from blog template
   if (checkFrontmatter) {
     metaType = `article`
   }

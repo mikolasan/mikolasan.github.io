@@ -6,7 +6,7 @@ import {
   Hits,
   Index,
   Snippet,
-  PoweredBy,
+  PoweredBy
 } from "react-instantsearch-dom"
 
 const HitCount = connectStateResults(({ searchResults }) => {

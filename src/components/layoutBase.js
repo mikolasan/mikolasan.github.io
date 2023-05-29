@@ -27,15 +27,15 @@ class LayoutBase extends React.Component {
     })
   }
   
-  menuClicked () {
+  menuClicked() {
     this.setState({ menuOpen: !this.state.menuOpen })
   }
 
-  openMenu () {
+  openMenu() {
     this.setState({ menuOpen: true })
   }
 
-  closeMenu () {
+  closeMenu() {
     this.setState({ menuOpen: false })
   }
 

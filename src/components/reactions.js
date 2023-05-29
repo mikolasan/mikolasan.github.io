@@ -16,7 +16,7 @@ class Reactions extends React.Component {
   // https://emojipedia.org/confused-face/
   // https://emojipedia.org/yawning-face/
 
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.likeClicked = this.likeClicked.bind(this)
     this.pageUrl = props.location.pathname
@@ -32,7 +32,7 @@ class Reactions extends React.Component {
     }
   }
 
-  getZeroScores () {
+  getZeroScores() {
     const scores = {...this.state.scores}
     Object.entries(scores).forEach(([name, score]) => {
       scores[name] = 0
@@ -40,7 +40,7 @@ class Reactions extends React.Component {
     return scores
   }
 
-  async componentDidMount () {
+  async componentDidMount() {
     const requestStartTime = Date.now()
     this.errorCallback("Sending request to web service on render.com. I'm using free plan, so be patient :)")  
     const requestOptions = {
@@ -99,7 +99,7 @@ class Reactions extends React.Component {
     }
   }
 
-  likeClicked (scoreName, e) {
+  likeClicked(scoreName, e) {
     e.preventDefault()
     // Simple POST request with a JSON body using fetch
     const requestOptions = {
@@ -127,7 +127,7 @@ class Reactions extends React.Component {
       .catch(err => self.errorCallback(`My dear friend! We have encountered this: ${err}`))
   }
 
-  render () {
+  render() {
     return (
       <section className={styles.reactions}>
         <h3>Page reactions</h3>

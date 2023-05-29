@@ -25,9 +25,9 @@ const Banner = ({
     </div>
   ) || ''
   const timeBlock = (published && lastUpdated) && (<div className="absolute-time-block time-block">
-      <span>Published: <time>{published}</time></span>
-      <span>Updated: <time>{lastUpdated}</time></span>
-    </div>
+    <span>Published: <time>{published}</time></span>
+    <span>Updated: <time>{lastUpdated}</time></span>
+  </div>
   ) || ''
 
   return (

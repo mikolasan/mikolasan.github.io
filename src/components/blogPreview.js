@@ -15,20 +15,20 @@ const BlogPreview = ({
 }) => (
   <article className={styles.blogcard}>
     {image && (
-    <Link to={path}>
-      <GatsbyImage
-        image={image}
-        alt={altImage}
-        placeholder="blurred"
-        layout="constrained"
-        transformOptions={{
-          cropFocus: "attention",
-          fit: "cover",
-        }}
-        quality={60}
-        className={styles.blogimage}
-      />
-    </Link>)}
+      <Link to={path}>
+        <GatsbyImage
+          image={image}
+          alt={altImage}
+          placeholder="blurred"
+          layout="constrained"
+          transformOptions={{
+            cropFocus: "attention",
+            fit: "cover",
+          }}
+          quality={60}
+          className={styles.blogimage}
+        />
+      </Link>)}
     <Link to={path}>
       <h3>
         {title}

@@ -131,11 +131,11 @@ function getRandomIntInclusive(min, max) {
 function shuffle(array) {
   let {length} = array;
   while (length--) {
-      let i = getRandomIntInclusive(0, length);
-      [array[i], array[length]] = [array[length], array[i]];
+    const i = getRandomIntInclusive(0, length);
+    [array[i], array[length]] = [array[length], array[i]];
   }
   return array;
-};
+}
 
 const choose_5 = [TW, MA, BS, FO, RE, VU, SV, NG, JQ, JS, PY, SO, CS, JA, PH, RB, QL, RS, MY, SQ, MO, RD];
 const strips = [
@@ -173,41 +173,41 @@ const spin_button = {
   mouse: 'out',
 }
 
-var slot_images = new Map();
+let slot_images = new Map();
 
-var y = 0;
+const y = 0;
 
-var reels = [];
+const reels = [];
 reels.length = n_reels;
-var reel_speed = 1;
-var reel_positions = [];
+const reel_speed = 1;
+const reel_positions = [];
 reel_positions.length = n_reels;
-var reel_position_offsets = [];
+const reel_position_offsets = [];
 reel_position_offsets.length = n_reels;
 const start_position = 0;
 const start_offset = invisible_rows * slot_height;
 const slots_per_spin = 5; // must be >= n_rows
 const total_distance = (slots_per_spin + invisible_rows) * slot_height;
-var t_spinning = 0;
-var t_stopping = 0;
+let t_spinning = 0;
+let t_stopping = 0;
 const fps = 60.0;
 // dt = 1/60 = 0.016 sec = 16 ms
 const spin_duration = 1500; // msec
-var k = 0;
-var n_draw_calls = (spin_duration / 1000) * fps;
-var accumulated_t = (n_draw_calls / 2) * (n_draw_calls - 1) * (1 / fps); // =  n_draw_calls - 1
+let k = 0;
+const n_draw_calls = (spin_duration / 1000) * fps;
+const accumulated_t = (n_draw_calls / 2) * (n_draw_calls - 1) * (1 / fps); // =  n_draw_calls - 1
 //const k = 0.005;
-var showtime = 0
+let showtime = 0
 // accumulated_t = max_t
 // dt = k
 // k = max_t * dt / accumulated_t
 
-var n_slots_spinned = [];
+const n_slots_spinned = [];
 n_slots_spinned.length = n_reels;
-var n_reels_stopped = 0;
-var t = 0;
-var max_t = 0;
-var result = null;
+let n_reels_stopped = 0;
+let t = 0;
+let max_t = 0;
+let result = null;
 
 // my beautiful state machine
 const state_idle = {
@@ -267,7 +267,7 @@ const state_winning = {
   //current_animating_line: 0
 };
 
-var current_state = state_idle;
+let current_state = state_idle;
 
 function switch_state(s1, s2) {
   s1.on_leave(s2);
@@ -286,7 +286,7 @@ function get_strip_symbol(reel_id, offset) {
 }
 
 function random_result_symbols() {
-  var symbols = [];
+  const symbols = [];
   for (let reel_id = 0; reel_id < n_reels; ++reel_id) {
     const virtual_stop = random_virtual_stop(reel_id);
     for (let slot_id = 0; slot_id < n_rows; ++slot_id) {
@@ -356,8 +356,8 @@ function on_reels_stopped() {
 function parse_line(line_id) {
   const l = lines[line_id];
   const first = result[l[0]];
-  var x_times = 1;
-  var slots = [l[0]];
+  let x_times = 1;
+  let slots = [l[0]];
   for (let reel_id = 1; reel_id < n_reels; ++reel_id) {
     const symbol = result[l[reel_id]];
     if (first == symbol) {
@@ -373,8 +373,8 @@ function parse_line(line_id) {
 }
 
 function parse_result() {
-  var win = 0;
-  var text_result = ''
+  const win = 0;
+  let text_result = ''
   const reel_name = ['Backend', 'Frontend', 'DB', 'Protocol', 'Killer Feature']
   for (let i = 0; i < lines.length; ++ i) {
     // text_result += `<h3>Idea ${i+1}</h3>
@@ -403,7 +403,7 @@ function generate_next_symbol(reel_id) {
   }
 }
 
-var t1 = 0;
+let t1 = 0;
 
 function move_func(x) {
   return Math.pow(x, 2) / 2;
@@ -455,7 +455,7 @@ function get_reel_draw_coords(reel_id, slot_id) {
 const one_line_delay = 1000;
 const spin_highlight_delay = 2500;
 const spin_highlight = 500;
-var highlight_time = 0;
+let highlight_time = 0;
 
 function show_result(ctx, dt) {
   showtime += dt;
@@ -478,7 +478,7 @@ function show_result(ctx, dt) {
 
   ctx.strokeStyle = 'rgb(0, 0, 0)';
   ctx.lineWidth = 6;
-  for (let slot of slots) {
+  for (const slot of slots) {
     const x = Math.floor(slot / n_rows);
     const y = slot % n_rows;
     ctx.strokeRect(shift_x + x * slot_width + reel_gap * x, shift_y + y * slot_height, slot_width, slot_height);
@@ -487,7 +487,7 @@ function show_result(ctx, dt) {
   ctx.restore();
 }
 
-var background = null;
+let background = null;
 let last_timestamp = 0;
 
 function draw(ctx, timestamp) {
@@ -514,7 +514,7 @@ function draw(ctx, timestamp) {
   for (let reel_id = 0; reel_id < n_reels; ++reel_id) {
     // draw a reel
     for (let i = 0; i < reels[reel_id].length; ++i) {
-      let {x, y} = get_reel_draw_coords(reel_id, i);
+      const {x, y} = get_reel_draw_coords(reel_id, i);
       ctx.drawImage(reels[reel_id][i], shift_x + x + reel_gap * reel_id, shift_y + y);
       //ctx.fillText(`y: ${y.toFixed(2)}`, x, y+50);
     }
@@ -546,7 +546,7 @@ function draw(ctx, timestamp) {
   }
   ctx.restore();
   
-  const drawWrapper = (t) => draw(ctx, t);
+  const drawWrapper = t => draw(ctx, t);
   window.requestAnimationFrame(drawWrapper);
 }
 
@@ -554,10 +554,10 @@ function draw(ctx, timestamp) {
 
 function spin_stop() {
   switch (current_state) {
-    case state_idle: console.log("was idle, pressed SPIN"); switch_state(current_state, state_spinning); break;
-    case state_spinning: console.log("SPIN while spinning = STOP"); force_stop(); break;
-    case state_stopping: console.log("SPIN while stopping = STOP"); force_stop(); break;
-    case state_winning: console.log("SPIN while winning = BREAK"); switch_state(current_state, state_spinning); break;
+  case state_idle: console.log("was idle, pressed SPIN"); switch_state(current_state, state_spinning); break;
+  case state_spinning: console.log("SPIN while spinning = STOP"); force_stop(); break;
+  case state_stopping: console.log("SPIN while stopping = STOP"); force_stop(); break;
+  case state_winning: console.log("SPIN while winning = BREAK"); switch_state(current_state, state_spinning); break;
   }
 }
 
@@ -659,7 +659,7 @@ function init_reels() {
   }
 
   canvas.addEventListener('mousemove', function(evt) {
-    var mousePos = getMousePos(canvas, evt);
+    const mousePos = getMousePos(canvas, evt);
     if (isInside(mousePos,spin_button)) {
       spin_button.mouse = 'in'
     } else {
@@ -667,19 +667,19 @@ function init_reels() {
     }
   }, false);
   canvas.addEventListener('mousedown', function(evt) {
-    var mousePos = getMousePos(canvas, evt);
+    const mousePos = getMousePos(canvas, evt);
     if (isInside(mousePos,spin_button)) {
       spin_button.clicked = true
     }
   }, false);
   canvas.addEventListener('mouseup', function(evt) {
-    var mousePos = getMousePos(canvas, evt);
+    const mousePos = getMousePos(canvas, evt);
     if (isInside(mousePos,spin_button)) {
       spin_button.clicked = false
     }
   }, false);
   canvas.addEventListener('click', function(evt) {
-    var mousePos = getMousePos(canvas, evt);
+    const mousePos = getMousePos(canvas, evt);
     if (isInside(mousePos,spin_button)) {
       spin_button.clicked = false
       on_spin_clicked();
@@ -719,7 +719,7 @@ function init_reels() {
     draw(ctx, 0);
   });
 
-  const drawWrapper = (timestamp) => draw(ctx, timestamp);
+  const drawWrapper = timestamp => draw(ctx, timestamp);
   window.requestAnimationFrame(drawWrapper);
 }
 
