@@ -20,7 +20,7 @@ const MobileNav = ({ language, menuOpen, menuClickedCallback }) => (
     </div>
     <div className={styles.mobilelanguage}>
       <Link to={language === "en" ? "/about" : "/ru/about"}>
-        <img src="/user.png" className={styles.userbutton} />
+        <img alt="User icon navigates to About Me page" src="/user.png" className={styles.userbutton} />
       </Link>
     </div>
   </nav>

@@ -140,8 +140,11 @@ pip install https://download.lfd.uci.edu/pythonlibs/archived/matplotlib-2.2.5-cp
 
 ## TODO
 
-- Get full [AffectNet trainset](https://mohammadmahoor.com/affectnet/)
+- Get full [AffectNet trainset](https://mohammadmahoor.com/affectnet/) ([academic torrent](https://academictorrents.com/details/3c740bf0655ca4e818c3e0bf33b79cebda83563c))
 - Get full [RaFD](https://web.archive.org/web/20210617170920/http://www.socsci.ru.nl:8180/RaFD2/RaFD) (WebArchive)
 - Get full [RAF-DB](http://www.whdeng.cn/raf/model1.html)
 - If I understand it correctly, [VQVAE-2](https://arxiv.org/abs/1906.00446) is a quility improvement technique
 - Other face datasets https://pics.stir.ac.uk/Other_face_databases.htm
+
+try diffusion https://github.com/Stability-AI/stablediffusion
+datasets, tools to make datasets https://laion.ai/projects/
