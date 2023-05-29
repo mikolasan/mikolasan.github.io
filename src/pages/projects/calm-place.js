@@ -25,3 +25,5 @@ const CalmPlace = () => (
 )
 
 export default CalmPlace
+
+export { Head } from "./../../components/head"

@@ -103,3 +103,5 @@ const About = ({ pageContext }) => {
 }
 
 export default About
+
+export { Head } from "./../components/head"

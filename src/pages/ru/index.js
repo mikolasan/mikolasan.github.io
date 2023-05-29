@@ -136,3 +136,5 @@ const RuIndex = ({ pageContext }) => (
 )
 
 export default RuIndex
+
+export { Head } from "./../../components/head"

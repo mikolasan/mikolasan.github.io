@@ -130,3 +130,5 @@ const RuAbout = ({ pageContext }) => (
 )
 
 export default RuAbout
+
+export { Head } from "./../../components/head"

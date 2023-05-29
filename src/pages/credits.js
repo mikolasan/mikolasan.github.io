@@ -59,3 +59,5 @@ const Credits = ({ pageContext }) => (
 
 
 export default Credits
+
+export { Head } from "./../components/head"

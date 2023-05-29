@@ -29,3 +29,5 @@ const LuckyIdeaGenerator = ({ pageContext }) => (
 
 
 export default LuckyIdeaGenerator
+
+export { Head } from "./../components/head"

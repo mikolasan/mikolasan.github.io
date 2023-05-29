@@ -69,3 +69,5 @@ const IdeasPage = () => (
 )
 
 export default IdeasPage
+
+export { Head } from "./../../components/head"

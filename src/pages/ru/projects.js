@@ -112,3 +112,5 @@ const Projects = ({ data }) => (
 )
 
 export default Projects
+
+export { Head } from "./../../components/head"
