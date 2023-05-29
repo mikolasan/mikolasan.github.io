@@ -25,7 +25,7 @@ const About = ({ pageContext }) => {
         <li key="l5">Enjoy coding today!</li>
       </ul>
       <p>
-        > <a href="https://github.com/mikolasan">My github profile</a>
+        &gt; <a href="https://github.com/mikolasan">My github profile</a>
       </p>
 
 

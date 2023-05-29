@@ -1,7 +1,19 @@
 module.exports = {
-  extends: ["standard"],
-  plugins: ["standard", "react"],
+  extends: [
+    require.resolve(`eslint-config-react-app`),
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:import/recommended",
+  ],
+  plugins: ["react", "jsx-a11y"],
   rules: {
+    // react plugin - options
+    "react/jsx-indent": [2, 2, {indentLogicalExpressions: true}],
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    
+    "prefer-const": "error", // ?
     "no-var": "error", // optional, recommended when using es6+
     "no-unused-vars": 1, // recommended
     "arrow-spacing": ["error", { before: true, after: true }], // recommended
@@ -18,8 +30,8 @@ module.exports = {
     ],
 
     // options to emulate prettier setup
-    semi: ["error", "never"],
-    quotes: ["error", "double",  { "allowTemplateLiterals": true }],
+    // semi: ["warn", "never"],
+    // quotes: ["warn", "double",  { "allowTemplateLiterals": true }],
     "max-len": ["error", { code: 160 }],
     "template-curly-spacing": ["error", "always"],
     "arrow-parens": ["error", "as-needed"],
@@ -28,24 +40,19 @@ module.exports = {
     "space-before-function-paren": [
       "error",
       {
-        named: "always",
-        anonymous: "always",
+        named: "never",
+        anonymous: "never",
         asyncArrow: "always",
       },
     ],
-
-    // standard plugin - options
-    "standard/object-curly-even-spacing": ["error", "either"],
-    "standard/array-bracket-even-spacing": ["error", "either"],
-    "standard/computed-property-even-spacing": ["error", "even"],
-    "standard/no-callback-literal": ["error", ["cb", "callback"]],
-
-    // react plugin - options
-    "react/jsx-uses-react": "error",
-    "react/jsx-uses-vars": "error",
   },
-  parser: "babel-eslint",
+  parser: require.resolve(`@babel/eslint-parser`),
   parserOptions: {
-    ecmaVersion: 8, // optional, recommended 6+
+    requireConfigFile: false,
+    ecmaVersion: "latest",
+    sourceType: `module`,
+    ecmaFeatures: {
+      jsx: true,
+    },
   },
 }
