@@ -1,6 +1,8 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 
+
+// eslint-disable-next-line react/display-name, import/no-anonymous-default-export
 export default () => (
   <div style={{minHeight:"300px", maxHeight: "300px"}}>
     <StaticImage 

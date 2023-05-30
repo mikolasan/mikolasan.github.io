@@ -51,8 +51,8 @@ class MenuPopup extends React.Component {
             <div className={styles.featuredlink}>
               <a href="/ru/make/hydroponics">
                 <div className={styles.featuredspace}>
-                  <img className={styles.newtag} src="/new.png" />
-                  <img className={styles.featuredimage} src="/hydroponics.png" />
+                  <img className={styles.newtag} src="/new.png" alt="tag saying NEW" />
+                  <img className={styles.featuredimage} src="/hydroponics.png" alt="plant in the pot" />
                 </div>
               </a>
             </div>) : ""}
