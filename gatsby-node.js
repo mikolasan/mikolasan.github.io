@@ -4,7 +4,7 @@ const likesConfig = require("./likes-config")
 const nifty = require("./src/nifty")
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
-const replacePath = (path) => path.endsWith(".html") ? path : `${path}.html`
+const replacePath = path => path.endsWith(".html") ? path : `${path}.html`
 
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions
@@ -54,7 +54,7 @@ exports.onCreatePage = ({ page, actions }) => {
   const path = page.componentPath
   const match = path.match(/.*\/src\/pages\/(.*)\.js/)
   if (match && match.length > 1) {
-    pageName = match[1]
+    const pageName = match[1]
     if (pageName in updated) {
       // console.log(pageName, updated[pageName])
       deletePage(page)
@@ -164,7 +164,7 @@ const toPages = (node, template, recentArticles) => {
 }
 
 const pageFactory = (template, recentArticles) => {
-  return (node) => toPages(node, template, recentArticles)
+  return node => toPages(node, template, recentArticles)
 }
 
 const paginationFor = (result, path, listTemplate, postsPerPage = 6) => {

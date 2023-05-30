@@ -12,26 +12,53 @@
 }
 
 .reactions ul {
+  margin-left: 0;
+  margin-top: 4rem;
   display: flex;
   justify-content: flex-start;
   gap: 1rem;
   list-style: none;
+  overflow-x: hidden;
 }
 
 .reactions li {
-  padding: 0.5rem 1rem;
-  border-radius: 2rem;
-  background-color: #e0e0e0;
-  cursor: pointer;
   font-family: 'Roboto', sans-serif;
-  font-size: x-large;
+  font-size: 2rem;
   font-weight: bold;
   white-space: nowrap;
 }
 
+.reactions button {
+  height: auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  border-style: solid;
+  border-color: #d0d0d0;
+  border-width: 2px;
+  cursor: pointer;
+  
+  background-color: #fff;
+}
+
+.reactions img {
+  height: 30px;
+}
+
+.reactions button:hover {
+  
+  background-color: #ecf1f6;
+}
+
+.reactions p {
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
 .reactions li:hover {
-  background-color: #ccc;
-  transform: scale(0.9);
 }
 
 @media all and (max-width: 768px) {

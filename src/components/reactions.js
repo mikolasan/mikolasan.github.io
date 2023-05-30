@@ -1,48 +1,57 @@
 import PropTypes from "prop-types"
 import React from "react"
-import { Location } from "@reach/router"
 import * as styles from "./reactions.module.css"
 
 const serverUrl = "https://reactions-xn8g.onrender.com"
 
 class Reactions extends React.Component {
   static propTypes = {
-    location: PropTypes.object.isRequired,
+    slug: PropTypes.string.isRequired,
     errorCallback: PropTypes.func.isRequired
   }
 
-  // https://emojipedia.org/exploding-head/
-  // https://emojipedia.org/zany-face/
-  // https://emojipedia.org/confused-face/
-  // https://emojipedia.org/yawning-face/
-
+  // heart clap 
   constructor(props) {
     super(props)
-    this.likeClicked = this.likeClicked.bind(this)
-    this.pageUrl = props.location.pathname
+    this.sendReaction = this.sendReaction.bind(this)
+    this.reactHeart = this.sendReaction.bind(this, "heart")
+    this.reactExplodingHead = this.sendReaction.bind(this, "exploding-head")
+    this.reactRaisedHands = this.sendReaction.bind(this, "raised-hands")
+    this.reactFire = this.sendReaction.bind(this, "fire")
+    this.reactUnicorn = this.sendReaction.bind(this, "unicorn")
+    this.pageUrl = props.slug
     this.errorCallback = props.errorCallback
     this.state = {
-      scores: {
-        "mind-blown": 0,
-        wild: 0,
-        confused: 0,
-        boring: 0
+      reactions: {
+        "heart": 0,
+        "exploding-head": 0,
+        "raised-hands": 0,
+        "fire": 0,
+        "unicorn": 0
       },
-      total: "0 (probably). Fetching new results..."
+      total: 0,
+      message: ""
     }
   }
 
-  getZeroScores() {
-    const scores = {...this.state.scores}
-    Object.entries(scores).forEach(([name, score]) => {
-      scores[name] = 0
+  zeroReactions() {
+    const reactions = {...this.state.reactions}
+    Object.entries(reactions).forEach(([name, reaction]) => {
+      reactions[name] = 0
     })
-    return scores
+    return reactions
+  }
+
+  setMessageAndCallback(message) {
+    this.setState({
+      message: message
+    })
+    this.errorCallback(message)
   }
 
   async componentDidMount() {
     const requestStartTime = Date.now()
-    this.errorCallback("Sending request to web service on render.com. I'm using free plan, so be patient :)")  
+    this.setMessageAndCallback("Sending request to web service on render.com. I'm using free plan, so be patient :)")  
     const requestOptions = {
       method: "GET",
       headers: {
@@ -54,52 +63,48 @@ class Reactions extends React.Component {
       const params = new URLSearchParams({
         url: this.pageUrl
       })
-      const response = await fetch(serverUrl + "/likes?" + params, requestOptions)
+      const response = await fetch(serverUrl + "/reactions?" + params, requestOptions)
       if (!response.ok) {
-        this.errorCallback(`RESPONSE is not OKAY AAAAAAAAAAAAAAAA ${response.statusText}`)  
+        this.setMessageAndCallback(`RESPONSE is not OKAY AAAAAAAAAAAAAAAA ${response.statusText}`)  
         return
       }
       console.log(response);
       const contentType = response.headers.get('content-type');
       if (!contentType || !contentType.includes('application/json')) {
-        this.errorCallback("Oops, we haven't got a JSON!");
+        this.setMessageAndCallback("Oops, we haven't got a JSON!");
       }
-      // if (!response.bodyUsed) {
-      //   this.errorCallback("This page has never been scored. Be the first one!")
-      //   return
-      // }
 
       const data = await response.json()
-      if (!("scores" in data) || data.scores === null) {
-        this.errorCallback("Be the first who adds a reaction to this page!");
+      if (!("reactions" in data) || data.reactions === null) {
+        this.setMessageAndCallback("\u00A0");
         this.setState({
-          scores: this.getZeroScores(),
+          reactions: this.zeroReactions(),
           total: 0
         })
         return
       }
 
-      const scores = this.getZeroScores()
-      Object.entries(data.scores).forEach(([name, score]) => {
-        scores[name] = score
+      const reactions = this.zeroReactions()
+      Object.entries(data.reactions).forEach(([name, reaction]) => {
+        reactions[name] = reaction
       })
       const requestTime = Date.now() - requestStartTime
-      this.errorCallback(`Reactions retrieved from Mongo DB and delivered by a Python service in ${Math.floor(requestTime / 1000)} msec`);
+      this.setMessageAndCallback(`Reactions retrieved from Mongo DB and delivered by a Python service in ${Math.floor(requestTime / 1000)} msec`);
       this.setState({
-        scores: scores,
-        total: Object.values(scores).reduce((a, b) => a + b, 0)
+        reactions: reactions,
+        total: Object.values(reactions).reduce((a, b) => a + b, 0)
       })
     
     } catch (err) {
       if (err instanceof SyntaxError) {
-        this.errorCallback(`I write very bad API: ${err}`)
+        this.setMessageAndCallback(`I write very bad API: ${err}`)
       } else {
-        this.errorCallback(`My dear friend! We have encountered this: ${err}`)
+        this.setMessageAndCallback(`My dear friend! We have encountered this: ${err}`)
       }
     }
   }
 
-  likeClicked(scoreName, e) {
+  sendReaction(reactionName, e) {
     e.preventDefault()
     // Simple POST request with a JSON body using fetch
     const requestOptions = {
@@ -110,43 +115,60 @@ class Reactions extends React.Component {
       },
       body: JSON.stringify({
         url: this.pageUrl,
-        like: scoreName
+        reaction: reactionName
       })
     }
     const self = this
-    fetch(serverUrl + "/like", requestOptions)
+    fetch(serverUrl + "/react", requestOptions)
       .then(response => response.json())
       .then(data => {
-        const scores = {...self.state.scores}
-        scores[data.scoreName] = data.score
+        const reactions = {...self.state.reactions}
+        reactions[data.reactionName] = data.reaction
         self.setState({
-          scores: scores,
-          total: Object.values(scores).reduce((a, b) => a + b, 0)
+          reactions: reactions,
+          total: Object.values(reactions).reduce((a, b) => a + b, 0)
         })        
       })
-      .catch(err => self.errorCallback(`My dear friend! We have encountered this: ${err}`))
+      .catch(err => self.setMessageAndCallback(`My dear friend! We have encountered this: ${err}`))
   }
 
   render() {
     return (
-      <section className={styles.reactions}>
-        <h3>Page reactions</h3>
+      <section className={styles.reactions} aria-label="Page reactions">
         <ul>
-          <li onClick={this.likeClicked.bind(this, "mind-blown")}>🤯 {this.state.scores["mind-blown"]}</li>
-          <li onClick={this.likeClicked.bind(this, "wild")}>🤪 {this.state.scores.wild}</li>
-          <li onClick={this.likeClicked.bind(this, "confused")}>😕 {this.state.scores.confused}</li>
-          <li onClick={this.likeClicked.bind(this, "boring")}>🥱 {this.state.scores.boring}</li>
+          <li>
+            <button onClick={this.reactHeart} aria-label="Heart">
+              <img src="/images/reactions/heart_t.svg"  alt="heart reaction" />
+              {` `}{this.state.reactions.heart}
+            </button>
+          </li>
+          <li>
+            <button onClick={this.reactExplodingHead} aria-label="Eploding Head">
+              <img src="/images/reactions/exploding_head_t.svg" alt="exploding head reaction" />
+              {` `}{this.state.reactions["exploding-head"]}</button>
+          </li>
+          <li>
+            <button onClick={this.reactRaisedHands} aria-label="RaisedHands">
+              <img src="/images/reactions/raising_hands_t.svg" alt="raised hands reaction" />
+              {` `}{this.state.reactions["raised-hands"]}</button>
+          </li>
+          <li>
+            <button onClick={this.reactFire} aria-label="Fire">
+              <img src="/images/reactions/fire_t.svg" alt="fire reaction" />
+              {` `}{this.state.reactions.fire}</button>
+          </li>
+          <li>
+            <button onClick={this.reactUnicorn} aria-label="Unicorn">
+              <img src="/images/reactions/unicorn_t.svg" alt="unicorn reaction" />
+              {` `}{this.state.reactions.unicorn}</button>
+          </li>
         </ul>
         <p>
-          Total votes: {this.state.total}
+          {this.state.message}
         </p>
       </section>
     )
   }
 }
 
-export default props => (
-  <Location>
-    {locationProps => <Reactions {...locationProps} {...props} />}
-  </Location>
-)
+export default Reactions

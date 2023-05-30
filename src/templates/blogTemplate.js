@@ -4,18 +4,18 @@ import Layout from "../components/layout"
 import DraftAlert from "../components/draftAlert"
 import InProgressAlert from "../components/inProgressAlert"
 
-export default function Template ({ data, pageContext }) {
+export default function Template({ data, pageContext }) {
   const { markdownRemark } = data
   const { frontmatter, html, excerpt } = markdownRemark
   const url = pageContext.url
-  let section = url.substring(1, url.indexOf('/', 1))
-  let languageName = "Switch to russian version"
-  let anotherLanguageLink = '/ru'
+  const section = url.substring(1, url.indexOf('/', 1))
+  const languageName = "Switch to russian version"
+  const anotherLanguageLink = '/ru'
   let published = frontmatter.published || frontmatter.date
   let lastModified = frontmatter.lastModified || frontmatter.date
   // date fixes
-  let lastModifiedDate = new Date(lastModified)
-  let publishedDate = new Date(published)
+  const lastModifiedDate = new Date(lastModified)
+  const publishedDate = new Date(published)
   if (published && lastModified && lastModifiedDate < publishedDate) {
     [published, lastModified] = [lastModified, published];
   }
@@ -29,13 +29,13 @@ export default function Template ({ data, pageContext }) {
 
   return (
     <Layout
-      pageUrl={url}
       title={frontmatter.title}
       description={excerpt}
       published={published}
       lastUpdated={lastModified}
       section={frontmatter.section || section}
       showLikes={pageContext.showLikes}
+      slug={pageContext.url}
       crumbs={pageContext.breadcrumb.crumbs}
       languageName={languageName}
       anotherLanguageLink={anotherLanguageLink}

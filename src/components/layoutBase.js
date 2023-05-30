@@ -17,7 +17,7 @@ class LayoutBase extends React.Component {
     this.closeCallback = this.closeMenu.bind(this)
     this.state = {
       menuOpen: false,
-      errorMessage: "null"
+      errorMessage: ""
     }
   }
 
@@ -43,23 +43,18 @@ class LayoutBase extends React.Component {
     const {
       children,
       title,
-      description,
-      pageUrl,
       published,
-      publishedText,
       lastUpdated,
-      updatedText,
       section,
-      showLikes,
       crumbs,
-      anotherLanguageLink,
       buttonText,
       buttonLink,
       secondButtonText,
       secondButtonLink,
       featuredImage,
       bannerParagraph,
-      recentArticles
+      mainConf,
+      languageName
     } = this.props
     
     const imageData = getImage(featuredImage);
@@ -78,8 +73,8 @@ class LayoutBase extends React.Component {
       >
         {bannerParagraph}
       </FeaturedImage>
-      
     )
+
     const banner = bannerParagraph && (
       <Banner
         buttonText={buttonText}
@@ -93,43 +88,45 @@ class LayoutBase extends React.Component {
       </Banner>
     ) || ``
 
-    return (
+    const fullscreenMenu = (
       <>
-        {this.state.menuOpen && (
-          <>
-            <Header
-              crumbs={crumbs}
-              language={this.props.languageName}
-              menuOpen={this.state.menuOpen}
-              menuClickedCallback={this.menuClicked}
-              section={section}
-            />
-            <MenuPopup
-              language={this.props.languageName}
-              closeCallback={this.closeCallback}
-            />
-          </>
-        ) || (
-          <>
-            <Header
-              crumbs={crumbs}
-              language={this.props.languageName}
-              menuClickedCallback={this.menuClicked}
-              section={section}
-            />
-            {featuredImage && wideImage || banner}
-            <MainBase
-              children={children}
-              mainConf={this.props.mainConf}
-              errorCallback={this.errorCallback}
-              errorMessage={this.state.errorMessage}
-              {...this.props}
-            />
-            <Footer language={this.props.languageName} />
-          </>
-        )}
+        <Header
+          crumbs={crumbs}
+          language={languageName}
+          menuOpen={this.state.menuOpen}
+          menuClickedCallback={this.menuClicked}
+          section={section}
+        />
+        <MenuPopup
+          language={languageName}
+          closeCallback={this.closeCallback}
+        />
       </>
     )
+
+    const fullPage = (
+      <>
+        <Header
+          crumbs={crumbs}
+          language={languageName}
+          menuClickedCallback={this.menuClicked}
+          section={section}
+        />
+        {featuredImage && wideImage || banner}
+        <MainBase
+          mainConf={mainConf}
+          errorCallback={this.errorCallback}
+          errorMessage={this.state.errorMessage}
+          {...this.props}
+        >
+          {children}
+        </MainBase>
+        <Footer language={languageName} />
+      </>
+    )
+
+    const currentLayout = this.state.menuOpen && fullscreenMenu || fullPage
+    return currentLayout
   }
 }
 

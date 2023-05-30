@@ -15,6 +15,7 @@ const MainCentered = ({
   secondButtonLink,
   children,
   showLikes,
+  slug,
   recentArticles,
   errorCallback,
   errorMessage
@@ -56,8 +57,10 @@ const MainCentered = ({
         {children}
         {showLikes && (
           <>
-            <Reactions errorCallback={errorCallback} />
-            <div>{errorMessage}</div>
+            <Reactions
+              slug={slug}
+              errorCallback={errorCallback}
+            />
           </>
         )}
       </div>
