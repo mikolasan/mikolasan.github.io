@@ -129,10 +129,13 @@ a:visited.activelink  {
 }
 
 .burgermenu {
-  cursor: pointer;
   height: 1.8rem;
   width: 2rem;
   margin-left: 0.5rem;
+  padding: 0;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
 }
 
 .burgermenuopen {
