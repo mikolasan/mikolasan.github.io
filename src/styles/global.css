@@ -102,7 +102,7 @@ section {
 
 .time-block {
   font-size: 0.85rem;
-  padding: 0.2rem 1.5rem 0.2rem 1.5rem;
+  
   color: #211a1d;
 }
 
@@ -118,6 +118,15 @@ section {
 .time-block span {
   display: block;
   font-weight: 700;
+}
+
+.table-of-contents {
+  margin-top: 2rem;
+  margin-left: -1.45rem;
+}
+
+.table-of-contents ul {
+  list-style-type: none;
 }
 
 .featured-area {

@@ -18,7 +18,8 @@ const MainCentered = ({
   slug,
   recentArticles,
   errorCallback,
-  errorMessage
+  errorMessage,
+  tableOfContents
 }) => {
   const timeBlock = (published, lastUpdated, addClass) => {
     const time = <>
@@ -34,6 +35,9 @@ const MainCentered = ({
     <main className="centered">
       <div className="left-section">
         {timeBlock(published, lastUpdated, "left-time-block")}
+        <div className="table-of-contents"
+          dangerouslySetInnerHTML={{ __html: tableOfContents }}
+        />
       </div>
       <div className="main-section">
         <div className="mobile-header">

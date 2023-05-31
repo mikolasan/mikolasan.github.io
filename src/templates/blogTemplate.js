@@ -6,7 +6,7 @@ import InProgressAlert from "../components/inProgressAlert"
 
 export default function Template({ data, pageContext }) {
   const { markdownRemark } = data
-  const { frontmatter, html, excerpt } = markdownRemark
+  const { frontmatter, html, excerpt, tableOfContents } = markdownRemark
   const url = pageContext.url
   const section = url.substring(1, url.indexOf('/', 1))
   const languageName = "Switch to russian version"
@@ -45,6 +45,7 @@ export default function Template({ data, pageContext }) {
       secondButtonLink={frontmatter.secondButtonLink}
       featuredImage={frontmatter.featuredImage}
       bannerParagraph={banner}
+      tableOfContents={tableOfContents}
     >
       {frontmatter.draft && <DraftAlert linkPath={url} />}
       {frontmatter.developing && <InProgressAlert linkPath={url} />}
@@ -66,6 +67,11 @@ export const pageQuery = graphql`
     markdownRemark(fileAbsolutePath: { eq: $absolutePath }) {
       html
       excerpt
+      tableOfContents(
+        absolute: false
+        pathToSlugField: "fields.slug"
+        maxDepth: 3
+      )
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         published(formatString: "MMMM DD, YYYY")

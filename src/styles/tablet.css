@@ -26,4 +26,7 @@
     width: max-content;
     border-bottom: #211a1d  0.25rem solid;
   }
+  .table-of-contents {
+    margin-left: 1.5rem;
+  }
 }
