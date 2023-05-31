@@ -22,16 +22,18 @@
 }
 
 .reactions li {
-  font-family: 'Roboto', sans-serif;
-  font-size: 2rem;
-  font-weight: bold;
+  padding: 0;
+  font-family: 'Barlow', sans-serif;
+  font-size: 1.2rem;
+  font-weight: normal;
   white-space: nowrap;
 }
 
 .reactions button {
   height: auto;
+  width: max-content;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 1rem;
 
   padding: 0.5rem 1rem;
@@ -72,9 +74,12 @@
     gap: 0.5rem;
   }
 
-  .reactions li {
+  .reactions button {
     padding: 0.25rem 0.5rem;
-    border-radius: 2rem;
-    font-size: large;
+    gap: 0.4rem;
+  }
+
+  .reactions img {
+    height: 24px;
   }
 }
