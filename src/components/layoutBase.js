@@ -44,7 +44,9 @@ class LayoutBase extends React.Component {
       children,
       title,
       published,
+      publishedText,
       lastUpdated,
+      updatedText,
       section,
       crumbs,
       buttonText,
@@ -82,7 +84,9 @@ class LayoutBase extends React.Component {
         secondButtonText={secondButtonText}
         secondButtonLink={secondButtonLink}
         published={published}
+        publishedText={publishedText}
         lastUpdated={lastUpdated}
+        updatedText={updatedText}
       >
         {bannerParagraph}
       </Banner>

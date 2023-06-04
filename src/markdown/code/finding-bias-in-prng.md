@@ -26,7 +26,7 @@ Here `this.rand()` returns a random integer value in range [0, 2^32), then we di
 
 And this method probably in every browser and [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random) warns you:
 
-> If extremely large bounds are chosen (2^53 or higher), it's possible in extremely rare cases to reach the usually-excluded upper bound. 
+> If extremely large bounds are chosen (2^53 or higher), it's possible in extremely rare cases to reach the usually-excluded upper bound.
 
 And let's assume that you are going to generate a random value in a range by this code
 
@@ -37,9 +37,14 @@ const random = function(a, b) {
 };
 ```
 
-Surprisingly, this is [very common](https://stackoverflow.com/questions/1527803/generating-random-whole-numbers-in-javascript-in-a-specific-range) way to do it in the JavaScript world. 
+Surprisingly, this is [very common](https://stackoverflow.com/questions/1527803/generating-random-whole-numbers-in-javascript-in-a-specific-range) way to do it in the JavaScript world.
 
 So here is the way to properly use the `isaac` library implementing the OpenBSD algorithm
+
+
+:::note
+The code for OpenBSD's `arc4random_uniform` (which is also used on OS X and iOS) adopts this strategy.
+:::
 
 ```js
 const max_uint = 0x100000000;
@@ -111,6 +116,7 @@ while (true) {
   await delay(1);
 }
 ```
+
 
 **numbers-to-stream.cpp**
 
@@ -297,3 +303,5 @@ We are working with discrete uniform distribution (not continuous!) https://en.w
 ### Boost
 
 For quantiles [use boost](https://valelab4.ucsf.edu/svn/3rdpartypublic/boost/libs/math/doc/sf_and_dist/html/math_toolkit/dist/stat_tut/weg/cs_eg/chi_sq_test.html). Include it with cmake in [this way](https://stackoverflow.com/questions/3897839/how-to-link-c-program-with-boost-using-cmake). [Strip the boost](https://stackoverflow.com/a/31293908/1104612) later.
+
+

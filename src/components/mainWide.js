@@ -3,7 +3,7 @@ import React from "react"
 import Reactions from "./reactions"
 import RelatedArticles from "./recentArticles"
 
-const MainCentered = ({
+const MainWide = ({
   publishedText,
   published,
   updatedText,
@@ -59,4 +59,4 @@ const MainCentered = ({
   )
 }
 
-export default MainCentered;
+export default MainWide;

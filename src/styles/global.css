@@ -125,6 +125,11 @@ section {
   margin-left: -1.45rem;
 }
 
+.title {
+  margin-left: 0;
+  font-weight: bold;
+}
+
 .table-of-contents ul {
   list-style-type: none;
 }

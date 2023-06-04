@@ -5,9 +5,7 @@
 
 .home_grid {
   background: #fff;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-auto-rows: minmax(4rem, auto);
+  display: flex;
 }
 
 .home_grid img {
@@ -19,11 +17,11 @@
 }
 
 .home_grid_box1 {
-  grid-column-start: 1;
-  grid-column-end: 3;
   margin: 1rem;
   
   border-bottom: #d4d4d4 solid 1px;
+  flex-grow: 1;
+  min-width: 300px;
 }
 
 .home_grid_box1 img {
@@ -31,44 +29,69 @@
 }
 
 .home_grid_box2 {
-  grid-column-start: 3;
-  grid-row-start: 1;
-  grid-row-end: 4;
   margin: 1rem 0.5rem 1rem 0rem;
   padding: 0rem 1rem 0rem 1.5rem;
   border-left: #d4d4d4 solid 1px;
+  flex-grow: 1;
 }
 
 .home_grid_box3 {
-  grid-column-start: 4;
-  grid-row-start: 1;
-  grid-row-end: 4;
   margin: 1rem 0.5rem 1rem 0rem;
   padding: 0rem 1rem 0rem 1.5rem;
   border-left: #d4d4d4 solid 1px;
+  flex-grow: 1;
 }
 
 .home_grid_box4 {
-  grid-column-start: 1;
-  grid-row-start: 2;
-  grid-row-end: 4;
   margin: 1rem 0rem 1rem 0rem;;
   padding: 0rem 1rem 0rem 1rem;
 
   border-right: #d4d4d4 solid 1px;
+
+  flex-grow: 1;
+  flex-shrink: 2;
 }
 
 .home_grid_box5 {
-  grid-column-start: 2;
   margin: 1rem;
   padding: 0 0 1.5rem 0;
   border-bottom: #d4d4d4 solid 1px;
+
+  flex-grow: 1;
+
 }
 
 .home_grid_box6 {
-  grid-column-start: 2;
   margin: 1rem;
   padding: 0 0 1.5rem 0;
+
+  flex-grow: 1;
+  flex-shrink: 2;
+}
+
+.home_grid_column_1 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
+
+.home_grid_column_2 {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  flex-shrink: 2;
+}
+
+.home_grid_row_2 {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 4;
+}
+
+.home_grid_column_3 {
+  display: flex;
+  flex-direction: column;
 }
 
 .home_title {
@@ -103,19 +126,18 @@
 .home_card_separator {
 }
 
-@media all and (max-width: 1160px) {
+@media all and (max-width: 1220px) {
+  .home_grid {
+    display: flex;
+    column-count: 2;
+  }
+
   .home_grid_box2 {
-    grid-column-start: 3;
-    grid-row-start: 1;
-    grid-row-end: 2;
     margin: 1rem 0.5rem 1rem 0rem;
     padding: 0rem 1rem 0rem 1.5rem;
     border-left: #d4d4d4 solid 1px;
   }
   .home_grid_box3 {
-    grid-column-start: 3;
-    grid-row-start: 2;
-    grid-row-end: 4;
     margin: 1rem 0.5rem 1rem 0rem;
     padding: 0rem 1rem 0rem 1.5rem;
     border-left: #d4d4d4 solid 1px;

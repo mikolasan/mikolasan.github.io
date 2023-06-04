@@ -55,3 +55,18 @@ A very good Morse code operator can send/receive 30 words per minute, which is a
 Linux serial console is only 192 times faster.
 
 Just a random thought.
+
+## Why Linux is not dominating the market?
+
+I think this is because there is no company with big money reserves targeted on common users. Because Linux distribution is not a product. And I think that only by doing the same things what Microsoft did 30 years ago, Linux will start dominating.
+
+Let’s imagine Canonical is such company. Of course there are other big companies like Red Hat, SUSE, who sell Linux distributions, but they focus only on servers. And there is a reason for this skewed balance. Many products for business from Adobe, Autodesk only support Windows (and sometimes Mac)
+
+So let’s focus on home users who need a browser, office suite, and games. First, Canonical must contract with many laptop manufacturers and make Ubuntu to be an OS installed by default, not Windows.
+
+As some consoles maintain exclusive titles (for example, Zelda, Metal Gear Solid, Halo) and release big hits together with the launch of the new console version. So, next Call of Duty must be released only for Ubuntu.
+
+
+## Books
+
+- [Linux inside](https://0xax.gitbooks.io/linux-insides/content/index.html)
