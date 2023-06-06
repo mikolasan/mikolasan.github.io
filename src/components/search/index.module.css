@@ -58,9 +58,6 @@
 }
 
 @media all and (max-width: 960px) {
-  .root {
-    display: none;
-  }
 }
 
 @media all and (max-width: 768px) {
