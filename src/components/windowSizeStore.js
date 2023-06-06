@@ -20,5 +20,14 @@ export const windowSizeStore = {
       store.size = { height: window.innerHeight, width: window.innerWidth };
     }
     return store.size;
+  },
+
+  getServerSnapshot() {
+    return {
+      size: {
+        width: 0,
+        height: 0,
+      }
+    };
   }
 }

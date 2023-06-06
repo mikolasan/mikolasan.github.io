@@ -39,7 +39,8 @@ const twoColumnLayout = (
 export default function Index({ pageContext }) {
   const { height, width } = useSyncExternalStore(
     windowSizeStore.subscribe,
-    windowSizeStore.getSnapshot)
+    windowSizeStore.getSnapshot,
+    windowSizeStore.getServerSnapshot)
   return (
     <Layout
       mainConf="fullscreen"

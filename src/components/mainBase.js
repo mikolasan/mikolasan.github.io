@@ -7,7 +7,8 @@ import { windowSizeStore } from "../components/windowSizeStore"
 export default function MainBase(props) {
   const { height, width } = useSyncExternalStore(
     windowSizeStore.subscribe,
-    windowSizeStore.getSnapshot)
+    windowSizeStore.getSnapshot,
+    windowSizeStore.getServerSnapshot)
   return props.mainConf === "fullscreen" && (
     <MainFullscreen>
       {props.children}
