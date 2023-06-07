@@ -31,7 +31,10 @@ class LayoutBase extends React.Component {
   }
   
   menuClicked() {
-    this.setState({ menuOpen: !this.state.menuOpen })
+    this.setState({
+      menuOpen: !this.state.menuOpen,
+      searchOpen: false
+    })
   }
 
   openMenu() {
@@ -43,6 +46,8 @@ class LayoutBase extends React.Component {
   }
 
   searchClicked() {
+    if (this.state.menuOpen) return
+
     this.setState({ searchOpen: !this.state.searchOpen})
   }
 
@@ -142,7 +147,8 @@ class LayoutBase extends React.Component {
       </>
     )
 
-    const currentLayout = this.state.menuOpen && fullscreenMenu || fullPage
+    const isMenuOpen = this.state.menuOpen
+    const currentLayout = isMenuOpen && fullscreenMenu || fullPage
     return currentLayout
   }
 }
