@@ -3,19 +3,13 @@ import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 import NavigationBar from "../components/navigationBar"
 import * as styles from "./header.module.css"
 
-const Header = ({
-  crumbs,
-  language,
-  menuOpen,
-  menuClickedCallback,
-  section
-}) => {
+const Header = props => {
   let crumbsLine = <div className="bottomline"></div>
-  if (crumbs) {
-    let _crumbs = [...crumbs]
-    if (language !== "en") {
+  if (props.crumbs) {
+    let _crumbs = [...props.crumbs]
+    if (props.language !== "en") {
       const root = _crumbs.shift(); // remove the first element
-      if (_crumbs.length == 1) {
+      if (_crumbs.length === 1) {
         _crumbs = []
       } else if (_crumbs.length > 0) {
         // update the crumb label, keep `pathname`
@@ -29,7 +23,7 @@ const Header = ({
           || lastLabel !== "neural-networks" 
           && lastLabel !== "board-games" 
           && lastLabel !== "3d-prints" 
-          && lastLabel.indexOf("-") != -1) {
+          && lastLabel.indexOf("-") !== -1) {
         _crumbs.pop()
       }
     }
@@ -48,15 +42,9 @@ const Header = ({
     )
   }
 
-  // console.log("crumbs", crumbs)
   return (
     <header>
-      <NavigationBar 
-        active={section}
-        language={language}
-        menuOpen={menuOpen}
-        menuClickedCallback={menuClickedCallback}
-      />
+      <NavigationBar {...props} />
       {crumbsLine}
     </header>
   )

@@ -83,16 +83,14 @@
   }
 
   .result {
-    max-height: unset;
+    max-height: 70vh;
     max-width: unset;
     overflow-x: unset;
-    overflow-y: unset;
-    -webkit-overflow-scrolling: unset;
     position: unset;
     right: unset;
     top: unset;
     width: 100%;
-    margin-top: 0.25em;
+    margin-top: 0;
     box-shadow: none;
     padding: 1em;
     padding-bottom: 2rem;

@@ -8,6 +8,7 @@ import MainBase from "./mainBase"
 import MenuPopup from "./menuPopup"
 import Footer from "./footerBase"
 import Header from "./header"
+import Search from "./allPagesSearch"
 
 class LayoutBase extends React.Component {
   constructor(props) {
@@ -15,8 +16,10 @@ class LayoutBase extends React.Component {
     this.errorCallback = this.errorCallback.bind(this)
     this.menuClicked = this.menuClicked.bind(this)
     this.closeCallback = this.closeMenu.bind(this)
+    this.searchClicked = this.searchClicked.bind(this)
     this.state = {
       menuOpen: false,
+      searchOpen: false,
       errorMessage: ""
     }
   }
@@ -37,6 +40,10 @@ class LayoutBase extends React.Component {
 
   closeMenu() {
     this.setState({ menuOpen: false })
+  }
+
+  searchClicked() {
+    this.setState({ searchOpen: !this.state.searchOpen})
   }
 
   render() {
@@ -92,15 +99,21 @@ class LayoutBase extends React.Component {
       </Banner>
     ) || ``
 
+    const header = (
+      <Header
+        crumbs={crumbs}
+        language={languageName}
+        menuOpen={this.state.menuOpen}
+        menuClickedCallback={this.menuClicked}
+        searchOpen={this.state.searchOpen}
+        searchClickedCallback={this.searchClicked}
+        activeSection={section}
+      />
+    )
+
     const fullscreenMenu = (
       <>
-        <Header
-          crumbs={crumbs}
-          language={languageName}
-          menuOpen={this.state.menuOpen}
-          menuClickedCallback={this.menuClicked}
-          section={section}
-        />
+        {header}
         <MenuPopup
           language={languageName}
           closeCallback={this.closeCallback}
@@ -110,12 +123,12 @@ class LayoutBase extends React.Component {
 
     const fullPage = (
       <>
-        <Header
-          crumbs={crumbs}
-          language={languageName}
-          menuClickedCallback={this.menuClicked}
-          section={section}
-        />
+        {header}
+        {this.state.searchOpen && (
+          <div className="searchline">
+            <Search />
+          </div>
+        )}
         {featuredImage && wideImage || banner}
         <MainBase
           mainConf={mainConf}

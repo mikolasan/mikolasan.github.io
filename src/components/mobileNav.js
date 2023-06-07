@@ -4,9 +4,18 @@ import { Link } from "gatsby"
 import LogoButton from "./logoButton"
 import * as styles from "./navigationBar.module.css"
 
-const MobileNav = ({ language, menuOpen, menuClickedCallback }) => (
+const MobileNav = ({
+  language,
+  menuClickedCallback,
+  menuOpen,
+  searchClickedCallback,
+  searchOpen
+}) => (
   <nav className={styles.mobilenav}>
-    <button className={[styles.burgermenu, menuOpen && styles.burgermenuopen || ""].join(" ")} onClick={menuClickedCallback}>
+    <button
+      className={[styles.burgermenu, menuOpen && styles.burgermenuopen || ""].join(" ")}
+      onClick={menuClickedCallback}
+    >
       <svg id="burgericon" className={menuOpen && "open" || ""} viewBox="0 0 100 100" width="100%" height="100%">
         <rect className="frstbar" y="10" width="100" height="20"></rect>
         <rect className="scndbar" y="40" width="100" height="20"></rect>
@@ -18,11 +27,12 @@ const MobileNav = ({ language, menuOpen, menuClickedCallback }) => (
         <LogoButton style={styles.mobilelogo} />
       </Link>
     </div>
-    <div className={styles.mobilelanguage}>
-      <Link to={language === "en" ? "/about" : "/ru/about"}>
-        <img alt="User icon navigates to About Me page" src="/user.png" className={styles.userbutton} />
-      </Link>
-    </div>
+    <button
+      className={[styles.searchbutton, searchOpen && styles.searchbuttonopen || ""].join(" ")}
+      onClick={searchClickedCallback}
+    >
+      <img alt="A magnifier lens" src="/magnifier.png" className={styles.searchbutton} />
+    </button>
   </nav>
 )
 

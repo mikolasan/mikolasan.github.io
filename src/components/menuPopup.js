@@ -1,8 +1,7 @@
 import React from 'react'
 import PropTypes from "prop-types"
-import Search from "./search"
+import Search from "./allPagesSearch"
 import * as styles from './menuPopup.module.css'
-const searchIndices = [{ name: `Pages`, title: `Pages` }]
 
 class MenuPopup extends React.Component {
   constructor(props) {
@@ -45,7 +44,7 @@ class MenuPopup extends React.Component {
   render() {
     return (
       <div className={styles.menu}>
-        <Search indices={searchIndices} />
+        <Search />
         <div className={styles.back}>
           {this.language === "ru" ? (
             <div className={styles.featuredlink}>

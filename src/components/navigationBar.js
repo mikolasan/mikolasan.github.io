@@ -4,16 +4,12 @@ import MobileNav from "./mobileNav"
 import Nav from "./nav"
 import RuNav from "./ruNav"
 
-const Navbar = ({ active, language, menuOpen, menuClickedCallback }) => (
+const Navbar = props => (
   <>
-    <MobileNav
-      language={language}
-      menuOpen={menuOpen}
-      menuClickedCallback={menuClickedCallback}
-    />
-    {language === "en" && 
-      <Nav active={active} /> || 
-        <RuNav active={active} />
+    <MobileNav {...props} />
+    {props.language === "en" && 
+      <Nav active={props.activeSection} /> ||
+        <RuNav active={props.activeSection} />
     }
   </>
 )
