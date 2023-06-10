@@ -2,23 +2,29 @@ import React from "react"
 import Layout from "../components/layout"
 import { graphql, Link } from "gatsby"
 import Snake from "../components/snake"
+import { absPathToUrl } from "../nifty"
+
+const removeHtmlExtension = path => 
+  path.endsWith(".html") ? 
+    path.substring(0, path.length - 5) : path
 
 const NotFoundPage = ({ data }) => {
   const nodes = data.allSitePage.nodes
   const edges = data.allMarkdownRemark.edges
-  const paths = nodes.map(node => node.path)
+  const slugs = nodes.map(node => removeHtmlExtension(node.path))
   const sections = new Map()
-  paths.forEach(path => {
-    const ruRegex = /\/ru\/([a-z\-]+)\/.*/i
+  const ruSections = new Map()
+  slugs.forEach(path => {
     const regex = /\/([a-z\-]+)\/.*/i
-    const ruMatch = ruRegex.exec(path)
+    const ruRegex = /\/ru\/([a-z\-]+)\/.*/i
     const match = regex.exec(path)
+    const ruMatch = ruRegex.exec(path)
     if (ruMatch !== null && ruMatch[1] !== undefined) {
       const sectioName = ruMatch[1]
-      if (sections.has(sectioName)) {
-        sections.get(sectioName).unshift(path)
+      if (ruSections.has(sectioName)) {
+        ruSections.get(sectioName).unshift(path)
       } else {
-        sections.set(sectioName, [path])
+        ruSections.set(sectioName, [path])
       }
     } else if (match !== null && match[1] !== undefined && match[1] !== "ru") {
       const sectioName = match[1]
@@ -36,26 +42,59 @@ const NotFoundPage = ({ data }) => {
       bannerParagraph={[<h1 key="1">404 - Not Found</h1>]}
     >
       <p>Oops. The page you are looking for ... got lost.</p>
+      <p>So, first, DON'T PANIC</p>
+      <ul>
+        <ol>You can use local search from the top navigation bar.</ol>
+        <ol>Or enjoy my isometric implementation of a snake game</ol>
+      </ul>
 
       <Snake />
 
       <p>But here are all sections of this website. I hope at least this can help</p>
-      <h1>Navigation</h1>
       {Array.from(sections.keys()).map(key => {
         return (
           <details key={key}>
-            <summary><h2>▸ {key.replaceAll("-", " ")}</h2></summary>
+            <summary>
+              <h2>▸ {key.replaceAll("-", " ")}</h2>
+            </summary>
             <ul>
               {sections.get(key).map(path => {
-                let title = "< no title :( >"
-                const edge = edges.find(e => e.node.frontmatter.path === path)
-                if (edge !== undefined) {
+                let title = "---"
+                const edge = edges.find(e => absPathToUrl(e.node.fileAbsolutePath) === path)
+                if (edge === undefined) {
+                  return ``
+                } else {
                   title = edge.node.frontmatter.title
+                  return <li key={path}>
+                    <Link to={path}>{title}</Link>
+                  </li>
                 }
-                if (path.match(/\/ru\//) !== null) {
-                  title = "[RU] " + title
+              })}
+            </ul>
+          </details>
+        )
+      })}
+
+      <hr />
+      <p>And here is the Russian part of this website</p>
+      {Array.from(ruSections.keys()).map(key => {
+        return (
+          <details key={key}>
+            <summary>
+              <h2>▸ {key.replaceAll("-", " ")}</h2>
+            </summary>
+            <ul>
+              {ruSections.get(key).map(path => {
+                let title = "---"
+                const edge = edges.find(e => absPathToUrl(e.node.fileAbsolutePath) === path)
+                if (edge === undefined) {
+                  return ``
+                } else {
+                  title = edge.node.frontmatter.title
+                  return <li key={path}>
+                    <Link to={path}>{title}</Link>
+                  </li>
                 }
-                return <li key={path}><Link to={path}>{title}</Link></li>
               })}
             </ul>
           </details>
@@ -79,8 +118,8 @@ export const query = graphql`
         node {
           frontmatter {
             title
-            path
           }
+          fileAbsolutePath
         }
       }
     }
