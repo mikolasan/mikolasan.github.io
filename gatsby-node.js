@@ -7,7 +7,7 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 const replacePath = path => path.endsWith(".html") ? path : `${path}.html`
 
 exports.onCreatePage = ({ page, actions }) => {
-  const { createPage, deletePage } = actions
+  const { createPage, deletePage, createRedirect } = actions
 
   // fix "no trailing slash" for GitHub pages
   const oldPath = page.path
@@ -17,6 +17,10 @@ exports.onCreatePage = ({ page, actions }) => {
     page.path = newPath
     page.matchPath = oldPath
     createPage(page)
+    createRedirect({
+      fromPath: oldPath,
+      toPath: newPath,
+    })
   }
 
   // add `updated` pageContext to JS pages (not Markdown, not pagination)
