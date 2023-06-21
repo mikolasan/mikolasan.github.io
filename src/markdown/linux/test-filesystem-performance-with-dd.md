@@ -1,5 +1,7 @@
 ---
 date: 2022-06-08
+published: 2022-06-08
+lastModified: 2022-06-08
 title: File system performance
 subtitle: Test with dd
 ---

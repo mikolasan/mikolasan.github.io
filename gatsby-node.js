@@ -252,6 +252,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const blogListTemplate = path.resolve(`./src/templates/blogListTemplate.js`)
   const codeListTemplate = path.resolve(`./src/templates/codeListTemplate.js`)
   const cppListTemplate = path.resolve(`./src/templates/cppListTemplate.js`)
+  const devlogListTemplate = path.resolve(`./src/templates/devlogListTemplate.js`)
   const gamedevListTemplate = path.resolve(`./src/templates/gamedevListTemplate.js`)
   const ideasListTemplate = path.resolve(`./src/templates/ideasListTemplate.js`)
   const linuxListTemplate = path.resolve(`./src/templates/linuxListTemplate.js`)
@@ -275,6 +276,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       createPagination("/markdown\/code\/cpp\//", `/code/cpp`, cppListTemplate),
       // Pagination [/code]
       createPagination("/markdown\/code\/(?!cpp)/", `/code`, codeListTemplate, 9),
+      // Pagination [/devlog]
+      createPagination("/markdown\/devlog\//", `/devlog`, devlogListTemplate, 18),
       // Pagination [/gamedev]
       createPagination("/markdown\/gamedev\//", `/gamedev`, gamedevListTemplate),
       // Pagination [/ideas]

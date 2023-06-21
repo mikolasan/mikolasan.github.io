@@ -61,3 +61,5 @@ Many other things get postponed to [version 2](/make/robot/prototype-2).
 - #Tiny4WD on Twiter
 
 ![Tiny4WD](./robot/tiny-4wd.jpg)
+
+- [Awesome C++ robotics stuff](https://github.com/fffaraz/awesome-cpp#robotics)

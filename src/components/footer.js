@@ -31,12 +31,12 @@ const Footer = () => (
           <div className="bottommenu">
             <h2>More</h2>
             <div className="bottomlist">
+              <Link to="/devlog">Dev Log</Link>
               <Link to="/ideas">Ideas</Link>
               <Link to="/projects">Projects</Link>
               <Link to="/youtube">Vlog</Link>
               <Link to="/board-games">Board Games</Link>
               <Link to="/free">Free Stuff</Link>
-              <Link to="/code-snippets">Code Snippets</Link>
               <Link to="/ebooks">My ebooks</Link>
             </div>
           </div>

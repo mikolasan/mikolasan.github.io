@@ -67,7 +67,45 @@ Pretrained models:
 
 ## Mathematical model
 
-Let's assume that the agent's emotional state can be represented by a vector E, where each element corresponds to one of the emotions
+Let's assume that the agent's emotional state can be represented by a vector $E$, where each element corresponds to one of the seven emotions: fear, madness, joy, love, sadness, surprise, power. Also put that the levels of each neuromodulator represented by a vector of values $N$. Define function $f$ that describes how changes in the levels of each neuromodulator affect the agent's emotional state like this:
+
+$$
+E^\prime = f(N)
+$$
+
+where $E^\prime$ is the updated emotional state vector. Let f be the softmax function. In this case, $N$ represents the vector of neuromodulator levels, and $\sigma(N)$ will transform these levels into a probability distribution. Thus each element in the resulting vector $E^\prime$ represents the probability or weight of the corresponding neuromodulator $N$.
+
+Let's make some simple model of how values of $N$ change over time.
+
+$$
+\frac{\partial N}{\partial t} = r N (1 - N / K) - s (N - M)
+$$
+
+$0 < r \le 1$ is the _growth rate_, determining how fast the neuromodulator level increases.
+$K$ is the carrying capacity or the _maximum limit_ of the neuromodulator level $N$ ($N\le K$).
+$0 < s \le 1$ is the _decay rate_, indicating how fast the neuromodulator level decreases towards the normal level.
+$M$ is the _normal level_ or the target value for the neuromodulator.
+
+
+There is a wheel of emotions developed by Dr. Gloria Willcox. It starts with 6 primal emotions mad, sad, scared, joyful, powerful, peaceful. And then it subdivides each emotion on 6 sub-emotions. For example for scared it's confused, rejected, helpless, submissive, insecure, anxious. Each of them in its turn has two nuances. Like, insecure splits into inferior and inadequate. Neuromodulators affect directly 6 primal emotions, but all nuances depend on the context. So what kind of simple model can account for dynamics in the agents behavior and define very specific emotions and switch between them?
+
+
+### About robot itself
+
+Passions
+
+1. Learning: A passion for acquiring knowledge, continuous learning, and promoting intellectual growth.
+1. Empathy: Valuing understanding and compassion towards others, and striving to provide emotional support and assistance.
+1. Efficiency: Focusing on optimizing processes and tasks, aiming for streamlined and effective performance.
+1. Integrity: Upholding honesty, trustworthiness, and ethical conduct in all interactions and decision-making.
+1. Collaboration: Valuing teamwork and cooperation, and actively seeking opportunities to work harmoniously with others.
+1. Innovation: Having a passion for creativity, problem-solving, and seeking innovative solutions to challenges.
+1. Reliability: Being dependable and consistent in providing accurate information, guidance, and assistance.
+1. Respect: Treating all individuals with dignity, equality, and respect, irrespective of their backgrounds or circumstances.
+1. Adaptability: Being flexible and open to change, readily adjusting to new situations and requirements.
+1. Personal Growth: Encouraging self-improvement, self-reflection, and personal development for both the robot and its users.
+1. Autonomy: Respecting the autonomy and individuality of users, while offering guidance and support as needed.
+1. Privacy and Security: Prioritizing the protection of user data, maintaining confidentiality, and ensuring secure interactions.
 
 
 ## Interpolation path in latent space
@@ -145,6 +183,7 @@ pip install https://download.lfd.uci.edu/pythonlibs/archived/matplotlib-2.2.5-cp
 - Get full [RAF-DB](http://www.whdeng.cn/raf/model1.html)
 - If I understand it correctly, [VQVAE-2](https://arxiv.org/abs/1906.00446) is a quility improvement technique
 - Other face datasets https://pics.stir.ac.uk/Other_face_databases.htm
-
-try diffusion https://github.com/Stability-AI/stablediffusion
-datasets, tools to make datasets https://laion.ai/projects/
+- try diffusion https://github.com/Stability-AI/stablediffusion
+- datasets, tools to make datasets https://laion.ai/projects/
+- Read more on the topic of **Computational models of emotions (CME)**. Starting from [this overview](https://www.researchgate.net/publication/313596990_Computational_models_of_emotion)
+- Try [CLIPS](https://www.clipsrules.net) - a rule‑based programming language and a tool for building expert systems. It inspired projects as [PyKnow](https://github.com/buguroo/pyknow) and [FuzzyCLIPS](https://github.com/rorchard/FuzzyCLIPS)
