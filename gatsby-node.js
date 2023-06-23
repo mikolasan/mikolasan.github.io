@@ -10,6 +10,10 @@ const findRedirect = path => redirects.find(r => r.toPath === path)
 
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions
+  const oldPath = page.path
+  if (oldPath.endsWith("/")) {
+    return
+  }
 
   // fix "no trailing slash" for GitHub pages
   // exceptions
@@ -17,19 +21,19 @@ exports.onCreatePage = ({ page, actions }) => {
     `/blog/how-windows-web-developers-fix-websites-in-safari/`,
     `/ideas/web-app/`
   ]  
-  const oldPath = page.path
   const newPath = addHtmlToPath(oldPath)
   if (oldPath !== "/" && oldPath !== "/404" && newPath !== oldPath) {
     // slash or no-slash at the end of urls, but Gatsby creates directories and index.html inside
     // for GitHub Pages it means redirect from "no slash" url to "slash" url which is not good
     // but moreover it's bad for Google's indexing
 
-    deletePage(page)
     // in case Google already has trailing slash in its index, then we keep that page
     if (allowTrailingSlash.indexOf(`${oldPath}/`) === -1) {
+      console.log(`create html version for ${oldPath}`)
       deletePage(page)
     } else {
       console.log(`keep page with a trailing slash: ${oldPath}/`)
+      return
     }
 
     page.path = newPath
@@ -51,54 +55,54 @@ exports.onCreatePage = ({ page, actions }) => {
   }
 
   // add `updated` pageContext to JS pages (not Markdown, not pagination)
-  if (`updated` in page.context) {
-    return
-  }
-  const updated = {
-    'about': `2022-10-22`,
-    'creative-ideas-for-app-development': `2022-10-22`,
-    'credits': `2022-10-22`,
-    'd3-test': `2022-10-22`,
-    'gamedev_old': `2022-10-22`,
-    'idea-generator': `2022-10-22`,
-    'ideas-for-app-development': `2022-10-22`,
-    'ideas_old': `2022-10-22`,
-    'index': `2022-10-22`,
-    'innovative-ideas-for-app-development': `2022-10-22`,
-    'make_old': `2022-10-22`,
-    'projects_old': `2022-10-22`,
-    'site-map': `2022-10-22`,
-    'sitemap': `2022-10-22`,
-    'projects/calm-place': `2022-10-22`,
-    'ru/about': `2022-10-22`,
-    'ru/ideas': `2022-10-22`,
-    'ru/index': `2022-10-22`,
-    'ru/projects': `2022-10-22`,
-    'ideas/ai': `2022-10-22`,
-    'ideas/ar': `2022-10-22`,
-    'ideas/diy': `2022-10-22`,
-    'ideas/games': `2022-10-22`,
-    'ideas/life': `2022-10-22`,
-    'ideas/mobile-app': `2022-10-22`,
-    'ideas/web-app': `2022-10-22`,
-  }
-  const path = page.componentPath
-  const match = path.match(/.*\/src\/pages\/(.*)\.js/)
-  if (match && match.length > 1) {
-    const pageName = match[1]
-    if (pageName in updated) {
-      // console.log(pageName, updated[pageName])
-      deletePage(page)
-      createPage({
-        ...page,
-        context: {
-          ...page.context,
-          updated: updated[pageName],
-        },
-      })
-      return
-    }
-  }
+  // if (`updated` in page.context) {
+  //   return
+  // }
+  // const updated = {
+  //   'about': `2022-10-22`,
+  //   'creative-ideas-for-app-development': `2022-10-22`,
+  //   'credits': `2022-10-22`,
+  //   'd3-test': `2022-10-22`,
+  //   'gamedev_old': `2022-10-22`,
+  //   'idea-generator': `2022-10-22`,
+  //   'ideas-for-app-development': `2022-10-22`,
+  //   'ideas_old': `2022-10-22`,
+  //   'index': `2022-10-22`,
+  //   'innovative-ideas-for-app-development': `2022-10-22`,
+  //   'make_old': `2022-10-22`,
+  //   'projects_old': `2022-10-22`,
+  //   'site-map': `2022-10-22`,
+  //   'sitemap': `2022-10-22`,
+  //   'projects/calm-place': `2022-10-22`,
+  //   'ru/about': `2022-10-22`,
+  //   'ru/ideas': `2022-10-22`,
+  //   'ru/index': `2022-10-22`,
+  //   'ru/projects': `2022-10-22`,
+  //   'ideas/ai': `2022-10-22`,
+  //   'ideas/ar': `2022-10-22`,
+  //   'ideas/diy': `2022-10-22`,
+  //   'ideas/games': `2022-10-22`,
+  //   'ideas/life': `2022-10-22`,
+  //   'ideas/mobile-app': `2022-10-22`,
+  //   'ideas/web-app': `2022-10-22`,
+  // }
+  // const path = page.componentPath
+  // const match = path.match(/.*\/src\/pages\/(.*)\.js/)
+  // if (match && match.length > 1) {
+  //   const pageName = match[1]
+  //   if (pageName in updated) {
+  //     // console.log(pageName, updated[pageName])
+  //     deletePage(page)
+  //     createPage({
+  //       ...page,
+  //       context: {
+  //         ...page.context,
+  //         updated: updated[pageName],
+  //       },
+  //     })
+  //     return
+  //   }
+  // }
 
   // add more ???
 
