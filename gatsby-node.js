@@ -4,22 +4,49 @@ const likesConfig = require("./likes-config")
 const nifty = require("./src/nifty")
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
-const replacePath = path => path.endsWith(".html") ? path : `${path}.html`
+const addHtmlToPath = path => path.endsWith(".html") ? path : `${path}.html`
+
+const findRedirect = path => redirects.find(r => r.toPath === path)
 
 exports.onCreatePage = ({ page, actions }) => {
-  const { createPage, deletePage, createRedirect } = actions
+  const { createPage, deletePage } = actions
 
   // fix "no trailing slash" for GitHub pages
+  // exceptions
+  const allowTrailingSlash = [
+    `/blog/how-windows-web-developers-fix-websites-in-safari/`,
+    `/ideas/web-app/`
+  ]  
   const oldPath = page.path
-  const newPath = replacePath(oldPath)
+  const newPath = addHtmlToPath(oldPath)
   if (oldPath !== "/" && oldPath !== "/404" && newPath !== oldPath) {
+    // slash or no-slash at the end of urls, but Gatsby creates directories and index.html inside
+    // for GitHub Pages it means redirect from "no slash" url to "slash" url which is not good
+    // but moreover it's bad for Google's indexing
+
     deletePage(page)
+    // in case Google already has trailing slash in its index, then we keep that page
+    if (allowTrailingSlash.indexOf(`${oldPath}/`) === -1) {
+      deletePage(page)
+    } else {
+      console.log(`keep page with a trailing slash: ${oldPath}/`)
+    }
+
     page.path = newPath
     page.matchPath = oldPath
     createPage(page)
-    createRedirect({
-      fromPath: oldPath,
-      toPath: newPath,
+  }
+
+  const redirect = findRedirect(oldPath)
+  if (redirect !== undefined) {
+    console.log(`create redirect ${redirect.fromPath} -> ${oldPath}`)
+    page.path = redirect.fromPath
+    createPage({
+      ...page,
+      context: {
+        ...page.context,
+        redirect: redirect.toPath,
+      },
     })
   }
 
@@ -192,14 +219,7 @@ const paginationFor = (result, path, listTemplate, postsPerPage = 6) => {
 }
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
-  const { createPage, createRedirect } = actions
-
-  redirects.forEach(redirect => 
-    createRedirect({
-      fromPath: redirect.fromPath,
-      toPath: redirect.toPath,
-    })
-  )
+  const { createPage } = actions
 
   const recentArticles = {} // TODO
   // await graphql(`

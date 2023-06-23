@@ -19,6 +19,9 @@ const config = {
     author: `@mikolasan`,
   },
   trailingSlash: `never`,
+  flags: {
+    DEV_SSR: true
+  },
   plugins: [
     {
       resolve: `gatsby-transformer-remark`,

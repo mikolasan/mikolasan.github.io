@@ -1,31 +1,33 @@
 ---
-date: 2020-09-19
 title: My YouTube channel
-section: projects
+date: 2020-09-19
 published: 2021-02-11
-lastModified: 2022-07-31
+lastModified: 2023-06-21
 ---
 
-## Plan
+[My channel](https://www.youtube.com/channel/UC7JDwFPt-Wu_rMB4-g-ePug) has 4 subscribers right now 🤠 Though I have 82 on another [Russian oriented channel](https://www.youtube.com/user/stakanmartini). I'm not consistent with my content and I assume those 82 people are crazy 😆 Or maybe because with social networks I mainly helping to my wife.
 
-- [About](/youtube/about)
-- [Subscriber tiers](/youtube/subscribers)
+Three years ago she has started a channel about coloring with pencils. Just recently she achieved 4000 subs. It is a slow but steady growth.
 
 
 ## Episodes
 
-- HTML5 game
+You can go check recent videos on YouTube directly but here's a list of videos with corresponding posts on this website.
+
+- [Game JAM: My first roguelike on Pygame](https://www.youtube.com/watch?v=VqfjrGS7Ukw) (blog post [here](/gamedev/pygame-roguelike))
+- [How intuitive UI/UX for drawing simple circuit schematics? | I've tried 11 free apps](https://www.youtube.com/watch?v=OCclRU_ILEI) (blog post [here](/make/free-circuit-drawing-software))
+- [Classic snake game in isometric view | HTML 5 Canvas + vanilla JavaScript | Prototype development](https://www.youtube.com/watch?v=BfAF2YLTXPc) (you will see it if you somehow end up on 404 page)
+- [Procedurally generated level layout in Godot engine | AI and Games Jam 2021](https://www.youtube.com/watch?v=8p112-5Xeyk) (blog post [here](/gamedev/ai-and-games))
+- [Top Down shooter made with Game Maker | Trailer](https://www.youtube.com/watch?v=p3cFtWLc2LY) (blog post [here](/gamedev/fire))
 
 
 ## FAQ
 
-[My channel](https://www.youtube.com/channel/UC7JDwFPt-Wu_rMB4-g-ePug) has 0 subscribers right now 🤠 Though I have 16 on another [Russian oriented channel](https://www.youtube.com/user/stakanmartini). I'm not consistent with my content and I assume those 16 people are crazy 😆 Or maybe because with social networks I mainly helping to my wife.
+Here's some lessons from my experience based on questions I've been asked in DMs.
 
-A year ago she has started a channel about coloring with pencils. Just recently she achieved 1000 subs. It is a slow but steady growth.
+### Q: Traffic from Facebook community
 
-### Q: Facebook to YouTube conversion
-
-**Q:** I cannot post a video or youtube channel link on Facebook. Otherwise they will ban my account permanently. They have strict rule about spam. I hate Facebook
+**Q:** I cannot post a video or youtube channel link on Facebook. Otherwise they will ban my account permanently. They have strict rule about spam.
 
 **A:** If you want to promote your YouTube channel on Facebook, then create a Group or a Page and it must be public. When you post to other groups you need to capture attention without a link - that's the tricky part. Then say "link in my bio".
 

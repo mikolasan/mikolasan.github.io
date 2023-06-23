@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import DraftAlert from "../components/draftAlert"
 import InProgressAlert from "../components/inProgressAlert"
+import RedirectAlert from "../components/redirectAlert"
 
 export default function Template({ data, pageContext }) {
   const { markdownRemark } = data
@@ -47,10 +48,11 @@ export default function Template({ data, pageContext }) {
       bannerParagraph={banner}
       tableOfContents={tableOfContents}
     >
+      {pageContext.redirect && <RedirectAlert linkPath={pageContext.redirect} />}
       {frontmatter.draft && <DraftAlert linkPath={url} />}
       {frontmatter.developing && <InProgressAlert linkPath={url} />}
       <span 
-        itemScope="true"
+        itemScope={true}
         itemType="http://schema.org/Article"
         itemRef="_name1 _datePublished3"
       >

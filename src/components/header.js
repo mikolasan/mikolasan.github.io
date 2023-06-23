@@ -34,7 +34,7 @@ const Header = props => {
           <Breadcrumb
             crumbs={_crumbs}
             crumbSeparator=" "
-            title={<p className={styles.titleimg}>N</p>}
+            title=""
           />
           <div className={styles.nextline}></div>
         </div>

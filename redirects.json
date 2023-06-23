@@ -1,14 +1,18 @@
 [
   {
     "fromPath": "/blog/weston-autolaunch",
-    "toPath": "/code/weston-autolaunch"
+    "toPath": "/linux/weston-autolaunch"
   },
   {
-    "fromPath": "/blog/custom-linux",
-    "toPath": "/code/custom-linux"
+    "fromPath": "/blog/custom-linux/",
+    "toPath": "/linux/custom-linux-distro"
   },
   {
-    "fromPath": "/blog/blog-with-metalsmith",
-    "toPath": "/blog/what-static-site-generator"
+    "fromPath": "/projects/why-am-i-doing-this/",
+    "toPath": "/blog/why-am-i-doing-this"
+  },
+  {
+    "fromPath": "/blog/parallel-ssh",
+    "toPath": "/linux/parallel-ssh"
   }
 ]
