@@ -29,7 +29,7 @@ exports.onCreatePage = ({ page, actions }) => {
 
     // in case Google already has trailing slash in its index, then we keep that page
     if (allowTrailingSlash.indexOf(`${oldPath}/`) === -1) {
-      console.log(`create html version for ${oldPath}`)
+      // console.log(`create html version for ${oldPath}`)
       deletePage(page)
     } else {
       console.log(`keep page with a trailing slash: ${oldPath}/`)
