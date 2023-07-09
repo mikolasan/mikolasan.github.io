@@ -147,6 +147,16 @@ The paper says that reservoir computing is good, essentially it just converts th
 - neuromorphic computing systems
 - [spike coded trains](https://www.frontiersin.org/articles/10.3389/fncom.2019.00082/full) - the sequence of neuronal firing timings
 - [autoencoders](https://www.jeremyjordan.me/autoencoders/) - hidden layers in ANN, output is equal to input and learning formula L is special. Boring.
+- Developmental psychology
+- developmental learning
+- Morphological computation
+- Moravec's paradox
+- symbolic AI
+- Temporal neural encoder
+- Neuromorphic computing systems
+- Spike coded trains
+- Comparative connectomics 
+- Stage of cognitive development
 
 
 ## Quotes

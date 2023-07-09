@@ -5,6 +5,13 @@ published: 2023-06-17
 lastModified: 2023-06-17
 ---
 
+## What to build
+
+- I build [Lineage 15.1 from source](/linux/build-lineage-15). With some complications, but apparently it is possible and this inspired me to go further and build following versions
+- But first I go through [treblization](/linux/unofficial-treble-support-for-nvidia-shield)
+- Then I build [Android GSI 10](/linux/build-android-gsi-10)
+- Then I build [Lineage 16 from source](/linux/build-lineage-16)
+
 ## Android history
 
 There are [articles](https://www.computerworld.com/article/3235946/android-versions-a-living-history-from-1-0-to-today.html) explaining how Android has evolved visually. But I'm interested in another aspect of its evolution. This is my list of technical details introduced in specific Android versions
@@ -41,7 +48,7 @@ adb backup -apk -shared -all -f C:\Users\neupo\shield_upgrade\backup_shield.ab
 - maybe you will want APK expansions with `-oob`
 
 
-### Make recovery image
+### Full system backup
 
 As mentioned in these answers [ [1](https://android.stackexchange.com/a/104856/392080) ] [ [2](https://android.stackexchange.com/a/159860/392080) ] one can do a full backup of
 
@@ -72,18 +79,27 @@ For more details read [here](https://forum.fairphone.com/t/how-to-backup-your-in
 I assume this is equivalent to connecting via ssh and `dd` every partition. 
 
 
-## Choose Android flavor
+## Android flavors
 
-### LineageOS
+I honestly don't know why I chose Lineage. You can choose from many other ROMs/mods/OSes
+
+- **CyanogenMod** (for [Shield](https://cyanogenmodroms.com/shieldtablet/#Extract_proprietary_blobs))
+- **Resurrection Remix OS** Seems like a popular thing, because I find it as a first ROM that I have to install before installing GSI in the process of preparing Shield for Treble system. [Link](https://resurrectionremix.com/)
+- **OmniROM** Well, I need to dig into that when I'll have time. [Link](https://omnirom.org/)
+- **Arrow OS** Another AOSP-based creation, I've never heard about it. [Link](https://arrowos.net/)
+- **postmarket OS** [Nvidia Shield Tablet](https://wiki.postmarketos.org/wiki/Nvidia_Shield_Tablet_(nvidia-shieldtablet))
+- **Android Open Source Project** Android Open Source Project (AOSP) is True Android as I call it. Here's [some tips](https://stackoverflow.com/questions/63136813/how-do-you-build-a-linux-kernel-for-android-from-the-aosp)
+
+
+## Build the ROM
 
 Lineage OS for [Shield](https://wiki.lineageos.org/devices/shieldtablet/) ([github](https://github.com/LineageOS/android_device_nvidia_shieldtablet))
 
 ROMs 
 
-- [XDA 15.1](https://forum.xda-developers.com/t/rom-unofficial-lineageos-15-1-for-shield-tablet-omx-camera-working.4276915/)
-- [I build Lineage 15.1 from source](/linux/build-lineage-15). With some complications, but apparently it is possible and this inspired me to go further and build following versions
-- But first I go through [treblization](/linux/unofficial-treble-support-for-nvidia-shield)
-- Then [I build Lineage 16 from source](/linux/build-lineage-16)
+- [XDA 15.1](https://forum.xda-developers.com/t/rom-unofficial-lineageos-15-1-for-shield-tablet-omx-camera-working.4276915/). [Another tutotial](https://forum.xda-developers.com/t/guide-tutorial-howto-nvidia-shield-tablet-k1-stock-to-android-9.4524451/) says "Android 9", but this is not true, maybe they meant **< 9**.
+- My [howto for Lineage 15.1 from source](/linux/build-lineage-15)
+- My [howto for Lineage 16 from source](/linux/build-lineage-16)
 
 Docs
 
@@ -98,40 +114,10 @@ Lineage | Android | Codename | Branch
 --------|---------|----------|-----------
 15.1    | 8.1     | Oreo     | lineage-15.1
 16      | 9       | Pie      | lineage-16.0
-17      | 10      | Q
-18      | 11      | R
-19      | 12      | S
+17      | 10      | Q        | lineage-17.0
+18      | 11      | R        | lineage-18.0
+19      | 12      | S        | lineage-19.0
 [20](https://www.lineageos.org/Changelog-27/)      | 13      | T        | lineage-20
-
-
-
-### CyanogenMod
-
-CyanogenMod for [Shield](https://cyanogenmodroms.com/shieldtablet/#Extract_proprietary_blobs)
-
-
-### Resurrection Remix OS 
-
-Seems like a popular thing, because I find it as a first ROM that I have to install before installing GSI in the process of preparing Shield for Treble system. [Link](https://resurrectionremix.com/)
-
-### OmniROM
-
-Well, I need to dig into that when I'll have time. [Link](https://omnirom.org/)
-
-
-### Arrow OS
-
-Another AOSP-based creation, I've never heard about it. [Link](https://arrowos.net/)
-
-
-### postmarket OS
-
-[Nvidia Shield Tablet](https://wiki.postmarketos.org/wiki/Nvidia_Shield_Tablet_(nvidia-shieldtablet))
-
-
-### Android Open Source Project
-
-Android Open Source Project (AOSP) is True Android as I call it. Here's ([some tips](https://stackoverflow.com/questions/63136813/how-do-you-build-a-linux-kernel-for-android-from-the-aosp))
 
 
 ## Install
@@ -167,6 +153,8 @@ Downsides of installing GAPPS:
 
 ## Verify
 
+This is my short checklist.
+
 Hardware:
 
 - Wi-Fi (sort of essential step in the first onboarding)
@@ -182,14 +170,12 @@ Software:
 
 ## Resources
 
-
-https://github.com/LineageOS/android_device_nvidia_shieldtablet
-
 - [HOWTO: Unpack, Edit, and Re-Pack Boot Images](https://web.archive.org/web/20200128133443/http://android-dls.com:80/wiki/index.php?title=HOWTO:_Unpack,_Edit,_and_Re-Pack_Boot_Images)
+- On [NVIDIA Open Source Resources](https://developer.nvidia.com/shield-open-source) you can find a stock image for Shield Tablet K1 and restore it (for example following [this video](https://www.youtube.com/watch?v=yp2eT-sE2fo))
+- [Reproducible builds](https://www.digidow.eu/publications/2020-poell-bachelorthesis/Poell_2020_BachelorThesis_SOAP.pdf)
 
-- On [NVIDIA Open Source Resources](https://developer.nvidia.com/shield-open-source) you can find a stock image for Shield Tablet K1 and restore it (for example following [this video](https://www.youtube.com/watch?v=yp2eT-sE2fo)
 
-### Next
+### Next steps
 
 - [F2FS filesystem](https://forum.xda-developers.com/t/full-f2fs-support-for-shield-tablet-kernel-twrp-fstab-injection-tool-n-updated.3492416/)
 - [Linux for Tegra](https://news.ycombinator.com/item?id=10805117). Yeah, no Android, bye-bye Java
@@ -201,3 +187,4 @@ https://github.com/LineageOS/android_device_nvidia_shieldtablet
 ### Websites
 
 - [XDA](https://forum.xda-developers.com/)
+- [4PDA](https://4pda.to/forum/index.php?showtopic=892755&st=19400)

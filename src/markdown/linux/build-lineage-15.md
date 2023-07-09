@@ -5,6 +5,9 @@ published: 2023-06-20
 lastModified: 2023-06-24
 ---
 
+Here is the story of how I started [upgrading Android on my Nvidia Shield tablet](/linux/upgrade-android-on-nvidia-shield) because one day I saw a popup in the app, where I read ebooks from my public library, that soon they will drop support of Android 7.
+
+
 ## Setup Docker
 
 So I open VirtualBox and blow off dust from my Ubuntu 18 virtual machine. "Blowing" means I run `apt update && apt upgrade`. It's also possible to do everything in a docker container:
@@ -18,6 +21,7 @@ docker start -i lineage-build
 # or save as image (very fat image though)
 docker container ls -a -s # check size (72GB after git clone, 126GB after build)
 docker commit lineage-build lineagos:15.1
+# in case you run `adb` from the docker mount `dev`, open ports
 docker run --tty --detached --privileged --volume /dev/bus/usb:/dev/bus/usb --publish-all --name lineage-build-2 lineagos:15.1
 docker ps -a
 docker exec --tty --interactive d886b12741a8 bash
@@ -34,7 +38,7 @@ sed "s/TLSv1, TLSv1.1, //" -i /etc/java-8-openjdk/security/java.security
 export USER=nikolay # stupid script from Jack server needs it
 ```
 
-Then we follow the build instructions. The excerpt.
+Then we follow the [build instructions](https://wiki.lineageos.org/devices/shieldtablet/build). The excerpt.
 
 Install stuff
 
@@ -73,9 +77,10 @@ export ANDROID_JACK_EXTRA_ARGS="--verbose debug --sanity-checks on -D sched.runn
 Get the repo. Note: you have to [use local directories](https://stackoverflow.com/questions/72547134/repo-init-fails-while-cloning-manifest) owned by your user and not ones mounted into virtual machine from the host that usually have `root:vboxsf` ownership.
 
 ```bash
-mkdir ~/lineage
-cd ~/lineage/
+mkdir /lineage
+cd /lineage
 repo init -u https://github.com/LineageOS/android.git -b lineage-15.1 --git-lfs
+repo sync
 
 # switch to Python 2
 update-alternatives --install /usr/bin/python python /usr/bin/python2.7 2
@@ -93,6 +98,7 @@ brunch shieldtablet
 ```
 
 Hint: `taskset -c 0-3 bash` to restrict a shell to only 4 cores (0-3; adjust as you need), then `envsetup` and `brunch`.
+
 
 ## Extracting proprietary files
 
@@ -273,3 +279,7 @@ jack-admin start-server
 
 The problem was fixed by [enabling deprecated TLS algorithms](https://stackoverflow.com/questions/67363030/rebuild-android-code-with-error-ssl-error-when-connecting-to-the-jack-server-t) in Java 8. I added that to my initial Docker commands above.
 
+
+## Next
+
+I build [Lineage 16 from source](/linux/build-lineage-16)

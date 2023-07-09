@@ -5,15 +5,32 @@ published: 2023-06-27
 lastModified: 2023-06-27
 ---
 
+Here is the story of how I continued [upgrading Android on my Nvidia Shield tablet](/linux/upgrade-android-on-nvidia-shield) because one day I saw a popup in the app, where I read ebooks from my public library, that soon they will drop support of Android 7.
+
+
+## Setup Docker
+
 Docker setup is the same as for [Lineage 15 build](/linux/build-lineage-15)
 
-I just wiped the whole `/lineage/` folder. Maybe there is a better way. I just repeat from the beginning with another branch
+I just wiped the whole `/lineage/` folder. Maybe there is a better way. Something like
 
 ```bash
+cd /lineage
+make clean
+repo init -b lineage-16.0
+repo sync --force-sync --force-remove-dirty
+```
+
+Repo [command reference](https://source.android.com/docs/setup/create/repo#init). But most likely it will fail. So I just repeat from the beginning with another branch
+
+```bash
+rm -r /lineage
+mkdir /lineage
+cd /lineage
 repo init -u https://github.com/LineageOS/android.git -b lineage-16.0 --git-lfs
 ```
 
-And the `breakfast shieldtablet` command spits these errors.
+Then we follow the [build instructions](https://wiki.lineageos.org/devices/shieldtablet/build). And very soon the `breakfast shieldtablet` command spits these errors.
 
 ```
 build/make/core/product_config.mk:234: error: Can not locate config makefile for product "lineage_shieldtablet".
@@ -291,28 +308,18 @@ cc_binary {
 
 ## Stuck on boot
 
-My build finished, but it stuck on boot logo
+My build finished, but it stuck on boot logo. I found [a forum post](https://forum.xda-developers.com/t/how-get-boot-log-of-fresh-builded-lineage-of-device-stucks-on-boot-animation.4077827/) precisely describing my problem. No answer.
 
-1. Reboot to TWRP
-2. ...?
+Where to find logs?
 
-- Try GSI https://developer.android.com/topic/generic-system-image/releases#android-gsi-10
-- Try prebuilt versions, like from Andy Yan https://sourceforge.net/projects/andyyan-gsi/files/lineage-16.x/
+- I tried `adb logcat` - nothing
+- Maybe I should build ROM again, but this time disable some security features: `persist.sys.usb.config=mtp,ad ro.secure=0 ro.adb.secure=0` ([link](https://android.stackexchange.com/questions/221431/how-to-see-the-boot-progress-messages-akin-to-dmesg-when-booting-lineageos)). But then the question about messing with `boot.img` is another headache. [Unpack `boot.img`](https://www.whitewinterwolf.com/posts/2016/08/11/how-to-unpack-and-edit-android-boot-img/), and then [pack it back](https://android.stackexchange.com/questions/169528/device-does-not-boot-to-system-after-flashing-boot-image?rq=1)
+- I tried to find previous boot log in `/proc/last_kmsg` from TWRP.
+- But in my version it probably will use `pstore` ([link](https://android.stackexchange.com/questions/213336/how-can-i-enable-last-kmsg)). Or should I say _definitely!_, because Lineage 15 uses kernel **3.10.96+**, and `pstore` is enabled in kernel >3.4 ([link](https://docs.halium.org/en/latest/porting/debug-build/dmesg.html))
+- But maybe some stuff should be mounted manually ([link](https://github.com/torvalds/linux/blob/v5.1/Documentation/admin-guide/ramoops.rst#reading-the-data))
 
-this is exactly my problem https://forum.xda-developers.com/t/how-get-boot-log-of-fresh-builded-lineage-of-device-stucks-on-boot-animation.4077827/
 
-where to find logs?
+Or should I try prebuilt versions, like the ones [from Andy Yan](https://sourceforge.net/projects/andyyan-gsi/files/lineage-16.x/)?
 
-pstore thing should be supported by the kernel https://android.stackexchange.com/questions/213336/how-can-i-enable-last-kmsg
+Well, I started [building GSI](/linux/build-android-gsi-10).
 
-https://docs.halium.org/en/latest/porting/debug-build/dmesg.html
-
-https://github.com/torvalds/linux/blob/v5.1/Documentation/admin-guide/ramoops.rst#reading-the-data
-
-data/dontpanic folder https://stackoverflow.com/questions/9682306/android-how-to-get-kernel-logs-after-kernel-panic
-
-enable logcat during boot https://android.stackexchange.com/questions/221431/how-to-see-the-boot-progress-messages-akin-to-dmesg-when-booting-lineageos
-
-unpack boot.img https://www.whitewinterwolf.com/posts/2016/08/11/how-to-unpack-and-edit-android-boot-img/
-
-problems to pack back https://android.stackexchange.com/questions/169528/device-does-not-boot-to-system-after-flashing-boot-image?rq=1
