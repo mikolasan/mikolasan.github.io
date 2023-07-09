@@ -4,8 +4,6 @@ const likesConfig = require("./likes-config")
 const nifty = require("./src/nifty")
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
-const addHtmlToPath = path => path.endsWith(".html") ? path : `${path}.html`
-
 const findRedirect = path => redirects.find(r => r.toPath === path)
 
 exports.onCreatePage = ({ page, actions }) => {
@@ -21,7 +19,7 @@ exports.onCreatePage = ({ page, actions }) => {
     `/blog/how-windows-web-developers-fix-websites-in-safari/`,
     `/ideas/web-app/`
   ]  
-  const newPath = addHtmlToPath(oldPath)
+  const newPath = nifty.addHtmlToPath(oldPath)
   if (oldPath !== "/" && oldPath !== "/404" && newPath !== oldPath) {
     // slash or no-slash at the end of urls, but Gatsby creates directories and index.html inside
     // for GitHub Pages it means redirect from "no slash" url to "slash" url which is not good

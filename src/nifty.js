@@ -20,7 +20,7 @@ const formatDate = (date, language) => {
   }
 }
 
-const removeTrailingSlash = (str) => {
+const removeTrailingSlash = str => {
   if (str.charAt(str.length - 1) === '/') {
     return str.slice(-1);
   } else {
@@ -28,6 +28,15 @@ const removeTrailingSlash = (str) => {
   }
 }
 
+const addHtmlToPath = path => path.endsWith(".html") ? path : `${path}.html`
+
+const removeHtmlExtension = path => 
+  path.endsWith(".html") ? 
+    path.substring(0, path.length - 5) :
+    path
+
 exports.absPathToUrl = absPathToUrl;
+exports.addHtmlToPath = addHtmlToPath;
 exports.formatDate = formatDate;
+exports.removeHtmlExtension = removeHtmlExtension;
 exports.removeTrailingSlash = removeTrailingSlash;

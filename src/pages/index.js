@@ -1,7 +1,7 @@
 import { default as React, useSyncExternalStore } from "react"
 import Layout from "../components/layout"
 import HomeBlock from "../components/homeBlock"
-import { articles } from "../home/october"
+import { articles } from "../home/july2023"
 import { windowSizeStore } from "../components/windowSizeStore"
 
 const threeColumnLayout = (

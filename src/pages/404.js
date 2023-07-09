@@ -2,11 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import { graphql, Link } from "gatsby"
 import Snake from "../components/snake"
-import { absPathToUrl } from "../nifty"
-
-const removeHtmlExtension = path => 
-  path.endsWith(".html") ? 
-    path.substring(0, path.length - 5) : path
+import { absPathToUrl, removeHtmlExtension } from "../nifty"
 
 const NotFoundPage = ({ data }) => {
   const nodes = data.allSitePage.nodes

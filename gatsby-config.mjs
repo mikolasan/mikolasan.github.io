@@ -1,5 +1,5 @@
 import round from "lodash";
-import { absPathToUrl, removeTrailingSlash } from "./src/nifty.js";
+import { absPathToUrl, removeHtmlExtension, removeTrailingSlash } from "./src/nifty.js";
 import { createRequire } from "module"
 import { dirname } from "path"
 import { fileURLToPath } from "url"
@@ -20,7 +20,9 @@ const config = {
   },
   trailingSlash: `never`,
   flags: {
-    DEV_SSR: true
+    DEV_SSR: true,
+    FAST_DEV: true,
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
   },
   plugins: [
     {
@@ -144,52 +146,70 @@ const config = {
     {
       resolve: "gatsby-plugin-sitemap",
       options: {
-        query: `
-          {
-            allSitePage {
-              nodes {
-                path
-              }
+        query: `{
+          allSitePage {
+            nodes {
+              path
             }
-            allFile(filter: {sourceInstanceName: {eq: "js-pages"}}) {
-              nodes {
-                fields {
-                  gitLogLatestDate
-                }
-                absolutePath
+          }
+          allFile(filter: {sourceInstanceName: {eq: "js-pages"}}) {
+            nodes {
+              fields {
+                gitLogLatestDate
               }
+              absolutePath
             }
-            allMarkdownRemark {
-              nodes {
-                fileAbsolutePath
-                frontmatter {
-                  lastModified
-                }
+          }
+          allMarkdownRemark (
+            sort: { frontmatter: {lastModified: DESC}}
+          ){
+            nodes {
+              fileAbsolutePath
+              frontmatter {
+                lastModified
               }
             }
           }
-        `,
+        }`,
         resolveSiteUrl: () => siteUrl,
         resolvePages: ({
-          allSitePage: { nodes: allPages }, allMarkdownRemark: { nodes: allMarkdownNodes }, allFile: { nodes: allJsNodes } }) => {
-          const nodeMap = allMarkdownNodes.reduce((acc, node) => {
+          allSitePage: { nodes: allPages }, 
+          allMarkdownRemark: { nodes: allMarkdownNodes }, 
+          allFile: { nodes: allJsNodes } 
+        }) => {
+          const nodeMap = {}
+          allMarkdownNodes.reduce((acc, node) => {
             const { fileAbsolutePath } = node;
             const uri = absPathToUrl(fileAbsolutePath);
             acc[uri] = node.frontmatter;
             return acc;
-          }, {});
+          }, nodeMap);
 
           allJsNodes.reduce((acc, node) => {
             const { absolutePath, fields } = node;
             const uri = absPathToUrl(absolutePath, "pages");
-            acc[uri] = { lastModified: fields.gitLogLatestDate };
+            if (fields !== null && 'gitLogLatestDate' in fields) {
+              acc[uri] = { lastModified: fields.gitLogLatestDate };
+            }
             return acc;
           }, nodeMap);
 
-          return allPages.map(page => {
-            const path = removeTrailingSlash(page.path);
-            return { ...page, ...nodeMap[path], originalPath: path };
-          });
+          // this will only add markdown files with `lastModified` field set
+          // and JS pages commited to git
+          // it excludes pagination, 404 and index page
+          // TODO: index page should be in the list!
+          const pages = []
+          for (const [path, node] of Object.entries(nodeMap)) {
+            pages.push({ path: path, ...node })
+          }
+          return pages
+          // return allPages.reduce((acc, page) => {
+          //   const path = removeHtmlExtension(removeTrailingSlash(page.path));
+          //   if (path in nodeMap && 'lastModified' in nodeMap[path]) {
+          //     acc.push({ path: path, ...nodeMap[path] })
+          //   }
+          //   return acc;
+          // }, []);
         },
         serialize: ({ path, lastModified, originalPath }) => {
           return {
@@ -205,9 +225,84 @@ const config = {
         formatAsDateString: false,
       }
     },
-
-
-    
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        // Setting a color is optional.
+        color: `tomato`,
+        // Disable the loading spinner.
+        showSpinner: false,
+      },
+    },
+    // this (optional) plugin enables Progressive Web App + Offline functionality
+    // To learn more, visit: https://gatsby.app/offline
+    // 'gatsby-plugin-offline',
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.ALGOLIA_ADMIN_KEY,
+        queries: require("./src/utils/algolia-queries")
+      },
+    },
+    `@mediacurrent/gatsby-plugin-silence-css-order-warning`,
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ 
+              query: { site, allMarkdownRemark } 
+            }) => {
+              return allMarkdownRemark.edges.map(edge => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  date: edge.node.frontmatter.lastModified,
+                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  custom_elements: [{ "content:encoded": edge.node.html }],
+                })
+              })
+            },
+            query: `
+              {
+                allMarkdownRemark(
+                  filter: {fileAbsolutePath: {regex: "/^(?!.*\/ru\/.*)/"}}
+                  sort: { frontmatter: {lastModified: DESC} },
+                ) {
+                  edges {
+                    node {
+                      excerpt
+                      html
+                      fields { slug }
+                      frontmatter {
+                        title
+                        lastModified
+                      }
+                      fileAbsolutePath
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/rss.xml",
+            title: "N - Robots, science, gamedev - RSS Feed",
+          },
+        ],
+      },
+    },
   ]
 }
 
