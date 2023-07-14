@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../../components/layout"
 import { init_interface } from "../../components/slots/interface"
-import { init_reels } from "../../components/slots/new-reels"
+import { init_reels } from "../../components/slots/samurai-reels"
 import * as styles from "../../components/slots/index.module.css"
 
 class TheLastSamurai extends React.Component {

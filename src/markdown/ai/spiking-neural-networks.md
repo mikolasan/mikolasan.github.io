@@ -45,8 +45,8 @@ A list from https://cnvrg.io/spiking-neural-networks/
 
 ## Papers
 
-- [2019 Thiele](https://arxiv.org/pdf/1906.00851.pdf) SpikeGrad: An ANN-equivalent Computation Model for Implementing Backpropagation with Spikes
 - [2002 Gerstner Kistler](http://catdir.loc.gov/catdir/samples/cam031/2002067657.pdf) SPIKING NEURON MODELS: Single Neurons, Populations, Plasticity
-- [2020 Comsa et al](https://arxiv.org/abs/1907.13223) - Temporal Coding in Spiking Neural Networks with Alpha Synaptic Function: Learning with Backpropagation https://arxiv.org/pdf/1907.13223.pdf
 - [2010 Basu, Hasler](https://0795f079-a-62cb3a1a-s-sites.googlegroups.com/site/arindambasu/writings/2010_J2.pdf) - Nullcline-Based Design of a Silicon Neuron
+- [2019 Thiele](https://arxiv.org/pdf/1906.00851.pdf) SpikeGrad: An ANN-equivalent Computation Model for Implementing Backpropagation with Spikes
+- [2020 Comsa et al](https://arxiv.org/abs/1907.13223) - Temporal Coding in Spiking Neural Networks with Alpha Synaptic Function: Learning with Backpropagation https://arxiv.org/pdf/1907.13223.pdf
 
