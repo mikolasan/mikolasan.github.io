@@ -1,4 +1,3 @@
-import { spin_stop } from "./reels"
 
 let balance = 1000;
 const max_bet_per_line = 20;
@@ -9,10 +8,6 @@ let win = 0;
 
 function init_interface() {
   update_all_labels();
-}
-
-function on_spin_clicked() {
-  spin_stop();
 }
 
 function on_bet_plus_clicked() {
@@ -87,4 +82,4 @@ function update_all_labels() {
   update_win_label();
 }
 
-export { init_interface, on_spin_clicked, on_spin_started, on_winning_result };
+export { init_interface, on_spin_started, on_winning_result };

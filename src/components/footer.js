@@ -25,6 +25,7 @@ const Footer = () => (
               <Link to="/science">Science</Link>
               <Link to="/coding">Coding</Link>
               <Link to="/gamedev">Gamedev</Link>
+              <Link to="/ideas">Ideas</Link>
               <Link to="/blog">Blog</Link>
             </div>
           </div>
@@ -32,7 +33,7 @@ const Footer = () => (
             <h2>More</h2>
             <div className="bottomlist">
               <Link to="/devlog">Dev Log</Link>
-              <Link to="/ideas">Ideas</Link>
+              <Link to="/slots">Slots</Link>
               <Link to="/projects">Projects</Link>
               <Link to="/youtube">Vlog</Link>
               <Link to="/board-games">Board Games</Link>
