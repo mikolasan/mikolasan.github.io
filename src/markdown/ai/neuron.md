@@ -48,6 +48,13 @@ To answer that there are metastable states in the work of Rabinovich MI, Huerta 
 
 Then I switch to a huge topic called [Synaptic plasticity](https://www.nature.com/articles/1301559). Which actually brought me to a dead end. Not because the idea is dead, but because it introduces so many biological terms about chemical processes in neurons that I stop understanding this and other articles on the second sentence. I'll need to return to this topic when I will have interactive model ready. **->**
 
+> Neural plasticity, the alteration of function in response to experience, is a basic property of the nervous system that can be observed at the level of neural networks. Long-Term Potentiation (LTP) refers to a persistent enhancement of synaptic transmission following high frequency stimulation and is thought to reflect the cellular processes underlying learning and memory. The induction of LTP is dependent on activation of NMDA receptors, which are inhibited by organic solvents. 
+>
+> _Christoph van Thriel, William K. Boyes, in Advances in Neurotoxicology, 2022_
+
+> Plastic changes can also include the ability of the neurons to change their function and the amount and type of neurotransmitter they produce. [...] Although most of the 100 billion neurons are already formed at birth, neurons continue to make connections with other structures through dendritic branching and by remodeling other connections.
+>
+> _Donna J. Cech DHS, PT, PCS, Suzanne “Tink” Martin MACT, PT, in Functional Movement Development Across the Life Span (Third Edition), 2012_
 
 ## Feedback loops
 

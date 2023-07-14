@@ -200,7 +200,9 @@ const config = {
           // TODO: index page should be in the list!
           const pages = []
           for (const [path, node] of Object.entries(nodeMap)) {
-            pages.push({ path: path, ...node })
+            if (path.indexOf('_') === -1 && !path.endsWith('.module')) {
+              pages.push({ path: path, ...node })
+            }
           }
           return pages
           // return allPages.reduce((acc, page) => {

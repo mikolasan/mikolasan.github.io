@@ -4,8 +4,12 @@ title: Brain map
 topic: true
 description: ""
 published: 2022-12-20
-lastModified: 2022-12-20
+lastModified: 2023-07-10
 ---
+
+[Phenotypic variation of transcriptomic cell types in mouse motor cortex](https://github.com/berenslab/mini-atlas/tree/master) ([paper](https://www.nature.com/articles/s41586-021-03950-0)). Scientist got neurons from different layers and regions and compared their DNA. That added to the classification by neuron's form because generation of enzymes and transmitters is coded in DNA, thus we probably can tell more about neuron's functions now.
+
+
 
 - [Data](https://portal.brain-map.org/explore/connectivity/synaptic-physiology/interact) provided by Allen Institute
 - [API](https://aisynphys.readthedocs.io/en/latest/introduction.html)
