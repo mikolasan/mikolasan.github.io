@@ -20,12 +20,12 @@ mu-ha-ha 🤣 In reality you need to overcome a little bit more steps.
 
 In this light I put on the first place the functional capabilities of the thing you want to build.
 
-- Does it move? Mechanical tracks, or wheels, or legs?
+- Does it move? Mechanical tracks, or wheels, or legs? But keep in mind that even [one vibration motor](https://www.mdpi.com/2072-666X/13/8/1184) can move in complex trajectories.
 - Inside or outside? It needs a battery.
-- How complex its movements in the space? Just moving or also make interactions with the world: drawing, grab things? Extra servomotors.
+- How complex its movements in the space? Just moving or also make interactions with the world: drawing, grab things? Extra servomotors. Inspiration: [rolling spider](https://www.youtube.com/watch?v=4z-aT8Wp2YQ)
 - What obstacles it needs to conquer? Lidar or ultrasonic sensors. 
 - Flat floor and walls and doors? Climb stairs? Think about adding more legs for stability like hexapod and gyro sensor.
-- Jump on the desk and from it? Fly? You are building a drone now.
+- Jump on the desk and from it? [Fly like a butterfly](https://www.science.org/doi/full/10.1126/sciadv.add3788)? Probably you are building a drone now.
 - Should it collect information? Add sensors 
 
 It worth looking through [popular designs](/make/robot/encyclopedia). I started a research about [appearance design](/make/robot/appearance-design) in order to understand how to make it look cute or evil.

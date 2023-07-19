@@ -33,7 +33,7 @@ const Make = ({ data, pageContext }) => (
         url="/make/3d-prints"
       >
         <p>
-          Nice models, settings for slicers
+          Have you tried this mantra: I have more filament than nerves
         </p>
       </SectionCard>
     </div>

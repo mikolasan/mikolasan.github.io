@@ -1,8 +1,7 @@
-import { default as React, useSyncExternalStore } from "react"
+import React from "react"
 import Layout from "../components/layout"
 import HomeBlock from "../components/homeBlock"
 import { articles } from "../home/july2023"
-import { windowSizeStore } from "../components/windowSizeStore"
 
 const threeColumnLayout = (
   <div className="home_grid">
@@ -21,26 +20,22 @@ const threeColumnLayout = (
   </div>
 )
 
-const twoColumnLayout = (
-  <div className="home_grid">
-    <div className="home_grid_column_1">
-      <HomeBlock {...articles[0]} />
-      <HomeBlock {...articles[3]} />
-      <HomeBlock {...articles[4]} />
-      <HomeBlock {...articles[5]} />
-    </div>
-    <div className="home_grid_column_2">
-      <HomeBlock {...articles[1]} />
-      <HomeBlock {...articles[2]} />
-    </div>
-  </div>
-)
+// const twoColumnLayout = (
+//   <div className="home_grid">
+//     <div className="home_grid_column_1">
+//       <HomeBlock {...articles[0]} />
+//       <HomeBlock {...articles[3]} />
+//       <HomeBlock {...articles[4]} />
+//       <HomeBlock {...articles[5]} />
+//     </div>
+//     <div className="home_grid_column_2">
+//       <HomeBlock {...articles[1]} />
+//       <HomeBlock {...articles[2]} />
+//     </div>
+//   </div>
+// )
 
 export default function Index({ pageContext }) {
-  const { height, width } = useSyncExternalStore(
-    windowSizeStore.subscribe,
-    windowSizeStore.getSnapshot,
-    windowSizeStore.getServerSnapshot)
   return (
     <Layout
       mainConf="fullscreen"
@@ -50,7 +45,7 @@ export default function Index({ pageContext }) {
       anotherLanguageLink="/ru"
       recentArticles={pageContext.recentArticles}
     >
-      {width > 1150 && threeColumnLayout || twoColumnLayout}
+      {threeColumnLayout}
     </Layout>
   )
 }

@@ -6,6 +6,13 @@ const store = {
   }
 };
 
+const serverSize = {
+  size: {
+    width: 0,
+    height: 0,
+  }
+};
+
 export const windowSizeStore = {
   subscribe(callback) {
     window.addEventListener('resize', callback);
@@ -19,15 +26,11 @@ export const windowSizeStore = {
     ) {
       store.size = { height: window.innerHeight, width: window.innerWidth };
     }
+    console.log(`getSnapshot ${store.size.width}`)
     return store.size;
   },
 
   getServerSnapshot() {
-    return {
-      size: {
-        width: 0,
-        height: 0,
-      }
-    };
+    return serverSize;
   }
 }

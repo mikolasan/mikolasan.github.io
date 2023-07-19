@@ -15,6 +15,8 @@ lastModified: 2022-12-26
 - add to power board logic level 3.3V
 - brushless DC motors
 - look into adjustable output regulator based on [L78M](https://datasheetspdf.com/pdf-file/1045179/STMicroelectronics/78M12/1) and [LS141](https://datasheetspdf.com/pdf-file/237025/SGS/LS141/1)
+- choose an MCU. Forget about ATMega and RP2040, they don't have integrated battery management, that's why look into [nRF52840](https://www.seeedstudio.com/Seeed-XIAO-BLE-nRF52840-p-5201.html)
+- LCD screen. What is refresh rate on LCD screen with SPI protocol?
 
 
 ## Control voltage with microcontroller
@@ -47,3 +49,6 @@ Cascade of resistor dividers and mosfets
 Motorized potentiometer
 
 
+## LCD
+
+- 

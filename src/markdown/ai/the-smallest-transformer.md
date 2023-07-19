@@ -16,3 +16,8 @@ I am trying to understand the difference in training data between sequence2seque
 - The Annotated Transformer [version 1](https://nlp.seas.harvard.edu/2018/04/03/attention.html) [version 2](https://nlp.seas.harvard.edu/annotated-transformer/) (PyTorch)
 - [Embedding](https://medium.com/deeper-learning/glossary-of-deep-learning-word-embedding-f90c3cec34ca) is just a way of converting sentences into vectors.
 - 
+
+
+## Homework
+
+- What is a usual window size for attention in current models? See [here](https://stats.stackexchange.com/questions/411736/why-do-attention-models-need-to-choose-a-maximum-sentence-length/411919#411919) why it's theoretically infinite

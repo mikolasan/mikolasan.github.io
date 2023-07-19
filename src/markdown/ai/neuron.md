@@ -95,6 +95,9 @@ _Multiple neural network systems_, but not when they are trained on different pa
 For example Recurrent Neural Networks (RNN) have connection loops and specific memory nodes that together allows it to be Turing complete
 
 
+Also [Model-Agnostic Meta-Learning](https://arxiv.org/pdf/1703.03400.pdf) (MAML) look like a multi network system
+
+
 ## Temporal encoding
 
 22. Also temporal encoding of analog data is really intriguing topic that I want to figure out. Can be found in [this online book](https://neuronaldynamics.epfl.ch/online/index.html) that I immediately added to [my reading list](/science/reading-list).
