@@ -176,6 +176,11 @@ pip install https://download.lfd.uci.edu/pythonlibs/archived/matplotlib-2.2.5-cp
 - v2 PyTorch https://github.com/clovaai/stargan-v2
 - v2 TensorFlow https://github.com/clovaai/stargan-v2-tensorflow
 
+
+## Animation with Diffusion model
+
+FADM [Face Animation with an Attribute-Guided Diffusion Model](https://openaccess.thecvf.com/content/CVPR2023W/GCV/papers/Zeng_Face_Animation_With_an_Attribute-Guided_Diffusion_Model_CVPRW_2023_paper.pdf). [code](https://github.com/zengbohan0217/FADM)
+
 ## TODO
 
 - Get full [AffectNet trainset](https://mohammadmahoor.com/affectnet/) ([academic torrent](https://academictorrents.com/details/3c740bf0655ca4e818c3e0bf33b79cebda83563c))

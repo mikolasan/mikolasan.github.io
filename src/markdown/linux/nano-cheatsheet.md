@@ -18,3 +18,7 @@ lastModified: 2021-10-28
 copy-cut-paste applies to the current line or to the selection
 
 **select**: `Alt`+`m`+`a`
+
+**save**: `Ctrl` + `s`
+
+**exit**: `Ctrl` + `x`

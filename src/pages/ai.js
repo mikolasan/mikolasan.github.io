@@ -10,7 +10,7 @@ const BrainModelPage = ({ data }) => {
   return (
     <Layout 
       title="AI"
-      section="ai"
+      section="science"
     >
       <h1>Brain model</h1>
       <h2>Big research</h2>
@@ -22,25 +22,38 @@ const BrainModelPage = ({ data }) => {
         </Link>
       </div>
       <div>
-        <Link to="/ai/">
+        <Link to="/ai/mdp-example-social-media-bot">
           <h3>
             Markov Chains going wild
+          </h3>
+        </Link>
+      </div>
+      <div>
+        <Link to="/ai/unsupervised-image-classification-with-gan">
+          <h3>
+            Unsupervised image classification with GAN
           </h3>
         </Link>
       </div>
       <h2>Big topics A-Z</h2>
       {topicNodes.map(node => {
         return (
-          <div>
+          <div key={node.id}>
             <Link to={absPathToUrl(node.fileAbsolutePath)}><h3>{node.frontmatter.title}</h3></Link>
           </div>
         )})
       }
 
-      <h2>Article review</h2>
+      <hr />
+
+      <h2>Last reviews</h2>
+      <p>
+        All reviews <Link to="/ai/reviews">here</Link>
+      </p>
+
       {articleNodes.map(node => {
         return (
-          <div>
+          <div key={node.id}>
             <Link to={absPathToUrl(node.fileAbsolutePath)}>
               <h3>{node.frontmatter.title}</h3>
             </Link>
@@ -57,7 +70,7 @@ const BrainModelPage = ({ data }) => {
 export default BrainModelPage
 
 export const query = graphql`
-  query AiQuery {
+  query AIQuery {
     topicNodes: allMarkdownRemark(
       filter: {
         fileAbsolutePath: { regex: "/markdown\/ai\//"},
@@ -75,7 +88,7 @@ export const query = graphql`
     }
     articleNodes: allMarkdownRemark(
       filter: {
-        fileAbsolutePath: { regex: "/markdown\/ai\//"},
+        fileAbsolutePath: { regex: "/markdown\/ai\/reviews\//"},
         frontmatter: {article: {eq: true}}
       }
       sort: {fileAbsolutePath: ASC}
