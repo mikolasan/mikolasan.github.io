@@ -21,3 +21,6 @@ I am trying to understand the difference in training data between sequence2seque
 ## Homework
 
 - What is a usual window size for attention in current models? See [here](https://stats.stackexchange.com/questions/411736/why-do-attention-models-need-to-choose-a-maximum-sentence-length/411919#411919) why it's theoretically infinite
+- How Transformers solve problem with [overfitting usually caused by softmax](https://smerity.com/articles/2017/mixture_of_softmaxes.html)?
+
+> The softmax allows you to produce a probability distribution over a set of classes

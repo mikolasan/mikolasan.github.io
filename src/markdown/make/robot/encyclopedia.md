@@ -63,3 +63,8 @@ https://protopedia.net/prototype/3277
 
 - art deco style tank https://cults3d.com/en/3d-model/tool/tank-hydra-mega-arduino
 - quadpod, nice legs https://cults3d.com/en/3d-model/game/tetratankoped
+
+
+## Functions
+
+- robot helps learn another language ([link](https://www.hindawi.com/journals/cin/2019/8904389/))

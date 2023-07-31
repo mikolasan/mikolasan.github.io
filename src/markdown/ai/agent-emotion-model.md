@@ -7,6 +7,8 @@ published: 2023-04-04
 lastModified: 2023-04-04
 ---
 
+The robot that has a model of emotions actually [already exists](https://www.mdpi.com/2076-3417/13/5/3284), but I want to create my version.
+
 ## Task
 
 Display emotions on small LED screen. Draw them with GAN network - trained on real faces, but it converts it to simplistic black and white drawing. Primary emotions (see Plutchik or Wilcox _feeling wheel_) are chosen based on scales for the following characteristics:
@@ -35,14 +37,13 @@ I’ll go through a [list of projects](https://github.com/MarkMoHR/Awesome-Sketc
 
 That's why I targeted the AffectNet trainset and convert all photos to sketches.
 
-- https://github.com/yiranran/QMUPD
+- Artistic Portrait Drawings from Face Photos with Hierarchical GANs [source](https://github.com/yiranran/APDrawingGAN) - baised on Cycle GAN. Separate models for eyes, nose and lips
+- Unpaired Portrait Drawing Generation via Asymmetric Cycle Mapping [source](https://github.com/yiranran/Unpaired-Portrait-Drawing), [source 2](https://github.com/yiranran/QMUPD) - baised on Cycle GAN. 3 different stroke styles
+- Line Drawings for Face Portraits from Photos using Global and Local Structure based GANs [source](https://github.com/yiranran/APDrawingGAN2) - both previous models together now.
+- [https://github.com/aliprf/Ad-Corre](https://github.com/aliprf/Ad-Corre) - model: any picture to a feeling name
+- [https://peterwang512.github.io/GANSketching/](https://peterwang512.github.io/GANSketching/)
+- [https://cybertron.cg.tu-berlin.de/eitz/pdf/2012_siggraph_classifysketch.pdf](https://cybertron.cg.tu-berlin.de/eitz/pdf/2012_siggraph_classifysketch.pdf)
 
-
-[https://github.com/aliprf/Ad-Corre](https://github.com/aliprf/Ad-Corre) - model: any picture to a feeling name
-
-[https://peterwang512.github.io/GANSketching/](https://peterwang512.github.io/GANSketching/)
-
-[https://cybertron.cg.tu-berlin.de/eitz/pdf/2012_siggraph_classifysketch.pdf](https://cybertron.cg.tu-berlin.de/eitz/pdf/2012_siggraph_classifysketch.pdf)
 
 I have [OLED monochrome display module](/make/oled-display-ssd1306) 128x64 pixels blue color based on SSD1306 chip. Which means we are going to create a GAN model that converts any picture to 128x64 size. Should I do 64x64 centered in the screen? I think no, because I want it to mimic zoom in effect and that’s where you need to use full area of the screen.
 
@@ -52,6 +53,7 @@ I have [OLED monochrome display module](/make/oled-display-ssd1306) 128x64 pixel
 
 Datasets:
 
+- [CelebA-Dialog](https://github.com/yumingj/Talk-to-Edit)
 - https://paperswithcode.com/datasets?task=facial-expression-recognition&page=1
 - AffectNet 96x96 version https://www.kaggle.com/datasets/noamsegal/affectnet-training-data
 
@@ -66,6 +68,12 @@ Pretrained models:
 
 
 ## Mathematical model
+
+### In the field
+
+[Computational model of emotion](https://github.com/tu-team/2/blob/b01482aca0e9f943fc88b5ebbe43f660ee4e22e2/doc/analysis/computational_model_of_emotion.md)
+
+### Another from scratch
 
 Let's assume that the agent's emotional state can be represented by a vector $E$, where each element corresponds to one of the seven emotions: fear, madness, joy, love, sadness, surprise, power. Also put that the levels of each neuromodulator represented by a vector of values $N$. Define function $f$ that describes how changes in the levels of each neuromodulator affect the agent's emotional state like this:
 
@@ -191,4 +199,5 @@ FADM [Face Animation with an Attribute-Guided Diffusion Model](https://openacces
 - try diffusion https://github.com/Stability-AI/stablediffusion
 - datasets, tools to make datasets https://laion.ai/projects/
 - Read more on the topic of **Computational models of emotions (CME)**. Starting from [this overview](https://www.researchgate.net/publication/313596990_Computational_models_of_emotion)
+- Apply emotions to Reinforcement Learning ([paper](https://www.academia.edu/75134520/Emotion_driven_reinforcement_learning?auto=download): Emotion-Driven Reinforcement Learning)
 - Try [CLIPS](https://www.clipsrules.net) - a rule‑based programming language and a tool for building expert systems. It inspired projects as [PyKnow](https://github.com/buguroo/pyknow) and [FuzzyCLIPS](https://github.com/rorchard/FuzzyCLIPS)

@@ -7,7 +7,7 @@ lastModified: 2023-05-18
 
 First thing you may find is [Whisper](https://github.com/openai/whisper) by OpenAI. Surprisingly it's open sourced, but the normal model requires 10GB of video memory which is indimidating for an average laptop (my laptop is from 2018). But what can be better than Python? That's right C++ rewrite [Whisper.cpp](https://github.com/ggerganov/whisper.cpp). Another optimization is [faster-whisper](https://github.com/guillaumekln/faster-whisper).
 
-```cmd
+```bash
 git clone https://github.com/ggerganov/whisper.cpp.git
 cd whisper.cpp
 models\download-ggml-model.cmd medium
@@ -39,7 +39,7 @@ popd
 main.exe -m c:\Users\neupo\robot\whisper.cpp\models\ggml-medium.bin -f "c:\Users\neupo\robot\whisper.cpp\samples\New Recording 8.wav"
 ```
 
-## Output
+### Output
 
 ```
 c:\Users\neupo\robot\whisper.cpp>main.exe -m c:\Users\neupo\robot\whisper.cpp\models\ggml-medium.bin -f "c:\Users\neupo\robot\whispe
@@ -190,3 +190,11 @@ https://stackoverflow.com/questions/56636714/cuda-compile-problems-on-windows-cm
 cmake -G "Visual Studio 17 2022" -A x64 -DCMAKE_BUILD_TYPE=Release -DWHISPER_CUBLAS=ON -S . -B build
 devenv build\whisper.cpp.sln /build
 ```
+
+
+## Other versions of Whisper
+
+- [whisper for streaming](https://github.com/shirayu/whispering)
+- [whisper C++](https://github.com/ggerganov/whisper.cpp/tree/master)
+- [faster whisper](https://github.com/guillaumekln/faster-whisper)
+- [whisper playground](https://github.com/saharmor/whisper-playground)

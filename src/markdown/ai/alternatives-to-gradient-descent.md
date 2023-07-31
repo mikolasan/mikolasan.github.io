@@ -33,6 +33,8 @@ When it comes to **Global Optimisation** tasks (i.e. attempting to find a global
 11. Finito https://arxiv.org/abs/1407.2710
 12. Stochastic Dual Coordinate Ascent (SDCA) https://arxiv.org/abs/1209.1873
 13. Stochastic Optimization with Variance Reduction https://hal.inria.fr/hal-01375816v1/document
+14. Spike timing-dependent plasticity (STDP) for [Spiking Neural Networks](/ai/spiking-neural-networks)
+15. Feedback alignment (FA)
 
 
 As mentioned above, *Simulated Annealing, Particle Swarm Optimisation and Genetic Algorithms* are good global optimisation algorithms that navigate well through huge search spaces and unlike *Gradient Descent* do not need any information about the gradient and could be successfully used with black-box objective functions and problems that require running simulations.
@@ -59,3 +61,7 @@ Source: [1](https://stats.stackexchange.com/questions/97014/what-are-alternative
 - [python code](https://github.com/burnpiro/elm-pure/blob/master/model.py)
 - [wiki](https://en.wikipedia.org/wiki/Extreme_learning_machine)
 - [paper](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7140733)
+
+## Towards a more biologically plausible learning algorithm
+
+Main article - Biologically-Plausible Learning Algorithms Can Scale to Large Datasets [link](https://arxiv.org/pdf/1811.03567.pdf)
