@@ -35,6 +35,15 @@ const BrainModelPage = ({ data }) => {
           </h3>
         </Link>
       </div>
+      <div>
+        <Link to="/ai/solve-cartpole-with-spiking-neural-networks">
+          <h3>
+            Solving CartPole with Spiking Neural Networks
+          </h3>
+        </Link>
+      </div>
+      
+      
       <h2>Big topics A-Z</h2>
       {topicNodes.map(node => {
         return (

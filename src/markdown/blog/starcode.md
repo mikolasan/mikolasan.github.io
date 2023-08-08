@@ -8,8 +8,7 @@ lastModified: 2023-07-18
 Following the [tutorial](https://huggingface.co/blog/starchat-alpha) and [this](https://huggingface.co/blog/codeparrot). For optimization [PEFT](https://github.com/huggingface/peft)
 
 - Install [miniconda](https://docs.conda.io/en/latest/miniconda.html)
-- Open Alacritty
-- Convert regular CMD into conda: `C:\Users\neupo\miniconda3\Scripts\activate.bat`
+- Start Anaconda in your terminal. For example, open [Alacritty](/science/how-to-run-dalle-locally) and run `C:\Users\neupo\miniconda3\Scripts\activate.bat`. Also see [VS Code example](/code/anaconda-in-vscode-terminal).
 
 ```bash
 conda create -n starchat python=3.10

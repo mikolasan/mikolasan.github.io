@@ -10,6 +10,7 @@ lastModified: 2023-07-27
 
 ## Resources
 
+- [Awesome list](https://github.com/weihaox/awesome-gan-inversion) of many papers about GAN networks and links to the code
 - [Tips and tricks to make GANs work](https://github.com/soumith/ganhacks)
 - [Deep Convolution GAN](https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html). Agile? Sentient? Quantum?
 - real math [here](https://arxiv.org/pdf/1712.08244.pdf) with Lebesgue measure, Sobolev spaces

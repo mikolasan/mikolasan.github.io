@@ -67,6 +67,47 @@ Pretrained models:
 - https://www.kaggle.com/code/edwardjross/affectnet-resnet-fastai/output
 
 
+Follow instructions from [this paper](https://arxiv.org/pdf/2205.06102.pdf) and thus follow [anoother paper](https://arxiv.org/pdf/2102.02766.pdf): embed images with [e4e](https://github.com/omertov/encoder4editing).
+
+Use WSL2 on Windows
+
+```bash
+git clone https://github.com/omertov/encoder4editing.git
+cd encoder4editing
+conda env create -n e4e --file environment/e4e_env.yaml
+# might be an error see below how to fix
+conda activate e4e
+sudo apt update
+sudo apt install g++ make cmake
+pip install dlib
+wget https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-wsl-ubuntu.pin
+sudo mv cuda-wsl-ubuntu.pin /etc/apt/preferences.d/cuda-repository-pin-600
+# wget https://developer.download.nvidia.com/compute/cuda/12.2.1/local_installers/cuda-repo-wsl-ubuntu-12-2-local_12.2.1-1_amd64.deb
+# sudo dpkg -i cuda-repo-wsl-ubuntu-12-2-local_12.2.1-1_amd64.deb
+# sudo cp /var/cuda-repo-wsl-ubuntu-12-2-local/cuda-*-keyring.gpg /usr/share/keyrings/
+wget https://developer.download.nvidia.com/compute/cuda/11.8.0/local_installers/cuda-repo-wsl-ubuntu-11-8-local_11.8.0-1_amd64.deb
+sudo dpkg -i cuda-repo-wsl-ubuntu-11-8-local_11.8.0-1_amd64.deb
+sudo cp /var/cuda-repo-wsl-ubuntu-11-8-local/cuda-*-keyring.gpg /usr/share/keyrings/
+sudo apt-get update
+sudo apt-get -y install cuda
+python scripts/inference.py \
+  --images_dir=/mnt/c/Users/neupo/ai/ai_art/QMUPD/examples \
+  --save_dir=output \
+  /mnt/c/Users/neupo/ai/gan/encoder4editing/e4e_ffhq_encode.pt
+```
+
+One little error you might see
+
+```text
+ERROR: Could not find a version that satisfies the requirement torchvision==0.7.1 (from -r /home/nikolay/encoder4editing/environment/condaenv.szamf61q.requirements.txt (line 40)) (from versions: 0.1.6, 0.1.7, 0.1.8, 0.1.9, 0.2.0, 0.2.1, 0.2.2, 0.2.2.post2, 0.2.2.post3, 0.3.0, 0.4.0, 0.4.1, 0.4.2, 0.5.0, 0.6.0, 0.6.1, 0.7.0, 0.8.0, 0.8.1, 0.8.2, 0.9.0, 0.9.1, 0.10.0, 0.10.1, 0.11.0, 0.11.1, 0.11.2)                                                                             ERROR: No matching distribution found for torchvision==0.7.1 (from -r /home/nikolay/encoder4editing/environment/condaenv.szamf61q.requirements.txt (line 40))
+```
+
+I chose `0.7.0`, then update environment with the change
+
+```bash
+conda env update --name e4e --file environment/e4e_env.yaml --prune
+```
+
 ## Mathematical model
 
 ### In the field
