@@ -90,6 +90,31 @@ sudo dpkg -i cuda-repo-wsl-ubuntu-11-8-local_11.8.0-1_amd64.deb
 sudo cp /var/cuda-repo-wsl-ubuntu-11-8-local/cuda-*-keyring.gpg /usr/share/keyrings/
 sudo apt-get update
 sudo apt-get -y install cuda
+
+wget https://developer.download.nvidia.com/compute/cuda/11.3.1/local_installers/cuda-repo-wsl-ubuntu-11-3-local_11.3.1-1_amd64.deb
+sudo dpkg -i cuda-repo-wsl-ubuntu-11-3-local_11.3.1-1_amd64.deb
+sudo apt-key add /var/cuda-repo-wsl-ubuntu-11-3-local/7fa2af80.pub
+sudo apt-get update
+sudo apt-get -y install cuda
+
+conda install pytorch==1.6.0 torchvision==0.7.0 cudatoolkit=10.2 -c pytorch
+
+sudo apt install gcc-10 g++-10
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 10
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 10
+
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-11 10
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-10 10
+
+sudo update-alternatives --set cc /usr/bin/gcc
+sudo update-alternatives --set c++ /usr/bin/g++
+
+export LD_LIBRARY_PATH=$HOME/miniconda3/envs/e4e/lib:$LD_LIBRARY_PATH
+export CUDA_HOME=$CONDA_PREFIX
+# after installing wrong version of PyTorch this help:
+rm -fr ~/.cache
+
+mkdir -p output
 python scripts/inference.py \
   --images_dir=/mnt/c/Users/neupo/ai/ai_art/QMUPD/examples \
   --save_dir=output \
@@ -99,7 +124,13 @@ python scripts/inference.py \
 One little error you might see
 
 ```text
-ERROR: Could not find a version that satisfies the requirement torchvision==0.7.1 (from -r /home/nikolay/encoder4editing/environment/condaenv.szamf61q.requirements.txt (line 40)) (from versions: 0.1.6, 0.1.7, 0.1.8, 0.1.9, 0.2.0, 0.2.1, 0.2.2, 0.2.2.post2, 0.2.2.post3, 0.3.0, 0.4.0, 0.4.1, 0.4.2, 0.5.0, 0.6.0, 0.6.1, 0.7.0, 0.8.0, 0.8.1, 0.8.2, 0.9.0, 0.9.1, 0.10.0, 0.10.1, 0.11.0, 0.11.1, 0.11.2)                                                                             ERROR: No matching distribution found for torchvision==0.7.1 (from -r /home/nikolay/encoder4editing/environment/condaenv.szamf61q.requirements.txt (line 40))
+ERROR: Could not find a version that satisfies the requirement torchvision==0.7.1 
+(from -r /home/nikolay/encoder4editing/environment/condaenv.szamf61q.requirements.txt (line 40)) 
+(from versions: 0.1.6, 0.1.7, 0.1.8, 0.1.9, 0.2.0, 0.2.1, 0.2.2, 0.2.2.post2, 0.2.2.post3, 0.3.0, 
+0.4.0, 0.4.1, 0.4.2, 0.5.0, 0.6.0, 0.6.1, 0.7.0, 0.8.0, 0.8.1, 0.8.2, 0.9.0, 0.9.1, 0.10.0, 0.10.1, 
+0.11.0, 0.11.1, 0.11.2)                                                                             
+ERROR: No matching distribution found for torchvision==0.7.1 
+(from -r /home/nikolay/encoder4editing/environment/condaenv.szamf61q.requirements.txt (line 40))
 ```
 
 I chose `0.7.0`, then update environment with the change
@@ -107,6 +138,84 @@ I chose `0.7.0`, then update environment with the change
 ```bash
 conda env update --name e4e --file environment/e4e_env.yaml --prune
 ```
+
+Then it revealed that the environment is not fully ready:
+
+```
+Traceback (most recent call last):
+  File "scripts/inference.py", line 15, in <module>
+    from utils.model_utils import setup_model
+  File "./utils/model_utils.py", line 3, in <module>
+    from models.psp import pSp
+  File "./models/psp.py", line 6, in <module>
+    from models.encoders import psp_encoders
+  File "./models/encoders/psp_encoders.py", line 9, in <module>
+    from models.stylegan2.model import EqualLinear
+  File "./models/stylegan2/model.py", line 7, in <module>
+    from models.stylegan2.op import FusedLeakyReLU, fused_leaky_relu, upfirdn2d
+  File "./models/stylegan2/op/__init__.py", line 1, in <module>
+    from .fused_act import FusedLeakyReLU, fused_leaky_relu
+  File "./models/stylegan2/op/fused_act.py", line 13, in <module>
+    os.path.join(module_path, 'fused_bias_act_kernel.cu'),
+  File "/home/nikolay/miniconda3/envs/e4e/lib/python3.6/site-packages/torch/utils/cpp_extension.py", line 974, in load
+    keep_intermediates=keep_intermediates)
+  File "/home/nikolay/miniconda3/envs/e4e/lib/python3.6/site-packages/torch/utils/cpp_extension.py", line 1179, in _jit_compile
+    with_cuda=with_cuda)
+  File "/home/nikolay/miniconda3/envs/e4e/lib/python3.6/site-packages/torch/utils/cpp_extension.py", line 1257, in _write_ninja_file_and_build_library
+    verbose)
+  File "/home/nikolay/miniconda3/envs/e4e/lib/python3.6/site-packages/torch/utils/cpp_extension.py", line 1348, in _prepare_ldflags
+    extra_ldflags.append('-L{}'.format(_join_cuda_home('lib64')))
+  File "/home/nikolay/miniconda3/envs/e4e/lib/python3.6/site-packages/torch/utils/cpp_extension.py", line 1783, in _join_cuda_home
+    raise EnvironmentError('CUDA_HOME environment variable is not set. '
+OSError: CUDA_HOME environment variable is not set. Please set it to your CUDA install root.
+```
+
+From [the list of previous PyTorch versions](https://pytorch.org/get-started/previous-versions/) I get that with version `1.6` comes CUDA version `10.2`.
+
+```bash
+conda install pytorch==1.6.0 torchvision==0.7.0 cudatoolkit=10.2 -c pytorch
+conda install pytorch==1.8.1 torchvision==0.9.1 torchaudio==0.8.1 cudatoolkit=11.3 -c pytorch -c conda-forge
+```
+
+But this breaks `dlib`
+
+```
+Traceback (most recent call last):
+  File "scripts/inference.py", line 7, in <module>
+    import dlib
+  File "/home/nikolay/miniconda3/envs/e4e/lib/python3.6/site-packages/dlib/__init__.py", line 19, in <module>
+    from _dlib_pybind11 import *
+ImportError: /home/nikolay/miniconda3/envs/e4e/lib/python3.6/site-packages/torch/lib/../../../.././libstdc++.so.6: version `GLIBCXX_3.4.29' not found (required 
+by /home/nikolay/miniconda3/envs/e4e/lib/python3.6/site-packages/_dlib_pybind11.cpython-36m-x86_64-linux-gnu.so)
+```
+
+Maybe I need to recompile `dlib`?
+
+```bash
+pip install --force-reinstall --no-cache-dir --verbose dlib 
+```
+
+But this doesn't help. Updating build tools in Ubuntu?
+
+```
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+sudo apt-get upgrade libstdc++6
+```
+
+Also no change. I'll just remove the import of the `dlib`, because, as I suspicioned, it is used only for one function to align face pictures, and I do not use it.
+
+But I still need `nvcc`. The `conda-forge` channel strangely doesn't have version **10.2**, and it doesn't have development libraries and headers. NVIDIA has its [conda channel](https://anaconda.org/nvidia/repo) from where accurate [little packages can be installed](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#conda-installation), but it starts only from version 11. But there's `hcc` channel
+
+```
+conda install -c hcc cudatoolkit=10.2
+```
+
+conda install -c "nvidia/label/cuda-11.3.1" cuda cuda-nvcc cuda-libraries-dev
+
+
+And of course BU-3DFE dataset is not readily available. Why not create one by searching the Internet. First we need face detection and emotion recognition.
+
+But even before that I need to make interpolation animation.
 
 ## Mathematical model
 

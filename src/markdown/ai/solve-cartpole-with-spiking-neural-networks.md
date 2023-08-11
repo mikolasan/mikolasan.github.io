@@ -26,27 +26,47 @@ There's [an environment](https://gymnasium.farama.org/environments/classic_contr
 ![Diagram to display the main connection rules](./graph_rules.png)
 
 
-https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4071954/
+[This article](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4071954/) about dendrites led me to many important statements.
 
+I searched for pictures of axon to dendrite connections. One lame artist made a picture for sale where many axon terminals from one neuron are connected to many dendrites of another neuron. Is this how synaptic strength can be increased?
 
 > a dendritic arbor avoids multiple hits with the same axon, which could multiply not just actual synapses, but also potential ones. 
 > Such avoidance results in a statistical repulsion between branches. 
 >
 > [_Maximization of the connectivity repertoire as a statistical principle governing the shapes of dendritic arbors_](https://pubmed.ncbi.nlm.nih.gov/19622738/)
 
+Obviously that illustration was a dud. One neuron when excited sends the message to many postsynaptic neurons. Which corresponds to fully connected feed-forward network if we consider a local region in a column (otherwise we should change from _fully_ connected to _locally_ connected in some region).
+
+If spines define synaptic strength, when do we make adjustments to this strength? Constantly.
 
 > most spines that appear in adult animals are transient, and the addition of **stable spines and synapses is rare**.
 >
 > [_Anatomical and physiological plasticity of dendritic spines_](https://pubmed.ncbi.nlm.nih.gov/17280523/)
 
+How many spines per dendritic shaft are we talking about? Some constant amount, but they can appear and disappear.
+
 > motor learning induces rapid growth of new dendritic spines at mice contralateral motor cortex neurons, and subsequent elimination of spines existing before training, so the **overall spine density is relatively constant**
 >
 > [_Dendritic Spines Shape Analysis—Classification or Clusterization? Perspective_](https://www.frontiersin.org/articles/10.3389/fnsyn.2020.00031/full)
+
+
+
+Answering my questions, How important for different axon terminals (coming from different axons) to be on one dendritic shaft comparing to connections on different shafts
+
+> Signaling molecules may spread from active to inactive synapses. [...] the priming effect can spread about 10 μ, thereby sensitizing neighboring spines to an induction stimulus that would otherwise not lead to plasticity.
+>
+> [_Spike timing dependent plasticity: a consequence of more fundamental learning rules_](https://www.frontiersin.org/articles/10.3389/fncom.2010.00019/full)
+
+Hebbian Rule -> Spike time-dependent plasticity -> Calcium-dependent plasticity [link](https://www.frontiersin.org/articles/10.3389/fncom.2010.00019/full)
+
+
+If you stop the signal, then you stop the whole branch.
 
 > In contrast to excitatory synapses, the vast majority of inhibitory synapses are located at the dendritic shaft and the cell body, while only a few inhibitory synapses in the neocortex are spine synapses
 >
 > [_Cytoskeletal makeup of the synapse: Shaft versus spine_](https://onlinelibrary.wiley.com/doi/10.1002/cm.21583)
 
+Surprisingly, signals can go to nowhere
 
 > In the adult rat, 80% of parallel fiber terminals occur on dendritic spines, 9% contact dendritic shafts, and approximately 11% do not have a postsynaptic partner. 
 > Moreover, 20% of terminals can be shared by two dendritic spines. 

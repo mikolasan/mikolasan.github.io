@@ -125,3 +125,10 @@ for i, data in enumerate(dataloader, 0):
       
   iters += 1
 ```
+
+
+
+
+## Next 
+
+- StyleGAN3 and photo editing [link](https://github.com/yuval-alaluf/stylegan3-editing)

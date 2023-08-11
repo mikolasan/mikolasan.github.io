@@ -11,27 +11,22 @@ const defaultImage = `https://neupokoev.xyz/images/image-7.jpg`
 const defaultImageAlt = `Probably no text description for this placeholder picture, but I will work on that`
 
 export const Head = ({ location, params, data, pageContext }) => {
-  let metaType = `website`
-
+  const metaType = `website`
   const lang = location.pathname.startsWith("/ru") ? "ru" : "en"
   const pageUrl = location.pathname // pageContext.url
-  if (pageUrl === "/") {
-    metaType = `website`
-  }
-  const checkFrontmatter = data?.markdownRemark?.frontmatter // from blog template
-  if (checkFrontmatter) {
-    metaType = `article`
+  
+  let url = siteUrl
+  if (pageUrl !== "/") {
+    url = `${siteUrl}${pageUrl}`
   }
 
-  // if (metaType === `website`)
-  let url = siteUrl
   let title = siteTitle
   let description = siteDescription
   let image = siteImageUrl
   let imageAlt = siteImageAlt
-
-  if (metaType === `article`) {
-    url = `${siteUrl}${pageUrl}`
+  // from blog template
+  const checkFrontmatter = data?.markdownRemark?.frontmatter 
+  if (checkFrontmatter) {
     title = data?.markdownRemark?.frontmatter?.title
     description = data?.markdownRemark?.frontmatter?.description || `TODO: add description for this article`
     image = data?.markdownRemark?.frontmatter?.featuredImage || defaultImage
@@ -120,7 +115,7 @@ export const Head = ({ location, params, data, pageContext }) => {
     },
   ]
   
-  if (metaType === `article`) {
+  if (pageUrl !== "/") {
     meta.push({
       property: `og:site_name`,
       content: `Neupokoev XYZ`
@@ -134,7 +129,6 @@ export const Head = ({ location, params, data, pageContext }) => {
   // article:author - profile array - Writers of the article.
   // article:section - string - A high-level section name. E.g. Technology
   // article:tag - string array - Tag words associated with this article.
-
 
   return (
     <>

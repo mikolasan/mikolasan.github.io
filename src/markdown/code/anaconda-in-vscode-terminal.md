@@ -23,7 +23,7 @@ I got tired of it. And when the time has come to update Python 3.8 to the new ve
 Since that I started using in my day after day experiments
 
 - [Transformers and PyTorch](/blog/starcode)
-- Also [PyTorch](/ai/agent-emotion-model), but in WSL2 and this version is carving for `CUDA_HOME`
+- Also [PyTorch](/ai/agent-emotion-model), but in WSL2 and this version is craving for `CUDA_HOME`
 - [Diffusers](/ai/my-faces-dataset) from Hugging Face
 - [TensorFlow 2.12](/ai/unsupervised-image-classification-with-gan) on Windows can only be installed in WSL2
 
