@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../../components/ruLayout"
+import Layout from "../../components/ru/layout"
 import * as styles from "./index.module.css"
 
 const RuIndex = ({ pageContext }) => (
@@ -137,4 +137,4 @@ const RuIndex = ({ pageContext }) => (
 
 export default RuIndex
 
-export { Head } from "./../../components/head"
+export { Head } from "./../../components/ru/head"

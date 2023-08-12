@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, Link, StaticQuery } from "gatsby"
-import { formatDate } from "../nifty"
+import { formatDate } from "../../nifty"
 
 const RuFooter = () => (
   <StaticQuery

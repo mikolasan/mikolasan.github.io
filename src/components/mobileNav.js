@@ -11,7 +11,7 @@ const MobileNav = ({
   searchClickedCallback,
   searchOpen
 }) => (
-  <nav className={styles.mobilenav}>
+  <nav className={["mobilenav", "language-" + language, styles.mobilenav].join(" ")}>
     <button
       className={[styles.burgermenu, menuOpen && styles.burgermenuopen || ""].join(" ")}
       onClick={menuClickedCallback}

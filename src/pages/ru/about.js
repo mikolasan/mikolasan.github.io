@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../../components/ruLayout"
+import Layout from "../../components/ru/layout"
 import * as styles from "./about.module.css"
 
 const RuAbout = ({ pageContext }) => (
@@ -131,4 +131,4 @@ const RuAbout = ({ pageContext }) => (
 
 export default RuAbout
 
-export { Head } from "./../../components/head"
+export { Head } from "./../../components/ru/head"

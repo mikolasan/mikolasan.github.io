@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, } from "gatsby"
-import Layout from "../components/ruLayout"
-import PostList from "../components/ruPostList"
+import Layout from "../../components/ru/layout"
+import PostList from "../../components/ru/postList"
 
 const RuBlogIndex = ({ data, pageContext }) => (
   <Layout
@@ -49,4 +49,4 @@ export const query = graphql`
   }
 `
 
-export { Head } from "./../components/head"
+export { Head } from "../../components/ru/head"

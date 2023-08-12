@@ -1,0 +1,168 @@
+import React from "react"
+
+const siteUrl = `https://neupokoev.xyz/ru`
+const siteTitle = `Наука, мастерская, девлог`
+const siteDescription = `Magazine, blog and knowledge base for embedded engineers, game developers and geeks`
+const siteImageUrl = `https://neupokoev.xyz/images/preview.jpg`
+const siteImageAlt = `A pink printed circuit board (PCB) design made in Autodesk Fusion 360.
+The board looks like an Arduino shield with some connectors on it. 
+The board is designed for connecting DC motors and sensors to Arduino board.`
+const defaultImage = `https://neupokoev.xyz/images/image-7.jpg`
+const defaultImageAlt = `Probably no text description for this placeholder picture, but I will work on that`
+
+export const Head = ({ location, params, data, pageContext }) => {
+  const metaType = `website`
+  const lang = location.pathname.startsWith("/ru") ? "ru" : "en"
+  const pageUrl = location.pathname // pageContext.url
+  
+  let url = siteUrl
+  if (pageUrl !== "/") {
+    url = `${siteUrl}${pageUrl}`
+  }
+
+  let title = siteTitle
+  let description = siteDescription
+  let image = siteImageUrl
+  let imageAlt = siteImageAlt
+  // from blog template
+  const checkFrontmatter = data?.markdownRemark?.frontmatter 
+  if (checkFrontmatter) {
+    title = data?.markdownRemark?.frontmatter?.title
+    description = data?.markdownRemark?.frontmatter?.description || `TODO: add description for this article`
+    image = data?.markdownRemark?.frontmatter?.featuredImage || defaultImage
+    imageAlt = data?.markdownRemark?.frontmatter?.featuredImageAlt || defaultImageAlt
+  }
+  
+  title += ` - N`
+  
+  // property = RDF / HTML5
+  // itemProp = Microdata
+  const meta = [
+    {
+      // https://developers.google.com/search/docs/advanced/robots/robots_meta_tag
+      name: `robots`,
+      content: `noarchive, max-image-preview:large`,
+    },
+    {
+      name: `author`,
+      content: `Nikolay Neupokoev`,
+    },
+    {
+      name: `description`,
+      itemProp: `description`,
+      content: description,
+    },
+    {
+      name: `image`,
+      itemProp: `image`,
+      content: image,
+    },
+    {
+      property: `og:description`,
+      content: description,
+    },
+    {
+      property: `og:image`,
+      content: image,
+    },
+    {
+      property: `og:image:alt`,
+      content: imageAlt
+    },
+    {
+      property: `og:locale`,
+      content: `en_US`,
+    },
+    {
+      itemProp: `name`,
+      property: `og:title`,
+      content: title,
+    },
+    {
+      property: `og:type`,
+      content: metaType,
+    },
+    {
+      property: `og:url`,
+      content: url,
+    },
+    // Twitter cards use `name` and `content`.
+    // Though Twitter’s parser will fall back to using `property` and `content`
+    // https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/getting-started
+    {
+      name: `twitter:creator`,
+      content: `@mikolasan`,
+    },
+    {
+      name: `twitter:card`,
+      content: `summary_large_image`,
+    },
+    {
+      name: `twitter:url`,
+      content: url,
+    },
+    {
+      name: `twitter:title`,
+      content: title,
+    },
+    {
+      name: `twitter:description`,
+      content: description,
+    },
+    {
+      name: `twitter:image`,
+      content: image,
+    },
+  ]
+  
+  if (pageUrl !== "/") {
+    meta.push({
+      property: `og:site_name`,
+      content: `Neupokoev XYZ`
+    })
+  }
+
+  // TODO:
+  // article:published_time - datetime - When the article was first published.
+  // article:modified_time - datetime - When the article was last changed.
+  // article:expiration_time - datetime - When the article is out of date after.
+  // article:author - profile array - Writers of the article.
+  // article:section - string - A high-level section name. E.g. Technology
+  // article:tag - string array - Tag words associated with this article.
+
+  return (
+    <>
+      <html lang={lang} />
+
+      {meta.map(({ name, property, itemProp, content }, i) => (
+        <meta 
+          key={i}
+          name={name}
+          property={property}
+          itemProp={itemProp}
+          content={content}
+        />
+      ))}
+
+      {/* <meta name="test input location" content={JSON.stringify(location)} />
+      <meta name="test input params" content={JSON.stringify(params)} />
+      <meta name="test input data" content={JSON.stringify(data)} />
+      <meta name="test input pageContext" content={JSON.stringify(pageContext)} /> */}
+
+      <title>{title}</title>
+
+      <link rel="canonical" href={url} />
+      <link rel="preconnect" href="https://fonts.googleapis.com"></link>
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"></link>
+
+      {/* Text */}
+      <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"></link>
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet"></link>
+      
+      {/* Titles */}
+      <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;700&display=swap" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet"></link>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet"></link>
+    </>
+  )
+}

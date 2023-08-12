@@ -1,0 +1,57 @@
+/* 
+html.language-ru {
+  font-family: 'Lora', serif;
+}
+*/
+
+.language-ru {
+  font-family: 'Roboto', sans-serif;
+}
+
+.topnav.language-ru {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.mobilenav.language-ru {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.search.language-ru {
+  font-family: 'Roboto', sans-serif;
+}
+
+.language-ru h1,
+.language-ru h2,
+.language-ru h3,
+.language-ru h4,
+.language-ru h5,
+.language-ru h6 {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+/*
+.home_subtitle {
+  font-family: 'Barlow', sans-serif;
+}
+
+.searchline {
+  font-family: 'Manrope', sans-serif;
+}
+
+.action-button {
+  font-family: 'Manrope', sans-serif;
+}
+
+.second-action-button {
+  font-family: 'Manrope', sans-serif;
+}
+
+.draftalert {
+  font-family: 'Barlow', sans-serif;
+}
+
+.__in_progress_alert {
+  font-family: 'Barlow', sans-serif;
+}
+*/
+

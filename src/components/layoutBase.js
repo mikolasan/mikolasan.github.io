@@ -127,7 +127,7 @@ class LayoutBase extends React.Component {
     )
 
     const fullPage = (
-      <>
+      <div className={"language-" + languageName}>
         {header}
         {this.state.searchOpen && (
           <div className="searchline">
@@ -144,7 +144,7 @@ class LayoutBase extends React.Component {
           {children}
         </MainBase>
         <Footer language={languageName} />
-      </>
+      </div>
     )
 
     const isMenuOpen = this.state.menuOpen

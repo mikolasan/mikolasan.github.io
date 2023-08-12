@@ -6,7 +6,7 @@ import SearchResult from "./search-result"
 import useClickOutside from "./use-click-outside"
 import * as styles from "./index.module.css"
 
-export default function Search({ indices }) {
+export default function Search({ indices, language }) {
   const rootRef = useRef(null)
   const [query, setQuery] = useState()
   const [hasFocus, setFocus] = useState(false)
@@ -22,7 +22,7 @@ export default function Search({ indices }) {
   useClickOutside(rootRef, () => setFocus(false))
 
   return (
-    <div ref={rootRef} className={styles.root}>
+    <div ref={rootRef} className={["search", "language-" + language, styles.root].join(' ')}>
       <InstantSearch
         searchClient={searchClient}
         indexName={indices[0].name}

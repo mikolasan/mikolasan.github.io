@@ -19,7 +19,8 @@ const MainWide = ({
   recentArticles,
   errorCallback,
   errorMessage,
-  tableOfContents
+  tableOfContents,
+  languageName
 }) => {
   const timeBlock = (published, lastUpdated, addClass) => {
     const time = <>
@@ -38,7 +39,9 @@ const MainWide = ({
     </div>) || ``
 
   return (
-    <main className="centered">
+    <main
+      className={["centered", "language-" + languageName].join(" ")}
+    >
       <div className="left-section">
         {timeBlock(published, lastUpdated, "left-time-block")}
         {toc}

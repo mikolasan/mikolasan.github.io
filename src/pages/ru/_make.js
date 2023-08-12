@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../../components/ruLayout"
+import Layout from "../../components/ru/layout"
 
 const RuMake = ({ pageContext }) => (
   <Layout

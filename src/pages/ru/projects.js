@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../../components/ruLayout"
+import Layout from "../../components/ru/layout"
 
 const Projects = ({ data }) => (
   <Layout
@@ -113,4 +113,4 @@ const Projects = ({ data }) => (
 
 export default Projects
 
-export { Head } from "./../../components/head"
+export { Head } from "./../../components/ru/head"

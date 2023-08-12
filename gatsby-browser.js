@@ -1,8 +1,8 @@
-require("./src/styles/global.css")
-require("./src/styles/search.css")
-require("./src/styles/home.css")
-require("./src/styles/tablet.css")
-require("./src/styles/mobile.css")
-require("./src/styles/tiny.css")
-require("./src/styles/prism-a11y-dark.css")
-require("katex/dist/katex.min.css")
+import "./src/styles/global.css"
+import "./src/styles/search.css"
+import "./src/styles/home.css"
+import "./src/styles/tablet.css"
+import "./src/styles/mobile.css"
+import "./src/styles/tiny.css"
+import "./src/styles/prism-a11y-dark.css"
+import "katex/dist/katex.min.css"

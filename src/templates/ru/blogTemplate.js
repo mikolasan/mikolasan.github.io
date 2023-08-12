@@ -1,8 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { getImage } from "gatsby-plugin-image"
-import Layout from "../components/ruLayout"
-import DraftAlert from "../components/draftAlert"
+import Layout from "../../components/ru/layout"
+import DraftAlert from "../../components/draftAlert"
 
 export default function Template ({ data, pageContext }) {
   const { markdownRemark } = data
@@ -86,4 +86,4 @@ export const pageQuery = graphql`
   }
 `
 
-export { Head } from "./../components/head"
+export { Head } from "../../components/ru/head"

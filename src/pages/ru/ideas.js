@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../../components/ruLayout"
+import Layout from "../../components/ru/layout"
 
 const IdeasPage = () => (
   <Layout
@@ -70,4 +70,4 @@ const IdeasPage = () => (
 
 export default IdeasPage
 
-export { Head } from "./../../components/head"
+export { Head } from "./../../components/ru/head"

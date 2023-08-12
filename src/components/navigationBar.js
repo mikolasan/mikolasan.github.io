@@ -2,7 +2,7 @@ import React from "react"
 
 import MobileNav from "./mobileNav"
 import Nav from "./nav"
-import RuNav from "./ruNav"
+import RuNav from "./ru/nav"
 
 const Navbar = props => (
   <>

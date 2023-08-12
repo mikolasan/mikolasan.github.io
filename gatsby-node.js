@@ -257,7 +257,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     .forEach(page => createPage(page))
 
   // Russian version
-  const ruBlogPostTemplate = path.resolve(`./src/templates/ruBlogTemplate.js`)
+  const ruBlogPostTemplate = path.resolve(`./src/templates/ru/blogTemplate.js`)
   const ruResult = await queryAllByPath(graphql, "/\/ru\//")
   ruResult.data.allMarkdownRemark.nodes
     .reduce(nodeReducer, [])
@@ -282,11 +282,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const projectsListTemplate = path.resolve(`./src/templates/projectsListTemplate.js`)
   const scienceListTemplate = path.resolve(`./src/templates/scienceListTemplate.js`)
   
-  const ruBlogListTemplate = path.resolve(`./src/templates/ruBlogListTemplate.js`)
-  const ruParanormalListTemplate = path.resolve(`./src/templates/ruParanormalListTemplate.js`)
-  const ruMakeListTemplate = path.resolve(`./src/templates/ruMakeListTemplate.js`)
-  const ruDevlogListTemplate = path.resolve(`./src/templates/ruDevlogListTemplate.js`)
-  const ruScienceListTemplate = path.resolve(`./src/templates/ruScienceListTemplate.js`)
+  const ruBlogListTemplate = path.resolve(`./src/templates/ru/blogListTemplate.js`)
+  const ruParanormalListTemplate = path.resolve(`./src/templates/ru/paranormalListTemplate.js`)
+  const ruMakeListTemplate = path.resolve(`./src/templates/ru/makeListTemplate.js`)
+  const ruDevlogListTemplate = path.resolve(`./src/templates/ru/devlogListTemplate.js`)
+  const ruScienceListTemplate = path.resolve(`./src/templates/ru/scienceListTemplate.js`)
 
   try {
     await Promise.all([

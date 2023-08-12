@@ -1,8 +1,8 @@
 import React from "react"
-import BlogPreview from "./blogPreview"
-import Pagination from "./pagination"
-import { absPathToUrl, formatDate } from "../nifty"
-import * as styles from "./postList.module.css"
+import BlogPreview from "../blogPreview"
+import Pagination from "../pagination"
+import { absPathToUrl, formatDate } from "../../nifty"
+import * as styles from "../postList.module.css"
 
 const RuPostList = ({ pageContext, posts, baseUrl }) => {
   const {
