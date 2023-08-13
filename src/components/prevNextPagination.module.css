@@ -50,6 +50,7 @@ span.prevpage {
   border: 1px solid #ccc;
   border-radius: 5px;
   color: #ccc;
+  text-align: left;
 }
 
 span.nextpage {
@@ -60,6 +61,7 @@ span.nextpage {
   border: 1px solid #ccc;
   border-radius: 5px;
   color: #ccc;
+  text-align: right;
 }
 
 span.arrow {

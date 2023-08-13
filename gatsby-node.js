@@ -140,10 +140,6 @@ const queryAllByPath = async (graphql, regex) => {
   const result = await graphql(`
     {
       allMarkdownRemark(
-        sort: [
-          {fileAbsolutePath: ASC},
-          {frontmatter: { date: ASC}}
-        ],
         filter: {
           fileAbsolutePath: { regex: "${regex}" }
         }
@@ -152,6 +148,7 @@ const queryAllByPath = async (graphql, regex) => {
           fileAbsolutePath
           frontmatter {
             title
+            date
           }
         }
         totalCount
@@ -233,6 +230,22 @@ const paginationFor = (result, path, listTemplate, postsPerPage = 6) => {
   })
 }
 
+const sectionRegexp = new RegExp(/\/(.*)\//s);
+
+const compareSectionAndDate = (a, b) => {
+  const pathA = nifty.absPathToUrl(a.fileAbsolutePath)
+  const matchA = pathA.match(sectionRegexp);
+  const sectionA = matchA && matchA[1];
+  const pathB = nifty.absPathToUrl(b.fileAbsolutePath)
+  const matchB = pathB.match(sectionRegexp);
+  const sectionB = matchB && matchB[1];
+  if (sectionA !== sectionB) {
+    return a.fileAbsolutePath.localeCompare(b.fileAbsolutePath)
+  } else {
+    return new Date(a.frontmatter.date) - new Date(b.frontmatter.date)
+  }
+}
+
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
 
@@ -266,6 +279,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const result = await queryAllByPath(graphql, "/^(?!.*\/ru\/.*)/");
   result.data.allMarkdownRemark.nodes
     .reduce(nodeReducer, [])
+    .sort(compareSectionAndDate)
     .map(pageFactory(blogPostTemplate, recentArticles))
     .forEach(page => createPage(page))
 
@@ -274,6 +288,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const ruResult = await queryAllByPath(graphql, "/\/ru\//")
   ruResult.data.allMarkdownRemark.nodes
     .reduce(nodeReducer, [])
+    .sort(compareSectionAndDate)
     .map(pageFactory(ruBlogPostTemplate, recentArticles))
     .forEach(page => createPage(page))
 
