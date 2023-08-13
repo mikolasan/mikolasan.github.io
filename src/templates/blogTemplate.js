@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import DraftAlert from "../components/draftAlert"
 import InProgressAlert from "../components/inProgressAlert"
 import RedirectAlert from "../components/redirectAlert"
+import PrevNextPagination from "../components/prevNextPagination"
 
 export default function Template({ data, pageContext }) {
   const { markdownRemark } = data
@@ -60,6 +61,11 @@ export default function Template({ data, pageContext }) {
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </span>
+      <PrevNextPagination
+        prevPage={pageContext.previous}
+        nextPage={pageContext.next}
+        currentPagePath={url}
+      />
     </Layout>
   )
 }

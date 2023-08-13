@@ -140,12 +140,19 @@ const queryAllByPath = async (graphql, regex) => {
   const result = await graphql(`
     {
       allMarkdownRemark(
+        sort: [
+          {fileAbsolutePath: ASC},
+          {frontmatter: { date: ASC}}
+        ],
         filter: {
           fileAbsolutePath: { regex: "${regex}" }
         }
       ) {
         nodes {
           fileAbsolutePath
+          frontmatter {
+            title
+          }
         }
         totalCount
       }
@@ -181,7 +188,7 @@ const queryPagesByPath = async (graphql, regex) => {
   return result
 }
 
-const toPages = (node, template, recentArticles) => {
+const toPages = (node, template, previous, next, recentArticles) => {
   const path = nifty.absPathToUrl(node.fileAbsolutePath)
   const showLikes = likesConfig.excludePath.find(p => p === path) === undefined
   return {
@@ -191,13 +198,19 @@ const toPages = (node, template, recentArticles) => {
       showLikes: showLikes,
       absolutePath: node.fileAbsolutePath,
       url: path,
+      next,
+      previous,
       recentArticles: recentArticles
     },
   }
 }
 
 const pageFactory = (template, recentArticles) => {
-  return node => toPages(node, template, recentArticles)
+  return (node, index, nodes) => {
+    const previous = index === 0 ? null : nodes[index - 1]
+    const next = index === nodes.length - 1 ? null : nodes[index + 1]
+    return toPages(node, template, previous, next, recentArticles)
+  }
 }
 
 const paginationFor = (result, path, listTemplate, postsPerPage = 6) => {
