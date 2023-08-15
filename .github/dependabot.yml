@@ -5,4 +5,5 @@ updates:
     schedule:
       interval: "weekly"
     allow:
-      - dependency-name: "gatsby"
+      - dependency-name: "gatsby*"
+      - dependency-name: "react*"
