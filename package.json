@@ -21,7 +21,7 @@
     "gatsby-plugin-feed": "^5.10.0",
     "gatsby-plugin-google-gtag": "^5.10.0",
     "gatsby-plugin-image": "^3.10.0",
-    "gatsby-plugin-manifest": "^5.10.0",
+    "gatsby-plugin-manifest": "^5.11.0",
     "gatsby-plugin-nprogress": "^5.10.0",
     "gatsby-plugin-offline": "^6.11.0",
     "gatsby-plugin-sass": "^6.11.0",
