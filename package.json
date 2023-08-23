@@ -31,7 +31,7 @@
     "gatsby-remark-autolink-headers": "^6.10.0",
     "gatsby-remark-copy-linked-files": "^6.11.0",
     "gatsby-remark-images": "^7.11.0",
-    "gatsby-remark-katex": "^7.10.0",
+    "gatsby-remark-katex": "^7.11.0",
     "gatsby-remark-prismjs": "^7.10.0",
     "gatsby-source-filesystem": "^5.10.0",
     "gatsby-transformer-gitinfo": "^1.1.0",
