@@ -73,3 +73,37 @@ Surprisingly, signals can go to nowhere
 > [...] **a vast majority of the axonal terminals are not motile.**
 >
 > [_Dynamics of dendritic spines and their afferent terminals: spines are more motile than presynaptic bouton_](https://www.sciencedirect.com/science/article/pii/S0012160604006657#aep-section-id29)
+
+
+When spines are developed and when they are pruned https://www.frontiersin.org/articles/10.3389/fnsyn.2020.00036/full
+
+**Dendritic spine formation and stabilization** (no access) https://www.sciencedirect.com/science/article/abs/pii/S0959438809000518
+
+![Dendritic spine formation and stabilization. First activity, then plasticity](./dendritic-spine-formation-and-stabilization.jpg)
+
+
+
+```bash
+C:\Users\neupo\miniconda3\Scripts\activate.bat
+conda create -n cartpole python=3.10
+conda activate cartpole
+pip install notebook
+jupyter notebook
+```
+
+```jupyter
+!pip install gymnasium
+import gymnasium as gym
+env = gym.make('CartPole-v1')
+
+observation, info = env.reset()
+action = env.action_space.sample()
+num_actions = env.action_space.n
+
+observation, reward, terminated, truncated, info = env.step(action)
+
+if terminated or truncated:
+  observation, info = env.reset()
+
+env.close()
+```

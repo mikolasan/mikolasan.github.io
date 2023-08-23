@@ -71,3 +71,8 @@ A list from [this blog](https://cnvrg.io/spiking-neural-networks/)
 ## My links
 
 **A Minimal Spiking Neural Network** to Rapidly Train and Classify Handwritten Digits in Binary and 10-Digit Tasks [paper](https://thesai.org/Downloads/IJARAI/Volume4No7/Paper_1-A_Minimal_Spiking_Neural_Network_to_Rapidly_Train.pdf). Guess how spikes work in this work. Pixels from black and white picture unwrapped into spike trains (facepalm)
+
+
+## Questions
+
+- How does STDP start if no synaptic connections exist a priori?

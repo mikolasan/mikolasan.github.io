@@ -5,6 +5,8 @@ published: 2022-08-22
 lastModified: 2022-08-22
 ---
 
+A static site generator converts markdown files into web pages, incorporating images and formulas, resembling HTML. Despite the advertised simplicity, I still invested considerable time crafting React components and refining CSS design. However, the benefit lies in keeping data separate from design, eliminating the need for a complex CMS for new post creation.
+
 I was looking for more flexible static site generator than Jekyll on [Jamstack](https://jamstack.org/generators/). 
 
 
