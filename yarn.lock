@@ -1656,15 +1656,15 @@
   resolved "https://registry.yarnpkg.com/@gar/promisify/-/promisify-1.1.3.tgz#555193ab2e3bb3b6adc3d551c9c030d9e860daf6"
   integrity sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==
 
-"@gatsbyjs/parcel-namer-relative-to-cwd@^2.11.0":
-  version "2.11.0"
-  resolved "https://registry.yarnpkg.com/@gatsbyjs/parcel-namer-relative-to-cwd/-/parcel-namer-relative-to-cwd-2.11.0.tgz#80b92ea1432838f5d86a8f85719ffe57fd3ddabe"
-  integrity sha512-Iniqvn2uREkyf6LC4Ge0NQE9EeVbACqDSFn2Fl4brl4obwcubwWxVyB4fof34r8yG7YuDIPWeyT6iuRocGqp8w==
+"@gatsbyjs/parcel-namer-relative-to-cwd@^2.12.0":
+  version "2.12.0"
+  resolved "https://registry.yarnpkg.com/@gatsbyjs/parcel-namer-relative-to-cwd/-/parcel-namer-relative-to-cwd-2.12.0.tgz#4bd49fb678e739624d0bc39c3376b4781bf6a0ee"
+  integrity sha512-ENTps2Fg3EMy5WyTrX3TY62McmZcyhJbU/rD90UTyqZnB9XbuEFNW72Ya6qH0jXMPV7tcxNeD2P7HijuJ1O5lQ==
   dependencies:
     "@babel/runtime" "^7.20.13"
     "@parcel/namer-default" "2.8.3"
     "@parcel/plugin" "2.8.3"
-    gatsby-core-utils "^4.11.0"
+    gatsby-core-utils "^4.12.0"
 
 "@gatsbyjs/reach-router@^2.0.1":
   version "2.0.1"
@@ -7142,6 +7142,28 @@ gatsby-core-utils@^4.10.0, gatsby-core-utils@^4.11.0:
     tmp "^0.2.1"
     xdg-basedir "^4.0.0"
 
+gatsby-core-utils@^4.12.0:
+  version "4.12.0"
+  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-4.12.0.tgz#1ee4ced94cf2c7b2139d8d3ea6321391ce3ffdea"
+  integrity sha512-1vK0cmL8FNHAddQ5WZt0yTPdFSZuMPNUSsHckM+ZdVmRxyif3aZYSi7ofj6sJo/UvhKj7fBqJv/smZYpp2PRqg==
+  dependencies:
+    "@babel/runtime" "^7.20.13"
+    ci-info "2.0.0"
+    configstore "^5.0.1"
+    fastq "^1.15.0"
+    file-type "^16.5.4"
+    fs-extra "^11.1.1"
+    got "^11.8.6"
+    hash-wasm "^4.9.0"
+    import-from "^4.0.0"
+    lmdb "2.5.3"
+    lock "^1.1.0"
+    node-object-hash "^2.3.10"
+    proper-lockfile "^4.1.2"
+    resolve-from "^5.0.0"
+    tmp "^0.2.1"
+    xdg-basedir "^4.0.0"
+
 gatsby-graphiql-explorer@^3.11.0:
   version "3.11.0"
   resolved "https://registry.yarnpkg.com/gatsby-graphiql-explorer/-/gatsby-graphiql-explorer-3.11.0.tgz#c49f3ddc623259f313085bd6190bf2e36b89860e"
@@ -7179,11 +7201,11 @@ gatsby-page-utils@^3.11.0:
     micromatch "^4.0.5"
 
 gatsby-parcel-config@^1.11.0:
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/gatsby-parcel-config/-/gatsby-parcel-config-1.11.0.tgz#20d939e103d050bef2474c78b0d1cec272cbdc1d"
-  integrity sha512-Q8WHu9aDkrIUM1QdDldYDiArQpm9RsFHYvotFn3BzFTL0+5FngIs7qKg17H3Jzsjg7YlDPYiwS1ir9zGjjJEkQ==
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/gatsby-parcel-config/-/gatsby-parcel-config-1.12.0.tgz#1731b00c78ecb8a5e776ae150a48446d6b2542cc"
+  integrity sha512-Ouru3TuIadzcTJ3zC943V3TKaesKOB0PW07dAlvXnjX8BXLDz9bgaS+eQlq+kvIrE1bsdpIWwAo/eL58a2+RCg==
   dependencies:
-    "@gatsbyjs/parcel-namer-relative-to-cwd" "^2.11.0"
+    "@gatsbyjs/parcel-namer-relative-to-cwd" "^2.12.0"
     "@parcel/bundler-default" "2.8.3"
     "@parcel/compressor-raw" "2.8.3"
     "@parcel/namer-default" "2.8.3"
