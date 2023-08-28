@@ -25,7 +25,7 @@
     "gatsby-plugin-nprogress": "^5.10.0",
     "gatsby-plugin-offline": "^6.11.0",
     "gatsby-plugin-sass": "^6.11.0",
-    "gatsby-plugin-sharp": "^5.10.0",
+    "gatsby-plugin-sharp": "^5.12.0",
     "gatsby-plugin-sitemap": "^6.11.0",
     "gatsby-react-router-scroll": "^6.10.0",
     "gatsby-remark-autolink-headers": "^6.10.0",
