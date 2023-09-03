@@ -1,37 +1,36 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import PostList from "../components/postList"
 
-const Projects = ({ data, pageContext }) => (
-  <Layout
-    title="Projects"
-    section="code"
-    subsection="projects"
-    crumbs={pageContext.breadcrumb.crumbs}
-    languageName="Switch to russian version"
-    anotherLanguageLink="/ru"
-  >
-    <PostList
-      posts={data.allMarkdownRemark.edges}
-      baseUrl="/projects"
-      pageContext={pageContext}
-    />
+const ListTemplate = ({ data, pageContext }) => {
+  return (
+    <Layout
+      title={pageContext.title}
+      section="blog"
+      crumbs={pageContext.breadcrumb.crumbs}
+      languageName="Switch to russian version"
+      anotherLanguageLink="/ru/blog"
+    >
+      <PostList
+        posts={data.allMarkdownRemark.edges}
+        baseUrl={pageContext.baseUrl}
+        pageContext={pageContext}
+      />
+    </Layout>
+  )
+}
 
-  </Layout>
-)
-
-export default Projects
+export default ListTemplate
 
 export const query = graphql`
-  query ProjectsListQuery($skip: Int!, $limit: Int!) {
+  query blogListQuery($skip: Int!, $limit: Int!, $regex: String!) {
     allMarkdownRemark(
       limit: $limit,
       skip: $skip,
       sort: { frontmatter: {date: DESC}},
-      filter: { fileAbsolutePath: { regex: "/markdown\/projects\//"} }
+      filter: {fileAbsolutePath: { regex: $regex}}
     ) {
-      totalCount
       edges {
         node {
           id
@@ -61,4 +60,4 @@ export const query = graphql`
   }
 `
 
-export { Head } from "./../components/head"
+export { Head } from "../components/head"

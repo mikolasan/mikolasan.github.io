@@ -23,7 +23,7 @@ const Footer = () => (
             <div className="bottomlist">
               <Link to="/make">Make</Link>
               <Link to="/science">Science</Link>
-              <Link to="/coding">Coding</Link>
+              <Link to="/code">Coding</Link>
               <Link to="/gamedev">Gamedev</Link>
               <Link to="/ideas">Ideas</Link>
               <Link to="/blog">Blog</Link>

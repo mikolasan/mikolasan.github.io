@@ -7,6 +7,7 @@ const Prints = ({ data, pageContext }) => (
   <Layout
     title="3D Prints"
     section="make"
+    subsection="3d-prints"
     crumbs={pageContext.breadcrumb.crumbs}
     languageName="Switch to russian version"
     anotherLanguageLink="/ru"

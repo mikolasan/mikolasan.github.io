@@ -1,40 +1,14 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 import { absPathToUrl, formatDate } from "../nifty"
 import BlogPreview from "./blogPreview"
 import * as styles from "./recentArticles.module.css"
 
-const RecentArticles = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allMarkdownRemark(
-        limit: 3,
-        sort: { frontmatter: {date: DESC}},
-        filter: {
-          fileAbsolutePath: {regex: "/^(?!.*\/ru\/.*)/"},
-          frontmatter: { topic: {ne: true}, article: {ne: true}}
-        }
-      ) {
-        edges {
-          node {
-            id
-            frontmatter {
-              title
-              date
-            }
-            excerpt
-            fileAbsolutePath
-          }
-        }
-      }
-    }
-  `)
-  const posts = data.allMarkdownRemark.edges
-  return (
+const RecentArticles = ({ nodes, section, subsection }) => {
+  return nodes && (
     <aside className={styles.recentarticles}>
-      <h2>Recent articles</h2>
+      <h2>Recently posted in "{section}"</h2>
       <div className={styles.blogcards}>
-        {posts.map(({ node }) => (
+        {nodes.map(node => (
           <BlogPreview
             key={node.id} 
             path={absPathToUrl(node.fileAbsolutePath)}
@@ -46,7 +20,7 @@ const RecentArticles = () => {
         ))}
       </div>
     </aside>
-  )
+  ) || ``
 }
 
 export default RecentArticles

@@ -60,6 +60,7 @@ class LayoutBase extends React.Component {
       lastUpdated,
       updatedText,
       section,
+      subsection,
       crumbs,
       buttonText,
       buttonLink,
@@ -106,13 +107,14 @@ class LayoutBase extends React.Component {
 
     const header = (
       <Header
+        section={section}
+        subsection={subsection}
         crumbs={crumbs}
         language={languageName}
         menuOpen={this.state.menuOpen}
         menuClickedCallback={this.menuClicked}
         searchOpen={this.state.searchOpen}
         searchClickedCallback={this.searchClicked}
-        activeSection={section}
       />
     )
 

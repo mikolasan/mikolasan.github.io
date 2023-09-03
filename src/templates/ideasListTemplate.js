@@ -6,7 +6,8 @@ import PostList from "../components/postList"
 const Ideas = ({ data, pageContext }) => (
   <Layout
     title="Ideas"
-    section="ideas"
+    section="code"
+    subsection="ideas"
     crumbs={pageContext.breadcrumb.crumbs}
     languageName="Switch to russian version"
     anotherLanguageLink="/ru"

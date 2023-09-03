@@ -20,21 +20,6 @@ const threeColumnLayout = (
   </div>
 )
 
-// const twoColumnLayout = (
-//   <div className="home_grid">
-//     <div className="home_grid_column_1">
-//       <HomeBlock {...articles[0]} />
-//       <HomeBlock {...articles[3]} />
-//       <HomeBlock {...articles[4]} />
-//       <HomeBlock {...articles[5]} />
-//     </div>
-//     <div className="home_grid_column_2">
-//       <HomeBlock {...articles[1]} />
-//       <HomeBlock {...articles[2]} />
-//     </div>
-//   </div>
-// )
-
 export default function Index({ pageContext }) {
   return (
     <Layout

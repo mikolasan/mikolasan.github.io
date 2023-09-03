@@ -10,47 +10,61 @@ exports.onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions
   const oldPath = page.path
   if (oldPath.endsWith("/")) {
+    console.log(`created page with trailing slash: ${oldPath}`)
     return
   }
 
   // fix "no trailing slash" for GitHub pages
   // exceptions
-  const allowTrailingSlash = [
+  const addTrailingSlash = [
     `/blog/how-windows-web-developers-fix-websites-in-safari/`,
     `/ideas/web-app/`
   ]  
   const newPath = nifty.addHtmlToPath(oldPath)
   if (oldPath !== "/" && oldPath !== "/404" && newPath !== oldPath) {
-    // slash or no-slash at the end of urls, but Gatsby creates directories and index.html inside
-    // for GitHub Pages it means redirect from "no slash" url to "slash" url which is not good
-    // but moreover it's bad for Google's indexing
+    // Setting config for slash or no-slash at the end of urls (`trailingSlash`)
+    // doesn't affect Gatsby in a way that it always creates directories (= url) and index.html inside.
+    // For GitHub Pages this means that going to "no slash" address will redirect
+    // from "no slash" url to "slash" url. It's bad for Google's indexing (301 is a bad tone)
 
-    // in case Google already has trailing slash in its index, then we keep that page
-    if (allowTrailingSlash.indexOf(`${oldPath}/`) === -1) {
-      // console.log(`create html version for ${oldPath}`)
-      deletePage(page)
-    } else {
-      console.log(`keep page with a trailing slash: ${oldPath}/`)
-      return
-    }
+    // // in case Google already has trailing slash in its index, then we keep that page
+    // if (addTrailingSlash.indexOf(`${oldPath}/`) === -1) {
+    //   // console.log(`create html version for ${oldPath}`)
+    //   deletePage(page)
+    // } else {
+    //   console.log(`keep page with a trailing slash: ${oldPath}/`)
+    // }
 
-    page.path = newPath
-    page.matchPath = oldPath
-    createPage(page)
-  }
-
-  const redirect = findRedirect(oldPath)
-  if (redirect !== undefined) {
-    console.log(`create redirect ${redirect.fromPath} -> ${oldPath}`)
-    page.path = redirect.fromPath
+    // page.path = newPath
+    // if (addTrailingSlash.indexOf(`${oldPath}/`) === -1) {
+    //   page.matchPath = newPath
+    // } else {
+    //   // then we have 'path' folder and 'path.html' folder for page-data.json
+    //   page.matchPath = `${oldPath}/*`
+    // }
+    // createPage(page)
+    
     createPage({
       ...page,
+      path: newPath,
       context: {
         ...page.context,
-        redirect: redirect.toPath,
       },
     })
   }
+
+  // const redirect = findRedirect(oldPath)
+  // if (redirect !== undefined) {
+  //   console.log(`create redirect ${redirect.fromPath} -> ${oldPath}`)
+  //   page.path = redirect.fromPath
+  //   createPage({
+  //     ...page,
+  //     context: {
+  //       ...page.context,
+  //       redirect: redirect.toPath,
+  //     },
+  //   })
+  // }
 
   // add `updated` pageContext to JS pages (not Markdown, not pagination)
   // if (`updated` in page.context) {
@@ -129,27 +143,22 @@ exports.createSchemaCustomization = ({ actions }) => {
   createTypes(typeDefs)
 }
 
-const nodeReducer = (array, node) => {
-  if (node.fileAbsolutePath !== null) {
-    array.push(node);
-  }
-  return array;
-}
-
-const queryAllByPath = async (graphql, regex) => {
+const queryAll = async graphql => {
   const result = await graphql(`
     {
       allMarkdownRemark(
-        filter: {
-          fileAbsolutePath: { regex: "${regex}" }
-        }
+        sort: { frontmatter: { date: DESC } },
       ) {
         nodes {
+          excerpt
           fileAbsolutePath
           frontmatter {
             title
             date
+            topic
+            article
           }
+          id
         }
         totalCount
       }
@@ -157,35 +166,12 @@ const queryAllByPath = async (graphql, regex) => {
   `)
 
   if (result.errors) {
-    throw `Error while running GraphQL query for ${regex} pages.`
+    throw `Error while running GraphQL query for ALL pages.`
   }
   return result
 }
 
-const queryPagesByPath = async (graphql, regex) => {
-  const result = await graphql(`
-    {
-      allMarkdownRemark(
-        filter: {
-          frontmatter: { topic: {ne: true}, article: {ne: true}}
-          fileAbsolutePath: { regex: "${regex}" }
-        }
-      ) {
-        nodes {
-          fileAbsolutePath
-        }
-        totalCount
-      }
-    }
-  `)
-
-  if (result.errors) {
-    throw `Error while running GraphQL query for ${regex} pages.`
-  }
-  return result
-}
-
-const toPages = (node, template, previous, next, recentArticles) => {
+const nodeToPageData = (node, template, previous, next, recentArticles) => {
   const path = nifty.absPathToUrl(node.fileAbsolutePath)
   const showLikes = likesConfig.excludePath.find(p => p === path) === undefined
   return {
@@ -202,19 +188,7 @@ const toPages = (node, template, previous, next, recentArticles) => {
   }
 }
 
-const pageFactory = (template, recentArticles) => {
-  return (node, index, nodes) => {
-    const previous = index === 0 ? null : nodes[index - 1]
-    const next = index === nodes.length - 1 ? null : nodes[index + 1]
-    return toPages(node, template, previous, next, recentArticles)
-  }
-}
-
-const paginationFor = (result, path, listTemplate, postsPerPage = 6) => {
-  let numPosts = result.data.allMarkdownRemark?.totalCount
-  if (numPosts === undefined) {
-    numPosts = result.data.allMarkdownRemark.nodes.length
-  }
+const paginationFor = (title, path, listTemplate, regex, numPosts, postsPerPage = 6) => {
   const numPages = Math.ceil(numPosts / postsPerPage)
   return Array.from({ length: numPages }).map((_, i) => {
     return {
@@ -225,79 +199,52 @@ const paginationFor = (result, path, listTemplate, postsPerPage = 6) => {
         skip: i * postsPerPage,
         numPages,
         currentPage: i + 1,
+        baseUrl: path,
+        title,
+        regex
       },
     }
   })
 }
 
-const sectionRegexp = new RegExp(/\/(.*)\//s);
+const groupBySections = nodes => {
+  const sections = {}
+  const recentArticlesMaxSize = 5
 
-const compareSectionAndDate = (a, b) => {
-  const pathA = nifty.absPathToUrl(a.fileAbsolutePath)
-  const matchA = pathA.match(sectionRegexp);
-  const sectionA = matchA && matchA[1];
-  const pathB = nifty.absPathToUrl(b.fileAbsolutePath)
-  const matchB = pathB.match(sectionRegexp);
-  const sectionB = matchB && matchB[1];
-  if (sectionA !== sectionB) {
-    return a.fileAbsolutePath.localeCompare(b.fileAbsolutePath)
-  } else {
-    return new Date(a.frontmatter.date) - new Date(b.frontmatter.date)
+  for (let i = 0; i < nodes.length; ++i) {
+    const node = nodes[i];
+    const path = nifty.absPathToUrl(node.fileAbsolutePath)
+    const pathEnd = path.lastIndexOf(`/`)
+    let currentSection = path.substring(0, pathEnd)
+    if (!currentSection) {
+      currentSection = path
+    }
+    if (!Object.hasOwn(sections, currentSection)) {
+      sections[currentSection] = {
+        count: 0,
+        paginationCount: 0,
+        nodes: [],
+        paginationNodes: [],
+        recentArticles: [],
+      }
+    }
+    sections[currentSection].count++;
+    sections[currentSection].nodes.push(node)
+    if (!node.frontmatter?.topic && !node.frontmatter?.article) {
+      sections[currentSection].paginationNodes.push(node)
+      sections[currentSection].paginationCount++;
+    }
+    if (sections[currentSection].recentArticles.length < recentArticlesMaxSize) {
+      sections[currentSection].recentArticles.push(node)
+    }
   }
+  return sections
 }
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
 
-  const recentArticles = {} // TODO
-  // await graphql(`
-  //   {
-  //     allMarkdownRemark(
-  //       limit: 5,
-  //       sort: { frontmatter: {date: DESC}},
-  //       filter: {
-  //         frontmatter: {language: {ne: "ru"}, topic: {ne: true}, article: {ne: true}}
-  //       }
-  //     ) {
-  //       edges {
-  //         node {
-  //           frontmatter {
-  //             path
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
-
-  // if (recentArticles.errors) {
-  //   reporter.panicOnBuild(`Error while running GraphQL query.`)
-  //   return
-  // }
-
-  const blogPostTemplate = path.resolve(`./src/templates/blogTemplate.js`)
-  const result = await queryAllByPath(graphql, "/^(?!.*\/ru\/.*)/");
-  result.data.allMarkdownRemark.nodes
-    .reduce(nodeReducer, [])
-    .sort(compareSectionAndDate)
-    .map(pageFactory(blogPostTemplate, recentArticles))
-    .forEach(page => createPage(page))
-
-  // Russian version
-  const ruBlogPostTemplate = path.resolve(`./src/templates/ru/blogTemplate.js`)
-  const ruResult = await queryAllByPath(graphql, "/\/ru\//")
-  ruResult.data.allMarkdownRemark.nodes
-    .reduce(nodeReducer, [])
-    .sort(compareSectionAndDate)
-    .map(pageFactory(ruBlogPostTemplate, recentArticles))
-    .forEach(page => createPage(page))
-
-  const createPagination = async (regex, path, listTemplate, postsPerPage = 6) => {
-    const result = await queryPagesByPath(graphql, regex)
-    paginationFor(result, path, listTemplate, postsPerPage)
-      .forEach(page => createPage(page))  
-  }
-
+  const genericlistTemplate = path.resolve(`./src/templates/genericListTemplate.js`)
   const printsListTemplate = path.resolve(`./src/templates/3dPrintsListTemplate.js`)
   const blogListTemplate = path.resolve(`./src/templates/blogListTemplate.js`)
   const codeListTemplate = path.resolve(`./src/templates/codeListTemplate.js`)
@@ -316,43 +263,59 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const ruDevlogListTemplate = path.resolve(`./src/templates/ru/devlogListTemplate.js`)
   const ruScienceListTemplate = path.resolve(`./src/templates/ru/scienceListTemplate.js`)
 
-  try {
-    await Promise.all([
-      // Pagination [/make/3d-prints]
-      createPagination("/markdown\/make\/3d-prints\//", `/make/3d-prints`, printsListTemplate),
-      // Pagination [/blog]
-      createPagination("/markdown\/blog\//", `/blog`, blogListTemplate, 18),
-      // Pagination [/code/cpp]
-      createPagination("/markdown\/code\/cpp\//", `/code/cpp`, cppListTemplate),
-      // Pagination [/code]
-      createPagination("/markdown\/code\/(?!cpp)/", `/code`, codeListTemplate, 9),
-      // Pagination [/devlog]
-      createPagination("/markdown\/devlog\//", `/devlog`, devlogListTemplate, 18),
-      // Pagination [/gamedev]
-      createPagination("/markdown\/gamedev\//", `/gamedev`, gamedevListTemplate),
-      // Pagination [/ideas]
-      createPagination("/markdown\/ideas\//", `/ideas`, ideasListTemplate),
-      // Pagination [/linux]
-      createPagination("/markdown\/linux\//", `/linux`, linuxListTemplate, 25),
-      // Pagination [/make]
-      createPagination("/markdown\/make\/(?!robot|3d-prints)/", `/make`, makeListTemplate),
-      // Pagination [/projects]
-      createPagination("/markdown\/projects\//", `/projects`, projectsListTemplate),
-      // Pagination [/science]
-      createPagination("/markdown\/science\//", `/science`, scienceListTemplate),
+  const pageTemplate = path.resolve(`./src/templates/blogTemplate.js`)
+  const pageRuTemplate = path.resolve(`./src/templates/ru/blogTemplate.js`)
 
-      // Pagination [/ru/blog]
-      createPagination("/\/ru\/blog*/", `/ru/blog`, ruBlogListTemplate),
-      // Pagination [/ru/paranormal]
-      createPagination("/\/ru\/paranormal\//", `/ru/paranormal`, ruParanormalListTemplate),
-      // Pagination [/ru/make]
-      createPagination("/\/ru\/make\/(?!hydroponics)/", `/ru/make`, ruMakeListTemplate),
-      // Pagination [/ru/devlog]
-      createPagination("/\/ru\/devlog\//", `/ru/devlog`, ruDevlogListTemplate),
-      // Pagination [/ru/neural-networks]
-      createPagination("/\/ru\/neural-networks\//", `/ru/neural-networks`, ruScienceListTemplate),
-    ])
+  const paginationConfig = {
+    "/blog": {template: genericlistTemplate, postsPerPage: 18, title: `Blog`, regex: "/markdown\/blog\//"},
+    "/code/cpp": {template: cppListTemplate, postsPerPage: 6, title: `C++`},
+    "/code": {template: codeListTemplate, postsPerPage: 9, title: ``},
+    "/devlog": {template: devlogListTemplate, postsPerPage: 18, title: ``},
+    "/gamedev": {template: gamedevListTemplate, postsPerPage: 6, title: ``},
+    "/ideas": {template: ideasListTemplate, postsPerPage: 6, title: ``},
+    "/linux": {template: linuxListTemplate, postsPerPage: 25, title: ``},
+    "/make/3d-prints": {template: printsListTemplate, postsPerPage: 6, title: ``},
+    "/make": {template: makeListTemplate, postsPerPage: 6, title: ``},
+    "/projects": {template: projectsListTemplate, postsPerPage: 6, title: ``},
+    "/science": {template: scienceListTemplate, postsPerPage: 6, title: ``},
+    "/ru/blog": {template: ruBlogListTemplate, postsPerPage: 6, title: ``},
+    "/ru/paranormal": {template: ruParanormalListTemplate, postsPerPage: 6, title: ``},
+    "/ru/make": {template: ruMakeListTemplate, postsPerPage: 6, title: ``},
+    "/ru/devlog": {template: ruDevlogListTemplate, postsPerPage: 6, title: ``},
+    "/ru/neural-networks": {template: ruScienceListTemplate, postsPerPage: 6, title: ``},
+  }
+
+  let result
+  try {
+    result = await queryAll(graphql);
   } catch (e) {
     reporter.panicOnBuild(e)
+    return
   }
+
+  const allNodes = result.data.allMarkdownRemark.nodes
+  const sections = groupBySections(allNodes)
+  const keys = Object.keys(sections)
+  keys.sort()
+  for (let i = 0; i < keys.length; i++) {
+    const sectionName = keys[i];
+    const section = sections[sectionName];
+    const sectionNodes = section.nodes;
+    for (let j = 0; j < sectionNodes.length; j++) {
+      const node = sectionNodes[j];
+      const template = sectionName.startsWith(`/ru`) ? pageRuTemplate : pageTemplate 
+      const next = j === 0 ? null : sectionNodes[j - 1]
+      const previous = j === sectionNodes.length - 1 ? null : sectionNodes[j + 1]
+      const pageData = nodeToPageData(node, template, previous, next, section.recentArticles)
+      createPage(pageData)
+    }
+
+    // pagination
+    if (Object.hasOwn(paginationConfig, sectionName)) {
+      const config = paginationConfig[sectionName]
+      paginationFor(config.title, sectionName, config.template, config.regex, section.paginationCount, config.postsPerPage)
+        .forEach(pageData => createPage(pageData))
+    }
+  }
+
 }

@@ -19,7 +19,8 @@ const DevlogIndex = ({ data, pageContext }) => {
   return (
     <Layout
       title="Devlog"
-      section="devlog"
+      section="blog"
+      subsection="devlog"
       crumbs={crumbs}
       languageName={languageName}
       anotherLanguageLink={anotherLanguageLink}

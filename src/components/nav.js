@@ -7,15 +7,15 @@ import * as styles from "./navigationBar.module.css"
 
 const searchIndices = [{ name: `Pages`, title: `Pages` }]
 
-const Nav = ({ active }) => (
+const Nav = ({ section }) => (
   <nav className={styles.topnav}>
-    <Link to="/" { ...(active === "root" && { className: [styles.activelink, styles.toplogo].join(' ') } || { className: styles.toplogo }) }>
+    <Link to="/" { ...(section === "root" && { className: [styles.activelink, styles.toplogo].join(' ') } || { className: styles.toplogo }) }>
       <LogoButton style={styles.toplogo} />
     </Link>
-    <Link to="/make" { ...(active === "make" && { className: styles.activelink }) }>Make</Link>
-    <Link to="/science" { ...(active === "science" && { className: styles.activelink }) }>Science</Link>
-    <Link to="/code" { ...(active === "code" && { className: styles.activelink }) }>Coding</Link>
-    <Link to="/blog" { ...(active === "blog" && { className: styles.activelink }) }>Blog</Link>
+    <Link to="/make" { ...(section === "make" && { className: styles.activelink }) }>Make</Link>
+    <Link to="/science" { ...(section === "science" && { className: styles.activelink }) }>Science</Link>
+    <Link to="/code" { ...(section === "code" && { className: styles.activelink }) }>Coding</Link>
+    <Link to="/blog" { ...(section === "blog" && { className: styles.activelink }) }>Blog</Link>
     <Search indices={searchIndices} />
   </nav>
 )

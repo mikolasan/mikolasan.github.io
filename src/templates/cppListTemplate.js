@@ -8,6 +8,7 @@ const Cpp = ({ data, pageContext }) => (
   <Layout
     title="C++"
     section="code"
+    subsection="cpp"
     crumbs={pageContext.breadcrumb.crumbs}
     languageName="Switch to russian version"
     anotherLanguageLink="/ru/devlog"

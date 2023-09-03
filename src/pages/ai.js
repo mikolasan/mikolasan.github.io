@@ -11,6 +11,7 @@ const BrainModelPage = ({ data }) => {
     <Layout 
       title="AI"
       section="science"
+      subsection="ai"
     >
       <h1>Brain model</h1>
       <h2>Big research</h2>

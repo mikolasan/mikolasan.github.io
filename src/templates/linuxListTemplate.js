@@ -7,7 +7,8 @@ import SectionCard from "../components/sectionCard"
 const Linux = ({ data, pageContext }) => (
   <Layout
     title="Linux"
-    section="linux"
+    section="code"
+    subsection="linux"
     crumbs={pageContext.breadcrumb.crumbs}
     languageName="Switch to russian version"
     anotherLanguageLink="/ru/devlog"

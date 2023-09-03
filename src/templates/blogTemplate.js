@@ -48,6 +48,7 @@ export default function Template({ data, pageContext }) {
       featuredImage={frontmatter.featuredImage}
       bannerParagraph={banner}
       tableOfContents={tableOfContents}
+      recentArticles={pageContext.recentArticles}
     >
       {pageContext.redirect && <RedirectAlert linkPath={pageContext.redirect} />}
       {frontmatter.draft && <DraftAlert linkPath={url} />}

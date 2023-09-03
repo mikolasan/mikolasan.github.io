@@ -8,8 +8,8 @@ const Navbar = props => (
   <>
     <MobileNav {...props} />
     {props.language === "en" && 
-      <Nav active={props.activeSection} /> ||
-        <RuNav active={props.activeSection} />
+      <Nav section={props.section} /> ||
+        <RuNav section={props.section} />
     }
   </>
 )

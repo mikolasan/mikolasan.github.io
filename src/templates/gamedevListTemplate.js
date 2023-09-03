@@ -6,7 +6,8 @@ import PostList from "../components/postList"
 const Gamedev = ({ data, pageContext }) => (
   <Layout
     title="Gamedev"
-    section="gamedev"
+    section="code"
+    subsection="gamedev"
     crumbs={pageContext.breadcrumb.crumbs}
     languageName="Switch to russian version"
     anotherLanguageLink="/ru/devlog"

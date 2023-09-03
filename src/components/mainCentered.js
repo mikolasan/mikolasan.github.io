@@ -4,23 +4,19 @@ import Reactions from "./reactions"
 import RelatedArticles from "./recentArticles"
 
 const MainCentered = ({
+  children,
+  slug,
+  section,
+  subsection,
+  tableOfContents,
+  languageName,
   publishedText,
   published,
   updatedText,
   lastUpdated,
-  bannerParagraph,
-  buttonText,
-  buttonLink,
-  secondButtonText,
-  secondButtonLink,
-  children,
   showLikes,
-  slug,
   recentArticles,
   errorCallback,
-  errorMessage,
-  tableOfContents,
-  languageName
 }) => {
   const timeBlock = (published, lastUpdated, addClass) => {
     const time = <>
@@ -57,7 +53,11 @@ const MainCentered = ({
           </>
         )}
       </div>
-      <RelatedArticles query={recentArticles} />
+      <RelatedArticles
+        section={section}
+        subsection={subsection}
+        nodes={recentArticles}
+      />
     </main>
   )
 }

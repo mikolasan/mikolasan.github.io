@@ -18,7 +18,7 @@ const config = {
     description: `Magazine, blog and knowledgebase for geeks`,
     author: `@mikolasan`,
   },
-  trailingSlash: `never`,
+  trailingSlash: `ignore`,
   flags: {
     DEV_SSR: true,
     FAST_DEV: true,

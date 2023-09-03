@@ -4,11 +4,11 @@
     "toPath": "/linux/weston-autolaunch"
   },
   {
-    "fromPath": "/blog/custom-linux/",
+    "fromPath": "/blog/custom-linux",
     "toPath": "/linux/custom-linux-distro"
   },
   {
-    "fromPath": "/projects/why-am-i-doing-this/",
+    "fromPath": "/projects/why-am-i-doing-this",
     "toPath": "/blog/why-am-i-doing-this"
   },
   {
