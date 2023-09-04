@@ -99,7 +99,7 @@ Now you are ready to publish your changes and make a Pull Request
 git push origin branch-name-with-your-work
 ```
 
-If you use Pull Requests on GitHub or BitBuclet then branches will be merged automatically when the Pull Request is accepted. But if you are just messing with branches then merge your branch into master
+If you use Pull Requests on GitHub or BitBucket then branches will be merged automatically when the Pull Request is accepted. But if you are just messing with branches then merge your branch into master
 
 ```bash
 git checkout master

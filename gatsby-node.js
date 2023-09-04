@@ -69,12 +69,14 @@ exports.onCreatePage = ({ page, actions }) => {
     })
   }
 
+  // restore old pages that already in the index
+  // add redirect link to new pages
   const redirect = findRedirect(oldPath)
   if (redirect !== undefined) {
     console.log(`create redirect ${redirect.fromPath} -> ${oldPath}`)
-    page.path = redirect.fromPath
     createPage({
       ...page,
+      path: redirect.fromPath,
       context: {
         ...page.context,
         redirect: redirect.toPath,
