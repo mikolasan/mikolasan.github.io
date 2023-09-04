@@ -4,6 +4,22 @@ const likesConfig = require("./likes-config")
 const nifty = require("./src/nifty")
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
+const genericlistTemplate = path.resolve(`./src/templates/genericListTemplate.js`)
+const codeListTemplate = path.resolve(`./src/templates/codeListTemplate.js`)
+const ideasListTemplate = path.resolve(`./src/templates/ideasListTemplate.js`)
+const linuxListTemplate = path.resolve(`./src/templates/linuxListTemplate.js`)
+const makeListTemplate = path.resolve(`./src/templates/makeListTemplate.js`)
+const scienceListTemplate = path.resolve(`./src/templates/scienceListTemplate.js`)
+
+const ruBlogListTemplate = path.resolve(`./src/templates/ru/blogListTemplate.js`)
+const ruParanormalListTemplate = path.resolve(`./src/templates/ru/paranormalListTemplate.js`)
+const ruMakeListTemplate = path.resolve(`./src/templates/ru/makeListTemplate.js`)
+const ruDevlogListTemplate = path.resolve(`./src/templates/ru/devlogListTemplate.js`)
+const ruScienceListTemplate = path.resolve(`./src/templates/ru/scienceListTemplate.js`)
+
+const pageTemplate = path.resolve(`./src/templates/blogTemplate.js`)
+const pageRuTemplate = path.resolve(`./src/templates/ru/blogTemplate.js`)
+
 const findRedirect = path => redirects.find(r => r.toPath === path)
 
 exports.onCreatePage = ({ page, actions }) => {
@@ -43,7 +59,7 @@ exports.onCreatePage = ({ page, actions }) => {
     //   page.matchPath = `${oldPath}/*`
     // }
     // createPage(page)
-    
+
     createPage({
       ...page,
       path: newPath,
@@ -188,20 +204,23 @@ const nodeToPageData = (node, template, previous, next, recentArticles) => {
   }
 }
 
-const paginationFor = (title, path, listTemplate, regex, numPosts, postsPerPage = 6) => {
-  const numPages = Math.ceil(numPosts / postsPerPage)
+const paginationFor = (path, numPosts, config) => {
+  const postsPerPage = config.postsPerPage
+  const numPages = Math.ceil(numPosts / config.postsPerPage)
   return Array.from({ length: numPages }).map((_, i) => {
     return {
       path: i === 0 ? path : `${path}/${i + 1}`,
-      component: listTemplate,
+      component: config.template,
       context: {
         limit: postsPerPage,
         skip: i * postsPerPage,
         numPages,
         currentPage: i + 1,
         baseUrl: path,
-        title,
-        regex
+        title: config.title,
+        regex: config.regex,
+        section: config.section,
+        subsection: config.subsection,
       },
     }
   })
@@ -243,46 +262,104 @@ const groupBySections = nodes => {
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
-
-  const genericlistTemplate = path.resolve(`./src/templates/genericListTemplate.js`)
-  const printsListTemplate = path.resolve(`./src/templates/3dPrintsListTemplate.js`)
-  const blogListTemplate = path.resolve(`./src/templates/blogListTemplate.js`)
-  const codeListTemplate = path.resolve(`./src/templates/codeListTemplate.js`)
-  const cppListTemplate = path.resolve(`./src/templates/cppListTemplate.js`)
-  const devlogListTemplate = path.resolve(`./src/templates/devlogListTemplate.js`)
-  const gamedevListTemplate = path.resolve(`./src/templates/gamedevListTemplate.js`)
-  const ideasListTemplate = path.resolve(`./src/templates/ideasListTemplate.js`)
-  const linuxListTemplate = path.resolve(`./src/templates/linuxListTemplate.js`)
-  const makeListTemplate = path.resolve(`./src/templates/makeListTemplate.js`)
-  const projectsListTemplate = path.resolve(`./src/templates/projectsListTemplate.js`)
-  const scienceListTemplate = path.resolve(`./src/templates/scienceListTemplate.js`)
-  
-  const ruBlogListTemplate = path.resolve(`./src/templates/ru/blogListTemplate.js`)
-  const ruParanormalListTemplate = path.resolve(`./src/templates/ru/paranormalListTemplate.js`)
-  const ruMakeListTemplate = path.resolve(`./src/templates/ru/makeListTemplate.js`)
-  const ruDevlogListTemplate = path.resolve(`./src/templates/ru/devlogListTemplate.js`)
-  const ruScienceListTemplate = path.resolve(`./src/templates/ru/scienceListTemplate.js`)
-
-  const pageTemplate = path.resolve(`./src/templates/blogTemplate.js`)
-  const pageRuTemplate = path.resolve(`./src/templates/ru/blogTemplate.js`)
-
   const paginationConfig = {
-    "/blog": {template: genericlistTemplate, postsPerPage: 18, title: `Blog`, regex: "/markdown\/blog\//"},
-    "/code/cpp": {template: cppListTemplate, postsPerPage: 6, title: `C++`},
-    "/code": {template: codeListTemplate, postsPerPage: 9, title: ``},
-    "/devlog": {template: devlogListTemplate, postsPerPage: 18, title: ``},
-    "/gamedev": {template: gamedevListTemplate, postsPerPage: 6, title: ``},
-    "/ideas": {template: ideasListTemplate, postsPerPage: 6, title: ``},
-    "/linux": {template: linuxListTemplate, postsPerPage: 25, title: ``},
-    "/make/3d-prints": {template: printsListTemplate, postsPerPage: 6, title: ``},
-    "/make": {template: makeListTemplate, postsPerPage: 6, title: ``},
-    "/projects": {template: projectsListTemplate, postsPerPage: 6, title: ``},
-    "/science": {template: scienceListTemplate, postsPerPage: 6, title: ``},
-    "/ru/blog": {template: ruBlogListTemplate, postsPerPage: 6, title: ``},
-    "/ru/paranormal": {template: ruParanormalListTemplate, postsPerPage: 6, title: ``},
-    "/ru/make": {template: ruMakeListTemplate, postsPerPage: 6, title: ``},
-    "/ru/devlog": {template: ruDevlogListTemplate, postsPerPage: 6, title: ``},
-    "/ru/neural-networks": {template: ruScienceListTemplate, postsPerPage: 6, title: ``},
+    "/blog": {
+      template: genericlistTemplate,
+      postsPerPage: 18,
+      title: `Blog`,
+      regex: "/markdown\/blog\//",
+      section: "blog",
+    },
+    "/code/cpp": {
+      template: genericlistTemplate,
+      postsPerPage: 6,
+      title: `C++`,
+      regex: "/markdown\/code\/cpp\//",
+      section: "code",
+      subsection: "cpp",
+    },
+    "/code": {
+      template: codeListTemplate,
+      postsPerPage: 9,
+      title: ``
+    },
+    "/devlog": {
+      template: genericlistTemplate,
+      postsPerPage: 18,
+      title: `Devlog`,
+      regex: "/markdown\/devlog\//",
+      section: "blog",
+      subsection: "devlog",
+    },
+    "/gamedev": {
+      template: genericlistTemplate,
+      postsPerPage: 6,
+      title: `Gamedev`,
+      regex: "/markdown\/gamedev\//",
+      section: "code",
+      subsection: "gamedev",
+    },
+    "/ideas": {
+      template: ideasListTemplate,
+      postsPerPage: 6,
+      title: ``
+    },
+    "/linux": {
+      template: linuxListTemplate,
+      postsPerPage: 25,
+      title: ``
+    },
+    "/make/3d-prints": {
+      template: genericlistTemplate,
+      postsPerPage: 6,
+      title: `3D Prints`,
+      regex: "/markdown\/make\/3d-prints\//",
+      section: "make",
+      subsection: "3d-prints",
+    },
+    "/make": {
+      template: makeListTemplate,
+      postsPerPage: 6,
+      title: ``
+    },
+    "/projects": {
+      template: genericlistTemplate,
+      postsPerPage: 6,
+      title: `Projects`,
+      regex: "/markdown\/projects\//",
+      section: "code",
+      subsection: "projects",
+    },
+    "/science": {
+      template: scienceListTemplate,
+      postsPerPage: 6,
+      title: ``
+    },
+    "/ru/blog": {
+      template: ruBlogListTemplate,
+      postsPerPage: 6,
+      title: ``
+    },
+    "/ru/paranormal": {
+      template: ruParanormalListTemplate,
+      postsPerPage: 6,
+      title: ``
+    },
+    "/ru/make": {
+      template: ruMakeListTemplate,
+      postsPerPage: 6,
+      title: ``
+    },
+    "/ru/devlog": {
+      template: ruDevlogListTemplate,
+      postsPerPage: 6,
+      title: ``
+    },
+    "/ru/neural-networks": {
+      template: ruScienceListTemplate,
+      postsPerPage: 6,
+      title: ``
+    },
   }
 
   let result
@@ -313,7 +390,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     // pagination
     if (Object.hasOwn(paginationConfig, sectionName)) {
       const config = paginationConfig[sectionName]
-      paginationFor(config.title, sectionName, config.template, config.regex, section.paginationCount, config.postsPerPage)
+      paginationFor(sectionName, section.paginationCount, config)
         .forEach(pageData => createPage(pageData))
     }
   }

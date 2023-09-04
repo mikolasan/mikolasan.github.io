@@ -7,10 +7,11 @@ const ListTemplate = ({ data, pageContext }) => {
   return (
     <Layout
       title={pageContext.title}
-      section="blog"
+      section={pageContext.section}
+      subsection={pageContext.subsection}
       crumbs={pageContext.breadcrumb.crumbs}
       languageName="Switch to russian version"
-      anotherLanguageLink="/ru/blog"
+      anotherLanguageLink="/ru"
     >
       <PostList
         posts={data.allMarkdownRemark.edges}
