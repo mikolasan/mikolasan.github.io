@@ -32,7 +32,7 @@ class TechStackSmack extends React.Component {
           New version based on a tweet from <a href="https://twitter.com/chriskalmar/status/1459066591912640529">Chis Kalmar</a>
         </p>
         
-        <div className={styles.generator}>
+        <div>
           <canvas className={styles.slotmachine} id="reels"></canvas>
           <canvas className={styles.slotmachine} id="ui"></canvas>
           <h2>The result</h2>

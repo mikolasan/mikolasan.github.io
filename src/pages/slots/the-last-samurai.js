@@ -28,7 +28,7 @@ class TheLastSamurai extends React.Component {
           Now, he is on the second reel.
         </p>
         
-        <div className={styles.generator}>
+        <div>
           <canvas className={styles.slotmachine} id="reels"></canvas>
           <canvas className={styles.slotmachine} id="ui"></canvas>
         </div>
