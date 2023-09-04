@@ -41,21 +41,6 @@ const Banner = ({
   return (
     <>
       <div className="banner">
-        <div className="banner-background">
-          <StaticImage 
-            src="../images/index-7.jpg"
-            alt="Car forest"
-            placeholder="blurred"
-            layout="constrained"
-            breakpoints={[576, 768, 922, 1400]}
-            transformOptions={{
-              cropFocus: "attention",
-              fit: "cover",
-            }}
-            quality={100}
-            style={{minHeight:"300px", maxHeight: '300px'}}
-          />
-        </div>
         <div className="banner-text">
           <div className="featured-area">
             <div className="featured-text">

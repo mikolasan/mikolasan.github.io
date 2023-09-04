@@ -172,13 +172,12 @@ a:visited.activelink  {
 @media all and (max-width: 768px) {
   .topnav { display: none; }
   .mobilenav {
-  width: 100%;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content:space-between;
-  font-family: 'Manrope', sans-serif;
-  border-bottom: #211a1d solid 0.25rem;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    font-family: 'Manrope', sans-serif;
   }
 }
 

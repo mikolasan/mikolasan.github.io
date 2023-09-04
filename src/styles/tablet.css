@@ -19,12 +19,13 @@
     padding-top: 1.5rem;
   }
   .time-block span {
+    margin-left: 1.5rem;
   }
   .left-time-block {
-    margin-left: 1.5rem;
     padding-left: 0;
-    width: max-content;
-    border-bottom: #211a1d  0.25rem solid;
+    width: 100%;
+    background-color: #f0f0f0;
+    border-bottom: 0.25rem solid #000;
   }
   .table-of-contents {
     margin-left: 1.5rem;

@@ -69,18 +69,18 @@ exports.onCreatePage = ({ page, actions }) => {
     })
   }
 
-  // const redirect = findRedirect(oldPath)
-  // if (redirect !== undefined) {
-  //   console.log(`create redirect ${redirect.fromPath} -> ${oldPath}`)
-  //   page.path = redirect.fromPath
-  //   createPage({
-  //     ...page,
-  //     context: {
-  //       ...page.context,
-  //       redirect: redirect.toPath,
-  //     },
-  //   })
-  // }
+  const redirect = findRedirect(oldPath)
+  if (redirect !== undefined) {
+    console.log(`create redirect ${redirect.fromPath} -> ${oldPath}`)
+    page.path = redirect.fromPath
+    createPage({
+      ...page,
+      context: {
+        ...page.context,
+        redirect: redirect.toPath,
+      },
+    })
+  }
 
   // add `updated` pageContext to JS pages (not Markdown, not pagination)
   // if (`updated` in page.context) {
