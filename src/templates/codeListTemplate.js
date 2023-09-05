@@ -6,6 +6,7 @@ import SectionCard from "../components/sectionCard"
 
 const Code = ({ data, pageContext }) => (
   <Layout
+    mainConf="list"
     title="Code"
     section="code"
     crumbs={pageContext.breadcrumb.crumbs}

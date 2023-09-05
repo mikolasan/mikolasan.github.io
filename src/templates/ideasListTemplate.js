@@ -5,6 +5,7 @@ import PostList from "../components/postList"
 
 const Ideas = ({ data, pageContext }) => (
   <Layout
+    mainConf="list"
     title="Ideas"
     section="code"
     subsection="ideas"

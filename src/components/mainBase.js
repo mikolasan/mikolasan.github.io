@@ -1,27 +1,28 @@
-import { default as React, useEffect, useState, useSyncExternalStore } from "react"
+import React from "react"
 import MainCentered from "./mainCentered";
 import MainFullscreen from "./mainFullscreen";
-import MainWide from "./mainWide";
-import { windowSizeStore } from "../components/windowSizeStore"
+import MainList from "./mainList";
 
 export default function MainBase(props) {
-  const { height, width } = useSyncExternalStore(
-    windowSizeStore.subscribe,
-    windowSizeStore.getSnapshot,
-    windowSizeStore.getServerSnapshot)
-
-  return props.mainConf === "fullscreen" && (
-    <MainFullscreen>
-      {props.children}
-    </MainFullscreen>
-  ) || (
-    width > 1660 && (
-      <MainWide {...props}>
+  switch (props.mainConf) {
+  case "fullscreen":
+    return (
+      <MainFullscreen>
         {props.children}
-      </MainWide>
-    ) ||
+      </MainFullscreen>
+    )
+  case "list":
+    return (
+      <MainList>
+        {props.children}
+      </MainList>
+    )
+  default:
+    return (
       <MainCentered {...props}>
         {props.children}
       </MainCentered>
-  )
+    )
+  }
+
 }

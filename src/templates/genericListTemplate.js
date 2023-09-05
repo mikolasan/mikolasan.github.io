@@ -6,6 +6,7 @@ import PostList from "../components/postList"
 const ListTemplate = ({ data, pageContext }) => {
   return (
     <Layout
+      mainConf="list"
       title={pageContext.title}
       section={pageContext.section}
       subsection={pageContext.subsection}

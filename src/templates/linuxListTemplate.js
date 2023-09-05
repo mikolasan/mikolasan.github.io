@@ -6,6 +6,7 @@ import SectionCard from "../components/sectionCard"
 
 const Linux = ({ data, pageContext }) => (
   <Layout
+    mainConf="list"
     title="Linux"
     section="code"
     subsection="linux"

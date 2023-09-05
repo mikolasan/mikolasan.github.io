@@ -20,7 +20,7 @@ const RecentArticles = ({ nodes, section, subsection }) => {
         ))}
       </div>
     </aside>
-  ) || ``
+  ) || <div className={styles.norecentarticles}></div>
 }
 
 export default RecentArticles

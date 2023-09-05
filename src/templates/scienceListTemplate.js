@@ -6,6 +6,7 @@ import SectionCard from "../components/sectionCard"
 
 const Science = ({ data, pageContext }) => (
   <Layout
+    mainConf="list" 
     title="Science"
     section="science"
     crumbs={pageContext.breadcrumb.crumbs}
