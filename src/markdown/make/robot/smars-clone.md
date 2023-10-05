@@ -87,3 +87,5 @@ Arduino UNO size is 69mm x 53mm. Geometry is in mm (not in)
 > The joints of the tracks are simply pieces of 1.75mm filament cutted at the right length.
 
 I used toothpicks instead :) [Also possible](https://www.thingiverse.com/thing:3710272) to use binding rivets (size 1/8") as pins
+
+Also possible to print the whole track in go already assembled if put it on the side (see https://www.thingiverse.com/thing:2319872)

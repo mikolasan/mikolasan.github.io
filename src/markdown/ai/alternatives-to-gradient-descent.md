@@ -65,3 +65,8 @@ Source: [1](https://stats.stackexchange.com/questions/97014/what-are-alternative
 ## Towards a more biologically plausible learning algorithm
 
 Main article - Biologically-Plausible Learning Algorithms Can Scale to Large Datasets [link](https://arxiv.org/pdf/1811.03567.pdf)
+
+
+## Nash’s equilibrium
+
+Why is gradient descent the most popular, the only one technique in use? Because it’s stable. No matter what’s in your training data, with any order you will get predictable outcome. And things like Adaptive Resonance Theory aren't stable in that regard. They learn fast, but the order of data is very important. But. What if we apply Nash’s equilibrium here? Every system, component in the brain fight for their truth and shift the system, they play against each other, but we can determine when they must stop overwriting each other. Will it fix the problem with order?

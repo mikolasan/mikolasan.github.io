@@ -43,3 +43,8 @@ https://twitter.com/mikolasan/status/1480902412655378437
 
 Go Godot Jam 3. Submitted: https://neup.itch.io/see-you-later-aligator. [Devlog link](/gamedev/evolution-card-game).
 
+## 2023
+
+### Ninja vs AI
+
+Mega Jam. Theme: Antiquated Future. Joined, but not submitted. Too much time spent on movement component. [Devlog link](/gamedev/ninja-vs-ai)

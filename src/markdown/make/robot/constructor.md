@@ -25,3 +25,23 @@ lastModified: 2022-12-21
 - Well parts, finally! But no manual :(  https://www.thingiverse.com/thing:566793
 - Tiny drone https://www.printables.com/model/396395-goblin-
 - From quadcopter to the car https://cults3d.com/en/3d-model/tool/flexcar-transformed-from-flexbot-series
+
+## The process
+
+I started with nuts and bolts. Literally.
+https://www.thingiverse.com/thing:1460364 
+
+Because in the constructor all different planks must be connected together with bolts. At least if our main material is plastic and we are not going to copy from LEGO. 
+
+Also this is a temporary component. I print it to feel it in my hands. And decide with what size I want to go. Size of the bolts will define size of planks and sheets and that will define the total size of the constructor.
+
+
+Some cold grey PETG. I don’t like how they rub each other. This is mostly because of many stringing artifacts inside the nut. And spiky surfaces will be changed too.
+
+I must confess. This is an addictive fidget toy. I spun it the whole day yesterday. (That’s why it spins freely now)
+
+next to try
+
+
+escapement mechanisms (gravity) https://www.youtube.com/watch?v=yfNFbE0ahi0
+tourbillon (spring mechanism) https://www.youtube.com/watch?v=bLEi2mcOXw0

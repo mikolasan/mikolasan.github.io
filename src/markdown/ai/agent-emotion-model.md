@@ -247,6 +247,18 @@ $M$ is the _normal level_ or the target value for the neuromodulator.
 
 There is a wheel of emotions developed by Dr. Gloria Willcox. It starts with 6 primal emotions mad, sad, scared, joyful, powerful, peaceful. And then it subdivides each emotion on 6 sub-emotions. For example for scared it's confused, rejected, helpless, submissive, insecure, anxious. Each of them in its turn has two nuances. Like, insecure splits into inferior and inadequate. Neuromodulators affect directly 6 primal emotions, but all nuances depend on the context. So what kind of simple model can account for dynamics in the agents behavior and define very specific emotions and switch between them?
 
+I think we are ready to write some code. I'm using pixi.js to display neuromodulator level change in real time. Every frame update we update level_value and draw it
+
+```javascript
+const process = (delta) => {
+  total_elapsed += delta / 50
+  if (pump_time !== undefined && level_value < 100) {
+    elapsed = delta;
+    // ... calculate new level_value
+    graphics = draw_bar(graphics, level_value)
+  }
+}
+```
 
 ### About robot itself
 
