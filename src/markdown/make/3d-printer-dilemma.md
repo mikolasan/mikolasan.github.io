@@ -26,7 +26,7 @@ I've read a few articles about 3D printers. The technology is so simple. The fra
 
 Besides, one should be proficient in 3D modeling and know the tools. Blender, for example.
 
-I spent about 2 weeks [creating a car model](/make/3d-print-carmageddon) to make a birthday present for my 40-year-old brother. The car is from his favorite video game. That project was so absorbing. But somewhere along the process, when colors didn't go well, I raised my concerns to mum. She said that anything made with your hands that holds a personal meaning is more valuable than anything you can buy.
+I spent about 2 weeks [creating a car model](/make/3d-prints/eagle-carmageddon) to make a birthday present for my 40-year-old brother. The car is from his favorite video game. That project was so absorbing. But somewhere along the process, when colors didn't go well, I raised my concerns to mum. She said that anything made with your hands that holds a personal meaning is more valuable than anything you can buy.
 
 It turned out that my brother thinks the other way around. Or I don't know. He even hasn't recalled the game name. So next time, I bought him a rum bottle at the duty-free zone. He was a little happier about that.
 

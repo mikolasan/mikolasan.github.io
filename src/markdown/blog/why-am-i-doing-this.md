@@ -15,7 +15,7 @@ My projects. I invested my time and life, but did I get anything back from them?
 
 I feel my development experience not compete without significant success of the app. I learned a little about Java, found not pleasant things about Android API, survived many design iterations, the code is a bit mess, but it's OK and readable though, however functionality is minimal. No downloads. In other words I’m not satisfied with the current situation around my application. 
 
-[Roguelike (PyGame)](/gamedev/pyroguelike). It is playable! It requires a little effort to finish, and it uses my "engine" written from scratch. Nothing special about gameplay. Just one month for the jam spent. I didn't win.
+[Roguelike (PyGame)](/gamedev/pygame-roguelike). It is playable! It requires a little effort to finish, and it uses my "engine" written from scratch. Nothing special about gameplay. Just one month for the jam spent. I didn't win.
 
 [Overload (Godot 3.1)](/gamedev/overload-godot). The code is tangled as hell. I am lost in that class hierarchy that I have created. 
 

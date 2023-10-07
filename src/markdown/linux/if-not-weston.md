@@ -6,7 +6,7 @@ published: 2021-10-14
 lastModified: 2021-10-14
 ---
 
-My fisrt problem was: [How to center window in Weston?](/blog/center-window-in-weston). My second problem was: [Drop shadow effect in Weston](/blog/drop-shadow-in-weston)
+My fisrt problem was: [How to center window in Weston?](/blog/center-window-in-weston). My second problem was: [Drop shadow effect in Weston](/linux/drop-shadow-in-weston)
 
 The last one is so simple, but I didn't find a working solution. So
 

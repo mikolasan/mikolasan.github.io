@@ -14,17 +14,17 @@ lastModified: 2021-10-31
 
 ## Правила
 
-[Подготовка](./my-game/setup)
+[Подготовка](/ru/board-games/my-game/setup)
 
-[Ход](./my-game/turns)
+[Ход](/ru/board-games/my-game/turns)
 
-[Навыки персонажей](./my-game/abilities)
+[Навыки персонажей](/ru/board-games/my-game/abilities)
 
-[Репутация](./my-game/reputation)
+[Репутация](/ru/board-games/my-game/reputation)
 
-[Квесты/задания](./my-game/quests) (Происходящее)
+[Квесты/задания](/ru/board-games/my-game/quests) (Происходящее)
 
-[Предметы/репутация](./my-game/items) (Осмотрительность)
+[Предметы/репутация](/ru/board-games/my-game/items) (Осмотрительность)
 
 ![Расклад на столе](./my-game/table-layout.jpg)
 

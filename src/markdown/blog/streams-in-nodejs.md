@@ -6,7 +6,7 @@ published: 2022-09-08
 lastModified: 2022-09-08
 ---
 
-I'm trying to add "last updated" time to [my blog on Gatsby](blog/what-static-site-generator).
+I'm trying to add "last updated" time to [my blog on Gatsby](/blog/what-static-site-generator).
 
 
 ## Timeline

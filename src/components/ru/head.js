@@ -1,6 +1,7 @@
 import React from "react"
+import { removeHtmlExtension, removeTrailingSlash } from "../../nifty"
 
-const siteUrl = `https://neupokoev.xyz/ru`
+const siteUrl = `https://neupokoev.xyz`
 const siteTitle = `Наука, мастерская, девлог`
 const siteDescription = `Magazine, blog and knowledge base for embedded engineers, game developers and geeks`
 const siteImageUrl = `https://neupokoev.xyz/images/preview.jpg`
@@ -15,10 +16,11 @@ export const Head = ({ location, params, data, pageContext }) => {
   const lang = location.pathname.startsWith("/ru") ? "ru" : "en"
   const pageUrl = location.pathname // pageContext.url
   
-  let url = siteUrl
+  let url = `${siteUrl}/ru`
   if (pageUrl !== "/") {
     url = `${siteUrl}${pageUrl}`
   }
+  const canonicalUrl = removeTrailingSlash(removeHtmlExtension(url))
 
   let title = siteTitle
   let description = siteDescription
@@ -151,7 +153,7 @@ export const Head = ({ location, params, data, pageContext }) => {
 
       <title>{title}</title>
 
-      <link rel="canonical" href={url} />
+      <link rel="canonical" href={canonicalUrl} />
       <link rel="preconnect" href="https://fonts.googleapis.com"></link>
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"></link>
 

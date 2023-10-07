@@ -19,7 +19,7 @@ lastModified: 2022-08-22
 
 ## Connect to Raspberry Pi
 
-I use [interactive pinout]() I mentioned in [my collection](/make/useful-links) of useful links for DIY hobbyist.
+I use [interactive pinout](https://pinout.xyz) I mentioned in [my collection](/make/resources) of useful links for DIY hobbyist.
 
 We need I2C interface.
 

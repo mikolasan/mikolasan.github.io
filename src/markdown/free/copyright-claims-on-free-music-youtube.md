@@ -18,7 +18,8 @@ YouTube says: Copyright owner AdRev for Rights Holder on behalf of 4 House Digit
 
 ## Video uses a song's melody
 
-![screenshot from YouTube](video_uses_a_songs_melody.png)
+![screenshot from YouTube](./video_uses_a_songs_melody.png)
+
 ### In the Belly of the Whale by Nihilore
 
 License: Nihilore is released under a Creative Commons Attribution 4.0 license

@@ -7,7 +7,7 @@ published: 2022-06-21
 lastModified: 2022-06-21
 ---
 
-Recently I listed [the most addictive games](/blog/most-addictive-games) of my time. But how good they can be with new technologies?
+Recently I listed [the most addictive games](/gamedev/most-addictive-games) of my time. But how good they can be with new technologies?
 
 1. **Yetisports** using Nintendo Switch controller
 2. **NFK** on Smart TV with wireless set of keyboard and mouse

@@ -52,4 +52,4 @@ lastModified: 2022-07-31
 
 ## Как уместить 16х16 пазл на мобильный экран?
 
-![Game screen](./sudoku-game-2.png)
+![Game screen](./../../gamedev/sudoku-game-2.png)

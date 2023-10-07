@@ -19,7 +19,7 @@ I decided to go rogue. Top down view. My initial plan was 48x48 pixels for a til
 
 ![](./round-yellow-monster-pixel-art.jpg)
 
-I was sure that I can find pixel art characters and animations, but I did find only very good reference. Submitted: https://replit.com/@stakanmartini/test-roguelike-11 [Devlog link](/gamedev/pyroguelike).
+I was sure that I can find pixel art characters and animations, but I did find only very good reference. Submitted: https://replit.com/@stakanmartini/test-roguelike-11 [Devlog link](/gamedev/pygame-roguelike).
 
 ### Double Down: Aftermath
 

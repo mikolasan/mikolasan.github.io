@@ -24,7 +24,7 @@ lastModified: 2021-10-28
 
 https://www.reddit.com/r/selfhosted/comments/dp6jd2/pomoday_easy_to_use_yet_powerful_and_flexible/
 
-> [Pomoday](pomoday.com) - Easy to use, yet powerful and flexible web-based task management software that you can use with just a keyboard.
+> [Pomoday](https://web.archive.org/web/20191102133726/https://www.pomoday.com/) - Easy to use, yet powerful and flexible web-based task management software that you can use with just a keyboard.
 >
 > Hey, I'm the developer of Pomoday. Great to see it posted here and see how you guys responsed to it, especially with the nameeeeee, I don't know what should I feel about it, haha.
 >

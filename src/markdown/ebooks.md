@@ -9,7 +9,7 @@ lastModified: 2021-11-10
 
 My comprehensive tutorial about PXE Boot on BIOS and UEFI clients.
 
-![Books lying on my desk](./pxe-boot-book.jpg)
+![Books lying on my desk](./blog/pxe-boot-book.jpg)
 
 I will cover how to install PXE Server and boot on Legacy systems and then how to upgrade the installation to support modern UEFI firmware. I'm going to use Raspberry Pi board as a server.
 

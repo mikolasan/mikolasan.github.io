@@ -83,7 +83,7 @@ I dedicated special post to [Pi Camera](/make/raspberry-pi-camera), because it t
 
 ### Stream camera feed
 
-It raises another problem: overheating. I have a simple radiator without active cooling, no case. But I become concerned when Raspberry Pi processes the camera input. It become so hot > 90C and I think it requires appropriate cooling system. Which means I need to buy proper radiators, and a fan, and [print a case](/make/3d-printed-raspberry-pi-case). At this point I [was already considering purchasing a 3D printer](/make/3d-printer-dilemma) and the project has been set on pause. ([one week I was building Prusa Original Mini](/make/prusa-mini-original))
+It raises another problem: overheating. I have a simple radiator without active cooling, no case. But I become concerned when Raspberry Pi processes the camera input. It become so hot > 90C and I think it requires appropriate cooling system. Which means I need to buy proper radiators, and a fan, and [print a case](/make/3d-prints/raspberry-pi-case). At this point I [was already considering purchasing a 3D printer](/make/3d-printer-dilemma) and the project has been set on pause. ([one week I was building Prusa Original Mini](/make/prusa-mini-original))
 
 ## Further reading
 

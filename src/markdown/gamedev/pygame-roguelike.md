@@ -1,5 +1,5 @@
 ---
-path: "/gamedev/pyroguelike"
+path: "/gamedev/pygame-roguelike"
 date: 2019-04-17
 title: "Not your father's roguelike"
 featuredImage: pyroguelike-1.png

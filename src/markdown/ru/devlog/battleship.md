@@ -10,7 +10,7 @@ lastModified: 2022-07-31
 
 Бато йо слагет!
 
-![Main menu](./battleship_main_menu.png)
+![Main menu](./../../gamedev/battleship_main_menu.png)
 
 ## Идея
 
@@ -20,13 +20,13 @@ lastModified: 2022-07-31
 
 Это заключение меня подвело, когда я начал собирать графику [на Пинтересте](https://www.pinterest.com/nenikolay/game-design/battleship/) - хорошего арта очень мало. А пиксельного - тотальный ноль.
 
-![Positioning](./battleship_positioning.png)
+![Positioning](./../../gamedev/battleship_positioning.png)
 
 ## Под капотом
 
 Первая игра с питоновскими классами. Да, это игра, но я играл именно с классами. Идея была в том, чтобы сделать такую иерархию, чтобы отделить логику и сделать не зависящим от нее отображение объектов. Текстовый рендер, 2д рендер, 3д рендер (3д на питоне - это шутка).
 
-![Console version](./battleship_console.png)
+![Console version](./../../gamedev/battleship_console.png)
 
 ## Этимология названия
 
@@ -35,7 +35,7 @@ lastModified: 2022-07-31
 - **bato yo** - _морской_ с креольского на гаити
 - **slaget** - _бой_ с норвежского и голландского 
 
-![Gameplay](./battleship_gameplay.png)
+![Gameplay](./../../gamedev/battleship_gameplay.png)
 
 ## Оригинальные элементы
 
@@ -51,4 +51,4 @@ lastModified: 2022-07-31
 
 Разведка. Можно заранее узнать что находится в нужной клетке. Если это клетка не пустая то есть шанс 50/50, что субмарина (однопалубный) будет рассекречен.
 
-![Win message](./battleship_win_message.png)
+![Win message](./../../gamedev/battleship_win_message.png)

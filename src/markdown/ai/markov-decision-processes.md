@@ -23,7 +23,7 @@ Appropriate keywords:
 - MDP formal description https://arxiv.org/pdf/2006.05879.pdf (wikipedia as always sucks)
 - More math https://games-automata-play.github.io/blog/dynamic_algorithms_MDP/
 - [Big review of many other planning techniques](https://arxiv.org/pdf/1105.5460.pdf) in **Decision-Theoretic Planning: Structural assumptions and Computational Leverage**. Task of making coffee, checking mail and cleaning the room. MDP to bayesian network. Task decomposition - partitioning of the state space into blocks - exactly my thought that infinite grid world doesn't exist, it's only possible to process small rooms and then combine them. But how such rooms are created? 
-- [Reward is not Necessary](/ai/reward-is-not-necessary.md). Temporal goals https://arxiv.org/pdf/2211.10851.pdf
+- [Reward is not Necessary](/ai/reviews/reward-is-not-necessary). Temporal goals https://arxiv.org/pdf/2211.10851.pdf
 - Unpredictable transitions https://gaips.inesc-id.pt/~fmelo/publications/witwicki13icaps.pdf
 - Dynamic states with fixed initial one https://finale.seas.harvard.edu/files/finale/files/doshi-velez-tpami-2015.pdf
 - Dynamic state space https://www.frontiersin.org/articles/10.3389/fncom.2021.784592/full <<<=== this is something very related to what I was - hoping to find. It's 2022, imagine how fresh it is!

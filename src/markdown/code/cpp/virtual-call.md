@@ -54,7 +54,7 @@ int main(int argc, char const *argv[])
 }
 ```
 
-Let's now play around with a base class that has const and non-const versions. You may want to review [what const pointer means](/code/cpp-const)
+Let's now play around with a base class that has const and non-const versions. You may want to review [what const pointer means](/code/cpp/const-ness)
 
 ```cpp
 #include <iostream>
