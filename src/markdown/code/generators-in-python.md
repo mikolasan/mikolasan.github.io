@@ -82,7 +82,6 @@ The way how yield stops the execution in the generator itself is strange for my 
 97
 96
 ```
-![slide 4](./python-generator-4.jpg)
 
 
 ## Generators in Machine Learning

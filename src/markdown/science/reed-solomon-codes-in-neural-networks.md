@@ -14,6 +14,8 @@ So first we should keep redundancy - different paths can carry the same informat
 
 Wait, how the path can become information itself?
 
+![Encoding using neurons instead of discrete gates](reed-solomon-in-ann-encoding.png)
+
 [https://tomverbeure.github.io/2022/08/07/Reed-Solomon.html](https://tomverbeure.github.io/2022/08/07/Reed-Solomon.html)
 
 [https://www.embeddedrelated.com/showarticle/1182.php](https://www.embeddedrelated.com/showarticle/1182.php) (over Galois fields)
@@ -34,10 +36,12 @@ New improvements [https://ietresearch.onlinelibrary.wiley.com/doi/10.1049/iet-co
 
 Lagrangian Interpolation (from dots to polynomial) [https://www.dcode.fr/lagrange-interpolating-polynomial](https://www.dcode.fr/lagrange-interpolating-polynomial)
 
+![Lagrange interpolating polynomial in Wolfram](./wolfram-interpolating-polynomial.png)
 ```
 Lagrange interpolating polynomial (-1,8),(0,5),(1,12),(2,12),(3,15) (9 x^4)/8 - (61 x^3)/12 + (31 x^2)/8 + (85 x)/12 + 5
 ```
 
+![Evaluate in Wolfram](./wolfram-evaluate.png)
 
 ```
 evaluate f(x)=8+5x+12x^2+12x^3+15x^4 at x=-1 a-b+c-d+e=18, a=8, a+b+c+d+e=52, a+2b+4c+8d+16e=402, a+3b+9c+27d+81e=1670 (Gaussian elimination)
@@ -66,6 +70,8 @@ Implementation with discrete gates
 Decoding theory first [https://www-users.cse.umn.edu/~garrett/students/reu/MB_algorithm.pdf](https://www-users.cse.umn.edu/~garrett/students/reu/MB_algorithm.pdf)
 
 [https://tomverbeure.github.io/2022/08/07/Reed-Solomon.html](https://tomverbeure.github.io/2022/08/07/Reed-Solomon.html) - encoding
+
+![Add scheduler and debug it](reed-solomon-in-ann-debugging.png)
 
 [](https://cas.cnu.ac.kr/wp-data/international_journal/%5B2018%5D%20Area%20optimized%20Syndrome%20Calculation%20for%20Reedsolomon%20Decoder.pdf)[https://cas.cnu.ac.kr/wp-data/international_journal/[2018]](https://cas.cnu.ac.kr/wp-data/international_journal/%5B2018%5D) Area optimized Syndrome Calculation for Reedsolomon Decoder.pdf - syndromes
 

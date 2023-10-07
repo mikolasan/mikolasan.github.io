@@ -17,6 +17,6 @@ There is simple free diagram editor [PlantText](https://www.planttext.com/). You
 
 It's script based, which means you don't need to drag and drop and then align stuff. Scripts force you to keep your diagrams neat and clear. There are plenty of examples to get started. Here is an example
 
-![diagram of network communication](./planttext-diagram-examle.png)
+![diagram of network communication](./planttext-diagram-example.png)
 
 ![code to produce such diagram](./planttext-diagram-code.png)

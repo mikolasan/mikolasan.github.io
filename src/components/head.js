@@ -1,4 +1,5 @@
 import React from "react"
+import { removeHtmlExtension } from "../nifty"
 
 const siteUrl = `https://neupokoev.xyz`
 const siteTitle = `Robots, science, gamedev`
@@ -19,6 +20,7 @@ export const Head = ({ location, params, data, pageContext }) => {
   if (pageUrl !== "/") {
     url = `${siteUrl}${pageUrl}`
   }
+  const urlNoHtml = removeHtmlExtension(url)
 
   let title = siteTitle
   let description = siteDescription
@@ -151,7 +153,7 @@ export const Head = ({ location, params, data, pageContext }) => {
 
       <title>{title}</title>
 
-      <link rel="canonical" href={url} />
+      <link rel="canonical" href={urlNoHtml} />
       <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300&display=swap" rel="stylesheet" />
       <link rel="preconnect" href="https://fonts.googleapis.com"></link>
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"></link>

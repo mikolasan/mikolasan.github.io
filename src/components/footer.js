@@ -44,11 +44,11 @@ const Footer = () => {
           <h2>Social</h2>
           <div className="bottomlist">
             <a href="https://discord.gg/FhbAshWjcB">Discord</a>
+            <a href="https://mikolasan.substack.com">Substack</a>
             <a href="https://github.com/mikolasan">GitHub</a>
-            <a href="https://www.instagram.com/saturdayscode/">Instagram</a>
-            <a href="https://www.linkedin.com/in/nikolay-neupokoev">LinkedIn</a>
-            <a href="https://www.youtube.com/channel/UC7JDwFPt-Wu_rMB4-g-ePug">YouTube</a>
             <a href="https://twitter.com/mikolasan">Twitter</a>
+            <a href="https://www.linkedin.com/in/nikolay-neupokoev">LinkedIn</a>
+            <a href="https://www.instagram.com/n_tech_lab/">Instagram</a>
           </div>
         </div>
       </div>

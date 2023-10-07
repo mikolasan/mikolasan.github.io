@@ -164,7 +164,7 @@ Seems like I've missed one note on the wiki, saying that these files must be tak
 
 > This step requires to have a device **already running the latest LineageOS**, based on the branch you wish to build for. If you don’t have access to such device, refer to [Extracting proprietary blobs from installable zip](https://wiki.lineageos.org/extracting_blobs_from_zips.html). 
 >
-> _LineageOS [build instructions]([build](https://wiki.lineageos.org/devices/shieldtablet/build))_
+> _LineageOS [build instructions](https://wiki.lineageos.org/devices/shieldtablet/build)_
 
 So I can retrieve it from installed Lineage OS, or zip file, or [proprietary_vendor_nvidia](https://github.com/TheMuppets/proprietary_vendor_nvidia/tree/lineage-15.1) repository (possible mirror or fork [on gitlab](https://gitlab.incom.co/CM-Shield/proprietary_vendor_nvidia/-/blob/lineage-15.1/shield/shieldtablet.mk)). 
 

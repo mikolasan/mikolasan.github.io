@@ -72,3 +72,5 @@ yarn-error.log
 
 # design files
 /assets
+
+/src/markdown/.obsidian
