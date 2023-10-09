@@ -47,7 +47,8 @@ const Footer = () => {
             <a href="https://mikolasan.substack.com">Substack</a>
             <a href="https://github.com/mikolasan">GitHub</a>
             <a href="https://twitter.com/mikolasan">Twitter</a>
-            <a href="https://www.linkedin.com/in/nikolay-neupokoev">LinkedIn</a>
+            {/* <a href="https://www.linkedin.com/in/nikolay-neupokoev">LinkedIn</a> */}
+            <a href="https://mastodon.social/@mikolasan" rel="me">Mastodon</a>
             <a href="https://www.instagram.com/n_tech_lab/">Instagram</a>
           </div>
         </div>
