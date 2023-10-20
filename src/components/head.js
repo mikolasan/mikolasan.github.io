@@ -17,7 +17,9 @@ export const Head = ({ location, params, data, pageContext }) => {
   const pageUrl = location.pathname // pageContext.url
   
   let url = siteUrl
-  if (pageUrl !== "/") {
+  if (pageContext?.baseUrl) {
+    url = `${siteUrl}${pageContext.baseUrl}`
+  } else if (pageUrl !== "/") {
     url = `${siteUrl}${pageUrl}`
   }
   const canonicalUrl = removeTrailingSlash(removeHtmlExtension(url))
