@@ -15,9 +15,10 @@ export const Head = ({ location, params, data, pageContext }) => {
   const metaType = `website`
   const lang = location.pathname.startsWith("/ru") ? "ru" : "en"
   const pageUrl = location.pathname // pageContext.url
+  const pagination = !!pageContext?.baseUrl
   
   let url = siteUrl
-  if (pageContext?.baseUrl) {
+  if (pagination) {
     url = `${siteUrl}${pageContext.baseUrl}`
   } else if (pageUrl !== "/") {
     url = `${siteUrl}${pageUrl}`
@@ -42,11 +43,6 @@ export const Head = ({ location, params, data, pageContext }) => {
   // property = RDF / HTML5
   // itemProp = Microdata
   const meta = [
-    {
-      // https://developers.google.com/search/docs/advanced/robots/robots_meta_tag
-      name: `robots`,
-      content: `noarchive, max-image-preview:large`,
-    },
     {
       name: `author`,
       content: `Nikolay Neupokoev`,
@@ -118,7 +114,20 @@ export const Head = ({ location, params, data, pageContext }) => {
       content: image,
     },
   ]
-  
+
+  if (pagination) {
+    meta.push({
+      name: `robots`,
+      content: `noindex`
+    })
+  } else {
+    meta.push({
+      // https://developers.google.com/search/docs/advanced/robots/robots_meta_tag
+      name: `robots`,
+      content: `noarchive, max-image-preview:large`,
+    })
+  }
+
   if (pageUrl !== "/") {
     meta.push({
       property: `og:site_name`,
