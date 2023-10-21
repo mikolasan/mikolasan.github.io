@@ -44,6 +44,13 @@ const config = {
             },
           },
           {
+            resolve: "gatsby-remark-external-links",
+            options: {
+              target: "_blank",
+              rel: "noopener noreferrer"
+            }
+          },
+          {
             resolve: `gatsby-remark-autolink-headers`,
             options: {
               enableCustomId: true,

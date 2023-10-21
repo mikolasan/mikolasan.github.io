@@ -36,16 +36,21 @@ const RuFooter = () => {
         <div className="bottomxsocial">
           <h2>Сети</h2>
           <div className="bottomlist">
-            <a href="https://twitter.com/stakanmartini">Твиттер</a>
-            <a href="https://www.youtube.com/user/stakanmartini">Ютюб</a>
-            <a href="https://github.com/mikolasan">Гитхаб</a>
+            <a href="https://twitter.com/stakanmartini" target="_blank" rel="external nofollow noopener noreferrer">Твиттер</a>
+            <a href="https://www.youtube.com/user/stakanmartini" target="_blank" rel="external nofollow noopener noreferrer">Ютюб</a>
+            <a href="https://github.com/mikolasan" target="_blank" rel="external nofollow noopener noreferrer">Гитхаб</a>
           </div>
         </div>
       </div>
       <div className="copyright">
-        <p>Сайт работает на генераторе статических сайтов {` `}<a href="https://www.gatsbyjs.org">Gatsby</a>. Последняя сборка: {formatDate(data.currentBuildDate.currentDate, 'ru')}</p>
-        <p>Иконки нарисованы художниками, и все необходимые <a href="/credits">кредиты</a>❤️ возданы</p>
-        <p>There is also an <a href="/">English version</a> of this website</p>
+        <p>Сайт работает на генераторе статических сайтов {` `}
+          <a href="https://www.gatsbyjs.org" target="_blank" rel="external nofollow noopener noreferrer">Gatsby</a>. 
+          Последняя сборка: {formatDate(data.currentBuildDate.currentDate, 'ru')}
+        </p>
+        <p>Иконки нарисованы художниками, и все необходимые <Link to="/credits">
+          кредиты
+        </Link>❤️ возданы</p>
+        <p>There is also an <Link to="/">English version</Link> of this website</p>
         <p>© Николай Неупокоев, {new Date().getFullYear()}</p>
       </div>
     </footer>

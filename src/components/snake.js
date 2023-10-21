@@ -12,7 +12,8 @@ class Snake extends React.Component {
       <>
         <canvas id="snake" className={styles.snake} tabIndex="0"></canvas>
         <p>
-          Tileset: <a href="https://artyom-zagorskiy.itch.io/isometric-medieval-pack">Isometric Medieval Pack</a> by Artyom Zagorskiy.
+          Tileset: <a href="https://artyom-zagorskiy.itch.io/isometric-medieval-pack" target="_blank" rel="external nofollow noopener noreferrer">
+            Isometric Medieval Pack</a> by Artyom Zagorskiy.
         </p>
         <hr />
       </>

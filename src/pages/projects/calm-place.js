@@ -7,7 +7,7 @@ const CalmPlace = () => (
     <br />
     <h1>Calm place</h1>
     <p>
-      I have listened about healing forests on a <a href="https://mysteriousuniverse.org/2017/04/17-14-mu-podcast/">Mysterious Universe podcast</a>.
+      I have listened about healing forests on a <a href="https://mysteriousuniverse.org/2017/04/17-14-mu-podcast/" target="_blank" rel="external nofollow noopener noreferrer">Mysterious Universe podcast</a>.
       They have discussed a book "The Nature Fix: Why Nature Makes us Happier, Healthier, and More Creative" by Florence Williams.
     </p>
     <p>

@@ -29,7 +29,7 @@ class TechStackSmack extends React.Component {
 
         <p>
           You can only pick 5.
-          New version based on a tweet from <a href="https://twitter.com/chriskalmar/status/1459066591912640529">Chis Kalmar</a>
+          New version based on a tweet from <a href="https://twitter.com/chriskalmar/status/1459066591912640529" target="_blank" rel="external nofollow noopener noreferrer">Chis Kalmar</a>
         </p>
         
         <div>

@@ -21,11 +21,11 @@ const About = ({ pageContext }) => {
         <li key="l1">I’m interested in game development, DIY electronics, and artificial intelligence</li>
         <li key="l2">I’m currently learning Kotlin, revamping data structures and algorithms in GDScript, and basics of electronics</li>
         <li key="l3">I’m looking to collaborate on projects related to robots, games and procedural generation</li>
-        <li key="l4">You can reach me on Twitter <a href="https://twitter.com/mikolasan">@mikolasan</a> where once a week I write threads about gamedev and development process</li>
+        <li key="l4">You can reach me on Twitter <a href="https://twitter.com/mikolasan" target="_blank" rel="external nofollow noopener noreferrer">@mikolasan</a> where once a week I write threads about gamedev and development process</li>
         <li key="l5">Enjoy coding today!</li>
       </ul>
       <p>
-        &gt; <a href="https://github.com/mikolasan">My github profile</a>
+        &gt; <a href="https://github.com/mikolasan" target="_blank" rel="external nofollow noopener noreferrer">My github profile</a>
       </p>
 
 
@@ -75,12 +75,12 @@ const About = ({ pageContext }) => {
 
       <blockquote className="twitter-tweet" data-conversation="none" data-lang="en" data-dnt="true" data-theme="light">
         <p lang="en" dir="ltr">Hahaha that&#39;s exactly the kind of out-of-the-box answer I&#39;m looking for, thanks for your creativity!</p>
-        &mdash; Maxime Labonne (@maximelabonne) <a href="https://twitter.com/maximelabonne/status/1548260107732934656?ref_src=twsrc%5Etfw">July 16, 2022</a>
+        &mdash; Maxime Labonne (@maximelabonne) <a href="https://twitter.com/maximelabonne/status/1548260107732934656?ref_src=twsrc%5Etfw" target="_blank" rel="external nofollow noopener noreferrer">July 16, 2022</a>
       </blockquote> 
 
       <blockquote className="twitter-tweet" data-conversation="none" data-lang="en" data-dnt="true" data-theme="light">
         <p lang="en" dir="ltr">Gosh and this is what happens when I’m not here for a few hours ?! I love these tech talks so much !!! Hey seriously you two are one of the only reasons I am still on Twitter 😂👑</p>
-        &mdash; (Capuc)+i(ne) (@Cappuccino_Math) <a href="https://twitter.com/Cappuccino_Math/status/1548436485832994820?ref_src=twsrc%5Etfw">July 16, 2022</a>
+        &mdash; (Capuc)+i(ne) (@Cappuccino_Math) <a href="https://twitter.com/Cappuccino_Math/status/1548436485832994820?ref_src=twsrc%5Etfw" target="_blank" rel="external nofollow noopener noreferrer">July 16, 2022</a>
       </blockquote>
 
 
