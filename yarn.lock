@@ -4668,10 +4668,10 @@ cosmiconfig@^7.0.0:
     path-type "^4.0.0"
     yaml "^1.10.0"
 
-create-gatsby@^3.12.0:
-  version "3.12.0"
-  resolved "https://registry.yarnpkg.com/create-gatsby/-/create-gatsby-3.12.0.tgz#1a5d0dc5d536f6c826f51a27390d0e1c30239ee1"
-  integrity sha512-cAWZ6046W0kUDAVRwpAEYlHTUAZApN5xmuq24JMDQPO5Qzn1eWe7s2LZ8V3isWOMOHXHKMMVm83NtJYIHql80g==
+create-gatsby@^3.12.2:
+  version "3.12.2"
+  resolved "https://registry.yarnpkg.com/create-gatsby/-/create-gatsby-3.12.2.tgz#91b0aaaf8bd38e6ad0179f6a6b49aed75f8654c1"
+  integrity sha512-4E0kR/56Bs/WlFONSuIu7AO841NZqMkZxnA4//gARyodieo/5zr6eG1I0V/1dy9lTLIJSQPTm97DysZB5ql1WA==
   dependencies:
     "@babel/runtime" "^7.20.13"
 
@@ -6760,10 +6760,10 @@ functions-have-names@^1.2.3:
   resolved "https://registry.yarnpkg.com/functions-have-names/-/functions-have-names-1.2.3.tgz#0404fe4ee2ba2f607f0e0ec3c80bae994133b834"
   integrity sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ==
 
-gatsby-cli@^5.10.0, gatsby-cli@^5.12.0:
-  version "5.12.0"
-  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-5.12.0.tgz#1d245f9a2f9cfaa145a41d2910e4fec324045c3a"
-  integrity sha512-XLLwwq2l0AIM9O2OqT74EpxjTyJYwCLh1r0t1+dIt4p5owpNvpu9HSPPFgPGRfV0ADoBzrAHcixNOBtLPRax0Q==
+gatsby-cli@^5.10.0, gatsby-cli@^5.12.3:
+  version "5.12.3"
+  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-5.12.3.tgz#7b575b6d03e9464a202e62d134bafa0ad85bcaf0"
+  integrity sha512-pYrL5Qvjq21wa3gHkcVD8/j9aZ4EzZGe4qVM3qbHl3tAc4DJw+g10qstasvyaum3Fm5sj+uc0DneNlERU+Hucg==
   dependencies:
     "@babel/code-frame" "^7.18.6"
     "@babel/core" "^7.20.12"
@@ -6781,7 +6781,7 @@ gatsby-cli@^5.10.0, gatsby-cli@^5.12.0:
     clipboardy "^2.3.0"
     common-tags "^1.8.2"
     convert-hrtime "^3.0.0"
-    create-gatsby "^3.12.0"
+    create-gatsby "^3.12.2"
     envinfo "^7.10.0"
     execa "^5.1.1"
     fs-exists-cached "^1.0.0"
@@ -6829,10 +6829,10 @@ gatsby-core-utils@^4.12.0:
     tmp "^0.2.1"
     xdg-basedir "^4.0.0"
 
-gatsby-graphiql-explorer@^3.12.0:
-  version "3.12.0"
-  resolved "https://registry.yarnpkg.com/gatsby-graphiql-explorer/-/gatsby-graphiql-explorer-3.12.0.tgz#13122bcd742de0f4ad51ff87c9f4c7c4def78da1"
-  integrity sha512-vr86oLhif5uZ+VSTE34DYjtBDCIHWpJHh4+65fmgZh+WtDv1lyONJ/WWmyD+dNMHlGsZtR6wVvBjrj5iFRDGRw==
+gatsby-graphiql-explorer@^3.12.1:
+  version "3.12.1"
+  resolved "https://registry.yarnpkg.com/gatsby-graphiql-explorer/-/gatsby-graphiql-explorer-3.12.1.tgz#7ea2196467d5982bc3fb8e0326cd57161bc1b8c6"
+  integrity sha512-c2iG+4nAft2cTS9zgnPUAYNBtxTWGKjI26QIfjuo25j7/klnz8rLQYdj6TA4Z2Y3yyTyBspAHr9ho6zvOHlBJg==
 
 gatsby-legacy-polyfills@^3.12.0:
   version "3.12.0"
@@ -6987,10 +6987,10 @@ gatsby-plugin-offline@^6.11.0:
     lodash "^4.17.21"
     workbox-build "^4.3.1"
 
-gatsby-plugin-page-creator@^5.12.0:
-  version "5.12.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-page-creator/-/gatsby-plugin-page-creator-5.12.0.tgz#b47f0bb5ccce6dc1c3b0668cba8804a3c75f7894"
-  integrity sha512-CwpI0Bp20+t7D8CVMD3R09df4eDo2RVB6Z6vgpmNdNzcRzk8GojuLSrdlA2s/RzwyCuxpDGyGGu5Ocnp4xJEhQ==
+gatsby-plugin-page-creator@^5.12.2:
+  version "5.12.2"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-page-creator/-/gatsby-plugin-page-creator-5.12.2.tgz#a18069696a9f40c6b730ae6c9cfe38674c0bf9e5"
+  integrity sha512-nHlS6MVTMvFbByZ/hG/O9sYdeC18ZiKJ74E9+TsCpeeYYPHyMd958WfrKBBEVaFqWlYq8kPpJD6vh38SFi8Gnw==
   dependencies:
     "@babel/runtime" "^7.20.13"
     "@babel/traverse" "^7.20.13"
@@ -7000,7 +7000,7 @@ gatsby-plugin-page-creator@^5.12.0:
     fs-extra "^11.1.1"
     gatsby-core-utils "^4.12.0"
     gatsby-page-utils "^3.12.0"
-    gatsby-plugin-utils "^4.12.0"
+    gatsby-plugin-utils "^4.12.2"
     gatsby-telemetry "^4.12.0"
     globby "^11.1.0"
     lodash "^4.17.21"
@@ -7055,16 +7055,16 @@ gatsby-plugin-typescript@^5.12.0:
     "@babel/runtime" "^7.20.13"
     babel-plugin-remove-graphql-queries "^5.12.0"
 
-gatsby-plugin-utils@^4.12.0:
-  version "4.12.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-utils/-/gatsby-plugin-utils-4.12.0.tgz#1f6143a4ffb223fb1d4988a12285c0d2403ed074"
-  integrity sha512-lU84VmWC9qGojROMZkBgGjCAzxcAUlyGAsd75vjj2y3yqGYtyvqInvK5tZvDyNNVvU21u040Ps4AKIvRVgMV/Q==
+gatsby-plugin-utils@^4.12.0, gatsby-plugin-utils@^4.12.2:
+  version "4.12.2"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-utils/-/gatsby-plugin-utils-4.12.2.tgz#8e6d3ceaca1f485ddf1e7da674b57c067564dd52"
+  integrity sha512-N5d+fxPd7cZ9KeTl0bHF1JM4MDB2hazXbcOI2gxS9rIL0vgbyBT/ffJ9uczNwJwQuGQPOWdXO6eCspjT4zKcqw==
   dependencies:
     "@babel/runtime" "^7.20.13"
     fastq "^1.15.0"
     fs-extra "^11.1.1"
     gatsby-core-utils "^4.12.0"
-    gatsby-sharp "^1.12.0"
+    gatsby-sharp "^1.12.1"
     graphql-compose "^9.0.10"
     import-from "^4.0.0"
     joi "^17.9.2"
@@ -7154,12 +7154,12 @@ gatsby-script@^2.12.0:
   resolved "https://registry.yarnpkg.com/gatsby-script/-/gatsby-script-2.12.0.tgz#3737cddf44cd28a3d3532826db075beb4ac74067"
   integrity sha512-prYN8x8q+ErQpy8G4c8VR+BalFe1H7v09/esJWF8Ufmy7xi0FsbG56a/Ee2YDrnuu942lhY+ailWR+UnDSDA8g==
 
-gatsby-sharp@^1.12.0:
-  version "1.12.0"
-  resolved "https://registry.yarnpkg.com/gatsby-sharp/-/gatsby-sharp-1.12.0.tgz#8160e14155a46dc91f211bf3a4ee10ffe9b8ffda"
-  integrity sha512-5MbTPKfzkOCtwT74+FZTUFKaul/2UyF10apvMcmIKomq71/jHf6wJx+rHtSdgyq19r4VWL8DGG2CKgSpe0z9GQ==
+gatsby-sharp@^1.12.1:
+  version "1.12.1"
+  resolved "https://registry.yarnpkg.com/gatsby-sharp/-/gatsby-sharp-1.12.1.tgz#e8dfe8ddfddb6176363c02f255272feb9819a82c"
+  integrity sha512-e7lqA74UZau7MOktc9V+sNh86a8oNZPFIsY5Atk+C0sGlzHx0IcivsJjwLHJ6OF11SIC38a9z2wE8Nl6YiG/Ig==
   dependencies:
-    sharp "^0.32.1"
+    sharp "^0.32.6"
 
 gatsby-source-filesystem@^5.10.0:
   version "5.12.0"
@@ -7254,10 +7254,10 @@ gatsby-worker@^2.12.0:
     fs-extra "^11.1.1"
     signal-exit "^3.0.7"
 
-gatsby@^5.11.0:
-  version "5.12.3"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-5.12.3.tgz#3e3e1b503d759d445aaf0825f051632536bc6584"
-  integrity sha512-+qO2gKA95HH+b4RCf3AYHOW3Pz8YC1t3W9MOwbUQe7QgDXd0D9lRc7YAqk8XuXp8Pkp/NWuoeZY3d/1B8d8nng==
+gatsby@^5.12.8:
+  version "5.12.8"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-5.12.8.tgz#e4ba5213e936da39a58709465d1e0ccbfd52212f"
+  integrity sha512-J/1YyZA1XVr6H1+8ot940WDtKm83SWsioRpV9JueHvjt1Y91M+b7xlSed+/gZG8z6KFXzedtKgxlNAH3WKrDmQ==
   dependencies:
     "@babel/code-frame" "^7.18.6"
     "@babel/core" "^7.20.12"
@@ -7340,16 +7340,16 @@ gatsby@^5.11.0:
     find-cache-dir "^3.3.2"
     fs-exists-cached "1.0.0"
     fs-extra "^11.1.1"
-    gatsby-cli "^5.12.0"
+    gatsby-cli "^5.12.3"
     gatsby-core-utils "^4.12.0"
-    gatsby-graphiql-explorer "^3.12.0"
+    gatsby-graphiql-explorer "^3.12.1"
     gatsby-legacy-polyfills "^3.12.0"
     gatsby-link "^5.12.0"
     gatsby-page-utils "^3.12.0"
     gatsby-parcel-config "1.12.0"
-    gatsby-plugin-page-creator "^5.12.0"
+    gatsby-plugin-page-creator "^5.12.2"
     gatsby-plugin-typescript "^5.12.0"
-    gatsby-plugin-utils "^4.12.0"
+    gatsby-plugin-utils "^4.12.2"
     gatsby-react-router-scroll "^6.12.0"
     gatsby-script "^2.12.0"
     gatsby-telemetry "^4.12.0"
@@ -7426,7 +7426,7 @@ gatsby@^5.11.0:
     xstate "^4.38.0"
     yaml-loader "^0.8.0"
   optionalDependencies:
-    gatsby-sharp "^1.12.0"
+    gatsby-sharp "^1.12.1"
 
 gauge@^4.0.3:
   version "4.0.4"
@@ -12544,6 +12544,20 @@ sharp@^0.32.1:
   version "0.32.5"
   resolved "https://registry.yarnpkg.com/sharp/-/sharp-0.32.5.tgz#9ddc78ead6446094f51e50355a2d4ec6e7220cd4"
   integrity sha512-0dap3iysgDkNaPOaOL4X/0akdu0ma62GcdC2NBQ+93eqpePdDdr2/LM0sFdDSMmN7yS+odyZtPsb7tx/cYBKnQ==
+  dependencies:
+    color "^4.2.3"
+    detect-libc "^2.0.2"
+    node-addon-api "^6.1.0"
+    prebuild-install "^7.1.1"
+    semver "^7.5.4"
+    simple-get "^4.0.1"
+    tar-fs "^3.0.4"
+    tunnel-agent "^0.6.0"
+
+sharp@^0.32.6:
+  version "0.32.6"
+  resolved "https://registry.yarnpkg.com/sharp/-/sharp-0.32.6.tgz#6ad30c0b7cd910df65d5f355f774aa4fce45732a"
+  integrity sha512-KyLTWwgcR9Oe4d9HwCwNM2l7+J0dUQwn/yf7S0EnTtb0eVS4RxO0eUSvxPtzT4F3SY+C4K6fqdv/DO27sJ/v/w==
   dependencies:
     color "^4.2.3"
     detect-libc "^2.0.2"
