@@ -14,4 +14,3 @@ Source: https://wiki.archlinux.org/title/PostgreSQL
 
 - https://www.linux.com/learn/how-create-and-manage-btrfs-snapshots-and-rollbacks-linux-part-2
 - http://snapper.io/development.html
-- https://www.kali.org/docs/base-images/kali-linux-btrfs-install/
