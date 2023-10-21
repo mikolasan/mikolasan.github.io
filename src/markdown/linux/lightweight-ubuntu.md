@@ -149,7 +149,7 @@ sudo snap remove gnome-calculator
 sudo snap remove gnome-system-monitor
 ```
 
-Source: https://www.kevin-custer.com/blog/disabling-snaps-in-ubuntu-20-04/
+Source: https://www.kevin-custer.com/blog/disabling-snaps-in-ubuntu-20-10-and-20-04-lts/
 
 
 ## Step 5 - Use `bspwm`

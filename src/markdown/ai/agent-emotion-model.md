@@ -353,7 +353,8 @@ FADM [Face Animation with an Attribute-Guided Diffusion Model](https://openacces
 
 ## TODO
 
-- Get full [AffectNet trainset](https://mohammadmahoor.com/affectnet/) ([academic torrent](https://academictorrents.com/details/3c740bf0655ca4e818c3e0bf33b79cebda83563c))
+
+- Get full [AffectNet trainset](http://mohammadmahoor.com/affectnet/) (it was even removed from [academic torrents](https://academictorrents.com/)!)
 - Get full [RaFD](https://web.archive.org/web/20210617170920/http://www.socsci.ru.nl:8180/RaFD2/RaFD) (WebArchive)
 - Get full [RAF-DB](http://www.whdeng.cn/raf/model1.html)
 - If I understand it correctly, [VQVAE-2](https://arxiv.org/abs/1906.00446) is a quility improvement technique

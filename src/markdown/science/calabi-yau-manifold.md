@@ -38,9 +38,9 @@ So to bring this animation to my website, I need to [undestand the math behind i
 
 Before integrating it into my layout and maybe even into React.js I start with vanilla HTML + JS on [Codepen](https://codepen.io/mikolasan/pen/WNzKEZO?editors=1111). 
 
-- Three.js https://threejs.org/docs/index.html#manual/en/introduction/Installation
-- example https://github.com/mrdoob/three.js/blob/dev/examples/index.html
-- more examples with explanations https://r105.threejsfundamentals.org/threejs/lessons/threejs-custom-buffergeometry.html
+- [Three.js](https://threejs.org/docs/index.html#manual/en/introduction/Installation)
+- [example](https://github.com/mrdoob/three.js/blob/dev/examples/index.html)
+- [more examples](https://threejs.org/manual/#en/custom-buffergeometry)
 
 
 ## Further reading

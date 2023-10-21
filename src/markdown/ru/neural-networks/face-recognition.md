@@ -25,8 +25,6 @@ lastModified: 2022-07-31
 
 Начнем мы с картинок. VGGFace2 http://www.robots.ox.ac.uk/~vgg/data/vgg_face2/
 
-Скачать после регистрации http://zeus.robots.ox.ac.uk/vgg_face2/
-
 ResNet 50 https://github.com/WeidiXie/Keras-VGGFace2-ResNet50
 
 ## Многозадачная каскадная сверточная сеть

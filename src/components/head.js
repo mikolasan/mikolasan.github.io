@@ -84,7 +84,7 @@ export const Head = ({ location, params, data, pageContext }) => {
     },
     {
       property: `og:url`,
-      content: url,
+      content: canonicalUrl,
     },
     // Twitter cards use `name` and `content`.
     // Though Twitter’s parser will fall back to using `property` and `content`
@@ -99,7 +99,7 @@ export const Head = ({ location, params, data, pageContext }) => {
     },
     {
       name: `twitter:url`,
-      content: url,
+      content: canonicalUrl,
     },
     {
       name: `twitter:title`,

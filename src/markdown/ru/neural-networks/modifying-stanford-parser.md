@@ -10,7 +10,7 @@ lastModified: 2022-07-31
 
 Давайте повторим результат из статьи **Recursive Deep Models for Semantic Compositionality Over a Sentiment Treebank** под авторством Richard Socher, Alex Perelygin, Jean Y. Wu, Jason Chuang,Christopher D. Manning, Andrew Y. Ng and Christopher Potts. Они в свою очередь ссылаются на парсер описанный в **Accurate Unlexicalized Parsing** Клейном и Маннингом (Dan Klein, Christopher D. Manning).
 
-[Ссылка в их статье](https://nlp.stanford.edu/downloads/lex-parser.shtml) устарела. 
+[Ссылка в их статье](https://nlp.stanford.edu/software/lex-parser.shtml) устарела. 
 
 Я стал искать какие-либо упоминания парсера описанного Клейном и Маннингом.
 

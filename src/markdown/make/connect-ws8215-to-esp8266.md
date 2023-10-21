@@ -30,7 +30,7 @@ To get started, you'll need to set up your ESP8266 board to receive Art-Net pack
 
 - https://acrobotic.com/products/acr-00021/
 - https://www.esp8266.com/viewtopic.php?p=67776
-- https://tttapa.github.io/ESP8266/Chap04 - Microcontroller.html
+- [A Beginner's Guide to the ESP8266](https://tttapa.github.io/ESP8266/Chap04%20-%20Microcontroller.html) by Pieter P
 - https://github.com/FastLED/FastLED/wiki/ESP8266-notes
 - https://github.com/FastLED/FastLED/wiki/Rgb-calibration
 - try 160 Mhz [https://www.reddit.com/r/FastLED/comments/c2w1yy/esp32_esp8266_fastled_no_signal_output_on_the_pin/ern3eg6/?utm_source=reddit&utm_medium=web2x&context=3](https://www.reddit.com/r/FastLED/comments/c2w1yy/esp32_esp8266_fastled_no_signal_output_on_the_pin/ern3eg6/?utm_source=reddit&utm_medium=web2x&context=3) [https://github.com/FastLED/FastLED/issues/367#issuecomment-618656585](https://github.com/FastLED/FastLED/issues/367#issuecomment-618656585)

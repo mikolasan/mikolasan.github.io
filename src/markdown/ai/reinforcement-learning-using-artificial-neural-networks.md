@@ -25,7 +25,7 @@ So practice, practice, practice! We focus on examples implemented with PyTorch a
 
 ## Backpropagation formally introduced
 
-- very clear work with partial derivatives in **Neural Networks for RF and Microwave Design** by Q. J. Zhang, K. C. Gupta [Chapter 3](https://www.ieee.cz/knihovna/Zhang/Zhang100-ch03.pdf)
+- very clear work with partial derivatives in **Neural Networks for RF and Microwave Design** by Q. J. Zhang, K. C. Gupta
 - classic and also biologically reasonable in [Artificial Neural Networks for Neuroscientists](https://www.sciencedirect.com/science/article/pii/S0896627320307054)
 - superscript indecies for layers in [this big SO question](https://stats.stackexchange.com/questions/154879/a-list-of-cost-functions-used-in-neural-networks-alongside-applications) based on [free online book](http://neuralnetworksanddeeplearning.com/) by Michael Neilsen
 - sequence of matrix-vector tuples in [Limitations of neural network training due to numerical instability of backpropagation](https://arxiv.org/pdf/2210.00805.pdf)
@@ -281,7 +281,7 @@ I think conventional "training" is wrong because it stops once errors on test se
 
 [Neural Network Zoo](https://www.asimovinstitute.org/neural-network-zoo/) and [a prequel](https://www.asimovinstitute.org/neural-network-zoo-prequel-cells-layers/) by Fjodor van Veen
 
-Just another Python library - PyGAD. It's focused on optimization algorithms and genetic algorithms. Specifically [ANN module](https://pygad.readthedocs.io/en/latest/README_pygad_nn_ReadTheDocs.html) can be interesting in regards the current topic.
+Just another Python library - PyGAD. It's focused on optimization algorithms and genetic algorithms. Specifically [ANN module](https://pygad.readthedocs.io/en/latest/nn.html) can be interesting in regards the current topic.
 
 
 ## Best notation

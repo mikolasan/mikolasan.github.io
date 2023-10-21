@@ -9,7 +9,7 @@ lastModified: 2022-12-20
 
 ### Tank-like robot
 
-SMARS [version 1](https://www.thingiverse.com/thing:2662828), [version 4 (lite)](https://cults3d.com/en/3d-model/gadget/smars-v4-lite) created by [Kevin Thomas](https://cults3d.com/en/users/Tuitxy/creations?page=2).
+SMARS [version 1](https://www.thingiverse.com/thing:2662828), [version 4 (lite)](https://cults3d.com/en/3d-model/gadget/smars-v4-lite) created by [Kevin Thomas](https://cults3d.com/en/users/Tuitxy/3d-models).
 
 ![smars v4](./smars-v4.jpg)
 
@@ -49,7 +49,7 @@ https://protopedia.net/prototype/3277
 ## Bi-pedal
 
 - cute https://cults3d.com/en/3d-model/gadget/rofi-bipedal-robot
-- just a model, but impressing mech https://cults3d.com/en/3d-model/game/heavy-armored-thiccboi-of-brutality
+- just a model, but impressing mech https://cults3d.com/en/3d-printing/heavy-armored-thicc-boi-of-brutality-dantheman223
 
 ## Retro style
 

@@ -36,7 +36,9 @@ Install the latest codecs and a player
 
 In another words: How to stream from one OBS to another?
 
-May be not possible in these words, but very close [solution](https://obsproject.com/forum/resources/obs-studio-send-an-udp-stream-to-a-second-pc-using-obs.455/):
+https://obsproject.com/forum/threads/send-an-udp-stream-to-a-second-pc-using-obs.149520/
+
+May be not possible in these words, but very close [solution](https://web.archive.org/web/20210502211923/https://obsproject.com/forum/resources/obs-studio-send-an-udp-stream-to-a-second-pc-using-obs.455/):
 
 - You will need [VLC 64 bit](https://obsproject.com/forum/threads/obs-studio-how-to-get-vlc-video-source.72661/)
 - Correct setup with [screenshots](https://obsproject.com/forum/threads/obs-studio-send-an-udp-stream-to-a-second-pc-using-obs.55379/page-3) (woaw, screenshots are helpful) 

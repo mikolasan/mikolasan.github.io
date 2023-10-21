@@ -40,7 +40,7 @@ python src/interactive_conditional_samples.py --model_name=1558M --nsamples=10 -
 
 Или серьезный подход
 
-Спец драйвер https://developer.nvidia.com/cuda/wsl/download
+Спец драйвер https://developer.nvidia.com/cuda/wsl
 
 Спец образ для докера https://ngc.nvidia.com/catalog/containers/nvidia:tensorflow
 

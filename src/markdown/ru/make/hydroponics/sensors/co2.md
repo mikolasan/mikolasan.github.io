@@ -186,7 +186,7 @@ void loop() {
 **Figaro TGS4160**
 
 **WINSEN MG812**
-- [Datasheet](https://data.electronshik.ru/z/Datasheet/M/mg812-co2-manual-v1_1.pdf)
+- [Datasheet](https://www.winsen-sensor.com/d/files/PDF/Solid%20Electrolyte%20CO2%20Sensor/MG812%20CO2%20Manual%20V1.1.pdf)
 - [Купить](https://www.chipdip.ru/product0/8000978122)
 
 **WINSEN MG811**

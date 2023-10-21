@@ -16,7 +16,7 @@ There are many online books about Rust. Here is my top 5:
 2. [Rust by example](https://doc.rust-lang.org/rust-by-example/std/result/question_mark.html) - the same concepts from the book, but oriented more to practice examples
 3. [Cookbook](https://rust-lang-nursery.github.io/rust-cookbook/file/read-write.html) - about using crates in real life problems, solutions, best practices
 4. [Rustonomicon](https://doc.rust-lang.org/nomicon/send-and-sync.html) - when you are ready for something spicy
-5. [Learning Rust](https://learning-rust.github.io/docs/e6.combinators.html#ok-or-and-ok-or-else) - back to origin
+5. [Learning Rust](https://learning-rust.github.io/docs/combinators/) - back to origin
 
 
 # Have a fun project
@@ -68,7 +68,7 @@ cairo-rs = { version = "0.15.12", features = ["use_glib", "freetype", "png"] }
 
 ### cairo alternatives
 
-- https://crates.io/crates/cairo-rs
+- [cairo-rs](https://crates.io/crates/cairo-rs)
 - https://docs.rs/embedded-graphics/0.5.0/embedded_graphics/
 - https://github.com/image-rs/imageproc
 - https://github.com/image-rs/imageproc/blob/master/examples/font.rs

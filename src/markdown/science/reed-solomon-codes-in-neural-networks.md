@@ -73,7 +73,7 @@ Decoding theory first [https://www-users.cse.umn.edu/~garrett/students/reu/MB_al
 
 ![Add scheduler and debug it](reed-solomon-in-ann-debugging.png)
 
-[](https://cas.cnu.ac.kr/wp-data/international_journal/%5B2018%5D%20Area%20optimized%20Syndrome%20Calculation%20for%20Reedsolomon%20Decoder.pdf)[https://cas.cnu.ac.kr/wp-data/international_journal/[2018]](https://cas.cnu.ac.kr/wp-data/international_journal/%5B2018%5D) Area optimized Syndrome Calculation for Reedsolomon Decoder.pdf - syndromes
+[Area optimized Syndrome Calculation for Reedsolomon Decoder](https://cas.cnu.ac.kr/wp-data/international_journal/%5B2018%5D%20Area%20optimized%20Syndrome%20Calculation%20for%20Reedsolomon%20Decoder.pdf) - syndromes
 
 [https://www.iasj.net/iasj/download/4cc73688e4fa840b](https://www.iasj.net/iasj/download/4cc73688e4fa840b) formulas and diagrams with gates (low quality, I do not trust)
 

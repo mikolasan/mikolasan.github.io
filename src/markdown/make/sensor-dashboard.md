@@ -89,7 +89,7 @@ It raises another problem: overheating. I have a simple radiator without active 
 
 - Store data in DB https://redis.io/docs/reference/patterns/
 - Cell network on PI https://www.hackster.io/news/you-can-create-your-own-cell-network-with-a-raspberry-pi-and-sdr-238980964b5b.amp
-- GPRS SIM800C GSM GPRS module https://www.amazon.com/Comimark-SIM800C-Module-Bluetooth-Arduino
+- GPRS SIM800C GSM GPRS module https://shop.m5stack.com/products/com-gsm-module-sim800c?variant=35338832609444
 - Collect data with Soracom Lagoon https://create.arduino.cc/projecthub/andreiflorian/unifiedwater-v1-13b168?ref=tag&ref_id=gsm&offset=13
 - Robot [tools from Intel](https://www.intel.com/content/www/us/en/developer/tools/software-catalog/overview.html?s=Newest)
 - [Robot kit](https://www.intel.com/content/www/us/en/develop/documentation/ei4amr-2022-2-get-started-robot-kit/top.html)

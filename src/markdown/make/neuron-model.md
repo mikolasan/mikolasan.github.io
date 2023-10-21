@@ -54,7 +54,7 @@ Model by McGybeer
 There are tutorials on [how to program one FPGA to work as a neural network](https://www.youtube.com/watch?v=Qgjawf20v7Y) (even non real FPGA, but [in the cloud](https://towardsdatascience.com/neural-network-inference-on-fpgas-d1c20c479e84)). Such thing use very perfomant chips like
 
 - [mojo 3](https://www.nutsvolts.com/magazine/article/July2015_Clarke)
-- [Perf-v](https://www.electromaker.io/shop/product/perf-v-based-on-xilinx-artix-7-fpga-risc-v-opensource)
+- [Perf-v](https://www.electromaker.io/shop/product/perf-v-based-on-xilinx-artix-7-fpga-risc-v-opensource-xc7a100t-1ftg256c)
 - [Arty S7](https://digilent.com/shop/arty-s7-spartan-7-fpga-development-board/)
 - [Alchitry Au](https://www.sparkfun.com/products/16527)
 

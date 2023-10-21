@@ -37,7 +37,7 @@ Try to search: `how to build a quantum computer at home`
 
 ### Quantum computers books
 
-- **Quantum Computation and Quantum Information** [10th edition](http://mmrc.amss.cas.cn/tlb/201702/W020170224608149940643.pdf)
+- **Quantum Computation and Quantum Information** [10th edition](https://www.academia.edu/41154803/Quantum_Computation_and_Quantum_Information_by_Nielsen_and_Chuang)
 - **Quantum Machine Learning: An Applied Approach**
 
 ### Quantum python libraries
