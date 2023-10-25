@@ -3,11 +3,12 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import PostList from "../components/postList"
 import SectionCard from "../components/sectionCard"
+import { SEO } from "../components/seo"
 
 const Make = ({ data, pageContext }) => (
   <Layout
     mainConf="list"
-    title="Make"
+    title={pageContext.title}
     section="make"
     crumbs={pageContext.breadcrumb.crumbs}
     languageName="Switch to russian version"
@@ -81,4 +82,13 @@ export const query = graphql`
   }
 `
 
-export { Head } from "./../components/head"
+export const Head = ({ location, data, pageContext }) => (
+  <SEO 
+    path={location.pathname}
+    data={data}
+    frontmatter={data?.markdownRemark?.frontmatter}
+    pageContext={pageContext}
+  >
+
+  </SEO>
+)

@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import { getImage } from "gatsby-plugin-image"
 import Layout from "../../components/ru/layout"
 import DraftAlert from "../../components/draftAlert"
+import { SEO } from "./../../components/seo"
 
 export default function Template ({ data, pageContext }) {
   const { markdownRemark } = data
@@ -86,4 +87,13 @@ export const pageQuery = graphql`
   }
 `
 
-export { Head } from "../../components/ru/head"
+export const Head = ({ location, data, pageContext }) => (
+  <SEO 
+    path={location.pathname}
+    data={data}
+    frontmatter={data?.markdownRemark?.frontmatter}
+    pageContext={pageContext}
+  >
+
+  </SEO>
+)

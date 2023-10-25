@@ -66,6 +66,18 @@ a.readmore:visited {
   font-size: 80%;
 }
 
+p.tags {
+  padding: 0;
+}
+
+.tags span {
+  background-color: #383882;
+  padding: 0.1rem 0.25rem;
+  margin-right: 0.5rem;
+  border-radius: 0.25rem;
+  color: #d3d0d0;
+}
+
 @media screen and (max-width: 870px) {
   .blogcard {
     flex: 50%;

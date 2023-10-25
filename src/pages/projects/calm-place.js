@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../../components/layout"
 import FeaturedImage from "../../components/featuredImage"
+import { SEO } from "../../components/seo"
 
 const CalmPlace = () => (
   <Layout title="Calm place">
@@ -26,4 +27,14 @@ const CalmPlace = () => (
 
 export default CalmPlace
 
-export { Head } from "./../../components/head"
+export const Head = ({ location, data, pageContext }) => (
+  <SEO 
+    path={location.pathname}
+    data={data}
+    frontmatter={data?.markdownRemark?.frontmatter}
+    pageContext={pageContext}
+    title="Calm place"
+  >
+
+  </SEO>
+)

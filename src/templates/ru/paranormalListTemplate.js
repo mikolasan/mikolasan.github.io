@@ -2,10 +2,11 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../../components/ru/layout"
 import PostList from "../../components/ru/postList"
+import { SEO } from "./../../components/seo"
 
 const RuParanormal = ({ data, pageContext }) => (
   <Layout
-    title="Паранормальные экспедиции"
+    title={pageContext.title}
     section="paranormal"
     crumbs={pageContext.breadcrumb.crumbs}
     languageName="Switch to english version"
@@ -50,4 +51,13 @@ export const query = graphql`
   }
 `
 
-export { Head } from "../../components/ru/head"
+export const Head = ({ location, data, pageContext }) => (
+  <SEO 
+    path={location.pathname}
+    data={data}
+    frontmatter={data?.markdownRemark?.frontmatter}
+    pageContext={pageContext}
+  >
+
+  </SEO>
+)

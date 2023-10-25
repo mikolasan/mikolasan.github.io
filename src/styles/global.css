@@ -1071,6 +1071,14 @@ a[href^="https://"]::after
   display: inline-block;
 }
 
+footer a[href^="http"]::after,
+footer a[href^="https://"]::after
+{
+  content: none;
+  width: 0;
+  height: 0;
+  background-image: none;
+}
 
 /* unvisited link */
 a:link {

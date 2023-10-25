@@ -62,4 +62,14 @@ const Slots = ({ pageContext }) => (
 
 export default Slots
 
-export { Head } from "../components/head"
+export const Head = ({ location, data, pageContext }) => (
+  <SEO 
+    path={location.pathname}
+    data={data}
+    frontmatter={data?.markdownRemark?.frontmatter}
+    pageContext={pageContext}
+    title="Slots"
+  >
+
+  </SEO>
+)

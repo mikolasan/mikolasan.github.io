@@ -64,7 +64,7 @@ export const articles = [
     style: `box6`,
     title: `Weather app to rule them all`,
     subtitle: ``,
-    url: `/ideas/mobile-app/weather-app-to-rule-them-all`,
+    url: `/ideas/weather-app-to-rule-them-all`,
     excerpt: `<p>And I'm thinking that the proper weather app should include more!</p>`,
     readMore: ``,
     imgSrc: null,

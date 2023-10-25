@@ -1,10 +1,11 @@
 import React from "react"
 import Layout from "../../components/ru/layout"
+import { SEO } from "./../../components/seo"
 import * as styles from "./index.module.css"
 
 const RuIndex = ({ pageContext }) => (
   <Layout
-    title="Наука, мастерская, девлог"
+    title="Лаборатория Н"
     section="root"
     crumbs={pageContext.breadcrumb.crumbs}
     languageName="Switch to english version"
@@ -14,19 +15,21 @@ const RuIndex = ({ pageContext }) => (
     <div className={styles.newproject}>
       <h2>Новый проект!</h2>
       <p>
-      Во-первых, это стартап. Реальный стартап, но без серьезного плана.
+        Во-первых, это стартап. Реальный стартап, но без серьезного плана.
       </p>
       <p>
-      Во-вторых, я предоставлю сообществу возможность влиять на развитие проекта, принимать решения вместе.
+        Во-вторых, я предоставлю сообществу возможность влиять на развитие проекта, принимать решения вместе.
       </p>
       <p>
-      Эти вещи происходят в <a href="https://twitter.com/stakanmartini" target="_blank" rel="external nofollow noopener noreferrer">моем твиттере</a>,
-      где можно писать личные сообщения, 
-      следить за каждым шагом проекта в момент, когда он реально происходит,
-      помогать в сиюминутных вопросах, а также вносить вклад в более продолжительные опросы.
+        Эти вещи происходят в <a href="https://twitter.com/stakanmartini" target="_blank" rel="external nofollow noopener noreferrer">моем твиттере</a>,
+        где можно писать личные сообщения, 
+        следить за каждым шагом проекта в момент, когда он реально происходит,
+        помогать в сиюминутных вопросах, а также вносить вклад в более продолжительные опросы.
       </p>
       <p>
-      Итак, озаглавим основные моменты гидропонного проекта: корпус, детали водяного цикла, система мониторинга, рука-манипулятор для захвата ягод, система автоматической посадки из семян, библиотека заболеваний растений, выявление причин неурожая.
+        Итак, озаглавим основные моменты гидропонного проекта: 
+        корпус, детали водяного цикла, система мониторинга, рука-манипулятор для захвата ягод, 
+        система автоматической посадки из семян, библиотека заболеваний растений, выявление причин неурожая.
       </p>
       <p>
         Вся информация такая как видео, ссылки на компоненты, заметки из блога - всё это собрано в <a href="/ru/make/hydroponics">специальном разделе</a>.
@@ -137,4 +140,13 @@ const RuIndex = ({ pageContext }) => (
 
 export default RuIndex
 
-export { Head } from "./../../components/ru/head"
+export const Head = ({ location, data, pageContext }) => (
+  <SEO 
+    path={location.pathname}
+    data={data}
+    frontmatter={data?.markdownRemark?.frontmatter}
+    pageContext={pageContext}
+  >
+
+  </SEO>
+)

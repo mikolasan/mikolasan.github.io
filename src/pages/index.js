@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import HomeBlock from "../components/homeBlock"
 import { articles } from "../home/july2023"
+import { SEO } from "../components/seo"
 
 const threeColumnLayout = (
   <div className="home_grid">
@@ -35,4 +36,14 @@ export default function Index({ pageContext }) {
   )
 }
 
-export { Head } from "./../components/head"
+export const Head = ({ location, data, pageContext }) => (
+  <SEO 
+    path={location.pathname}
+    data={data}
+    frontmatter={data?.markdownRemark?.frontmatter}
+    pageContext={pageContext}
+    title="AI"
+  >
+
+  </SEO>
+)

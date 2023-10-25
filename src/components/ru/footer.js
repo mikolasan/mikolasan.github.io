@@ -44,8 +44,9 @@ const RuFooter = () => {
       </div>
       <div className="copyright">
         <p>Сайт работает на генераторе статических сайтов {` `}
-          <a href="https://www.gatsbyjs.org" target="_blank" rel="external nofollow noopener noreferrer">Gatsby</a>. 
-          Последняя сборка: {formatDate(data.currentBuildDate.currentDate, 'ru')}
+          <a href="https://www.gatsbyjs.org" 
+            target="_blank" rel="external nofollow noopener noreferrer">Gatsby</a>. Последняя сборка: {
+            formatDate(data.currentBuildDate.currentDate, 'ru')}
         </p>
         <p>Иконки нарисованы художниками, и все необходимые <Link to="/credits">
           кредиты

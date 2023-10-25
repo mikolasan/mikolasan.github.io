@@ -11,7 +11,8 @@ const BlogPreview = ({
   readMore,
   image,
   altImage,
-  developing
+  developing,
+  tags
 }) => (
   <article className={styles.blogcard}>
     {image && (
@@ -30,10 +31,13 @@ const BlogPreview = ({
         />
       </Link>)}
     <Link to={path}>
-      <h3>
-        {title}
-      </h3>
+      <h3>{title}</h3>
     </Link>
+    {tags && (
+      <p className={styles.tags}><small>
+        {tags.map((t, i) => <span key={i}>{t}</span>)}
+      </small></p>
+    )}
     {developing && (
       <p className={styles.developing}>Under development</p>
     ) || (date && (

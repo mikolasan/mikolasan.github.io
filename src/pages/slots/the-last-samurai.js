@@ -39,4 +39,14 @@ class TheLastSamurai extends React.Component {
 
 export default TheLastSamurai
 
-export { Head } from "../../components/head"
+export const Head = ({ location, data, pageContext }) => (
+  <SEO 
+    path={location.pathname}
+    data={data}
+    frontmatter={data?.markdownRemark?.frontmatter}
+    pageContext={pageContext}
+    title="The Last Samurai"
+  >
+
+  </SEO>
+)

@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
+import { SEO } from "../components/seo"
 
 const About = ({ pageContext }) => {
   return (
@@ -104,4 +105,14 @@ const About = ({ pageContext }) => {
 
 export default About
 
-export { Head } from "./../components/head"
+export const Head = ({ location, data, pageContext }) => (
+  <SEO 
+    path={location.pathname}
+    data={data}
+    frontmatter={data?.markdownRemark?.frontmatter}
+    pageContext={pageContext}
+    title="About"
+  >
+
+  </SEO>
+)

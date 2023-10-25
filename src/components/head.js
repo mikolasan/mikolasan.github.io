@@ -2,7 +2,8 @@ import React from "react"
 import { removeHtmlExtension, removeTrailingSlash } from "../nifty"
 
 const siteUrl = `https://neupokoev.xyz`
-const siteTitle = `Robots, science, gamedev`
+const siteName = `N Tech Lab`
+const rootTitle = `Robots, science, gamedev`
 const siteDescription = `Magazine, blog and knowledge base for embedded engineers, game developers and geeks`
 const siteImageUrl = `https://neupokoev.xyz/images/preview.jpg`
 const siteImageAlt = `A pink printed circuit board (PCB) design made in Autodesk Fusion 360.
@@ -16,6 +17,7 @@ export const Head = ({ location, params, data, pageContext }) => {
   const lang = location.pathname.startsWith("/ru") ? "ru" : "en"
   const pageUrl = location.pathname // pageContext.url
   const pagination = !!pageContext?.baseUrl
+  const fromMarkdown = !!data?.markdownRemark?.frontmatter 
   
   let url = siteUrl
   if (pagination) {
@@ -25,20 +27,21 @@ export const Head = ({ location, params, data, pageContext }) => {
   }
   const canonicalUrl = removeTrailingSlash(removeHtmlExtension(url))
 
-  let title = siteTitle
+  let title = rootTitle
   let description = siteDescription
   let image = siteImageUrl
   let imageAlt = siteImageAlt
   // from blog template
-  const checkFrontmatter = data?.markdownRemark?.frontmatter 
-  if (checkFrontmatter) {
+  if (pagination) {
+    title = pageContext.title
+  } else if (fromMarkdown) {
     title = data?.markdownRemark?.frontmatter?.title
     description = data?.markdownRemark?.frontmatter?.description || `TODO: add description for this article`
     image = data?.markdownRemark?.frontmatter?.featuredImage || defaultImage
     imageAlt = data?.markdownRemark?.frontmatter?.featuredImageAlt || defaultImageAlt
   }
   
-  title += ` - N`
+  title += ` - ${siteName}`
   
   // property = RDF / HTML5
   // itemProp = Microdata
@@ -131,7 +134,7 @@ export const Head = ({ location, params, data, pageContext }) => {
   if (pageUrl !== "/") {
     meta.push({
       property: `og:site_name`,
-      content: `Neupokoev XYZ`
+      content: siteName
     })
   }
 
@@ -170,17 +173,12 @@ export const Head = ({ location, params, data, pageContext }) => {
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"></link>
 
       {/* Text */}
-      {/* <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet"></link> */}
       <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet"></link>
-      {/* <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet"></link> */}
       <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet"></link>
-      {/* <link href="https://fonts.googleapis.com/css2?family=Cardo&display=swap" rel="stylesheet"></link> */}
 
       {/* Titles */}
       <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap" rel="stylesheet"></link>
-      {/* <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet"></link> */}
       <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&display=swap" rel="stylesheet"></link>
-      {/* <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet"></link> */}
     </>
   )
 }

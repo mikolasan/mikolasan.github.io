@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import { graphql, Link } from "gatsby"
 import Snake from "../components/snake"
 import { absPathToUrl, removeHtmlExtension } from "../nifty"
+import { SEO } from "../components/seo"
 
 const NotFoundPage = ({ data }) => {
   const nodes = data.allSitePage.nodes
@@ -122,4 +123,14 @@ export const query = graphql`
   }
 `
 
-export { Head } from "./../components/head"
+export const Head = ({ location, data, pageContext }) => (
+  <SEO 
+    path={location.pathname}
+    data={data}
+    frontmatter={data?.markdownRemark?.frontmatter}
+    pageContext={pageContext}
+    title="404"
+  >
+
+  </SEO>
+)

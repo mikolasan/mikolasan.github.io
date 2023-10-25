@@ -6,7 +6,6 @@ const Layout = props => (
   <LayoutBase
     {...props}
     languageName="ru"
-    titleEnding=" - N"
     publishedText="Опубликовано: "
     updatedText="Последние правки: "
   >

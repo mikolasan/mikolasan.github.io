@@ -24,6 +24,7 @@ const PostList = ({ pageContext, posts, baseUrl }) => {
             image={getImage(node.frontmatter.previewImage)}
             altImage="Some alt text for this picture"
             developing={node.frontmatter.developing}
+            tags={node.frontmatter.tags}
           />
         ))}
       </div>

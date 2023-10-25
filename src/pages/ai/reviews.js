@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../../components/layout"
 import { absPathToUrl } from "../../nifty"
+import { SEO } from "../../components/seo"
 
 const AIReviewsPage = ({ data }) => {
   const articleNodes = data.articleNodes.nodes
@@ -53,4 +54,14 @@ export const query = graphql`
   }
 `
 
-export { Head } from "./../../components/head"
+export const Head = ({ location, data, pageContext }) => (
+  <SEO 
+    path={location.pathname}
+    data={data}
+    frontmatter={data?.markdownRemark?.frontmatter}
+    pageContext={pageContext}
+    title="AI Article Reviews"
+  >
+
+  </SEO>
+)

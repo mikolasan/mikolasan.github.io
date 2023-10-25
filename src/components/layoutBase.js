@@ -160,7 +160,6 @@ LayoutBase.propTypes = {
   languageName: PropTypes.string.isRequired,
   publishedText: PropTypes.string.isRequired,
   updatedText: PropTypes.string.isRequired,
-  titleEnding: PropTypes.string.isRequired,
 }
 
 export default LayoutBase

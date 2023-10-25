@@ -2,17 +2,24 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import PostList from "../components/postList"
+import { SEO } from "../components/seo"
 
 const Ideas = ({ data, pageContext }) => (
   <Layout
     mainConf="list"
-    title="Ideas"
+    title={pageContext.title}
     section="code"
     subsection="ideas"
     crumbs={pageContext.breadcrumb.crumbs}
     languageName="Switch to russian version"
     anotherLanguageLink="/ru"
   >
+    <p>
+      Ready to embark on the journey of app development? 
+      You're in the right place. 
+      The road to creating a fantastic app begins with a single spark of inspiration. 
+      And guess what? We've got a treasure trove of free ideas waiting just for you.
+    </p>
     <PostList
       posts={data.allMarkdownRemark.edges}
       baseUrl="/ideas"
@@ -39,6 +46,7 @@ export const query = graphql`
           frontmatter {
             title
             date
+            tags
             developing
             previewImage {
               childImageSharp {
@@ -62,4 +70,13 @@ export const query = graphql`
   }
 `
 
-export { Head } from "./../components/head"
+export const Head = ({ location, data, pageContext }) => (
+  <SEO 
+    path={location.pathname}
+    data={data}
+    frontmatter={data?.markdownRemark?.frontmatter}
+    pageContext={pageContext}
+  >
+
+  </SEO>
+)

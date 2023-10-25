@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../../components/ru/layout"
+import { SEO } from "../../components/seo"
 
 const IdeasPage = () => (
   <Layout
@@ -70,4 +71,14 @@ const IdeasPage = () => (
 
 export default IdeasPage
 
-export { Head } from "./../../components/ru/head"
+export const Head = ({ location, data, pageContext }) => (
+  <SEO 
+    path={location.pathname}
+    data={data}
+    frontmatter={data?.markdownRemark?.frontmatter}
+    pageContext={pageContext}
+    title="Идеи"
+  >
+
+  </SEO>
+)

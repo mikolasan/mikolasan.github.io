@@ -1,7 +1,7 @@
 ---
 date: "2020-05-16"
 title: "MIDI планшет"
-tags: ["mobile"]
+tags: ["mobile app"]
 idea: creative
 language: "ru"
 published: 2021-10-28

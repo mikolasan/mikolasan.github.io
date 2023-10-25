@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../../components/ru/layout"
+import { SEO } from "../../components/seo"
 import * as styles from "./about.module.css"
 
 const RuAbout = ({ pageContext }) => (
@@ -131,4 +132,14 @@ const RuAbout = ({ pageContext }) => (
 
 export default RuAbout
 
-export { Head } from "./../../components/ru/head"
+export const Head = ({ location, data, pageContext }) => (
+  <SEO 
+    path={location.pathname}
+    data={data}
+    frontmatter={data?.markdownRemark?.frontmatter}
+    pageContext={pageContext}
+    title="О себе"
+  >
+
+  </SEO>
+)

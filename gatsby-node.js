@@ -4,7 +4,7 @@ const likesConfig = require("./likes-config")
 const nifty = require("./src/nifty")
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
-const genericlistTemplate = path.resolve(`./src/templates/genericListTemplate.js`)
+const genericListTemplate = path.resolve(`./src/templates/genericListTemplate.js`)
 const codeListTemplate = path.resolve(`./src/templates/codeListTemplate.js`)
 const ideasListTemplate = path.resolve(`./src/templates/ideasListTemplate.js`)
 const linuxListTemplate = path.resolve(`./src/templates/linuxListTemplate.js`)
@@ -266,14 +266,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
   const paginationConfig = {
     "/blog": {
-      template: genericlistTemplate,
+      template: genericListTemplate,
       postsPerPage: 18,
       title: `Blog`,
       regex: "/markdown\/blog\//",
       section: "blog",
     },
     "/code/cpp": {
-      template: genericlistTemplate,
+      template: genericListTemplate,
       postsPerPage: 6,
       title: `C++`,
       regex: "/markdown\/code\/cpp\//",
@@ -283,10 +283,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     "/code": {
       template: codeListTemplate,
       postsPerPage: 9,
-      title: ``
+      title: `Code`
     },
     "/devlog": {
-      template: genericlistTemplate,
+      template: genericListTemplate,
       postsPerPage: 18,
       title: `Devlog`,
       regex: "/markdown\/devlog\//",
@@ -294,7 +294,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       subsection: "devlog",
     },
     "/gamedev": {
-      template: genericlistTemplate,
+      template: genericListTemplate,
       postsPerPage: 6,
       title: `Gamedev`,
       regex: "/markdown\/gamedev\//",
@@ -302,17 +302,20 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       subsection: "gamedev",
     },
     "/ideas": {
-      template: ideasListTemplate,
-      postsPerPage: 6,
-      title: ``
+      template: genericListTemplate,
+      postsPerPage: 12,
+      title: `Ideas`,
+      regex: `/markdown\/ideas\//`,
+      section: `code`,
+      subsection: `ideas`
     },
     "/linux": {
       template: linuxListTemplate,
       postsPerPage: 25,
-      title: ``
+      title: `Linux`
     },
     "/make/3d-prints": {
-      template: genericlistTemplate,
+      template: genericListTemplate,
       postsPerPage: 6,
       title: `3D Prints`,
       regex: "/markdown\/make\/3d-prints\//",
@@ -322,10 +325,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     "/make": {
       template: makeListTemplate,
       postsPerPage: 6,
-      title: ``
+      title: `Make`
     },
     "/projects": {
-      template: genericlistTemplate,
+      template: genericListTemplate,
       postsPerPage: 6,
       title: `Projects`,
       regex: "/markdown\/projects\//",
@@ -335,32 +338,32 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     "/science": {
       template: scienceListTemplate,
       postsPerPage: 6,
-      title: ``
+      title: `Science`
     },
     "/ru/blog": {
       template: ruBlogListTemplate,
       postsPerPage: 6,
-      title: ``
+      title: `Остальное`
     },
     "/ru/paranormal": {
       template: ruParanormalListTemplate,
       postsPerPage: 6,
-      title: ``
+      title: `Паранормальные экспедиции`
     },
     "/ru/make": {
       template: ruMakeListTemplate,
       postsPerPage: 6,
-      title: ``
+      title: `Мастерская`
     },
     "/ru/devlog": {
       template: ruDevlogListTemplate,
       postsPerPage: 6,
-      title: ``
+      title: `Разношерстный девлог`
     },
     "/ru/neural-networks": {
       template: ruScienceListTemplate,
       postsPerPage: 6,
-      title: ``
+      title: `Наука`
     },
   }
 

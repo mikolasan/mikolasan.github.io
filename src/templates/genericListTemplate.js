@@ -1,7 +1,8 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import PostList from "../components/postList"
+import { SEO } from "../components/seo"
 
 const ListTemplate = ({ data, pageContext }) => {
   return (
@@ -39,6 +40,7 @@ export const query = graphql`
           frontmatter {
             title
             date
+            tags
             developing
             previewImage {
               childImageSharp {
@@ -62,4 +64,13 @@ export const query = graphql`
   }
 `
 
-export { Head } from "../components/head"
+export const Head = ({ location, data, pageContext }) => (
+  <SEO 
+    path={location.pathname}
+    data={data}
+    frontmatter={data?.markdownRemark?.frontmatter}
+    pageContext={pageContext}
+  >
+
+  </SEO>
+)

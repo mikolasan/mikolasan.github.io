@@ -45,4 +45,14 @@ class TechStackSmack extends React.Component {
 
 export default TechStackSmack
 
-export { Head } from "../../components/head"
+export const Head = ({ location, data, pageContext }) => (
+  <SEO 
+    path={location.pathname}
+    data={data}
+    frontmatter={data?.markdownRemark?.frontmatter}
+    pageContext={pageContext}
+    title="Tech Stack Smack"
+  >
+
+  </SEO>
+)

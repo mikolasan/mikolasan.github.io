@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import DraftAlert from "../components/draftAlert"
 import InProgressAlert from "../components/inProgressAlert"
+import { SEO } from "../components/seo"
 
 export default function Template({ data, pageContext }) {
   const { markdownRemark } = data
@@ -92,4 +93,13 @@ export const pageQuery = graphql`
   }
 `
 
-export { Head } from "./../components/head"
+export const Head = ({ location, data, pageContext }) => (
+  <SEO 
+    path={location.pathname}
+    data={data}
+    frontmatter={data?.markdownRemark?.frontmatter}
+    pageContext={pageContext}
+  >
+
+  </SEO>
+)
