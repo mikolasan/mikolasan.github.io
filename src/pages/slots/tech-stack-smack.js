@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../../components/layout"
+import { SEO } from "../../components/seo"
 import { init_interface } from "../../components/slots/interface"
 import { init_reels } from "../../components/slots/tech-reels"
 import * as styles from "../../components/slots/index.module.css"
