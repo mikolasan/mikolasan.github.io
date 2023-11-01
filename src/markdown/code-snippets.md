@@ -8,22 +8,22 @@ lastModified: 2022-08-20
 
 # C++
 
-- [UDP send](/blog/udp-send-cpp)
-- [State Machine](/code/cpp-state-machine)
-- [YAML Parser](/blog/getting-started-with-rapidyaml)
-- [Read pcap files](/blog/how-to-read-pcap-file-in-cpp)
+- [UDP send](/code/cpp/send-udp-packet-example)
+- [State Machine](/code/cpp/finite-state-machine)
+- [YAML Parser](/code/cpp/getting-started-with-rapidyaml)
+- [Read pcap files](/code/cpp/how-to-read-pcap-file-in-cpp)
 
 
 # Python
 
-- [TCP client](/blog/simple-tcp-client-python)
+- [TCP client](/code/simple-tcp-client-python)
 
 
 # Java
 
-- [HTTPS client in Java](/blog/https-client-in-java)
+- [HTTPS client in Java](/code/https-client-in-java)
 
 
 # JavaScript
 
-- [Fisher-Yates shuffle algorithm](/blog/shuffle-algorithm-performance)
+- [Fisher-Yates shuffle algorithm](/code/shuffle-algorithm-performance)

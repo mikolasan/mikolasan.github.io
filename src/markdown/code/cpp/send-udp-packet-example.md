@@ -1,5 +1,5 @@
 ---
-title: C++ send UDP example
+title: Send UDP packet example
 date: 2021-10-04
 published: 2022-08-02
 lastModified: 2022-08-02
@@ -38,15 +38,22 @@ gist link: https://gist.github.com/mikolasan/adfa10849aae8d940a6caea018422f17
 #include <sys/socket.h> // socket, sendto
 #include <unistd.h> // close
 
-void send_data(const std::string& hostname, uint16_t port, const std::string_view& data) {
+void send_data(const std::string& hostname, uint16_t port, 
+               const std::string_view& data)
+{
     int sock = ::socket(AF_INET, SOCK_DGRAM, 0);
-
     sockaddr_in destination;
     destination.sin_family = AF_INET;
     destination.sin_port = htons(port);
     destination.sin_addr.s_addr = inet_addr(hostname.c_str());
 
-    int n_bytes = ::sendto(sock, data.data(), data.length(), 0, reinterpret_cast<sockaddr*>(&destination), sizeof(destination));
+    int n_bytes = ::sendto(
+        sock, 
+        data.data(), 
+        data.length(), 
+        0, 
+        reinterpret_cast<sockaddr*>(&destination), 
+        sizeof(destination));
     std::cout << n_bytes << " bytes sent" << std::endl;
     ::close(sock);
 }
