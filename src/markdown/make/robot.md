@@ -35,7 +35,7 @@ It worth looking through [popular designs](/make/robot/encyclopedia). I started 
 
 - Battery charger and step up voltage regulator in one [power board](/make/robot/power-board)
 - [Motors](/make/robot/motors) with [encoders](https://www.pololu.com/product-info-merged/4761)
-- [Motor driver board](/make/robot/motor-board) in case we decide to add motors for any purpose
+- [Motor driver board](/make/robot/motor-controller-board) in case we decide to add motors for any purpose
 - [Sensor board](/make/robot/sensor-board) (accelerometer, ultrasonic sensor)
 - Gyro
 - Tilt sensor

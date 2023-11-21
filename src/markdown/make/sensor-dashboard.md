@@ -20,7 +20,7 @@ Plans for the weekend
 - Collect data with ELK
 - Send laptop sensors to Pi
 - Display some nice dashboard
-- Connect [Pi Camera](/make/raspberry-pi-camera)
+- Connect [Pi Camera](/make/lens-for-raspberry-pi-hq-camera)
 - Stream camera feed
 - Run object recognition on camera stream
 
@@ -79,7 +79,7 @@ As for now I will search for sensor library, tentatively C# language. I look at 
 
 ## Pi camera
 
-I dedicated special post to [Pi Camera](/make/raspberry-pi-camera), because it took me out of guard. Camera but without a lens. For some reason I decided to make my research about lenses instead of ordering one for $50. I found a niche in other words.
+I dedicated special post to [Pi Camera](/make/lens-for-raspberry-pi-hq-camera), because it took me out of guard. Camera but without a lens. For some reason I decided to make my research about lenses instead of ordering one for $50. I found a niche in other words.
 
 ### Stream camera feed
 

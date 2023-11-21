@@ -1,11 +1,24 @@
 ---
 section: robot
-title: Motor board
+title: Motor controller board
 date: 2022-10-30
 published: 2022-12-20
 lastModified: 2022-12-21
 twitter: https://twitter.com/mikolasan/status/1589868745606172675
 ---
+
+Observation: everyone creates their version [of motor controller/driver board] 
+
+- [Starfish](https://blog.thea.codes/starfish-a-control-board-with-the-rp2040/) by Stargirl
+- [Acorn](https://twitter.com/TLAlexander/status/1720693291069689897) by Taylor Alexander
+
+or relies on currently available shields or hats 
+
+- Pimoroni Yukon board 
+
+![Yukon driver board](./pimoroni_yukon.jpeg "Photo by [Dr Footleg](https://twitter.com/drfootleg)")
+
+Maybe that's why Yukon is very popular, but why not to make this customly expandable?
 
 
 ## H-Bridge
@@ -87,6 +100,7 @@ Note: Pay attention to a paragraph about bulk resistance
 - [X-NUCLEO-IHM08M1](https://www.st.com/en/ecosystems/x-nucleo-ihm08m1.html) (L6398). Half bridge, but oriented on brushless motors that require a special algorithm to supply power, which is a part of hardware.
 - [MAX22007 Peripheral module](https://www.mouser.com/datasheet/2/256/MAX22007PMB-3002184.pdf) `
 - [Driver for stepper motors](https://blog.poscope.com/stepper-motor-driver/)
+- [PCA9685](https://www.nxp.com/part/PCA9685PW#/) which is actually 16-channel PWM LED controller used in [Pi Servo Hat](https://www.sparkfun.com/products/15316)
 
 ## Questions
 

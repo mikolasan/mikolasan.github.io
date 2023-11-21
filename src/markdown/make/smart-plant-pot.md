@@ -5,7 +5,10 @@ published: 2023-10-04
 lastModified: 2023-10-04
 ---
 
-This is [my main inspiration](https://www.thingiverse.com/thing:5960590)
+This is my main inspiration:
+
+- [Face](https://www.thingiverse.com/thing:5960590)
+- [Pot and software](https://github.com/FlauraPlantPot/Flaura)
 
 ### Pot redesign
 
