@@ -174,9 +174,11 @@ float getDistance()
 
 ## SparkFun Pi Servo pHAT
 
-Code [here](https://github.com/sparkfun/Pi_Servo_Hat/tree/v20)
+Code [here](https://github.com/sparkfun/Pi_Servo_Hat/tree/v20), [docs](https://piservohat-py.readthedocs.io/en/latest/index.html)
 
-[sparkfun-pi-servo-hat source](https://github.com/sparkfun/PiServoHat_Py/blob/main/pi_servo_hat.py), its dependency [sparkfun-qwiic-pca9685](https://github.com/sparkfun/Qwiic_PCA9685_Py/blob/main/qwiic_pca9685.py), and I2C driver [sparkfun-qwiic-i2c](https://github.com/sparkfun/Qwiic_I2C_Py/blob/master/qwiic_i2c/linux_i2c.py) based on **smbus2**
+- [sparkfun-pi-servo-hat source](https://github.com/sparkfun/PiServoHat_Py/blob/main/pi_servo_hat.py), 
+- its dependency [sparkfun-qwiic-pca9685](https://github.com/sparkfun/Qwiic_PCA9685_Py/blob/main/qwiic_pca9685.py), 
+- and I2C driver [sparkfun-qwiic-i2c](https://github.com/sparkfun/Qwiic_I2C_Py/blob/master/qwiic_i2c/linux_i2c.py) based on **smbus2**
 
 ```py
 import pi_servo_hat
@@ -214,3 +216,74 @@ while True:
         test.move_servo_position(0, i)
         time.sleep(.001)
 ```
+
+Sidequest: I2C library in C
+
+- [A page](https://elinux.org/Interfacing_with_I2C_Devices) from eLinux wiki, no `smbus`
+- [libi2c](https://github.com/amaork/libi2c/blob/master/src/i2c.c). Note: it uses meson build system.
+- [i2c-exp-driver](https://github.com/OnionIoT/i2c-exp-driver/blob/master/src/lib/onion-i2c.c) from Onion company
+
+forks:
+
+- https://github.com/coupdair/libi2c
+
+
+## 1.14 Inch TFT Display Module
+
+- Screen size: 135 x 240 (14.86 x 24.91 (mm))
+- Module size: 30.40 x 28 (mm)
+- Colors: 65K
+- Protocol: SPI
+- IC: ST7789V [datasheet](https://newhavendisplay.com/content/datasheets/ST7789V.pdf)
+- VCC: 3.3V
+- [store link](https://www.aliexpress.us/item/3256805450520253.html)
+- OLED ?
+
+### Connection (Wemos D1 R1)
+
+- GND -> GND obviously
+- VCC -> 3.3V
+- SCL -> D5 / SCK (clock)
+- SDA -> D7 / MOSI (data out)
+- RES -> D0 (reset, any port is good)
+- DC -> D3 (?, any port is good)
+- CS -> D4 (child select, any port is good)
+- BLK - not connected
+
+## 1.44 inch TFT Display Module
+
+- Screen size: 240 x 240 (23.4 x 23.4 (mm))
+- Module size: 27,78 x 39.22 (mm)
+- Colors: 65K
+- Protocol: SPI
+- IC ST7789VW
+- VCC: 3.3V
+- [store link](https://www.aliexpress.us/item/3256805804462796.html)
+- IPS ?
+
+### Important
+
+- For Arduino boards do NOT forget resistors to [make voltage dividers](https://simple-circuit.com/arduino-st7789-ips-tft-display-example/). Connecting to 3.3V pin is not enough to save the display from 5V. 
+- Do not skip the Reset pin (-1 doesn't mean that it is not connected)
+
+In order to avoid level shifting (voltage dividers) use 3.3V boards. Here are some options
+
+- [Adafruit Feather HUZZAH ESP8266](https://www.adafruit.com/product/3046) 80MHz with 3.3V (80MHz, Carl!)
+- [Arduino Pro Mini 328](https://www.sparkfun.com/products/11114) 3.3V/8MHz (higher clock requires higher voltage, so if you see 16MHz quarts on the board with ATmega328P then it's definitely 5V)
+- [Pro Micro](https://www.sparkfun.com/products/12587) ATmega32U4 3.3V/8MHz
+- [Seeeduino-V4.2](https://www.seeedstudio.com/Seeeduino-V4-2-p-2517.html)
+
+
+### Libraries
+
+- Fast SPI in C for ST7789 [code](https://github.com/cbm80amiga/Arduino_ST7789_Fast)
+- [Python library](https://github.com/Zeroji/st7789v)
+- Adafruit GFX: [how config sent to the controller](https://github.com/adafruit/Adafruit-ST7735-Library/blob/master/Adafruit_ST77xx.cpp#L93C30-L93C30),
+[number of columns and rows set in the config](https://github.com/adafruit/Adafruit-ST7735-Library/pull/126/files),
+and [how SPI works](https://github.com/adafruit/Adafruit-GFX-Library/blob/126007f2c52d3238b7a1133ec14192c3d1deb8a9/Adafruit_SPITFT.cpp#L1901)
+
+
+## Artemis Dev Kit
+
+- [pinout](https://cdn.sparkfun.com/assets/6/b/e/8/c/Graphical_Datasheet_Artemis_DK.pdf)
+- About [SPI](https://learn.sparkfun.com/tutorials/getting-started-with-the-artemis-development-kit/hardware-overview) (probably a typo in the pinout about SCK and SDO)
