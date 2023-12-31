@@ -30,7 +30,7 @@ export const SEO = ({ children, title, path, frontmatter, pageContext }) => {
   }
 
   let root = removeHtmlExtension(path) === "/"
-  let siteName = `N Tech Lab`
+  let siteName = `K Robot Lab`
   let rootTitle = `Robots, science, gamedev`
   let author = `Nikolay Neupokoev`
   if (lang === `ru`) {

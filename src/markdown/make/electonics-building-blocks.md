@@ -287,3 +287,20 @@ and [how SPI works](https://github.com/adafruit/Adafruit-GFX-Library/blob/126007
 
 - [pinout](https://cdn.sparkfun.com/assets/6/b/e/8/c/Graphical_Datasheet_Artemis_DK.pdf)
 - About [SPI](https://learn.sparkfun.com/tutorials/getting-started-with-the-artemis-development-kit/hardware-overview) (probably a typo in the pinout about SCK and SDO)
+
+
+## Vibration motors
+
+- Motor size: 4mm x 8mm
+- Rated voltage: 3.0V DC
+- Operating voltage range: 2.5-4.0V DC
+- Rotation direction: CW/CCW
+- Operating environment: -20°C - + 60°C
+- Storage Environment: -30°C - + 70°C
+- Rated speed: 11000 ± 3000RPM Min
+- Rated current: 90mA max
+- Stall current: 120mA max
+- Starting voltage: 2.4V DC Max
+- Insulation resistance: 10MΩ Min
+- Termination impedance: 30Ω ±15% (single phase) | | 60 Ω ±15% (duplex)
+- [store link](https://www.aliexpress.us/item/3256802567607902.html)

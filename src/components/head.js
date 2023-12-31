@@ -2,7 +2,7 @@ import React from "react"
 import { removeHtmlExtension, removeTrailingSlash } from "../nifty"
 
 const siteUrl = `https://neupokoev.xyz`
-const siteName = `N Tech Lab`
+const siteName = `K Robot Lab`
 const rootTitle = `Robots, science, gamedev`
 const siteDescription = `Magazine, blog and knowledge base for embedded engineers, game developers and geeks`
 const siteImageUrl = `https://neupokoev.xyz/images/preview.jpg`

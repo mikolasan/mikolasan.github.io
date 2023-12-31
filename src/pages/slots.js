@@ -8,18 +8,10 @@ const Slots = ({ pageContext }) => (
     section="slots"
     crumbs={pageContext.breadcrumb.crumbs}
   >
-       
-    <h2>Board game development</h2>
-    <ul>
-      <li>Section <a href="/board-games">Board games</a></li>
-      <li></li>
-      <li></li>
-    </ul>
-    
     <h2>Cool feature prototypes</h2>
     <div className="ideacards">
       <div className="ideacard">
-        <a href="/gamedev/fire">
+        <a href="/slots/tech-stack-smack">
           <img src="/images/projects/fire.jpg" alt="Pink Cadillac"/>
         </a>
         <div className="idea-card-container">
@@ -30,8 +22,8 @@ const Slots = ({ pageContext }) => (
       </div>
 
       <div className="ideacard">
-        <a href="/gamedev/fire">
-          <img src="/images/projects/fire.jpg" alt="Pink Cadillac"/>
+        <a href="/slots/the-last-samurai">
+          <img src="/images/slots/samurai/_4921539a-d3d6-4cd1-a050-ed5252567b58.jpeg" alt="chinese lantern on fire"/>
         </a>
         <div className="idea-card-container">
           <h3><b>The Last Samurai</b></h3>
@@ -39,25 +31,18 @@ const Slots = ({ pageContext }) => (
           <p><a href="/slots/the-last-samurai">Try the slot</a></p>
         </div>
       </div>
+
+      <div className="ideacard">
+        <a href="/slots/still-life">
+          <img src="/images/slots/van-gogh/_0331afc1-42f9-49c1-9ee7-99b0f6877f10.jpeg" alt="spades suit drawn in Van Gogh style"/>
+        </a>
+        <div className="idea-card-container">
+          <h3><b>Still Life</b></h3>
+          <p></p>
+          <p><a href="/slots/the-last-samurai">Try the slot</a></p>
+        </div>
+      </div>
     </div>
-
-    <h2>Game Jams</h2>
-
-    <p>
-      Game jams I have <a href="/gamedev/game-jams">participated in</a>
-    </p>
-
-    <h2>Cool game names</h2>
-
-    <p>
-      While I&apos;m thinking on a title name for one project, I believe some catchy versions can go to a trash bin, 
-      but they can shine in another game. Here&apos;s my trash:
-    </p>
-    <ul>
-      <li>Turtle Empire</li>
-      <li></li>
-      <li></li>
-    </ul>
   </Layout>
 )
 

@@ -8,3 +8,7 @@ lastModified: 2023-10-05
 ---
 
 Small carryable devices that only transmit data. They use solar energy to increase battery life. But essentially they serve as a replacement for WiFi and cell networks. Like bread crumbs: just leave these devices on your way, and they will transmit back to your home. It will use some radio frequencies.
+
+### References
+
+- [Guide to solr power systems](https://solar.lowtechmagazine.com/2023/12/how-to-build-a-small-solar-power-system/) by Low Tech Magazine
