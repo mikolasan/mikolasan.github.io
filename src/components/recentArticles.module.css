@@ -49,10 +49,15 @@
   .recentarticles {
     max-width: 960px;
     padding: 2.5rem 1rem 4rem;
+    border-top: #211a1d  0.25rem solid;
   }
 }
 
 @media screen and (max-width: 870px) {
+  .recentarticles {
+    border-top: #211a1d  0.25rem solid;
+  }
+
   .blogcard {
     flex: 50%;
     display: block;

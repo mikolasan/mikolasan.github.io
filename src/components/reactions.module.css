@@ -7,13 +7,11 @@
   margin-right: -1.5rem;
   padding: 1rem 0;
   padding-left: 1.5rem;
-  background-color: rgb(212, 212, 212);
-
 }
 
 .reactions ul {
   margin-left: 0;
-  margin-top: 4rem;
+  margin-top: 1rem;
   display: flex;
   justify-content: flex-start;
   gap: 1rem;
@@ -37,13 +35,13 @@
   gap: 1rem;
 
   padding: 0.5rem 1rem;
-  border-radius: 2rem;
+  border-radius: 0.25rem;
   border-style: solid;
-  border-color: #d0d0d0;
-  border-width: 2px;
+  border-color: #ccc;
+  border-width: 1px;
   cursor: pointer;
   
-  background-color: #fff;
+  background-color: #f9f9f9;
 }
 
 .reactions img {

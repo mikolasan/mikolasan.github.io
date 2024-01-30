@@ -22,6 +22,7 @@ class Reactions extends React.Component {
     this.pageUrl = props.slug
     this.errorCallback = props.errorCallback
     this.state = {
+      voted: false,
       reactions: {
         "heart": 0,
         "exploding-head": 0,
@@ -88,8 +89,9 @@ class Reactions extends React.Component {
       Object.entries(data.reactions).forEach(([name, reaction]) => {
         reactions[name] = reaction
       })
-      const requestTime = Date.now() - requestStartTime
-      this.setMessageAndCallback(`Reactions retrieved from Mongo DB and delivered by a Python service in ${Math.floor(requestTime / 1000)} msec`);
+      this.setMessageAndCallback("\u00A0");
+      // const requestTime = Date.now() - requestStartTime
+      //this.setMessageAndCallback(`Reactions retrieved from Mongo DB and delivered by a Python service in ${Math.floor(requestTime / 1000)} msec`);
       this.setState({
         reactions: reactions,
         total: Object.values(reactions).reduce((a, b) => a + b, 0)
@@ -106,6 +108,8 @@ class Reactions extends React.Component {
 
   sendReaction(reactionName, e) {
     e.preventDefault()
+    if (this.state.voted) return;
+    
     // Simple POST request with a JSON body using fetch
     const requestOptions = {
       method: "POST",
@@ -125,6 +129,7 @@ class Reactions extends React.Component {
         const reactions = {...self.state.reactions}
         reactions[data.reactionName] = data.reaction
         self.setState({
+          voted: true,
           reactions: reactions,
           total: Object.values(reactions).reduce((a, b) => a + b, 0)
         })        
@@ -132,39 +137,52 @@ class Reactions extends React.Component {
       .catch(err => self.setMessageAndCallback(`My dear friend! We have encountered this: ${err}`))
   }
 
+  getReactionScore(reactionName) {
+    if (this.state.voted) {
+      return this.state.reactions[reactionName];
+    } else {
+      return `+1`;
+    }
+  }
+
+  getStatusMessage() {
+    return this.state.message;
+  }
+
   render() {
     return (
       <section className={styles.reactions} aria-label="Page reactions">
+        <h3>Rate this page</h3>
         <ul>
           <li>
             <button onClick={this.reactHeart} aria-label="Heart">
               <img src="/images/reactions/heart_t.svg"  alt="heart reaction" />
-              {` `}{this.state.reactions.heart}
+              {` `}{this.getReactionScore("heart")}
             </button>
           </li>
           <li>
             <button onClick={this.reactExplodingHead} aria-label="Eploding Head">
               <img src="/images/reactions/exploding_head_t.svg" alt="exploding head reaction" />
-              {` `}{this.state.reactions["exploding-head"]}</button>
+              {` `}{this.getReactionScore("exploding-head")}</button>
           </li>
           <li>
             <button onClick={this.reactRaisedHands} aria-label="RaisedHands">
               <img src="/images/reactions/raising_hands_t.svg" alt="raised hands reaction" />
-              {` `}{this.state.reactions["raised-hands"]}</button>
+              {` `}{this.getReactionScore("raised-hands")}</button>
           </li>
           <li>
             <button onClick={this.reactFire} aria-label="Fire">
               <img src="/images/reactions/fire_t.svg" alt="fire reaction" />
-              {` `}{this.state.reactions.fire}</button>
+              {` `}{this.getReactionScore("fire")}</button>
           </li>
           <li>
             <button onClick={this.reactUnicorn} aria-label="Unicorn">
               <img src="/images/reactions/unicorn_t.svg" alt="unicorn reaction" />
-              {` `}{this.state.reactions.unicorn}</button>
+              {` `}{this.getReactionScore("unicorn")}</button>
           </li>
         </ul>
         <p>
-          {this.state.message}
+          {this.getStatusMessage()}
         </p>
       </section>
     )

@@ -45,12 +45,10 @@ const MainCentered = ({
       <div className="main-section">
         {children}
         {showLikes && (
-          <>
-            <Reactions
-              slug={slug}
-              errorCallback={errorCallback}
-            />
-          </>
+          <Reactions
+            slug={slug}
+            errorCallback={errorCallback}
+          />
         )}
       </div>
       <RelatedArticles

@@ -1,22 +1,45 @@
 import React from "react"
 import Layout from "../components/layout"
 import HomeBlock from "../components/homeBlock"
+import ScrollSplit from "../components/scrollSplit"
 import { articles } from "../home/july2023"
 import { SEO } from "../components/seo"
 
 const threeColumnLayout = (
-  <div className="home_grid">
-    <div className="home_grid_column_1">
-      <HomeBlock {...articles[0]} />
-      <HomeBlock {...articles[3]} />
+  <div>
+    <div className="centered">
+      <div className="main-section">
+        <h3>February 2024, Issue 5</h3>
+      </div>
     </div>
-    <div className="home_grid_column_2">
-      <HomeBlock {...articles[1]} />
-      <HomeBlock {...articles[4]} />
+    
+    <div className="centered">
+      <div className="main-section">
+        <HomeBlock {...articles[0]} />
+      </div>
     </div>
-    <div className="home_grid_column_3 wide">
-      <HomeBlock {...articles[2]} />
-      <HomeBlock {...articles[5]} />
+
+    <ScrollSplit>
+      <h1>Science</h1>
+    </ScrollSplit>
+
+    <div className="centered">
+      <div className="main-section">
+        <HomeBlock {...articles[1]} />
+        <HomeBlock {...articles[2]} />
+      </div>
+    </div>
+
+    <ScrollSplit>
+      <h1>Make</h1>
+    </ScrollSplit>
+
+    <div className="centered">
+      <div className="main-section">
+        <HomeBlock {...articles[3]} />
+        <HomeBlock {...articles[4]} />
+        <HomeBlock {...articles[5]} />
+      </div>
     </div>
   </div>
 )

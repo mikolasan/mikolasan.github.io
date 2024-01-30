@@ -5,6 +5,17 @@ published: 2023-06-03
 lastModified: 2023-06-03
 ---
 
+
+## Questions
+
+- What stacks add to the whole picture? How are they different?
+- Why 2 parts are called encoder and encoder if they both take input data similarly and process data with almost exact layers? (Only if the first layer of the decoder consisting of the masked multi-head attention is converting encoder into decoder. Or because data from encoder is forwarded into the decoder?). I think that names of these two parts should reflect time-relative context.
+
+>  The models proposed recently for neural machine translation often belong to a family of encoder-decoders and consists of an encoder that encodes a source sentence into a fixed-length vector from which a decoder generates a translation.
+>
+> _[Neural Machine Translation by Jointly Learning to Align and Translate](https://arxiv.org/abs/1409.0473)_
+
+
 Based on [this tutorial](https://www.tensorflow.org/text/tutorials/transformer)
 
 I am trying to understand the difference in training data between sequence2sequence and bidirectional Transformers (like [BERT](https://arxiv.org/pdf/1810.04805.pdf), [code](https://github.com/tensorflow/models/blob/master/official/legacy/bert/bert_models.py))

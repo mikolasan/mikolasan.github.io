@@ -5,6 +5,9 @@ import PostList from "../components/postList"
 import { SEO } from "../components/seo"
 
 const ListTemplate = ({ data, pageContext }) => {
+  const banner = [
+    <h1 key="title" id="_name1" itemProp="name">{pageContext.title}</h1>,
+  ]
   return (
     <Layout
       mainConf="list"
@@ -14,6 +17,7 @@ const ListTemplate = ({ data, pageContext }) => {
       crumbs={pageContext.breadcrumb.crumbs}
       languageName="Switch to russian version"
       anotherLanguageLink="/ru"
+      bannerParagraph={banner}
     >
       <PostList
         posts={data.allMarkdownRemark.edges}

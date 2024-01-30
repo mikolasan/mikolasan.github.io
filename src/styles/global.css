@@ -56,7 +56,6 @@ section {
 }
 
 .left-section {
-  flex-grow: 1;
   flex-shrink: 1;
   max-width: 300px;
   display: block;
@@ -71,14 +70,10 @@ section {
   max-width: 960px;
   background-color: #fff;
   padding: 2.5rem 1.5rem 4rem;
-  border-bottom: none;
 }
 
 .banner {
-  background-image: linear-gradient( 86.3deg,  rgba(0,119,182,1) 3.6%, rgba(8,24,68,1) 87.6% );
-
   width: 100%;
-  height: 300px;
   display: grid;
 }
 
@@ -142,7 +137,6 @@ section {
   height: 100%;
   max-width: 960px;
   padding: 1rem 1.5rem;
-  color: #f2f2f2;
 
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -632,7 +626,7 @@ body {
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
-  background: #f0f0f0;
+  background: #fff;
 }
 img {
   max-width: 100%;

@@ -157,7 +157,7 @@ Open Anaconda PowerShell prompt (I installed **miniconda** [here](/blog/starcode
 python -m venv .venv
 .\.venv\Scripts\activate.ps1
 pip install .
-gvsbuild build gtk4 libadwaita gtksourceview5
+gvsbuild build gtk4 libadwaita gtksourceview5 gettext
 ```
 
 Then make sip of tea 🍵
