@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import HomeBlock from "../components/homeBlock"
 import ScrollSplit from "../components/scrollSplit"
-import { articles } from "../home/july2023"
+import { articles } from "../home/february2024"
 import { SEO } from "../components/seo"
 
 const threeColumnLayout = (
@@ -26,7 +26,7 @@ const threeColumnLayout = (
     <div className="centered">
       <div className="main-section">
         <HomeBlock {...articles[1]} />
-        <HomeBlock {...articles[2]} />
+        <HomeBlock {...articles[5]} />
       </div>
     </div>
 
@@ -36,11 +36,22 @@ const threeColumnLayout = (
 
     <div className="centered">
       <div className="main-section">
+        <HomeBlock {...articles[2]} />
         <HomeBlock {...articles[3]} />
-        <HomeBlock {...articles[4]} />
-        <HomeBlock {...articles[5]} />
       </div>
     </div>
+
+    <ScrollSplit>
+      <h1>Code</h1>
+    </ScrollSplit>
+
+    <div className="centered">
+      <div className="main-section">
+        <HomeBlock {...articles[4]} />
+      </div>
+    </div>
+
+
   </div>
 )
 
