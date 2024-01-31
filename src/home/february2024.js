@@ -10,7 +10,7 @@ export const articles = [
     but any other fault tolerance methodology should work too.</p>
     <p></p>`,
     readMore: ``,
-    imgSrc: `/images/home/reed-solomon-in-ann-encoding.png`,
+    imgSrc: ``,
     imgAlt: ``,
   },
   {
@@ -24,7 +24,7 @@ export const articles = [
     but we very much appreciate even some strange abstract splashes because...
     </p>`,
     readMore: ``,
-    imgSrc: `/images/home/backpack-with-brains-at-the-San-Francisco-Museum-of-Modern-Art.jpg`,
+    imgSrc: ``,
     imgAlt: ``,
   },
   {
@@ -33,7 +33,7 @@ export const articles = [
     subtitle: `controlled by neural netowrk`,
     url: `/ideas/christmas-tree-lights-controlled-by-neural-network`,
     excerpt: `<p>Addressable LEDs in some ornament. A neural network drives the signals.</p>`,
-    readMore: `Understand Models in PyTorch`,
+    readMore: `instead of designing special algorithm for switching lights...`,
     imgSrc: ``,
     imgAlt: ``,
   },
@@ -45,7 +45,7 @@ export const articles = [
     excerpt: `<p>I had a dream where I worked with hardware engineers. 
     We were examining a machine and then the power went down.
     </p>`,
-    readMore: `I successfully finished the assembly of my first 3d printer`,
+    readMore: `This happened next`,
     imgSrc: ``,
     imgAlt: ``,
   },
@@ -56,7 +56,7 @@ export const articles = [
     url: `/blog/solid-pods`,
     excerpt: `<p>I studied Solid Pods carefully yesterday and I don't like what I found.
     </p>`,
-    readMore: `Data scientists LOVE Jupyter notebooks.`,
+    readMore: ``,
     imgSrc: null,
     imgAlt: null,
   },
