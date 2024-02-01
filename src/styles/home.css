@@ -5,18 +5,30 @@
 }
 
 .issue-line {
-  padding: 1rem;
-  margin: 1rem;
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  border-top: 0.25rem solid #000;
-  border-bottom: 0.25rem solid #000;
+  border-top: 2px solid #211a1d;
+  border-bottom: 2px solid #211a1d;
+}
+
+.issue-slogan {
+  margin: 1rem 2rem;
+  border-right: 2px solid #211a1d;
+}
+
+.issue-date {
+  margin: 1rem 2rem;
+  border-left: 2px solid #211a1d;
 }
 
 .issue-number {
+  margin: 1rem 2rem;
+}
 
+.issue-number h3 {
+  margin: 0;
 }
 
 .bottomline {
@@ -29,31 +41,73 @@
   max-width: 1260px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   column-gap: 2rem;
+  margin: 0;
+}
+
+.home-all h1 {
+  font-size: 2.2rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.home-all .banner {
+  border-top: 2px solid #211a1d;
+  border-bottom: 2px solid #211a1d;
+}
+
+.home-all .banner h1 {
+  margin: 0;
+}
+
+.home-logo {
+  margin: 2rem;
+  width: 100px;
+}
+
+.home-image {
+  overflow: hidden;
 }
 
 .home-image img {
   height: 100%;
-  max-width: 400px;
+  width: 100%;
+  padding: 2rem 0;
   object-fit: cover;
 }
 
 .home-first-block {
   display: flex;
   flex-direction: row;
+  column-gap: 2rem;
 }
 
 .home-left-column {
   max-width: 400px;
+  margin: 1rem 1rem;
   display: flex;
   flex-direction: column;
 }
 
+.home-left-column section {
+  width: 400px;
+}
+
 .home-right-column {
   max-width: 400px;
+  margin: 1rem 1rem;
   display: flex;
   flex-direction: column;
+}
+
+.home-small-headlines {
+  margin: 2rem 0 0;
+}
+
+.home-small-headlines h1 {
+  font-size: 1.8rem;
+  margin: 1rem 0;
 }
 
 .home_title {
@@ -61,7 +115,7 @@
 }
 
 .home_subtitle {
-  margin-bottom: 1.45rem;
+  margin-bottom: 1rem;
   font-family: 'Barlow', sans-serif;
   font-size: 1.8rem;
   line-height: 1.1;
@@ -102,9 +156,17 @@
     display: flex;
     flex-direction: column;
   }
+}
 
+@media all and (max-width: 650px) {
   .home-image {
     display: none;
   }
+
+  
+  .home-left-column section {
+    width: unset;
+  }
+
 
 }

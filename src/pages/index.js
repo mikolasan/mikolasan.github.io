@@ -1,12 +1,14 @@
 import React from "react"
 import Layout from "../components/layout"
 import HomeBlock from "../components/homeBlock"
+import LogoButton from "../components/logoButton"
 import ScrollSplit from "../components/scrollSplit"
 import { articles } from "../home/february2024"
 import { SEO } from "../components/seo"
 
 const threeColumnLayout = (
   <div className="home-all">
+    <LogoButton style="home-logo" />
     <div className="issue-line">
       <div className="issue-slogan"></div>
       <div className="issue-number">
@@ -28,8 +30,27 @@ const threeColumnLayout = (
       <div className="home-right-column">
         <HomeBlock {...articles[5]} />
         <div className="home-small-headlines">
-          <HomeBlock {...articles[2]} />
-          <HomeBlock {...articles[3]} />
+          <secion>
+            <a href={articles[2].url}>
+              <h1>
+                {articles[2].title}
+              </h1>
+            </a>
+          </secion>
+          <secion>
+            <a href={articles[3].url}>
+              <h1>
+                {articles[3].title}
+              </h1>
+            </a>
+          </secion>
+          <secion>
+            <a href={articles[4].url}>
+              <h1>
+                {articles[4].title}
+              </h1>
+            </a>
+          </secion>
         </div>
       </div>
     </div>
@@ -38,10 +59,10 @@ const threeColumnLayout = (
       <h1>Latest</h1>
     </ScrollSplit>
 
-    <div className="centered">
-      <div className="main-section">
-        <HomeBlock {...articles[4]} />
-      </div>
+    <div className="home-left-column">
+      <HomeBlock {...articles[6]} />
+      <HomeBlock {...articles[7]} />
+      <HomeBlock {...articles[8]} />
     </div>
 
 

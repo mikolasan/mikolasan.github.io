@@ -63,11 +63,45 @@ export const articles = [
   {
     style: `box6`,
     title: `Solving CartPole`,
-    subtitle: ` with Spiking Neural Networks`,
+    subtitle: `with Spiking Neural Networks`,
     url: `/ai/solve-cartpole-with-spiking-neural-networks`,
     excerpt: `<p>Sutton and Burto wrote the whole book about Reinforcment Learning, 
     so no wonder why their problem is solved this way, 
     but today we will use Spiking Neural Networks to achieve one-shot learning and smooth movements</p>`,
+    readMore: ``,
+    imgSrc: null,
+    imgAlt: null,
+  },
+  {
+    style: `box7`,
+    title: `Popular science book reviews`,
+    subtitle: ``,
+    url: `/blog/popular-science-book-reviews`,
+    excerpt: `<p>Somewhere in the middle of the book you reach that part that looks like an acid trip. 
+    You know, like in every good movie from the 90’s, where the main protagonist faces a moment of hard decision.
+    </p>`,
+    readMore: ``,
+    imgSrc: null,
+    imgAlt: null,
+  },
+  {
+    style: `box8`,
+    title: `Advanced Finite State Machine`,
+    subtitle: ``,
+    url: `/code/cpp/advanced-finite-state-machine`,
+    excerpt: `<p>In one project, I decided to navigate through the steps of the installation wizard using a state machine.
+    </p>`,
+    readMore: ``,
+    imgSrc: null,
+    imgAlt: null,
+  },
+  {
+    style: `box9`,
+    title: `Boot Raspberry Pi when nothing helps`,
+    subtitle: ``,
+    url: `/make/boot-raspberry-pi-when-nothing-helps`,
+    excerpt: `<p>I will need to check the power supply, though it's the official one that provides 5V 3A, I doubt that the problem is there.
+    </p>`,
     readMore: ``,
     imgSrc: null,
     imgAlt: null,
