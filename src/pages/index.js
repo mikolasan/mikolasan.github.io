@@ -59,7 +59,7 @@ const threeColumnLayout = (
       <h1>Latest</h1>
     </ScrollSplit>
 
-    <div className="home-left-column">
+    <div className="home-grid home-latest">
       <HomeBlock {...articles[6]} />
       <HomeBlock {...articles[7]} />
       <HomeBlock {...articles[8]} />

@@ -41,7 +41,7 @@ A list from [this blog](https://cnvrg.io/spiking-neural-networks/)
 ### Unsupervised Learning
 
 - [Spike-timing-dependent plasticity (STDP)](http://www.scholarpedia.org/article/Spike-timing_dependent_plasticity)
-- [Growing Spiking Neural Networks](https://arxiv.org/pdf/1807.09374.pdf)
+- [Unsupervised Learning with Self-Organizing Spiking Neural Networks](https://arxiv.org/pdf/1807.09374.pdf) (Hazan et al 2018). Growing Spiking Neural Networks, activation based on spacial proximity which makes similar classes transition from one to another.
 - [Artola, Bröcher, Singer (ABS) rule](https://www.sciencedirect.com/science/article/abs/pii/016622369390081V)
 - [Bienenstock, Cooper, Munro (BCM) rule](http://www.scholarpedia.org/article/BCM_theory)
 - [Relationship between BCM and STDP rules](http://www.izhikevich.org/publications/bcm.pdf)

@@ -1,12 +1,12 @@
 ---
-path: /projects/one-app-per-month
+title: App development challenge
+subtitle: One app per month
 date: 2020-05-01
-title: One app per month
-subtitle: Mastering Code and Self
 published: 2020-05-03
 lastModified: 2020-05-03
 ---
 
+One app per month - mastering Code and Self
 
 ## The Concept
 
