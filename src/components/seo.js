@@ -115,6 +115,9 @@ export const SEO = ({ children, title, path, frontmatter, pageContext }) => {
       <title>{title}</title>
 
       <link rel="canonical" href={canonicalUrl} />
+
+      <script defer src="https://analytics.us.umami.is/script.js" data-website-id="f315aad6-83df-4cfe-aa66-8322fce95327"></script>
+      
       <link rel="preconnect" href="https://fonts.googleapis.com"></link>
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"></link>
 
