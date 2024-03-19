@@ -1,6 +1,8 @@
 ---
 title: Logic programming in C++
-date: 24-01-2019
+date: 2019-01-24
+published: 2019-01-24
+lastModified: 2019-01-24
 ---
 
 - https://wordsandbuttons.online/logic_programming_in_cpp.html
