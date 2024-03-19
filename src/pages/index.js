@@ -75,8 +75,6 @@ export default function Index({ pageContext }) {
       mainConf="fullscreen"
       title="Robots, science, gamedev"
       section="root"
-      languageName="Switch to russian version"
-      anotherLanguageLink="/ru"
       recentArticles={pageContext.recentArticles}
     >
       {threeColumnLayout}

@@ -11,8 +11,6 @@ const Make = ({ data, pageContext }) => (
     title={pageContext.title}
     section="make"
     crumbs={pageContext.breadcrumb.crumbs}
-    languageName="Switch to russian version"
-    anotherLanguageLink="/ru/make"
   >
     <PostList
       posts={data.allMarkdownRemark.edges}

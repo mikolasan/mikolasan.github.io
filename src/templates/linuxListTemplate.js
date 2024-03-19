@@ -12,8 +12,6 @@ const Linux = ({ data, pageContext }) => (
     section="code"
     subsection="linux"
     crumbs={pageContext.breadcrumb.crumbs}
-    languageName="Switch to russian version"
-    anotherLanguageLink="/ru/devlog"
   >
     <CompactList
       posts={data.allMarkdownRemark.edges}

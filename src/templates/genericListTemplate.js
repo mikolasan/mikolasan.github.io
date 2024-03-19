@@ -15,8 +15,6 @@ const ListTemplate = ({ data, pageContext }) => {
       section={pageContext.section}
       subsection={pageContext.subsection}
       crumbs={pageContext.breadcrumb.crumbs}
-      languageName="Switch to russian version"
-      anotherLanguageLink="/ru"
       bannerParagraph={banner}
     >
       <PostList

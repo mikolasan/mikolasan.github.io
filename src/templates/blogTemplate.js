@@ -12,8 +12,6 @@ export default function Template({ data, pageContext }) {
   const { frontmatter, html, excerpt, tableOfContents } = markdownRemark
   const url = pageContext.url
   const section = url.substring(1, url.indexOf('/', 1))
-  const languageName = "Switch to russian version"
-  const anotherLanguageLink = '/ru'
   let published = frontmatter.published || frontmatter.date
   let lastModified = frontmatter.lastModified || frontmatter.date
   // date fixes
@@ -40,8 +38,6 @@ export default function Template({ data, pageContext }) {
       showLikes={pageContext.showLikes}
       slug={pageContext.url}
       crumbs={pageContext.breadcrumb.crumbs}
-      languageName={languageName}
-      anotherLanguageLink={anotherLanguageLink}
       buttonText={frontmatter.buttonText}
       buttonLink={frontmatter.buttonLink}
       secondButtonText={frontmatter.secondButtonText}

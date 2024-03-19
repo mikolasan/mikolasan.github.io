@@ -11,8 +11,6 @@ const Ideas = ({ data, pageContext }) => (
     section="code"
     subsection="ideas"
     crumbs={pageContext.breadcrumb.crumbs}
-    languageName="Switch to russian version"
-    anotherLanguageLink="/ru"
   >
     <p>
       Ready to embark on the journey of app development? 

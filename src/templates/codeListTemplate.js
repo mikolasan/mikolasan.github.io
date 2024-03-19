@@ -11,8 +11,6 @@ const Code = ({ data, pageContext }) => (
     title={pageContext.title}
     section="code"
     crumbs={pageContext.breadcrumb.crumbs}
-    languageName="Switch to russian version"
-    anotherLanguageLink="/ru/devlog"
   >
     <PostList
       posts={data.allMarkdownRemark.edges}

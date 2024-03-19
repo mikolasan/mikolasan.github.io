@@ -8,8 +8,6 @@ const About = ({ pageContext }) => {
       title="Developer, traveler, snob"
       section="about"
       crumbs={pageContext.breadcrumb.crumbs}
-      languageName="Switch to russian version"
-      anotherLanguageLink="/ru/about"
       buttonText="Open my latest projects"
       buttonLink="/projects"
       secondButtonText="Fresh posts in the blog"

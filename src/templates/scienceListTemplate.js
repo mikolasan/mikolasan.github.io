@@ -11,8 +11,6 @@ const Science = ({ data, pageContext }) => (
     title={pageContext.title}
     section="science"
     crumbs={pageContext.breadcrumb.crumbs}
-    languageName="Switch to russian version"
-    anotherLanguageLink="/ru/neural-networks"
   >
     <PostList
       posts={data.allMarkdownRemark.edges}
