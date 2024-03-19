@@ -1,6 +1,8 @@
 ---
 date: 2023-01-06
 title: Functional Analysis and Graph Theory
+published: 2023-01-13
+lastModified: 2023-01-13
 ---
 
 

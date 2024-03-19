@@ -2,6 +2,8 @@
 date: 2022-10-04
 title: Linux mysteries
 developing: true
+published: 2023-02-07
+lastModified: 2023-06-04
 ---
 
 A collection of things that I cannot explain

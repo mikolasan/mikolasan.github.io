@@ -1,6 +1,8 @@
 ---
 title: Elegant C code
 date: 2022-12-24
+published: 2022-12-25
+lastModified: 2023-05-14
 ---
 
 What the result of this code will be?

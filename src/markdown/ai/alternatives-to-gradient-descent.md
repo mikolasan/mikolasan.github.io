@@ -1,6 +1,8 @@
 ---
 date: 2022-11-13
 title: Alternatives to gradient descent
+published: 2023-01-03
+lastModified: 2023-10-04
 ---
 
 ## Improvements

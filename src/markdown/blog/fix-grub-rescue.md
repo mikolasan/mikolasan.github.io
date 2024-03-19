@@ -1,6 +1,8 @@
 ---
 title: Fix Grub rescue
 date: 2023-01-31
+published: 2023-02-07
+lastModified: 2023-05-14
 ---
 
 The following answer by [Ivan Bartsov](https://unix.stackexchange.com/a/193778/78773) is copied from [Unix&Linux Stack Exchange](https://unix.stackexchange.com/questions/114429/short-read-while-trying-to-open-partition/193778#193778) 

@@ -86,7 +86,6 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         published(formatString: "MMMM DD, YYYY")
         lastModified(formatString: "MMMM DD, YYYY")
-        path
         title
         subtitle
         section

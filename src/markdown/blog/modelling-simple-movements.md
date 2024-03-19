@@ -2,7 +2,7 @@
 date: 2023-04-29
 title: Modelling simple movements 
 published: 2023-04-29
-lastModified: 2023-04-29
+lastModified: 2023-05-11
 twitter: https://twitter.com/mikolasan/status/1651481568555433984
 ---
 

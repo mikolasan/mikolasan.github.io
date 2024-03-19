@@ -6,9 +6,8 @@ import { absPathToUrl, removeHtmlExtension } from "../nifty"
 import { SEO } from "../components/seo"
 
 const NotFoundPage = ({ data }) => {
-  const nodes = data.allSitePage.nodes
   const edges = data.allMarkdownRemark.edges
-  const slugs = nodes.map(node => removeHtmlExtension(node.path))
+  const slugs = edges.map(e => absPathToUrl(e.node.fileAbsolutePath))
   const sections = new Map()
   const ruSections = new Map()
   slugs.forEach(path => {
@@ -72,31 +71,6 @@ const NotFoundPage = ({ data }) => {
         )
       })}
 
-      <hr />
-      <p>And here is the Russian part of this website</p>
-      {Array.from(ruSections.keys()).map(key => {
-        return (
-          <details key={key}>
-            <summary>
-              <h2>▸ {key.replaceAll("-", " ")}</h2>
-            </summary>
-            <ul>
-              {ruSections.get(key).map(path => {
-                let title = "---"
-                const edge = edges.find(e => absPathToUrl(e.node.fileAbsolutePath) === path)
-                if (edge === undefined) {
-                  return ``
-                } else {
-                  title = edge.node.frontmatter.title
-                  return <li key={path}>
-                    <Link to={path}>{title}</Link>
-                  </li>
-                }
-              })}
-            </ul>
-          </details>
-        )
-      })}
     </Layout>
   )
 }
@@ -105,11 +79,6 @@ export default NotFoundPage
 
 export const query = graphql`
   query AllNavigationQuery {
-    allSitePage {
-      nodes {
-        path
-      }
-    },
     allMarkdownRemark {
       edges {
         node {

@@ -2,6 +2,8 @@
 title: Clue
 subtitle: Review and ideas
 date: 2021-11-02
+published: 2021-11-02
+lastModified: 2021-11-02
 ---
 
 ## Review

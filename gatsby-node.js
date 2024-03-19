@@ -184,6 +184,7 @@ const queryAll = async graphql => {
   `)
 
   if (result.errors) {
+    console.log(result.errors)
     throw `Error while running GraphQL query for ALL pages.`
   }
   return result
@@ -339,31 +340,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       template: scienceListTemplate,
       postsPerPage: 6,
       title: `Science`
-    },
-    "/ru/blog": {
-      template: ruBlogListTemplate,
-      postsPerPage: 6,
-      title: `Остальное`
-    },
-    "/ru/paranormal": {
-      template: ruParanormalListTemplate,
-      postsPerPage: 6,
-      title: `Паранормальные экспедиции`
-    },
-    "/ru/make": {
-      template: ruMakeListTemplate,
-      postsPerPage: 6,
-      title: `Мастерская`
-    },
-    "/ru/devlog": {
-      template: ruDevlogListTemplate,
-      postsPerPage: 6,
-      title: `Разношерстный девлог`
-    },
-    "/ru/neural-networks": {
-      template: ruScienceListTemplate,
-      postsPerPage: 6,
-      title: `Наука`
     },
   }
 

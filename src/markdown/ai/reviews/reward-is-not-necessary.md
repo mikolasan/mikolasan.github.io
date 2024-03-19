@@ -5,6 +5,8 @@ subtitle: How to Create a Compositional Self-Preserving Agent for Life-Long Lear
 article: true
 year: 2022
 authors: Thomas J. Ringstrom
+published: 2023-07-30
+lastModified: 2023-07-30
 ---
 
 PDF: https://arxiv.org/abs/2211.10851

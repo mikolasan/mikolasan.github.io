@@ -1,6 +1,8 @@
 ---
 title: Matplotlib on linux
 date: 2023-01-27
+published: 2023-02-07
+lastModified: 2023-02-07
 ---
 
 Sometimes using `matplotlib` on Linux you can get a long traceback message instead of a plot that you expected.

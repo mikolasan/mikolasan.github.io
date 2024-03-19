@@ -11,7 +11,7 @@ Can you explain what do you find in ROS that is missing in regular Linux? (I’v
 
 > ROS is a backend framework for robotics that allows you to easily communicate between robot hardware, leverage existing robotics packages, and simulate robot behaviours with the aid of robot simulators like [@GazeboSim](https://twitter.com/GazeboSim). ROS is mainly built for some Linux-based OS.
 
-First, it's strange to call some framework as \[Robot\] Operating System. If it's designed for embedded systems, how small is it? 50MB or so? Usually if I connect a sensor, I write a python script. How does it work with ROS?
+First, it's strange to call some framework as Robot Operating System. If it's designed for embedded systems, how small is it? 50MB or so? Usually if I connect a sensor, I write a python script. How does it work with ROS?
 
 > It's designed for (embedded) linux which has enough space to run it. The microcontroller variant, micro-ROS, is lightweight and can run on RTOS enabled MCUs. The sensor probably has a ROS package that makes processing its data easier. ROS has tools that'll make writing that script less hassle free. For example, if your sensor is an encoder, ROS can use the information from the encoder to keep track of the transformation between the encoder and any connected link. If you have an IMU and GPS on a robot, ROS can help you fuse these sensors for state estimation or localization with writing any code. The ROS mantra is "don't reinvent the wheel."
 

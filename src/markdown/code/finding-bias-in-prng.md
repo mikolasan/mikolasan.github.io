@@ -2,6 +2,8 @@
 title: Finding bias in PRNG
 date: 2022-12-22
 twitter: https://twitter.com/mikolasan/status/1608890355818303489
+published: 2022-12-25
+lastModified: 2023-06-04
 ---
 
 ## Biased scaling

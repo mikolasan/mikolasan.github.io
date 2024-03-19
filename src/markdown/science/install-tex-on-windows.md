@@ -1,6 +1,8 @@
 ---
 title: Install TeX on Windows
 date: 2023-01-12
+published: 2023-01-13
+lastModified: 2023-01-27
 ---
 
 1. Go to miktex website and download the installer https://miktex.org/download

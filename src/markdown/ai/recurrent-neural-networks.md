@@ -2,6 +2,8 @@
 section: brain
 title: Recurrent Neural Networks
 topic: true
+published: 2023-01-19
+lastModified: 2023-04-29
 ---
 
 ANN should have notion of time. RNN can do it

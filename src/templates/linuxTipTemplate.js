@@ -56,7 +56,7 @@ export default function Template({ data, pageContext }) {
 }
 
 export const pageQuery = graphql`
-  query blogQuery($absolutePath: String!) {
+  query LinuxTipQuery($absolutePath: String!) {
     markdownRemark(fileAbsolutePath: { eq: $absolutePath }) {
       html
       excerpt
@@ -64,7 +64,6 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         published(formatString: "MMMM DD, YYYY")
         lastModified(formatString: "MMMM DD, YYYY")
-        path
         title
         subtitle
         section

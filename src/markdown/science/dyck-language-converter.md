@@ -2,6 +2,8 @@
 date: 2023-02-02
 title: Dyck language converter
 twitter: https://twitter.com/mikolasan/status/1621360678433968130
+published: 2023-02-14
+lastModified: 2023-05-30
 ---
 
 First, I got carried away with researching what a [Dyck language](https://en.wikipedia.org/wiki/Dyck_language) is. I was damn certain that some geeks already released an online service for converting natural languages to Dyck. NO! There is none.
