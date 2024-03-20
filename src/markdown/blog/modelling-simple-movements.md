@@ -4,6 +4,7 @@ title: Modelling simple movements
 published: 2023-04-29
 lastModified: 2023-05-11
 twitter: https://twitter.com/mikolasan/status/1651481568555433984
+quality: good
 ---
 
 I was trying to understand the "inverse-dynamics model" block in the paper by Mitsuo Kawato. And I refreshed in my memory all physics from the university like Lagrange equations, Newton/Euler formulas; I made the wheel to roll and stop because of negative acceleration.

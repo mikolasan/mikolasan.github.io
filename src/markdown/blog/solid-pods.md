@@ -4,6 +4,7 @@ title: Solid pods
 published: 2023-05-05
 lastModified: 2023-05-05
 twitter: https://twitter.com/mikolasan/status/1654727941308452866
+quality: good
 ---
 
 I studied Solid Pods carefully yesterday and I don't like what I found.

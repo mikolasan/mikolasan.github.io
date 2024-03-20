@@ -4,6 +4,7 @@ title: Build ROCM from source
 published: 2023-04-22
 lastModified: 2023-04-22
 twitter: https://twitter.com/mikolasan/status/1650395555645001728
+quality: good
 ---
 
 [Previously I compiled](/science/how-to-run-dalle-locally) TensorFlow 2.3 on Windows. This time I want to use a more powerful Linux workstation with an AMD graphics card. Thus I'm compiling TensorFlow with ROCM support.

@@ -4,6 +4,7 @@ title: Shakey 2023
 published: 2023-03-04
 lastModified: 2023-03-04
 twitter: https://twitter.com/mikolasan/status/1631882907416424448
+quality: good
 ---
 
 I've used A* algorithm to search for the shortest path but I didn't know that it was created in the course of the Shakey project. Shakey the robot was able to reason about its own actions. This development dated back to 1968 😯

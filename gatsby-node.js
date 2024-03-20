@@ -6,19 +6,15 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 
 const genericListTemplate = path.resolve(`./src/templates/genericListTemplate.js`)
 const codeListTemplate = path.resolve(`./src/templates/codeListTemplate.js`)
-const ideasListTemplate = path.resolve(`./src/templates/ideasListTemplate.js`)
 const linuxListTemplate = path.resolve(`./src/templates/linuxListTemplate.js`)
 const makeListTemplate = path.resolve(`./src/templates/makeListTemplate.js`)
 const scienceListTemplate = path.resolve(`./src/templates/scienceListTemplate.js`)
 
-const ruBlogListTemplate = path.resolve(`./src/templates/ru/blogListTemplate.js`)
-const ruParanormalListTemplate = path.resolve(`./src/templates/ru/paranormalListTemplate.js`)
-const ruMakeListTemplate = path.resolve(`./src/templates/ru/makeListTemplate.js`)
-const ruDevlogListTemplate = path.resolve(`./src/templates/ru/devlogListTemplate.js`)
-const ruScienceListTemplate = path.resolve(`./src/templates/ru/scienceListTemplate.js`)
+const goodListTemplate = path.resolve(`./src/templates/goodListTemplate.js`)
+const badListTemplate = path.resolve(`./src/templates/badListTemplate.js`)
+const uglyListTemplate = path.resolve(`./src/templates/uglyListTemplate.js`)
 
 const pageTemplate = path.resolve(`./src/templates/blogTemplate.js`)
-const pageRuTemplate = path.resolve(`./src/templates/ru/blogTemplate.js`)
 
 const findRedirect = path => redirects.find(r => r.toPath === path)
 
@@ -361,7 +357,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     const sectionNodes = section.nodes;
     for (let j = 0; j < sectionNodes.length; j++) {
       const node = sectionNodes[j];
-      const template = sectionName.startsWith(`/ru`) ? pageRuTemplate : pageTemplate 
+      const template = pageTemplate 
       const next = j === 0 ? null : sectionNodes[j - 1]
       const previous = j === sectionNodes.length - 1 ? null : sectionNodes[j + 1]
       const pageData = nodeToPageData(node, template, previous, next, section.recentArticles)
@@ -376,4 +372,27 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   }
 
+  let config = {
+    template: goodListTemplate,
+    postsPerPage: 1000,
+    title: `The Good`,
+  }
+  paginationFor("/posts/good", 1, config)
+    .forEach(pageData => createPage(pageData))
+  
+  config = {
+    template: badListTemplate,
+    postsPerPage: 1000,
+    title: `The Bad`,
+  }
+  paginationFor("/posts/bad", 1, config)
+    .forEach(pageData => createPage(pageData))
+
+  config = {
+    template: uglyListTemplate,
+    postsPerPage: 1000,
+    title: `The Ugly`,
+  }
+  paginationFor("/posts/ugly", 1, config)
+    .forEach(pageData => createPage(pageData))
 }

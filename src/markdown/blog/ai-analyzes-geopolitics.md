@@ -4,6 +4,7 @@ title: AI analyzes geopolitics
 published: 2022-04-24
 lastModified: 2023-02-20
 twitter: https://twitter.com/mikolasan/status/1627905907337183234
+quality: bad
 ---
 
 Last Sunday on a hike I was thinking if robots can love. I somehow came to that topic after reviewing [associative memory](/ai/bidirectional-associative-memories) and an ability of NNs to represent abstract concepts. Of course I easily moved from connectionism to symbolism considering ontologies and logical rules.

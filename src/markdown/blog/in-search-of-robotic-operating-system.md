@@ -4,7 +4,9 @@ twitter: https://twitter.com/mikolasan/status/1706527808883978380
 date: 2023-09-25
 published: 2023-09-25
 lastModified: 2023-09-25
+quality: good
 ---
+
 Can you explain what do you find in ROS that is missing in regular Linux? (I’ve never used ROS, but it’s mentioned regularly, and I’m curious what is it, though official website doesn’t explain much)
 
 [Lake](https://twitter.com/robotempire1) says:

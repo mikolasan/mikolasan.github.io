@@ -24,20 +24,18 @@ const Footer = () => {
             <Link to="/science">Science</Link>
             <Link to="/code">Coding</Link>
             <Link to="/gamedev">Gamedev</Link>
+            <Link to="/linux">Linux</Link>
+            <Link to="/projects">Projects</Link>
             <Link to="/ideas">Ideas</Link>
             <Link to="/blog">Blog</Link>
           </div>
         </div>
         <div className="bottommenu">
-          <h2>More</h2>
+          <h2>Posts</h2>
           <div className="bottomlist">
-            <Link to="/devlog">Dev Log</Link>
-            <Link to="/slots">Slots</Link>
-            <Link to="/projects">Projects</Link>
-            <Link to="/youtube">Vlog</Link>
-            <Link to="/board-games">Board Games</Link>
-            <Link to="/free">Free Stuff</Link>
-            <Link to="/ebooks">My ebooks</Link>
+            <Link to="/posts/good">The Good</Link>
+            <Link to="/posts/bad">The Bad</Link>
+            <Link to="/posts/ugly">The Ugly</Link>
           </div>
         </div>
         <div className="bottomxsocial">

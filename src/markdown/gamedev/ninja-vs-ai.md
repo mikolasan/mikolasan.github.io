@@ -3,6 +3,7 @@ title: Ninja vs AI
 published: 2023-09-22
 lastModified: 2023-09-22
 date: 2023-09-22
+quality: ugly
 ---
 
 ## Level design

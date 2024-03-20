@@ -63,3 +63,7 @@ So I should be careful with literature devices. But I want to use irony - when t
 ## 10. Working title
 
 ...
+
+## Also
+
+Also it can be a plot in a [casual mobile game](/ideas/romantic-cthulhu)

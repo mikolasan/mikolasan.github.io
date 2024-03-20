@@ -1,8 +1,10 @@
 ---
 title: GDScript AI code completion
+subtitle: or trying Starcode
 date: 2023-07-18
 published: 2023-07-18
 lastModified: 2023-07-18
+quality: bad
 ---
 
 Following the [tutorial](https://huggingface.co/blog/starchat-alpha) and [this](https://huggingface.co/blog/codeparrot). For optimization [PEFT](https://github.com/huggingface/peft)

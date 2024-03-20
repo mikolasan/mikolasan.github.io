@@ -1,11 +1,11 @@
 ---
 date: 2022-06-23
 title: How to run DALL-E locally
-draft: true
 featuredImage: a_cat_in_a_cosmonaut_costume_floating_in_deep_space_with_colorful_nebulas_on_the_background.png
 previewImage: run-dalle-playground.png
 published: 2022-08-20
 lastModified: 2022-09-08
+quality: bad
 ---
 
 Prompt for generating a featured picture: _cat cosmonaut floating in deep space with colorful nebulas on the background_
