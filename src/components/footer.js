@@ -43,28 +43,26 @@ const Footer = () => {
         <div className="bottomxsocial">
           <h2>Social</h2>
           <div className="bottomlist">
+            <a href="https://mastodon.social/@mikolasan" target="_blank" rel="external nofollow noopener noreferrer me">Mastodon</a>
             <a href="https://discord.gg/FhbAshWjcB" target="_blank" rel="external nofollow noopener noreferrer">Discord</a>
-            <a href="https://mikolasan.substack.com" target="_blank" rel="external nofollow noopener noreferrer">Substack</a>
             <a href="https://github.com/mikolasan" target="_blank" rel="external nofollow noopener noreferrer">GitHub</a>
+            <a href="https://www.instagram.com/n_tech_lab/" target="_blank" rel="external nofollow noopener noreferrer">Instagram</a>
+            <a href="https://mikolasan.substack.com" target="_blank" rel="external nofollow noopener noreferrer">Substack</a>
             <a href="https://twitter.com/mikolasan" target="_blank" rel="external nofollow noopener noreferrer">Twitter</a>
             {/* <a href="https://www.linkedin.com/in/nikolay-neupokoev" target="_blank" rel="external nofollow noopener noreferrer">LinkedIn</a> */}
-            <a href="https://mastodon.social/@mikolasan" target="_blank" rel="external nofollow noopener noreferrer me">Mastodon</a>
-            <a href="https://www.instagram.com/n_tech_lab/" target="_blank" rel="external nofollow noopener noreferrer">Instagram</a>
           </div>
         </div>
       </div>
       <div className="copyright">
-        <p>This web site uses Google Analytics. It collects and processes data. <a 
-          href="https://policies.google.com/technologies/partner-sites" 
-          target="_blank" rel="external nofollow noopener noreferrer">How Google uses information from sites</a>
+        <p>This web site utilizes a privacy-friendly analytics system <a 
+          href="https://umami.is/docs/cloud"
+          target="_blank" rel="external nofollow noopener noreferrer">Umami</a>
         </p>
-        <p>Icons used on this website require attribution, you can find it on <Link to="/credits">credits</Link>❤️ page</p>
         <p>
           Built with{` `}<a href="https://www.gatsbyjs.org" 
             target="_blank" rel="external nofollow noopener noreferrer">Gatsby</a>. Last build: {
             formatDate(data.currentBuildDate.currentDate)}
         </p>
-        <p>There is also a <Link to="/ru">Russian version</Link> of this website</p>
         <div className="license">
           <a target="_blank" rel="external nofollow noopener noreferrer license" 
             href="http://creativecommons.org/licenses/by/4.0/">
@@ -75,12 +73,12 @@ const Footer = () => {
             <img alt="Creative Commons License" src="/by.svg" />
           </a>
         </div>
-        <p className="license_right">Copyright © {new Date().getFullYear()} Nikolay Neupokoev</p>
         <p className="license_right">
           Except where otherwise noted, content on this site is licensed under a <a 
             target="_blank" rel="external nofollow noopener noreferrer license" 
             href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
         </p>
+        <p className="license_right">Copyright © {new Date().getFullYear()} Nikolay Neupokoev</p>
       </div>
     </footer>
   )
