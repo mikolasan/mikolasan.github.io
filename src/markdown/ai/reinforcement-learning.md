@@ -12,6 +12,7 @@ lastModified: 2022-12-20
 
 ## Articles
 
+- [How RL Agents Behave When Their Actions Are Modified](https://arxiv.org/pdf/2102.07716.pdf), [code](https://github.com/edlanglois/mamdp)
 - soccer bi-pedal robot recover after push with Deep Reinforcement Learning [site](https://sites.google.com/view/op3-soccer?pli=10) [paper](https://arxiv.org/abs/2304.13653)
 - 2019 Neftci - Reinforcement learning in artificial and biological systems https://www.gwern.net/docs/reinforcement-learning/model-free/2019-neftci.pdf
 - neurorobotics can be used to explain how neural network activity leads to behavior. [Neurorobots as a Means Toward Neuroethology and Explainable AI](https://www.frontiersin.org/articles/10.3389/fnbot.2020.570308/full)
@@ -19,6 +20,9 @@ lastModified: 2022-12-20
 - Explnataion-based learning VS Reinforcement learning [Dietterich 1997](https://link.springer.com/article/10.1023/A:1007355226281)
 - HOT! (According to [Ignacio de Gregorio](https://medium.com/@ignacio.de.gregorio.noblejas/offline-rl-680450c472c), pulp fiction writer: In a paper that’s not even been officially presented yet, Google has announced pre-trained robots that are capable of doing multiple different activities and also be easily trained to ambitious downstream tasks.) https://arxiv.org/pdf/2211.15144.pdf
 - [Review of clutches](https://www.nature.com/articles/s42256-023-00701-w) required in RL 
+- Smart Reinforcement learning in [How to Create a Modular & Compositional Self-Preserving Agent for Life-Long Learning](https://arxiv.org/pdf/2211.10851.pdf). It is based on [Markov decision processes](https://medium.com/@ngao7/markov-decision-process-basics-3da5144d3348) (too wordy, but very simple articles with examples) that uses Bellman equation, [value functions](http://incompleteideas.net/book/ebook/node34.html), [temporal goals in MDP](https://arxiv.org/pdf/2211.10851.pdf). I think one can rewrite [this smelly python code](https://www.tech-quantum.com/markov-decision-process-implemented-from-scratch/) while using [this popular python library](https://github.com/sawcordwell/pymdptoolbox/blob/master/src/mdptoolbox/mdp.py) (470 stars) as reference.
+- Game theory in RF. [Mastering the Game of Stratego with Model-Free Multiagent Reinforcement Learning](https://arxiv.org/pdf/2206.15378.pdf). Where you need to know what is [The replicator equation](https://www.pnas.org/doi/full/10.1073/pnas.1400823111) and how to plot [3-Strategy Evolutionary Games](https://www.biorxiv.org/content/10.1101/300004v2.full.pdf#page91)
+
 
 ## Questions
 

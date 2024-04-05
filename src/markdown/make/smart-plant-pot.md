@@ -12,9 +12,15 @@ This is my main inspiration:
 
 ### Pot redesign
 
+- [Simple hexagon](https://www.thingiverse.com/thing:5326190)
+- [Big vase with inserts](https://www.printables.com/model/357618-flower-pot/files)
 - [Constructivist design](https://www.thingiverse.com/thing:6101723)
 - [Geometric pattern](https://www.thingiverse.com/thing:4591435/files)
 - [Low poly](https://www.thingiverse.com/thing:4064558)
+- [Stone texture](https://www.thingiverse.com/thing:6512372)
+- [Stairs](https://www.thingiverse.com/thing:3297402)
+- [Italian house](https://www.thingiverse.com/thing:3050906)
+- [Greek pillar](https://www.thingiverse.com/thing:5497924)
 
 ## Self-watering pot secrets
 

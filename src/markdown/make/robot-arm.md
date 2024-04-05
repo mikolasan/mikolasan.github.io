@@ -9,6 +9,10 @@ lastModified: 2022-12-16
 
 A new spin to my strange purchase of 5 servo drives. Why strange? Because 5 servos is not enough to make a spider (a hexapod robot).
 
+Here is a list of hexapods
+
+- [Artificial intelligence walking machine](https://github.com/NeoProg2013/AIWM_hexapod)
+
 This time I want to create an arm. 5 servos should be enough for single arm robot.
 
 

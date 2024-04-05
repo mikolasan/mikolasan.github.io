@@ -32,6 +32,8 @@ How to write a spiking neural network simulation from scratch in Python
 - snnTorch https://snntorch.readthedocs.io/en/latest/tutorials/tutorial_3.html ([white paper](https://arxiv.org/pdf/2109.12894.pdf))
 - Guillaume Chevalier's experiment [in his blog](https://guillaume-chevalier.com/spiking-neural-network-snn-with-pytorch-where-backpropagation-engenders-stdp-hebbian-learning/)
 - [Notebook](https://github.com/dacorvo/tensorsandbox/blob/master/snn/simple_spiking_model.ipynb) simulating spiking neurons with Tensorflow
+- [The Attentional Routing Circuit](https://uwspace.uwaterloo.ca/bitstream/handle/10012/6122/Bobier_Bruce.pdf) by Bobier
+- Eliasmith and [Spaun](https://xchoo.github.io/spaun2.0/videos.html) model. Original article from [Science](https://www.science.org/doi/10.1126/science.1225266). [PDF version](https://compneuro.uwaterloo.ca/files/publications/eliasmith.2012.pdf). And supplementary materials for [A Large-Scale Model of the Functioning Brain](https://www.science.org/action/downloadSupplement?doi=10.1126%2Fscience.1225266&file=1225266.eliasmith.sm.pdf#page91)
 
 
 ## Training methods
