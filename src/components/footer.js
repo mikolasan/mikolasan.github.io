@@ -44,7 +44,7 @@ const Footer = () => {
             <a href="https://mastodon.social/@mikolasan" target="_blank" rel="external nofollow noopener noreferrer me">Mastodon</a>
             <a href="https://discord.gg/FhbAshWjcB" target="_blank" rel="external nofollow noopener noreferrer">Discord</a>
             <a href="https://github.com/mikolasan" target="_blank" rel="external nofollow noopener noreferrer">GitHub</a>
-            <a href="https://www.instagram.com/n_tech_lab/" target="_blank" rel="external nofollow noopener noreferrer">Instagram</a>
+            <a href="https://www.instagram.com/k_robot_lab/" target="_blank" rel="external nofollow noopener noreferrer">Instagram</a>
             <a href="https://mikolasan.substack.com" target="_blank" rel="external nofollow noopener noreferrer">Substack</a>
             <a href="https://twitter.com/mikolasan" target="_blank" rel="external nofollow noopener noreferrer">Twitter</a>
             {/* <a href="https://www.linkedin.com/in/nikolay-neupokoev" target="_blank" rel="external nofollow noopener noreferrer">LinkedIn</a> */}
