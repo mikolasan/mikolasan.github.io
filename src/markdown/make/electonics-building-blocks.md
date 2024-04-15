@@ -5,61 +5,18 @@ published: 2023-11-04
 lastModified: 2023-11-04
 ---
 
-## Capacitive Soil Moisture Sensor
+## From Ali
+
+- [Capacitive Soil Moisture Sensor](/make/capacitive-soil-moisture-sensor)
 
 
-- One SOT-23 component marked as **662K** is 3.3V 200mA Positive Fixed LDO Voltage Regulator (XC6206P332MR) which gives the board an operating voltage range of 3.3
-~ 5.5V
-- And 555 timer. Be careful with greedy sellers that might put the wrong version of the timer that can only work with 5V. So verify this info with the datasheet. I have [NE555](https://www.ti.com/lit/ds/symlink/ne555.pdf) from Texas Instruments which only works from the voltage in the range between 4V and 16V. Instead it should be TLC555C or TLC555I or an outlier NE555 with a second line **20M**
+## Wishlist
 
-It's a simple analog sensor, for compatibility with a Raspberry Pi (see, [no analog inputs](https://pinout.xyz/)) it will need an extra ADC converter. The Arduino analog input voltage is 1V max, and the output voltage of the capacitive sensor is about 3V (if powered by 3.3V), which means you have to use a voltage divider at the output of the sensor.
-
-1. Open the serial port
-2. Record the sensor value when the probe is exposed to the air. This is the minimum value of dry soil "Moist: 0%"
-3. Take a cup of water and insert the probe into it (the probe, not the whole board)
-4. Record the sensor value when the probe is exposed to the water. This is the maximum value of moist soil "Moist: 100%"
-
-```c
-void setup() {
-  Serial.begin(9600);
-}
-
-void loop() {
-  int val = analogRead(0); //connect sensor to Analog 0
-  Serial.print(val);
-  delay(100);
-}
-```
-
-![Schematics of capacitive soil moisteru sensor](./capacitive-soil-moisture-sensor-v1.0.png)
+- [T-Deck](https://www.lilygo.cc/products/t-deck) - Blackbery / Nokia clone
+- [T-Display](https://www.lilygo.cc/products/t-display-s3-amoled) - Juicy display, favourite toy of [@Sulfuroid](https://twitter.com/sulfuroid)
 
 
-Reference
-
-- [Constant reading of 1023](https://forum.arduino.cc/t/capacitive-soil-moisture-sensor-v1-2/628094/8)
-- [Schematics](https://raw.githubusercontent.com/Arduinolibrary/DFRobot_Capacitive_Soil_Moisture_Sensor/master/SEN0193%20%20Capacitive%20Soil%20Moisture%20SensorV1.0.PDF)
-- [DFRobot wiki](https://wiki.dfrobot.com/Capacitive_Soil_Moisture_Sensor_SKU_SEN0193)
-- [Adafruit alternative](https://www.adafruit.com/product/4026)
-- [Check R1 resistor](https://www.youtube.com/watch?v=QGCrtXf8YSs) if readings are slow
-- [Many sensors are defective](https://www.youtube.com/watch?v=IGP38bz-K48)
-
-
-## T-Deck
-
-Blackbery / Nokia clone
-
-https://www.lilygo.cc/products/t-deck
-
-
-## T-Display
-
-Juicy display, favourite toy of [@Sulfuroid](https://twitter.com/sulfuroid)
-
-
-https://www.lilygo.cc/products/t-display-s3-amoled
-
-
-## All
+## Dumpster dive
 
 - DAGU robot MINI DC gearbox DG01D 48:1
 - Liyhium Poli Battery 3.7V 1300mAh
@@ -67,7 +24,7 @@ https://www.lilygo.cc/products/t-display-s3-amoled
 - Pi [Servo Hat](https://www.sparkfun.com/products/15316). 16 PWM channels, controllable over I2C
 - [Accelerometer and gyroscope](https://www.sparkfun.com/products/18020). I2C, 3.3V operating voltage
 - Passive Infrared (PIR) sensors are great for detecting motion in a small area around the sensor. 
-- [MicroMod MikroBUS Carrier Board](https://www.sparkfun.com/products/18710) equipped with a MCP73831 Single-Cell Lithium-Ion/Lithium-Polymer Charge IC. It receives power from the USB connection and can source up to 450mA to charge an attached battery. PLus 3.3V 1A Voltage Regulator
+- [MicroMod MikroBUS Carrier Board](https://www.sparkfun.com/products/18710) - I also mention it in my [power board](/make/robot/power-board) development notes. equipped with a MCP73831 Single-Cell Lithium-Ion/Lithium-Polymer Charge IC. It receives power from the USB connection and can source up to 450mA to charge an attached battery. PLus 3.3V 1A Voltage Regulator
 
 ## Ultrasonic distance sensor HC-SR04
 
