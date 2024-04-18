@@ -15,7 +15,8 @@ const Footer = () => {
       <div className="bottomnav">
         <div className="bottomsmallabout">
           <h2>About</h2>
-          <p>N is a magazine, blog and knowledge base for embedded engineers, game developers and geeks</p>
+          <p>N is a magazine, blog and knowledge base for embedded engineers, 
+            game developers and geeks</p>
         </div>
         <div className="bottommenu">
           <h2>Topics</h2>
@@ -76,7 +77,7 @@ const Footer = () => {
             target="_blank" rel="external nofollow noopener noreferrer license" 
             href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
         </p>
-        <p className="license_right">Copyright © {new Date().getFullYear()} Nikolay Neupokoev</p>
+        <p className="license_right">Copyright © {new Date().getFullYear()} <a href="/about">Nikolay Neupokoev</a></p>
       </div>
     </footer>
   )

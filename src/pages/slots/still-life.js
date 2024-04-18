@@ -2,10 +2,10 @@ import React from "react"
 import Layout from "../../components/layout"
 import { SEO } from "../../components/seo"
 import { init_interface } from "../../components/slots/interface"
-import { init_reels } from "../../components/slots/samurai-reels"
+import { init_reels } from "../../components/slots/vangogh-reels"
 import * as styles from "../../components/slots/index.module.css"
 
-class TheLastSamurai extends React.Component {
+class StillLife extends React.Component {
   componentDidMount() {
     init_reels();
     init_interface();
@@ -14,20 +14,11 @@ class TheLastSamurai extends React.Component {
   render() {
     return (
       <Layout
-        title="The Last Samurai"
+        title="Still Life"
         section="slots"
         crumbs={this.props.pageContext.breadcrumb.crumbs}
       >
-        <p>
-          A special symbol populates all reels one by one by crushing them.
-          But only when some special symbol lands on tha reel
-        </p>
-        <p>
-          Stacked symbol on the first reel stops in the full length, then a fighter shoots from the right.
-          Other reels spin.
-          If the same symbol appears on the next reel, the fighter hits the next reel and feel it all.
-          Now, he is on the second reel.
-        </p>
+        
         
         <div>
           <canvas className={styles.slotmachine} id="reels"></canvas>
@@ -39,7 +30,7 @@ class TheLastSamurai extends React.Component {
   }
 }
 
-export default TheLastSamurai
+export default StillLife
 
 export const Head = ({ location, data, pageContext }) => (
   <SEO 
@@ -47,7 +38,7 @@ export const Head = ({ location, data, pageContext }) => (
     data={data}
     frontmatter={data?.markdownRemark?.frontmatter}
     pageContext={pageContext}
-    title="The Last Samurai"
+    title="Still Life"
   >
 
   </SEO>

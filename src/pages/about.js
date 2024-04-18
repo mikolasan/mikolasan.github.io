@@ -3,31 +3,57 @@ import Layout from "../components/layout"
 import { SEO } from "../components/seo"
 
 const About = ({ pageContext }) => {
+  const banner = [
+    <h1 key="title" id="_name1" itemProp="name">About me</h1>,
+  ]
   return (
     <Layout
-      title="Developer, traveler, snob"
+      title="About me"
       section="about"
       crumbs={pageContext.breadcrumb.crumbs}
-      buttonText="Open my latest projects"
-      buttonLink="/projects"
-      secondButtonText="Fresh posts in the blog"
-      secondButtonLink="/blog"
-      bannerParagraph={[<h1>developer - traveler - snob</h1>]}
+      bannerParagraph={banner}
     >
 
-      <p>Updated: {pageContext.updated}</p>
+      <h2>👋 Hi</h2>
+      <p>Updated from <a href="https://github.com/mikolasan" target="_blank" rel="external nofollow noopener noreferrer">my GitHub profile</a></p>
       <ul>
-        <li key="l1">I’m interested in game development, DIY electronics, and artificial intelligence</li>
-        <li key="l2">I’m currently learning Kotlin, revamping data structures and algorithms in GDScript, and basics of electronics</li>
-        <li key="l3">I’m looking to collaborate on projects related to robots, games and procedural generation</li>
-        <li key="l4">You can reach me on Twitter <a href="https://twitter.com/mikolasan" target="_blank" rel="external nofollow noopener noreferrer">@mikolasan</a> where once a week I write threads about gamedev and development process</li>
-        <li key="l5">Enjoy coding today!</li>
+        <li key="l1">👀 I’m interested in game development, DIY electronics, and artificial intelligence</li>
+        <li key="l2">🌱 I’m currently learning Kotlin, revamping data structures and algorithms in GDScript, and basics of electronics</li>
+        <li key="l3">💞️ I’m looking to collaborate on projects related to robots, games and procedural generation</li>
+        <li key="l4">📫 You can reach me on Mastodon <a href="https://mastodon.social/@mikolasan" target="_blank" rel="external nofollow noopener noreferrer">@mikolasan</a> where once a week I write threads about gamedev and development process</li>
+        <li key="l5">☕ Enjoy coding today!</li>
       </ul>
-      <p>
-        &gt; <a href="https://github.com/mikolasan" target="_blank" rel="external nofollow noopener noreferrer">My github profile</a>
-      </p>
+
+      <div className="cards">
+        <div key="c1" className="card">
+          <img src="/card_developer.png" alt="Developer" width="100px" />
+          <div className="card-container">
+            <h3>Developer</h3>
+            <p><a href="/cv">My professional resume</a>. Also I have many hobby projects. But ideas—I have more.</p>
+          </div>
+        </div>
+
+        <div key="c2" className="card">
+          <img src="/card_traveler.png" alt="Traveler" width="100px" />
+          <div className="card-container">
+            <h3>Traveler</h3>
+            <p>More than writing code I like to plan a good journey.
+              I post travelling stories to <a href="https://www.instagram.com/saturdayscode/" target="_blank" rel="external nofollow noopener noreferrer">my Instagram</a></p>
+          </div>
+        </div>
+
+        <div key="c3" className="card">
+          <img src="/card_snob.png" alt="Snob" width="100px" />
+          <div className="card-container">
+            <h3>Snob</h3>
+            <p>I love good typography. That is why I also write a <a href="https://mikolasan.substack.com/" target="_blank" rel="external nofollow noopener noreferrer">newsletter on Substack</a></p>
+          </div>
+        </div>
+
+      </div>
 
 
+      <h2>Brief biography</h2>
       <p>
       Since early days in school I was reading video game magazines, 
       I liked playing pithy RPG and rapid action games, 
@@ -43,32 +69,6 @@ const About = ({ pageContext }) => {
       But besides that, I passionate about <a href="/gamedev">game development</a> and irrational exploitation of computers.
       </p>
 
-      <div className="cards">
-        <div key="c1" className="card">
-          <img src="/card_developer.png" alt="Developer" width="100px" />
-          <div className="card-container">
-            <h3>Developer</h3>
-            <p>I have many hobby projects. But ideas I have more.</p>
-          </div>
-        </div>
-
-        <div key="c2" className="card">
-          <img src="/card_traveler.png" alt="Traveler" width="100px" />
-          <div className="card-container">
-            <h3>Traveler</h3>
-            <p>More than writing code I like to plan a good journey.</p>
-          </div>
-        </div>
-
-        <div key="c3" className="card">
-          <img src="/card_snob.png" alt="Snob" width="100px" />
-          <div className="card-container">
-            <h3>Snob</h3>
-            <p>I enjoy the code that is written well and looks perfect. </p>
-          </div>
-        </div>
-
-      </div>
 
       <h2>Testimonials</h2>
 
@@ -94,7 +94,8 @@ const About = ({ pageContext }) => {
         I like hardware, electronic components, limited resources and capabilities.
       </p>
 
-      <h2>Brain characteristics</h2>
+
+      <h2>Brain stats</h2>
       <img src="/images/about/brain-wars-stats.png" alt="BrainWars stats" width="400px" />
 
     </Layout>

@@ -9,7 +9,7 @@ Here's another review. This time,
 
 ## The Master Algorithm by Pedro Domingos
 
-[Page 240 of the book shows the main diagram, The Five Tribes of Machine Learning: Analogizers, Symbolists, Connectionists, Evolutionaries, Bayesians.](./master-algorithm-main-diagram.jpeg)
+![Page 240 of the book shows the main diagram, The Five Tribes of Machine Learning: Analogizers, Symbolists, Connectionists, Evolutionaries, Bayesians.](./master-algorithm-main-diagram.jpeg)
 
 Somewhere in the middle of the book you reach that part that looks like an acid trip. You know, like in every good movie from the 90’s, where the main protagonist faces a moment of hard decision.
 

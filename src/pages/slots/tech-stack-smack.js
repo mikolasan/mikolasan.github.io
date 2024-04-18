@@ -19,8 +19,8 @@ class TechStackSmack extends React.Component {
         crumbs={this.props.pageContext.breadcrumb.crumbs}
       >
         <p>
-          If you want random unpredictable and fun project, then try this totally free slot machine
-          from a slot developer who likes throwing cutting edge technologies in production.
+          You can only pick 5.
+          New version based on a tweet from <a href="https://twitter.com/chriskalmar/status/1459066591912640529" target="_blank" rel="external nofollow noopener noreferrer">Chis Kalmar</a>
         </p>
         <p>
           Essentially any project has backend, frontend, some storage or database, it uses a protocol and has a killer feature.
@@ -28,10 +28,7 @@ class TechStackSmack extends React.Component {
           Normally developers like to use the same language across all parts to spend minimum time setting up only one environment.
         </p>
 
-        <p>
-          You can only pick 5.
-          New version based on a tweet from <a href="https://twitter.com/chriskalmar/status/1459066591912640529" target="_blank" rel="external nofollow noopener noreferrer">Chis Kalmar</a>
-        </p>
+        
         
         <div>
           <canvas className={styles.slotmachine} id="reels"></canvas>

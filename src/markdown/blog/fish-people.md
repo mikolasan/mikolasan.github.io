@@ -1,5 +1,6 @@
 ---
 title: The fish story
+date: 2024-04-01
 published: 2024-04-01
 ---
 

@@ -15,17 +15,15 @@ let width;
 let height;
 
 
-const BS = 'BS';
-const CH = 'CH';
-const CR = 'CR';
-const JD = 'JD';
-const LA = 'LA';
-const NJ = 'NJ';
-const PA = 'PA';
-const RI = 'RI';
-const SM = 'SM';
-const SU = 'SU';
-const TR = 'TR';
+const A1 = 'A1';
+const A2 = 'A2';
+const K1 = 'K1';
+const K2 = 'K2';
+const Q1 = 'Q1';
+const S1 = 'S1';
+const S2 = 'S2';
+const S3 = 'S3';
+const S4 = 'S4';
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random#getting_a_random_integer_between_two_values_inclusive
 function getRandomIntInclusive(min, max) {
@@ -43,13 +41,12 @@ function shuffle(array) {
   return array;
 }
 
-const choose_5 = [BS, CH, CR, JD, LA, NJ, PA, RI, SM, SU, TR];
 const strips = [
-  [RI, RI, BS, CH, CR, JD, LA, NJ, PA, RI, RI, SM, SU, RI, RI, TR, TR, TR, TR],
-  [SM, TR, RI, RI, JD, JD, CR, RI, PA, NJ, JD, JD, JD, JD, SU, LA, JD, JD, CH, BS ],
-  [SM, PA, PA, BS, RI, RI, LA, JD, JD, JD, JD, PA, PA, CH, NJ, PA, PA, RI, TR, JD, JD, SU, CR, PA, PA ],
-  [CR, JD, JD, SU, PA, RI, RI, RI, BS, JD, JD, JD, JD, CH, LA, SM, JD, JD, NJ ],
-  [CR, RI, TR, JD, JD, JD, RI, RI, SM, BS, RI, RI, SU, LA, JD, JD, NJ, CH ],
+  [A1, A2, S3, K2, S2, A2, K2, K2, S1, S4 ],
+  [A1, A2, S3, K2, S2, A2, K2, K2, S1, S4 ],
+  [A1, A2, S3, K2, S2, A2, K2, K2, S1, S4 ],
+  [A1, A2, S3, K2, S2, A2, K2, K2, S1, S4 ],
+  [A1, A2, S3, K2, S2, A2, K2, K2, S1, S4 ],
 ]
 
 // 0 3 6 9  12
@@ -483,17 +480,15 @@ function isInside(pos, btn){
 
 function init_reels() {
   slot_images = new Map([
-    [BS, ['/images/slots/samurai/bonsai.jpeg']],
-    [CH, ['/images/slots/samurai/chest.jpeg']],
-    [CR, ['/images/slots/samurai/crab.jpeg']],
-    [JD, ['/images/slots/samurai/jade.jpeg']],
-    [LA, ['/images/slots/samurai/lantern.jpeg']],
-    [NJ, ['/images/slots/samurai/ninja.jpeg']],
-    [PA, ['/images/slots/samurai/panda.jpeg']],
-    [RI, ['/images/slots/samurai/rice.jpeg']],
-    [SM, ['/images/slots/samurai/samurai.jpeg']],
-    [SU, ['/images/slots/samurai/sushi.jpeg']],
-    [TR, ['/images/slots/samurai/turtle.jpeg']],
+    [A1, ['/images/slots/van-gogh/a1.jpeg']],
+    [A2, ['/images/slots/van-gogh/a2.jpeg']],
+    [K1, ['/images/slots/van-gogh/k1.jpeg']],
+    [K2, ['/images/slots/van-gogh/k2.jpeg']],
+    [Q1, ['/images/slots/van-gogh/q1.jpeg']],
+    [S1, ['/images/slots/van-gogh/spades1.jpeg']],
+    [S2, ['/images/slots/van-gogh/spades2.jpeg']],
+    [S3, ['/images/slots/van-gogh/spades3.jpeg']],
+    [S4, ['/images/slots/van-gogh/spades4.jpeg']],
   ]);
 
   for (const value of slot_images.values()) {

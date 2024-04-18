@@ -4,7 +4,7 @@ subtitle: on Raspberry Pi and Debian Bookworm
 date: 2024-04-12
 ---
 
-I guess you can install raspberry jukebox and no worry about conflicting dependencies and a pile of configuration. But if you want to build the system as you want then you have to reserve a few days of struggle. But then you will be proud of yourself. Maybe it will be another distribution for Raspberry!
+I guess you can install raspberry jukebox and do not worry about conflicting dependencies and a pile of configuration. But if you want to build the system that works for your special case then you have to reserve a few days of struggle. But then you will be proud of yourself. Maybe it will be another OS distribution for Raspberry!
 
 Note: I will be using `192.168.0.130` here - IP address of my Raspberry Pi. Do not forget to update it for your configuration.
 
@@ -36,9 +36,11 @@ sudo apt-get install \
   mopidy \
   mopidy-mpd \
   flac \
-  yt-dlp \
-  youtube-dl \
   gstreamer1.0-plugins-bad
+
+wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_linux_aarch64
+chmod +x yt-dlp_linux_aarch64
+sudo mv yt-dlp_linux_aarch64 /usr/local/bin/yt-dlp
 sudo apt install python3-websockets
 sudo python3 -m pip install --break-system-packages Mopidy-YTMusic
 sudo python3 -m pip install --break-system-packages Mopidy-YouTube
@@ -163,12 +165,39 @@ server {
 
 ### Iris
 
-Go to `http://192.168.0.130:6680/iris`
+Go to [http://192.168.0.130:6680/iris](http://192.168.0.130:6680/iris)
 
 
 ## Save playlists
 
-The `youtube` extension allows to send YouTube playlist to Mopidy. Just go to `http://192.168.0.130:6680/youtube/` and insert your playlist like `https://music.youtube.com/playlist?list=PL8PzFN20ieZF8Q_-PuQSeiaXBjEqrtpTV` and press "Submit Query".
+### With yt-dlp
+
+Mostly everything explained in [the docs](https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#format-selection-examples).
+
+To transfer your cookie to Raspberry Pi use [this extension](https://addons.mozilla.org/en-US/firefox/addon/cookies-txt/).
+
+And this is well crafted a complete command to download one private playlist:
+
+```bash
+yt-dlp \
+-P /home/nikolay/Music \
+-o "%(playlist_index)s_%(title)s.%(ext)s" \
+--cookies /home/nikolay/cookies.txt \
+--ffmpeg-location "/usr/bin/" \
+--extract-audio \
+--write-thumbnail \
+--restrict-filenames \
+--newline \
+--audio-format flac \
+--audio-quality 0 \
+--embed-thumbnail \
+--format bestvideo*+bestaudio/best \
+https://music.youtube.com/playlist?list=PL8PzFN20ieZF8Q_-PuQSeiaXBjEqrtpTV
+```
+
+### In RompR
+
+The `youtube` extension allows to send YouTube playlist to Mopidy. Just go to [http://192.168.0.130:6680/youtube/](http://192.168.0.130:6680/youtube/) and insert your playlist like `https://music.youtube.com/playlist?list=PL8PzFN20ieZF8Q_-PuQSeiaXBjEqrtpTV` and press **Submit Query**.
 
 Then open Rompr, the playlist from YouTube should be in the right column. Above the list find "Save playlist" button - this way you can restore/reload your playlist into the list of playing tracks.
 
@@ -178,7 +207,7 @@ Now on the left top bar the second button must be the Music Collection. Again by
 
 ## Snapcast
 
-Now it's time to play our collection. We are not going to play music on Raspberry Pi (which is possible through the audio jack or HDMI) but instead stream in our local network.
+Now it's time to play our collection. We are not going to play music on Raspberry Pi (which is possible through the audio jack or HDMI) but instead we will be playing _from_ Raspberry Pi by streaming in home network.
 
 Seems like [Icecast](https://docs.mopidy.com/latest/icecast/) doesn't work, so we will use Snapcast. For Mopidy you just need to change one line ([docs](https://github.com/badaix/snapcast/blob/develop/doc/player_setup.md#mopidy))
 
@@ -224,8 +253,8 @@ sudo systemctl restart mopidy
 sudo journalctl -u mopidy -f
 ```
 
-Go to `http://192.168.0.130/` and press play (it starts streaming but no sound)!
-Then go to `http://192.168.0.130:1780/` and press play (it starts playing the stream from this tab)!
+Go to [http://192.168.0.130/](http://192.168.0.130/) and press play (it starts streaming but no sound)!
+Then go to [http://192.168.0.130:1780/](http://192.168.0.130:1780/) and press play (it starts playing the stream from this tab)!
 
 ## Reference
 

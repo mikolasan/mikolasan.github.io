@@ -102,6 +102,6 @@ As usual all code for your experiments and slides are in [**cpp-skill** reposito
 - ["Pointing" arguments](/code/cpp/pointing-arguments)
 - [const in C++](/code/cpp/const-ness)
 - [C++ question: exec](/code/cpp/exec-function)
-- [C++ State Machine](/code/cpp/finite-state-machine)
+- [C++ State Machine](/code/cpp/advanced-finite-state-machine)
 - [Variadic templates in C++](/code/cpp/variadic-templates)
 - [Leak in std::map](/code/cpp/leak-in-std-map)

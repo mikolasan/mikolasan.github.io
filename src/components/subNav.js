@@ -20,6 +20,7 @@ const SubNav = props => {
     <Link to="/board-games">Board Games</Link>
     <Link to="/slots">Slots</Link>
     <Link to="/youtube">Vlog</Link>
+    <Link to="/about">About</Link>
   </>
   
   if (props.section === `make`) {
@@ -45,6 +46,7 @@ const SubNav = props => {
       <Link to="/board-games">Board Games</Link>
       <Link to="/slots">Slots</Link>
       <Link to="/youtube">Vlog</Link>
+      <Link to="/about">About</Link>
     </>
   }
   return <div className={styles.subnav}>

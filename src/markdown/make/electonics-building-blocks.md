@@ -20,8 +20,8 @@ lastModified: 2023-11-04
 
 - DAGU robot MINI DC gearbox DG01D 48:1
 - Liyhium Poli Battery 3.7V 1300mAh
-- [Qwiic motor driver](https://www.sparkfun.com/products/15451) (1.5 A peak drive per channel, 1.2 A steady state, Operates from 3 to 11 Volts with 12V absolute max, 3.3V default VCC and logic, Controllable by I2C or TTL UART signals) based on DRV8835. Similar chip [I reveiwed already](/make/robot/motor-board)
-- Pi [Servo Hat](https://www.sparkfun.com/products/15316). 16 PWM channels, controllable over I2C
+- [Qwiic motor driver](https://www.sparkfun.com/products/15451) (1.5 A peak drive per channel, 1.2 A steady state, Operates from 3 to 11 Volts with 12V absolute max, 3.3V default VCC and logic, Controllable by I2C or TTL UART signals) based on DRV8835. Similar chip [I reveiwed already](/make/robot/motor-controller-board)
+- Pi [Servo Hat](/make/servo-hat-for-raspberry-pi). 16 PWM channels, controllable over I2C
 - [Accelerometer and gyroscope](https://www.sparkfun.com/products/18020). I2C, 3.3V operating voltage
 - Passive Infrared (PIR) sensors are great for detecting motion in a small area around the sensor. 
 - [MicroMod MikroBUS Carrier Board](https://www.sparkfun.com/products/18710) - I also mention it in my [power board](/make/robot/power-board) development notes. equipped with a MCP73831 Single-Cell Lithium-Ion/Lithium-Polymer Charge IC. It receives power from the USB connection and can source up to 450mA to charge an attached battery. PLus 3.3V 1A Voltage Regulator
@@ -129,60 +129,7 @@ float getDistance()
 ```
 
 
-## SparkFun Pi Servo pHAT
 
-Code [here](https://github.com/sparkfun/Pi_Servo_Hat/tree/v20), [docs](https://piservohat-py.readthedocs.io/en/latest/index.html)
-
-- [sparkfun-pi-servo-hat source](https://github.com/sparkfun/PiServoHat_Py/blob/main/pi_servo_hat.py), 
-- its dependency [sparkfun-qwiic-pca9685](https://github.com/sparkfun/Qwiic_PCA9685_Py/blob/main/qwiic_pca9685.py), 
-- and I2C driver [sparkfun-qwiic-i2c](https://github.com/sparkfun/Qwiic_I2C_Py/blob/master/qwiic_i2c/linux_i2c.py) based on **smbus2**
-
-```py
-import pi_servo_hat
-import time
-
-# Initialize Constructor
-test = pi_servo_hat.PiServoHat()
-
-# Restart Servo Hat (in case Hat is frozen/locked)
-test.restart()
-
-# Test Run
-#########################################
-# Moves servo position to 0 degrees (1ms), Channel 0
-test.move_servo_position(0, 0)
-
-# Pause 1 sec
-time.sleep(1)
-
-# Moves servo position to 90 degrees (2ms), Channel 0
-test.move_servo_position(0, 90)
-
-# Pause 1 sec
-time.sleep(1)
-
-# Sweep
-#########################################
-while True:
-    for i in range(0, 90):
-        print(i)
-        test.move_servo_position(0, i)
-        time.sleep(.001)
-    for i in range(90, 0, -1):
-        print(i)
-        test.move_servo_position(0, i)
-        time.sleep(.001)
-```
-
-Sidequest: I2C library in C
-
-- [A page](https://elinux.org/Interfacing_with_I2C_Devices) from eLinux wiki, no `smbus`
-- [libi2c](https://github.com/amaork/libi2c/blob/master/src/i2c.c). Note: it uses meson build system.
-- [i2c-exp-driver](https://github.com/OnionIoT/i2c-exp-driver/blob/master/src/lib/onion-i2c.c) from Onion company
-
-forks:
-
-- https://github.com/coupdair/libi2c
 
 
 ## 1.14 Inch TFT Display Module

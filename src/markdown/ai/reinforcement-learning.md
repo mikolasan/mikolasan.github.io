@@ -22,7 +22,7 @@ lastModified: 2022-12-20
 - [Review of clutches](https://www.nature.com/articles/s42256-023-00701-w) required in RL 
 - Smart Reinforcement learning in [How to Create a Modular & Compositional Self-Preserving Agent for Life-Long Learning](https://arxiv.org/pdf/2211.10851.pdf). It is based on [Markov decision processes](https://medium.com/@ngao7/markov-decision-process-basics-3da5144d3348) (too wordy, but very simple articles with examples) that uses Bellman equation, [value functions](http://incompleteideas.net/book/ebook/node34.html), [temporal goals in MDP](https://arxiv.org/pdf/2211.10851.pdf). I think one can rewrite [this smelly python code](https://www.tech-quantum.com/markov-decision-process-implemented-from-scratch/) while using [this popular python library](https://github.com/sawcordwell/pymdptoolbox/blob/master/src/mdptoolbox/mdp.py) (470 stars) as reference.
 - Game theory in RF. [Mastering the Game of Stratego with Model-Free Multiagent Reinforcement Learning](https://arxiv.org/pdf/2206.15378.pdf). Where you need to know what is [The replicator equation](https://www.pnas.org/doi/full/10.1073/pnas.1400823111) and how to plot [3-Strategy Evolutionary Games](https://www.biorxiv.org/content/10.1101/300004v2.full.pdf#page91)
-
+- [Policy gradient methods](https://people.eecs.berkeley.edu/~pabbeel/cs287-fa09/readings/KakadeLangford-icml2002.pdf) -> [Proximal policy optimization](https://arxiv.org/pdf/1707.06347.pdf)
 
 ## Questions
 
