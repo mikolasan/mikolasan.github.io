@@ -6,11 +6,13 @@ const slot_height = 128;
 const n_reels = 5;
 const n_rows = 3;
 const invisible_rows = 1; // add these rows to the top and bottom of the reels
-const shift_x = 67;
-const shift_y = 271;
+const shift_x = 110;
+const shift_y = 50;
 const reel_gap = 7;
 // const width = slot_width * n_reels + reel_gap * (n_reels - 1) + shift_x * 2;
 // const height = slot_height * n_rows + shift_y * 2;
+const maxWidth = 900;
+const maxHeight = 550;
 let width;
 let height;
 
@@ -62,8 +64,8 @@ const lines = [
 ];
 
 const spin_button = {
-  x: 342,
-  y: 727,
+  x: 396,
+  y: 427,
   a: 53,
   b: 52,
   enabled: true,
@@ -233,7 +235,7 @@ function force_stop() {
 
 function on_reel_stopped() {
   n_reels_stopped += 1;
-  if (n_reels_stopped == n_reels) {
+  if (n_reels_stopped === n_reels) {
     on_reels_stopped();
   }
 }
@@ -356,7 +358,7 @@ function show_result(ctx, dt) {
   }
 
   const line = state_winning.current_animating_line;
-  if (line == state_winning.animating_slots.length) {
+  if (line === state_winning.animating_slots.length) {
     // pause between cycles
     return;
   }
@@ -382,12 +384,12 @@ function draw(ctx, timestamp) {
   const dt = timestamp - last_timestamp;
   last_timestamp = timestamp;
   
-  ctx.fillStyle = '#fff'; // background color
+  ctx.fillStyle = '#BDC2BF'; // background color
   ctx.fillRect(0, 0, width, height);
 
   
   ctx.save();
-  const scale = width / 900;
+  const scale = width / maxWidth;
   ctx.scale(scale, scale);
   ctx.drawImage(background, 0, 0);
 
@@ -408,6 +410,21 @@ function draw(ctx, timestamp) {
     }
     move_reel(reel_id, dt, generate_next_symbol);
     
+  }
+  ctx.restore();
+
+  ctx.save();
+
+  ctx.strokeStyle = 'rgb(37, 41, 28)';
+  ctx.lineWidth = 6;
+  for (let reel_id = 0; reel_id < n_reels; ++reel_id) {
+    const x = reel_id * slot_width;
+    const y = 0;
+    ctx.strokeRect(
+      shift_x + x + reel_gap * reel_id, 
+      shift_y + y, 
+      slot_width, 
+      slot_height * n_rows);
   }
   ctx.restore();
 
@@ -472,7 +489,7 @@ function getMousePos(canvas, event) {
 
 // window.addEventListener('keydown', on_key_down);
 function isInside(pos, btn){
-  const scale = width / 900;
+  const scale = width / maxWidth;
   const x = (btn.x + btn.a) * scale;
   const y = (btn.y + btn.b) * scale;
   const rx = btn.a * scale;
@@ -554,7 +571,7 @@ function init_reels() {
   spin_button.highlight.src = '/images/idea-generator/spin_button_highlight.png';
   
   background = new Image();
-  background.src = '/images/idea-generator/slot-frame.png';
+  background.src = '/images/slots/samurai/background.jpeg';
 
   if (!canvas.getContext) {
     console.error('canvas without context')
@@ -581,7 +598,7 @@ function init_reels() {
 
 function setUpCanvas(canvas) {
   // const { clientWidth, clientHeight } = canvas.getBoundingClientRect();
-  const ratio = 900/843;
+  const ratio = maxWidth/maxHeight;
   canvas.width = canvas.clientWidth;
   // canvas.height = canvas.clientHeight;
   canvas.height = canvas.width / ratio
