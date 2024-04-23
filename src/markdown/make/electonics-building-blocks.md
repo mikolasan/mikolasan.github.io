@@ -21,116 +21,24 @@ lastModified: 2023-11-04
 - DAGU robot MINI DC gearbox DG01D 48:1
 - Liyhium Poli Battery 3.7V 1300mAh
 - [Qwiic motor driver](https://www.sparkfun.com/products/15451) (1.5 A peak drive per channel, 1.2 A steady state, Operates from 3 to 11 Volts with 12V absolute max, 3.3V default VCC and logic, Controllable by I2C or TTL UART signals) based on DRV8835. Similar chip [I reveiwed already](/make/robot/motor-controller-board)
-- Pi [Servo Hat](/make/servo-hat-for-raspberry-pi). 16 PWM channels, controllable over I2C
+- [Pi Servo Hat](/make/servo-hat-for-raspberry-pi). 16 PWM channels, controllable over I2C
 - [Accelerometer and gyroscope](https://www.sparkfun.com/products/18020). I2C, 3.3V operating voltage
 - Passive Infrared (PIR) sensors are great for detecting motion in a small area around the sensor. 
-- [MicroMod MikroBUS Carrier Board](https://www.sparkfun.com/products/18710) - I also mention it in my [power board](/make/robot/power-board) development notes. equipped with a MCP73831 Single-Cell Lithium-Ion/Lithium-Polymer Charge IC. It receives power from the USB connection and can source up to 450mA to charge an attached battery. PLus 3.3V 1A Voltage Regulator
+- [MicroMod MikroBUS Carrier Board](https://www.sparkfun.com/products/18710) - I also mention it in my [power board](/make/robot/power-board) development notes. equipped with a MCP73831 Single-Cell Lithium-Ion/Lithium-Polymer Charge IC. It receives power from the USB connection and can source up to 450mA to charge an attached battery. PLus 3.3V 1A Voltage 
+## Other components
+- WROOM
+- [Ultrasonic distance sensor HC-SR04](/make/distance-sensor)
 
-## Ultrasonic distance sensor HC-SR04
+## WROOM
+32-bit MCU (Xtensa LX7) from Espressif ESP32-S2-WROOM. [Datasheet](https://www.espressif.com/sites/default/files/documentation/esp32-s2-wroom_esp32-s2-wroom-i_datasheet_en.pdf), [hardware design guidelines](https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32s2/schematic-checklist.html). Not recommended for new designs (4/20/2024), that's why I got them from SparkFun with discount.
+To compare with Arduino Uno, ATMega328, or other boards: WROOM has 128 KB ROM, 320 KB SRAM
+Peripherals include 43 GPIOs, 1 full-speed USB OTG interface, SPI, I2S, UART, I2C, LED PWM, LCD interface, camera interface, ADC, DAC, touch sensor, temperature sensor.
 
-- Operating Voltage: 5V DC
-- Operating Current: 15mA
-- Measure Angle: 15°
-- Ranging Distance: 2cm - 4m
-- Accuracy +-3mm
-
-Despite many chips on the back side of this board, it does not use any protocols like I2C or SPI. But neither it requires analog-to-digital conerter.
-It rather close to its physical properties, how a measurement signal sent about every 60 ms and received after some time. 1 uS = 58 cm
-
-
-```c
-/*
-  SparkFun Inventor’s Kit
-  Circuit 3B-Distance Sensor
-
-  Control the color of an RGB LED using an ultrasonic distance sensor.
-
-  This sketch was written by SparkFun Electronics, with lots of help from the Arduino community.
-  This code is completely free for any use.
-
-  View circuit diagram and instructions at: https://learn.sparkfun.com/tutorials/sparkfun-inventors-kit-experiment-guide---v40
-  Download drawings and code at: https://github.com/sparkfun/SIK-Guide-Code
-*/
-
-const int trigPin = 11;           //connects to the trigger pin on the distance sensor
-const int echoPin = 12;           //connects to the echo pin on the distance sensor
-
-const int redPin = 3;             //pin to control the red LED inside the RGB LED
-
-const int greenPin = 5;           //pin to control the green LED inside the RGB LED
-const int bluePin = 6;            //pin to control the blue LED inside the RGB LED
-
-float distance = 0;               //stores the distance measured by the distance sensor
-
-void setup()
-{
-  Serial.begin (9600);        //set up a serial connection with the computer
-
-  pinMode(trigPin, OUTPUT);   //the trigger pin will output pulses of electricity
-  pinMode(echoPin, INPUT);    //the echo pin will measure the duration of pulses coming back from the distance sensor
-
-  //set the RGB LED pins to output
-  pinMode(redPin, OUTPUT);
-  pinMode(greenPin, OUTPUT);
-  pinMode(bluePin, OUTPUT);
-}
-
-void loop() {
-  distance = getDistance();   //variable to store the distance measured by the sensor
-
-  Serial.print(distance);     //print the distance that was measured
-  Serial.println(" in");      //print units after the distance
-
-  if (distance <= 10) {                       //if the object is close
-
-    //make the RGB LED red
-    analogWrite(redPin, 255);
-    analogWrite(greenPin, 0);
-    analogWrite(bluePin, 0);
-
-  } else if (10 < distance && distance < 20) { //if the object is a medium distance
-
-    //make the RGB LED yellow
-    analogWrite(redPin, 255);
-    analogWrite(greenPin, 50);
-    analogWrite(bluePin, 0);
-
-  } else {                                    //if the object is far away
-
-    //make the RGB LED green
-    analogWrite(redPin, 0);
-    analogWrite(greenPin, 255);
-    analogWrite(bluePin, 0);
-  }
-
-  delay(50);      //delay 50ms between each reading
-}
-
-//------------------FUNCTIONS-------------------------------
-
-//RETURNS THE DISTANCE MEASURED BY THE HC-SR04 DISTANCE SENSOR
-float getDistance()
-{
-  float echoTime;                   //variable to store the time it takes for a ping to bounce off an object
-  float calculatedDistance;         //variable to store the distance calculated from the echo time
-
-  //send out an ultrasonic pulse that's 10ms long
-  digitalWrite(trigPin, HIGH);
-  delayMicroseconds(10);
-  digitalWrite(trigPin, LOW);
-
-  echoTime = pulseIn(echoPin, HIGH);      //use the pulsein command to see how long it takes for the
-                                          //pulse to bounce back to the sensor
-
-  calculatedDistance = echoTime / 148.0;  //calculate the distance of the object that reflected the pulse (half the bounce time multiplied by the speed of sound)
-
-  return calculatedDistance;              //send back the distance that was calculated
-}
-```
-
-
-
-
+Power from 3.7V battery ? 3.0V - 3.6V
+Wi-Fi (802.11 b/g/n) for communication
+About ADC. 2 ADC 10 channels each. [ADC Attenuation](https://docs.espressif.com/projects/esp-idf/en/v4.4/esp32/api-reference/peripherals/adc.html#adc-attenuation)
+Arduino IDE support.
+SPI for TFT display.
 
 ## 1.14 Inch TFT Display Module
 

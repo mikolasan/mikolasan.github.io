@@ -13,6 +13,13 @@ It's a simple analog sensor, for compatibility with Raspberry Pi (see, [no analo
 - One SOT-23 component marked as **662K** is 3.3V 200mA Positive Fixed LDO Voltage Regulator ([XC6206P332MR](https://product.torexsemi.com/system/files/series/xc6206.pdf)) which gives the board an operating voltage range of 3.3-5.5V
 - And 555 timer. Be careful with greedy sellers that might put the wrong version of the timer that can only work with 5V. So verify this info with the datasheet. I have [NE555](https://www.ti.com/lit/ds/symlink/ne555.pdf) from Texas Instruments which only works from the voltage in the range between 4V and 16V. Instead it should be TLC555C or TLC555I or an outlier NE555 with a second line **20M**
 
+## Calibration
+
+Calibrate or not calibrate? Don't do it but _normalize_ ([as science people say](https://www.daf.qld.gov.au/__data/assets/pdf_file/0018/55170/Capacitance-Probe-Calibration.pdf)).
+
+>Probes are normalised by matching the raw readings from each sensor at both 0% (held in air) and 100% water levels (submerged in water). Without normalising, these devices would only provide a range of irrelevant raw data that varies slightly with each sensor. By matching the raw reading from each sensor to both 0% and 100% water levels, a comparison of readings taken by different sensors can be made on a common scale. Equipment suppliers should provide you with procedures for normalising their product.
+
+
 ## Sketch
 
 1. Open the serial port

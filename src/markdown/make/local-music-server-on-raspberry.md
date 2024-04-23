@@ -266,3 +266,4 @@ Then go to [http://192.168.0.130:1780/](http://192.168.0.130:1780/) and press pl
 - [smart shuffle](https://github.com/uriel1998/mpdq)
 - [mpd clients](https://www.musicpd.org/clients/)
 - [fediverse](https://docs.funkwhale.audio/user/index.html#set-up-your-funkwhale-account)
+- [self-hosted ? music player](https://github.com/jeffvli/feishin)

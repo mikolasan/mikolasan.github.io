@@ -1,3 +1,6 @@
+// TODO:
+// - add shader effect to the background https://www.shadertoy.com/view/wstSRM
+
 import { on_spin_started, on_winning_result } from "./interface"
 
 const slot_width = 128;
