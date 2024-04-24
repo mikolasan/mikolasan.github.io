@@ -101,6 +101,7 @@ const config = {
       options: {
         name: `markdown-pages`,
         path: `${__dirname}/src/markdown`,
+        ignore: `**/templates`,
       },
     },
     {
