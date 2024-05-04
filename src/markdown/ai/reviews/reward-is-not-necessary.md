@@ -2,7 +2,6 @@
 section: brain
 title: Reward is not Necessary
 subtitle: How to Create a Compositional Self-Preserving Agent for Life-Long Learning
-article: true
 year: 2022
 authors: Thomas J. Ringstrom
 published: 2023-07-30

@@ -2,7 +2,6 @@
 section: brain
 title: Spike arrival times
 subtitle: A highly efficient coding scheme for neural networks
-article: true
 year: 1990
 authors: Simon J Thorpe
 published: 2022-12-20

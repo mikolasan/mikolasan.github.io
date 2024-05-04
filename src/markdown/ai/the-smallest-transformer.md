@@ -1,4 +1,5 @@
 ---
+article: quest
 title: The smallest Transformer
 date: 2023-06-03
 published: 2023-06-03

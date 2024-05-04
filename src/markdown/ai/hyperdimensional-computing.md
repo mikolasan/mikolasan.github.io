@@ -1,4 +1,5 @@
 ---
+topic: true
 title: Hyperdimensional computing
 date: 2024-04-15
 ---

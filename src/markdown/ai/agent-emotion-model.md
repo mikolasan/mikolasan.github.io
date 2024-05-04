@@ -1,8 +1,7 @@
 ---
-date: 2023-04-04
+article: main
 title: Agent emotion model
-topic: true
-draft: true
+date: 2023-04-04
 published: 2023-04-04
 lastModified: 2023-04-04
 ---

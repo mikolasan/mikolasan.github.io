@@ -1,6 +1,7 @@
 ---
 title: Real AI test
 date: 2022-09-11
+topic: true
 draft: true
 published: 2022-09-16
 lastModified: 2022-10-20

@@ -1,6 +1,7 @@
 ---
-date: 2023-05-18
+article: quest
 title: Voice recognition AI model
+date: 2023-05-18
 published: 2023-05-18
 lastModified: 2023-05-18
 ---

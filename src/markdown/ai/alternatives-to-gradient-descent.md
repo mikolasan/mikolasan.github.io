@@ -1,6 +1,7 @@
 ---
-date: 2022-11-13
+article: main
 title: Alternatives to gradient descent
+date: 2022-11-13
 published: 2023-01-03
 lastModified: 2023-10-04
 ---

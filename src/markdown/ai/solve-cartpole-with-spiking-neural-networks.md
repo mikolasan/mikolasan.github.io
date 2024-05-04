@@ -1,4 +1,5 @@
 ---
+article: main
 title: Solving CartPole with Spiking Neural Networks
 date: 2023-04-21
 published: 2023-04-21

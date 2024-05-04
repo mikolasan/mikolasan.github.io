@@ -1,9 +1,10 @@
 ---
+article: main
+topic: true
 title: Markov decision processes
 date: 2023-01-01
 published: 2023-01-01
 lastModified: 2023-01-01
-topic: true
 ---
 
 Neural networks, classification and clusterization algorithms are considered to be intelligent as far as they are part of Artificial Intelligence. But can they create novel independent decisions? Plan their execution algorithm and improve it over time?

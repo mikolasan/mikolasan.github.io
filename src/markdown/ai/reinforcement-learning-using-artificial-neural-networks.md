@@ -1,4 +1,5 @@
 ---
+article: main
 title: Reinforcement Learning using ANN
 date: 2022-10-25
 published: 2022-10-25

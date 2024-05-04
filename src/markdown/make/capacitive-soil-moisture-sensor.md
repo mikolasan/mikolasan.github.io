@@ -46,6 +46,7 @@ void loop() {
 
 ## Reference
 
+- [How it works](https://www.biomaker.org/block-catalogue/2021/12/17/soil-moisture-sensor-aideepen-v12) and [more about 555 timers](https://www.nutsvolts.com/magazine/article/using-the-555-timer-ic-in-special-or-unusual-circuits) and later you will need [this online calculator](https://www.digikey.com/en/resources/conversion-calculators/conversion-calculator-555-timer)
 - [Constant reading of 1023](https://forum.arduino.cc/t/capacitive-soil-moisture-sensor-v1-2/628094/8)
 - [Schematics](https://raw.githubusercontent.com/Arduinolibrary/DFRobot_Capacitive_Soil_Moisture_Sensor/master/SEN0193%20%20Capacitive%20Soil%20Moisture%20SensorV1.0.PDF)
 - [DFRobot wiki](https://wiki.dfrobot.com/Capacitive_Soil_Moisture_Sensor_SKU_SEN0193)

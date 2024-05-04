@@ -1,4 +1,5 @@
 ---
+article: quest
 date: 2023-05-26
 title: Not square GAN
 published: 2023-05-26

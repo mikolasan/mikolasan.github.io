@@ -1,6 +1,7 @@
 ---
-date: 2023-05-13
+topic: true
 title: Convolutional Neural Networks
+date: 2023-05-13
 published: 2023-05-13
 lastModified: 2023-05-13
 ---

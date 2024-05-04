@@ -10,7 +10,7 @@ lastModified: 2022-12-19
 - [Tokyo bird](https://burariweb.info)
 - [Jeremy Cook](https://jeremyscook.com/macro-keyboard-makes-music/)
 - [Stargirl](https://blog.thea.codes/starfish-a-control-board-with-the-rp2040)
-
+- Other blogs in a [blogroll](https://benjaminhollon.com/blogroll/) (maybe offtopic)
 
 ## Services
 

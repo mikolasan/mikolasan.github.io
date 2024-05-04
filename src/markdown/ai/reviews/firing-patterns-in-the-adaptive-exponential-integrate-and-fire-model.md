@@ -2,7 +2,6 @@
 section: brain
 title: Firing patterns in the adaptive exponential integrate-and-fire model
 subtitle: in the adaptive exponential integrate-and-fire model
-article: true
 year: 2008
 authors: Naud R, Marcille N, Clopath C, Gerstner W.
 published: 2022-12-20

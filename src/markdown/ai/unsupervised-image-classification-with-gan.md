@@ -1,4 +1,5 @@
 ---
+article: quest
 title: Unsupervised image classification
 subtitle: with GAN
 date: 2023-07-29

@@ -41,7 +41,6 @@ export const query = graphql`
       sort: { frontmatter: {date: DESC}},
       filter: {
         fileAbsolutePath: { regex: "/markdown\/science\//"},
-        frontmatter: { topic: {ne: true}, article: {ne: true}}
       }
     ) {
       totalCount

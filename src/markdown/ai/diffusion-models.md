@@ -1,10 +1,14 @@
 ---
-date: 2023-05-27
+topic: true
 title: Diffusion models
+date: 2023-05-27
 published: 2023-05-27
 lastModified: 2023-05-27
 ---
 
+**Also**: [Stable Diffusion and 3D](/ai/stable-diffusion-generates-3d-content)
+
+## Tutorials
 
 - https://lilianweng.github.io/posts/2021-07-11-diffusion-models/
 - Another diffusion tutorial https://github.com/Project-MONAI/GenerativeModels/blob/main/tutorials/generative/2d_ddpm/2d_ddpm_compare_schedulers.ipynb

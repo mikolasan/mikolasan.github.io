@@ -1,8 +1,7 @@
 ---
 section: brain
 title: Inverse Dynamics Model
-topic: true
-description: ""
+article: main
 published: 2023-03-20
 lastModified: 2023-03-20
 ---

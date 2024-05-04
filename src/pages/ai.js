@@ -10,6 +10,8 @@ import * as styles from "../components/postList.module.css"
 const BrainModelPage = ({ data }) => {
   const topicNodes = data.topicNodes.nodes
   const articleNodes = data.articleNodes.nodes
+  const researchNodes = data.researchNodes.nodes
+  const questNodes = data.questNodes.nodes
   const banner = [
     <h1 key="title" id="_name1" itemProp="name">Artificial Intelligence</h1>,
   ]
@@ -24,34 +26,15 @@ const BrainModelPage = ({ data }) => {
       <div className="centered">
         <div className="main-section">
           <h2>Main research</h2>
-          <div>
-            <Link to="/ai/reinforcement-learning-using-artificial-neural-networks">
-              <h3>
-                Reinforcement Learning using ANN
-              </h3>
-            </Link>
-          </div>
-          <div>
-            <Link to="/ai/mdp-example-social-media-bot">
-              <h3>
-                Markov Chains going wild
-              </h3>
-            </Link>
-          </div>
-          <div>
-            <Link to="/ai/unsupervised-image-classification-with-gan">
-              <h3>
-                Unsupervised image classification with GAN
-              </h3>
-            </Link>
-          </div>
-          <div>
-            <Link to="/ai/solve-cartpole-with-spiking-neural-networks">
-              <h3>
-                Solving CartPole with Spiking Neural Networks
-              </h3>
-            </Link>
-          </div>
+          {researchNodes.map(node => (
+            <div key={node.id}>
+              <Link to={absPathToUrl(node.fileAbsolutePath)}>
+                <h3>
+                  {node.frontmatter.title}
+                </h3>
+              </Link>
+            </div>
+          ))}
         </div>
       </div>
       
@@ -75,6 +58,22 @@ const BrainModelPage = ({ data }) => {
         </div>
       </div>
       
+
+      <div className="centered">
+        <div className="main-section">
+          <h2>Additional research</h2>
+          <p>Side quests</p>
+          {questNodes.map(node => (
+            <div key={node.id}>
+              <Link to={absPathToUrl(node.fileAbsolutePath)}>
+                <h3>
+                  {node.frontmatter.title}
+                </h3>
+              </Link>
+            </div>
+          ))}
+        </div>
+      </div>
 
       <ScrollSplit>
         <h2>Last reviews</h2>
@@ -106,6 +105,38 @@ export default BrainModelPage
 
 export const query = graphql`
   query AIQuery {
+    researchNodes: allMarkdownRemark(
+      filter: {
+        fileAbsolutePath: { regex: "/markdown\/ai\//"},
+        frontmatter: {article: {eq: "main"}}
+      }
+      sort: {frontmatter: { date: ASC}}
+    ) {
+      nodes {
+        frontmatter {
+          title
+        }
+        excerpt
+        fileAbsolutePath
+        id
+      }
+    }
+    questNodes: allMarkdownRemark(
+      filter: {
+        fileAbsolutePath: { regex: "/markdown\/ai\//"},
+        frontmatter: {article: {eq: "quest"}}
+      }
+      sort: {frontmatter: { date: ASC}}
+    ) {
+      nodes {
+        frontmatter {
+          title
+        }
+        excerpt
+        fileAbsolutePath
+        id
+      }
+    }
     topicNodes: allMarkdownRemark(
       filter: {
         fileAbsolutePath: { regex: "/markdown\/ai\//"},
@@ -125,9 +156,8 @@ export const query = graphql`
     articleNodes: allMarkdownRemark(
       filter: {
         fileAbsolutePath: { regex: "/markdown\/ai\/reviews\//"},
-        frontmatter: {article: {eq: true}}
       }
-      sort: {fileAbsolutePath: ASC}
+      sort: {frontmatter: {year: DESC}}
     ) {
       nodes {
         frontmatter {

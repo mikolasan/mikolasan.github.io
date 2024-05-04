@@ -1,12 +1,15 @@
 ---
 date: 2022-05-24
 title: Shitty sentiment analysis
+article: quest
 draft: true
 published: 2022-06-07
 lastModified: 2022-07-30
 ---
 
-This idea based on [shitty sentiment analysis](https://twitter.com/ImZackAdams/status/1526378770277576704)
+This idea based on [Zack's tweet](https://web.archive.org/web/20220517014800/https://twitter.com/ImZackAdams/status/1526378770277576704)
+
+![Are you more positive or negative? Comment below and I will run your last 500 tweets through my shitty sentiment analysis and give you a score between -1 (negative) and 1(positive)](./are_you_positive_or_negative.png)
 
 Let me repeat it here:
 

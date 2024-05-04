@@ -36,9 +36,8 @@ export const query = graphql`
     articleNodes: allMarkdownRemark(
       filter: {
         fileAbsolutePath: { regex: "/markdown\/ai\/reviews\//"},
-        frontmatter: {article: {eq: true}}
       }
-      sort: {fileAbsolutePath: ASC}
+      sort: {frontmatter: {year: DESC}}
     ) {
       nodes {
         frontmatter {
