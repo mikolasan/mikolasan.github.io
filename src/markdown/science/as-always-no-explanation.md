@@ -2,9 +2,14 @@
 title: As always - no explanation
 date: 2023-06-04
 published: 2023-06-04
-lastModified: 2023-06-04
+lastModified: 2024-05-10
 ---
+You can find this in many scientific papers, common phrases indicating that the proper explanation is skipped, here sorted in the growing order of complexity:
 
+- Rather trivial
+- Then clearly
+- Simple (small) algebraic transformation
+- Tedious exercise leave up to the reader
 
 ## Positional encoding
 

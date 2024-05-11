@@ -24,7 +24,7 @@ In this light I put on the first place the functional capabilities of the thing 
 - Inside or outside? It needs a battery.
 - How complex its movements in the space? Just moving or also make interactions with the world: drawing, grab things? Extra servomotors. Inspiration: [rolling spider](https://www.youtube.com/watch?v=4z-aT8Wp2YQ)
 - What obstacles it needs to conquer? Lidar or ultrasonic sensors. 
-- Flat floor and walls and doors? Climb stairs? Think about adding more legs for stability like hexapod and gyro sensor.
+- Flat floor and walls and doors? Climb stairs? Think about adding more legs for stability like [hexapod](/make/robot/hexapod) and gyro sensor.
 - Jump on the desk and from it? [Fly like a butterfly](https://www.science.org/doi/full/10.1126/sciadv.add3788)? Probably you are building a drone now.
 - Should it collect information? Add sensors 
 
@@ -55,6 +55,7 @@ Many other things get postponed to [version 2](/make/robot/prototype-2).
  
 ## See also
 
+- [Robot of the World](https://trello.com/b/A1RnF6x5/robots-of-the-world) - my modest encyclopedia, use it for inspiration.
 - If it looks too intimidating, then take a look on Kevin McAleer's video [How to design and make a robot](https://www.youtube.com/watch?v=lKxJUViQsW8) that will show how simple it can be
 - Perception of sensors and actuation of motors reviewed alos from [developmental psychology perspective](/science/developmental-psychology-studies)
 - SmartCar [1](https://www.pcbway.com/project/shareproject/Smartcar___Motors_board.html) [2](https://github.com/rosmo-robot/smartcar_shield#platform)

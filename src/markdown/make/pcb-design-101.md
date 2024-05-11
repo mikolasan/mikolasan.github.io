@@ -45,7 +45,14 @@ Multiply voltage by 4/3 or 3/2 (electrolytic caps) and up to 2 (ceramic caps)
 - Edit -> Add... -> Scroll down to **frames**, Choose LETTER_L
 - If silkscreen and soldermask colors are swapped in Fusion 360, then check silkscreen contours outside of the board. Also measurements are not allowed
 
+PCB design checklist ([example](https://mastodon.social/deck/@noodlejs@hachyderm.io/112356378501183070)):
 
+- Rounded edges
+- Copper-plated mounting holes
+- Components aligned in a grid (vs. haphazard)
+- Actually centered aligned everything
+- No sharp corners on the traces
+- Non-standard pcb color
 ## Fusion 360
 
 - Change PCB color: go back to Eagle

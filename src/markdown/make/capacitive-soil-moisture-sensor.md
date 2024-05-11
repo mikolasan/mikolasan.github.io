@@ -3,10 +3,17 @@ title: Moist sensor
 subtitle: Capacitive soil moisture sensor
 date: 2023-11-04
 published: 2023-11-04
-lastModified: 2023-11-04
+lastModified: 2024-05-10
 ---
 
 It's a simple analog sensor, for compatibility with Raspberry Pi (see, [no analog inputs](https://pinout.xyz/)) you will need an extra ADC converter. The Arduino analog input voltage is 1V max, and the output voltage of the capacitive sensor is about 3V (if powered by 3.3V), which means you have to use a voltage divider at the output of the sensor.
+## Principle
+
+There is a classic 555 timer in the sensor. The sensor provides an analog signal. How does it use the timer, and why does it need the timer?
+
+> pins 2 and 6 are tied for several modes of operation. That schematic is an astable, it’s charging up the 1uF across the soil sensor each time it triggers. The conductivity of the soil will discharge the cap between triggers, so the lower the minimum cap voltage the more conductive (rough proxy for “moist”, considering soils have salts in them and are conductive).
+>
+> - _[ozeng](https://aus.social/@ozeng/112363314413452382)_
 
 ## Before you buy
 

@@ -16,6 +16,7 @@ Very interesting things that have very good write up, but I do not have time to 
 - AI Dungeon (text adventure game)
 - Position based fluids
 - Homemade machine learning https://github.com/trekhleb/homemade-machine-learning
+- [Complex numbers in electronics](https://ecstudiosystems.com/discover/textbooks/basic-electronics/ac-circuits/complex-numbers-in-electronics/)
 
 ## Also
 

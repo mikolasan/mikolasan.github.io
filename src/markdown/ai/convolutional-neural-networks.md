@@ -20,13 +20,17 @@ Do you know what I like about this model? It's easily compiled on Windows, and h
 
 ## Main questions
 
+### Image size
+
+What will be the spatial map between an image with resolution of 1024x1024 pixels and rods and cells in the human eye assuming that the image covers full field of view? In such model one pixel will correspond to an area of rods and cones. In order to keep the system small and efficient, we will keep only one rod and cones according to its distribution in retina. How many photo receptors do we need for such model?
+
 ### Halftone images
 
 Human eyes not exactly percieve the world as a matrix of RGB pixels. There are several types of [retinal ganglion cells](https://en.wikipedia.org/wiki/Retinal_ganglion_cell). What if we convert images using [halftone](https://en.wikipedia.org/wiki/Halftone) technique ([python 1](https://github.com/GravO8/halftone), [python 2](https://github.com/philgyford/python-halftone), [c opencv](https://stackoverflow.com/questions/1487517/fastest-dithering-halftoning-library-in-c)). Also: [Rod and Cone Connections With Bipolar Cells in the Rabbit Retina](https://www.frontiersin.org/articles/10.3389/fncel.2021.662329/full)
 
 ### How does a convolution kernel get trained?
 
-2D convolution is [a matrix-matrix multiplication](https://stackoverflow.com/questions/16798888/2-d-convolution-as-a-matrix-matrix-multiplication). See [here](https://ai.stackexchange.com/questions/11172/how-can-the-convolution-operation-be-implemented-as-a-matrix-multiplication) with pictures and formulas.
+2D convolution is [a matrix-matrix multiplication](https://stackoverflow.com/questions/16798888/2-d-convolution-as-a-matrix-matrix-multiplication). See [here](https://ai.stackexchange.com/questions/11172/how-can-the-convolution-operation-be-implemented-as-a-matrix-multiplication) with pictures and formulas. And see [visualization](https://mydeeplearningnb.wordpress.com/2019/07/24/visualizing-cnns-using-tensorflow/) of active neurons and conv filters.
 
 
 ## Papers

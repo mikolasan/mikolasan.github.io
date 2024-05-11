@@ -12,6 +12,8 @@ This is my main inspiration:
 
 ### Pot redesign
 
+- [https://www.printables.com/model/757270-the-vyre-planter-pot-orchid-pot-hybrid-with-draina](https://www.printables.com/model/757270-the-vyre-planter-pot-orchid-pot-hybrid-with-draina)
+- [https://www.printables.com/model/735888-the-luxar-planter-pot-with-drainage-tray-stand-inc](https://www.printables.com/model/735888-the-luxar-planter-pot-with-drainage-tray-stand-inc)
 - [Simple hexagon](https://www.thingiverse.com/thing:5326190)
 - [Big vase with inserts](https://www.printables.com/model/357618-flower-pot/files)
 - [Constructivist design](https://www.thingiverse.com/thing:6101723)

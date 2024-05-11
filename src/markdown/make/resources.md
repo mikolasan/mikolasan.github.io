@@ -12,6 +12,22 @@ lastModified: 2022-12-19
 - [Stargirl](https://blog.thea.codes/starfish-a-control-board-with-the-rp2040)
 - Other blogs in a [blogroll](https://benjaminhollon.com/blogroll/) (maybe offtopic)
 
+
+## Robotics shows
+
+Free to attend *Automate* [https://www.automateshow.com/](https://www.automateshow.com/)
+
+
+## Things
+
+- [motherboard schematics](https://community.mnt.re/t/im-building-my-own-reform/759)
+- 
+
+## News
+
+- [Science Robotics](https://www.science.org/journal/scirobotics)
+
+
 ## Services
 
 Helpful links for DIY hobbyist playing with system on a chip (SoC) and microcontrollers

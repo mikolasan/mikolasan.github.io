@@ -160,12 +160,12 @@ The paper says that reservoir computing is good, essentially it just converts th
 - Morphological computation
 - Moravec's paradox
 - symbolic AI
-- Temporal neural encoder
-- Neuromorphic computing systems
-- Spike coded trains
 - Comparative connectomics 
 - Stage of cognitive development
 
+## Notes
+
+Use numerical differentiation for proving that over time the networks does not exponentially explode with cycles and other unpredictable activities. Most likely it’s not helpful during training, but can be used for upper bound evaluation.
 
 ## Quotes
 

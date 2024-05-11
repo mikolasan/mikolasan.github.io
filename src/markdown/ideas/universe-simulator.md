@@ -31,3 +31,8 @@ This was originally written by a PHD from Denmark - John Olsson
 - Homepage: https://www.lysator.liu.se/~johol/fwmg/fwmg.html
 
 ![texture in godot](./fractal-world-map-generator.png)
+
+
+## Shaders
+
+- [a planet](https://www.shadertoy.com/view/4tVSRw)

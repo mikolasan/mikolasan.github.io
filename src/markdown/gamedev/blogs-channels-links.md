@@ -27,6 +27,8 @@ If you are following gamedev on Twitter, then you see stuff, but no things to re
 - How to make [roguelike in 7 days](http://www.gamesofgrey.com/blog/?p=157) by [Darren Grey](https://twitter.com/@dgrey0)
 - Rust [devlog](https://ozkriff.github.io/2016-08-22--devlog.html). ZoC is a turn-based hexagonal strategy game written in Rust.
 - Markov chains for calculating a feature in slot games [http://blog.collurio.com/2014/10/18/stickin-it/](http://blog.collurio.com/2014/10/18/stickin-it/)
+- Some cool vectors that make [animation transitions smooth](https://theorangeduck.com/page/propagating-velocities-through-animation-systems)
+- [Lua in Unreal Engine](https://github.com/Tencent/sluaunreal)
 
 ## Bonus
 

@@ -166,4 +166,4 @@ env.close()
 
 ### Neuroscience
 
-- Muscles. [Spinal control of movement](https://openbooks.lib.msu.edu/neuroscience/chapter/spinal-control-of-movement/). [Nervous System Control of Muscle Tension](https://open.oregonstate.education/aandp/chapter/10-4-nervous-system-control-of-muscle-tension/)
+- Muscles. [Spinal control of movement](https://openbooks.lib.msu.edu/neuroscience/chapter/spinal-control-of-movement/). How neuron drives muscles in [Nervous System Control of Muscle Tension](https://open.oregonstate.education/aandp/chapter/10-4-nervous-system-control-of-muscle-tension/)
