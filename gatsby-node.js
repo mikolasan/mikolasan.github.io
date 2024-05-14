@@ -300,7 +300,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     },
     "/ideas": {
       template: genericListTemplate,
-      postsPerPage: 12,
+      postsPerPage: 24,
       title: `Ideas`,
       regex: `/markdown\/ideas\//`,
       section: `code`,

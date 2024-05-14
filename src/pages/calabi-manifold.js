@@ -7,7 +7,7 @@
 // https://threejs.org/docs/?q=buffer#api/en/core/BufferGeometry
 // all examples https://docs.pmnd.rs/react-three-fiber/getting-started/examples
 // compute normals https://stackoverflow.com/questions/67753315/buffergeometry-normals-react-three-fiber
-
+// camera movement example https://codesandbox.io/p/sandbox/viking-ship-0buje?file=%2Fsrc%2FApp.tsx
 // bloom from selection and pallette https://codesandbox.io/p/sandbox/instanced-vertex-colors-8fo01?file=%2Fsrc%2FApp.js
 
 import React, { useRef, useState, useEffect, useTransition, useMemo } from 'react'
@@ -17,7 +17,7 @@ import { SEO } from "../components/seo"
 
 import { BufferAttribute, DoubleSide } from "three";
 import { Canvas, useFrame } from '@react-three/fiber'
-import { Center, AccumulativeShadows, RandomizedLight, Environment, OrbitControls } from "@react-three/drei";
+import { Center, AccumulativeShadows, RandomizedLight, Environment, OrbitControls, CameraControls } from "@react-three/drei";
 
 import * as math from 'mathjs';
 
@@ -121,11 +121,11 @@ function BufferGeometryTest2() {
 
 function coordinate(x, y, n, k1, k2, a) {
   const z1 = math.multiply(
-    math.exp(math.complex(0, 2 * math.pi * k1 / n)),
+    math.exp(math.complex(0, 2 * Math.PI * k1 / n)),
     math.pow(math.cos(math.complex(x, y)), 2 / n)
   );
   const z2 = math.multiply(
-    math.exp(math.complex(0, 2 * math.pi * k2 / n)),
+    math.exp(math.complex(0, 2 * Math.PI * k2 / n)),
     math.pow(math.sin(math.complex(x, y)), 2 / n)
   );
   return [
@@ -142,8 +142,8 @@ function BufferGeometryTest3() {
     const n = 6;
     const a = 2.0;
     const PI_2 = Math.PI / 2;
-    const dx = math.pi / 10;
-    const dy = math.pi / 10;
+    const dx = PI_2 / 5;
+    const dy = PI_2 / 5;
     let ids = [];
     let vertices = [];
     let i = 0;
@@ -185,70 +185,27 @@ function BufferGeometryTest3() {
           itemSize={1}
         />
       </bufferGeometry>
-      <meshStandardMaterial 
+      <meshPhongMaterial 
+        side={DoubleSide}
+        color={0x374A67}
+        specular={0xCB9CF2}
+        
+      />
+      {/* <meshStandardMaterial 
         color='orange'
         side={DoubleSide}
         metalness={0.8}
         roughness={0.7}
-      />
+      /> */}
     </mesh>
   );
 }
 
 function Env() {
   const preset = 'sunset';
-  const blur = 0.33;
+  const blur = 0.9;
     
   return <Environment preset={preset} background backgroundBlurriness={blur} />
-}
-
-function CalabiYauManifold(props) {
-  const n = 8;
-  const a = 2.0;
-  const PI_2 = Math.PI / 2;
-  const dx = math.pi / 10;
-  const dy = math.pi / 10;
-  let vertices = [];
-
-  function coordinate(x, y, n, k1, k2, a) {
-    const z1 = math.multiply(
-      math.exp(math.complex(0, 2 * math.pi * k1 / n)),
-      math.pow(math.cos(math.complex(x, y)), 2 / n)
-    );
-    const z2 = math.multiply(
-      math.exp(math.complex(0, 2 * math.pi * k2 / n)),
-      math.pow(math.sin(math.complex(x, y)), 2 / n)
-    );
-    return [
-      z1.re, 
-      z2.re, 
-      z1.im * math.cos(a) + z2.im * math.sin(a)
-    ];
-  }
-
-  for (let k1 = 0; k1 < n; ++k1) {
-    for (let k2 = 0; k2 < n; ++k2) {
-      for (let x = 0; x <= PI_2; x += dx) {
-        for (let y = -PI_2; y < PI_2; y += dy) {
-          vertices = vertices.concat(
-            coordinate(x, y, n, k1, k2, a),
-            coordinate(x + dx, y, n, k1, k2, a),
-            coordinate(x + dx, y + dy, n, k1, k2, a),
-            coordinate(x, y + dy, n, k1, k2, a)
-          );
-        }
-      }
-    }
-  }
-
-  const points = new BufferAttribute(new Float32Array(vertices), 3);
-
-  return <mesh {...props}>
-    <bufferGeometry>
-      <bufferAttribute attach={"attributes-position"} {...points} />
-    </bufferGeometry>
-    <meshStandardMaterial color='orange' />
-  </mesh>
 }
 
 // const dimensions = {
@@ -257,62 +214,35 @@ function CalabiYauManifold(props) {
 //   margin: { top: 30, right: 60, bottom: 30, left: 60 }
 // };
 
+function CustomCameraControls(){
+  const cameraControlsRef = useRef();
+
+  useFrame(({ camera, clock }) => {
+    const t = clock.getElapsedTime()
+    
+    cameraControlsRef.current?.moveTo(
+      Math.sin(t / 2.0) / 1.0, 
+      (Math.sin(t / 4.0) + 1.0) / 4.0 + 0.5,
+      Math.cos(t / 2.0) / 1.0, 
+      false
+    )
+
+    cameraControlsRef.current?.lookInDirectionOf(0, 0.7, 0, false)
+  });
+  useEffect(() => {
+    cameraControlsRef.current?.lookInDirectionOf(-15, 0, -1, false)
+  });
+  
+
+  return (
+    <CameraControls
+      enabled={true}
+      ref={cameraControlsRef}
+    />
+  )
+}
 
 const CalabiManifold = () => {
-
-  // const { width, height, margin } = dimensions;
-  // const svgWidth = width + margin.left + margin.right;
-  // const svgHeight = height + margin.top + margin.bottom;
-
-  // // init
-
-  // const camera = new THREE.PerspectiveCamera(70, width / height, 0.01, 10);
-  // camera.position.z = 1;
-
-  // const scene = new THREE.Scene();
-
-  // const geometry = new THREE.BoxGeometry(0.2, 0.2, 0.2);
-  // const material = new THREE.MeshNormalMaterial();
-
-  // const mesh = new THREE.Mesh(geometry, material);
-  // scene.add(mesh);
-
-  // const renderer = new THREE.WebGLRenderer({ antialias: true });
-  // renderer.setSize(width, height);
-  // renderer.setAnimationLoop(animate);
-  // document.body.appendChild(renderer.domElement);
-
-  // // animation
-
-  // function animate(time) {
-
-  //   mesh.rotation.x = time / 2000;
-  //   mesh.rotation.y = time / 1000;
-
-  //   renderer.render(scene, camera);
-
-  // }
-
-  // function mount(container) {
-  //   if (container) {
-  //     container.insertBefore(renderer.domElement, container.firstChild);
-  //     //resize();
-  //   } else {
-  //     renderer.domElement.remove();
-  //   }
-  // }
-
-  // const containerRef = useCallback(mount, []);
-
-
-  // const svgRef = useRef();
-  // useEffect(() => {
-
-  //   cube.rotation.x += 0.01;
-  //   cube.rotation.y += 0.01;
-
-  //   renderer.render( scene, camera );
-  // }, [])
   return (<Layout
     title="Calabi Manifold"
     section="science"
@@ -320,7 +250,10 @@ const CalabiManifold = () => {
     {/* <svg ref={svgRef} width={svgWidth} height={svgHeight} /> */}
     {/* <div className="Cube-container" ref={containerRef}></div> */}
     <div style={{width:"800px", height:"500px"}}>
-      <Canvas shadows camera={{ fov: 35, near: 1, far: 1000, position: [5, 7, 0] }} >
+      <Canvas camera={{ fov: 25, near: 1, far: 1000, position: [5, 7, 0] }} >
+        <ambientLight intensity={1.0} />
+        <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
+        <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
         <group position={[0, -0.45, 0]}>
           <BufferGeometryTest3 />
           <AccumulativeShadows temporal frames={200} color="purple" colorBlend={0.5} opacity={1} scale={10} alphaTest={0.85}>
@@ -329,14 +262,9 @@ const CalabiManifold = () => {
         </group>
         
         <Env />
-        <OrbitControls 
-          autoRotate
-          autoRotateSpeed={4}
-          enablePan={false}
-          enableZoom={false}
-          minPolarAngle={Math.PI / 2.1}
-          maxPolarAngle={Math.PI / 2.1}
+        <CustomCameraControls
         />
+        
       </Canvas>
     </div>
 

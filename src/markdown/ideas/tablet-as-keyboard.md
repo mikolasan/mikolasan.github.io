@@ -21,4 +21,4 @@ But when my look stopped for a moment on a TV screen, I imagined that one can si
 
 Instead of a TV screen, the keyboard app can be remotely connected to a regular PC. They can communicate using Bluetooth.
 
-Also to learn vim [this reinforcement learning system](/ideas/reinfocement-learning-and-vim-lessons) can help.
+Also to learn vim [this reinforcement learning system](agent-learns-vim-with-reinforcement-learning.md) can help.

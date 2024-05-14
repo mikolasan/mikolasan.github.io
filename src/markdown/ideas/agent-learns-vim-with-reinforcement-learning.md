@@ -1,5 +1,6 @@
 ---
-title: Reinforcement Learning and vim lessons
+title: Agent learns vim
+subtitle: with Reinforcement Learning
 date: 2024-05-09
 published: 2024-05-09
 lastModified: 2024-05-09
