@@ -82,3 +82,8 @@ Decoding theory first [https://www-users.cse.umn.edu/~garrett/students/reu/MB_al
 D = D Flip Flop
 
 Article to understand [https://ietresearch.onlinelibrary.wiley.com/doi/10.1049/iet-com.2015.0500#](https://ietresearch.onlinelibrary.wiley.com/doi/10.1049/iet-com.2015.0500#)
+
+
+Play with digital gates:
+- [logic designer and circuit simulator](https://github.com/hneemann/Digital) app
+- [simulator](https://circuitverse.org/simulator) online

@@ -6,6 +6,33 @@ published: 2022-12-20
 lastModified: 2022-12-21
 ---
 
+Zak [well explained](https://blog.zakkemble.net/a-lithium-battery-charger-with-load-sharing/) how to add a MOSFET that will help with situations like
+
+- using only battery
+- USB connected, charging battery, battery is not used for powering the load. What USB cannot provide enough power, will charging suffer?
+- USB connected but battery is missing (MOSFET has nothing to do here, this is on MCP73831)
+
+![](./MCP73831_loadshare.png)
+
+Which is in its turn an adaptation of [a note from Microchip](https://ww1.microchip.com/downloads/en/AppNotes/01149c.pdf) (_Designing A Li-Ion Battery Charger and Load Sharing System With Microchip’s Stand-Alone Li-Ion Battery Charge Management Controller_ by Brian Chu)
+
+Interesting that I found these links in one very long rant on a [EEVblog forum](https://www.eevblog.com/forum/beginners/tips-for-designing-a-usb-battery-powered-mcu-project-with-built-in-charging/). Very confusing discussion full of MOSFET dyslexia ()
+
+But it was much more constructive discussion than on Electronics Stackexchange where I found very confusing topics:
+
+- [How to add MOSFET](https://electronics.stackexchange.com/questions/139600/how-to-use-coin-cell-cr2032-in-parallel-with-a-power-supply) to switch between battery and external source. Doesn't look like the source is connected right
+- [Two diodes or MOSFET?](https://electronics.stackexchange.com/questions/495845/best-way-to-have-circuit-powered-by-usb-when-plugged-in-and-battery-when-not) but the answer is to buy a board. Otherwise, mind bending schematics without ground. No ground at all!
+- [Idea with the comparator](https://electronics.stackexchange.com/questions/130932/switching-between-battery-and-usb-using-diode-or-logic). And also with two comparators that detect a voltage range ([window comparator curcuit](https://www.electronics-tutorials.ws/opamp/op-amp-comparator.html)). Though it's interesting but doesn't look flexible: first you need to understand the window and comparators, then calculate values (take into account battery charged and discharged states, and difference between USB and battery voltage), then why one MOSFET is not enough?
+
+On hackster.io I found [some concerns](https://www.hackster.io/spurga_zr/esp8266-development-board-battery-powered-and-solar-powered-f3fccd) about LDO voltage regulator (suggesting HT7333 as a solution)
+
+> most boards such as Wemos, NodeMCU and others have an AMS117 voltage regulator that has an extremely high drop-out voltage of 1.3V, which makes them unusable for battery power
+
+ and proper battery level readings (this is about separate LipoFuelGauge system)
+ 
+> In order to be able to accurately measure the state of the battery, you cannot do it through resistors and ADC Pins, because the voltage of lithium-ion batteries does not drop linearly, while this chip has a special algorithm that calculates the state of the battery.
+
+More complex control - [voltage multiplexer](https://www.mikrocontroller.net/attachment/176412/Power_Multiplexer.pdf) from Power Electronics Technology magazine
 ## Alternatives
 
 - [PCB design alternative](https://grabcad.com/library/stbc08-high-current-lipo-battery-charger-1)
@@ -13,7 +40,7 @@ lastModified: 2022-12-21
 
 Power distribution boards
 
-- [Matek PDB-XT60 w/ BEC 5V & 12V](http://www.mateksys.com/?portfolio=pdb-xt60)
+- [Matek PDB-XT60 w/ BEC 5V & 12V](http://www.mateksys.com/?portfolio=pdb-xt60) (what chip is used there?)
 - Matek Systems PDB Supports 3S Battery for FPV Racing Drone HUB5V12V
 
 ## Power source

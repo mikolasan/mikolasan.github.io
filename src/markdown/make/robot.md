@@ -52,6 +52,8 @@ Modular design dictates to find a way to put the boards together. For example wi
 Before really doing [version 1](/make/robot/prototype-1) I plan to look closer into targeting it as a board for making [Arduino-based drone](/make/robot/arduino-drone) and flexible for [constructor kit](/make/robot/constructor) purposes.
 
 Many other things get postponed to [version 2](/make/robot/prototype-2).
+
+Planning next: [eco-friendly](/make/robot/eco-friendly) robot
  
 ## See also
 

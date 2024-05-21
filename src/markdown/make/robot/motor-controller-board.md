@@ -18,12 +18,12 @@ or relies on currently available shields or hats
 
 ![Yukon driver board](./pimoroni_yukon.jpeg "Photo by [Dr Footleg](https://twitter.com/drfootleg)")
 
-Maybe that's why Yukon is very popular, but why not to make this customly expandable?
+Maybe that's why Yukon is very popular, but why not to make this customly expandable? Should I think about RP2040 Yukon clone but with something different from Cortex M0
 
 
 ## H-Bridge
 
-[H-bridge](https://www.uni-weimar.de/kunst-und-gestaltung/wiki/H-Bridge), also called as _full bridge_ (but not half bridge), is a motor driver that allows the motor to rotate forward and backward. With independent movement of every wheel we will implement [skid-steer drive](https://groups.csail.mit.edu/drl/courses/cs54-2001s/skidsteer.html). H-Bridge can be created with the help of four MOSFETs and diodes.
+H-bridge, also called as _full bridge_ (but not half bridge), is a motor driver that allows the motor to rotate forward and backward. With independent movement of every wheel we will implement _skid-steer drive_. H-Bridge can be created with the help of four MOSFETs and diodes.
 
 > Unwise to power an H-bridge with two d-a's, forward and reverse, you run risk of powering both sides on at once. This destroys the H-bridge and can destroy the motor. Be really careful. You can only power one at a time.
 >

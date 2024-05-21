@@ -50,10 +50,14 @@ void loop() {
 
 ![Schematics of capacitive soil moisteru sensor](./capacitive-soil-moisture-sensor-v1.0.png)
 
+Schematics from [Biomaker's website](https://www.biomaker.org/block-catalogue/2021/12/17/soil-moisture-sensor-aideepen-v12). 
+![](./capacitive-soil-moisture-sensor-schematic-biomaker.png)
 
+Note: I think on this scheme there is a mistake in how wire goes from pin 4 and connects to pin 7 through a resistor. It's missing a dot where pin 4 should be connected to Vcc and pin 8
 ## Reference
 
-- [How it works](https://www.biomaker.org/block-catalogue/2021/12/17/soil-moisture-sensor-aideepen-v12) and [more about 555 timers](https://www.nutsvolts.com/magazine/article/using-the-555-timer-ic-in-special-or-unusual-circuits) and later you will need [this online calculator](https://www.digikey.com/en/resources/conversion-calculators/conversion-calculator-555-timer)
+- [How it works](https://www.biomaker.org/block-catalogue/2021/12/17/soil-moisture-sensor-aideepen-v12)  and [more about 555 timers](https://www.nutsvolts.com/magazine/article/using-the-555-timer-ic-in-special-or-unusual-circuits) and later you will need [this online calculator](https://www.digikey.com/en/resources/conversion-calculators/conversion-calculator-555-timer)
+- About [parallel RC circuit](https://neurotext.library.stonybrook.edu/C3/C3_3/C3_3.html) just before output
 - [Constant reading of 1023](https://forum.arduino.cc/t/capacitive-soil-moisture-sensor-v1-2/628094/8)
 - [Schematics](https://raw.githubusercontent.com/Arduinolibrary/DFRobot_Capacitive_Soil_Moisture_Sensor/master/SEN0193%20%20Capacitive%20Soil%20Moisture%20SensorV1.0.PDF)
 - [DFRobot wiki](https://wiki.dfrobot.com/Capacitive_Soil_Moisture_Sensor_SKU_SEN0193)
