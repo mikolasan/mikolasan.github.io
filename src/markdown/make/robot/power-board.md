@@ -43,6 +43,17 @@ Power distribution boards
 - [Matek PDB-XT60 w/ BEC 5V & 12V](http://www.mateksys.com/?portfolio=pdb-xt60) (what chip is used there?)
 - Matek Systems PDB Supports 3S Battery for FPV Racing Drone HUB5V12V
 
+## Plan
+
+- search for a prototype board for ESP32
+- add USB connector
+- voltage stabilizer (buck converter)
+- battery charger chip
+- solar panel connector
+- battery connector
+- SPI line connectors and power for display
+- voltage divider between ADC and battery (to read battery level)
+
 ## Power source
 
 Motors normally require higher voltage (6V, 12V, 24V) and current, and it's a good practice to keep motors, LEDs (like very long strips of LEDs), switches electronically seperated from the logic (3.3V). But **how do you decouple it** when the whole project should work from the battery?
@@ -74,6 +85,16 @@ Old alternative for these chips is [MAX1555](https://datasheets.maximintegrated.
 - 1x resistor (to set maximum charging current) [1K](https://www.mouser.com/ProductDetail/755-SDR10EZPF1001) - for 25mA current (?), therefore the Power Rating >125mW
 - 1x resistor (to skip temperature control) [10K](https://www.mouser.com/ProductDetail/71-CRCW040210K0FKEDC) - for 50uA and 1.25V = 62.5uW
 
+
+## Load sharing
+
+Even an LED can cause the battery to never finish charging.
+
+USB should work as input and charge the battery too.
+
+**Power multiplexer**. Add diodes to prevent flow from solar panel to USB (as they will share input lines).
+What MOSFET specs to use?
+
 ## Step up voltage regulator
 
 We need to boost 3.7V voltage from our battery to 5V level where Arduino and motors can work. Preferably we should supply 3.3V to logic board and separate 5V or 6V or even more to motors. But we must keep the first version simple.
@@ -101,6 +122,32 @@ Old alternative for these chips is [TPS6109](https://www.ti.com/lit/ds/symlink/t
 - For charging USB cable let's be modern and use type C - [USB Type C Female](https://www.digikey.com/en/products/detail/adam-tech/USB-C31-S-VT-CS4-BK-PP-T-R/9832222)
 
 
+## Don't forget
+
+- Programmer connector. Two options: USB to UART with chips like CP210x or CH340, and see [DevKitM](https://dl.espressif.com/dl/schematics/ESP32-S2-DevKitM-1_V1_Schematics.pdf) for [WROOM](/make/esp32-s2-wroom); or COM port (or USB to Serial converter) directly connected to RXD and TXD pins (this [might not work on every system](https://forum.arduino.cc/t/debugging-my-esp32-programmer/703334/13), maybe because DTR and RTS which just automatically trigger **Reset** and **Boot** buttons)
+![Picture from Last Minute Engineers showing form and marking difference between CP210x and CH340](/make/cp210x-vs-ch340.png "Source: [Last Minute Engineers: Installing ESP32 Board in the Arduino IDE](https://lastminuteengineers.com/esp32-arduino-ide-tutorial/)")
+- Add several buttons in a joystick formation plus functional buttons (for setup, menu)
+
+## Solar Panel
+
+- Solar panels [https://solar.lowtechmagazine.com/2023/12/how-to-build-a-small-solar-power-system/#withbattery](https://solar.lowtechmagazine.com/2023/12/how-to-build-a-small-solar-power-system/#withbattery)
+- Mcp 7387 (not 3, not 1) and big big big capacitor will handle unstable panels [https://learn.adafruit.com/usb-dc-and-solar-lipoly-charger/using-the-charger?view=all#downloads](https://learn.adafruit.com/usb-dc-and-solar-lipoly-charger/using-the-charger?view=all#downloads)
+
+And then carefuly think about power consumption and try to save on some functionality that you don't use. For example, here an amazing list [from](https://www.gammon.com.au/power)
+
+- Run the processor at a lower frequency
+- Run the processor at a lower voltage
+- Turn off unneeded internal modules in software (eg. SPI, I2C, Serial, ADC)
+- Turn off brownout detection
+- Turn off the Analog-to-Digital converter (ADC)
+- Turn off the watchdog timer
+- Put the processor to sleep
+- Don't use inefficient voltage regulators - if possible run directly from batteries
+- Don't use power-hungry displays (eg. indicator LEDs, backlit LCDs)
+- Arrange to wake the processor from sleep only when needed
+- Turn off (with a MOSFET) external devices (eg. SD cards, temperature sensors) until needed
+
+
 ## Q&A
 
 - Do you know that batteries can have multiple cells. One cell is **3.7V**. 2 cells (2S) - **7.4V**. 3 cells (3S) - **11.1V**
@@ -108,3 +155,7 @@ Old alternative for these chips is [TPS6109](https://www.ti.com/lit/ds/symlink/t
 - Why capacitors are basically everywhere?
 
 ![schematics with many capacitors](./capacitors-q-a.png "Capacitors are everywhere. Or at least in many places where the power is applied")
+
+## Extra
+
+- Serial port debugging with [Bray++ terminal](https://sites.google.com/site/terminalbpp/)

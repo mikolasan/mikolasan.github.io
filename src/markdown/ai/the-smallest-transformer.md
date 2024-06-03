@@ -3,12 +3,13 @@ article: quest
 title: The smallest Transformer
 date: 2023-06-03
 published: 2023-06-03
-lastModified: 2023-06-03
+lastModified: 2024-05-26
 ---
 
 
 ## Questions
 
+- Are embeddings required for any type of data? [Why sin/cos?](/science/as-always-no-explanation)
 - What stacks add to the whole picture? How are they different?
 - Why 2 parts are called encoder and encoder if they both take input data similarly and process data with almost exact layers? (Only if the first layer of the decoder consisting of the masked multi-head attention is converting encoder into decoder. Or because data from encoder is forwarded into the decoder?). I think that names of these two parts should reflect time-relative context.
 
@@ -29,8 +30,12 @@ White papers that we are going to use
 - [Original Transformer](https://nlp.seas.harvard.edu/2018/04/03/attention.html) with code
 - [Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)
 - The Annotated Transformer [version 1](https://nlp.seas.harvard.edu/2018/04/03/attention.html) [version 2](https://nlp.seas.harvard.edu/annotated-transformer/) (PyTorch)
-- [Embedding](https://medium.com/deeper-learning/glossary-of-deep-learning-word-embedding-f90c3cec34ca) is just a way of converting sentences into vectors.
+- [Embedding](https://medium.com/deeper-learning/glossary-of-deep-learning-word-embedding-f90c3cec34ca) is just a way of converting sentences into vectors. More in my notes [about embeddings](/science/as-always-no-explanation).
+- Multi-head attention is implemented in TensorFlow: [docs](https://www.tensorflow.org/api_docs/python/tf/keras/layers/MultiHeadAttention), [code](https://github.com/tensorflow/addons/blob/v0.20.0/tensorflow_addons/layers/multihead_attention.py#L22-L298). I checked in code how that [layer](https://www.tensorflow.org/api_docs/python/tf/keras/Layer) includes separate [weights](https://www.tensorflow.org/guide/keras/making_new_layers_and_models_via_subclassing) for query, value, and key. For multiplication of tensors they use [Einstein summation](https://rockt.github.io/2018/04/30/einsum) - **einsum** (three dots, ellipsis, to support any higher dimensions).
 
+## Input data and goal
+
+Let's write a minimal Transformer model implementation in Rust writing feedforward layers and backpropagation, and decoder-encoder and multi-head attention from scratch. For training we will use a simple sequence `1 0 1 0 1 0...`.
 
 ## Code
 

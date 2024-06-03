@@ -1,5 +1,5 @@
 ---
-title: 
+title: List of Single Board Computers
 date: 2024-05-10
 published: 2024-05-10
 lastModified: 2024-05-10

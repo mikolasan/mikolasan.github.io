@@ -36,3 +36,9 @@ Maybe it's just me but I don't understand how sin/cos functions can save positio
 Why $sin$ for even indices and $cos$ for odd ones?
 
 ### Explanation
+
+From: [Neural machine translation with a Transformer](https://www.tensorflow.org/text/tutorials/transformer)
+
+Since the model doesn't contain any recurrent or convolutional layers, it needs some way to identify word order, otherwise it would see the input sequence as a _bag of words_ instance, `how are you`, `how you are`, `you how are` would be indistinguishable.
+
+The position encoding function vibrates along the position axis at different frequencies depending on their location along the depth of the embedding vector.

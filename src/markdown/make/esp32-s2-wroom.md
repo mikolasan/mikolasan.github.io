@@ -7,7 +7,7 @@ lastModified: 2024-05-10
 
 ## Specs
 
-32-bit MCU (Xtensa LX7) from Espressif ESP32-S2-WROOM. [Datasheet](https://www.espressif.com/sites/default/files/documentation/esp32-s2-wroom_esp32-s2-wroom-i_datasheet_en.pdf), [hardware design guidelines](https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32s2/schematic-checklist.html). Not recommended for new designs (4/20/2024), that's why I got them from SparkFun with discount.
+32-bit MCU (Xtensa LX7, up to 240 MHz) from Espressif ESP32-S2-WROOM. [Datasheet](https://www.espressif.com/sites/default/files/documentation/esp32-s2-wroom_esp32-s2-wroom-i_datasheet_en.pdf), [Technical Reference](https://www.espressif.com/sites/default/files/documentation/esp32-s2_technical_reference_manual_en.pdf), official [Development board](https://docs.espressif.com/projects/esp-idf/en/release-v4.3/esp32s2/hw-reference/esp32s2/user-guide-devkitm-1-v1.html#hardware-revision-details), and [hardware design guidelines](https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32s2/schematic-checklist.html). Not recommended for new designs (4/20/2024), that's why I got them from SparkFun with discount.
 
 To compare with Arduino Uno, ATMega328, or other boards: WROOM has 128 KB ROM, 320 KB SRAM
 
