@@ -7,6 +7,8 @@ lastModified: 2022-05-22
 
 I choose Pipeline project in Jenkins, this allows me to create one Groovy script instead of doing it in GUI that may not support all features (for example, git LFS). With the script there is a catch though, it differs in syntax depending on what block you are using `pipeline` or `node`. And speaking in terms that Jenkins developers use: [Declarative pipeline](https://www.jenkins.io/doc/book/pipeline/#declarative-pipeline-fundamentals) or [Scripted pipeline](https://www.jenkins.io/doc/book/pipeline/#scripted-pipeline-fundamentals). I will go through both of them and show what advantages they have.
 
+**Update:** the latest pipelines for HTML5 and Windows export templates, and for Godot 4 are in [this gist](https://gist.github.com/mikolasan/eaaa2b55ddf75da024639c05c5fada32)
+
 
 ## Prerequisites
 
@@ -39,44 +41,9 @@ sudo usermod -aG docker jenkins
 sudo systemctl restart jenkins
 ```
 
-### Local repositories
+### Build Godot
 
-
-
-## Using a Node block
-
-Let's start with a Scripted pipeline, because it's more elegant and compact, but not flexible at all.
-
-For start, this is how I build Godot engine in Jenkins
-
-```groovy
-node {
-    stage 'Checkout'
-    git 'https://github.com/godotengine/godot.git'
-    
-    stage 'Build'
-    docker.image('mylittledocker/godot').inside {
-        ansiColor('xterm') {
-            sh 'cp /build.sh .'
-            sh 'chmod +x build.sh'
-            sh 'rm -rf bin/'
-            def build = "${env.GD_BUILD_TYPE}"
-            if (build == 'ALL') {
-                sh 'GD_BUILD_TYPE=editor ./build.sh'
-                sh 'GD_BUILD_TYPE=templates ./build.sh'
-                sh 'GD_BUILD_TYPE=server ./build.sh'
-            } else {
-                sh './build.sh'
-            }
-        }
-    }
-
-    stage 'Archive'
-    archiveArtifacts artifacts: 'bin/godot*', fingerprint: true, onlyIfSuccessful: true
-}
-```
-
-Here a build script used in the pipeline, its intend is to build very small engine for 2D games by disabling all 3D features. And also it requires the `strip` command to strip out debug symbols.
+Here a build script used in the pipelines, its intend is to build very small engine for 2D games by disabling all 3D features. And also it requires the `strip` command to strip out debug symbols.
 
 ```bash
 #!/bin/bash
@@ -157,7 +124,7 @@ RUN apt-get update && \
 COPY build.sh /
 ```
 
-It worked on Ubuntu 18 for version 3.1 and 3.2, but somewhere later they have updated Python to version 3. So install it and update how the `python` command works
+It worked on Ubuntu 18 for version 3.1 and 3.2, but somewhere later they have updated Python to version 3. So we need to install it and update how the `python` command works
 
 ```dockerfile
 # Add 3 to the available alternatives
@@ -167,16 +134,50 @@ RUN update-alternatives --set python /usr/bin/python3
 
 ```
 
-This image must be in my local registry. So before running a build in Jenkins, run the following command in an empty folder. This folder must include only **Dockerfile** and **build.sh**, otherwise it will copy other files into the image just making that image taking extra space for no use.
+This image must be in our local registry. So before running a build job on Jenkins, run the following command in an empty folder. This folder must include only **Dockerfile** and **build.sh**, otherwise it will copy other files into the image just making that image taking extra space for no reason.
 
 ```
 sudo docker build --tag mylittledocker/godot --file Dockerfile .
 ```
 
-LFS example
+
+## Using a Node block
+
+Let's start with a **Scripted pipeline**, because it's more elegant and compact, but not flexible at all.
+
+For start, this is how I build Godot engine in Jenkins
 
 ```groovy
-def packageName = 'class-2-backend.tar.gz'
+node {
+    stage 'Checkout'
+    git 'https://github.com/godotengine/godot.git'
+    
+    stage 'Build'
+    docker.image('mylittledocker/godot').inside {
+        ansiColor('xterm') {
+            sh 'cp /build.sh .'
+            sh 'chmod +x build.sh'
+            sh 'rm -rf bin/'
+            def build = "${env.GD_BUILD_TYPE}"
+            if (build == 'ALL') {
+                sh 'GD_BUILD_TYPE=editor ./build.sh'
+                sh 'GD_BUILD_TYPE=templates ./build.sh'
+                sh 'GD_BUILD_TYPE=server ./build.sh'
+            } else {
+                sh './build.sh'
+            }
+        }
+    }
+
+    stage 'Archive'
+    archiveArtifacts artifacts: 'bin/godot*', fingerprint: true, onlyIfSuccessful: true
+}
+```
+
+### LFS example
+
+```groovy
+def packageName = 'game.tar.gz'
 
 node {
     stage 'Checkout'
@@ -184,18 +185,16 @@ node {
         branches: [[name: '*/stable']],
         extensions: [[$class: 'GitLFSPull']],
         userRemoteConfigs: [[
-            credentialsId: 'EthoGames',
-            url: 'git@bitbucket.org:EthoGames/class-2-backend.git'
+            credentialsId: '***',
+            url: 'git@bitbucket.org:***'
         ]]
     ])
     stage 'Build'
-    docker.image('ethogaming:5000/backend:slon-1.4.12').inside {
-        sh 'make clean'
-        sh 'make pack-debug'
-        sh 'make pack-release'
+    docker.image('mylittledocker/game').inside {
+        sh 'make all'
     }
     stage 'Archive'
-    archiveArtifacts artifacts: 'class-2-backend-debug.tar.gz,class-2-backend.tar.gz', fingerprint: true, onlyIfSuccessful: true
+    archiveArtifacts artifacts: 'game.tar.gz', fingerprint: true, onlyIfSuccessful: true
 }
 ```
 
@@ -205,10 +204,10 @@ node {
 What features we have here:
 
 - multiline string in Groovy
-- creating image and container right in build script
+- creating image and container right from the build script
 
 ```groovy
-def archiveName = 'class-2-frontend.tar.gz'
+def archiveName = 'game.tar.gz'
 def dockerFile = '''FROM ubuntu:18.04
 
 RUN apt-get update && apt-get install -y python3
@@ -217,20 +216,20 @@ RUN ln -sr /usr/bin/godot_server.x11.opt.tools.x64 /usr/bin/godot
 
 ENV UID 1000
 ENV GD_VERSION 3.1.2.devel
-RUN groupadd --system --gid $UID etho \
+RUN groupadd --system --gid $UID saturdayscode \
     && useradd --create-home \
         --shell /bin/bash \
         --no-log-init \
         --system \
-        --gid etho \
-        --uid $UID etho
+        --gid saturdayscode \
+        --uid $UID saturdayscode
 
-USER etho
+USER saturdayscode
 RUN mkdir -p \
     $HOME/.cache \
     $HOME/.local/share/godot/templates/$GD_VERSION \
     $HOME/.config
-COPY linux_x11_64_debug /home/etho/.local/share/godot/templates/$GD_VERSION/'''
+COPY linux_x11_64_debug /home/saturdayscode/.local/share/godot/templates/$GD_VERSION/'''
 
 def frontendImage
 
@@ -261,8 +260,8 @@ pipeline {
                         ]], 
                         submoduleCfg: [], 
                         userRemoteConfigs: [[
-                            credentialsId: 'EthoGames',
-                            url: 'git@bitbucket.org:EthoGames/class2lobby.git'
+                            credentialsId: '***',
+                            url: 'git@bitbucket.org:***'
                         ]]
                     ])
                 }
@@ -273,27 +272,27 @@ pipeline {
                 dir('docker') {
                     copyArtifacts filter: 'bin/godot.x11.debug.x64',
                         fingerprintArtifacts: true,
-                        projectName: 'godot3.1-templates',
+                        projectName: 'godot-templates',
                         selector: lastSuccessful()
                     sh 'cp -v bin/godot.x11.debug.x64 linux_x11_64_debug'
                     copyArtifacts filter: 'bin/godot_server.x11.opt.tools.x64',
                         fingerprintArtifacts: true,
-                        projectName: 'godot3.1-server',
+                        projectName: 'godot-server',
                         selector: lastSuccessful()
                     sh 'cp -v bin/godot_server.x11.opt.tools.x64 .'
                     script {
                         writeFile file: 'Dockerfile', text: dockerFile
-                        frontendImage = docker.build('ethogaming/frontend:3.1.2.devel')
+                        frontendImage = docker.build('mylittledocker/game')
                     }
                 }
             }
         }
         stage('Clean') {
             when {
-                expression { "$env.ETHO_CLEAN_IMPORT" == 'true' }
+                expression { "$env.CLEAN_IMPORT" == 'true' }
             }
             steps {
-                sh 'find lobby -name "*.import" | xargs -i rm -rf "{}"'
+                sh 'find -name "*.import" | xargs -i rm -rf "{}"'
             }
         }
         stage('Build') {
@@ -301,9 +300,7 @@ pipeline {
                 script {
                     frontendImage.inside {
                         ansiColor('xterm') {
-                            sh 'rm -rf lobby/Build'
-                            sh 'mkdir lobby/Build'
-                            sh "cd lobby && ./build.py ${env.ETHO_BUILD}" 
+                            sh "./build.py ${env.GAME_BUILD}" 
                         }
                     }
                 }
@@ -311,7 +308,7 @@ pipeline {
         }
         stage('Archive') {
             steps {
-                sh "cd lobby/Build && tar -czf ../../${archiveName} *"
+                sh "cd Build && tar -czf ../${archiveName} *"
                 archiveArtifacts artifacts: "${archiveName}",
                     fingerprint: true,
                     onlyIfSuccessful: true
