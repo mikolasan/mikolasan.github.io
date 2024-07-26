@@ -194,6 +194,25 @@ sudo apt list --installed | grep -Eo ".+\-dev\/" | sed 's/\///' | tr '\n' ' '
 sudo apt-get --purge remove comerr-dev libc6-dev libdrm-dev libelf-dev libffi-dev libfreetype6-dev libftgl-dev libgl1-mesa-dev libglew-dev libglu1-mesa-dev libglvnd-core-dev libglvnd-dev libgmp-dev libgnutls28-dev libice-dev libidn2-0-dev libidn2-dev libkrb5-dev libmirclient-dev libmircommon-dev libmircookie-dev libmircore-dev libogg-dev libp11-kit-dev libphonon4qt5-dev libpng-dev libpq-dev libprotobuf-dev libpthread-stubs0-dev libreadline-dev librtmp-dev libsm-dev libssl-dev libtasn1-6-dev libtheora-dev libtinfo-dev libudev-dev libusb-1.0-0-dev libva-amdgpu-emb-dev libvdpau-amdgpu-emb-dev libx11-dev libx11-xcb-dev libxau-dev libxcb-dri2-0-dev libxcb-dri3-dev libxcb-glx0-dev libxcb-present-dev libxcb-randr0-dev libxcb-render0-dev libxcb-shape0-dev libxcb-sync-dev libxcb-xfixes0-dev libxcb1-dev libxdamage-dev libxdmcp-dev libxext-dev libxfixes-dev libxkbcommon-dev libxshmfence-dev libxt-dev libxxf86vm-dev linux-libc-dev manpages-dev mesa-common-dev nettle-dev x11proto-core-dev x11proto-damage-dev x11proto-dev x11proto-dri2-dev x11proto-fixes-dev x11proto-gl-dev x11proto-xext-dev x11proto-xf86vidmode-dev xtrans-dev zlib1g-dev
 ```
 
+## Step 7 (optional) - Change Linux kernel
+
+
+In Ubuntu the kernel comes in a group of several packages. You can list them like this
+
+```
+apt list | grep 5.15.0.*generic
+```
+
+But there is a script that helps to see what kernel versions are available for your Ubuntu version
+
+```
+wget https://raw.githubusercontent.com/pimlie/ubuntu-mainline-kernel.sh/master/ubuntu-mainline-kernel.sh
+chmod +x ubuntu-mainline-kernel.sh
+sudo mv ubuntu-mainline-kernel.sh /usr/local/bin/
+ubuntu-mainline-kernel.sh -c # what's the latest
+ubuntu-mainline-kernel.sh -r # list all
+sudo ubuntu-mainline-kernel.sh -i v5.15.133 # install specific
+```
 
 ## Final step
 
@@ -202,3 +221,16 @@ With clean and improved Ubuntu it's time to repeat step 1 and make another snaps
 At this point Ubuntu should shrink from 6GB down to 1GB. We did this long procedure to create something mobile that can be used as an installer or OS for embedded system but still be compatible with Ubuntu package repositories.
 
 There are rumors that Ubuntu Core already achieved the smallest size and targeted embedded devices, so you don't need to remove anything from it, but I haven't tried it yet.
+
+
+## Bash-fu
+
+```bash
+
+cat /proc/modules | cut -f 1 -d " " | while read module; do  echo "Module: $module";  if [ -d "/sys/module/$module/parameters" ]; then   ls /sys/module/$module/parameters/ | while read parameter; do    echo -n "Parameter: $parameter --> ";    sudo cat /sys/module/$module/parameters/$parameter;   done;  fi;  echo; done | less
+
+sudo grep 'menuentry \|submenu ' /boot/grub/grub.cfg | cut -f2 -d "'"
+sudo nano /etc/default/grub
+GRUB_DEFAULT='Advanced options for Ubuntu>Ubuntu, with Linux 6.1.61-amd'
+sudo update-grub
+```
