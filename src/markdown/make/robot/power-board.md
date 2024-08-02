@@ -52,7 +52,7 @@ Power distribution boards
 - solar panel connector
 - battery connector
 - SPI line connectors and power for display
-- voltage divider between ADC and battery (to read battery level)
+- voltage divider between ADC and battery (to read battery level) [about ADC](https://deepbluembedded.com/esp32-adc-tutorial-read-analog-voltage-arduino/)
 
 ## Power source
 
@@ -85,6 +85,31 @@ Old alternative for these chips is [MAX1555](https://datasheets.maximintegrated.
 - 1x resistor (to set maximum charging current) [1K](https://www.mouser.com/ProductDetail/755-SDR10EZPF1001) - for 25mA current (?), therefore the Power Rating >125mW
 - 1x resistor (to skip temperature control) [10K](https://www.mouser.com/ProductDetail/71-CRCW040210K0FKEDC) - for 50uA and 1.25V = 62.5uW
 
+
+### Send indication to MCU
+
+Why not send signaling information to MCU too instead of only connecting LEDs? Then a question arises here. Input voltage is 5V, will voltage on these lines will be acceptable to 3.3V GPIO?
+
+When STAT1, STAT2, or PG connected to ground, LEDs consume from 2 to 3 volts, which gives only 2 to 3 volts reaching the resistor and the chip. Then if we add a parallel route from the chip to GPIO pins, then this will work as adding a button in pull-up mode (power source is always connected to GPIO pin making high logic input on it but the circuit is not closed).
+
+Does it make sense to add a transistor? Thus to stop that high logic before LED is lit.
+
+https://electronics.stackexchange.com/a/324804/30694
+
+How to use BJT https://electronics.stackexchange.com/questions/324795/are-bjts-suitable-for-level-shifters-it-seems-fets-are-more-common-how-do-they
+
+I think I just need pull-up transistors https://electronics.stackexchange.com/questions/381171/mcp73833-and-status-to-raspberrypi
+https://forum.microchip.com/s/topic/a5C3l000000MXTtEAO/t358761
+
+But why positive voltage applied to the gate directly and not the logic output from PG?
+
+To keep different voltage separate 
+
+> The PG output can sink current, but not source current.
+> 
+> _From datasheet_
+
+About MOSFETS in general: https://toshiba.semicon-storage.com/info/application_note_en_20180726_AKX00068.pdf?did=59460
 
 ## Load sharing
 
@@ -126,7 +151,7 @@ Old alternative for these chips is [TPS6109](https://www.ti.com/lit/ds/symlink/t
 
 - Programmer connector. Two options: USB to UART with chips like CP210x or CH340, and see [DevKitM](https://dl.espressif.com/dl/schematics/ESP32-S2-DevKitM-1_V1_Schematics.pdf) for [WROOM](/make/esp32-s2-wroom); or COM port (or USB to Serial converter) directly connected to RXD and TXD pins (this [might not work on every system](https://forum.arduino.cc/t/debugging-my-esp32-programmer/703334/13), maybe because DTR and RTS which just automatically trigger **Reset** and **Boot** buttons)
 ![Picture from Last Minute Engineers showing form and marking difference between CP210x and CH340](/make/cp210x-vs-ch340.png "Source: [Last Minute Engineers: Installing ESP32 Board in the Arduino IDE](https://lastminuteengineers.com/esp32-arduino-ide-tutorial/)")
-- Add several buttons in a joystick formation plus functional buttons (for setup, menu)
+- Add several buttons in a joystick formation plus functional buttons (for setup, menu) (seen a capacitors near buttons on a dev board and wondered, so here's [small info about debounce](https://hackaday.com/2015/12/09/embed-with-elliot-debounce-your-noisy-buttons-part-i/))
 
 ## Solar Panel
 
@@ -147,7 +172,17 @@ And then carefuly think about power consumption and try to save on some function
 - Arrange to wake the processor from sleep only when needed
 - Turn off (with a MOSFET) external devices (eg. SD cards, temperature sensors) until needed
 
+## ADC
 
+Max range is from 0 to Vref which is 3.3V. But for precise readings the maximum value should be lower and that limit is defined by the attenuation setting. Read [more here](https://deepbluembedded.com/esp32-adc-tutorial-read-analog-voltage-arduino/) and in [the docs](https://docs.espressif.com/projects/esp-idf/en/v4.4.1/esp32s2/api-reference/peripherals/adc.html)
+
+ADC on ESP32 known to have issues. Some [simple steps to resolve](https://forum.arduino.cc/t/fixing-the-non-linear-adc-of-an-esp32/699190) it
+[ADC calibration] (https://esp32.com/viewtopic.php?f=19&t=2881&start=20#p16166). Reference voltage Vref can be measured by a multimeter if it directed by a special command to an IO pin.
+Last [docs](https://docs.espressif.com/projects/esp-idf/en/v5.2.2/esp32s2/api-reference/peripherals/adc_calibration.html)
+
+We are going to implore ["paleolithic circuit design"](https://electronics.stackexchange.com/questions/117511/transistor-resistance-for-switching-analog-signals) with two transistors instead of going the smart way and using CMOS analog switch (like [this](https://www.mouser.com/datasheet/2/609/ADG511_512_513-1502905.pdf) (but can find cheaper alternatives)).
+
+It can be a good idea to use an external ADC (for example [ADC101C021](https://www.ti.com/lit/ds/symlink/adc101c021.pdf) or [MCP3021](https://www.mouser.com/datasheet/2/268/20001805C-3135681.pdf))
 ## Q&A
 
 - Do you know that batteries can have multiple cells. One cell is **3.7V**. 2 cells (2S) - **7.4V**. 3 cells (3S) - **11.1V**
@@ -156,6 +191,11 @@ And then carefuly think about power consumption and try to save on some function
 
 ![schematics with many capacitors](./capacitors-q-a.png "Capacitors are everywhere. Or at least in many places where the power is applied")
 
+
+
+
 ## Extra
 
 - Serial port debugging with [Bray++ terminal](https://sites.google.com/site/terminalbpp/)
+- Futuristic case: small PCB board connects to a sheet of acrylic where it’s cut with special lines to deliver led lights to sides. Also the battery is attached to that part. Acrylic and PCB are connected by custom 3d printed piece 
+- Smooth routes: [kicad plugin](https://github.com/mitxela/kicad-round-tracks) posts about melting kicad [1](https://mitxela.com/projects/melting_kicad) and [2](https://mitxela.com/projects/melting_kicad_2). In KiCad 8 draw a normal sharp route, then select all intervals, right click and select **Fillet Tracks** and set radius to 2mm.

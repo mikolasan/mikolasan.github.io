@@ -50,7 +50,7 @@ TypeError: int() argument must be a string, a bytes-like object or a real number
 
 Let's say we trying to run this example:
 
-```py
+```python
 import networkx as nx
 import matplotlib
 import matplotlib.pyplot as plt
@@ -67,6 +67,6 @@ nx.draw(G, with_labels=True)
 
 Make sure you use the correct [backend](https://matplotlib.org/stable/users/explain/backends.html). You can switch it in the following way:
 
-```py
+```python
 matplotlib.use('wxAgg')
 ```

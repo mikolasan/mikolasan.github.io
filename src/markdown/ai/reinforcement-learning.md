@@ -30,7 +30,7 @@ lastModified: 2022-12-20
 
 ## Program
 
-I read [DQN Paper](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf) and implement something better than [any Python](https://github.com/berkeleydeeprlcourse/homework/blob/master/hw3/dqn.py) code.
+I read [DQN Paper](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf) and implement something better than [any](https://pytorch.org/tutorials/intermediate/reinforcement_q_learning.html) [Python](https://github.com/Apress/deep-reinforcement-learning-python/blob/main/chapter6/listing6_1_dqn_pytorch.ipynb) code.
 
 Let's write Reinforcement Learning program in Rust. In the beginning we will be solving frost lake environment. We will use a [grid world](https://github.com/tspooner/rsrl/blob/master/rsrl_domains/src/grid_world.rs) from `rsrl`
 
@@ -40,7 +40,7 @@ cd qu-robot
 cargo add rsrl
 ```
 
-Walls in the grid environmnt is an interesting problem. In `rsrl` crate it was implemented that the movement is possible but not movement actually occurs, so the agent just stays in the same position. It's not good. Because stay in place should be intentional action rather than a loophole in the implementation. Staying in the same spot is an equlibrium, so we can say it's safe strategy.
+Walls in the grid environment is an interesting problem. In `rsrl` crate it was implemented that the movement is possible but not movement actually occurs, so the agent just stays in the same position. It's not good. Because stay in place should be intentional action rather than a loophole in the implementation. Staying in the same spot is an equilibrium, so we can say it's safe strategy.
 
 What can we do to fix it? We can remove movements that go into any wall from a list of possible actions. But then the sum of probabilities for remaining actions stops being equal to 1. And this can be solved by normalization, but I have more important vote against it. I think that the agent should understand something about the environment and know what walls are. As thy can be the limits of the environment and also any obstacle inside the environment. And if the agent finds a way to avoid the obstacles then it can apply the same technique to the limits of the environment and leave the box...
 
@@ -49,3 +49,10 @@ Then if we add another state 'W' everywhere around our current grid then we emph
 But this is just very exponentially increased our set of possible states and dimensions of transition matrix. Then let's only include states that have reward values. That's not every state, right?
 
 We skip diogonal values. Thus we have 5 states that will create one meta state. Having only 3 meaningful states we have 5^3 = 125 meta states.
+
+## Further development
+
+### Sub goals
+
+**Goal-Conditioned Reinforcement Learning: Problems and Solutions** by Liu et al ([paper](https://arxiv.org/pdf/2201.08299), 2022)
+Goals are positions where robot should reach (it's body, or parts like arms). There are many end positions that correspond to different tasks or steps. These positions can be discovered with several methods, so no need  to hard-code them. But there is no single answer how to switch between goals. It resembles very much bayesian learning where conditional probabilities are learned from experience. 

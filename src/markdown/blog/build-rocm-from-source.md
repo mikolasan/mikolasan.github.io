@@ -126,7 +126,7 @@ by changing the catch condition
 
 Test it with code from [my notebook](https://github.com/mikolasan/ai_sandbox/blob/master/ann/Navigation%20ANN%20keras.ipynb)
 
-```py
+```python
 ‌gpus = tf.config.experimental.list_physical_devices('GPU')
 ```
 

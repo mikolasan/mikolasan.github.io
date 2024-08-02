@@ -12,7 +12,7 @@ lastModified: 2023-04-11
 I'm using TensorFlow and I need to scale black and white image from 512x512 pixels stored in `tf.Tensor` to 128x96 and add pixelation effect to the image using.
 
 
-```py
+```python
 import tensorflow as tf
 
 # Load the image as a tf.Tensor
@@ -52,7 +52,7 @@ How to design a discriminator for U-Net architecture when input images have size
 
 We will use a patch-based discriminator. This type of discriminator takes small patches from both the input and output images and classifies them as real or fake.
 
-```py
+```python
 import tensorflow as tf
 
 def build_discriminator():

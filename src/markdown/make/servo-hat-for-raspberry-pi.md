@@ -12,7 +12,7 @@ lastModified: 2023-11-04
 - its dependency [sparkfun-qwiic-pca9685](https://github.com/sparkfun/Qwiic_PCA9685_Py/blob/main/qwiic_pca9685.py), 
 - and I2C driver [sparkfun-qwiic-i2c](https://github.com/sparkfun/Qwiic_I2C_Py/blob/master/qwiic_i2c/linux_i2c.py) based on **smbus2**
 
-```py
+```python
 import pi_servo_hat
 import time
 

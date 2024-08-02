@@ -40,7 +40,7 @@ The core of any neural network model (and apparently Transformer as well) is [Mo
 
 What can you say about it's trivial example?
 
-```py
+```python
 import torch.nn as nn
 import torch.nn.functional as F
 

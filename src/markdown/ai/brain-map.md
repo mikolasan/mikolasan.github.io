@@ -27,7 +27,7 @@ lastModified: 2023-07-10
 - get a list of versions (sort by [size](https://portal.brain-map.org/explore/connectivity/synaptic-physiology/interact))
 
 
-```py
+```python
 l = SynphysDatabase.list_versions()
 l.sort(reverse=True, key=lambda x: x['db_size'])
 for f in l:
@@ -61,7 +61,7 @@ synphys_r2.0_full.sqlite full
 
 - download
 
-```py
+```python
 import aisynphys
 aisynphys.config.cache_path = r"C:\Users\neupo\ai\brain_map"
 db = SynphysDatabase.load_version('synphys_r2.0_small.sqlite')

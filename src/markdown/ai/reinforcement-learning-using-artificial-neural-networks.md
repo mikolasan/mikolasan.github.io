@@ -49,7 +49,7 @@ Two input neurons, two in the hidden layer, and one neuron - output. Simple as t
 - [nn.Module](https://pytorch.org/docs/stable/generated/torch.nn.Module.html)
 - [MSELoss](https://pytorch.org/docs/stable/generated/torch.nn.MSELoss.html)
 
-```py
+```python
 import torch
 import torch.nn as nn
 
@@ -98,7 +98,7 @@ I have a problem with 2000 epochs on some seed values. [This](https://machinelea
 
 ### Keras
 
-```py
+```python
 from keras.layers import Dense
 from keras.models import Sequential
 import numpy as np
@@ -125,7 +125,7 @@ Start with the [official docs](https://www.tensorflow.org/guide/core/mlp_core)
 
 So if you think library for machine learning is not making this example any simpler, then look how it would look with no external libraries (only numpy for matrix operations [don't know numpy - help!](https://numpy.org/devdocs/user/absolute_beginners.html)) 
 
-```py
+```python
 import numpy as np
 
 def sigmoid(x):

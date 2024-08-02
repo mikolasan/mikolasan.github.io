@@ -41,7 +41,7 @@ Let's write a minimal Transformer model implementation in Rust writing feedforwa
 
 So let's start coding our simple version. In its core the transformer has encoder-decoder structure.
 
-```py
+```python
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -67,7 +67,7 @@ class Transformer(nn.Module):
 
 We start with the Encoder which is 
 
-```py
+```python
 class Encoder(nn.Module):
     def __init__(self, hidden_size, num_heads, num_layers):
         super(Encoder, self).__init__()
@@ -82,7 +82,7 @@ class Encoder(nn.Module):
         return x
 ```
 
-```py
+```python
 # Define the Encoder Layer
 class EncoderLayer(nn.Module):
     def __init__(self, hidden_size, num_heads):

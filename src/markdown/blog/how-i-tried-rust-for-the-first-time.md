@@ -8,7 +8,7 @@ published: 2022-08-23
 ---
 
 
-# Get the books
+## Get the books
 
 There are many online books about Rust. Here is my top 5:
 
@@ -19,7 +19,19 @@ There are many online books about Rust. Here is my top 5:
 5. [Learning Rust](https://learning-rust.github.io/docs/combinators/) - back to origin
 
 
-# Have a fun project
+### About the book
+
+What I don’t like about Rust Book is that it’s not touching any real world examples. It goes into long paragraphs to explain some concepts like for kids, then it tries to explain some new ideas on abstract examples. But these examples not created with minimum code in mind, instead it tries to convey a deeper idea. Let's take for example references and pointers. How to make a list? Why all these types assume that my data is immutable? How to change data? 
+
+In the book they basically showed how to make a pointer to an integer. And done. How do I do it with structs? My new function returns a Box? Or I create an object first and then wrap it in the Box?
+
+Maybe it’s so obvious and I'll find answers on StackOverflow. 
+
+Oh to use pointers for complex structures you need to define traits. Makes sense. And the book will explain how to write Defer trait that is helpful for Boxes, but it will not use Boxes, it will create MyBox that essentially misses all Box functionality. About this abstraction I’m talking here. In order to understand how I need to write a Defer trait, I must read through all paragraphs where they explain why it’s so great to create your own MyBox that doesn’t allocate on heap and create Defer trait that has nothing to do with complex data again.
+
+You created everything with Rc because it made sense and now you want to work with threads? Then change everything to Arc.
+
+## Have a fun project
 
 It's never late to get a grasp on another programming language
 
@@ -36,7 +48,7 @@ I installed Rust on Windows, first time in years updated MSYS2 retrying many tim
 I [finished my project](/projects/github-activity-brush). I like how the code looks. I was afraid that it will be mix of Ruby with Java call chaining, but it actually look very neat. HTTP requests do not take many lines, it's far from monstrosity in Java. All json conversion back and forth is seamless.
 
 
-# Prepare the environment
+## Prepare the environment
 
 
 ![](./rust-mingw-w64-config.png)
@@ -50,7 +62,7 @@ I changed the editor's theme to One Dark Pro for more comfortable type deduction
 - https://rust-analyzer.github.io/manual.html#rust-analyzer-language-server-binary
 
 
-# Practice, practice, practice
+## Practice, practice, practice
 
 **Note:** I totally understand that usage of screenshots of code is a total disrespect, but content was intended specifically for superficial acquaintance. At the time of delivering I was a total newbie. But I might review this article letter in the format of educational post.
 
@@ -119,25 +131,25 @@ But proper Rust-ish idiomatic approach would be to return `Result<bool>`. Also b
 
 
 
-# Topics
+## Topics
 
 - Rust cheatsheet ?
 
-## Raw pointers
+### Raw pointers
 
 - Initialising Empty Structs in Rust https://gist.github.com/ChrisWellsWood/84421854794037e760808d5d97d21421
 - Using Rust like C https://stevedonovan.github.io/rustifications/2018/08/13/using-rust-like-c.html
 - raw pointers https://web.mit.edu/rust-lang_v1.25/arch/amd64_ubuntu1404/share/doc/rust/html/book/first-edition/raw-pointers.html
 - more about ffi https://blog.guillaume-gomez.fr/articles/2021-07-29+Interacting+with+data+from+FFI+in+Rust
 
-## Async
+### Async
 
 - https://tokio.rs/tokio/tutorial/spawning
 - https://github.com/rayon-rs/rayon
 - https://smallcultfollowing.com/babysteps/blog/2015/12/18/rayon-data-parallelism-in-rust/
 
 
-## Iterators
+### Iterators
 
 Trying to finish up with current Rust project, learning about iterators. Getting my first overflow. Looks pretty dramatic
 
@@ -155,7 +167,7 @@ the tutorial about [the Iterator trait](https://aloso.github.io/2021/03/09/creat
 - https://docs.github.com/en/rest/repos/repos#delete-a-repository
 
 
-# Troubleshooting
+## Troubleshooting
 
 Okay, I have a problem. I found a [question on StakOverflow](https://stackoverflow.com/q/53584631/1104612). And the answer is great and it makes total sense. But… But it doesn't make sense, because it's not working 😵‍💫
 

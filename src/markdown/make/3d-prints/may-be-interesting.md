@@ -9,3 +9,13 @@ lastModified: 2024-03-27
 
 - [Lantern](https://www.printables.com/model/729684-voronoi-lantern) (nice exterior color white?, marble)
 - [Building kit](https://www.printables.com/model/481443-bulding-kit-of-a-log-cabin-model) (wood)
+
+## Ideas
+
+- Native American totem pole (metal, wood, resin?)
+
+## Channel names
+
+- Printing_me_softly
+- Please_print_today
+- Neverending_filament

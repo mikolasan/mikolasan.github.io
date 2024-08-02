@@ -58,7 +58,7 @@ Discriminator(
 
 ### Train
 
-```py
+```python
 # For each batch in the dataloader
 for i, data in enumerate(dataloader, 0):
     

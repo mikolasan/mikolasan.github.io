@@ -1,3 +1,7 @@
+"""
+Code from https://nlp.seas.harvard.edu/2018/04/03/attention.html#attention
+"""
+
 import os
 from os.path import exists
 import torch
@@ -170,6 +174,18 @@ class MultiHeadedAttention(nn.Module):
         self.attn = None
         self.dropout = nn.Dropout(p=dropout)
 
+    def attention(query, key, value, mask=None, dropout=None):
+        "Compute 'Scaled Dot Product Attention'"
+        d_k = query.size(-1)
+        scores = torch.matmul(query, key.transpose(-2, -1)) \
+                / math.sqrt(d_k)
+        if mask is not None:
+            scores = scores.masked_fill(mask == 0, -1e9)
+        p_attn = F.softmax(scores, dim = -1)
+        if dropout is not None:
+            p_attn = dropout(p_attn)
+        return torch.matmul(p_attn, value), p_attn
+    
     def forward(self, query, key, value, mask=None):
         "Implements Figure 2"
         if mask is not None:

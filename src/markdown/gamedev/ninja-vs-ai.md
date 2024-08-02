@@ -5,7 +5,23 @@ lastModified: 2023-09-22
 date: 2023-09-22
 quality: ugly
 ---
+## Concept
 
+Watch quixel mixer tutorial
+
+Can I create landscape there?
+
+Create clouds and sunset in UE5
+
+Houdini tutorials
+
+
+
+Like mortal combat or street fighter, where it’s one to one and view on the side, bright colors
+But you fight with more than one foe. It’s almost like turn based game where you have a small moment for every opponent.
+In the best tradition of Jackie Chan movies
+
+Strategy game where some units are unique. They randomly appear across other mainly identical soldiers but they have personality and stories. Popups on the screen tell the story of  how influential their actions to battle’s results. This makes a special bond between a player and these units. But then, almost on purpose, they die. Play this trick over and over, the player must understand that the war is a bloodshed and feel the pain. Special achievement if the player actually cares about them and reloads and tries to save them.
 ## Level design
 
 [https://www.youtube.com/watch?v=8KZh41yR1_Y](https://www.youtube.com/watch?v=8KZh41yR1_Y) light in forest

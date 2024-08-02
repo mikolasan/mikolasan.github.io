@@ -58,7 +58,7 @@ curl https://api.bitbucket.org/2.0/repositories/{workspace_name} \
 
 I wrote a "package manager" for myself. This script downloads archived git repositories from BitBucket. First I request access token and start a local web server where after user's authentication an authorization code will be automatically retrieved and used to get the access token. BitBucket credentials are stored in the `.env` file
 
-```py
+```python
 """
 https://support.atlassian.com/bitbucket-cloud/docs/oauth-consumer-examples/
 
