@@ -58,8 +58,8 @@ You will use apt a lot during this stage, so be comfortable with it, here is [AP
 
 ```bash
 sudo apt-get --purge remove firefox
-sudo apt-get --purge remove anydesk
-sudo apt-get --purge remove teamviewer
+sudo apt-get --purge remove libreoffice*
+sudo apt-get --purge remove transmission-*
 sudo apt-get --purge remove autoconf automake cmake
 sudo apt-get --purge remove autotools-dev
 sudo apt-get --purge remove brltty
@@ -87,12 +87,13 @@ sudo apt-get --purge remove aspell
 sudo apt-get --purge remove rpm
 sudo apt-get --purge remove gvfs*
 sudo apt-get --purge remove gedit* gdbserver
+sudo apt-get --purge remove xdg-desktop-portal-*
 ```
 
 
 ## Step 3 - Stop services
 
-```
+```bash
 sudo systemctl disable cups
 sudo systemctl disable cupsd
 sudo systemctl disable cups-browsed
@@ -121,11 +122,11 @@ Reference:
 - https://prahladyeri.com/blog/2017/09/how-to-trim-your-new-ubuntu-installation-of-extra-fat-and-make-it-faster.html
 - https://askubuntu.com/questions/480753/remove-evolution-calendar-factory-from-startup/816353#816353
 - https://unix.stackexchange.com/questions/306276/make-systemd-stop-starting-unwanted-wpa-supplicant-service
-
+- https://www.reddit.com/r/Ubuntu/comments/clu0lj/short_guide_to_improve_slow_boot_on_ubuntu_1804/
 
 ## Step 4 - Remove snaps
 
-```
+```bash
 nano remove_old_snaps.sh
 #!/bin/bash
 # Removes old revisions of snaps
@@ -154,7 +155,7 @@ Source: https://www.kevin-custer.com/blog/disabling-snaps-in-ubuntu-20-10-and-20
 
 ## Step 5 - Use `bspwm`
 
-```
+```bash
 sudo apt update
 sudo apt-get install bspwm
 
@@ -181,14 +182,14 @@ xserver-command=X -core
 
 Reference:
 
-https://www.digitalocean.com/community/tutorials/how-to-use-pam-to-configure-authentication-on-an-ubuntu-12-04-vps
+- https://www.digitalocean.com/community/tutorials/how-to-use-pam-to-configure-authentication-on-an-ubuntu-12-04-vps
 
 
 ## Step 6 - Remove development packages
 
 **Important!** This is super experimental approach
 
-```
+```bash
 sudo apt list --installed | grep -Eo ".+\-dev\/" | sed 's/\///' | tr '\n' ' '
 
 sudo apt-get --purge remove comerr-dev libc6-dev libdrm-dev libelf-dev libffi-dev libfreetype6-dev libftgl-dev libgl1-mesa-dev libglew-dev libglu1-mesa-dev libglvnd-core-dev libglvnd-dev libgmp-dev libgnutls28-dev libice-dev libidn2-0-dev libidn2-dev libkrb5-dev libmirclient-dev libmircommon-dev libmircookie-dev libmircore-dev libogg-dev libp11-kit-dev libphonon4qt5-dev libpng-dev libpq-dev libprotobuf-dev libpthread-stubs0-dev libreadline-dev librtmp-dev libsm-dev libssl-dev libtasn1-6-dev libtheora-dev libtinfo-dev libudev-dev libusb-1.0-0-dev libva-amdgpu-emb-dev libvdpau-amdgpu-emb-dev libx11-dev libx11-xcb-dev libxau-dev libxcb-dri2-0-dev libxcb-dri3-dev libxcb-glx0-dev libxcb-present-dev libxcb-randr0-dev libxcb-render0-dev libxcb-shape0-dev libxcb-sync-dev libxcb-xfixes0-dev libxcb1-dev libxdamage-dev libxdmcp-dev libxext-dev libxfixes-dev libxkbcommon-dev libxshmfence-dev libxt-dev libxxf86vm-dev linux-libc-dev manpages-dev mesa-common-dev nettle-dev x11proto-core-dev x11proto-damage-dev x11proto-dev x11proto-dri2-dev x11proto-fixes-dev x11proto-gl-dev x11proto-xext-dev x11proto-xf86vidmode-dev xtrans-dev zlib1g-dev
@@ -199,13 +200,13 @@ sudo apt-get --purge remove comerr-dev libc6-dev libdrm-dev libelf-dev libffi-de
 
 In Ubuntu the kernel comes in a group of several packages. You can list them like this
 
-```
+```bash
 apt list | grep 5.15.0.*generic
 ```
 
 But there is a script that helps to see what kernel versions are available for your Ubuntu version
 
-```
+```bash
 wget https://raw.githubusercontent.com/pimlie/ubuntu-mainline-kernel.sh/master/ubuntu-mainline-kernel.sh
 chmod +x ubuntu-mainline-kernel.sh
 sudo mv ubuntu-mainline-kernel.sh /usr/local/bin/
@@ -213,6 +214,18 @@ ubuntu-mainline-kernel.sh -c # what's the latest
 ubuntu-mainline-kernel.sh -r # list all
 sudo ubuntu-mainline-kernel.sh -i v5.15.133 # install specific
 ```
+
+## Clean
+
+Check with `ncdu` (it's `du` with **ncurses**) and also
+
+```bash
+apt clean
+# clear journalctl
+sudo journalctl --rotate
+sudo journalctl --vacuum-time=1s
+```
+
 
 ## Final step
 

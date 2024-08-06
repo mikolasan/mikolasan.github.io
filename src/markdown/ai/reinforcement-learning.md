@@ -56,3 +56,20 @@ We skip diogonal values. Thus we have 5 states that will create one meta state. 
 
 **Goal-Conditioned Reinforcement Learning: Problems and Solutions** by Liu et al ([paper](https://arxiv.org/pdf/2201.08299), 2022)
 Goals are positions where robot should reach (it's body, or parts like arms). There are many end positions that correspond to different tasks or steps. These positions can be discovered with several methods, so no need  to hard-code them. But there is no single answer how to switch between goals. It resembles very much bayesian learning where conditional probabilities are learned from experience. 
+
+
+### Stabilization tricks
+
+In actor-critic:
+
+> To stabilize training, the resulting sequence of returns is also standardized (i.e. to have zero mean and unit standard deviation). 
+>
+> [Actor-critic when calculating expected returns](https://www.tensorflow.org/tutorials/reinforcement_learning/actor_critic#2_compute_the_expected_returns)
+
+For normalization layer ([by Kazumi](https://discord.com/channels/879548962464493619/915190889243103282/1263736433697362071):
+
+```python
+mean = x.mean(0).square()
+square = x.square().mean(0)
+self.activation = torch.mean(square - 2*torch.sqrt(square-mean))
+```
