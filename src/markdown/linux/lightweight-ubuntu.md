@@ -167,6 +167,8 @@ sudo nano /etc/pam.d/login
 sudo apt install plymouth-themes
 ```
 
+### LightDM
+
 **/etc/lightdm/lightdm.conf**
 
 ```
@@ -180,9 +182,21 @@ user-session=bspwm
 xserver-command=X -core
 ```
 
+### GDM (Gnome)
+
+**/etc/gdm3/custom.conf**
+
+```
+[daemon]
+AutomaticLoginEnable=true
+AutomaticLogin=root
+WaylandEnable=false
+```
+
 Reference:
 
 - https://www.digitalocean.com/community/tutorials/how-to-use-pam-to-configure-authentication-on-an-ubuntu-12-04-vps
+- https://help.gnome.org/admin/system-admin-guide/stable/login-automatic.html.en
 
 
 ## Step 6 - Remove development packages
@@ -214,6 +228,23 @@ ubuntu-mainline-kernel.sh -c # what's the latest
 ubuntu-mainline-kernel.sh -r # list all
 sudo ubuntu-mainline-kernel.sh -i v5.15.133 # install specific
 ```
+
+
+## Step 8 (optional) - Professional style
+
+Login message (motd)
+
+```
+systemctl disable motd-news.timer
+sed -i -e 's/ENABLED=1/ENABLED=0/' /etc/default/motd-news
+find /etc/update-motd.d -type f | xargs -i sudo chmod -x {}
+```
+
+Reference:
+
+- https://joe.schafer.dev/chatty-ubuntu-motd/
+
+
 
 ## Clean
 
