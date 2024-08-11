@@ -5,6 +5,36 @@ topic: true
 published: 2022-12-20
 lastModified: 2022-12-20
 ---
+## Roadmap
+
+- Tabular ([Huggingface course](https://huggingface.co/learn/deep-rl-course/unit2/q-learning-example), [develop the thing from scratch](https://mlabonne.github.io/blog/posts/2022-02-13-Q_learning.html))
+- DQN ([DQN Paper](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf) and implement something better than [any](https://pytorch.org/tutorials/intermediate/reinforcement_q_learning.html) [Python](https://github.com/Apress/deep-reinforcement-learning-python/blob/main/chapter6/listing6_1_dqn_pytorch.ipynb) code)
+- PPO
+- Distributional RL ([good explanation](https://mtomassoli.github.io/2017/12/08/distributional_rl/))
+- Rainbow ([github](https://github.com/Kaixhin/Rainbow), [paper](https://arxiv.org/abs/1710.02298))
+- Multi goal
+- Multi agent
+- Continuous time
+- SAC
+- REINFOCE
+- Dreamer
+- td3
+
+### Environments
+
+- OpenAI gym ([Farama](https://gymnasium.farama.org/environments/classic_control/cart_pole/))
+
+Sims:
+
+- Isaac Sim
+- MuJoCo
+- Webots
+- Gazebo
+
+Walking bipeds:
+
+- [Kyle](https://huggingface.co/p3nGu1nZz/Kyle-b0a) ([code](https://github.com/cat-game-research/Neko/tree/main/RagdollTrainer) from "cat crime research")
+- ???
 
 ## Personal research
 
@@ -66,7 +96,7 @@ In actor-critic:
 >
 > [Actor-critic when calculating expected returns](https://www.tensorflow.org/tutorials/reinforcement_learning/actor_critic#2_compute_the_expected_returns)
 
-For normalization layer ([by Kazumi](https://discord.com/channels/879548962464493619/915190889243103282/1263736433697362071):
+For normalization layer ([by Kazumi](https://discord.com/channels/879548962464493619/915190889243103282/1263736433697362071)):
 
 ```python
 mean = x.mean(0).square()

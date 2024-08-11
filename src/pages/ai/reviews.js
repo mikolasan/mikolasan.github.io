@@ -37,7 +37,7 @@ export const query = graphql`
       filter: {
         fileAbsolutePath: { regex: "/markdown\/ai\/reviews\//"},
       }
-      sort: {frontmatter: {year: DESC}}
+      sort: {frontmatter: {published: DESC}}
     ) {
       nodes {
         frontmatter {

@@ -1,7 +1,6 @@
 ---
 title: Patom theory
 subtitle: Memory approach guys
-date: 2022-11-23
 published: 2022-11-23
 lastModified: 2022-11-23
 year: 2022

@@ -13,10 +13,15 @@ published: 2022-08-23
 There are many online books about Rust. Here is my top 5:
 
 1. [The Book](https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html) - start here
-2. [Rust by example](https://doc.rust-lang.org/rust-by-example/std/result/question_mark.html) - the same concepts from the book, but oriented more to practice examples
+2. [Rust by example](https://doc.rust-lang.org/rust-by-example/std/result/question_mark.html) - the same concepts as in The Book but oriented more on practical examples
 3. [Cookbook](https://rust-lang-nursery.github.io/rust-cookbook/file/read-write.html) - about using crates in real life problems, solutions, best practices
 4. [Rustonomicon](https://doc.rust-lang.org/nomicon/send-and-sync.html) - when you are ready for something spicy
 5. [Learning Rust](https://learning-rust.github.io/docs/combinators/) - back to origin
+
+The following books were harder to find but nevertheless their content is golden
+
+6. [The Embedded Rust Book](https://docs.rust-embedded.org/book/peripherals/singletons.html) - Rust for solving tasks with microcontrollers
+7. [Easy Rust](https://fongyoong.github.io/easy_rust/Chapter_48.html) - if you find The Book confusing (as me) then try this
 
 
 ### About the book
