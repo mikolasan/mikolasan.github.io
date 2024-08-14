@@ -169,18 +169,26 @@ sudo apt install plymouth-themes
 
 ### LightDM
 
-**/etc/lightdm/lightdm.conf**
+LightDM ([sources](https://github.com/canonical/lightdm)) doesn’t use [unity-greeter](https://bazaar.launchpad.net/~unity-greeter-team/unity-greeter/trunk/view/head:/src/unity-greeter.vala) and it’s very good because that thing is written in esoteric language - Vala.
+
+We use config in **/etc/lightdm/lightdm.conf** and the following lines:
 
 ```
 [LightDM]
 logind-check-graphical=true
 [SeatDefaults]
-autologin-user=root
+autologin-user=<YOUR USER>
 autologin-user-timeout=0
 autologin-session=bspwm
 user-session=bspwm
 xserver-command=X -core
 ```
+
+Reference:
+
+- https://www.digitalocean.com/community/tutorials/how-to-use-pam-to-configure-authentication-on-an-ubuntu-12-04-vps
+- https://askubuntu.com/questions/1225049/automatic-login-on-but-login-screen-persists-on-startup-linux-ubuntu-18-04
+
 
 ### GDM (Gnome)
 
@@ -189,14 +197,22 @@ xserver-command=X -core
 ```
 [daemon]
 AutomaticLoginEnable=true
-AutomaticLogin=root
+AutomaticLogin=<YOUR USER>
 WaylandEnable=false
 ```
 
 Reference:
 
-- https://www.digitalocean.com/community/tutorials/how-to-use-pam-to-configure-authentication-on-an-ubuntu-12-04-vps
 - https://help.gnome.org/admin/system-admin-guide/stable/login-automatic.html.en
+
+
+### No display manager (wip)
+
+Let’s try to use a systemd service for starting Xorg
+
+- [start X server on login](https://unix.stackexchange.com/questions/437809/start-x-server-on-login-with-systemd)
+- [startx and systemd](https://vincent.bernat.ch/en/blog/2021-startx-systemd)
+- [systemd on arch wiki](https://wiki.archlinux.org/title/Systemd/User#Automatic_login_into_Xorg_without_display_manager)
 
 
 ## Step 6 - Remove development packages
