@@ -23,6 +23,7 @@ lastModified: 2022-12-20
 ### Environments
 
 - OpenAI gym ([Farama](https://gymnasium.farama.org/environments/classic_control/cart_pole/))
+- [Petting Zoo](https://pettingzoo.farama.org/) - multi-agent
 
 Sims:
 

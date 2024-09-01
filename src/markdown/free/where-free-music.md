@@ -5,6 +5,7 @@ title: "Where free music?"
 published: 2021-10-13
 lastModified: 2022-06-21
 ---
+## Links
 
 - [pixabay](https://pixabay.com/music/)
 - [NCS](https://ncs.io/music-search?q=&genre=&mood=&version=instrumental) - NoCopyrightSounds
@@ -13,3 +14,12 @@ lastModified: 2022-06-21
 - [bensound](https://www.bensound.com) small and used everywhere
 - https://freesound.org/
 - https://getsoundly.com/ (only through desktop application after registration)
+
+## Some examples
+
+[https://freemusicarchive.org/music/defrini/songtrash-vol2-space-junk/vv](https://freemusicarchive.org/music/defrini/songtrash-vol2-space-junk/vv)
+[https://freemusicarchive.org/music/Leisure-B/Back_In_Space/leisure_b_no_sax_for_joey](https://freemusicarchive.org/music/Leisure-B/Back_In_Space/leisure_b_no_sax_for_joey)
+[https://pixabay.com/users/nielizas-19737962/](https://pixabay.com/users/nielizas-19737962/)
+[https://soundcloud.com/nocopyrightlofi/tracks](https://soundcloud.com/nocopyrightlofi/tracks) - lofi
+[https://freemusicarchive.org/music/gigakoops/please-bring-peace-to-the-village-of-doom/tunnel-of-hate](https://freemusicarchive.org/music/gigakoops/please-bring-peace-to-the-village-of-doom/tunnel-of-hate) metal chip tune
+[https://freemusicarchive.org/music/FrostClick/FrostWire_Creative_Commons_Mixtape_2_Side_B/TenPenny_Joke__Caroline__FrostClick_FrostWire_Mixtape_Vol_2](https://freemusicarchive.org/music/FrostClick/FrostWire_Creative_Commons_Mixtape_2_Side_B/TenPenny_Joke__Caroline__FrostClick_FrostWire_Mixtape_Vol_2)

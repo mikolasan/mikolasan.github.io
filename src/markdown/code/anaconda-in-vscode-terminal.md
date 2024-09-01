@@ -9,12 +9,31 @@ It's possible to add specific terminal to VS Code on Windows machine when you ha
 You will have Python interpreter under your fingertips.
 Just add to **settings.json** the following configuration
 
+```json
+"terminal.integrated.profiles.windows": {
+  "miniconda": {
+    "path": [
+      "${env:windir}\\System32\\cmd.exe"
+    ],
+    "args": ["/k C:\\Users\\neupo\\miniconda3\\Scripts\\activate.bat"]
+  },  
+  "MinGW": {
+    "path": [
+      "C:\\msys64\\msys2_shell.cmd"
+    ],
+    "args": ["-defterm", "-here", "-no-start", "-mingw64"],
+    "icon": "terminal-bash"
+  },
+}
 ```
-"terminal.integrated.shellArgs.windows": [
-  "-NoExit",
-  "-File", "C:\\Users\\<user name>\\Anaconda3\\Scripts\\activate.ps1"
-],
+
+And then select the profile in local workspace settings **.vscode/settings.json**
+
+```json
+"terminal.integrated.defaultProfile.windows": "MinGW",
 ```
+
+Ref: https://stackoverflow.com/questions/67601161/the-new-way-to-configure-default-shell-and-argument-commands-in-vscode
 
 For a long time I was against any virtual environment for Python. You only need it for the clean experiment, right? The package manager must resolve all conflicts and it's not a problem to jump a few versions ahead. That's what I thought. But more and more I started see conflicts and new versions got uninstalled and another random version installed in my system. 
 

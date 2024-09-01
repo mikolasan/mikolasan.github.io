@@ -12,3 +12,8 @@ After I finished a project with an acrylic case that was laser cut by a layout t
 A box with buttons is a beautiful thing by itself, nevertheless, I expected to make a MIDI controller that can be connected to my computer for producing drum sounds in the DAW. 
 
 But the idea is going crazy here. Instead of adding MIDI logic to buttons with Arduino or Raspberry board, the plan is to connect buttons with a USB cable to the mobile device as an OTG device, get inputs from button deck or user interface, and send it as MIDI signal out. I tried MIDI piano on my tablet and can recommend one application: MIDI Keyboard from Dreamhound Studios. So learning USB protocol was an appealing bonus in this project, although it can be done without the mobile application.
+
+## Links
+
+- [DMach](https://github.com/simonnorberg/dmach)
+- [G-Stomper VA-Beast Synth](https://play.google.com/store/apps/details?id=com.planeth.vabeastdemo&hl=en)

@@ -19,7 +19,9 @@ Secondly, sudoku 16x16 can also be more fun and enjoyable than sudoku 9x9, becau
 
 Thirdly, sudoku 16x16 poses some challenges for developers who want to [create apps for mobile devices](/blog/android-development-for-starters). One of the main problems is how to fit a large grid on a small screen without compromising the readability and usability. Developers have to find ways to optimize the layout, the font size, the contrast, and the zooming features of their apps. And as always, they have to consider how to make their apps compatible with different screen sizes and resolutions. Sudoku 16x16 apps require more design and development efforts than sudoku 9x9 apps.
 
-## Developer's questions
+## Development
+
+### Questions
 
 When I decided to write sudoku 16x16 in Godot I've got many implementation related questions such as
 
@@ -29,9 +31,19 @@ When I decided to write sudoku 16x16 in Godot I've got many implementation relat
 - Is it possible to rate puzzles?
 - What features are available to help solving this gigantic puzzles?
 
+### Algorithms
+
+- Implement classes based on [this wiki](http://sudopedia.enjoysudoku.com/Last_Digit.html)
+- [Generating Sudoku Boards](https://github.com/rharriso/sudoku-gen-cpp/blob/master/sudoku-gen.cpp)
+### Features
+
+- Buttons piyunk-piyunk (pleasant sounds)
+- It is like a meditation Application 
+- You swipe across a line or column and the missing numbers are shown
+- A long press on a number highlights such numbers on the field
 
 
-## My app
+## Android app with Godot
 
 ![Menu screen](./sudoku-menu-1.png)
 
@@ -53,3 +65,8 @@ In conclusion, sudoku 16x16 is not for everyone, but it is definitely worth a tr
 I [tried to finish my app](https://twitter.com/mikolasan/status/1486754571779203084), but stuck with a liquid blood shader...
 
 Check out [my another puzzle game](/gamedev/overload-godot) in Godot instead. Or [this card game](/gamedev/evolution-card-game).
+
+## Links
+
+- Liquid Blood Shader [Reddit: flow](https://www.reddit.com/r/Unity3D/comments/63mrg0/blood_flow_shader_gore_effect/) [Reddit: running down](https://www.reddit.com/r/Unity3D/comments/4nz4nb/looking_for_ways_to_create_blood_running_down/)
+- [Nvidia HLSL Shader](https://http.download.nvidia.com/developer/SDK/Individual_Samples/DEMOS/Direct3D9/src/HLSL_BloodShader/docs/HLSL_BloodShader.pdf)

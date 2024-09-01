@@ -83,9 +83,9 @@ _Oct 2012 – Oct 2015_
 ### Core
 
 - C++ ([pull request](https://github.com/godotengine/godot/pull/28205) to Godot)
-- [Java](/blog/why-do-i-hate-java)
-- Kotlin ([app](/projects/imperial-russia) in Google Play),
-- [Python](/blog/why-do-i-hate-python),
+- Java
+- Kotlin ([app](/projects/imperial-russia) on Google Play),
+- Python,
 - Lua,
 - JavaScript,
 

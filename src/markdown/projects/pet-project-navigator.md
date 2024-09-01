@@ -46,3 +46,14 @@ Did you know that you can type mathematical formulas in Notion?!
 
 
 To be continued...
+
+## Plans
+
+Finish the simple part of task management. Like in Asana: just create a list of projects and reorganize them to make a specific sorted list. Main feature first. No projects, no additional activities. Working name: 
+
+## More about todo lists
+
+- An online app where you create tasks only with keyboard [pomoday](https://github.com/huytd/pomoday-v2)
+- [Get things done](https://hamberg.no/gtd)
+- CLI todo list [Task Warrior](https://taskwarrior.org/)
+- [Laverna](https://github.com/Laverna/laverna)

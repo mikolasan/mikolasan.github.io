@@ -1,7 +1,7 @@
 ---
-path: "/gamedev/battleship"
-date: "2020-08-19"
-title: Battleship
+path: /gamedev/battleship
+date: 2020-08-19
+title: Battleship game
 featuredImage: battleship_last_step.png
 previewImage: battleship_gameplay.png
 published: 2020-04-06
@@ -77,3 +77,20 @@ OK, how to make a regular dead simple Battleship implementation to be more like 
 1. Switch to voxel engine
 
 ![Win message](./battleship_win_message.png)
+
+
+
+
+## Other games
+
+### Battleship Variations
+
+- http://www.mountainvistasoft.com/variations.htm
+
+### On Play Store
+
+- https://play.google.com/store/apps/details?id=com.tellmewow.senior.battleship&hl=en_US&gl=US
+- https://play.google.com/store/apps/details?id=com.gamepatron.battleofsea
+- https://play.google.com/store/apps/details?id=com.azurgames.sailships
+- https://play.google.com/store/apps/details?id=com.midoki.pirates
+- https://play.google.com/store/apps/details?id=com.FunGame3D.Battleships - steampunk!
