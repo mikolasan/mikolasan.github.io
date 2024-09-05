@@ -441,6 +441,14 @@ footer a:active {
   column-gap: 2rem;
 }
 
+
+.social-icon {
+  width: 2em;
+  height: 2em;
+  vertical-align: -0.125em;
+  color: #f2f2f2;
+}
+
 audio,
 canvas,
 progress,
