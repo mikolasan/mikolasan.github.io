@@ -224,6 +224,8 @@ Later we will focus out research on aspects such as
 
 ![3d function approximation](./ann-function-approximation.png)
 
+[This post](https://writings.stephenwolfram.com/2024/08/whats-really-going-on-in-machine-learning-some-minimal-models/) tries to explain _how_ artificial neural networks work. So it is not about the algebraic part. Instead it tries to answer why size and structure matter, how the activation function makes a difference. And there I found the mesh neural networks interesting.
+
 ## Numerical differentiation
 
 ### Lotka Volterra model

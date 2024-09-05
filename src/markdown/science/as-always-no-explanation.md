@@ -28,7 +28,6 @@ We chose the sinusoidal version because it may allow the model to extrapolate to
 
 [Jupyter notebook](https://github.com/jalammar/jalammar.github.io/blob/master/notebookes/transformer/transformer_positional_encoding_graph.ipynb) to illustrate it
 
-
 ### What?
 
 Maybe it's just me but I don't understand how sin/cos functions can save positional relations. I can understand convolutional operations how they transform data based on their positions. 
@@ -39,6 +38,13 @@ Why $sin$ for even indices and $cos$ for odd ones?
 
 From: [Neural machine translation with a Transformer](https://www.tensorflow.org/text/tutorials/transformer)
 
-Since the model doesn't contain any recurrent or convolutional layers, it needs some way to identify word order, otherwise it would see the input sequence as a _bag of words_ instance, `how are you`, `how you are`, `you how are` would be indistinguishable.
+> Since the model doesn't contain any recurrent or convolutional layers, it needs some way to identify word order, otherwise it would see the input sequence as a _bag of words_ instance, `how are you`, `how you are`, `you how are` would be indistinguishable.
+>
+> The position encoding function vibrates along the position axis at different frequencies depending on their location along the depth of the embedding vector.
 
-The position encoding function vibrates along the position axis at different frequencies depending on their location along the depth of the embedding vector.
+I’ll try to explain it with my words. First, we need to know word frequencies beforehand in order to properly split words into tokens. Then we sort them by frequency. And after that, cosine will help spreading unrelated tokens apart when seen in a sentence.
+
+## Exercise
+
+1. How [rotary embeddings](https://blog.eleuther.ai/rotary-embeddings/) are different?
+2. Think of another encoding method. How to convert pictures into vectors and how to encode transformations? (I don’t know if there are tutorials for applying transformers to images.)
