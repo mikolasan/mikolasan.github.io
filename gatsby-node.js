@@ -5,6 +5,7 @@ const nifty = require("./src/nifty")
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 const genericListTemplate = path.resolve(`./src/templates/genericListTemplate.js`)
+const genericCompactListTemplate = path.resolve(`./src/templates/genericCompactListTemplate.js`)
 const codeListTemplate = path.resolve(`./src/templates/codeListTemplate.js`)
 const linuxListTemplate = path.resolve(`./src/templates/linuxListTemplate.js`)
 const makeListTemplate = path.resolve(`./src/templates/makeListTemplate.js`)
@@ -305,6 +306,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       regex: `/markdown\/ideas\//`,
       section: `code`,
       subsection: `ideas`
+    },
+    "/lists": {
+      template: genericCompactListTemplate,
+      postsPerPage: 25,
+      title: `Lists`,
+      regex: `/markdown\/lists\//`,
+      section: `blog`,
+      subsection: `lists`
     },
     "/linux": {
       template: linuxListTemplate,

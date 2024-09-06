@@ -1,7 +1,6 @@
 ---
-path: "/gamedev/where-free-art"
-date: "2020-05-24"
-title: "Where free 3d?"
+title: Where free 3d?
+date: 2020-05-24
 published: 2021-10-13
 lastModified: 2022-06-21
 ---
