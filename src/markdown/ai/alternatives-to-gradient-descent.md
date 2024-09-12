@@ -43,15 +43,6 @@ When it comes to **Global Optimisation** tasks (i.e. attempting to find a global
 As mentioned above, *Simulated Annealing, Particle Swarm Optimisation and Genetic Algorithms* are good global optimisation algorithms that navigate well through huge search spaces and unlike *Gradient Descent* do not need any information about the gradient and could be successfully used with black-box objective functions and problems that require running simulations.
 
 
-  [1]: https://en.wikipedia.org/wiki/Pattern_search_(optimization)
-  [2]: https://en.wikipedia.org/wiki/Genetic_algorithm
-  [3]: https://en.wikipedia.org/wiki/Particle_swarm_optimization
-  [4]: https://www.mathworks.com/help/gads/surrogate-optimization-algorithm.html
-  [5]: https://en.wikipedia.org/wiki/Multi-objective_optimization
-  [6]: https://en.wikipedia.org/wiki/Simulated_annealing
-  [7]: https://arxiv.org/abs/1412.7525#
-  [8]: https://arxiv.org/abs/1605.02026
-  [9]: https://arxiv.org/abs/2011.08895
 
 Source: [1](https://stats.stackexchange.com/questions/97014/what-are-alternatives-of-gradient-descent) [2](https://stackoverflow.com/questions/23554606/what-are-alternatives-of-gradient-descent)
 
@@ -73,3 +64,15 @@ Main article - Biologically-Plausible Learning Algorithms Can Scale to Large Dat
 ## Nash’s equilibrium
 
 Why is gradient descent the most popular, the only one technique in use? Because it’s stable. No matter what’s in your training data, with any order you will get predictable outcome. And things like Adaptive Resonance Theory aren't stable in that regard. They learn fast, but the order of data is very important. But. What if we apply Nash’s equilibrium here? Every system, component in the brain fight for their truth and shift the system, they play against each other, but we can determine when they must stop overwriting each other. Will it fix the problem with order?
+
+
+
+  [1]: https://en.wikipedia.org/wiki/Pattern_search_(optimization)
+  [2]: https://en.wikipedia.org/wiki/Genetic_algorithm
+  [3]: https://en.wikipedia.org/wiki/Particle_swarm_optimization
+  [4]: https://www.mathworks.com/help/gads/surrogate-optimization-algorithm.html
+  [5]: https://en.wikipedia.org/wiki/Multi-objective_optimization
+  [6]: https://en.wikipedia.org/wiki/Simulated_annealing
+  [7]: https://arxiv.org/abs/1412.7525#
+  [8]: https://arxiv.org/abs/1605.02026
+  [9]: https://arxiv.org/abs/2011.08895

@@ -61,7 +61,7 @@ Walking bipeds:
 
 ## Program
 
-I read [DQN Paper](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf) and implement something better than [any](https://pytorch.org/tutorials/intermediate/reinforcement_q_learning.html) [Python](https://github.com/Apress/deep-reinforcement-learning-python/blob/main/chapter6/listing6_1_dqn_pytorch.ipynb) code.
+I have read [DQN Paper](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf) and implement something better than [any](https://pytorch.org/tutorials/intermediate/reinforcement_q_learning.html) [Python](https://github.com/Apress/deep-reinforcement-learning-python/blob/main/chapter6/listing6_1_dqn_pytorch.ipynb) code.
 
 Let's write Reinforcement Learning program in Rust. In the beginning we will be solving frost lake environment. We will use a [grid world](https://github.com/tspooner/rsrl/blob/master/rsrl_domains/src/grid_world.rs) from `rsrl`
 
@@ -88,7 +88,9 @@ We skip diogonal values. Thus we have 5 states that will create one meta state. 
 **Goal-Conditioned Reinforcement Learning: Problems and Solutions** by Liu et al ([paper](https://arxiv.org/pdf/2201.08299), 2022)
 Goals are positions where robot should reach (it's body, or parts like arms). There are many end positions that correspond to different tasks or steps. These positions can be discovered with several methods, so no need  to hard-code them. But there is no single answer how to switch between goals. It resembles very much bayesian learning where conditional probabilities are learned from experience. 
 
+### Nash equilibrium
 
+[RL and nash equlibrium](https://arxiv.org/pdf/2404.03715.pdf)
 ### Stabilization tricks
 
 In actor-critic:

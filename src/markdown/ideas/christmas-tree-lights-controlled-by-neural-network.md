@@ -22,6 +22,10 @@ From a video camera show same samples like fireworks, fireplace, clouds, sunset 
 
 Another network can take these time series and apply them to current situation by listening for surrounding sounds.
 
+### Transformers?
+
+RNN that generates sequences? But Transformers are better with sequences. Transformers [can be used on images](https://arxiv.org/abs/2010.11929) and they are better than CNN
+
 ## 3D design
 
 ### Inspiration

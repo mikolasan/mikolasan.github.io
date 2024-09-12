@@ -18,7 +18,10 @@ Then here is what you should do.
 ## Terminal
 
 1. Install [Git for Windows](https://git-scm.com/download/win)
-1. Delete line `PS1="$PS1"'\n'` from **C:/Program Files/Git/etc/profile.d/git-prompt.sh**. Originally it has this content
+1. From `C:\Program Files\Git\etc\profile.d\git-prompt.sh` delete places where the newline symbols are used, like `PS1="$PS1"'\n'` 
+2. Also I removed useless `MSYSTEM` line. 
+
+Originally the file has this content
 
 ```bash
 if test -f /etc/profile.d/git-sdk.sh
@@ -73,11 +76,11 @@ then
 fi
 ```
 
-I remove the new line - it breaks some output from git, so be ready for messy outcome after commits. 
+Missing newlines didn't work good together with some output from git, so I had some messy output after commits. But it is fixed in the recent version (I noticed when I upgraded to 2.46.0 from some really old version).
 
 ![no newlines](./git-bash-one-line-mess.png)
 
-Also I remove useless for me `SYSTEM` part. Here is my resulting script
+Here is my resulting script
 
 ```bash
 if test -f /etc/profile.d/git-sdk.sh
@@ -128,19 +131,20 @@ then
 fi
 ```
 
-Change color scheme to your taste
+Change color scheme to your taste or [use Alacritty](/blog/alacritty-everywhere) that has more appealing look even with default settings.
 
 ![terminal colors](./git-bash-settings.png)
 
+
 ## vim
 
-1. Install **vim** to MSYS64
+1. Install **vim** on MSYS64
 
 ```
 pacman -S vim
 ```
 
-1. add to **C:\Users\your_user_name** your `.vimrc`. Mine (probably without changes from [dotfiles](https://github.com/mikolasan/dotfiles/blob/master/.vimrc))
+1. add to `C:\Users\your_user_name` your `.vimrc`. Mine (probably without changes from [dotfiles](https://github.com/mikolasan/dotfiles/blob/master/.vimrc))
 
 ```vimrc
 set nocompatible              " be iMproved, required
@@ -290,6 +294,39 @@ vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 ```
 
+## ssh
+
+I use `ssh-agent` to handle my credentials. Maybe **Git for Windows** nowadays offers some nice solution, and possibly that my approach is outdated, but I use it the way on Linux and it works even with several Github keys loaded simultaneously (which is not possible with any magic you try in `.ssh/config`).
+
+```bash
+SSH_ENV="$HOME/.ssh/environment"
+
+function start_agent {
+	#echo "Initialising new SSH agent..."
+	ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
+	chmod 600 "${SSH_ENV}"
+	. "${SSH_ENV}" > /dev/null
+	if [ -f ${HOME}/.ssh/github ]; then
+		ssh-add ${HOME}/.ssh/github > /dev/null 2>&1
+	fi
+}
+
+# Source SSH settings, if applicable
+
+if [ ! -d "$HOME/.ssh" ]; then
+	mkdir "$HOME/.ssh"
+	chmod 700 "$HOME/.ssh"
+fi
+
+if [ -f "${SSH_ENV}" ]; then
+	. "${SSH_ENV}" > /dev/null
+	ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+		start_agent;
+	}
+else
+	start_agent;
+fi
+```
 ## Conclusion
 
 This was a good warm up. So maybe it's time to offer something serious?
