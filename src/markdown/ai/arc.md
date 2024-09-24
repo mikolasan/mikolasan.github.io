@@ -3,6 +3,7 @@ title: ARC-AGI
 date: 2024-08-21
 published: 2024-08-21
 lastModified: 2024-09-04
+article: main
 ---
 
 Deadline for the [kaggle competition](https://www.kaggle.com/competitions/arc-prize-2024/leaderboard) is November

@@ -4,6 +4,7 @@ date: 2024-09-04
 published: 2024-09-04
 lastModified: 2024-09-04
 subtitle: in artificial neural networks
+topic: true
 ---
 Everyone is talking about active inference but no one implementing it. Right?
 
