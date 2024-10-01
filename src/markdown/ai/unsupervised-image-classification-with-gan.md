@@ -7,11 +7,17 @@ published: 2023-07-29
 lastModified: 2023-07-29
 ---
 
-After [playing with CycleGAN](/science/cycle-gan-intro), I [started wondering](/devlog/14) if [Generative Adversarial Networks](/ai/generative-adversarial-networks) (GANs) can be trained without labels on small datasets and their discriminator part would work as classificator. I found one [notebook](https://github.com/sthalles/blog-resources/blob/master/semi-supervised/semi-supervised_learning.ipynb) that follows this path, but it uses TensorFlow 1. So instead I will use PyTorch and their [DCGAN tutorial](https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html)
+After [playing with CycleGAN](/science/cycle-gan-intro), I [started wondering](/devlog/14) if [Generative Adversarial Networks](/ai/generative-adversarial-networks) (GANs) could be trained without labels on small datasets in a way that their discriminator part would work as a classifier.
 
-Dataset: [CelebA](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) - 64x64 faces
+## Self-supervised learning
+
+I found one [notebook](https://github.com/sthalles/blog-resources/blob/master/semi-supervised/semi-supervised_learning.ipynb) that at least has a classifier.
+It uses TensorFlow 1, but I would prefer PyTorch. 
+Anyway, we should start with [DCGAN tutorial](https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html)
 
 ### Generator
+
+Starting from a vector, that theoretically contains all features in the image, the flow goes trough several convolutional layers and at the end produces an image. The last layer is crowned with a $tanh$ function which maps the output into $[-1, 1]$ interval (they say, important for stability).
 
 ```
 Generator(
@@ -35,6 +41,8 @@ Generator(
 ```
 
 ### Discriminator
+
+Takes an image and classifies it as a real or fake.
 
 ```
 Discriminator(
@@ -129,6 +137,17 @@ for i, data in enumerate(dataloader, 0):
 
 
 
+## Blobs
+
+I [found a post](https://www.unite.ai/editing-a-gans-latent-space-with-blobs/) about blobs that serve as a blurred contour for locating objects in pictures. And here's the [BlobGAN paper](https://dave.ml/blobgan/static/blobgan_paper.pdf).
+
+The idea is that we can take that generator and prepend a fully connected layers that map Gaussian noise (technically that is the vector with features?) into the spatial map with blobs.
+
+What loss function makes the blobs match with objects?
+
+## Dataset
+
+[CelebA](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) - 64x64 faces
 
 ## Next 
 

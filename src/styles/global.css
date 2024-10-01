@@ -449,6 +449,10 @@ footer a:active {
   color: #f2f2f2;
 }
 
+.rss-color {
+  color: #f29722;
+}
+
 audio,
 canvas,
 progress,

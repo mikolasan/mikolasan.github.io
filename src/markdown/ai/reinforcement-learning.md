@@ -7,7 +7,7 @@ lastModified: 2022-12-20
 ---
 ## Roadmap
 
-- Tabular ([Huggingface course](https://huggingface.co/learn/deep-rl-course/unit2/q-learning-example), [develop the thing from scratch](https://mlabonne.github.io/blog/posts/2022-02-13-Q_learning.html))
+- Tabular ([Lecture 20](https://www.cs.cmu.edu/~epxing/Class/10708-20/scribe/lec20_scribe.pdf), [Huggingface course](https://huggingface.co/learn/deep-rl-course/unit2/q-learning-example), [develop the thing from scratch](https://mlabonne.github.io/blog/posts/2022-02-13-Q_learning.html))
 - DQN ([DQN Paper](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf) and implement something better than [any](https://pytorch.org/tutorials/intermediate/reinforcement_q_learning.html) [Python](https://github.com/Apress/deep-reinforcement-learning-python/blob/main/chapter6/listing6_1_dqn_pytorch.ipynb) code)
 - PPO
 - Distributional RL ([good explanation](https://mtomassoli.github.io/2017/12/08/distributional_rl/))
