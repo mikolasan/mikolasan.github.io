@@ -17,6 +17,113 @@ lastModified: 2023-07-17
 3. train a diffusion model on them (what model to use, what library to use, what video card to use (nvidia/AMD)???)
 
 
+## Image files into dataset
+
+Even when you have folders with JPG on PNG images, you still need to convert them into two-dimensional arrays across 3 color channels (red, green, and blue) that will be ready for models and easy to deploy or share.
+
+So, first we start with some utilities like making a list of files
+
+```python
+import pathlib
+
+def get_all_items(root: pathlib.Path):
+    for item in root.iterdir():
+        if item.is_file():
+            ext = item.suffix.lower()
+            if ext in ['.png', '.jpg']:
+                yield str(item)
+        if item.is_dir():
+            yield from get_all_items(item)
+
+file_list_name = "dataset_file_list.txt"
+with open(file_list_name, "w", encoding='utf-8') as output:
+    for filename in get_all_items(pathlib.Path("dataset")):
+        output.write(f'{filename}\n')
+```
+
+This list will help us when we use the `datasets` library
+
+```python
+from datasets import load_dataset
+
+dataset = load_dataset("text", data_files=file_list_name, split='train')
+```
+
+Files that I collected were of different size and aspect ratios. Neural networks (or diffusion models in particular) need small square pictures for the input. This is how we transform our dataset to 64x64 
+
+```python
+from PIL import Image
+from torchvision import transforms
+
+image_size = 64
+
+preprocess = transforms.Compose(
+    [
+        transforms.Resize(image_size, interpolation=transforms.InterpolationMode.BILINEAR),
+        transforms.RandomCrop(image_size),
+        transforms.ToTensor(),  # Convert to tensor (0, 1)
+        transforms.Normalize([0.5], [0.5]),  # Map to (-1, 1)
+    ]
+)
+
+def transform(examples):
+    images = [Image.open(e) for e in examples["text"]]
+    proc_images = [preprocess(image.convert("RGB")) for image in images]
+    return {"images": proc_images}
+
+dataset_resized = dataset.map(transform, batched=True)
+```
+
+It's time to save the results. We will use **parquet** - a binary, more compact format.
+
+```python
+# https://huggingface.co/docs/datasets/v2.14.0/en/process#save
+# dataset_resized.save_to_disk("dataset/dataset-resized-64")
+
+dataset_resized.to_parquet("dataset-resized-64.parquet")
+```
+
+## Using dataset examples
+
+### Load and show images
+
+```python
+import numpy as np
+import torchvision
+from datasets import load_dataset
+from PIL import Image
+
+dataset = load_dataset("parquet", data_files='dataset-resized-64.parquet', split="train")
+dataset.set_format("torch")
+
+def show_images(x):
+    """Given a batch of images x, make a grid and convert to PIL"""
+    x = x * 0.5 + 0.5  # Map from (-1, 1) back to (0, 1)
+    grid = torchvision.utils.make_grid(x)
+    grid_im = grid.detach().cpu().permute(1, 2, 0).clip(0, 1) * 255
+    grid_im = Image.fromarray(np.array(grid_im).astype(np.uint8))
+    return grid_im
+
+
+def make_grid(images, size=64):
+    """Given a list of PIL images, stack them together into a line for easy viewing"""
+    output_im = Image.new("RGB", (size * len(images), size))
+    for i, im in enumerate(images):
+        output_im.paste(im.resize((size, size)), (i * size, 0))
+    return output_im
+
+batch_size = 16
+dataset_resized.set_format("torch")
+# Create a dataloader from the dataset to serve up the transformed images in batches
+train_dataloader = torch.utils.data.DataLoader(
+    dataset_resized, batch_size=batch_size, shuffle=True
+)
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+xb = next(iter(train_dataloader))["images"].to(device)[:8]
+print("X shape:", xb.shape)
+show_images(xb) #.resize((8 * 64, 64), resample=Image.NEAREST)
+```
 ## Recognize faces
 
 Just to avoid manual work. Also how to create unsupervised butt recognition model? Try to use [GAN for object detection](https://arxiv.org/pdf/1706.05274.pdf)

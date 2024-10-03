@@ -19,6 +19,8 @@ Anyway, we should start with [DCGAN tutorial](https://pytorch.org/tutorials/begi
 
 Starting from a vector, that theoretically contains all features in the image, the flow goes trough several convolutional layers and at the end produces an image. The last layer is crowned with a $tanh$ function which maps the output into $[-1, 1]$ interval (they say, important for stability).
 
+Also this component is called **decoder**.
+
 ```
 Generator(
   (main): Sequential(
@@ -42,7 +44,7 @@ Generator(
 
 ### Discriminator
 
-Takes an image and classifies it as a real or fake.
+Takes an image and classifies it as a real or fake. Technically this is an **encoder**.
 
 ```
 Discriminator(
@@ -65,6 +67,27 @@ Discriminator(
 ```
 
 ### Train
+
+Okay, open [your favorite terminal](/blog/alacritty-everywhere) and create a special Python environment (believe me, this is how you would want to work with Python ML libraries)
+
+```bash
+conda create -n diffusers python=3.10
+conda activate diffusers
+pip install matplotlib Pillow datasets diffusers
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+pip install notebook
+jupyter notebook
+```
+
+At this point we assume that the dataset is ready (how to prepare will be discussed later in a corresponding chapter). Let's load it and configure the model
+
+```python
+dataset = load_dataset("parquet", data_files='dataset-resized-64.parquet', split="train")
+dataset.set_format("torch")
+
+
+```
+
 
 ```python
 # For each batch in the dataloader
@@ -141,13 +164,28 @@ for i, data in enumerate(dataloader, 0):
 
 I [found a post](https://www.unite.ai/editing-a-gans-latent-space-with-blobs/) about blobs that serve as a blurred contour for locating objects in pictures. And here's the [BlobGAN paper](https://dave.ml/blobgan/static/blobgan_paper.pdf).
 
-The idea is that we can take that generator and prepend a fully connected layers that map Gaussian noise (technically that is the vector with features?) into the spatial map with blobs.
+The idea is that we can take that generator and prepend a fully connected network that maps Gaussian noise (technically that is the vector with features?) into the spatial map with blobs.
+
+Discriminator in this case produces blobs from the last layer but not a binary classification
 
 What loss function makes the blobs match with objects?
 
+$$
+\begin{align}
+\mathcal{L}_{inversion} &= \mathcal{L}_{LPIPS} (x_{real}, G(E(x_{real})))\\
+&+ \mathcal{L}_{LPIPS}(x_{fake}, G(E(x_{fake}))) \\
+&+ \mathcal{L}_2(x_{real}, G(E(x_{real}))) \\
+&+ \mathcal{L}_2(x_{fake}, G(E(x_{fake}))) \\
+&+ \lambda \mathcal{L}_2(\beta_{fake}, E(x_{fake})) \\
+\end{align}
+$$
+where $\lambda = 10$, and $\mathcal{L}_{LPIPS}$ is the [Learned Perceptual Image Patch Similarity](https://richzhang.github.io/PerceptualSimilarity/) which uses features of the VGG network trained on ImageNet classification instead of comparing images pixel by pixel.
+
 ## Dataset
 
-[CelebA](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) - 64x64 faces
+See how to load pictures into torch in [this post](/ai/my-faces-dataset)
+
+Also, everyone uses this: [CelebA](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) - 64x64 faces
 
 ## Next 
 
