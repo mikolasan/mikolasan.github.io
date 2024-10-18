@@ -26,7 +26,10 @@ Components in the system would perceive the world perfectly and look like a cons
 - Someone's notes about ARC https://github.com/neoneye/arc-notes/tree/main/awesome
 - DSL solution - https://github.com/michaelhodel/arc-dsl/blob/main/solvers.py
 - Interesting [task vizualization](https://gist.github.com/p-i-/9ebed4917d5ea61674e536896fe0aa83#file-006-yaml) using colors from Unicode symbols.
+- Tech talk about the challenge https://bdtechtalks.com/2020/02/19/kaggle-arc-challenge-francois-chollet/
+- https://arxiv.org/pdf/2208.02957.pdf - what if GPT-3 is not that stupid as you think (Discussion: https://twitter.com/spiantado/status/1556641543959695361)
 
 ### Tools
 
 - Python cmd and plot visualization https://github.com/mxbi/arckit
+- ARC editor https://arc-editor.lab42.global/

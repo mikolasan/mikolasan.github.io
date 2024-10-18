@@ -25,4 +25,4 @@ But it is definitely an another thing when one looks at standard pyramidal hiera
 
 ## Ideas
 
-LSTM but it compares an input with a full pattern from memory
+[LSTM](/ai/long-short-term-memory) but it compares an input with a full pattern from memory
