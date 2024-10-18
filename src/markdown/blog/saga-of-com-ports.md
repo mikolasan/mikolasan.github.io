@@ -94,6 +94,33 @@ Links:
 - [](https://pythonhosted.org/pyserial/pyserial_api.html#classes)
 
 
+## Monitoring
+
+I did a few silly commands to check the booting process and analyze when something is changed in the settings and how it affects the communication
+
+```bash
+while true; do sudo cat /proc/tty/driver/serial | grep port:00004310 | ts '[%Y-%m-%d %H:%M:%S]' >> /var/log/serial.log; sleep 1; done &
+# example output:
+# [2024-10-17 10:21:12] 6: uart:16550A port:00004310 irq:32 tx:0 rx:0 RTS|CTS|DTR|DSR|CD|RI
+
+# sudo stty -F /dev/ttyS0 -a > working_serial_state
+while true; do sudo stty -F /dev/ttyS0 -a | diff working_serial_state - | ts '[%Y-%m-%d %H:%M:%S]' >> /var/log/serial2.log; sleep 1; done &
+# example output:
+# [2024-10-17 10:21:11] 4,6c4,6
+# [2024-10-17 10:21:11] < werase = ^W; lnext = ^V; discard = ^O; min = 0; time = 8;
+# [2024-10-17 10:21:11] < parenb -parodd -cmspar cs8 -hupcl -cstopb cread clocal -crtscts
+# [2024-10-17 10:21:11] < -ignbrk -brkint -ignpar -parmrk inpck -istrip -inlcr -igncr -icrnl -ixon -ixoff
+# [2024-10-17 10:21:11] ---
+# [2024-10-17 10:21:11] > werase = ^W; lnext = ^V; discard = ^O; min = 100; time = 2;
+# [2024-10-17 10:21:11] > -parenb -parodd -cmspar cs8 -hupcl -cstopb cread clocal -crtscts
+# [2024-10-17 10:21:11] > -ignbrk brkint ignpar -parmrk -inpck -istrip -inlcr -igncr -icrnl ixon -ixoff
+# [2024-10-17 10:21:11] 9c9
+# [2024-10-17 10:21:11] < -isig -icanon -iexten -echo echoe echok -echonl -noflsh -xcase -tostop -echoprt
+# [2024-10-17 10:21:11] ---
+# [2024-10-17 10:21:11] > -isig -icanon iexten -echo echoe echok -echonl -noflsh -xcase -tostop -echoprt
+
+while true; do ls -1 /dev/ttyS* | xargs -I{} sudo lsof -X {} | ts '[%Y-%m-%d %H:%M:%S]' >> /var/log/serial3.log; sleep 3; done &
+```
 
 ## Reference
 
