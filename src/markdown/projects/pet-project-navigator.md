@@ -17,9 +17,9 @@ I believe that many programmers find writing a small todo list application witho
 
 Let's take an example of grocery shopping, where we do create lists. When I create a list with pen and paper, I know that it has many disadvantages.
 
-I can forget the list at home, right at the place where I left it with the last item written in. In contrary, I will never forget my phone.
+I can forget the list at home, right at the place where I left it with the last item written in. On the contrary, I will never forget my phone.
 I cannot sort items on the paper according to the store's plan.
-Usually I do not bother to take a pen with me, thus I cannot strike out already found items, hence I have to go through the list over and over verifying items in the cart and extracting the remaining. If not removing items, then moving items to the end would provide a workaround for this problem.
+Usually, I do not bother to take a pen with me, thus I cannot strike out already found items, hence I have to go through the list over and over verifying items in the cart and extracting the remaining. If not removing items, then moving items to the end would provide a workaround for this problem.
 
 ![List of tasks](./pet-project-navigator-2.png)
 

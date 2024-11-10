@@ -36,6 +36,15 @@ lastModified: 2023-05-27
 >
 > _PixelCNN++: Improving the PixelCNN with Discretized Logistic Mixture Likelihood and Other Modifications_
 
+
+## Dataset: poses
+
+I incline to small but coherent datasets. This will make every diffusion model precise in their little purposes. Which means I need to work on my dataset. It has already some categories and I will start to train on \<redacted\> [recognition models using GAN](/ai/unsupervised-image-classification-with-gan), but to generate something interesting I need to recognize poses and generate new ones (I saw GAN models can do it). 
+
+
+Pose recognition is very helpful for robots anyway. That’s how they can learn new movements, though their bone and “muscle” structure is different. But maybe they can imitate to some degree.
+
+
 ## Extra
 
 It's possible to get access to TPU v3-8 (similar to 8 V100 GPUs) with [Google TRC program](https://sites.research.google/trc/about/).

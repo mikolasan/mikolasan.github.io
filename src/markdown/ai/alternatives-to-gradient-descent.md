@@ -47,6 +47,10 @@ As mentioned above, *Simulated Annealing, Particle Swarm Optimisation and Geneti
 Source: [1](https://stats.stackexchange.com/questions/97014/what-are-alternatives-of-gradient-descent) [2](https://stackoverflow.com/questions/23554606/what-are-alternatives-of-gradient-descent)
 
 
+## Vityaev's method
+
+Vityaev’s method gives more flexibility to the dendrites part of the system comparing to how they are modeled in perceptrons or any deep network, instead of simple weights per synapses it reacts to signal patterns like in spiking neurons. Moreover, using this framework it’s possible to interpret signal propagation with logic statements and probabilities like in Bayes networks. Thus we have a bigger choice of learning methods. It can be some statistical analysis of data.
+
 ## Extreme Learning
 
 - [official](https://web.njit.edu/~usman/courses/cs675_fall20/ELM-NC-2006.pdf) (?) 

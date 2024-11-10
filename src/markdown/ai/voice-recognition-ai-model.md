@@ -199,3 +199,14 @@ devenv build\whisper.cpp.sln /build
 - [whisper C++](https://github.com/ggerganov/whisper.cpp/tree/master)
 - [faster whisper](https://github.com/guillaumekln/faster-whisper)
 - [whisper playground](https://github.com/saharmor/whisper-playground)
+
+
+## Next gen
+
+I looked into voice recognition models and noticed that they might be not very fast. And when I watched any demonstration of dog robots or other assistants I noticed that when they obtain commands through natural language processing then it’s very noticeable how long it takes for them to process and come out with the response. The pipeline is something like: record a buffer of audio, send to the server, save it on intermediate server in text format, analyze the sentence, wait if it’s not complete, verify if the sentence makes sense by trying to answer it and checking if the answer has a good confidence level or also pass it through moderation or alignment filter, then send this text to another model that can synthesize audio from it, send finally receive audio back on the edge device and play it through speakers. And hope that all these audio streams are sent via a good wifi signal and not GPRS or some other exotic radio format.
+
+But you already know, from experience, that the answer is ready usually before an interlocutor finishes the sentence. Even if it’s “I don’t know” reply. Another nuance is context. If you didn’t follow the conversation and join it only for the last sentence then you will be lost if it is going to be your turn.
+
+The brain is an inference machine. It starts digging in the context from the beginning and it starts predicting in two directions. First, what the interlocutor is going to say next? It helps to recognize speech and aligns our context and makes adjustments if needed. Second, is to construct our relations and comments to the topic based on associations and knowledge that are retrieved from memory.
+
+Then how it should work for making quick responses. No audio-to-text-to-meaning conversion. Skip the text part. There’s an article that says that language is not important for thinking and making decisions. Yes, thoughts work without sound or text. And they work similarly for different languages.
