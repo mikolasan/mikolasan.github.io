@@ -140,3 +140,40 @@ tensor([[[1, 2],
         [[3, 4],
          [7, 8]]])
 ```
+
+Two vectors make a matrix
+
+```python
+# ( 1 ) * (1 0) = [ 1 0
+#   0               0 0 ]
+>>> a = torch.tensor([1,0]).unsqueeze(1)
+>>> torch.mm(a, a.T)
+tensor([[1, 0],
+        [0, 0]])
+```
+
+When for any reason one column (or row) must be copied several times to create a matrix that can be then processed in one go then keep in mind that these are the same
+
+```python
+>>> torch.stack([torch.tensor([1,2,3]) for i in range(2)])
+tensor([[1, 2, 3],
+        [1, 2, 3]])
+>>> torch.tensor([1,2,3]).unsqueeze(0).repeat(2,1)
+tensor([[1, 2, 3],
+        [1, 2, 3]])
+```
+
+The same as these basics
+
+```python
+>>> [2 for i in range(5)]
+[2, 2, 2, 2, 2]
+>>> [2]*5
+[2, 2, 2, 2, 2]
+```
+
+What is a difference between (vector * matrix) and (matrix * \[vector\]T)?
+
+In the case of (vector * matrix), vector is a row and its size must match with the amount of rows in the matrix. The resulting size will be the same as the matrix.
+
+In the case of (matrix * \[vector\]T), vector is a column and its size must match with the amount of columns in the matrix. The resulting size will be the same as the matrix.

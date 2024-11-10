@@ -19,6 +19,7 @@ lastModified: 2022-12-20
 - REINFOCE
 - Dreamer
 - td3
+- Planning ([a practical course from Yandex](https://github.com/yandexdataschool/Practical_RL))
 
 ### Environments
 
