@@ -3,7 +3,9 @@ title: Eco friendly robot
 date: 2023-08-03
 published: 2023-08-03
 lastModified: 2023-08-03
+topic: true
 ---
+
 What eco-friendly robot differs from others?
 
 - Such robots can use renewable or alternative sources of energy, such as solar power, biofuel, or organic matter

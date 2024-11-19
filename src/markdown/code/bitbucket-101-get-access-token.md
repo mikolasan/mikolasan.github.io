@@ -4,6 +4,7 @@ subtitle: Get access token
 date: 2022-07-21
 published: 2022-07-22
 lastModified: 2022-07-22
+quality: good
 ---
 
 How do I obtain an HTTP access token from to work with BitBucket through API? Here is [my answer](https://stackoverflow.com/questions/70393902/how-do-i-obtain-an-http-access-token-from-a-bitbucket-repository-on-bitbucket-cl)

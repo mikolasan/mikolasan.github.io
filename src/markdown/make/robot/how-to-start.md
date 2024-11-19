@@ -5,6 +5,7 @@ subtitle: It all started <a href="/blog/robot-coach">with a tweet</a>
 date: 2022-07-23
 published: 2022-12-20
 lastModified: 2022-12-21
+topic: true
 ---
 
 Design a robot in three easy steps:
@@ -57,12 +58,7 @@ Planning next: [eco-friendly](/make/robot/eco-friendly) robot
  
 ## See also
 
-- [Robot of the World](https://trello.com/b/A1RnF6x5/robots-of-the-world) - my modest encyclopedia, use it for inspiration.
 - If it looks too intimidating, then take a look on Kevin McAleer's video [How to design and make a robot](https://www.youtube.com/watch?v=lKxJUViQsW8) that will show how simple it can be
 - Perception of sensors and actuation of motors reviewed alos from [developmental psychology perspective](/science/developmental-psychology-studies)
 - SmartCar [1](https://www.pcbway.com/project/shareproject/Smartcar___Motors_board.html) [2](https://github.com/rosmo-robot/smartcar_shield#platform)
-- #Tiny4WD on Twiter
 
-![Tiny4WD](./robot/tiny-4wd.jpg)
-
-- [Awesome C++ robotics stuff](https://github.com/fffaraz/awesome-cpp#robotics)
