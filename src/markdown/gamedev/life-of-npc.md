@@ -29,6 +29,7 @@ lastModified: 2024-08-24
   2. https://github.com/alfredbaudisch/GodotDynamicInventorySystem 
   3. https://github.com/peter-kish/gloot/tree/master
 - Object random placing https://github.com/HungryProton/scatter
+- [Main menu template](https://github.com/Maaack/Godot-Menus-Template)
 
 ### Sky
 

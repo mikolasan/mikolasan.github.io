@@ -88,6 +88,10 @@ section {
 }
 
 .left-time-block {
+  border-bottom: 1px solid #ccc;
+  color: #595959;
+  margin: 0 1.5rem 0;
+  display: flex;
   position: relative;
 }
 
@@ -95,11 +99,6 @@ section {
   position: absolute;
   bottom: 1.5rem;
   left: 0rem;
-}
-
-.time-block {
-  font-size: 0.85rem;
-  color: #211a1d;
 }
 
 .mobile-time-block {

@@ -1,10 +1,12 @@
 ---
-title: 
+title: Playing "Legend of the Five Rings"
 date: 2021-07-10
 published: 2021-07-10
 lastModified: 2024-08-31
 ---
+
 ## Our play session
+
 ### Act 1
 
 We’re in medieval Japan investigating the theft of food supplies vital for the village’s survival. We enter a warehouse to look for any clues, but the most skilled detective comes up with absolutely nothing.
@@ -47,7 +49,7 @@ As they stop the last cart, Nonako notices a ninja slipping out of the warehouse
 - https://www.youtube.com/watch?v=CWCcWxlIQJc
 - https://www.youtube.com/watch?v=l-uAVAGI9f0&t=3s
 
-## Miniatures
+### Miniatures
 
 - https://www.nobleknight.com/P/2147342170/Daidoji-Kisu
 - https://www.nobleknight.com/P/1292296870/Crane-Courtier

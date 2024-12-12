@@ -2,7 +2,7 @@
 path: "/board-games"
 date: "2021-06-01"
 title: "Board games"
-section: "projects"
+section: "blog"
 published: 2021-02-11
 lastModified: 2022-05-01
 ---

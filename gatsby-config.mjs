@@ -47,7 +47,7 @@ const config = {
             resolve: "gatsby-remark-external-links",
             options: {
               target: "_blank",
-              rel: "noopener noreferrer"
+              rel: "external nofollow noopener noreferrer"
             }
           },
           {

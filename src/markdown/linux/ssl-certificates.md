@@ -51,4 +51,4 @@ keytool -list -keystore server.jks
 
 Code exaples:
 
-- [Java TCP secure server socket](/code/java-tcp-secure-server-socket)
+- [Java TCP secure server socket](/code/java/java-tcp-secure-server-socket)

@@ -37,4 +37,4 @@ But the result of this network is very noisy tensor with many cells active at th
 
 ## Memory
 
-Memory is done with a [Hopfield network](/ai/hopfield-network)
+Memory is done with a [Hopfield network](/ai/hopfield-networks)

@@ -19,7 +19,7 @@ It should be cute and interactive as japanese toy Tuttuki Bako (ツッツキバ�
 
 # Research
 
-I spend the Autumn of 2022 [trying to figure out](/ai/neuron) what approach I should use for my robots.
+I spend the Autumn of 2022 [trying to figure out](/ai/computational-neuroscience) what approach I should use for my robots.
 
 TODO: result will be concluded <here>
 

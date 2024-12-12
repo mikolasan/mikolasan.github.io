@@ -72,7 +72,7 @@ _Oct 2015 – Feb 2018_
 
 _Oct 2012 – Oct 2015_
 
-- Developed and released [casino games](/idea-generator) for many companies in Russia, USA, Malaysia, Mexico, Argentina.
+- Developed and released [casino games](/slots) for many companies in Russia, USA, Malaysia, Mexico, Argentina.
 - Provided remote installation support of company’s embedded system based on Linux.
 - Designed and coded simulation program for all new and modified games in C.
 - Preparing PAR sheets in Excel and TeX
@@ -96,7 +96,7 @@ _Oct 2012 – Oct 2015_
 ### Frameworks
 
 - Node.js ([pull request](https://github.com/sematext/logagent-js/pull/277) to logagent, here is [the research](/blog/parse-systemd-and-post-in-slack) and [summary](/blog/pull-requests-to-logagent))
-- React ([this website](https://github.com/mikolasan/mikolasan.github.io), [post-cat-o-lyptica](https://postcatolyptica.herokuapp.com/) - web search with [ML elements](/projects/postcatolyptica))
+- React ([this website](https://github.com/mikolasan/mikolasan.github.io), [post-cat-o-lyptica](https://post-cat-olyptica.netlify.app/) - web search with [ML elements](/projects/postcatolyptica))
 - Vue ([site-template](https://github.com/mikolasan/joy-for-paws) for petcare nonprofit organization)
 
 ### CI/CD

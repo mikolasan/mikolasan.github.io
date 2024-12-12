@@ -33,3 +33,8 @@ Components in the system would perceive the world perfectly and look like a cons
 
 - Python cmd and plot visualization https://github.com/mxbi/arckit
 - ARC editor https://arc-editor.lab42.global/
+
+## Papers/results
+
+- https://github.com/zoenguyenramirez/arc-prize-2024/
+- https://www.paulfletcherhill.com/mini-arc.pdf

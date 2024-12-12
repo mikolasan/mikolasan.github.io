@@ -16,7 +16,7 @@ There are many online books about Rust. Here is my top 5:
 2. [Rust by example](https://doc.rust-lang.org/rust-by-example/std/result/question_mark.html) - the same concepts as in The Book but oriented more on practical examples
 3. [Cookbook](https://rust-lang-nursery.github.io/rust-cookbook/file/read-write.html) - about using crates in real life problems, solutions, best practices
 4. [Rustonomicon](https://doc.rust-lang.org/nomicon/send-and-sync.html) - when you are ready for something spicy
-5. [Learning Rust](https://learning-rust.github.io/docs/combinators/) - back to origin
+5. [Learning Rust](https://learning-rust.github.io/docs/overview/) - back to origin
 
 The following books were harder to find but nevertheless their content is golden
 
@@ -41,7 +41,7 @@ You created everything with Rc because it made sense and now you want to work wi
 It's never late to get a grasp on another programming language
 
 One cheesy project pop into my head—I must do it. I believe that it boils down into several small tasks. Think about each of them as solving kata.
-I [opened replit](https://replit.com/@stakanmartini/GithubBrush#src/main.rs) and start experimenting
+I opened replit and started experimenting
 
 At the first day I learned basic types and control flow.
 
@@ -164,7 +164,7 @@ I added the Copy closure type ("+ Copy" after type definition). It helped. But i
 
 ![Iterator in Rust](./rust-iterators-fixed.png)
 
-the tutorial about [the Iterator trait](https://aloso.github.io/2021/03/09/creating-an-iterator) by [@LudwigStecher](https://twitter.com/LudwigStecher). It's written very clear 👏 Though I'm looking forward to [coroutines being implemented](https://doc.rust-lang.org/beta/unstable-book/language-features/generators.html) in Rust
+the tutorial about [the Iterator trait](https://aloso.github.io/2021/03/09/creating-an-iterator) by [@LudwigStecher](https://twitter.com/LudwigStecher). It's written very clear 👏 Though I'm looking forward to _coroutines being implemented_ (I found this in [the unstable book](https://doc.rust-lang.org/beta/unstable-book/) in the section about generators, but because the book is unstable, I cannot give a link to that page) in Rust
 
 
 - https://depth-first.com/articles/2020/06/22/returning-rust-iterators/
