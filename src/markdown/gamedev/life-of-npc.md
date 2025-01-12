@@ -51,6 +51,6 @@ But [this one](https://www.youtube.com/watch?v=iASMFba7GeI) has better explanati
 In Godot 4.
 
 - [this](https://www.youtube.com/watch?v=ReMKWYmifN8) is what I need but it's Godot 3. So before we do that, look at the underlying implementation in [coding adventures](https://www.youtube.com/watch?v=cWpFZbjtSQg&t=0s). This is a [question from Godot forum](https://forum.godotengine.org/t/oblique-near-clipping-plane-for-camera/19388) that describes a port to Godot  And [more examples](https://www.youtube.com/watch?v=hchttF-iN7Y)
-- And [Oblique plane](https://www.terathon.com/lengyel/Lengyel-Oblique.pdf) soon [will be in Godot](https://github.com/godotengine/godot/pull/89140)
+- And [Oblique plane](https://www.terathon.com/lengyel/Lengyel-Oblique.pdf) [proposed for Godot](https://github.com/godotengine/godot-proposals/issues/2713) ([soon will be in version 4.4 or later](https://github.com/godotengine/godot/pull/89140)  or [another approach](https://github.com/godotengine/godot/pull/85529) or [another](https://github.com/godotengine/godot/pull/84454)). So, soon.
 
 And [this] is just a bonus

@@ -16,4 +16,4 @@ After Gary Marcus I also watched Yann Lecun, Elon Musk, Andrew Huberman. I’ve 
 
 And that’s where I started thinking how I would explain the purpose of sleep. What an organism misses when it’s sleep deprived? Are dreams about repeating past experience and “archiving” them in the brain? How do we believe memory works?
 
-What about different rhythms in sleep? Do they “reset” neurons?  And thus, is it an important mechanism that is not even considered by computational biology?
+What about different rhythms in sleep? Do they “reset” neurons? And, if this mechanism is so important, then why is this not even considered by computational biology?

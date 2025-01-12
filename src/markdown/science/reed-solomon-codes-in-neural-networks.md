@@ -6,7 +6,7 @@ lastModified: 2023-10-04
 ---
 
 
-Today I came up with another weird combination. How can I use Reed-Solomon error correction on directed acyclic graph? In another words this graph is somewhat dynamic and some routes can be altered (edges removed), and we nee to update other weights in order to restore the missing path.
+Today I came up with another weird combination. How can I use Reed-Solomon error correction on directed acyclic graph? In another words, this graph is somewhat dynamic and some routes can be altered (edges removed), and we need to update other weights in order to restore the missing path.
 
 For some reason I just like Reed-Solomon codes by their name, it’s the first thing that pops in my mind, but any other fault tolerance methodology should work too.
 
