@@ -54,10 +54,14 @@ main {
 .nav-and-post {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  column-gap: 5rem;
+  margin-right: 5rem;
 }
 
 .nav-and-post main {
   flex-direction: column;
+  margin: unset;
 }
 
 .side-navigation {

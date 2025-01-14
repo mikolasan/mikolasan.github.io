@@ -367,7 +367,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     const sectionNodes = section.nodes;
     for (let j = 0; j < sectionNodes.length; j++) {
       const node = sectionNodes[j];
-      const template = sectionName === `/make/robot` ? postWithNavigationTemplate : postTemplate 
+      const template = sectionName === `/robots` ? postWithNavigationTemplate : postTemplate 
       const next = j === 0 ? null : sectionNodes[j - 1]
       const previous = j === sectionNodes.length - 1 ? null : sectionNodes[j + 1]
       const pageData = nodeToPageData(node, template, previous, next, section.recentArticles)

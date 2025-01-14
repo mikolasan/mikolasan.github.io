@@ -34,6 +34,7 @@
 
   .nav-and-post {
     flex-direction: column-reverse;
+    margin-right: 0;
   }
   
   .main-section {

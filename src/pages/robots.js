@@ -1,13 +1,13 @@
 import React from "react"
-import Layout from "../../components/layout"
-import BlogPreview from "../../components/blogPreview"
-import ScrollSplit from "../../components/scrollSplit"
-import { SEO } from "../../components/seo"
+import Layout from "../components/layout"
+import BlogPreview from "../components/blogPreview"
+import ScrollSplit from "../components/scrollSplit"
+import { SEO } from "../components/seo"
 import { graphql, Link } from "gatsby"
-import { absPathToUrl, formatDate } from "../../nifty"
-import * as styles from "../../components/postList.module.css"
+import { absPathToUrl, formatDate } from "../nifty"
+import * as styles from "../components/postList.module.css"
 
-const BrainModelPage = ({ data }) => {
+const RobotsPage = ({ data }) => {
   const postNodes = data.postNodes.nodes
   const constructorNodes = data.constructorNodes.nodes
   const topicNodes = data.topicNodes.nodes
@@ -110,7 +110,7 @@ const BrainModelPage = ({ data }) => {
   )
 }
 
-export default BrainModelPage
+export default RobotsPage
 
 export const query = graphql`
   query RobotQuery {
@@ -188,7 +188,7 @@ export const Head = ({ location, data, pageContext }) => (
     data={data}
     frontmatter={data?.markdownRemark?.frontmatter}
     pageContext={pageContext}
-    title="Robot"
+    title="Robots"
   >
 
   </SEO>

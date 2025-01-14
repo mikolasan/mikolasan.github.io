@@ -26,3 +26,10 @@
     margin-left: 1.5rem;
   }
 }
+
+@media all and (max-width: 1200px) {
+  .nav-and-post {
+    flex-direction: column-reverse;
+    margin-right: 0;
+  }
+}
