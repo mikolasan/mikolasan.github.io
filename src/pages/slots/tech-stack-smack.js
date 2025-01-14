@@ -16,7 +16,6 @@ class TechStackSmack extends React.Component {
       <Layout
         title="Tech Stack Smack"
         section="slots"
-        crumbs={this.props.pageContext.breadcrumb.crumbs}
       >
         <p>
           You can only pick 5.

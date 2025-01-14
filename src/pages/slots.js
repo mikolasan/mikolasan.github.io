@@ -6,7 +6,6 @@ const Slots = ({ pageContext }) => (
   <Layout
     title="Slots"
     section="slots"
-    crumbs={pageContext.breadcrumb.crumbs}
   >
     <h2>Mathematical models</h2>
     <p>

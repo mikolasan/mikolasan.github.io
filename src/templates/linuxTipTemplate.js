@@ -31,7 +31,6 @@ export default function Template({ data, pageContext }) {
       section={frontmatter.section || section}
       showLikes={pageContext.showLikes}
       slug={pageContext.url}
-      crumbs={pageContext.breadcrumb.crumbs}
       buttonText={frontmatter.buttonText}
       buttonLink={frontmatter.buttonLink}
       secondButtonText={frontmatter.secondButtonText}

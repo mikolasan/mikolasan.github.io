@@ -10,7 +10,6 @@ const Science = ({ data, pageContext }) => (
     mainConf="list" 
     title={pageContext.title}
     section="science"
-    crumbs={pageContext.breadcrumb.crumbs}
   >
     <PostList
       posts={data.allMarkdownRemark.edges}

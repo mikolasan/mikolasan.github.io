@@ -10,7 +10,6 @@ const Ideas = ({ data, pageContext }) => (
     title={pageContext.title}
     section="code"
     subsection="ideas"
-    crumbs={pageContext.breadcrumb.crumbs}
   >
     <p>
       Ready to embark on the journey of app development? 

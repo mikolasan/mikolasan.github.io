@@ -6,7 +6,6 @@ const Credits = ({ pageContext }) => (
   <Layout
     title="Credits"
     section="about"
-    crumbs={pageContext.breadcrumb.crumbs}
     bannerParagraph={[
       <h1>Credits</h1>,
       <p>

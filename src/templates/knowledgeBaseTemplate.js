@@ -1,13 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import DraftAlert from "../components/draftAlert"
-import InProgressAlert from "../components/inProgressAlert"
+import Layout from "../components/layoutNavigation"
 import RedirectAlert from "../components/redirectAlert"
 import PrevNextPagination from "../components/prevNextPagination"
 import { SEO } from "../components/seo"
 
-export default function Template({ data, pageContext }) {
+export default function PostWithNavigationTemplate({ data, pageContext }) {
   const { markdownRemark } = data
   const { frontmatter, html, excerpt, tableOfContents } = markdownRemark
   const url = pageContext.url
@@ -30,25 +28,20 @@ export default function Template({ data, pageContext }) {
 
   return (
     <Layout
+      mainConf="navigation"
       title={frontmatter.title}
+      section={frontmatter.section || section}
+      bannerParagraph={banner}
+
       description={excerpt}
       published={published}
       lastUpdated={lastModified}
-      section={frontmatter.section || section}
       showLikes={pageContext.showLikes}
       slug={pageContext.url}
-      buttonText={frontmatter.buttonText}
-      buttonLink={frontmatter.buttonLink}
-      secondButtonText={frontmatter.secondButtonText}
-      secondButtonLink={frontmatter.secondButtonLink}
       featuredImage={frontmatter.featuredImage}
-      bannerParagraph={banner}
       tableOfContents={tableOfContents}
-      recentArticles={pageContext.recentArticles}
     >
       {pageContext.redirect && <RedirectAlert linkPath={pageContext.redirect} />}
-      {frontmatter.draft && <DraftAlert linkPath={url} />}
-      {frontmatter.developing && <InProgressAlert linkPath={url} />}
       <span 
         itemScope={true}
         itemType="http://schema.org/Article"

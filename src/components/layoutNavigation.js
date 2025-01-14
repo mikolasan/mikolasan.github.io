@@ -10,7 +10,7 @@ import Footer from "./footerBase"
 import Header from "./header"
 import Search from "./allPagesSearch"
 
-class LayoutBase extends React.Component {
+class LayoutNavigation extends React.Component {
   constructor(props) {
     super(props)
     this.errorCallback = this.errorCallback.bind(this)
@@ -54,56 +54,12 @@ class LayoutBase extends React.Component {
   render() {
     const {
       children,
-      title,
-      published,
-      publishedText,
-      lastUpdated,
-      updatedText,
       section,
       subsection,
-      buttonText,
-      buttonLink,
-      secondButtonText,
-      secondButtonLink,
-      featuredImage,
-      bannerParagraph,
       mainConf,
       languageName
     } = this.props
     
-    const imageData = getImage(featuredImage);
-    const imageSrc = getSrc(featuredImage);
-
-    const wideImage = (
-      <FeaturedImage
-        image={imageData}
-        title={title}
-        buttonText={buttonText}
-        buttonLink={buttonLink}
-        secondButtonText={secondButtonText}
-        secondButtonLink={secondButtonLink}
-        published={published}
-        lastUpdated={lastUpdated}
-      >
-        {bannerParagraph}
-      </FeaturedImage>
-    )
-
-    const banner = bannerParagraph && (
-      <Banner
-        buttonText={buttonText}
-        buttonLink={buttonLink}
-        secondButtonText={secondButtonText}
-        secondButtonLink={secondButtonLink}
-        published={published}
-        publishedText={publishedText}
-        lastUpdated={lastUpdated}
-        updatedText={updatedText}
-      >
-        {bannerParagraph}
-      </Banner>
-    ) || ``
-
     const header = (
       <Header
         section={section}
@@ -134,7 +90,6 @@ class LayoutBase extends React.Component {
             <Search />
           </div>
         )}
-        {featuredImage && wideImage || banner}
         <MainBase
           mainConf={mainConf}
           errorCallback={this.errorCallback}
@@ -153,11 +108,11 @@ class LayoutBase extends React.Component {
   }
 }
 
-LayoutBase.propTypes = {
+LayoutNavigation.propTypes = {
   children: PropTypes.node.isRequired,
   languageName: PropTypes.string.isRequired,
   publishedText: PropTypes.string.isRequired,
   updatedText: PropTypes.string.isRequired,
 }
 
-export default LayoutBase
+export default LayoutNavigation

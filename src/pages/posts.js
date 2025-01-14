@@ -6,7 +6,6 @@ const Posts = ({ pageContext }) => (
   <Layout
     title="Posts"
     section=""
-    crumbs={pageContext.breadcrumb.crumbs}
   >
     <div className="ideacards">
       <div className="ideacard">

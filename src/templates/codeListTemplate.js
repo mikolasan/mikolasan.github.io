@@ -10,7 +10,6 @@ const Code = ({ data, pageContext }) => (
     mainConf="list"
     title={pageContext.title}
     section="code"
-    crumbs={pageContext.breadcrumb.crumbs}
   >
     <PostList
       posts={data.allMarkdownRemark.edges}

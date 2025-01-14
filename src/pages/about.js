@@ -10,7 +10,6 @@ const About = ({ pageContext }) => {
     <Layout
       title="About me"
       section="about"
-      crumbs={pageContext.breadcrumb.crumbs}
       bannerParagraph={banner}
     >
 

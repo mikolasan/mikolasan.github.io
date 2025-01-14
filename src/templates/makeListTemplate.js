@@ -10,7 +10,6 @@ const Make = ({ data, pageContext }) => (
     mainConf="list"
     title={pageContext.title}
     section="make"
-    crumbs={pageContext.breadcrumb.crumbs}
   >
     <PostList
       posts={data.allMarkdownRemark.edges}

@@ -31,6 +31,11 @@
     position: sticky;
     top: 0;
   }
+
+  .nav-and-post {
+    flex-direction: column-reverse;
+  }
+  
   .main-section {
     padding: 2.5rem 1rem 4rem;
   }

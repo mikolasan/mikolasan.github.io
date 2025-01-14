@@ -47,7 +47,23 @@ figcaption {
   max-width: 650px;
 }
 
-section {
+main {
+  flex-direction: row;
+}
+
+.nav-and-post {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-and-post main {
+  flex-direction: column;
+}
+
+.side-navigation {
+  min-width: 350px;
+  margin-top: 2rem;
+  padding: 1rem;
 }
 
 .centered {

@@ -16,7 +16,6 @@ class StillLife extends React.Component {
       <Layout
         title="Still Life"
         section="slots"
-        crumbs={this.props.pageContext.breadcrumb.crumbs}
       >
         
         

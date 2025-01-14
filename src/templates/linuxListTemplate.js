@@ -11,7 +11,6 @@ const Linux = ({ data, pageContext }) => (
     title={pageContext.title}
     section="code"
     subsection="linux"
-    crumbs={pageContext.breadcrumb.crumbs}
   >
     <CompactList
       posts={data.allMarkdownRemark.edges}

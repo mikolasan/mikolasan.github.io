@@ -15,7 +15,8 @@ const goodListTemplate = path.resolve(`./src/templates/goodListTemplate.js`)
 const badListTemplate = path.resolve(`./src/templates/badListTemplate.js`)
 const uglyListTemplate = path.resolve(`./src/templates/uglyListTemplate.js`)
 
-const pageTemplate = path.resolve(`./src/templates/blogTemplate.js`)
+const postTemplate = path.resolve(`./src/templates/blogTemplate.js`)
+const postWithNavigationTemplate = path.resolve(`./src/templates/knowledgeBaseTemplate.js`)
 
 const findRedirect = path => redirects.find(r => r.toPath === path)
 
@@ -366,7 +367,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     const sectionNodes = section.nodes;
     for (let j = 0; j < sectionNodes.length; j++) {
       const node = sectionNodes[j];
-      const template = pageTemplate 
+      const template = sectionName === `/make/robot` ? postWithNavigationTemplate : postTemplate 
       const next = j === 0 ? null : sectionNodes[j - 1]
       const previous = j === sectionNodes.length - 1 ? null : sectionNodes[j + 1]
       const pageData = nodeToPageData(node, template, previous, next, section.recentArticles)

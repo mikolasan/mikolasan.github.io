@@ -14,7 +14,6 @@ const BadListTemplate = ({ data, pageContext }) => {
       title={pageContext.title}
       section={pageContext.section}
       subsection={pageContext.subsection}
-      crumbs={pageContext.breadcrumb.crumbs}
       bannerParagraph={banner}
     >
       <PostList

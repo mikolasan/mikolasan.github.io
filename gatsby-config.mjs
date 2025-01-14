@@ -101,7 +101,7 @@ const config = {
       options: {
         name: `markdown-pages`,
         path: `${__dirname}/src/markdown`,
-        ignore: [`**/templates`],
+        ignore: [`**/templates`, `**/panini`],
       },
     },
     {
@@ -128,14 +128,6 @@ const config = {
         display: `standalone`,
         icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
-    },
-    {
-      resolve: `gatsby-plugin-breadcrumb`,
-      options: {
-        useAutoGen: true,
-        autoGenHomeLabel: `    `,
-        trailingSlashes: false,
-      }
     },
     {
       resolve: "gatsby-plugin-sitemap",

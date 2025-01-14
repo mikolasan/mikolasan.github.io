@@ -16,7 +16,6 @@ class TheLastSamurai extends React.Component {
       <Layout
         title="The Last Samurai"
         section="slots"
-        crumbs={this.props.pageContext.breadcrumb.crumbs}
       >
         <p>
           A special symbol populates all reels one by one by crushing them.
