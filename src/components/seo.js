@@ -50,6 +50,9 @@ export const SEO = ({ children, title, path, frontmatter, pageContext }) => {
   if (root) {
     title = siteName
   } else {
+    if (Object.hasOwn(pageContext, "currentPage") && pageContext.currentPage > 1) {
+      title += ` - Page ${pageContext.currentPage}`
+    }
     title += ` - ${siteName}`
   }
 
