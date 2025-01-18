@@ -17,9 +17,9 @@ const RobotsPage = ({ data }) => {
   ]
   return (
     <Layout
-      mainConf="fullscreen"
+      mainConf="navigation"
       title="Robot"
-      section="make"
+      section="robots"
       bannerParagraph={banner}
     >
       <div className="centered">
@@ -116,7 +116,7 @@ export const query = graphql`
   query RobotQuery {
     postNodes: allMarkdownRemark(
       filter: {
-        fileAbsolutePath: { regex: "/markdown\/make\/robot\/(?!encyclopedia)/"},
+        fileAbsolutePath: { regex: "/markdown\/robots\/(?!encyclopedia)/"},
         frontmatter: {
           topic: {ne: true}
           posts: {ne: false}
@@ -150,7 +150,7 @@ export const query = graphql`
     }
     encyclopediaNodes: allMarkdownRemark(
       filter: {
-        fileAbsolutePath: { regex: "/markdown\/make\/robot\/encyclopedia\//"},
+        fileAbsolutePath: { regex: "/markdown\/robots\/encyclopedia\//"},
       }
       sort: {frontmatter: {published: DESC}}
     ) {
@@ -165,7 +165,7 @@ export const query = graphql`
     }
     topicNodes: allMarkdownRemark(
       filter: {
-        fileAbsolutePath: { regex: "/markdown\/make\/robot\//"},
+        fileAbsolutePath: { regex: "/markdown\/robots\//"},
         frontmatter: {topic: {eq: true}}
       }
       sort: {fileAbsolutePath: ASC}

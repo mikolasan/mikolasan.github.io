@@ -10,62 +10,67 @@ const Code = ({ data, pageContext }) => (
     mainConf="list"
     title={pageContext.title}
     section="code"
+    bannerParagraph={pageContext.currentPage > 1 ? [
+      <h1 key="title" id="_name1" itemProp="name">Coding</h1>,
+    ] : undefined}
   >
+    {pageContext.currentPage === 1 && (
+    <>
+      <div className="ideacards">
+        <SectionCard
+          title="Linux"
+          url="/linux"
+        >
+          <p>
+            Custom linux development, carefully crafted commands and bash-fu
+          </p>
+        </SectionCard>
+
+        <SectionCard
+          title="C++"
+          url="/code/cpp"
+        >
+          <p>
+          My collection of C++ language snippets
+          </p>
+        </SectionCard>
+
+        <SectionCard
+          title="Gamedev"
+          url="/gamedev"
+        >
+          <p>
+          My game jam notes and other more serious endeavors in game development
+          </p>
+        </SectionCard>
+
+        <SectionCard
+          title="Projects"
+          url="/projects"
+        >
+          <p>
+          Professional efforts in developing and publishing free and open source products
+          </p>
+        </SectionCard>
+
+        <SectionCard
+          title="Ideas"
+          url="/ideas"
+        >
+          <p>
+          Concepts sitting on the backburner that my ADHD brain keeps spitting out
+          </p>
+        </SectionCard>
+      </div>
+      <div className="list-name">
+        <h1 key="title" id="_name1" itemProp="name">Coding</h1>
+      </div>
+    </>) || ``}
     <PostList
       posts={data.allMarkdownRemark.edges}
       baseUrl="/code"
       pageContext={pageContext}
     />
-    <div className="ideacards">
-      <h2>Topics</h2>
-      <SectionCard
-        title="Linux"
-        url="/linux"
-      >
-        <p>Tips and tricks for Linux users.
-          Something commands carefully crafted, some knowledge found from the first source when no documentation is not available.
-        </p>
-        <p>
-          Also this section is dedicated to custom linux development.
-        </p>
-      </SectionCard>
-
-      <SectionCard
-        title="C++"
-        url="/code/cpp"
-      >
-        <p>
-          Develop skills in C++ language by taking easy questionarries. 
-        </p>
-      </SectionCard>
-
-      <SectionCard
-        title="Gamedev"
-        url="/gamedev"
-      >
-        <p>
-          I dreamed about game developement since school. And now I'm professionally developing games for slot machines.
-        </p>
-      </SectionCard>
-
-      <SectionCard
-        title="Projects"
-        url="/projects"
-      >
-        <p>
-          My coding projects
-        </p>
-      </SectionCard>
-
-      <SectionCard
-        title="Ideas"
-        url="/ideas"
-      >
-        <p>
-          Ideas for new projects. 
-        </p>
-      </SectionCard>
-    </div>
   </Layout>
 )
 

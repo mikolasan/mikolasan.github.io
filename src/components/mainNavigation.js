@@ -77,7 +77,7 @@ const MainNavigation = ({
         className={["centered", "language-" + languageName].join(" ")}
       >
         {featuredImage && wideImage || banner}
-        <div className="left-section">
+        <div className="page-info">
           {timeBlock(published, lastUpdated, "left-time-block")}
           {toc}
         </div>

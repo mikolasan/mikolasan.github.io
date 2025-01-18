@@ -5,7 +5,7 @@ import { SEO } from "../components/seo"
 const Slots = ({ pageContext }) => (
   <Layout
     title="Slots"
-    section="slots"
+    section="code"
   >
     <h2>Mathematical models</h2>
     <p>

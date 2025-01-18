@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "gatsby"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 
-const SectionCard = ({ children, image, altImageText, title, url }) => (
-  <div className="ideacard">
+const SectionCard = ({ children, className, image, altImageText, title, url }) => (
+  <div className={`ideacard ${className}`}>
     {image && (
       <Link to={url}>
         <GatsbyImage

@@ -12,7 +12,7 @@ const Nav = ({ section }) => (
     <Link to="/" { ...(section === "root" && { className: [styles.activelink, styles.toplogo].join(' ') } || { className: styles.toplogo }) }>
       <LogoButton style={styles.toplogo} />
     </Link>
-    <Link to="/make" { ...(section === "make" && { className: styles.activelink }) }>Make</Link>
+    <Link to="/robots" { ...(section === "robots" && { className: styles.activelink }) }>Robots</Link>
     <Link to="/science" { ...(section === "science" && { className: styles.activelink }) }>Science</Link>
     <Link to="/code" { ...(section === "code" && { className: styles.activelink }) }>Coding</Link>
     <Link to="/blog" { ...(section === "blog" && { className: styles.activelink }) }>Blog</Link>

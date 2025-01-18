@@ -9,7 +9,7 @@ const About = ({ pageContext }) => {
   return (
     <Layout
       title="About me"
-      section="about"
+      section="blog"
       bannerParagraph={banner}
     >
 

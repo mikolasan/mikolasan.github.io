@@ -289,7 +289,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       postsPerPage: 18,
       title: `Devlog`,
       regex: "/markdown\/devlog\//",
-      section: "blog",
+      section: "robots",
       subsection: "devlog",
     },
     "/gamedev": {

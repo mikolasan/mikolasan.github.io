@@ -1,5 +1,5 @@
 ---
-section: make
+section: robots
 title: Robot constructor
 date: 2022-12-20
 published: 2022-12-21

@@ -10,23 +10,43 @@ const Science = ({ data, pageContext }) => (
     mainConf="list" 
     title={pageContext.title}
     section="science"
+    bannerParagraph={pageContext.currentPage > 1 ? [
+      <h1 key="title" id="_name1" itemProp="name">{pageContext.title}</h1>,
+    ] : undefined}
   >
+    {pageContext.currentPage === 1 && (
+    <>
+      <div className="ideacards">
+        <SectionCard
+          className="wide-card"
+          title="Artificial Intelligence"
+          url="/ai"
+        >
+          <p>
+            What do you think when you see “AI researcher”? 
+            Probably someone who recently jumped on a bandwagon of LLMs? 
+            Well, that’s is not me.
+            I started to dig into machine learning and data mining at the third year of uni (circa 2009). 
+            This was even before AlexNet.
+            I researched Bayesian networks and very niche Hierarchical Temporal Memory.
+          </p>
+          <p>
+            In this section I present current developments in artificial intelligence, 
+            critical analysis and new ideas
+          </p>
+        </SectionCard>
+      </div>
+      <div className="list-name">
+        <h1 key="title" id="_name1" itemProp="name">{pageContext.title}</h1>
+      </div>  
+    </>) || ``}
+    
     <PostList
       posts={data.allMarkdownRemark.edges}
       baseUrl="/science"
       pageContext={pageContext}
     />
-    <div className="ideacards">
-      <h2>Topics</h2>
-      <SectionCard
-        title="AI"
-        url="/ai"
-      >
-        <p>
-          Research about current development in Artificial Intellegence, crytical analysis and new ideas
-        </p>
-      </SectionCard>
-    </div>
+    
   </Layout>
 )
 

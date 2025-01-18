@@ -1,14 +1,26 @@
 import React from "react"
-import LayoutBase from "./layoutBase";
+import LayoutBase from "./layoutBase"
+import LayoutNavigation from "./layoutNavigation"
 
-const Layout = props => (
-  <LayoutBase
-    {...props}
-    languageName="en"
-    publishedText="Published: "
-    updatedText="Updated: "
-  >
-  </LayoutBase>
-);
-
-export default Layout;
+export default function Layout(props) {
+  switch (props.mainConf) {
+  case "navigation":
+    return (
+      <LayoutNavigation
+        {...props}
+        languageName="en"
+        publishedText="Published: "
+        updatedText="Updated: "
+      />
+    )
+  default:
+    return (
+      <LayoutBase
+        {...props}
+        languageName="en"
+        publishedText="Published: "
+        updatedText="Updated: "
+      />
+    )
+  }
+}

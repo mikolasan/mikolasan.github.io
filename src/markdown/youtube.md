@@ -3,6 +3,7 @@ title: My YouTube channel
 date: 2020-09-19
 published: 2021-02-11
 lastModified: 2023-06-21
+section: blog
 ---
 
 [My channel](https://www.youtube.com/channel/UC7JDwFPt-Wu_rMB4-g-ePug) has 4 subscribers right now 🤠 Though I have 82 on another [Russian oriented channel](https://www.youtube.com/user/stakanmartini). I'm not consistent with my content and I assume those 82 people are crazy 😆 Or maybe because with social networks I mainly helping to my wife.
