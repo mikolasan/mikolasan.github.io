@@ -173,7 +173,6 @@ export const Head = ({ location, params, data, pageContext }) => {
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"></link>
 
       {/* Text */}
-      <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet"></link>
       <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet"></link>
 
       {/* Titles */}

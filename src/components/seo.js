@@ -127,7 +127,6 @@ export const SEO = ({ children, title, path, frontmatter, pageContext }) => {
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"></link>
 
       <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;700&display=swap" rel="stylesheet" />
-      <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet"></link>
       
       {/* Text */}
       <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet"></link>
@@ -135,14 +134,6 @@ export const SEO = ({ children, title, path, frontmatter, pageContext }) => {
       {/* Titles */}
       <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap" rel="stylesheet"></link>
       <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&display=swap" rel="stylesheet"></link>
-   
-
-      {/* Text */}
-      <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"></link>
-      <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet"></link>
-      
-      {/* Titles */}
-      <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet"></link>
          
       {children}
     </>
