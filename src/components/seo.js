@@ -80,6 +80,8 @@ export const SEO = ({ children, title, path, frontmatter, pageContext }) => {
     { name: `twitter:title`, content: title },
     { name: `twitter:description`, content: description },
     { name: `twitter:image`, content: image },
+
+    { name: `fediverse:creator`, content: `@mikolasan@mastodon.social` },
   ]
 
   if (pagination) {

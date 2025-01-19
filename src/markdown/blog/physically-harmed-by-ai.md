@@ -1,6 +1,6 @@
 ---
 title: Physically harmed by AI
-date: 2024-11-09
+date: 2023-11-20
 published: 2024-11-09
 lastModified: 2024-11-09
 ---
