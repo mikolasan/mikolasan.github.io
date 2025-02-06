@@ -53,4 +53,30 @@ In Godot 4.
 - [this](https://www.youtube.com/watch?v=ReMKWYmifN8) is what I need but it's Godot 3. So before we do that, look at the underlying implementation in [coding adventures](https://www.youtube.com/watch?v=cWpFZbjtSQg&t=0s). This is a [question from Godot forum](https://forum.godotengine.org/t/oblique-near-clipping-plane-for-camera/19388) that describes a port to Godot  And [more examples](https://www.youtube.com/watch?v=hchttF-iN7Y)
 - And [Oblique plane](https://www.terathon.com/lengyel/Lengyel-Oblique.pdf) [proposed for Godot](https://github.com/godotengine/godot-proposals/issues/2713) ([soon will be in version 4.4 or later](https://github.com/godotengine/godot/pull/89140)  or [another approach](https://github.com/godotengine/godot/pull/85529) or [another](https://github.com/godotengine/godot/pull/84454)). So, soon.
 
-And [this] is just a bonus
+And [this] is just a bonus.
+
+So, I chose the one from [Lyuma](https://github.com/godotengine/godot/compare/master...V-Sekai:godot:override_projection_4.2). To carry it on you need to apply two commits
+
+```
+Commit 18e21e3
+Lyuma <xn.lyuma@gmail.com>
+Permit overriding the projection matrix passed to shaders without affecting culling logic.
+```
+
+and a fix for godot >= 4.3
+
+```
+Commit d7d6e385c271
+majikayogames <152851004+majikayogames@users.noreply.github.com>
+reverse z fix
+```
+
+So 
+
+```
+scons -c
+git checkout -b 4.4-beta-portals 4ce466d7fa7
+git cherry-pick 18e21e3
+git cherry-pick d7d6e385c271
+scons platform=windows
+```

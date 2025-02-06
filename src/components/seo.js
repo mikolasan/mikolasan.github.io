@@ -3,7 +3,6 @@ import { removeHtmlExtension, removeTrailingSlash } from "../nifty"
 
 const siteUrl = `https://neupokoev.xyz`
 const siteDescription = `Magazine, blog and knowledge base for embedded engineers, game developers and geeks`
-const siteImageUrl = `https://neupokoev.xyz/images/preview.jpg`
 const siteImageAlt = `A pink printed circuit board (PCB) design made in Autodesk Fusion 360.
 The board looks like an Arduino shield with some connectors on it. 
 The board is designed for connecting DC motors and sensors to Arduino board.`
@@ -17,7 +16,8 @@ export const SEO = ({ children, title, path, frontmatter, pageContext }) => {
   const sourceMarkdown = !!frontmatter // other source - JS pages
 
   let description = siteDescription
-  let image = siteImageUrl
+  // let image = siteImageUrl
+  let image = Object.hasOwn(frontmatter, "socialcard") ? frontmatter.socialcard : defaultImage
   let imageAlt = siteImageAlt
   // from blog template
   if (pagination) {
@@ -25,7 +25,7 @@ export const SEO = ({ children, title, path, frontmatter, pageContext }) => {
   } else if (sourceMarkdown) {
     title = frontmatter.title
     description = frontmatter.description || `TODO: add description for this article`
-    image = frontmatter.featuredImage || defaultImage
+    image = Object.hasOwn(frontmatter, "socialcard") ? frontmatter.socialcard : defaultImage
     imageAlt = frontmatter.featuredImageAlt || defaultImageAlt
   }
 

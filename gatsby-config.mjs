@@ -291,6 +291,17 @@ const config = {
         ],
       },
     },
+    {
+      resolve: "gatsby-plugin-social-cards",
+      options: {
+        // image to use when no cover in frontmatter
+        backgroundImage: "./static/preview/default.jpg",
+        // author to use when no auth in frontmatter
+        defaultAuthor: "Nikolay",
+        // card design
+        design: "default", // 'default' or 'card'
+      },
+    },
   ]
 }
 
