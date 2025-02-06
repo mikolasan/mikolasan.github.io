@@ -1,0 +1,62 @@
+input:
+   journal-upload:
+    module: input-journald-upload
+    port: 9090
+    worker: 0
+    systemdUnitFilter: 
+      include: !!js/regexp /my-python-project/i
+    removeFields:
+      - __CURSOR
+      - _TRANSPORT
+      - _BOOT_ID
+      - _UID
+      - _GID
+      - _CAP_EFFECTIVE
+      - _MACHINE_ID
+      - _HOSTNAME
+      - _SYSTEMD_SLICE
+      - _STREAM_ID
+      - _PID
+      - _COMM
+      - _EXE
+      - _CMDLINE
+      - _SYSTEMD_CGROUP
+      - _SYSTEMD_INVOCATION_ID
+      - SYSLOG_FACILITY
+      - PRIORITY
+      - SYSLOG_IDENTIFIER
+
+outputFilter:
+  remove-fields:
+    module: remove-fields
+    matchSource: !!js/regexp .*
+    fields:
+      - _systemd_unit
+  dropEvents:
+    module: drop-events
+    debug: false
+    filters:
+      message: 
+        exclude: !!js/regexp /bad/
+
+output: 
+  stdout: yaml
+  slack:
+    debug: false
+    module: slack-webhook
+    url: https://hooks.slack.com/services/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
+    transform: !!js/function >
+      function (context, data, config) {
+        if (data.__realtime_timestamp) {
+          data.__realtime_timestamp = Math.ceil(data.__realtime_timestamp / 1000000)
+        }
+        return data
+      }
+    format: template
+    template: '<!date^{__realtime_timestamp}^{{date}} {{time_secs}}|date not processed> : {message}'
+    payload:
+      blocks:
+        - type: section
+          text:
+            type: mrkdwn
+            text: ''
