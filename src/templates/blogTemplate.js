@@ -90,7 +90,6 @@ export const pageQuery = graphql`
         buttonLink
         secondButtonText
         secondButtonLink
-        socialcard
         featuredImage {
           publicURL
           childImageSharp {

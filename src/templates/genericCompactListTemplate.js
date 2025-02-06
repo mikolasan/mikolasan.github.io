@@ -28,7 +28,7 @@ const ListTemplate = ({ data, pageContext }) => {
 export default ListTemplate
 
 export const query = graphql`
-  query blogListQuery($skip: Int!, $limit: Int!, $regex: String!) {
+  query CompactListQuery($skip: Int!, $limit: Int!, $regex: String!) {
     allMarkdownRemark(
       limit: $limit,
       skip: $skip,

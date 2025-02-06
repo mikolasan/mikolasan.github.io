@@ -61,7 +61,7 @@ export default function PostWithNavigationTemplate({ data, pageContext }) {
 }
 
 export const pageQuery = graphql`
-  query blogQuery($absolutePath: String!) {
+  query KnowledgeBaseQuery($absolutePath: String!) {
     markdownRemark(fileAbsolutePath: { eq: $absolutePath }) {
       html
       excerpt

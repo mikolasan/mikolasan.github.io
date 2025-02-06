@@ -17,7 +17,7 @@ export const SEO = ({ children, title, path, frontmatter, pageContext }) => {
 
   let description = siteDescription
   // let image = siteImageUrl
-  let image = Object.hasOwn(frontmatter, "socialcard") ? frontmatter.socialcard : defaultImage
+  let image = sourceMarkdown && Object.hasOwn(frontmatter, "socialcard") ? frontmatter.socialcard : defaultImage
   let imageAlt = siteImageAlt
   // from blog template
   if (pagination) {
@@ -75,11 +75,12 @@ export const SEO = ({ children, title, path, frontmatter, pageContext }) => {
     // Though Twitter’s parser will fall back to using `property` and `content`
     // https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/getting-started
     { name: `twitter:creator`, content: `@mikolasan` },
-    { name: `twitter:card`, content: `summary_large_image` },
+    { name: `twitter:card`, content: image ? `summary_large_image` : `summary` },
     { name: `twitter:url`, content: canonicalUrl },
     { name: `twitter:title`, content: title },
     { name: `twitter:description`, content: description },
     { name: `twitter:image`, content: image },
+    { name: `twitter:image:alt`, content: imageAlt },
 
     { name: `fediverse:creator`, content: `@mikolasan@mastodon.social` },
   ]
