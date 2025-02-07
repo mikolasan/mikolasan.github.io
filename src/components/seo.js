@@ -17,7 +17,7 @@ export const SEO = ({ children, path, data, frontmatter, pageContext, title }) =
   // const frontmatter = data?.markdownRemark?.frontmatter
   const socialCard = data?.markdownRemark?.fields?.socialcard
   let description = siteDescription
-  let image = socialCard || defaultImage
+  let image = !!socialCard ? `${siteUrl}/${socialCard}` : defaultImage
   let imageAlt = siteImageAlt
   // from blog template
   if (pagination) {
@@ -32,6 +32,7 @@ export const SEO = ({ children, path, data, frontmatter, pageContext, title }) =
   let siteName = `K Robot Lab`
   let rootTitle = `Robots, science, gamedev`
   let author = `Nikolay Neupokoev`
+  
   if (lang === `ru`) {
     root = removeTrailingSlash(removeHtmlExtension(path)) === "/ru"
     siteName = `Лаборатория Н`
