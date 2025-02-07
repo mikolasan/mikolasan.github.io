@@ -77,6 +77,9 @@ export const pageQuery = graphql`
         pathToSlugField: "fields.slug"
         maxDepth: 3
       )
+      fields {
+        socialcard
+      }
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         published(formatString: "MMMM DD, YYYY")

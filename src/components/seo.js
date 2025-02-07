@@ -9,15 +9,15 @@ The board is designed for connecting DC motors and sensors to Arduino board.`
 const defaultImage = `https://neupokoev.xyz/images/image-7.jpg`
 const defaultImageAlt = `Probably no text description for this placeholder picture, but I will work on that`
 
-export const SEO = ({ children, title, path, frontmatter, pageContext }) => {
+export const SEO = ({ children, path, data, frontmatter, pageContext, title }) => {
   const metaType = `website`
   const lang = path.startsWith("/ru") ? "ru" : "en"
   const pagination = !!pageContext?.baseUrl // noindex, canonical to main
   const sourceMarkdown = !!frontmatter // other source - JS pages
-
+  // const frontmatter = data?.markdownRemark?.frontmatter
+  const socialCard = data?.markdownRemark?.fields?.socialcard
   let description = siteDescription
-  // let image = siteImageUrl
-  let image = sourceMarkdown && Object.hasOwn(frontmatter, "socialcard") ? frontmatter.socialcard : defaultImage
+  let image = socialCard || defaultImage
   let imageAlt = siteImageAlt
   // from blog template
   if (pagination) {
@@ -25,7 +25,6 @@ export const SEO = ({ children, title, path, frontmatter, pageContext }) => {
   } else if (sourceMarkdown) {
     title = frontmatter.title
     description = frontmatter.description || `TODO: add description for this article`
-    image = Object.hasOwn(frontmatter, "socialcard") ? frontmatter.socialcard : defaultImage
     imageAlt = frontmatter.featuredImageAlt || defaultImageAlt
   }
 
