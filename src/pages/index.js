@@ -73,7 +73,7 @@ export default function Index({ pageContext }) {
   return (
     <Layout
       mainConf="fullscreen"
-      title="Robots, science, gamedev"
+      title="November 2024, Issue 6"
       section="root"
       recentArticles={pageContext.recentArticles}
     >

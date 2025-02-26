@@ -29,14 +29,12 @@ export const SEO = ({ children, path, data, frontmatter, pageContext, title }) =
   }
 
   let root = removeHtmlExtension(path) === "/"
-  let siteName = `K Robot Lab`
-  let rootTitle = `Robots, science, gamedev`
+  let siteName = `N: Robots Science Gamedev`
   let author = `Nikolay Neupokoev`
   
   if (lang === `ru`) {
     root = removeTrailingSlash(removeHtmlExtension(path)) === "/ru"
     siteName = `Лаборатория Н`
-    rootTitle = `Наука, мастерская, девлог`
     author = `Николай Неупокоев`
   }
   
