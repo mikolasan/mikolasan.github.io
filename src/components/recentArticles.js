@@ -20,7 +20,7 @@ const RecentArticles = ({ nodes, section, subsection }) => {
         ))}
       </div>
     </aside>
-  ) || <div></div>
+  ) || ``
 }
 
 export default RecentArticles

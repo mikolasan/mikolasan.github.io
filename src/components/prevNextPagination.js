@@ -4,6 +4,9 @@ import { absPathToUrl } from "../nifty"
 import * as styles from "./prevNextPagination.module.css"
 
 const PrevNextPagination = ({ prevPage, nextPage, currentPagePath }) => {
+  if (!prevPage && !nextPage) {
+    return ``
+  }
   const re = new RegExp(/\/(.*)\//s);
   const match = currentPagePath.match(re);
   const currentSection = match && match[1] || ``;

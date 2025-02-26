@@ -29,7 +29,7 @@ export const SEO = ({ children, path, data, frontmatter, pageContext, title }) =
   }
 
   let root = removeHtmlExtension(path) === "/"
-  let siteName = `N: Robots Science Gamedev`
+  let siteName = `N | Robots Science Gamedev`
   let author = `Nikolay Neupokoev`
   
   if (lang === `ru`) {
@@ -45,14 +45,10 @@ export const SEO = ({ children, path, data, frontmatter, pageContext, title }) =
     url = `${siteUrl}${path}`
   }
 
-  if (root) {
-    title = siteName
-  } else {
-    if (Object.hasOwn(pageContext, "currentPage") && pageContext.currentPage > 1) {
-      title += ` - Page ${pageContext.currentPage}`
-    }
-    title += ` - ${siteName}`
+  if (Object.hasOwn(pageContext, "currentPage") && pageContext.currentPage > 1) {
+    title += ` - Page ${pageContext.currentPage}`
   }
+  title += ` - ${siteName}`
 
   const canonicalUrl = removeTrailingSlash(removeHtmlExtension(url))
   

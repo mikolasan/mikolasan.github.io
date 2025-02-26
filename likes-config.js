@@ -1,13 +1,11 @@
 module.exports = {
   excludePath: [
     "/",
-    "/ideas",
-    "/projects",
-    "/science",
-    "/idea-generator",
+    "/youtube",
     "/cv",
     "/about",
-    "/ru/privacy",
-    "/ru/terms"
+    "/terms-and-conditions",
+    "/privacy",
+    "/projects/imperial-russia/privacy-policy",
   ]
 }

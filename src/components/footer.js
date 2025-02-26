@@ -92,6 +92,8 @@ const Footer = () => {
         </div>
       </div>
       <div className="copyright">
+        <p className="license_right"><a href="/terms-and-conditions">Terms and Conditions</a> | <a href="/privacy">Privacy Policy</a></p>
+
         <p>This web site utilizes a privacy-friendly analytics system <a 
           href="https://umami.is/docs/cloud"
           target="_blank" rel="external nofollow noopener noreferrer">Umami</a>

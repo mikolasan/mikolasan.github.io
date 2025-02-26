@@ -1,12 +1,14 @@
 ---
 path: "/projects/imperial-russia/privacy-policy"
 date: "2020-04-26"
+subtitle: Forgotten Standards
 title: Privacy Policy
 published: 2021-10-13
-lastModified: 2021-10-13
+lastModified: 2025-02-25
+excludeFromLists: true
 ---
 
-Saturday's Code ("We", "Our", "Us") built the Imperial Russia app as an Open Source app. This SERVICE is provided by Saturday's Code at no cost and is intended for use as is.
+Saturday's Code ("We", "Our", "Us") built the Forgotten Standards (formerly known as Imperial Russia) app as an Open Source app. This SERVICE is provided by Saturday's Code at no cost and is intended for use as is.
 
 This page is used to inform visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decided to use our Service.
 
@@ -18,7 +20,7 @@ We do NOT collect any data. The Service itself does not collect, transmit, or ma
 
 We may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page.
 
-This policy is effective as of 2020-04-26.
+This policy is effective as of 2025-02-25.
 
 ## Contact Us
 

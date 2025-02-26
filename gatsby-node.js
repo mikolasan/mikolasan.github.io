@@ -191,6 +191,7 @@ const queryAll = async graphql => {
 const nodeToPageData = (node, template, previous, next, recentArticles) => {
   const path = nifty.absPathToUrl(node.fileAbsolutePath)
   const showLikes = likesConfig.excludePath.find(p => p === path) === undefined
+  const articlesList = showLikes && recentArticles
   return {
     path: path,
     component: template,
@@ -200,7 +201,7 @@ const nodeToPageData = (node, template, previous, next, recentArticles) => {
       url: path,
       next,
       previous,
-      recentArticles: recentArticles
+      recentArticles: articlesList
     },
   }
 }
@@ -259,6 +260,27 @@ const groupBySections = nodes => {
     }
   }
   return sections
+}
+
+const extractExcluded = nodes => {
+  let i = 0;
+  let length = nodes.length;
+  const excluded = [];
+  while (i < length) {
+    const node = nodes[i];
+    if (node.frontmatter.excludeFromLists === true) {
+      const path = nifty.absPathToUrl(node.fileAbsolutePath);
+      console.log(`Excluded node: ${path}`);
+      excluded.push(node);
+      
+      nodes.splice(i, 1);
+      length--;
+      // index `i` stays the same
+    } else {
+      i++;
+    }
+  }
+  return excluded;
 }
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
@@ -358,6 +380,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   const allNodes = result.data.allMarkdownRemark.nodes
+  const excludedNodes = extractExcluded(allNodes) // `allNodes` will be updated in-place
+  for (let i = 0; i < excludedNodes.length; i++) {
+    const node = excludedNodes[i];
+    const pageData = nodeToPageData(node, postTemplate, null, null, null)
+    createPage(pageData)
+  }
+
   const sections = groupBySections(allNodes)
   const keys = Object.keys(sections)
   keys.sort()

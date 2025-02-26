@@ -73,7 +73,6 @@ export default function Index({ pageContext }) {
   return (
     <Layout
       mainConf="fullscreen"
-      title="November 2024, Issue 6"
       section="root"
       recentArticles={pageContext.recentArticles}
     >
@@ -88,7 +87,7 @@ export const Head = ({ location, data, pageContext }) => (
     data={data}
     frontmatter={data?.markdownRemark?.frontmatter}
     pageContext={pageContext}
-    title="AI"
+    title="November 2024, Issue 6"
   >
 
   </SEO>
