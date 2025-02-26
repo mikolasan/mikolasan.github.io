@@ -205,6 +205,25 @@ But what we need now is to press on three lines after any track in that playlist
 
 Now on the left top bar the second button must be the Music Collection. Again by pressing on three lines after any track will open a dropdown that can be applied to all tracks, select "Download All YouTube Tracks".
 
+### From Yandex
+
+I found that the best way will be [a standalone tool](https://github.com/llistochek/yandex-music-downloader)
+
+```
+conda create --name music
+conda activate music
+conda install pip
+pip install https://github.com/llistochek/yandex-music-downloader/archive/main.zip
+yandex-music-downloader --help
+```
+
+There are some [tricks how to get a token](https://github.com/MarshalX/yandex-music-api/discussions/513), but once you get that use it like this:
+
+```
+yandex-music-downloader --token "<token>" --quality 1 --delay 3 --url https://music.yandex.ru/users/<user>/playlists/<playlist_id>
+```
+
+
 ## Snapcast
 
 Now it's time to play our collection. We are not going to play music on Raspberry Pi (which is possible through the audio jack or HDMI) but instead we will be playing _from_ Raspberry Pi by streaming in home network.

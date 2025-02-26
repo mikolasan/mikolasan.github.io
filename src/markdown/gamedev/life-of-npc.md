@@ -80,3 +80,14 @@ git cherry-pick 18e21e3
 git cherry-pick d7d6e385c271
 scons platform=windows
 ```
+
+
+## Pseudo relief
+
+- https://3dmodels.org/blog/normal-maps-in-blender-guide/
+- https://easy-peasy.ai/ai-image-generator/images/medieval-fantasy-cooper-coin-unique
+- https://docs.blender.org/manual/en/3.3/render/shader_nodes/vector/normal_map.html
+- https://docs.gimp.org/2.10/en/gimp-filter-normal-map.html
+- https://www.youtube.com/shorts/Lk1XlO_Df3M
+- https://3dmodels.org/blog/displacement-maps-in-blender-tutorial/
+

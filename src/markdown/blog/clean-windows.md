@@ -3,7 +3,7 @@ path: /blog/clean-windows
 date: 2020-09-23
 title: Clean Windows
 published: 2021-03-27
-lastModified: 2021-10-14
+lastModified: 2025-02-24
 ---
 
 ## Services I disabled
@@ -73,3 +73,7 @@ Does my laptop need a special dolby audio software that has no controls in its c
 - https://www.cvedetails.com/cve/CVE-2017-7293/
 - https://www.exploit-db.com/exploits/41933
 - https://github.com/tyranid/ExploitDotNetDCOM
+
+## compattelrunner
+
+I think it's _the thing_ that kicks off the fans once in a while when your computer sits idle. [Disable it](https://superuser.com/questions/1613932/how-to-disable-compattelrunner-exe-microsoft-compatibility-telemetry) because it's just spying on you.
