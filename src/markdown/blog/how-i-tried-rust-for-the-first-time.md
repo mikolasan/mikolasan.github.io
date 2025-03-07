@@ -166,6 +166,106 @@ I added the Copy closure type ("+ Copy" after type definition). It helped. But i
 
 the tutorial about [the Iterator trait](https://aloso.github.io/2021/03/09/creating-an-iterator) by [@LudwigStecher](https://twitter.com/LudwigStecher). It's written very clear 👏 Though I'm looking forward to _coroutines being implemented_ (I found this in [the unstable book](https://doc.rust-lang.org/beta/unstable-book/) in the section about generators, but because the book is unstable, I cannot give a link to that page) in Rust
 
+```rust
+use std::mem;
+
+enum Node<Item> {
+  Leaf(Item),
+  Children(Vec<Node<Item>>),
+}
+
+struct NodeIter<'a, It> {
+  children: &'a [Node<It>],
+  parent: Option<Box<NodeIter<'a, It>>>,
+}
+
+impl<It> Node<It> {
+  // fn traverse(&self, f: impl Fn(&It) + Copy) {
+  fn traverse<F>(&self, f: F) where
+    F: Fn(&It) + Copy {
+    match self {
+      Node::Leaf(item) => {
+        f(item);
+      },
+      Node::Children(children) => {
+        for node in children {
+          node.traverse(f);
+        }
+      }
+    }
+  }
+  fn iter(&self) -> NodeIter<'_, It> {
+    NodeIter {
+      children: std::slice::from_ref(self),
+      parent: None,
+    }
+  }
+}
+
+impl<It> Default for NodeIter<'_, It> {
+  fn default() -> Self {
+    NodeIter { children: &[], parent: None }
+  }
+}
+
+impl<'a, It> Iterator for NodeIter<'a, It> {
+  type Item = &'a It;
+
+  fn next(&mut self) -> Option<Self::Item> {
+    match self.children.get(0) {
+      None => match self.parent.take() {
+        Some(parent) => {
+          // continue with the parent node
+          *self = *parent;
+          self.next()
+        }
+        None => None,
+      },
+      Some(Node::Leaf(item)) => {
+        self.children = &self.children[1..];
+        Some(item)
+      }
+      Some(Node::Children(children)) => {
+        self.children = &self.children[1..];
+
+        // start iterating the child trees
+        *self = NodeIter {
+          children: children.as_slice(),
+          parent: Some(Box::new(mem::take(self))),
+        };
+        self.next()
+      }
+    }
+  }
+}
+
+fn main() {
+  let tree = Node::Children(vec![
+    Node::Leaf(5),
+    Node::Leaf(4),
+    Node::Children(vec![
+      Node::Leaf(3),
+      Node::Leaf(2),
+      Node::Children(vec![]),
+    ]),
+    Node::Children(vec![
+      Node::Children(vec![
+        Node::Children(vec![Node::Leaf(1)]),
+        Node::Leaf(0),
+      ]),
+    ]),
+  ]);
+
+  // let printer = |digit: &usize| {
+  //   println!("{}", digit);
+  // };
+  // tree.traverse(printer);
+
+  for i in tree.iter() {
+    println!("{}", i);
+  }
+}
+```
 
 - https://depth-first.com/articles/2020/06/22/returning-rust-iterators/
 - https://docs.github.com/en/developers/apps/building-oauth-apps/authorizing-oauth-apps#device-flow
