@@ -3,6 +3,7 @@ module.exports = {
     "/",
     "/youtube",
     "/cv",
+    "/cover-letter",
     "/about",
     "/terms-and-conditions",
     "/privacy",

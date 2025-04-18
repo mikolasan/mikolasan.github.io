@@ -11,7 +11,7 @@ tags: ["github", "git", "bitbucket", "gitcommands"]
 
 ```bash
 git config --global user.name "Nikolay Neupokoev"
-git config --global user.email "mikolasan@twitter.com"
+git config --global user.email "amazing-coder@neupokoev.xyz"
 ```
 
 ```bash

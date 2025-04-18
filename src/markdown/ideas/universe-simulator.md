@@ -32,6 +32,10 @@ This was originally written by a PHD from Denmark - John Olsson
 
 ![texture in godot](./fractal-world-map-generator.png)
 
+Somewhat related (but really awesome) websites
+
+- [Ancient Earth Globe](https://dinosaurpictures.org/ancient-earth#66)
+- [How The World Might Look in the Future](https://www.lakepowell.net/sciencecenter/future.htm) by Paleontological Science Center
 
 ## Shaders
 

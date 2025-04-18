@@ -21,6 +21,14 @@ There is also a biologically plausible system based on Anokhin’s theory of fun
 Components in the system would perceive the world perfectly and look like a conscious entity but no one can prove if it is really conscious or only imitating. This is a reference to David Chalmers’s thought experiment about zombies (p-zombies).
 ## The challenge
 
+Data is [here](https://github.com/fchollet/ARC-AGI).
+
+For a neural network, when inference improvements are finished on one image, you verify it on other images. Or most likely next training samples will be used for formulating the transformation properly. For the ARC challenge there should be a network that can recognize a space of one color surrounded by a line or other shape of another color. Network of 5 neurons should be sufficient. It would be similar to RNN, it starts from one point, follows the edge until it finds if it breaks or connect with the starting point. There should be an external network that waits an answer. But how do we make a question? (Another side question: Why such network would exist?)
+
+I think the question should appear after comparing input and output and trying to transform them pixel by pixel, where every step or a group of steps describe specific transformation. All steps in transformation we will call _a question about the current task_. Then this _question_ will find or create networks for transformation and they will be applied to the test data.
+
+The network will be applying transformations if it understand them. There will be a unique network for every transformation. They will be like heads in multi-head attention: input goes to all networks then they apply transformation and produce some output. Then we compare networks' output to the expected output and mark the best transformation network for further fine tuning.
+
 ### Helpful links
 
 - Someone's notes about ARC https://github.com/neoneye/arc-notes/tree/main/awesome
@@ -38,3 +46,4 @@ Components in the system would perceive the world perfectly and look like a cons
 
 - https://github.com/zoenguyenramirez/arc-prize-2024/
 - https://www.paulfletcherhill.com/mini-arc.pdf
+

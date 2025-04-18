@@ -12,7 +12,7 @@ Here is my template for a cover letter that consists of 5 main parts: intro para
 
 ### Intro paragraph
 
-I am a full-time developer, once a year traveler and a snob ever since I registered on Instagram. I have a postgraduate degree in Applied Mathematics and Computer Science. With its help I do what I do for a living. But besides that I passionate in game development and irrational exploitation of computers.
+<...>
 
 
 ### Body paragraph
