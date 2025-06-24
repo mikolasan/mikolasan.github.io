@@ -48,3 +48,10 @@ pip install jupyterthemes  jt -l  jt -t theme-name
 - [replit](https://replit.com)
 - [Google Colab](https://colab.research.google.com/)
 - [kaggle](https://www.kaggle.com/)
+
+
+## Tips
+
+- Organize code in classes. Class works as a namespace for variables and functions. This way many parameters can be saved locally in objects and you can compare between different iterations still sitting in memory. But be careful, because there are [no objects in Python](/blog/why-do-i-hate-python)
+- If objects instantiate the same class then functions of the class can be overridden which means all objects will use the new version. This replacement can be temporary.
+- Functions help repeat multiple actions by writing one line

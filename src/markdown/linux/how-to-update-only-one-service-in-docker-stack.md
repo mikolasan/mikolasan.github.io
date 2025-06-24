@@ -21,7 +21,7 @@ services:
     ports:
       - "8080:8080"
   db:
-    image: postgres:14
+    image: postgres:17
     environment:
       POSTGRES_DB: mydatabase
       POSTGRES_USER: myuser
@@ -47,6 +47,13 @@ After building a new image (or pulling it from the registry) you can update only
 docker service update --force --update-parallelism 1 --update-delay 5s my_stack_app1
 ```
 
+But if you only need to add an environment variable
+
+```bash
+docker service update --env-add ALLOWED_HOSTS=mastodon my_stack_app1
+# and verify that it's there
+docker service inspect --format "{{ .Spec.TaskTemplate.ContainerSpec.Env }}" my_stack_app1
+```
 ## About logs
 
 Check logs like this

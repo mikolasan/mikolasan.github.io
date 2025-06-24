@@ -1,10 +1,13 @@
 ---
 date: 2023-04-11
 title: Pixelate images with CycleGAN
-draft: true
 published: 2023-04-11
 lastModified: 2023-04-11
+tags:
+  - autoencoder
 ---
+
+## ⚠️ Work in progress ⚠️
 
 
 ## Load images

@@ -206,14 +206,14 @@ Reference:
 - https://help.gnome.org/admin/system-admin-guide/stable/login-automatic.html.en
 
 
-### No display manager (wip)
+### No display manager
 
 Let’s try to use a systemd service for starting Xorg
 
 - [start X server on login](https://unix.stackexchange.com/questions/437809/start-x-server-on-login-with-systemd)
 - [startx and systemd](https://vincent.bernat.ch/en/blog/2021-startx-systemd)
 - [systemd on arch wiki](https://wiki.archlinux.org/title/Systemd/User#Automatic_login_into_Xorg_without_display_manager)
-
+- [How to fix "Invalid MIT Magic Cookie"](/linux/mit-magic-cookie)
 
 ## Step 6 - Remove development packages
 

@@ -27,7 +27,7 @@ Modern AI researchers would create a text prompt that would explain what conditi
 
 But feelings do exist because of innate wiring and special [chemicals assigned to them](https://www.frontiersin.org/articles/10.3389/fpsyg.2020.00021/full) (neurotransmitters / neuromodulators (?)). Thus saturation to a specific level make it [visible on our face](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4221207/) (and in behavior) because some muscles also highly correlate to it.
 
-Stimulator adds neuromodulators into the system. Presence of specific modulators affects facial expressions directly, but we assign sets of pictures by emotion name and the name is assigned by the neuromodulator. Neuromodulators slowly dissolve or become overthrown by new emotion (caused by new stimulator).
+Stimulator adds neuromodulators into the system. Presence of specific modulators affects facial expressions directly, but we assign sets of pictures by emotion name and the name is assigned by the neuromodulator. Neuromodulators slowly dissolve or become shadowed by new emotion (caused by new stimulator).
 
 
 ## GAN sketching 

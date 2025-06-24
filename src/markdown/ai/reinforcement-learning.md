@@ -40,7 +40,7 @@ Walking bipeds:
 
 ## Personal research
 
-**[Link](/ai/reinforcement-learning-using-artificial-neural-networks)**
+[Reinforcement Learning using ANN](/ai/reinforcement-learning-using-artificial-neural-networks)
 
 ## Articles
 

@@ -78,3 +78,7 @@ A list from [this blog](https://cnvrg.io/spiking-neural-networks/)
 ## Questions
 
 - How does STDP start if no synaptic connections exist a priori?
+
+## Libraries
+
+- [Brian](https://brian2.readthedocs.io/en/stable/index.html) - Brian is a simulator for spiking neural networks.

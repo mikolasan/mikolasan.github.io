@@ -47,3 +47,5 @@ make_plot(df, corr)
 
 df.to_csv("titanic_data.csv", index=False)
 ```
+
+Related: [Is it always valid to use correlation for feature selection?](https://stats.stackexchange.com/questions/664709/is-it-always-valid-to-use-correlation-for-feature-selection) (answer: no)

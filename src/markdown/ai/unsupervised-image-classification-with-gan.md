@@ -17,9 +17,9 @@ Anyway, we should start with [DCGAN tutorial](https://pytorch.org/tutorials/begi
 
 ### Generator
 
-Starting from a vector, that theoretically contains all features in the image, the flow goes trough several convolutional layers and at the end produces an image. The last layer is crowned with a $tanh$ function which maps the output into $[-1, 1]$ interval (they say, important for stability).
+Starting from a vector, that theoretically contains all features in the image, the flow goes trough several convolutional layers and at the end produces an image. The last layer is finalised with a $tanh$ function which maps the output into $[-1, 1]$ interval (they say, important for stability).
 
-Also this component is called **decoder**.
+This component is also called **decoder**.
 
 ```
 Generator(
@@ -41,6 +41,15 @@ Generator(
   )
 )
 ```
+
+### Decoder in psychological tests
+
+So about the decoder system and how it compares its results with the expected images. 
+I remembered one psychological test when a person is asked to draw a human figure. I think I was seven when they tested me before school. I guess the idea is how many details one would put into that figure. Will it be a stick person or more cartoon like character or something else?
+
+Mine wasn’t sophisticated. I drew pants and big shoes. Shoes were facing left and right, I never really grasped how the perspective works with shoes even years later. I don’t remember much about the face. Not sure if it had a hat. Most likely no hat, and only a few single short hairs sticking into the air. 
+
+This test is about how we perceive the world, right? It reveals our model of the world through drawing, as we try to reconstruct concepts. Considering Piaget’s stages of development (that say that we need to experience more information to jump to the “next cognitive level”), I can formulate my question: is it possible to teach kids draw realistic pictures? Or it’s not possible because their concepts are still simple?
 
 ### Discriminator
 

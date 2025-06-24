@@ -29,6 +29,13 @@ I think the question should appear after comparing input and output and trying t
 
 The network will be applying transformations if it understand them. There will be a unique network for every transformation. They will be like heads in multi-head attention: input goes to all networks then they apply transformation and produce some output. Then we compare networks' output to the expected output and mark the best transformation network for further fine tuning.
 
+## Search space
+
+From that video, [ML street talk about applying LLMs for solving ARC challenge], I have another thought against matrices. The host said that ARC challenge forces researchers to search for a solution in a big space. 2D grid and 9 colors - it may not sound like much, but it probably harder than chess with brute-force approach, but from a human perspective it is simple if one understands geometry, transformation and other notions. Which requires big matrices and this implies demanding memory requirements already on this toy stage.
+
+Then forget about matrices, don’t measure space size as one plane with all parameters on one level. It’s possible that separate networks can calculate portions of the solution. It’s like writing Domain Specific Language (DSL) when you know about specific operations you need to handle for this task. 
+
+
 ### Helpful links
 
 - Someone's notes about ARC https://github.com/neoneye/arc-notes/tree/main/awesome

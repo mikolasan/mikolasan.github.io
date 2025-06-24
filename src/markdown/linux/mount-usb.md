@@ -6,7 +6,7 @@ lastModified: 2024-11-05
 ---
 
 
-Most likely that this case is very specific and not everyone will find it useful as it is, but this example can show what interesting subsystems do exist in Linux operationg systems and how one can approach to automatic execution of scripts.
+Most likely that this case is very specific and not everyone will find it useful as it is, but this example can show what interesting subsystems do exist in Linux operating systems and how one can approach to automatic execution of scripts.
 
 
 ## Original bash script
