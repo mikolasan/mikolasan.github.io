@@ -37,6 +37,11 @@ Somewhat related (but really awesome) websites
 - [Ancient Earth Globe](https://dinosaurpictures.org/ancient-earth#66)
 - [How The World Might Look in the Future](https://www.lakepowell.net/sciencecenter/future.htm) by Paleontological Science Center
 
+## More fractals
+
+- [Fractal Institute](https://fractal.institute/create-fractals/the-mandelbulb-3d-master-training-resource-guide/) - many many links on that page. Very big scene on Deviant Art
+- [Mandelbulb3D](https://mb3d.overwhale.com/), one of many  [tutorials](https://www.youtube.com/watch?v=XYxNFyd_EiQ)
+
 ## Shaders
 
 - [a planet](https://www.shadertoy.com/view/4tVSRw)

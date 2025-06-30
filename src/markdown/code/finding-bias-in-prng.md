@@ -307,3 +307,9 @@ We are working with discrete uniform distribution (not continuous!) https://en.w
 For quantiles [use boost](https://valelab4.ucsf.edu/svn/3rdpartypublic/boost/libs/math/doc/sf_and_dist/html/math_toolkit/dist/stat_tut/weg/cs_eg/chi_sq_test.html). Include it with cmake in [this way](https://stackoverflow.com/questions/3897839/how-to-link-c-program-with-boost-using-cmake). [Strip the boost](https://stackoverflow.com/a/31293908/1104612) later.
 
 
+## Scaling and cryptographic strength
+
+from [Flaws of MT PRNG](https://arxiv.org/pdf/1910.06437)
+
+> (d) The scaling method may not compromise the cryptographic strength of the random number generator. The scaling method must preserve the distribution of the scaled values. For example, if a 32-bit random number generator with a range of the set of integers in the closed interval (0, 232-1) were to be scaled to the range of the set of integers in the closed interval (1, 6) so that the scaled values can be used to simulate the roll of a standard six-sided die, then each integer in the scaled range should theoretically appear with equal frequency. In the example given, if the theoretical frequency for each value is not equal, then the scaling method **is considered to have a bias**. Thus, a compliant scaling method must have bias equal to zero
+

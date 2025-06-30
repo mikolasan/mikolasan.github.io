@@ -13,3 +13,8 @@ Maybe you have a job position as a data scientist or ML researcher, but you cann
 3. For training purposes activation functions must be differentiable. What method we can use if the activation function is not differentiable and give an example of such function.
 4. How to measure amount of information stored in ANN?
 5. How to find synonyms with LLMs?
+
+
+## Answers
+
+Might be an answer on how to train ANN on a period of the sin function the way that it can properly extrapolate outside of the training boundaries: [Neural Networks Fail to Learn Periodic Functions and How to Fix It](https://arxiv.org/abs/2006.08195)

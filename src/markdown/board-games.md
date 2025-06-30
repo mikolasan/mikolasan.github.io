@@ -15,7 +15,7 @@ I'll take a [game that I used to like](/board-games/clue-review-and-ideas) and t
 
 It's worth noting that when promoting your game, it's better not to describe it as "just like Clue but cooler." It's immediately obvious that you're not original. Let the publisher form the impression that the game is similar to Clue, but they should know that it's cooler, not just a clone.
 
--> [Devlog: Part 0](/board-games/clue-review-and-ideas)
+-> [Devlog: Part 0](/blog/clue-review-and-ideas)
 
 ## Resources
 

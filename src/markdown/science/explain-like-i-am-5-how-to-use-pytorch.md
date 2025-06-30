@@ -177,3 +177,5 @@ What is a difference between (vector * matrix) and (matrix * \[vector\]T)?
 In the case of (vector * matrix), vector is a row and its size must match with the amount of rows in the matrix. The resulting size will be the same as the matrix.
 
 In the case of (matrix * \[vector\]T), vector is a column and its size must match with the amount of columns in the matrix. The resulting size will be the same as the matrix.
+
+`nn.Linear` accepts additional dimensions as `[batch_size, *, in_features]`, but that star will work as a multiplier towards batch

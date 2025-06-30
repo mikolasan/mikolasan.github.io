@@ -1,11 +1,12 @@
 ---
-path: /make/ufo-lamp
-date: 2022-06-08
 title: UFO lamp
-tags: ["hardware", "LED"]
-published: 2022-06-10
 previewImage: ufo-lamp-and-unity.jpg
+date: 2022-06-08
+published: 2022-06-10
 lastModified: 2022-08-02
+tags:
+  - hardware
+  - LED
 ---
 
 A 3D printed desk lamp that looks like a UFO abducting a cow! 
