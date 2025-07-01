@@ -1,10 +1,11 @@
 ---
+article: quest
 title: Understanding invariants in ANN
 date: 2024-09-23
 published: 2024-09-23
 lastModified: 2024-09-23
-article: quest
 ---
+
 What are invariants in ANN? If some features extracted from the input data stay unchanged under some types of transformation like rotation, translation, scaling or other, then such features are invariant. This allows, for example, to recognize the same object from different angles. For models like YOLO (and other CNN networks) the training data is prepared in a special way (data augmentation) when transformations like scaling, rotation, adding different backgrounds applied to the original images. Also this way more training data will be available which is usually better for deep neural networks.
 
 We are going to review here such mathematical method as the Fourier Transform. It decomposes a signal into its frequency components. 

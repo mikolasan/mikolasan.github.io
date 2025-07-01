@@ -1,4 +1,5 @@
 ---
+article: quest
 title: Markov decision process example
 subtitle: Social media bot
 date: 2023-03-30

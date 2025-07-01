@@ -1,10 +1,12 @@
 ---
+article: quest
 title: Titanic
+subtitle: Kaggle challenge
 date: 2025-03-25
 published: 2025-03-25
 lastModified: 2025-03-25
-subtitle: Kaggle challenge
 ---
+
 I always return back to [this challenge](https://www.kaggle.com/c/titanic/overview).
 
 First I want to look at the correlation between columns

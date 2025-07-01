@@ -1,10 +1,9 @@
 ---
-title:
+title: Lizards and Continuous space
 date: 2025-06-23
 published: 2025-06-23
 lastModified: 2025-06-23
 ---
-Based on this thread [https://mastodon.social/@mikolasan/112683492516943241](https://mastodon.social/@mikolasan/112683492516943241)
 
 I think I like having a dialogue with someone who knows about the topic, even with students who just obtained knowledge from canonical sources. They are eager to prove that these new ideas and their understanding do match up.
 
@@ -60,6 +59,7 @@ If we are talking about a simple grid environment and an agent that can locate o
 
 I have ideas about improving the grid environment problem but I have never read about continuous variables in state space. Why? I’m so ashamed. I start researching the topic.
 
+Based on this thread [https://mastodon.social/@mikolasan/112683492516943241](https://mastodon.social/@mikolasan/112683492516943241)
 ## Reference
 
 At what age do lizards develop "vision" cortex:

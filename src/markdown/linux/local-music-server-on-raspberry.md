@@ -2,6 +2,8 @@
 title: Local music server
 subtitle: on Raspberry Pi and Debian Bookworm
 date: 2024-04-12
+published: 2024-04-12
+lastModified: 2024-04-12
 ---
 
 I guess you can install raspberry jukebox and do not worry about conflicting dependencies and a pile of configuration. But if you want to build the system that works for your special case then you have to reserve a few days of struggle. But then you will be proud of yourself. Maybe it will be another OS distribution for Raspberry!

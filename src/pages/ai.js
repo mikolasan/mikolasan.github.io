@@ -28,6 +28,7 @@ const BrainModelPage = ({ data }) => {
           <h2>Main research</h2>
           {researchNodes.map(node => (
             <div key={node.id}>
+              {node.frontmatter.date}
               <Link to={absPathToUrl(node.fileAbsolutePath)}>
                 <h3>
                   {node.frontmatter.title}
@@ -65,6 +66,7 @@ const BrainModelPage = ({ data }) => {
           <p>Side quests</p>
           {questNodes.map(node => (
             <div key={node.id}>
+              {node.frontmatter.date}
               <Link to={absPathToUrl(node.fileAbsolutePath)}>
                 <h3>
                   {node.frontmatter.title}
@@ -115,6 +117,7 @@ export const query = graphql`
       nodes {
         frontmatter {
           title
+          date(formatString: "MMMM DD, YYYY")
         }
         excerpt
         fileAbsolutePath
@@ -131,6 +134,7 @@ export const query = graphql`
       nodes {
         frontmatter {
           title
+          date(formatString: "MMMM DD, YYYY")
         }
         excerpt
         fileAbsolutePath
@@ -147,6 +151,7 @@ export const query = graphql`
       nodes {
         frontmatter {
           title
+          date(formatString: "MMMM DD, YYYY")
         }
         excerpt
         fileAbsolutePath
@@ -162,6 +167,7 @@ export const query = graphql`
       nodes {
         frontmatter {
           title
+          date(formatString: "MMMM DD, YYYY")
           subtitle
           year
           authors

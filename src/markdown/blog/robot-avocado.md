@@ -1,9 +1,10 @@
 ---
 title: The Robot's Advocate
-date: 2025-12-01
+date: 2024-12-01
 published: 2025-06-23
 lastModified: 2025-06-23
 ---
+
 It was a regular Sunday walk, but when I saw this guy in a car, my thoughts turned into an unexpected question about robots.
 
 The car stood out from the normal crowd in that area. It’s usually Porsche, Lamborghini, Ferrari, and a bunch of Teslas. But this was really old Ford, an old truck.

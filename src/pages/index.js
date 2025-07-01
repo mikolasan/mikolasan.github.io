@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import HomeBlock from "../components/homeBlock"
 import LogoButton from "../components/logoButton"
 import ScrollSplit from "../components/scrollSplit"
-import { articles } from "../home/november2024"
+import { articles } from "../home/july2025"
 import { SEO } from "../components/seo"
 
 const threeColumnLayout = (
@@ -12,7 +12,7 @@ const threeColumnLayout = (
     <div className="issue-line">
       <div className="issue-slogan"></div>
       <div className="issue-number">
-        <h3>November 2024, Issue 6</h3>
+        <h3>July 2025, Issue 7</h3>
       </div>
       <div className="issue-date"></div>
     </div>
@@ -24,7 +24,7 @@ const threeColumnLayout = (
           <HomeBlock {...articles[1]} />
         </div>
         <div className="home-image">
-          <img src="/images/home/nice-car.jpg" />
+          <img src="/images/home/may-clouds-2.jpg" />
         </div>
       </div>
       <div className="home-right-column">

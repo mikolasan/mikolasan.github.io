@@ -5,15 +5,15 @@ published: 2025-05-28
 lastModified: 2025-05-28
 subtitle: My thesis program and new development
 ---
-Now when I almost finished with the titanic competition (I didn’t reach 90% accuracy how a planned, though I don’t know if it’s possible), it’s time to think how to apply this algorithm to reinforcement learning tasks.
+Now when I almost finished with [the titanic competition](/ai/titanic-kaggle-challenge) (I didn’t reach 90% accuracy how a planned, though I don’t know if it’s possible), it’s time to think how to apply this algorithm to reinforcement learning tasks.
 
-Like a snake environment. The first difference with a simple classification task is that the solution is spread in time. Some may think that this task provides a huge space to search for an optimal solution. And reinforcement learning or even Alfa zero variation can provide an efficient way of minimizing the search. 
+Like the snake environment. The first difference with a simple classification task is that the solution is spread in time. Some may think that this task provides a huge space to search for an optimal solution. And reinforcement learning, and specifically Alfa zero variation, can provide an efficient way of minimizing the search. 
 
-But that’s is not how you would play this game. First of all, you are not a snake, you see the whole field. And let’s consider a variation where there are obstacles on the way to apples. With reinforcement learning the agent will be crashing into walls until a policy changes to stay away from the walls. But that doesn’t mean that it will direct to apples or could find an optimal route in changing environments.
+But that’s is not how you would play this game. First of all, you are not a snake, you see the whole field. And let’s consider a variation where there are obstacles on a way to apples. With reinforcement learning the agent will be crashing into walls until the policy changes to stay away from these walls. But that doesn’t mean that it will direct our agent to apples or find an optimal route in a changing environment.
 
 Second, you don’t see a grid, you immediately see how to avoid obstacles. It’s like lines going around with concrete details and alterations during actual execution of this plan.
 
-We will start looking at the problem with a simple approach. As usual there’s a state and action, and taking that action will change the state. But don’t think about the state as a precise collection of pixels on a grid. This is a macro state: nothing dangerous, hitting a wall, collecting apple. It’s already processed by “a pattern recognition” system. What’s important on this step is a sequence of events, a chain of state-action pairs that can lead to a terminal state or if we can branch out before that event and continue in another direction. So this is the search space.
+We will start looking at the problem using a simple approach. As usual there’s a state and action, and taking that action will change the state. But don’t think about the state as a precise collection of pixels on a grid. This is a macro state: nothing dangerous, hitting a wall, collecting apple. It’s already processed by “a pattern recognition” system. What’s important on this step is a sequence of events, a chain of state-action pairs that can lead to a terminal state or if we can branch out before that event and continue in another direction. So this is the search space.
 
 Time sequence is predicted by neurons when they receive a current state and expected state, so they can predict an action required to transition to the expected state.
 State nothing - action - state nothing (not actions will result in nothing, where to get this additional information?)
@@ -73,9 +73,12 @@ When we review the next example and some rules are applied, then we build new ru
 
 I’m going against the pyramidal structure and auto regression in VAE (v auto encoders) because I think it’s missing any way to extract invariants from data. Also prediction doesn’t come into comparison with the input.
 CNN kernels and layers by layer generalization of patches is the only technique for finding higher level patterns. But movement is not possible to find this way. Such information cannot be part of this structure. YOLO solves it but making such invariants in the training data. 
-So, what I think. The neural path is not pyramidal but more random. It just follows the spare spatial encoding. And signal going up (further from input) will create more abstract understanding. But the point is to match it with something from memory. And **if there is no exact match, then it can try to apply some adjustments to the input,** try to match it with existing information. As it is known, this will be reinforced by emotional response.
+
+Here's, what I think. The neural path is not pyramidal but more random. It just follows the sparse spatial encoding. And signal going up (further from input) will create more abstract understanding. But the point is to match it with something from memory. And **if there is no exact match, then it can try to apply some adjustments to the input,** try to match it with existing information. As it is known, this will be reinforced by emotional response.
+
 Where is these ideas about possible transformations are stored?
 
-Ideas
+## Ideas
+
 The agent should control how the input is located. The agent can move, rotate or scale the input. 
 To execute these actions we will have special neurons for that. Thus these neurons know about transformations and can be used as a part of decision making without any real action, the same as image prediction when the output is not what appears on the receptive field.

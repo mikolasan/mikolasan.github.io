@@ -43,9 +43,5 @@ Something less known as GIMP or blender and not specifically a Google's counterp
 
 ## Other steps
 
-Export Firefox history (sqlite file) with
-
-- [Nir Soft](https://www.nirsoft.net/utils/browsing_history_view.html) tool
-- or simply **DB Browser for SQLite**
-and export as CSV (ready for Excel... LIbreCalc ;) )
-
+- Backup locally following notes from [Own your stuff](/blog/own-your-stuff)
+- TODO

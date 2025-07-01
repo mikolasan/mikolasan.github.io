@@ -70,3 +70,8 @@ Generally, up to a certain limit (can be around around 8-9 samples), the smaller
 In addition: Increasing the `batch_size` throughout the training also helps with the validation performance.
 
 If you changed your `batch_size`, it is important to also change the `learning_rate` as well. A good ratio for this is according to the ratio of the `batch_size` change. Larger batches: Need larger `learning_rate`. Smaller batches Need smaller `learning_rate`.
+
+## 3D
+
+- [Fantasia3D](https://fantasia3d.github.io/)
+- [Dreamfusion](https://github.com/ashawkey/stable-dreamfusion) ([colab](https://colab.research.google.com/drive/1MXT3yfOFvO0ooKEfiUUvTKwUkrrlCHpF?usp=sharing#scrollTo=VklXFNisIrDo))

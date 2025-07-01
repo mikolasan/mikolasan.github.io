@@ -1,8 +1,10 @@
 ---
+article: quest
 title: Spiking MNIST
 date: 2025-05-28
 published: 2025-05-28
 lastModified: 2025-05-28
+genai: yes
 ---
 ### How numbers and quantities are represented in neural ensembles?
 

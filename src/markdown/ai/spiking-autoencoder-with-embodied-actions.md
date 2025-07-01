@@ -1,9 +1,11 @@
 ---
 title: Spiking autoencoder with embodied actions
+article: main
 date: 2025-05-14
 published: 2025-05-14
 lastModified: 2025-05-14
 ---
+
 I need to mix a new neural network architecture for image recognition. If we consider a simple input images, 8x8 pixels in size, where one neuron receives input from each pixel. Then a few feed-forward layers for sparse spatial encoding. 
 
 However, I'm adding neurons responsible for image transformation. There will be neurons that can command to move the image Y-pixels up or down, and/or X-pixels left or right. Another group of neurons will be commanding to rotate an image, and the third one will be scaling - zoom in, zoom out. 

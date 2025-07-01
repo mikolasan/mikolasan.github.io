@@ -1,7 +1,7 @@
 ---
-date: 2023-07-17
-title: My Faces Dataset
 article: quest
+title: My Faces Dataset
+date: 2023-07-17
 published: 2023-07-17
 lastModified: 2023-07-17
 ---

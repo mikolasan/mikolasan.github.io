@@ -2,6 +2,7 @@
 section: brain
 title: Inverse Dynamics Model
 article: main
+date: 2023-03-20
 published: 2023-03-20
 lastModified: 2023-03-20
 ---

@@ -1,4 +1,5 @@
 ---
+article: quest
 title: ML researcher interview questions
 date: 2024-08-23
 published: 2025-06-02

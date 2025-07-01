@@ -12,7 +12,7 @@ LINK: [nature.com](https://www.nature.com/articles/s42003-024-07282-3)
 
 ## How I found it
 
-I was looking for some insights about encoding methods and knows tricks like spatial distribution in sparse encoding while I was playing with [hippocampus model](/ai/hippocampus-model).
+I was looking for some insights about encoding methods and known tricks like spatial distribution in sparse encoding while I was playing with [hippocampus model](/ai/hippocampus-model).
 
 ## What I expect after reading the abstract 
 
