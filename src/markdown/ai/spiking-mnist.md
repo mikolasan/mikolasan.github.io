@@ -6,7 +6,69 @@ published: 2025-05-28
 lastModified: 2025-05-28
 genai: yes
 ---
-### How numbers and quantities are represented in neural ensembles?
+
+every picture 28x28 = 784 pixels + label. We will create 5x5 patches with no overlap.
+Then combine all of them into one dataset, classify, and replace 5x5 patches with class identifiers. 
+
+This will give 6x6 grid on the next level (30 / 5 = 6, where 30 pixels come from 28 with one extra pixel added to all sides)
+
+```
+x x x x x x
+x x x x x x
+x x x x x x
+x x x x x x
+x x x x x x
+x x x x x x
+```
+
+This is the second layer with 6x6 nodes, taking possibly 10 or more values (denote this value as $k$)
+
+So for $k$ different observations (meaning, definitely not similar, not converging to one of $k$ classes) we should have different nodes active. But what if the same node is activated by different patches?
+
+9 copies of each node. 
+
+```
+x x
+x x -> Dx
+```
+
+third layer: 10 nodes x 9 copies, like 10 tiny mini layers for every node type that makes a 3x3 grid
+
+layer 1
+
+```
+D1 D1 D1
+D1 D1 D1
+D1 D1 D1
+```
+
+layer 2
+
+```
+D2 D2 D2
+D2 D2 D2
+D2 D2 D2
+```
+
+and so on. for example, k = 10, layer 10
+
+784 -> k * 9 = 90
+
+fourth layer: possibly 10 or more values (m)
+
+## Trying brian library
+
+Brian [docs](https://brian2.readthedocs.io/en/stable/user/equations.html)
+
+- NeuronGroup + Synapses [example](https://brian2.readthedocs.io/en/stable/examples/frompapers.Graupner_Brunel_2012.html)
+- [STDP and MNIST](https://brian2.readthedocs.io/en/stable/examples/frompapers.Diehl_Cook_2015.html) (somewhat different code in [their repo](https://github.com/peter-u-diehl/stdp-mnist/blob/master/Diehl%26Cook_spiking_MNIST.py)) - but this is not an autoencoder architecture
+
+C++ options for SNN simulation
+
+- [CARLsim](https://github.com/UCI-CARL/CARLsim5/blob/master/carlsim/kernel/src/snn_manager.cpp)
+- 
+
+## How numbers and quantities are represented in neural ensembles?
 
 **Place Value and Population Coding** The dominant theory is that numerical magnitude is represented through population coding in ensembles of "number neurons." These neurons have tuned responses to specific numerical ranges, with overlapping tuning curves that create a distributed representation. Individual neurons fire maximally for their preferred numerosity but also respond (with decreasing intensity) to nearby values.
 

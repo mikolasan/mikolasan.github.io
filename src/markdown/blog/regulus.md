@@ -5,19 +5,26 @@ published: 2025-05-28
 lastModified: 2025-05-28
 subtitle: My thesis program and new development
 ---
-Now when I almost finished with [the titanic competition](/ai/titanic-kaggle-challenge) (I didn’t reach 90% accuracy how a planned, though I don’t know if it’s possible), it’s time to think how to apply this algorithm to reinforcement learning tasks.
+Now when I almost finished with [the titanic competition](/ai/titanic-kaggle-challenge) (I didn’t reach 90% accuracy as I planned, although I doubt it’s possible), it’s time to think how to apply this algorithm to tasks usually solved with reinforcement learning, like the snake environment.
 
-Like the snake environment. The first difference with a simple classification task is that the solution is spread in time. Some may think that this task provides a huge space to search for an optimal solution. And reinforcement learning, and specifically Alfa zero variation, can provide an efficient way of minimizing the search. 
+The first difference with a simple classification task is that the solution is spread in time. Some may think that this task provides a huge space to search for an optimal solution. And reinforcement learning, and specifically Alfa zero variation, can provide an efficient way of minimizing the search. 
 
-But that’s is not how you would play this game. First of all, you are not a snake, you see the whole field. And let’s consider a variation where there are obstacles on a way to apples. With reinforcement learning the agent will be crashing into walls until the policy changes to stay away from these walls. But that doesn’t mean that it will direct our agent to apples or find an optimal route in a changing environment.
+But that’s is not how you would play the snake, if you were given the controls. First of all, you are not a snake with a receptive field limited to surroundings, you see the whole environment. With reinforcement learning the agent will be crashing into walls until the policy changes to stay away from these walls. But that doesn’t mean that it will direct our agent to apples or find an optimal route in a changing environment.
 
-Second, you don’t see a grid, you immediately see how to avoid obstacles. It’s like lines going around with concrete details and alterations during actual execution of this plan.
+We will consider a variation where there are obstacles on a way to apples. So second, you don’t see a grid, you immediately see how to avoid obstacles. You project lines going around obstacles  and constantly update this plan during actual execution.
 
-We will start looking at the problem using a simple approach. As usual there’s a state and action, and taking that action will change the state. But don’t think about the state as a precise collection of pixels on a grid. This is a macro state: nothing dangerous, hitting a wall, collecting apple. It’s already processed by “a pattern recognition” system. What’s important on this step is a sequence of events, a chain of state-action pairs that can lead to a terminal state or if we can branch out before that event and continue in another direction. So this is the search space.
+We will start looking at this problem using a simple approach. In terms of reinforcement learning there must be a state and action, and taking that action will change the state. But don’t think about the state as a precise collection of pixels on a grid. This is a macro state: nothing dangerous, hitting a wall, collecting apple. It’s already processed by “a pattern recognition” system. What’s important at this step is a sequence of events, a chain of state-action pairs that can lead to a terminal state, a chain that also allows to branch out before an imminent outcome and continue in another direction. So this is the search space.
 
-Time sequence is predicted by neurons when they receive a current state and expected state, so they can predict an action required to transition to the expected state.
-State nothing - action - state nothing (not actions will result in nothing, where to get this additional information?)
-State nothing - action - state eat apple
+Therefore what we will need is a time sequence of predictions that can be simulated on spiking neurons. When neurons receive a current state and expected state, they can predict an action required to transition to the expected state. For example
+```
+state [nothing] - action - state [nothing]
+```
+
+(not actions will result in nothing, where to get this additional information?)
+
+```
+state [nothing] - action - state [eat apple]
+```
 
 ## How rules represent synaptic connections
 

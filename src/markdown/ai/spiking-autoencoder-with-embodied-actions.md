@@ -13,3 +13,7 @@ However, I'm adding neurons responsible for image transformation. There will be 
 So these transformation neurons will be sending a signal to an external source that would actually change the input. And the first layer (sensors) will receive an image with that transformation applied. Moreover, the neurons responsible for transformation are connected to the recognition system of neurons that evaluates prediction results. 
 
 A prediction is a reconstruction of images from triggers happening in the latent space. The prediction is compared with the input. And when prediction is far from the observed image, that is when transformation neurons try to adjust the image.
+
+## Next
+
+Apply this architecture to [the BrainCraft challenge](https://github.com/rougier/braincraft)
