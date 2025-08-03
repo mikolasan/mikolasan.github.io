@@ -2,8 +2,8 @@
 title: Alacritty everywhere
 date: 2024-08-25
 published: 2024-08-25
-lastModified: 2024-08-25
-subtitle: Terminal emulator for Windows
+lastModified: 2025-07-12
+subtitle: My default terminal emulator on Windows
 ---
 Some time ago I played with setting up [Anaconda in VS Code](/code/anaconda-in-vscode-terminal), but this time I want to upgrade [Git for Windows](/code/customize-git-bash-for-windows) and run it from Alacritty.
 
@@ -71,9 +71,39 @@ fi
 
 ## Fonts and emoji
 
-Fonts: https://www.nerdfonts.com/font-downloads
+[Nerd Fonts](https://www.nerdfonts.com/font-downloads). My preferred choice is [Source Code Pro](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/SourceCodePro.zip) (which is called *sauce* here)
 
-Or install all with a script https://gist.github.com/stramel/658d702f3af8a86a6fe8b588720e0e23
+Font related settings in **alacritty.toml**
+
+```toml
+[font]
+size = 13.0
+
+[font.normal]
+family = "SauceCodePro NF"
+style = "Regular"
+
+[font.bold]
+family = "SauceCodePro NF"
+style = "Bold"
+
+[font.italic]
+family = "SauceCodePro NF"
+style = "Italic"
+
+[font.bold_italic]
+family = "SauceCodePro NF"
+style = "Bold Italic"
+```
+
+If you see `font FontDesc {...} not found` then it's time to update the Windows font cache, close terminal, install all Windows updates, reboot your computer, reinstall video driver and all other shaman steps:
+
+```powershell
+Restart-Service -Name FontCache
+```
+
+
+Also an option to install all of them [with a script](https://gist.github.com/stramel/658d702f3af8a86a6fe8b588720e0e23)
 
 Configure your terminal for better experience (color emoji) https://github.com/alacritty/alacritty/issues/153#issuecomment-630636358
 

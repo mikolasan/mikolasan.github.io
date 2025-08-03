@@ -36,7 +36,7 @@ From that video, [ML street talk about applying LLMs for solving ARC challenge],
 Then forget about matrices, don’t measure space size as one plane with all parameters on one level. It’s possible that separate networks can calculate portions of the solution. It’s like writing Domain Specific Language (DSL) when you know about specific operations you need to handle for this task. 
 
 
-### Helpful links
+## Helpful links
 
 - Someone's notes about ARC https://github.com/neoneye/arc-notes/tree/main/awesome
 - DSL solution - https://github.com/michaelhodel/arc-dsl/blob/main/solvers.py
@@ -44,7 +44,7 @@ Then forget about matrices, don’t measure space size as one plane with all par
 - Tech talk about the challenge https://bdtechtalks.com/2020/02/19/kaggle-arc-challenge-francois-chollet/
 - https://arxiv.org/pdf/2208.02957.pdf - what if GPT-3 is not that stupid as you think (Discussion: https://twitter.com/spiantado/status/1556641543959695361)
 
-### Tools
+## Tools
 
 - Python cmd and plot visualization https://github.com/mxbi/arckit
 - ARC editor https://arc-editor.lab42.global/
@@ -53,4 +53,12 @@ Then forget about matrices, don’t measure space size as one plane with all par
 
 - https://github.com/zoenguyenramirez/arc-prize-2024/
 - https://www.paulfletcherhill.com/mini-arc.pdf
+
+## About next arcs
+
+From [François Chollet: How We Get To AGI](https://www.youtube.com/watch?v=5QcCeSsNRks) video [Benjamin Han](https://sigmoid.social/@BenjaminHan/114813306010636570) outlined _The evolution of ARC benchmarks_
+
+- ARC-1: Prior-free reasoning tasks  
+- ARC-2: Compositional reasoning tasks  
+- ARC-3: Reasoning with interactive agency
 

@@ -30,7 +30,7 @@ Sims:
 
 - Isaac Sim
 - MuJoCo
-- Webots
+- Webots ([in ROS2](https://mpolinowski.github.io/docs/Automation_and_Robotics/Robotics_Simulation/2023-11-26--ros2-webots/2023-11-26/))
 - Gazebo
 
 Walking bipeds:

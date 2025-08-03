@@ -6,9 +6,9 @@ published: 2025-05-28
 lastModified: 2025-05-28
 genai: yes
 ---
+I am planning for some hierarchical encoding for an experiment with my [rule-based system](/blog/regulus).
 
-every picture 28x28 = 784 pixels + label. We will create 5x5 patches with no overlap.
-Then combine all of them into one dataset, classify, and replace 5x5 patches with class identifiers. 
+Take MNIST data. Every picture 28x28 = 784 pixels + label. We will create 5x5 patches with no overlap. Then combine all of them into one dataset, classify, and replace 5x5 patches with class identifiers. 
 
 This will give 6x6 grid on the next level (30 / 5 = 6, where 30 pixels come from 28 with one extra pixel added to all sides)
 
@@ -50,11 +50,7 @@ D2 D2 D2
 D2 D2 D2
 ```
 
-and so on. for example, k = 10, layer 10
-
-784 -> k * 9 = 90
-
-fourth layer: possibly 10 or more values (m)
+and so on
 
 ## Trying brian library
 
@@ -70,14 +66,12 @@ C++ options for SNN simulation
 
 ## How numbers and quantities are represented in neural ensembles?
 
-**Place Value and Population Coding** The dominant theory is that numerical magnitude is represented through population coding in ensembles of "number neurons." These neurons have tuned responses to specific numerical ranges, with overlapping tuning curves that create a distributed representation. Individual neurons fire maximally for their preferred numerosity but also respond (with decreasing intensity) to nearby values.
+_Numerosity estimation_ refers to the ability to perceive and estimate quantities without explicit counting ([from](https://homepages.uni-tuebingen.de/andreas.nieder/Nieder%20(2025b)%20CerCort.pdf) "Numerosity coding in the brain: from early visual processing to abstract representations" by Andreas Nieder)
 
-**Key Brain Regions** The intraparietal sulcus (IPS), particularly the horizontal segment, shows robust activation for numerical processing across different formats (dots, digits, number words). Single-cell recordings in monkeys have identified neurons that respond selectively to specific numerosities, independent of other visual features like size or density.
+So some neurons have tuned responses to specific numerical ranges, possibly overlapping. Individual neurons fire maximally for their numerosity but also, with decreasing intensity, respond to nearby values. This system represents numerical magnitude in an analog, approximate manner following [Weber's law](https://en.wikipedia.org/wiki/Weber%E2%80%93Fechner_law) - discrimination becomes harder as numbers get larger. The neural representation appears to be logarithmically compressed.
 
-**Approximate Number System (ANS)** This system represents numerical magnitude in an analog, approximate manner following Weber's law - discrimination becomes harder as numbers get larger. The neural representation appears to be logarithmically compressed, similar to other magnitude representations in the brain.
+There's a debate if distinct neural pathways for exact symbolic numbers (like "7") and approximate quantities (like a collection of dots) may work the same way to represent numerosities.
 
-**Experimental Evidence** Research using fMRI adaptation paradigms shows that repeated presentation of the same numerosity leads to decreased activation, while changing numerosity causes recovery of the signal. The degree of recovery correlates with numerical distance, supporting the idea of overlapping tuning curves.
+The intraparietal sulcus (IPS), particularly the horizontal segment, shows robust activation for numerical processing.
 
-**Symbolic vs. Non-symbolic Processing** There's evidence for partially distinct neural pathways for exact symbolic numbers (like "7") versus approximate quantities (like a collection of dots), though they share common magnitude representation areas.
-
-**Neural Oscillations** Recent work suggests that different frequency bands in neural oscillations may encode different aspects of numerical information, with gamma oscillations potentially important for precise numerical computations.
+It is known that [neuronal oscillations](https://www.philippstreicher.com/blog/neural-oscillations) in various frequency bands may carry functionally distinct information. So, can different frequency bands encode different aspects of numerical information?

@@ -5,6 +5,7 @@ date: 2023-08-27
 published: 2023-08-27
 lastModified: 2023-08-27
 ---
+
 I see discussions about definition of consciousness a lot across AI enthusiasts on Twitter. Some people like to use it unconditionally, assuming that there is no question about it. But other people and myself think that one cannot draw statements about consciousness without formally defining it.
 
 How can it be described in terms of current models and algorithms? Can we create a specific test in order to apply it to an entity and conclude if it conscious or not?

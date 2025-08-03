@@ -17,6 +17,7 @@ const SubNav = props => {
     <Link to="/projects">Projects</Link>
     <Link to="/ideas">Ideas</Link>
 
+    <Link to="/lists">Lists</Link>
     <Link to="/slots">Slots</Link>
     <Link to="/youtube">Vlog</Link>
     <Link to="/about">About</Link>
@@ -49,6 +50,7 @@ const SubNav = props => {
     </>
   } else if (props.section === `blog`) {
     list = <>
+      <Link to="/lists">Lists</Link>
       <Link to="/youtube">Vlog</Link>
       <Link to="/about">About</Link>
     </>

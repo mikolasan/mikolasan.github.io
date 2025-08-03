@@ -4,32 +4,31 @@ export const articles = [
     title: `Regulus`,
     subtitle: ``,
     url: `/blog/regulus`,
-    excerpt: `
-    <p></p>
-    <p></p>`,
+    excerpt: `<p>Rules are like descriptions of spiking activity. 
+    A premise holds pre-synaptic neurons. 
+    And when receptors receive signals these rules describe what next neurons will be excited or inhibited</p>`,
     readMore: ``,
     imgSrc: ``,
     imgAlt: ``,
   },
   {
     style: `box2`,
-    title: `Modeling chemical synapses`,
-    subtitle: `and wrong brain maps in Devlog #9`,
-    url: `/devlog/9`,
-    excerpt: `<p>The GeForce RTX 40 Series has already reached the number of 76 billion transistors, 
-    so this video card can be compared with a human brain that has 86 billion neurons. 
-    A human with a slightly damaged brain. 
-    Something like too much alcohol at college parties.
-    </p>`,
+    title: `Uncomfortable Robots`,
+    subtitle: `How do we train robots to feel “comfortable” in some states and not others?`,
+    url: `/blog/uncompfortable-robots`,
+    excerpt: `<p>One could define internal goals and value structures, 
+    and train it on goal-aligned tasks where some paths feel cheap and good, others costly and conflictual. 
+    Discomfort would arise when there's mismatch with internal model and increase in prediction error. 
+    But if robot just optimizes reward, it might do things that look wrong to us.</p>`,
     readMore: ``,
     imgSrc: ``,
     imgAlt: ``,
   },
   {
     style: `box3`,
-    title: `Alternatives to gradient descent`,
+    title: `Intelligent work with pixels`,
     subtitle: ``,
-    url: `/ai/alternatives-to-gradient-descent`,
+    url: `/blog/intelligent-work-with-pixels`,
     excerpt: ``,
     readMore: ``,
     imgSrc: ``,
@@ -57,14 +56,12 @@ export const articles = [
   },
   {
     style: `box6`,
-    title: `Discrete Spiking Networks`,
+    title: `Spiking autoencoder with embodied actions`,
     subtitle: ``,
-    url: `/ai/discrete-spiking-networks`,
-    excerpt: `<p>First, we need to clarify how to work with the signal propagation in time. 
-    From one side, we use discrete time points, 
-    moments when a neuron has transmitted the action potential to following dendrites, 
-    but we need to track the dynamics of how values change when new inputs reappear on some neurons while the previous chain reaction is still propagating. 
-    Feedback signals and loops are essential features of this model, and that is what makes it an open problem here.</p>`,
+    url: `/ai/spiking-autoencoder-with-embodied-actions.md`,
+    excerpt: `<p>I'm adding neurons responsible for image transformation.
+    So these transformation neurons will be sending a signal to an external source that would actually change the input. 
+    And when prediction is far from the observed image, that is when transformation neurons try to adjust the image.</p>`,
     readMore: ``,
     imgSrc: null,
     imgAlt: null,
@@ -93,13 +90,12 @@ export const articles = [
   },
   {
     style: `box9`,
-    title: `Reinforcement Learning`,
+    title: `Keep render and logic separate`,
     subtitle: ``,
-    url: `/ai/reinforcement-learning`,
-    excerpt: `<p>Walls in the grid environment is an interesting problem. 
-    In rsrl crate it was implemented that the movement is possible but not movement actually occurs, 
-    so the agent just stays in the same position.
-    It's not good.</p>`,
+    url: `/code/cpp/render-and-logic`,
+    excerpt: `<p>I have nodes and a graph class that defines connections between nodes, 
+    and I think there’s a choice here—a render class that includes logic (like in any game engine) or
+    the logic includes rendering functions (which makes rendering optional)..</p>`,
     readMore: ``,
     imgSrc: null,
     imgAlt: null,

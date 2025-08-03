@@ -21,7 +21,9 @@ gallery-dl --cookies-from-browser firefox "<https://www.pinterest.com/mikolasan/
 
 ```
 
-## Firefox (history)
+## Web browsers
+
+### Firefox (history)
 
 Export Firefox history (sqlite file) with
 
@@ -29,6 +31,14 @@ Export Firefox history (sqlite file) with
 - or simply **DB Browser for SQLite**
 
 and export as CSV (ready for Excel... LIbreCalc ;) )
+
+### Bookmarks, open tabs
+
+Use [Readeck](https://readeck.org/en/) to retrieve web pages for offline reading. Just in case, if the link has changed, or the site went down, or AI has gone rogue and all networks vanished into oblivion, but you still would want to read that open tab that you set aside a long time ago.
+
+## Mastodon
+
+Search and view your posts from an exported archive with [MARL](https://github.com/s427/MARL)
 
 ## Other services
 

@@ -15,17 +15,18 @@ I cannot do a simple thing. Am I cursed?
 
 I'm 100% sure that my SD card slot is broken on RPi 4, that is why I have to use USB flash drive instead. It will not be a problem for RPi 5 where one can use NVME.
 
-What's the last thing that executes?
+What's the last thing that executes? It's hard to say it flashes so quickly. I record it on camera and then replay it in slo-mo. It somewhere where it mounts rootfs or starts the init script.
 
-It's hard to say it flashes so quickly. I record it on camera and then replay it in slo-mo. It somewhere where it mounts rootfs or starts the init script.
-
-I will need to check the power supply, though it's the official one that provides 5V 3A, I doubt that the problem is there.
-
-But first, I need to get a multimeter from work, then somehow interject it between PSU and USB type C connector. Which is a project by itself.
+I will need to check the power supply, though it's the official one that provides 5V 3A, I doubt that the problem is there. But first, I need to get a multimeter from work, then somehow interject it between PSU and USB type C connector. Which is a project by itself.
 
 Another theory is that Windows version of the Imager is not creating good ext4 partitions. I have Linux at work, but no card readers.
 
 More exotic theory is that MMC driver in the Linux kernel starting from version 5 is broken. I think that because RISC OS and LibreELEC worked just fine. And kernel 5 is in all distributions now *sigh*
+
+```
+mmc0: problem reading SD ...
+mmc0: error -110 whilst initialising sd card
+```
 
 Now I'm running Raspberry Pi (v1 model B) and the latest Raspbian works.
 

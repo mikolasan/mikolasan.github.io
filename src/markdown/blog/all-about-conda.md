@@ -34,5 +34,5 @@ My environments I created in the following projects
 
 - [Transformers and PyTorch](/blog/starcode)
 - Also [PyTorch](/ai/agent-emotion-model), but in WSL2 and this version is craving for `CUDA_HOME`
-- [Diffusers](/ai/my-faces-dataset) from Hugging Face
+- [Diffusers](my-dataset.md) from Hugging Face
 - [TensorFlow 2.12](/ai/unsupervised-image-classification-with-gan) on Windows can only be installed in WSL2

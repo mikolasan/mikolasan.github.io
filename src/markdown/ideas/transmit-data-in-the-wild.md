@@ -11,4 +11,5 @@ Small carryable devices that only transmit data. They use solar energy to increa
 
 ### References
 
-- [Guide to solr power systems](https://solar.lowtechmagazine.com/2023/12/how-to-build-a-small-solar-power-system/) by Low Tech Magazine
+- [Guide to solar power systems](https://solar.lowtechmagazine.com/2023/12/how-to-build-a-small-solar-power-system/) by Low Tech Magazine
+- [TV white space](https://www.ofcom.org.uk/spectrum/frequencies/white-space-coexistence) - use 470 to 790 MHz frequencies band designed for digital TV but repurposed to new wireless technology. 

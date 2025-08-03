@@ -7,10 +7,12 @@ lastModified: 2025-06-21
 
 If you were to create AGI, where would you start?
 What do people miss when they try to develop a system that conforms to AGI principles?
-It must have been a poll
 
+I was thinking about [ARC challenge](/ai/arc), how my [discrete spiking network](/ai/discrete-spiking-networks) and memory-inference paradigm can solve it. Some people say that good system for ARC would not be a good generalized system. But I think it would.
 
-I was thinking about ARC challenge, how my discrete spiking network and memory-inference paradigm can solve it. Some people say that good system for ARC would not be a good generalized system. But I think it would.
+## Memory-inference paradigm
+
+There should be a network that can recognize a space of one color surrounded by a line or other shape of another color. Should it follow the edge? Or verify the internal area? (I think there should be another “network” that can point out to another qualities and something else will combine the qualities together.)
 
 1. Image goes to memory
 2. We try to predict the result
@@ -18,17 +20,17 @@ I was thinking about ARC challenge, how my discrete spiking network and memory-i
 4. Error applied to the input again. 
 5. Problematic places used in new inference.
 6. …
-7. We need to get a notion of a closed figure.
+7. We need to get a notion of a closed contour.
 
-When inference improvements are finished on one image, you verify it on other images. Or most likely next training samples will be used for formulating the transformation properly. Also for describing the property, like a closed figure.
+When inference improvements are finished on one image, you verify it on other images. Or most likely next training samples will be used for formulating the transformation properly. Also for describing the property, like a closed contour.
 
-When there are two error patches, you need to compare them between each other - that’s how you define the property. As with the outline, you need to know the full picture, only the patch is not enough.
+When there are two error patches, you need to compare them between each other - that’s how you define the property. As with the outline, you need to know the full picture, only one patch is not enough.
 
-There should be a network that can recognize a space of one color surrounded by a line or other shape of another color. Should it follow the edge? Or verify the internal area? (I think there should be another “network” that can point out to another qualities and something will combine the qualities together.
 
-![Detecting edge process](detecting-edge-process.jpeg)]
 
-Such network of 5 neurons would be sufficient (5 is not exact, it’s simplified because there should be parts for movement actuators or area detection, color detection and comparison). But neurons don’t move. Though the vision area can move if we add muscle actuators. Or another approach would be to select a section from a vision field and bring it to these neurons. Like convolution networks and information from the higher layers (feature, latent space).
+![Detecting edge process](./detecting-edge-process.png)
+
+Such network of 5 neurons would be sufficient (5 is not exact, it’s simplified because there should be parts for movement actuators or area detection, color detection and comparison). But neurons don’t move. Though [the vision area can move if we add muscle actuators](/ai/spiking-autoencoder-with-embodied-actions). Or another approach would be to [select a section from a vision field and bring it to these neurons](/ai/spiking-mnist). Like convolution networks and information from the higher layers (feature, latent space).
 
 So, it should work similar to RNN where it starts from one point, then goes one by one and builds on top of the previous input. It follows the edge until it reaches the starting point or for some reason cannot follow to that point. Either search neurons cannot find the right move or the outline has a hole. 
 This means we need one signal coming from the starting point and comparison with the sliding position. And an external network that waits an answer.
@@ -36,14 +38,14 @@ This means we need one signal coming from the starting point and comparison with
 
 ## Inference 
 
-One thing is to say that all our actions heavily use background inference (for more context I will send an reader to Anil Seth book) because that is how we quickly react (like, no processing from scratch) or correct noise. But another thing is to look at standard pyramidal hierarchy of artificial neural network and try to figure out where is that inference. The closest would be autoencoders that have a shape of hourglasses: information from sensors passed through layers, features extracted, then these features used in a reverse process. But I don’t think it would work as inference 
+One thing is to say that all our actions heavily use [background inference](/ai/active-inference) (for more context I will send an reader to Anil Seth book) because that is how we quickly react or correct noise (quickly, because no need to apply layers of processing according to specific plans appropriate to current data type only). But another thing is to look at standard pyramidal hierarchy of artificial neural networks and try to figure out where is that inference. The closest would be autoencoders that have a shape of hourglasses: information from sensors passed through layers, features extracted, then these features used in a reverse process. But I don’t think it would work as inference 
 
 I thought that the input should go to memory, be stored there or processed from noise using another memory. But now thinking about inference and how to compare two inputs (one real input and the second is inference), I see that the result of inference is what we call memory, but there is no any storage as we represent like shelves with books, archives and so on. When something processed through that inference block, that’s how memory is retrieved.
 
 ## Self organizing maps
 
 Kohonen designed self organizing maps explaining them by neurological evidence that similar features located near each other. But they are located close because during plasticity only those neurons were turned into a special mode. So, som is not a training method it’s a consequence of training.
-![A quote from Kohonen's work](kohonen-quote.jpeg)
+![A quote from Kohonen's work](./kohonen-quote.jpeg)
 
 I was trying to figure out that example with triangles. So the distribution has two values that define how one point is connected to other two points in one dimensional list. It cannot go to two directions simultaneously so that is why it cannot be a full 1 square unit but only a triangle. It’s diagonal from (1,0) to (0,1) is when the sum is 1 (maximum strength, I suppose) but it also possible to have values under that line. So when the line evenly distributed itself in that triangle it didn’t look great and authors decided to transform it to evenly sided triangle using an affine transformation.
 https://people.sc.fsu.edu/~jburkardt/presentations/cg_lab_mapping_triangles.pdf
@@ -68,7 +70,7 @@ It seems like I need a comparator. And that can be achieved by classification AN
 
 But then, if we have two inputs: one with noise and another is output from memory that could be another noisy version or cleaned version then we either produce the clean version or just use the clean version “from memory”.
 
-![Draw blue line if observing one blue pixel](shifting-predictions.jpeg)
+![Draw blue line if observing one blue pixel](./shifting-predictions.png)
 
 Maybe training input and output are together and there’s another output. Equal to training output in training mode and calculates the output during evaluation. During evaluation it only uses one input, so it skips a comparison loop and goes straight to learned heuristics. But it should be able to return to the training examples in evaluation phase. Because it doesn’t learn distribution, it really only knows about several training cases and can explain reasoning step by step.
 Some priors should include knowledge about 9 colors and geometry and separate objects. 
@@ -110,19 +112,29 @@ In order to understand the flow, like its goal, direction and what meaning behin
 So forget for a moment about artificial neural networks, where the only way is forward and the only action is classification (activation of one neuron in the output group).
 One simple circuit is a link between motor sensors (proprioception) and muscles (actuators). Besides the external part that notifies about required movement, this circuit executes the movement and controls that it reaches the goal.
 The external part uses both parts: sends signals and listens for feedback.
+
 Let’s review another primitive action like satisfying hunger. The trigger is an emotion. This emotion is everywhere in the brain (it initiates the flow from specific regions where our experience about food is stored (but again I’m saying that experience is data like numbers)) and it forces to take actions (when the food is consumed and hunger is gone, dopamine (or whatever) will be released to award the taken course of actions. And that is when this flow is over. It dissipates. Everything stops). From experience we know how to solve that. Find food, eat it. Go to the fridge and cook a meal. Or stalk the prey and kill it.
+
 In computational biology scientists usually ignore how emotions are important.
+
 Now we will clarify what is our experience associated with hunger. It’s not about moments when you feel it, or random thoughts happening during this state. Though we can extract such things and relive some of them. But we know that it’s the wrong path that is not going to resolve the problem. That’s why our experience is all important decisions, good and bad, that we take to make that feeling go away.
-Let’s imagine that every neuron in one of the shortest paths is a step. Like go to the fridge, get frozen pizza, unwrap it, put in the oven, wait, eat. There are parallel neurons where many associated things can be triggered if we wanted to (to alter the path into that direction we would need another  signal in joint). Like visual images of the fridge or picture on the package of frozen pizza. Or many ways how to unpack the plastic: pull along the seal, use scissors or knife.
+
+Let’s imagine that every neuron in one of the shortest paths is a step. Like go to the fridge, get frozen pizza, unwrap it, put in the oven, wait, eat. There are parallel neurons where many associated things can be triggered if we wanted to (to alter the path into that direction we would need another signal in joint). Like visual images of the fridge or picture on the package of frozen pizza. Or many ways how to unpack the plastic: pull along the seal, use scissors or knife.
 
 But how do we advance in that path? Is it like a progress bar? It is initiated from one starting point and will be retriggered as far as the feeling persists?
 Or we go through this path as a plan and at the end of this path we see a promise and then we return back to the first step and start completing it. Getting feedback that it is done and continue to the next step.
 
-/<i drew a diagram with the steps/>
+...i drew a diagram with the steps...
 
-If we look at the diagram, some steps look complex if we ask themselves how an agent must learn these things for the first time? 
-The go to fridge task can be an input to another network of decisions: am I at home? do I see it? go to kitchen. 
-And again all these questions sound very complex and could be answered only with the symbolic approach. But definitely not by an artificial neural network that can only approximate functions.
+If we look at the diagram, some steps look complex. And we ask themselves how an agent must learn these things for the first time? 
+
+The `go to fridge` task can be an input to another network of decisions: 
+- `am I at home?`
+- `do I see it?`
+- `go to kitchen`
+
+And again all these questions sound very complex and could be answered only with the symbolic approach. But definitely not by an artificial neural network that can only [approximate functions](/ai/reinforcement-learning-using-artificial-neural-networks).
+
 However, these neurons don’t really have these complex labels attached to them. The labels only help us to understand what happened during training. But every neuron is not holding an answer that can be put in the label. It’s quite different. These neuron, it’s a way to organize our sensory patterns (memory, experience) and a set of learned actions. So basically they are blocks in a diagram that define the flow. Valves that open into a specific direction based on previous events.
 
 On the contrary to current surge of generative models, the brain, that we want to mimic, is not good at reproducing visual scene with their initial vividness.
@@ -140,7 +152,7 @@ So there is a short memory (based on hippocampus functions), it’s very flexibl
 Another difference about memory. Memory in ANN viewed as something that indeed affects the flow through the network depending on previous steps. We are talking about RNN here. But again, the input is numbers and synaptic strength is numbers too. Previous input plays a role in recurrent formulas (the previous step works as a bias to computations on the current one ). Is it similar (or some equivalent simplification ) to spiking neurons ? In SNN signal comes from one neuron as a train of spikes. Which can be considered as a boolean value. Frequency affects if this signal would be enough to propagate further. (In case of an inhibitory signal it tells if propagation should stop, ( that is a false value, where also should be no value when the neuron is not receiving any signals, which makes it ternary ))
 Actually, input value plus synaptic weights give us the amount of spikes collected and then they are converted into the following spike by the activation function . 
 
-![overlapping signals](inhibitory-synapses-on-overlapping-signals.jpeg)
+![overlapping signals](./inhibitory-synapses-on-overlapping-signals.png)
 
 Something about field of perception and initial configuration. ANN is always filled in the beginning with a tiny random noise. If the weight matrix was left with zeros then the algorithm would not work.
 For sparse networks I assume it works the same. But neurons should have localized connections. In some radius in the previous layers (correct, not only one previous layer, it connects simultaneously to several previous layers), and some radius in the same layer. Technically it will have connections in a bigger radius but through higher layers. 

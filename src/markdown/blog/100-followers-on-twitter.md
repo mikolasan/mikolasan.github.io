@@ -1,8 +1,9 @@
 ---
-title: Epistle to the followers (114)
+title: Epistle to my followers
 date: 2022-06-01
 published: 2022-06-01
 lastModified: 2022-06-01
+subtitle: 114 followers on Twitter
 ---
 This is typical me. It’s happening so slow that I don’t know when the milestone does occur. If it had happened the next day when I registered my account I would definitely be surprised but I would celebrate it. But when the number increments by one in a period of weeks or month, then it’s like playing drums, where the next beat is going to be only tomorrow. No music.
 

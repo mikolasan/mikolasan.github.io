@@ -24,7 +24,7 @@ class TheLastSamurai extends React.Component {
         <p>
           Stacked symbol on the first reel stops in the full length, then a fighter shoots from the right.
           Other reels spin.
-          If the same symbol appears on the next reel, the fighter hits the next reel and feel it all.
+          If the same symbol appears on the next reel, the fighter hits the next reel and fills it all.
           Now, he is on the second reel.
         </p>
         

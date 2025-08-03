@@ -46,3 +46,7 @@ lastModified: 2024-03-27
 - Boombox [https://cults3d.com/en/3d-model/gadget/raspberry-pi-airplay-boombox](https://cults3d.com/en/3d-model/gadget/raspberry-pi-airplay-boombox)
 - Flexi worm [https://www.printables.com/model/217417-articulated-axolotl-multicolor-remix](https://www.printables.com/model/217417-articulated-axolotl-multicolor-remix)
 - Flexi dragon [https://www.printables.com/model/210311-articulated-spirit-dragon_-dragon_no-support_easy-](https://www.printables.com/model/210311-articulated-spirit-dragon_-dragon_no-support_easy-)
+
+## 3D print files collections
+
+- Decentralized [Manyfold](https://manyfold.app/)

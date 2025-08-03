@@ -5,10 +5,18 @@ published: 2025-02-04
 lastModified: 2023-02-23
 ---
 
+I was looking for a reverse proxy for my self-hosted services. The choice is hard. I found 4 options:
+- ~Apache~
+- nginx
+- traefik
+- Caddy
+- feron ([https://www.ferronweb.org/docs/modules/](https://www.ferronweb.org/docs/modules/) [https://github.com/ferronweb/ferron](https://github.com/ferronweb/ferron) )
 
-1. Move the gui port from 80/443 to 9080/9443 on your router and disable access from WAN
+## Traefik
 
-For the Edge Router
+I don't know why I didn't choose **nginx**. I was not a fan of [Apache](https://www.jenkins.io/doc/book/system-administration/reverse-proxy-configuration-apache/) so I concluded that configuring **nginx** will be the same mess. Or **nginx** has this only in a paid version? Anyway, I decided that small unknown teams could make it better and based on the amount of docs I chose Traefik.
+
+So on the Edge Router I moved the gui port from 80/443 to 9080/9443 and disabled access from WAN
 
 ```bash
 configure
@@ -19,15 +27,15 @@ save
 exit
 ```
 
-2. Get a free SSL certificate
+Then got a free SSL certificate
 
 ```bash
 sudo certbot certonly --standalone
 ```
 
-3. Instal [Traefik](https://doc.traefik.io/traefik/routing/routers/#tls) (I don't know why I didn't choose nginx. I was not a fan of [Apache](https://www.jenkins.io/doc/book/system-administration/reverse-proxy-configuration-apache/) so I concluded that configuring nginx will be the same mess. Or nginx has it only in a paid version? Anyway, I decided that small unknown teams could make it better and based on the amount of docs I chose Traefik.)
+Installed [Traefik](https://doc.traefik.io/traefik/routing/routers/#tls) . Configuration based on two files. 
 
-Configuration based on two files. One base config **traefik.yml**
+One base config: **traefik.yml**
 
 ```yml
 global:
@@ -110,3 +118,6 @@ StandardError=journal
 [Install]
 WantedBy=multi-user.target
 ```
+
+
+## Caddy

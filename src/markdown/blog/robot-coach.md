@@ -14,7 +14,7 @@ Andrew Male in [his Twitter asked](https://twitter.com/andym84/status/1521733648
 
 > If anyone is bored and into robotics, I need one that will sit on my desk and when it sees me reading code for more than an hour it will ask me out loud if I really need to refactor the code.
 
-As you [may know](/about), I am up to robotics. I [decided to start](https://twitter.com/mikolasan/status/1533941270594277376) simple. Robot-companion
+As you [may know](/about), I am a huge robotics enthusiast. I [decided to start](https://twitter.com/mikolasan/status/1533941270594277376) simple. Robot-companion
 
 - it is sitting on your desk and monitors you
 - it plans and organizes your work
@@ -27,4 +27,4 @@ So it’s like a coach. It should pose an angry reaction when you are out of tra
 
 I'm aiming for a physical device. It will sit on a desk - a physical table where my laptop is. 
 
-In months [it grew big](/make/robot).
+In months [it grew big](/robots/prototype-2).

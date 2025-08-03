@@ -18,7 +18,8 @@ lastModified: 2022-12-19
 ## Things
 
 - [motherboard schematics](https://community.mnt.re/t/im-building-my-own-reform/759)
-- 
+- [OpenFlexure Microscope](https://openflexure.org/projects/microscope/)
+- [A handheld Linux terminal](https://github.com/ZitaoTech/Hackberry-Pi_Zero)
 
 
 ## Services

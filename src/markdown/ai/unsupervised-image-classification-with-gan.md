@@ -133,7 +133,7 @@ pip install wandb hydra-core --upgrade
 
 ## Dataset
 
-See how to load pictures into torch in [this post](/ai/my-faces-dataset)
+See how to load pictures into torch in [this post](my-dataset.md)
 
 Also, everyone uses this: [CelebA](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) - 64x64 faces
 

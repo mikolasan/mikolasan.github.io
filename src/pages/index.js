@@ -24,7 +24,7 @@ const threeColumnLayout = (
           <HomeBlock {...articles[1]} />
         </div>
         <div className="home-image">
-          <img src="/images/home/may-clouds-2.jpg" />
+          <img src="/images/home/lizard.jpg" />
         </div>
       </div>
       <div className="home-right-column">

@@ -43,7 +43,7 @@ Since that I started using in my day after day experiments
 
 - [Transformers and PyTorch](/blog/starcode)
 - Also [PyTorch](/ai/agent-emotion-model), but in WSL2 and this version is craving for `CUDA_HOME`
-- [Diffusers](/ai/my-faces-dataset) from Hugging Face
+- [Diffusers](my-dataset.md) from Hugging Face
 - [TensorFlow 2.12](/ai/unsupervised-image-classification-with-gan) on Windows can only be installed in WSL2
 
 Also, can be helpfull [Anaconda cheatsheet](https://docs.conda.io/projects/conda/en/stable/user-guide/cheatsheet.html)

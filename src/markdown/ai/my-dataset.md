@@ -1,11 +1,10 @@
 ---
 article: quest
-title: My Faces Dataset
+title: My Small Training Dataset
 date: 2023-07-17
 published: 2023-07-17
-lastModified: 2023-07-17
+lastModified: 2023-08-07
 ---
-
 
 ## Initial plan
 
@@ -187,3 +186,14 @@ model = UNet2DModel(
 ## C++ code
 
 **PyTorch C++**: [Docs](https://pytorch.org/tutorials/advanced/cpp_frontend.html), [examples](https://github.com/pytorch/examples/tree/main/cpp)
+
+
+## Smaller dataset
+
+I incline to small but coherent datasets. This will make every diffusion model precise in their little purposes. Which means I need to work on my dataset. It has already some categories and I will start to train body part recognition models [using GAN]https://towardsdatascience.com/semi-supervised-learning-with-gans-9f3cb128c5e), but to generate something interesting I need to [recognize poses](https://github.com/google/mediapipe/blob/master/docs/solutions/pose.md) and generate new ones (I saw GAN models can do it). Pose recognition is very helpful for robots anyway. 
+
+That’s how they [can learn new movements](https://proceedings.neurips.cc/paper_files/paper/2017/file/34ed066df378efacc9b924ec161e7639-Paper.pdf), though their bone and “muscle” structure is different. But maybe they can imitate to some degree.
+
+The images in the STL10 have a lot of variation meaning more "features" need to be encoded in the latent space to achieve a good reconstruction. Using a data-set with less variation (and the same latent vector size) should results in a higher quality reconstructed image.
+
+After CNN try [this approach](https://thesai.org/Downloads/IJARAI/Volume4No7/Paper_1-A_Minimal_Spiking_Neural_Network_to_Rapidly_Train.pdf) next.
