@@ -54,4 +54,4 @@ And every neuron will have a big threshold. During training this threshold can b
 
 For example, you’re listening speech in another language and maybe you’ll learn some words and you can recognize them, but other words you cannot recognize, and they will go to some empty new category. For every new word. And if you were listening for a speech (or reading long text) with many words, then possibly big amount of new words would create many new categories. So many that, of course, it will explode.
 
-But this would happen in the hippocampus, which means in a short term memory these categories can be overwritten. So some words will be erased, but if you repeat the words again then you will build categories that will go to a long-term memory. There they will be stored properly.
+But this would happen in the hippocampus, which means in a short term memory these categories can be overwritten. So some words will be erased, but if you repeat the words again then you will build categories that will go to a long-term memory. There they will be stored properly. What about [sleep functions](/blog/should-ai-sleep) in remembering?

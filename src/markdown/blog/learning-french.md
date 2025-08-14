@@ -28,7 +28,7 @@ lastModified: 2025-07-12
 
 - [Survive La France](https://survivelafrance.fr/)
 
-## My stories
+## Translation practice - My stories
 
 ### Jus de bouleau
 

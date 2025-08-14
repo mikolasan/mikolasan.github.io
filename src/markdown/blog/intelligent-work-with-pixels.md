@@ -50,17 +50,15 @@ Kohonen designed self organizing maps explaining them by neurological evidence t
 I was trying to figure out that example with triangles. So the distribution has two values that define how one point is connected to other two points in one dimensional list. It cannot go to two directions simultaneously so that is why it cannot be a full 1 square unit but only a triangle. It’s diagonal from (1,0) to (0,1) is when the sum is 1 (maximum strength, I suppose) but it also possible to have values under that line. So when the line evenly distributed itself in that triangle it didn’t look great and authors decided to transform it to evenly sided triangle using an affine transformation.
 https://people.sc.fsu.edu/~jburkardt/presentations/cg_lab_mapping_triangles.pdf
 
-## DNA
+## Specific region - specific purpose
 
-How we are developed just encoded there
-
-Though I like the idea of Self Organizing Maps, but that is a way to uncontrollable network development, chaotic organization. While the brain has always specific regions for specific purposes. Always. In every different human despite all mutations. 
+How cells grow and connect simply encoded in DNA. Though I like the idea of Self Organizing Maps, but that is a way to uncontrollable network development, chaotic organization  with heuristic assistance. While as the brain has always specific regions for specific purposes. Always. In every different human despite all the mutations. 
 
 A side note. Some little flexibility still possible, a brain can replace damaged functions (in case of trauma) utilizing other neurons. But this process is slow and unusual. 
 
-Language processing is in specific area. Was it always there? How such specialization evolves? Is it a subregion in a region? Is there always extra space for more regions? If not, then do they overwrite each other?
+Language processing is in specific area. Was it always there? **How such specialization evolves?** Is it a subregion in a region? **Is there always extra space for more regions?** If not, then do they overwrite each other?
 
-Could be that the brain consists of small systems that just carry their input. Some start from sensory data, some—from outputs from other systems.
+Could be that the brain consists of small systems that just carry their input? Some start from sensory data, some—from outputs from other systems.
 
 ## Inference again
 
@@ -75,21 +73,18 @@ But then, if we have two inputs: one with noise and another is output from memor
 Maybe training input and output are together and there’s another output. Equal to training output in training mode and calculates the output during evaluation. During evaluation it only uses one input, so it skips a comparison loop and goes straight to learned heuristics. But it should be able to return to the training examples in evaluation phase. Because it doesn’t learn distribution, it really only knows about several training cases and can explain reasoning step by step.
 Some priors should include knowledge about 9 colors and geometry and separate objects. 
 
-
 ## Invariants
 
-Every pixel is represented by three neurons for red green blue. Position s important for the initial layer but it must retrieve an invariant later. And each color neuron is not marked for a specific color but it should work in a group or inform near by neurons
+Every pixel is represented by three neurons for red, green and blue. Positions are important for the initial layer, but the system must retrieve an invariant in the later layers along the way.
 
-Active inference trained with masking? There is also latent space manipulations but no one considers invariants. Where are they? 
+Some neurons will be encoding color qualities. If you think about canonical ANN to predict colors, then it would have output neurons marked for a specific color. But we will not be setting labels. Moreover, the last output layer normally means no interaction between nodes. But here, color neurons should work together inform nearby neurons, inhibit other colors or excite and create color combinations.
 
-If people make AI will it require sleep?
+[Something](https://techxplore.com/news/2024-09-language-communication-artificial-networks.html) that is related to my [ultra-planar theory](/ai/ultra-planar-theory). 
+Language is a way to exchange invariants (?) between people. Or a way to express it (give meaning) and receive a confirmation from another person. It’s like active inference but using another person as a teacher. ([A framework for the emergence and analysis of language in social learning agents](https://www.nature.com/articles/s41467-024-51887-5))
 
-Something that is related to my ultra-planar theory. https://techxplore.com/news/2024-09-language-communication-artificial-networks.html
-Language is a way to exchange invariants (?) between people. Or a way to express it (give meaning) and receive a confirmation from another person. It’s like active inference but using another person as a teacher. 
-Imagine that you are trying to communicate with someone who speaks another language. So nothing you say would be understood by them and vice versa. And your task is something important. Like, you are deciding if that plant is poisonous or not.
-Basically you would follow exactly the same steps as training for one plane happens. It’s input, memory, correction, feedback and going on the second loop. 
+Imagine that you are trying to communicate with someone who doesn't speak your language. Nothing you say would be understood by them and vice versa. And you are in a life-and-death situation like, you are deciding if a plant is poisonous or not.
+Basically, what the article confirms, your actions would follow exactly the same steps as it occurs in the training process for a plane: input, memory, correction, feedback and going on the next loop. 
 
-Calculate $x-y$ , that is a trigger. Then calculate $y-x$ , that will be the new construction. Now, next iteration where we analyze the difference between them, how they relate to each other.
 
 
 How to teach AI about perfectionism? With unsupervised learning we don’t explain what a line is, we give examples of lines. (And we need to give A LOT of examples to deep learning models) And because it’s possible to have diagonal pixelated lines with not an ideal 45 degrees diagonal then not all pixels will be touching each other only by corners but will be some touching by edges, being on the same horizontal or vertical line. Some pixels that break the perfection. Or this can happen during prediction (like with very common artifact of six fingers) when horizontal (or vertical) segment will be predicted instead of a strict diagonal.
@@ -97,23 +92,28 @@ What is that feeling and need for perfection? How to explain it?
 
 
 In order to formalize active inference, we need to have memory where some image representation used for comparison would be stored. But this memory is not like programmers used to think about memory, like when you have an object, snap your fingers, and it’s saved in a region of memory as it is, byte by byte.
-It cannot be that way in memory that we are going to build for active inference. Why?
-Don’t forget, we use spiking networks, so data is not represented by numbers but more like binary signals that repeat itself (synaptic strength and frequency could play a role too but inhibitions or excitations are more important). So, as a result of these spikes, it just opens or closes gates to direct a flow of the signal. 
-Where can we have an object stored inside the network if the network only defines a path. Let’s say every part of the object is a specific neuron activated, and if we activate all these neurons then that’s how an object is retrieved. There is a big assumption here, that these neurons represent something (or somehow assigned to this object). But again, it’s not like in computer’s memory where numbers represent the object, these activated neurons are not the end of the flow. There is no way in the circuit to activate neurons for one object and another and when they retrieved, provide an operation with them (like summation or measure a spatial distance). 
 
-The first problem would be that similar images would use overlapping regions, so they cannot be activated as completely separate groups of neurons.
-Which means that objects are not retrieved as independent entities and they are not parts of operations. Maybe the flow itself is an operation.
+Memory that we are going to build cannot be that way in active inference. Why?
+Don’t forget, we use spiking networks, so data is not represented by numbers. It's more like binary signals that repeat itself (synaptic strength and frequency could play a role too but inhibitions or excitations are more important). So, as a result of these spikes, it just opens or closes gates to direct a flow of the signal. 
+
+Where can we have an object stored inside the network if the network only defines a path? Let’s say every part of the object is a specific neuron activated, and if we activate all these neurons then that’s how an object is retrieved. There is a big assumption here, that these neurons represent something (or somehow assigned to this object). But again, it’s not like in computer’s memory where numbers represent an object, these activated neurons are not the end of the flow. 
+
+Then, in this circuit will it be possible to activate neurons for two objects simultaneously, and when they are retrieved, provide an operation on them (for example, summation or measure a spatial distance). 
+There is no way if the flow propagates only forward and every unique pattern activates specific objects? Then this type of system (very similar to any pyramidal ANN architecture where there are inputs and outputs) would be very limited.
+
+The first problem would arise from similar images that use overlapping regions, so they cannot be activated as completely separate groups of neurons.
+Which means that objects are not retrieved as independent entities and they are not parts of operations. (Worth mentioning that there is a theory viewing the flow itself is an operation - **enactive memory**).
 
 The second problem is to understand how these operations are represented in the flow. 
 
 Let’s say we have a prior knowledge about lines and rectangles. What is the process of drawing a diagonal line from a point? In programming language it would be: find the dot, choose direction, put another dot in that direction, repeat. Or for pixel art perfection, use specific cells and repeat the pattern. Analyze some pixels in some combinations. See the grid, change the grid size virtually.
 
-In order to understand the flow, like its goal, direction and what meaning behind all interactions on its way is better to start with simple circuits.
-So forget for a moment about artificial neural networks, where the only way is forward and the only action is classification (activation of one neuron in the output group).
-One simple circuit is a link between motor sensors (proprioception) and muscles (actuators). Besides the external part that notifies about required movement, this circuit executes the movement and controls that it reaches the goal.
-The external part uses both parts: sends signals and listens for feedback.
+In order to understand the flow direction and what meaning behind all interactions on its way is better to start with simple circuits (understand = describe its goal).
+So forget for a moment about artificial neural networks, where the only way is forward and the only action is classification (activation of singular neurons in the output).
+One simple circuit is a link between motor sensors (proprioception) and muscles (actuators). Besides the external part that notifies about required movement, this circuit executes the movement and detects when it reaches the goal.
+The external part works with bidirectional flow: it sends signals and listens for feedback.
 
-Let’s review another primitive action like satisfying hunger. The trigger is an emotion. This emotion is everywhere in the brain (it initiates the flow from specific regions where our experience about food is stored (but again I’m saying that experience is data like numbers)) and it forces to take actions (when the food is consumed and hunger is gone, dopamine (or whatever) will be released to award the taken course of actions. And that is when this flow is over. It dissipates. Everything stops). From experience we know how to solve that. Find food, eat it. Go to the fridge and cook a meal. Or stalk the prey and kill it.
+Let’s review another primitive action like satisfying hunger. The trigger is an emotion. This emotion is everywhere in the brain (it initiates the flow from specific regions where our experience about food is stored (but again, this in assumption that experience is represented in solid values like numbers)) and it forces to take actions (when the food is consumed and hunger is gone, dopamine (or whatever) will be released to award the taken course of actions. And that is when this flow is over. It dissipates. Everything stops). From experience we know how to solve that. Find food, eat it. Go to the fridge and cook a meal. Or stalk the prey and kill it.
 
 In computational biology scientists usually ignore how emotions are important.
 

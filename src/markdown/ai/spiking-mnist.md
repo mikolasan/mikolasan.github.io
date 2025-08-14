@@ -4,7 +4,6 @@ title: Spiking MNIST
 date: 2025-05-28
 published: 2025-05-28
 lastModified: 2025-05-28
-genai: yes
 ---
 I am planning for some hierarchical encoding for an experiment with my [rule-based system](/blog/regulus).
 
