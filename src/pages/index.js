@@ -6,13 +6,15 @@ import ScrollSplit from "../components/scrollSplit"
 import { articles } from "../home/july2025"
 import { SEO } from "../components/seo"
 
+const issueTitle = "July 2025, Issue 7";
+
 const threeColumnLayout = (
   <div className="home-all">
     <LogoButton style="home-logo" />
     <div className="issue-line">
       <div className="issue-slogan"></div>
       <div className="issue-number">
-        <h3>July 2025, Issue 7</h3>
+        <h3>{issueTitle}</h3>
       </div>
       <div className="issue-date"></div>
     </div>
@@ -87,7 +89,7 @@ export const Head = ({ location, data, pageContext }) => (
     data={data}
     frontmatter={data?.markdownRemark?.frontmatter}
     pageContext={pageContext}
-    title="November 2024, Issue 6"
+    title={issueTitle}
   >
 
   </SEO>
