@@ -91,6 +91,19 @@ Here's a screenshot from **valgrind**
 
 ![a screenshot from valgrind](./cpp-map-leak.png)
 
+And a side note on how to use **valgrind**:
+
+```sh
+valgrind --leak-check=full \
+         --show-leak-kinds=all \
+         --track-origins=yes \
+         --verbose \
+         --log-file=valgrind-out.txt \
+         /path/to/your/program \
+         --your_program_arguments
+```
+
+(Do not use `--leak-check=yes`. the value `yes` makes it hang forever)
 
 As usual all code for your experiments and slides are in [**cpp-skill** repository](https://github.com/mikolasan/cpp-skill/tree/master/weird_map).
 

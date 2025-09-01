@@ -45,3 +45,6 @@ Somewhat related (but really awesome) websites
 ## Shaders
 
 - [a planet](https://www.shadertoy.com/view/4tVSRw)
+- [full system(https://www.shadertoy.com/view/3dyfzm)
+- [one exoplanet](https://www.shadertoy.com/view/XssyDM)
+- [costellations](https://www.shadertoy.com/view/lscczl)

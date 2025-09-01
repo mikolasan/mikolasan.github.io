@@ -40,6 +40,8 @@ But the result of this network is very noisy tensor with many cells active at th
 
 Memory is done with a [Hopfield network](/ai/hopfield-networks)
 
+Does human episodic memory depend on context-invariant or conjunctive coding of single neurons in the human hippocampus? [thread](https://synapse.cafe/@eliasraw/115026638737414897)
+
 ## Notebooks
 
 - [SOM](https://codeberg.org/mikolasan/ai-sandbox/src/branch/master/arc/kohonen.ipynb)

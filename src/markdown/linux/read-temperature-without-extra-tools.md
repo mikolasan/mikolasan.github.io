@@ -4,7 +4,7 @@ title: Read temperature without extra tools
 published: 2022-08-09
 lastModified: 2022-08-09
 ---
-
+Sensor values already provided by the Linux kernel. You just need to find them:
 
 ```bash
 paste \
@@ -18,3 +18,4 @@ edge  40.0°C
 Tdie  40.5°C
 Tctl  40.5°C
 ```
+

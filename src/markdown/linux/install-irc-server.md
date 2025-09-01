@@ -3,20 +3,51 @@ title: IRC server
 subtitle: Install on Raspberry Pi
 date: 2025-02-28
 published: 2025-02-28
-lastModified: 2025-02-28
+lastModified: 2025-08-30
 ---
 
 Probably you have seen on Mastodon people advocating for RSS, forums and IRC as a foundation of new cozy and niche internet without big tech companies. So I want to check if there’s a real reincarnation of these old things. (Except emails, real paper mails are much cooler.)
 
-I started to play with the system on my raspberry pi. It doesn’t boot from an SD card, but it can boot from a USB stick. But during `apt upgrade` I lost the ssh connection, decided to power cycle the board, and now it doesn’t boot. On Windows I fixed the file system on the first partition, and it started blinking but still no booting. Apparently, the kernel file was corrupted and I needed to replace it with a genuine one file from another place.
+I started to play with the system on my Raspberry Pi. It doesn’t boot from an SD card, but it can boot from a USB stick. But during `apt upgrade` I lost the ssh connection, decided to power cycle the board, and now it doesn’t boot. On Windows I fixed the file system on the first partition, and it started blinking but still no booting. Apparently, the kernel file was corrupted and I needed to replace it with a genuine one file from another place.
 
+So anyway, back to installing an IRC server. I already have done it on a Debian machine:
+
+```sh
+wget https://github.com/inspircd/inspircd/releases/download/v4.3.0/inspircd_4.3.0.deb12u1_amd64.deb
+apt install ./inspircd_4.3.0.deb12u1_amd64.deb
+apt install gnutls-bin
+
+certtool --generate-privkey --outfile key.pem
+certtool --generate-privkey --outfile ca-key.pem
+certtool --generate-certificate --load-privkey key.pem --outfile cert.pem
+certtool --generate-self-signed --load-privkey ca-key.pem  --outfile ca-cert.pem
+# certtool --generate-dh-params --sec-param normal --outfile dhparams.pem
+mkdir /etc/inspircd/keys
+mv key.pem cert.pem /etc/inspircd/keys
+
+chmod 644 /etc/inspircd/keys/*
+chown -R irc:irc /etc/inspircd/
+
+ufw allow 6697/tcp
+systemctl start inspircd
+journalctl -u inspircd.service
+```
+
+Interesting, that you can test your custom certificates with **[gnutls](https://www.gnutls.org/manual/html_node/certtool-Invocation.html)**:
+
+```sh
+cd /etc/inspircd/keys
+gnutls-serv --x509certfile ca-cert.pem --x509keyfile ca-key.pem
+HTTP Server listening on IPv4 0.0.0.0 port 5556...done
+HTTP Server listening on IPv6 :: port 5556...done
+```
 ## Build from sources
 
-Doing fun Linux stuff first: compiling an IRC client from source.  
+Doing fun Linux stuff first: compiling an IRC client from source. (Because **inspircd** doesn't have debian packages for arm64)
 
 No, I'm serious, I like it. Doing that you will feel that your computer is a sandbox and you can make programs from raw instructions. For the record, I'm not saying that I like Gentoo - that is overboard.
 
-```bash
+```sh
 sudo apt install libpq-dev libgnutls28-dev
 
 git clone https://github.com/inspircd/inspircd.git
@@ -25,7 +56,10 @@ cd inspircd
 make install
 
 /home/nikolay/irc/inspircd/run/conf/
+```
 
+To get features that one would expect from a normal chat (permanent channels, backlog of messages, user registration) I added [Anope](https://github.com/anope/anope) (just a random choice, not sure that I like it)
+```sh
 git clone https://github.com/anope/anope.git
 cd anope
 ./Config
@@ -96,6 +130,16 @@ According to [the kiwiirc documentation](https://gist.github.com/ItsOnlyBinary/3
 
 - `/names` - list of users
 - To tag a person - just type in their nickname
+
+### Anope Servers
+
+These commands I tried, not all of them worked, because it depends on Anope configuration also. For some reason I still cannot login as an OP.
+
+- register a user `/msg NickServ REGISTER <pass>`
+- register a moderator `/oper <user> <password>`
+- create a permanent channel `/msg ChanServ REGISTER #general`
+- other [NickServ Commnds](https://www.geekshed.net/commands/nickserv/)
+- and other [NickServ Commnds](https://gist.github.com/parsa/8d03ea272add575c67cc9b9305c5237a)
 
 ## Reference
 

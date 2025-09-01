@@ -61,7 +61,21 @@ Brian [docs](https://brian2.readthedocs.io/en/stable/user/equations.html)
 C++ options for SNN simulation
 
 - [CARLsim](https://github.com/UCI-CARL/CARLsim5/blob/master/carlsim/kernel/src/snn_manager.cpp)
-- 
+
+### Equations
+
+This defines dynamics between neurons
+
+```
+dv/dt = (v_rest - v + i_exc + i_inh) / tau_mem  : volt (unless refractory)
+i_exc = ge * -v                         : volt
+i_inh = gi * (v_inh_base - v)           : volt
+dge/dt = -ge/(1 * ms)                   : 1
+dgi/dt = -gi/(2 * ms)                   : 1
+dtimer/dt = 1                           : second
+```
+
+What? What's all that?
 
 ## How numbers and quantities are represented in neural ensembles?
 

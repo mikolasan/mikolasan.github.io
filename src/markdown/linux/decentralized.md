@@ -1,0 +1,1 @@
+Decentralized websites - [ZeroNet](https://github.com/HelloZeroNet/ZeroNet?tab=readme-ov-file)

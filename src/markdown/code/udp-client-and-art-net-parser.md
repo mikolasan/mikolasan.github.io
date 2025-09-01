@@ -6,9 +6,7 @@ published: 2021-10-13
 lastModified: 2021-10-13
 ---
 
-My own UDP client and Art-Net parser
-
-First we use a tool like [Resolume](https://resolume.com/download/files?file=Resolume_Arena_7_5_0_rev_77960_Installer.exe) or LED Strip Studio 
+First we use a tool like [Resolume](https://resolume.com/download/files?file=Resolume_Arena_7_5_0_rev_77960_Installer.exe) or LED Strip Studio to make an LED show.
 
 ![screenshot of the capturing process where Wireshark and LED Strip Studio are open](./capture-art-net.png)
 
@@ -18,17 +16,17 @@ Then we capture UDP packets from the software with the following wireshark captu
 udp and src host 192.168.0.4 and port 6454
 ```
 
-Wireshark saves packets in pcap format, then we will use pcap library to read them and then we need to parse Art-Net structures, make a few changes and send to LED controller. Yes, controller, not LED strip directly. It can be a specialized device like DMX King or Arduino board with [Art-Net library](https://www.arduino.cc/reference/en/libraries/artnet/) like [ArtneWifi](https://github.com/rstephan/ArtnetWifi)
+Wireshark saves packets in pcap format, then we use the **pcap** library to read them, and then we  parse Art-Net data, make a few changes and send it to an LED controller. Yes, controller, not directly to an LED strip. It can be a specialized device like DMX King or Arduino board with [Art-Net library](https://www.arduino.cc/reference/en/libraries/artnet/) like [ArtnetWifi](https://github.com/rstephan/ArtnetWifi)
 
 
-## ArtneWifi
+## Arduino and ArtnetWifi
 
 ```cpp
 Udp.begin(ART_NET_PORT);
 ```
 
-The `Udp` object implementation depends on what board is selected in Arduino IDE. For Wemos W1 the[ESP8266WiFi](https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266WiFi) library is used.
-There in **WiFiUdp.cpp** we find implementation of the `begin` method.
+The `Udp` object implementation depends on what board is selected in Arduino IDE. For Wemos W1 the [ESP8266WiFi](https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266WiFi) library is used.
+There, in **WiFiUdp.cpp**, we find implementation of the `begin` method.
 
 ```cpp
 uint8_t WiFiUDP::begin(uint16_t port)
@@ -117,7 +115,6 @@ Send/receive Art-Net on Arduino
 - choose one http://dmxking.com/m/support/13-control-software/80-artnet-sacn-software
 - https://artisticlicence.com/product/dmx-workshop/
 - https://learn.sparkfun.com/tutorials/using-artnet-dmx-and-the-esp32-to-drive-pixels/all
-    
 
 ## UDP
 

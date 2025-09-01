@@ -1,0 +1,3 @@
+- [smoke shader](https://www.shadertoy.com/view/WlVyRV)
+- [fluid simulation](https://www.shadertoy.com/view/4tGfDW)
+- [flame](https://www.shadertoy.com/view/WsccDH)
