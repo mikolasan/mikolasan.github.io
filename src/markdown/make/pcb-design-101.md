@@ -58,6 +58,11 @@ PCB design checklist ([example](https://mastodon.social/deck/@noodlejs@hachyderm
 - Change PCB color: go back to Eagle
 
 
+## KiCAD
+
+- Smooth traces in [Melting Kicad](https://mitxela.com/projects/melting_kicad_2)
+
+
 ## SMD Package Types
 
 SMD Package Type | Dimensions (mm) | Dimensions (inches)

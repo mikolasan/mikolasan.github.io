@@ -88,3 +88,8 @@ There's a debate if distinct neural pathways for exact symbolic numbers (like "7
 The intraparietal sulcus (IPS), particularly the horizontal segment, shows robust activation for numerical processing.
 
 It is known that [neuronal oscillations](https://www.philippstreicher.com/blog/neural-oscillations) in various frequency bands may carry functionally distinct information. So, can different frequency bands encode different aspects of numerical information?
+
+
+## References
+
+- [Spiking Neural Network (SNN) with PyTorch: towards bridging the gap between deep learning and the human brain](https://guillaume-chevalier.com/spiking-neural-network-snn-with-pytorch-where-backpropagation-engenders-stdp-hebbian-learning/) by Guillaume Chevalier

@@ -77,7 +77,7 @@ A list from [this blog](https://cnvrg.io/spiking-neural-networks/)
 
 ## Questions
 
-- How does STDP start if no synaptic connections exist a priori?
+- _How does STDP start if no synaptic connections exist a priori?_ Answer: because the process you are thinking about is called differently. It's **synaptogenesis**. STDP only refines the existing connections.
 
 ## Libraries
 

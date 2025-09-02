@@ -42,6 +42,9 @@ Memory is done with a [Hopfield network](/ai/hopfield-networks)
 
 Does human episodic memory depend on context-invariant or conjunctive coding of single neurons in the human hippocampus? [thread](https://synapse.cafe/@eliasraw/115026638737414897)
 
+Memories that last a lifetime are believed to be embedded in synaptic efficacies. There are two problems associated with the **stability** of memory which are explained in [Maintenance of synaptic plasticity](http://www.scholarpedia.org/article/Maintenance_of_synaptic_plasticity)
+
+The content of working memory is not only stimulus dependent but also strongly time varying ([source](https://www.jneurosci.org/content/26/14/3667#xref-ref-17-1): Higher-Dimensional Neurons Explain the Tuning and Dynamics of Working Memory Cells)
 ## Notebooks
 
 - [SOM](https://codeberg.org/mikolasan/ai-sandbox/src/branch/master/arc/kohonen.ipynb)

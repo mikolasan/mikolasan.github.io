@@ -142,6 +142,8 @@ According to Hebbian rule, neurons that fire together - wire together, and the c
 
 I think that **plasticity enabled and disabled by neurons themselves and [it only affects some population](/devlog/11) and not the whole network.** This idea has some influence from SOM (Kohonnen networks).
 
+Also, look at [this](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0170388) project demonstrating sensory-motor learning with random spiking networks through Hebbian learning relying on environmental conditions without a separate reward system.
+
 ### Action space discovery
 
 After [reviewing](/ai/reviews/discovery-of-question-by-reinforcement-learning-agent) an article **Discovery of useful questions as auxiliary tasks**, I see another approach in trying all possible movements, categorize them as different actions, and then choose between them to build a strategy. This way we build model free algorithm, and actually _agent free_ (agent unlocked ? ) too. Any agent with actuators and sensors can define the set of actions. The set of basic and more complex actions. With later possibility to discover new.
