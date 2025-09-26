@@ -4,9 +4,10 @@ date: 2025-06-19
 published: 2025-06-19
 lastModified: 2025-06-29
 ---
+
 ## Prologue
 
-When I changed my email with Asana, the service that I liked so much, I found it when I had trouble planning my day, forgiving routine tasks, and struggling to keep in mind many parallel projects, and it helped; and adding new tasks was so easy (not anymore), but today I used `*.passinbox.com` from Proton that was recognized not as a personal email (like gmail), therefore I fell into a trap, because Asana decided that personal accounts should be displaced by organizations.
+When I changed my email with Asana, the service that I liked so much, I found it when I had trouble planning my day, forgetting routine tasks, and struggling to keep in mind many parallel projects, and it helped; and adding new tasks was so easy (not anymore), but today I used `*.passinbox.com` from Proton that was recognized not as a personal email (like gmail), therefore I fell into a trap, because Asana decided that personal accounts should be displaced by organizations.
 
 Somehow it created an organization, passinbox, that I can’t control, but apparently someone from passinbox could control my account and (my speculation here) see my tasks unless they are private.
 
@@ -50,4 +51,14 @@ git clone https://github.com/GothenburgBitFactory/taskwarrior
 cd taskwarrior
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build
+
+# and then if you want to install it 
+# (but carefully to not mess up with any system path)
+# here's the cmake install command to /usr/local/bin
+sudo cmake --install build --prefix /usr/local
 ```
+
+
+## Enhancements
+
+- Multi line description ["annotations"](https://github.com/linuxcaffe/tw-ann-hook)

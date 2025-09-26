@@ -27,6 +27,7 @@ lastModified: 2025-07-12
 ## Cool resources
 
 - [Survive La France](https://survivelafrance.fr/)
+- [Travle France](https://travle.earth/fra)
 
 ## Translation practice - My stories
 

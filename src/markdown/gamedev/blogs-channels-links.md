@@ -7,7 +7,7 @@ lastModified: 2022-05-01
 
 ## Blogs
 
-If you are following gamedev on Twitter, then you see stuff, but no things to read. Today let’s jump in and read some great articles for game developers by game developers.
+If you are following gamedev on Twitter/Mastodon/Reddit, then you see stuff, but no things to read. Today let’s jump in and read some great articles for game developers by game developers.
 
 - Huge post on how to tinker with pathfinding algorithms by [@ruby0x1](https://twitter.com/ruby0x1) [https://notes.underscorediscovery.com/pathing-excursions/](https://notes.underscorediscovery.com/pathing-excursions/)
 - Immense guide about hexagonal grids by @redblobgames [https://www.redblobgames.com/grids/hexagons/](https://www.redblobgames.com/grids/hexagons/)
@@ -29,6 +29,7 @@ If you are following gamedev on Twitter, then you see stuff, but no things to re
 - Markov chains for calculating a feature in slot games [http://blog.collurio.com/2014/10/18/stickin-it/](http://blog.collurio.com/2014/10/18/stickin-it/)
 - Some cool vectors that make [animation transitions smooth](https://theorangeduck.com/page/propagating-velocities-through-animation-systems)
 - [Lua in Unreal Engine](https://github.com/Tencent/sluaunreal)
+- [Voxel renderer](https://blog.danielschroeder.me/blog/voxel-renderer-objects-and-animation/)
 
 ## Bonus
 

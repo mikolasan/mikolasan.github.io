@@ -181,6 +181,7 @@ env.close()
 ### Neuroscience
 
 - Muscles. [Spinal control of movement](https://openbooks.lib.msu.edu/neuroscience/chapter/spinal-control-of-movement/). How neuron drives muscles in [Nervous System Control of Muscle Tension](https://open.oregonstate.education/aandp/chapter/10-4-nervous-system-control-of-muscle-tension/)
+- [Culturing nerve cells](https://archive.org/details/culturingnervece02edunse_j7b2/page/448/mode/2up) Cambridge, Mass. : MIT Press, 1998, page 448 - Culture of specific cell types
 
 
 ## Next

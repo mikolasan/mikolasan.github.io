@@ -157,3 +157,12 @@ Another approach would be to create a Solid Pod server that can act as an IRC se
 
 Both of these approaches would require some development work to implement, but they could provide a way to add decentralization features to IRC using Solid Pods.
 
+
+## Other chats
+
+- [bit](https://github.com/permissionlesstech/bitchat/tree/main/bitchat) - A decentralized peer-to-peer messaging app with dual transport architecture: local Bluetooth mesh networks for offline communication and internet-based Nostr protocol for global reach. No accounts, no phone numbers, no central servers.
+
+## UI
+
+- GTK4
+- [slint](https://slint.dev/) (has some restrictions for commercial use)

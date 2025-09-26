@@ -37,6 +37,7 @@ More complex control - [voltage multiplexer](https://www.mikrocontroller.net/att
 
 - [PCB design alternative](https://grabcad.com/library/stbc08-high-current-lipo-battery-charger-1)
 - [LiPo charger from Adafruit](https://learn.adafruit.com/li-ion-and-lipoly-batteries/downloads)
+- BQ25240 [as recommended on Adafruit forum](https://forums.adafruit.com/viewtopic.php?t=1283260)
 
 Power distribution boards
 
@@ -157,6 +158,9 @@ Old alternative for these chips is [TPS6109](https://www.ti.com/lit/ds/symlink/t
 
 - Solar panels [https://solar.lowtechmagazine.com/2023/12/how-to-build-a-small-solar-power-system/#withbattery](https://solar.lowtechmagazine.com/2023/12/how-to-build-a-small-solar-power-system/#withbattery)
 - Mcp 7387 (not 3, not 1) and big big big capacitor will handle unstable panels [https://learn.adafruit.com/usb-dc-and-solar-lipoly-charger/using-the-charger?view=all#downloads](https://learn.adafruit.com/usb-dc-and-solar-lipoly-charger/using-the-charger?view=all#downloads)
+- [Thread about charging LiPo batteries](https://forum.arduino.cc/t/solarpanel-battery-arduino/468643) on Arduino forum
+- [LT3652](https://cdn.sparkfun.com/datasheets/Prototyping/LT3652.pdf) datasheet
+- [MPPT explained](https://www.instructables.com/DIY-1kW-MPPT-Solar-Charge-Controller/)
 
 And then carefuly think about power consumption and try to save on some functionality that you don't use. For example, here an amazing list [from](https://www.gammon.com.au/power)
 

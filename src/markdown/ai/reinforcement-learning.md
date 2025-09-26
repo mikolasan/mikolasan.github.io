@@ -11,7 +11,7 @@ lastModified: 2022-12-20
 - DQN ([DQN Paper](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf) and implement something better than [any](https://pytorch.org/tutorials/intermediate/reinforcement_q_learning.html) [Python](https://github.com/Apress/deep-reinforcement-learning-python/blob/main/chapter6/listing6_1_dqn_pytorch.ipynb) code)
 - PPO
 - Distributional RL ([good explanation](https://mtomassoli.github.io/2017/12/08/distributional_rl/))
-- Rainbow ([github](https://github.com/Kaixhin/Rainbow), [paper](https://arxiv.org/abs/1710.02298))
+- Rainbow ([github](https://github.com/Kaixhin/Rainbow), [paper](https://arxiv.org/abs/1710.02298)) - missing replay. Replay-based learning algorithms share important traits with model-based approaches, including the ability to _plan_: to use more computation without additional data to improve predictions and behaviour. (From [When to use parametric models in reinforcement learning?](https://proceedings.neurips.cc/paper/2019/file/1b742ae215adf18b75449c6e272fd92d-Paper.pdf))
 - Multi goal
 - Multi agent
 - Continuous time

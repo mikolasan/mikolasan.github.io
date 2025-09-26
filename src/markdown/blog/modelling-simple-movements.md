@@ -75,3 +75,4 @@ Hamiltonian is from [this paper](https://arxiv.org/abs/1909.12077) ([code](https
 - Look for [solution of double pendulum problem](https://arxiv.org/abs/2009.09457)
 - [Big review](https://arxiv.org/abs/2202.02435) of Neural Differential Equations
 - Lagrangian Deep Networks https://openreview.net/forum?id=BklHpjCqKm
+- [Finding changepoints](https://gregorygundersen.com/blog/2019/08/13/bocd/) (when data in a time series changes underlying parameters) with Bayesian framework. Based on Adams and MacKay's 2007 paper, "Bayesian Online Changepoint Detection"
