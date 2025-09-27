@@ -76,7 +76,7 @@ export const SEO = ({ children, path, data, frontmatter, pageContext, title }) =
     { name: `twitter:image`, content: image },
     { name: `twitter:image:alt`, content: imageAlt },
 
-    { name: `fediverse:creator`, content: `@mikolasan@mastodon.social` },
+    { name: `fediverse:creator`, content: `@mikolasan@cupoftea.social` },
   ]
 
   if (pagination) {

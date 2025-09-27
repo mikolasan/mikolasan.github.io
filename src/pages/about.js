@@ -19,7 +19,7 @@ const About = ({ pageContext }) => {
         <li key="l1">👀 I’m interested in game development, DIY electronics, and artificial intelligence</li>
         <li key="l2">🌱 I’m currently learning Kotlin, revamping data structures and algorithms in GDScript, and basics of electronics</li>
         <li key="l3">💞️ I’m looking to collaborate on projects related to robots, games and procedural generation</li>
-        <li key="l4">📫 You can reach me on Mastodon <a href="https://mastodon.social/@mikolasan" target="_blank" rel="external nofollow noopener noreferrer">@mikolasan</a> where once a week I write threads about gamedev and development process</li>
+        <li key="l4">📫 You can reach me on Mastodon <a href="https://cupoftea.social/@mikolasan" target="_blank" rel="external nofollow noopener noreferrer">@mikolasan</a> where once a week I write threads about gamedev and development process</li>
         <li key="l5">☕ Enjoy coding today!</li>
       </ul>
 
