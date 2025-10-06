@@ -23,3 +23,4 @@ TODO: add a radio receiver and mix it with the _ghost box_ method.
 
 - [https://learn.adafruit.com/bluefruit-ouija-board/board-teardown](https://learn.adafruit.com/bluefruit-ouija-board/board-teardown "https://learn.adafruit.com/bluefruit-ouija-board/board-teardown") - the magnet travels in a perfect arc, boring  
 - [https://github.com/ab3nd/ouija_board](https://github.com/ab3nd/ouija_board "https://github.com/ab3nd/ouija_board") - brainstorm and overview of technologies: field visualization film, Hall effect
+- [Probabilistic analysis](https://arxiv.org/abs/2507.11906) about predictions from LLM, similar to monkeys trying to type in full Shakespeare novel
