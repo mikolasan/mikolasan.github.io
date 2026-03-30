@@ -74,3 +74,34 @@ Set log rotation by editing **/etc/docker/daemon.json**
 ```
 
 Reference: https://docs.docker.com/config/containers/logging/local/
+
+You can check if the logs grow abundantly on your drive1
+
+```bash
+du -h $(docker inspect --format='{{.LogPath}}' $(docker ps -qa))
+```
+
+And possibly then archive them
+
+```bash
+docker inspect --format='{{.LogPath}}' $(docker ps -qa) | xargs -I{} sh -c 'gzip -c "{}" > "./$(basename "{}").gz"'
+```
+
+And delete... (careful one by one version)
+
+```bash
+sudo sh -c 'echo "" > $(docker inspect --format="{{.LogPath}}" e430578d8809)'
+```
+
+But do not do this type of deletion! It will break the output from the log command. You could still read logs from raw JSON:
+
+```bash
+sudo tail -n 50 -f /var/lib/docker/containers/e430578d8809005f7756606fc8e765a88813f1b17a59e23b19c8320758d70f46/e430578d8809005f7756606fc8e765a88813f1b17a59e23b19c8320758d70f46-json.log | jq -j '.["log"]'
+```
+
+I even managed to make a combined version when in a docker stack one service has several instnaces (search by the service name)
+
+```bash
+tail -qf $(docker inspect --format="{{.LogPath}}" $(sudo docker ps -f name=<your service name> -q)) | jq -j '.["log"]'
+```
+
