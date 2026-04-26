@@ -62,3 +62,8 @@ sudo cmake --install build --prefix /usr/local
 ## Enhancements
 
 - Multi line description ["annotations"](https://github.com/linuxcaffe/tw-ann-hook)
+
+## Reference
+
+- [How Michael* is using Taskwarrior](https://blog.mei-home.net/posts/taskwarrior-3/#how-im-using-taskwarrior) (* - [the homelab guy](https://social.mei-home.net/@mmeier/115560575759251366))
+- 

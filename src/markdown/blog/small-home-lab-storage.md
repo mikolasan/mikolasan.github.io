@@ -16,3 +16,10 @@ The last month my wife made $4 from her channel. So I would limit our budget to 
 I looked at a diskless solution from WD (**My Cloud EX) but it** costs $350 which is lot for my budget. Also I considered [True NAS Scale](https://www.truenas.com/download-truenas-scale/) because it’s free and [documentation](https://www.truenas.com/docs/scale/introduction/scalehardwareguide/) was fun to read .
 
 But after a week of reading about possible solutions we settled on buying another external USB HDD.
+
+
+## Enclosure
+
+This project could include a custom [3D printed mini server rack](https://makerworld.com/en/models/1464819-lab-rax-10-server-rack-bolted-version-5u#profileId-1527883)
+
+![Lab Rax is a fully 3D printable, modular 10-inch server rack for homelabs](./lab-rax-10-server-rack.jpg)

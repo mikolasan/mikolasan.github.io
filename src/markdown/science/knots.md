@@ -15,3 +15,4 @@ I mentioned 4th dimension as something unreachable, however for some objects thi
 ### Also
 
 - https://en.wikipedia.org/wiki/Seifert_surface
+- [Cohomology for kids, part 1: introduction](https://blog.robert-figura.de/maths/cohomology.html)

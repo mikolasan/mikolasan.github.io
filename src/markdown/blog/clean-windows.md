@@ -77,3 +77,11 @@ Does my laptop need a special dolby audio software that has no controls in its c
 ## compattelrunner
 
 I think it's _the thing_ that kicks off the fans once in a while when your computer sits idle. [Disable it](https://superuser.com/questions/1613932/how-to-disable-compattelrunner-exe-microsoft-compatibility-telemetry) because it's just spying on you.
+
+## Cool software
+
+- [Win Dir Stat](https://windirstat.net/download.html) - visually estimate what on your drive takes so much space.
+- [Beyond Compare](https://www.scootersoftware.com/download) (Standard version is totally capable!) - helped me in a case when I was copying >400GB from one drive to another and it got stuck at ninety something percent leaving 10GB not copied. Do I just try to copy all folders again? It will probably fail again because of some corrupted file in some folder. So let's be smart and review what is missing from the backup location.
+- [Tera Copy](https://www.codesector.com/teracopy) - then to prevent something like in the story above, use a better (more controllable, even I must say, palpable) ways to copy files.
+- [Greenshot](https://getgreenshot.org/downloads/) - screenshots
+- 

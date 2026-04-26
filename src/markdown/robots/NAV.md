@@ -13,7 +13,7 @@
 ## Carcass design
 ### Constructor
 
-## Robot brains
+## [Robot brains](./robot-brains)
 
 ### Robot values
 ### Neuron details

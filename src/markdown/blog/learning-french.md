@@ -6,6 +6,7 @@ lastModified: 2025-07-12
 ---
 ## To read
 
+- Why do you need a blog - [Pourquoi vous devriez lancer un blog](https://themimitoof.fr/pourquoi-vous-devriez-lancer-un-blog/)
 - AI hype is over? (post from 2023) - [_L’IA n’est-elle qu’un mythe qui s’essoufflera ?_](https://lapausephilo.fr/2023/11/21/ia-mythe-travail-philosophie-chapgpt-mindjourney/)
 - About Google alternative services -  [_Comment j’ai dégooglisé ma vie_](https://www.frandroid.com/marques/google/2605293_comment-jai-degooglise-ma-vie-episode-1-les-applications-et-les-outils-indispensables)
 - About dystopian games and game design - [_Dérive exploratoire : Disco Elysium, cartographie édition_](https://web.archive.org/web/20240915090225/https://hugoveille.com/derive-exploratoire-disco-elysium/)
@@ -28,6 +29,7 @@ lastModified: 2025-07-12
 
 - [Survive La France](https://survivelafrance.fr/)
 - [Travle France](https://travle.earth/fra)
+- [C'était Paris en 1970](https://paris1970.jeantho.eu/carres/1196.html)
 
 ## Translation practice - My stories
 

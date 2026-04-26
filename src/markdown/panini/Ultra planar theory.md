@@ -1,0 +1,4 @@
+Every specific feature tends to get a high activation rate on a single plane. This way every plane describes a specific feature. One plane can resection blue colors only, another one only horizontal lines, etc. Then perception and decisions start from there.
+When a new pattern is observed it works like a clusterization problem where all pattern feature we try to match with what already known.
+Like with the hard problem of a brown curly dog and a fried chicken. Color is the same, texture is the same, but there no eyes. Let’s put a googly eyes on the fried chicken. That could pass as a dog but now we closely review shapes of the fried chicken pieces and they don’t form a face.
+When only one plane gives a contradictive result, this puts other good matches into question.

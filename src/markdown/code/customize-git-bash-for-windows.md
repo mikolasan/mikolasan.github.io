@@ -331,8 +331,5 @@ fi
 
 This was a good warm up. So maybe it's time to offer something serious?
 
-A [tiling window manager](https://github.com/LGUG2Z/komorebi) for Windows 10 and 11!
-
-And it's written in Rust!
-
-Source: https://twitter.com/mikolasan/status/1456252757573132292
+- A [tiling window manager](https://github.com/LGUG2Z/komorebi) for Windows 10 and 11! And it's written in Rust!
+- [LiteStep](http://litestep.net/) - a replacement desktop interface for Windows

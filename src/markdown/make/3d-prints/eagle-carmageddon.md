@@ -25,3 +25,9 @@ Wheel mount https://www.thingiverse.com/thing:647389
 - https://www.youtube.com/watch?v=6vFkGh179H0 - blender tutorial (wheels)
 
 My dream design https://www.artstation.com/artwork/8l0O0x
+
+
+## Other car models
+
+- [3D sets](https://3dsets.com/)
+![Mini Truck: Roady Dumper](./3d-sets.png)

@@ -7,6 +7,26 @@ lastModified: 2023-01-02
 topic: true
 ---
 
+## What is the minimum unit of movement? 
+
+- Motor command level. A single PWM pulse?
+- Kinematic level. Motor position/velocity? 
+- Temporal level. Control loop period?
+ 
+When we combine these units together in a time series of movements, what is a unit higher in hierarchy?
+
+Different patterns, like "turn left" by moving left motors in reverse and right motors forward could be considered a high hierarchy block, composed of multiple lower-level units of motor movements. 
+
+For example, in case of slippage, in some off-road tests, we need to move only one motor. One motor is a simple unit, but its actuation in this example is a high order decision related to the specific situation of slippage. In other words we can formulate that for this situation it is important to keep other three motors static.
+
+## What type of Neural Networks to use for training these blocks?
+
+I will need to create a separate neural network that will understand physics like Lagrange, Euler, Newton equations. And based on required positions of the robot parts it will output the movement strategy accordingly.
+
+I want to create a universal model that will not require creating new inverse kinematics algorithm every time robot's structure has been changed. I know that it's not possible to approximate the equations with neural networks. But how equation system can be solved with neural networks?
+
+
+There will be no labeled input data, thus autoencoders will be a good choice. However, the network input will be directions or final goals like "go find mushrooms" or "find pine tree in the south" and the output will be sequences of values representing torque applied to motors of wheeled robot.
 
 ## Planetary gear train
 
