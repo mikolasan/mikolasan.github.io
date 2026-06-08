@@ -1,0 +1,150 @@
+diff --git a/lib/plugins/input/journald-upload.js b/lib/plugins/input/journald-upload.js
+index 3df3e47..5e0c8b9 100644
+--- a/lib/plugins/input/journald-upload.js
++++ b/lib/plugins/input/journald-upload.js
+@@ -12,9 +12,10 @@ const keyValueFieldRegex = /^\S+=.+$/ // key=value
+ const cursorRegex = /^__CURSOR=/
+ // const exportRecordRegex = /^(\S+)=(.+)$|^(\S+)$\n$\n([\S|\s]+)\n$/gm
+ class Parser {
+-  constructor (emitEvent, token) {
++  constructor (emitEvent, token, removeFields) {
+     this.token = token
+     this.emitEvent = emitEvent
++    this.removeFields = removeFields
+     this.multiLineMode = false
+     this.log = {}
+     this.multiLineFieldValue = ''
+@@ -46,7 +47,7 @@ class Parser {
+     if (!isNaN(value)) {
+       value = Number(value)
+     }
+-    if (fieldName.length > 0) {
++    if (fieldName.length > 0 && !this.removeFields[fieldName]) {
+       this.log[fieldName] = value
+     }
+   }
+@@ -175,17 +176,20 @@ JournaldUpload.prototype.emitEvent = function (log, token) {
+     if (
+       config.systemdUnitFilter !== undefined &&
+       config.systemdUnitFilter.include &&
+-      !config.systemdUnitFilter.include.test(log._SYSTEMD_UNIT)
++      !config.systemdUnitFilter.include.test(systemdUnit)
+     ) {
+       return
+     }
+     if (
+       config.systemdUnitFilter !== undefined &&
+       config.systemdUnitFilter.exclude &&
+-      config.systemdUnitFilter.exclude.test(log._SYSTEMD_UNIT)
++      config.systemdUnitFilter.exclude.test(systemdUnit)
+     ) {
+       return
+     }
++  } else {
++    // ignore messages not from systemd
++    return
+   }
+   const context = {
+     sourceName: log[_SYSTEMD_UNIT] || log[SYSLOG_IDENTIFIER] || 'journald',
+@@ -239,22 +243,6 @@ JournaldUpload.prototype.getHttpServer = function (aport, handler) {
+   }
+ }
+ 
+-JournaldUpload.prototype.parseLine = function (log, line) {
+-  if (!line) {
+-    return log
+-  }
+-  const index = line.indexOf('=')
+-  const fieldName = line.substr(0, index).toLowerCase()
+-  let value = line.substr(index + 1, line.length)
+-  if (!isNaN(value)) {
+-    value = Number(value)
+-  }
+-  if (!this.removeFields[fieldName]) {
+-    log[fieldName] = value
+-  }
+-  return log
+-}
+-
+ JournaldUpload.prototype.journaldHttpHandler = function (req, res) {
+   try {
+     this.config.useIndexFromUrlPath = true
+@@ -262,7 +250,7 @@ JournaldUpload.prototype.journaldHttpHandler = function (req, res) {
+     const path = req.url.split('/')
+     let token = null
+ 
+-    if (self.config.useIndexFromUrlPath === true && path.length > 1) {
++    if (this.config.useIndexFromUrlPath === true && path.length > 1) {
+       if (path[1] && path[1].length > 31 && tokenFormatRegEx.test(path[1])) {
+         const match = path[1].match(extractTokenRegEx)
+         if (match && match.length > 1) {
+@@ -276,15 +264,15 @@ JournaldUpload.prototype.journaldHttpHandler = function (req, res) {
+     }
+ 
+     if (
+-      (self.config.useIndexFromUrlPath === true && !token) ||
+-      self.tokenBlackList.isTokenInvalid(token)
++      (this.config.useIndexFromUrlPath === true && !token) ||
++      this.tokenBlackList.isTokenInvalid(token)
+     ) {
+-      res.statusCode = self.config.invalidTokenStatus || 403
++      res.statusCode = this.config.invalidTokenStatus || 403
+       res.end(`invalid logs token in url ${req.url}\n`)
+       return
+     }
+ 
+-    const parserState = new Parser(self.emitEvent.bind(self), token)
++    const parserState = new Parser(this.emitEvent.bind(this), token, this.removeFields)
+     req
+       .pipe(createStreamThrottle(this.throughputPerClient))
+       .pipe(split())
+diff --git a/lib/plugins/output-filter/dropEventsFilter.js b/lib/plugins/output-filter/dropEventsFilter.js
+index e4187c1..32f0081 100644
+--- a/lib/plugins/output-filter/dropEventsFilter.js
++++ b/lib/plugins/output-filter/dropEventsFilter.js
+@@ -3,11 +3,9 @@ function testCondition (data, fieldName, condition) {
+ 
+   const isObj = isLiteralObject(value)
+   if (isObj) {
+-    console.log(JSON.stringify(value))
+     return condition.test(JSON.stringify(value))
+   }
+ 
+-  console.log(String(value))
+   return condition.test(String(value))
+ }
+ 
+@@ -59,7 +57,7 @@ function dropEventsFilter (context, config, eventEmitter, data, callback) {
+         )
+       }
+     }
+-    logStatus(debug, 'filter result', drop)
++    logStatus(undefined, debug, 'filter result', drop)
+     if (drop) {
+       if (debug) {
+         logStatus(data, debug, 'drop', JSON.stringify(data))
+diff --git a/lib/plugins/output/slack-webhook.js b/lib/plugins/output/slack-webhook.js
+index 8e0b533..5f8d64a 100644
+--- a/lib/plugins/output/slack-webhook.js
++++ b/lib/plugins/output/slack-webhook.js
+@@ -24,6 +24,9 @@ OutputSlackWebhook.prototype.eventHandler = function (data, context) {
+     return
+   }
+   if (this.match(data, context)) {
++    if (this.config.transform) {
++      data = this.config.transform(context, data, this.config)
++    }
+     var slackMessage = ''
+     var payload = this.config.payload
+     if (this.config.format === 'json') {
+@@ -35,8 +38,8 @@ OutputSlackWebhook.prototype.eventHandler = function (data, context) {
+     } else if (this.config.template) {
+       slackMessage = format(this.config.template, data)
+     }
+-    if (payload.attachments && payload.attachments[0]) {
+-      payload.attachments[0].text = slackMessage
++    if (payload.blocks && payload.blocks[0]) {
++      payload.blocks[0].text.text = slackMessage
+     } else {
+       payload.text = slackMessage
+     }
