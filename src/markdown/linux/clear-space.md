@@ -8,6 +8,9 @@ So this happened when I was working on a Go project and quite frequently compile
 
 
 ```bash
+# can check usage first
+journalctl --disk-usage
+
 sudo journalctl --rotate
 sudo journalctl --vacuum-time=1s
 sudo pacman -Scc
