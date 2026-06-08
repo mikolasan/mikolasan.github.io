@@ -6,7 +6,7 @@ published: 2025-02-28
 lastModified: 2025-08-30
 ---
 
-Probably you have seen on Mastodon people advocating for RSS, forums and IRC as a foundation of new cozy and niche internet without big tech companies. So I want to check if there’s a real reincarnation of these old things. (Except emails, real paper mails are much cooler.)
+Probably you have seen on Mastodon people advocating for RSS, forums and IRC as a foundation of new cozy and niche internet without big tech companies. So I want to check if there’s a real reincarnation of these old things. (Except emails, because I believe in real paper mails -they are much cooler.)
 
 I started to play with the system on my Raspberry Pi. It doesn’t boot from an SD card, but it can boot from a USB stick. But during `apt upgrade` I lost the ssh connection, decided to power cycle the board, and now it doesn’t boot. On Windows I fixed the file system on the first partition, and it started blinking but still no booting. Apparently, the kernel file was corrupted and I needed to replace it with a genuine one file from another place.
 
@@ -33,7 +33,7 @@ systemctl start inspircd
 journalctl -u inspircd.service
 ```
 
-Interesting, that you can test your custom certificates with **[gnutls](https://www.gnutls.org/manual/html_node/certtool-Invocation.html)**:
+Interesting, that you can test your custom certificates with [gnutls](https://www.gnutls.org/manual/html_node/certtool-Invocation.html):
 
 ```sh
 cd /etc/inspircd/keys
@@ -143,4 +143,7 @@ These commands I tried, not all of them worked, because it depends on Anope conf
 
 ## Reference
 
+- Web interface - Kiwi IRC  ([configuration](https://github.com/kiwiirc/kiwiirc/wiki/Configuration))
 - Very long dump but maybe helpful https://clients.sisrv.net/knowledgebase/89/How-to-build-your-own-InspIRCd-IRC-Server-and-Anope.html
+- IRC bouncer [ZNC](https://wiki.znc.in/ZNC)
+- Writing [my chat platform](/code/rust/irc-server-and-modern-chat) in Rust

@@ -53,3 +53,35 @@ You need to produce something with high demand. Something unique. For example, c
 ### Q: Give me advice how to make my channel better
 
 **A:** If you have more then 5 videos, I think it would not hurt to add playlists. It will structure different topics covered in your videos.
+
+## First episodes
+
+for a channel where I
+
+### test the Prototypes
+
+| **Episode** | **Topic**                             | **The "In-Depth" Angle**                                                                                       |
+| ----------- | ------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| **01**      | **Nostr: Is it actually a protocol?** | Try to send a message without using a centralized relay. Can you do it in 15 minutes of coding?                |
+| **02**      | **IPFS vs. Hypercore**                | Compare how they handle a single 1GB file. Which one "breaks" first on a standard dev laptop?                  |
+| **03**      | **Libp2p: The Lego of the D-Web**     | Look at 3 different projects using it. Is it a universal standard or just a mess of configurations?            |
+| **04**      | **The "Ghost" Protocols**             | Review a protocol that everyone talks about but no one uses (like Scuttlebutt). Why did it "fail" technically? |
+
+
+### create something meaningful
+
+|**Episode**|**Topic**|**The "Meaningful" Takeaway for You**|
+|---|---|---|
+|**01**|**GunDB: The Database that lives nowhere**|You learn how to sync data between two browsers with zero servers. (Great for private chat or todo apps).|
+|**02**|**Hypercore / Holepunch**|You learn how to stream files directly from your computer to a friend’s. (Personal "Netflix" for your own files).|
+|**03**|**ActivityPub (The Mastodon Protocol)**|You learn how "Social Media" actually works under the hood so you can own your own identity.|
+|**04**|**ZeroTier or Yggdrasil**|You learn how to turn the whole internet into one giant "Local Area Network" (LAN) for your own devices.|
+
+### have a gaming development focus
+
+| **Episode** | **Title Idea**                                          | **The "Unique" Angle**                                                                                                        |
+| ----------- | ------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| **01**      | **I Read the Doom Source Code (So You Don't Have To)**  | Find a classic game with open-source code. Point out the "dirty hacks" the original devs used to make it run on old hardware. |
+| **02**      | **Why Your 'Indie' Game Idea is a Technical Nightmare** | A cynical dev’s look at why "MMO RPG with realistic physics" is an architectural trap for beginners.                          |
+| **03**      | **Architecture Audit: ECS vs OOP in Game Engines**      | An in-depth look at how Data-Oriented Design (ECS) is changing gaming. No "people," just high-level technical theory.         |
+| **04**      | **Building a Game in 100 Lines of Code**                | Try to make the most complex game possible with a strict line limit. It’s a puzzle for you and entertaining for the viewers.  |

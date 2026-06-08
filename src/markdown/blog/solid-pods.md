@@ -23,7 +23,7 @@ To improve privacy we must design applications in a new way. Applications may be
 
 So what not-decentralized, not-protecting-privacy Pod is?
 
-It's a storage of data in RDF format. What is this cool format? you ask. In short, if you are amused how people still use XML, then meet your future - more bloated format without any justification of its advantages.
+It's a storage of data in RDF format. What is this cool format? you ask. In short, if you are amused how people still use XML, then meet your future - get more of that bloated format without any justification of its advantages.
 
 And about security (encryption of our data). TLS is not enough. I want this RDF-type-of-crap to be encrypted preferably in a way supported by the specification and not just on the end-sides.
 
@@ -36,8 +36,8 @@ I honestly don't understand prefixes. And purpose of URLs (URI, IRI, whatever) t
 
 The following two examples show where I see RDF format to be relevant
 
-**Example 1.** A city could use RDF data to represent various aspects of urban life, such as traffic patterns, energy usage, public safety, and social services. By using RDF, the city could integrate data from different sources and systems, such as sensor networks, social media, and city databases. This integrated data could be used to create smart city applications that improve the quality of life for residents, such as traffic management systems, energy optimization tools, and emergency response systems.
+**Example 1.** A city could integrate data from different sources, such as sensor networks, social media, and city databases to improve quality of life for residents: predict traffic patterns, optimize energy consumption.
 
-**Example 2.** A cat owner could use RDF data to represent various aspects of feline life, such as hunting patterns, food preferences, health conditions, and social interactions. By using RDF, the cat owner could integrate data from different sources and systems, such as GPS trackers, cat food reviews, veterinary records, and online forums. This integrated data could be used to create smart cat applications that improve the quality of life for cats, such as prey detection systems, food recommendation tools, and wellness monitoring systems.
+**Example 2.** A cat owner could use RDF data to represent various aspects of feline life, such as food preferences, health conditions, and social interactions. Sources: GPS trackers, cat food reviews, veterinary records, and online forums. Such integrated data could be used to create smart cat applications that improve the quality of life for cats, such as food and toy recommendation, and wellness monitoring systems.
 
 To be concluded...

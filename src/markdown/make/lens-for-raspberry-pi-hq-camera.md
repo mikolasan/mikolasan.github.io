@@ -17,6 +17,8 @@ That strange cylinder connected with white ribbon is the camera. It only shows p
 
 ### Specs
 
+Reference: [About the Camera Modules](https://www.raspberrypi.com/documentation/accessories/camera.html#hardware-specification)
+
 - Sony IMX477 sensor [datasheet](https://www.sony-semicon.co.jp/products/common/pdf/IMX477-AACK_Flyer.pdf)
 - 12.3 megapixels
 - Sensor size: diagonal 7.857 mm (Type 1/2.3) 

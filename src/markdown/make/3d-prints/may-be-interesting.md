@@ -21,6 +21,18 @@ lastModified: 2024-03-27
 - Neverending_filament
 
 
+## Clock
+
+![Many gears](./3d-fdm-printed-mechanical-clock-project-1.jpeg)
+Photo by [Trinity](https://3dprintingspace.com/u/trinity)
+
+- Mechanical - falling weight https://3dprintingspace.com/t/3d-fdm-printed-mechanical-clock-project/4023
+- Wandering hour clock (hour digits are completely detached from their usual positions and flying around and pointing to minutes) https://www.printables.com/model/327198-improved-wandering-hour-clock
+- Tourbillon Escapement Mechanical Clock https://www.myminifactory.com/object/3d-print-tourbillon-mechanica-tourbillon-escapement-mechanical-clock-assembly-guide-pdf-in-description-124938
+
+![Many gears in a round shape](./tourbillon-escapement-mechanical-clock.jpg)
+Photo by [Dan @Mechanistic](https://www.myminifactory.com/users/Mechanistic)
+
 ## Christmas lamp
 
 - UFO [https://www.thingiverse.com/thing:1430758/makes](https://www.thingiverse.com/thing:1430758/makes)
@@ -35,8 +47,9 @@ lastModified: 2024-03-27
 - scary smile strange 4 pieces [https://www.thingiverse.com/thing:4517737](https://www.thingiverse.com/thing:4517737)
 - just a container [https://www.thingiverse.com/thing:3171870](https://www.thingiverse.com/thing:3171870)
 
-## Cool 3D things
+## Cool things
 
+- For small electronics components I fancy a [retro toolbox](https://www.printables.com/model/1129868-retro-toolbox)
 - Notre-Dame [https://cults3d.com/en/3d-model/architecture/reims-cathedral-kitset](https://cults3d.com/en/3d-model/architecture/reims-cathedral-kitset)
 - Train [https://cults3d.com/en/3d-model/game/bb-toy-train-kit-advanced](https://cults3d.com/en/3d-model/game/bb-toy-train-kit-advanced)
 - Aluminum can holder [https://cults3d.com/en/3d-model/gadget/toon-style-beverage-can-mug](https://cults3d.com/en/3d-model/gadget/toon-style-beverage-can-mug)

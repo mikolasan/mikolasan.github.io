@@ -5,6 +5,12 @@ date: 2023-04-26
 published: 2023-05-05
 lastModified: 2023-05-05
 ---
+
+So what will it be, if I want to enhance IRC with Matrix states, Tox discoverability via UDP multicast and DHT, and Double Ratchet encryption ideas?
+
+Tox = "open-world" version of Vypress
+Matrix state = chat history stored as directed acyclic graph
+
 ## About
 
 I just started the development (May 2023). It's not my main side project, quite the opposite, this very random idea for practicing crazy stuff in between really important projects when it becomes boring even there.
@@ -166,3 +172,7 @@ Both of these approaches would require some development work to implement, but t
 
 - GTK4
 - [slint](https://slint.dev/) (has some restrictions for commercial use)
+
+## Tests
+
+- [irctest](https://github.com/progval/irctest/blob/master/irctest/server_tests/channel.py)

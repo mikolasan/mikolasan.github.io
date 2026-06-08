@@ -6,7 +6,7 @@ lastModified: 2025-06-01
 ---
 ### Pinterest
 
-Download all boards from pinterest
+Download all boards from Pinterest
 
 ```bash
 conda create --name gallery_env
@@ -14,11 +14,15 @@ conda activate gallery_env
 conda install pip
 pip install -U gallery-dl
 pip install -U youtube-dl
-conda install -c conda-forge ffmpeg
+# this may be broken https://github.com/conda-forge/glib-feedstock/issues/162
+# conda install -c conda-forge ffmpeg
+# so better to have ffmpeg installed in your system
 mkdir pinterest
 cd pinterest
-gallery-dl --cookies-from-browser firefox "<https://www.pinterest.com/mikolasan/>"
+gallery-dl --cookies-from-browser floorp https://www.pinterest.com/mikolasan
 
+# and when you're done - delete the environment
+conda env remove -n gallery_env
 ```
 
 ## Web browsers

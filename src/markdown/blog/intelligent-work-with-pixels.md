@@ -44,7 +44,7 @@ I thought that the input should go to memory, be stored there or processed from 
 
 ## Self organizing maps
 
-Kohonen designed self organizing maps explaining them by neurological evidence that similar features located near each other. But they are located close because during plasticity only those neurons were turned into a special mode. So, som is not a training method it’s a consequence of training.
+Kohonen designed [self organizing maps](http://www.scholarpedia.org/article/Kohonen_network) explaining them by neurological evidence that similar features located near each other. But they are located close because during plasticity only those neurons were turned into a special mode. So, som is not a training method it’s a consequence of training.
 ![A quote from Kohonen's work](./kohonen-quote.jpeg)
 
 I was trying to figure out that example with triangles. So the distribution has two values that define how one point is connected to other two points in one dimensional list. It cannot go to two directions simultaneously so that is why it cannot be a full 1 square unit but only a triangle. It’s diagonal from (1,0) to (0,1) is when the sum is 1 (maximum strength, I suppose) but it also possible to have values under that line. So when the line evenly distributed itself in that triangle it didn’t look great and authors decided to transform it to evenly sided triangle using an affine transformation.

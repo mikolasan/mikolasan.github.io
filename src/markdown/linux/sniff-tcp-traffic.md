@@ -11,7 +11,7 @@ When you develop components in a server-client architecture, there is a moment w
 tcpdump port 5432 -i lo -X
 ```
 
-`-i` is for specifing an interface, `-X` - ??? well, I need to check the man pages.
+`-i` is for specifying an interface, `-X` - ??? well, I need to check the man pages.
 
 And also you would want to see if the ports are really open:
 
@@ -20,3 +20,16 @@ netstat -lpnt
 ```
 
 (install it with `apt install net-tools`)
+
+
+What path does traffic take to reach the server IP (check the routing table)?
+
+```bash
+ip route get 192.168.0.54
+```
+
+And which interface is actually sending (UDP example here)?
+
+```bash
+sudo tcpdump -i any udp port 51820 -n
+```

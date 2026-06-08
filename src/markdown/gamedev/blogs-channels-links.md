@@ -24,6 +24,7 @@ If you are following gamedev on Twitter/Mastodon/Reddit, then you see stuff, but
 
 ## Links
 
+- [The Level Design Book](https://book.leveldesignbook.com/process/blockout/massing/landscape)
 - How to make [roguelike in 7 days](http://www.gamesofgrey.com/blog/?p=157) by [Darren Grey](https://twitter.com/@dgrey0)
 - Rust [devlog](https://ozkriff.github.io/2016-08-22--devlog.html). ZoC is a turn-based hexagonal strategy game written in Rust.
 - Markov chains for calculating a feature in slot games [http://blog.collurio.com/2014/10/18/stickin-it/](http://blog.collurio.com/2014/10/18/stickin-it/)
@@ -34,3 +35,5 @@ If you are following gamedev on Twitter/Mastodon/Reddit, then you see stuff, but
 ## Bonus
 
 Has anyone noticed that all links from 2014 or somewhere in that era? Plus do not stop with the page that I provided in the links, go and explore the whole site from its root. They worth it.
+
+- library of character [animations](https://quaternius.itch.io/universal-animation-library)

@@ -210,3 +210,10 @@ But you already know, from experience, that the answer is ready usually before a
 The brain is an inference machine. It starts digging in the context from the beginning and it starts predicting in two directions. First, what the interlocutor is going to say next? It helps to recognize speech and aligns our context and makes adjustments if needed. Second, is to construct our relations and comments to the topic based on associations and knowledge that are retrieved from memory.
 
 Then how it should work for making quick responses. No audio-to-text-to-meaning conversion. Skip the text part. There’s an article that says that language is not important for thinking and making decisions. Yes, thoughts work without sound or text. And they work similarly for different languages.
+
+
+## Voice generation
+
+- **F5-TTS:** A favorite for local use. It uses a **Diffusion Transformer (DiT)** technique that is  good at matching a voice from a 5-second sample.
+- **Piper:** It is  lightweight and uses **OnnxRuntime**, making it fast enough to run on a Raspberry Pi. It uses a VITS (Variational Inference with adversarial learning) architecture.
+- **Fish-Speech:** An open-source SOTA model that uses the same "audio token" approach as Gemini, allowing for high-fidelity cloning on a local GPU.

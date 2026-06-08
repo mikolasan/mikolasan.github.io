@@ -21,3 +21,6 @@ When I discussed with Tony the new web, he had a vision of secure and fast web. 
 - Torrents in web browsers - https://webtorrent.io/
 - Decentralized git (mainly repository search) - [tangled](https://tangled.sh/) (new url? https://tangled.org/)
 - Social networks - fediverse. [Top Instances by Number of Emotes](https://emotes.cc/toplist)
+- I found out about P2P encrypted chat [Tox](https://tox.chat/faq.html) that uses DHT (Distributed Hash Tables) to find peers behind NAT using [Kademlia](https://codethechange.stanford.edu/guides/guide_kademlia.html) (something about search trees)
+- [Parallel file system lustre](https://www.lustre.org/) - probably a bit off, but it fits the topic of Internet and compute
+- Though the alternative Internet is _gemini_ (not Gemini from Google). Although not many browsers support it (lol, gemini is kinda like a restricted version of HTTP, where it's restricted on purpose). Example in our normal browser - https://warmedal.se/~wobbly/
